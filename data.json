@@ -1,0 +1,1833 @@
+{
+  "generated_at": "2026-06-29T09:03:18.441Z",
+  "pendapatan_harian": [
+    {
+      "tanggal": "2026-03-31",
+      "total_kredit": "1.699509354231E10",
+      "total_debet": "1.699509354231E10"
+    },
+    {
+      "tanggal": "2026-04-01",
+      "total_kredit": "5.22055738818E9",
+      "total_debet": "5.22055738818E9"
+    },
+    {
+      "tanggal": "2026-04-03",
+      "total_kredit": "1.08494029019E9",
+      "total_debet": "1.08494029019E9"
+    },
+    {
+      "tanggal": "2026-04-04",
+      "total_kredit": "2.67537491097E9",
+      "total_debet": "2.67537491097E9"
+    },
+    {
+      "tanggal": "2026-04-05",
+      "total_kredit": "1.11171950092E9",
+      "total_debet": "1.11171950092E9"
+    },
+    {
+      "tanggal": "2026-04-06",
+      "total_kredit": "3.47257490615E9",
+      "total_debet": "3.47257490615E9"
+    },
+    {
+      "tanggal": "2026-04-07",
+      "total_kredit": "4.45229478721E9",
+      "total_debet": "4.45229478721E9"
+    },
+    {
+      "tanggal": "2026-04-08",
+      "total_kredit": "4.24774250991E9",
+      "total_debet": "4.24774250991E9"
+    },
+    {
+      "tanggal": "2026-04-10",
+      "total_kredit": "4.54145435952E9",
+      "total_debet": "4.54145435952E9"
+    },
+    {
+      "tanggal": "2026-04-11",
+      "total_kredit": "3.13354604226E9",
+      "total_debet": "3.13354604226E9"
+    },
+    {
+      "tanggal": "2026-04-12",
+      "total_kredit": "8.2800480422E8",
+      "total_debet": "8.2800480422E8"
+    },
+    {
+      "tanggal": "2026-04-13",
+      "total_kredit": "4.2457846873E9",
+      "total_debet": "4.2457846873E9"
+    },
+    {
+      "tanggal": "2026-04-14",
+      "total_kredit": "4.88376227079E9",
+      "total_debet": "4.88376227079E9"
+    },
+    {
+      "tanggal": "2026-04-15",
+      "total_kredit": "3.71964924547E9",
+      "total_debet": "3.71964924547E9"
+    },
+    {
+      "tanggal": "2026-04-17",
+      "total_kredit": "5.89476580276E9",
+      "total_debet": "5.89476580276E9"
+    },
+    {
+      "tanggal": "2026-04-18",
+      "total_kredit": "3.01656916125E9",
+      "total_debet": "3.01656916125E9"
+    },
+    {
+      "tanggal": "2026-04-19",
+      "total_kredit": "8.7760707263E8",
+      "total_debet": "8.7760707263E8"
+    },
+    {
+      "tanggal": "2026-04-20",
+      "total_kredit": "4.50934222828E9",
+      "total_debet": "4.50934222828E9"
+    },
+    {
+      "tanggal": "2026-04-21",
+      "total_kredit": "4.30219205326E9",
+      "total_debet": "4.30219205326E9"
+    },
+    {
+      "tanggal": "2026-04-22",
+      "total_kredit": "6.26114922924E9",
+      "total_debet": "6.26114922924E9"
+    },
+    {
+      "tanggal": "2026-04-24",
+      "total_kredit": "6.49002212554E9",
+      "total_debet": "6.49002212554E9"
+    },
+    {
+      "tanggal": "2026-04-25",
+      "total_kredit": "3.73424973384E9",
+      "total_debet": "3.73424973384E9"
+    },
+    {
+      "tanggal": "2026-04-26",
+      "total_kredit": "8.5392734957E8",
+      "total_debet": "8.5392734957E8"
+    },
+    {
+      "tanggal": "2026-04-27",
+      "total_kredit": "4.09702927088E9",
+      "total_debet": "4.09702927088E9"
+    },
+    {
+      "tanggal": "2026-04-28",
+      "total_kredit": "5.66080522851E9",
+      "total_debet": "5.66080522851E9"
+    },
+    {
+      "tanggal": "2026-04-29",
+      "total_kredit": "6.02873621374E9",
+      "total_debet": "6.02873621374E9"
+    },
+    {
+      "tanggal": "2026-05-01",
+      "total_kredit": "1.48481750734E9",
+      "total_debet": "1.48481750734E9"
+    },
+    {
+      "tanggal": "2026-05-02",
+      "total_kredit": "2.2205819483E9",
+      "total_debet": "2.2205819483E9"
+    },
+    {
+      "tanggal": "2026-05-03",
+      "total_kredit": "8.5450997955E8",
+      "total_debet": "8.5450997955E8"
+    },
+    {
+      "tanggal": "2026-05-04",
+      "total_kredit": "1.106196794706E10",
+      "total_debet": "1.106196794706E10"
+    },
+    {
+      "tanggal": "2026-05-05",
+      "total_kredit": "5.24857070351E9",
+      "total_debet": "5.24857070351E9"
+    },
+    {
+      "tanggal": "2026-05-06",
+      "total_kredit": "1.252406525109E10",
+      "total_debet": "1.252406525109E10"
+    },
+    {
+      "tanggal": "2026-05-08",
+      "total_kredit": "1.465868245133E10",
+      "total_debet": "1.465868245133E10"
+    },
+    {
+      "tanggal": "2026-05-09",
+      "total_kredit": "3.90537712577E9",
+      "total_debet": "3.90537712577E9"
+    },
+    {
+      "tanggal": "2026-05-10",
+      "total_kredit": "1.51410293998E9",
+      "total_debet": "1.51410293998E9"
+    },
+    {
+      "tanggal": "2026-05-11",
+      "total_kredit": "5.5811263128E9",
+      "total_debet": "5.5811263128E9"
+    },
+    {
+      "tanggal": "2026-05-12",
+      "total_kredit": "6.31994823131E9",
+      "total_debet": "6.31994823131E9"
+    },
+    {
+      "tanggal": "2026-05-13",
+      "total_kredit": "6.37680821456E9",
+      "total_debet": "6.37680821456E9"
+    },
+    {
+      "tanggal": "2026-05-15",
+      "total_kredit": "2.46286301177E9",
+      "total_debet": "2.46286301177E9"
+    },
+    {
+      "tanggal": "2026-05-16",
+      "total_kredit": "2.56179037671E9",
+      "total_debet": "2.56179037671E9"
+    },
+    {
+      "tanggal": "2026-05-17",
+      "total_kredit": "1.21283459727E9",
+      "total_debet": "1.21283459727E9"
+    },
+    {
+      "tanggal": "2026-05-18",
+      "total_kredit": "8.30141170734E9",
+      "total_debet": "8.30141170734E9"
+    },
+    {
+      "tanggal": "2026-05-19",
+      "total_kredit": "4.24141730389E9",
+      "total_debet": "4.24141730389E9"
+    },
+    {
+      "tanggal": "2026-05-20",
+      "total_kredit": "7.1140226189E9",
+      "total_debet": "7.1140226189E9"
+    },
+    {
+      "tanggal": "2026-05-22",
+      "total_kredit": "4.99047352226E9",
+      "total_debet": "4.99047352226E9"
+    },
+    {
+      "tanggal": "2026-05-23",
+      "total_kredit": "2.66823209808E9",
+      "total_debet": "2.66823209808E9"
+    },
+    {
+      "tanggal": "2026-05-24",
+      "total_kredit": "8.7860229518E8",
+      "total_debet": "8.7860229518E8"
+    },
+    {
+      "tanggal": "2026-05-25",
+      "total_kredit": "1.227187787934E10",
+      "total_debet": "1.227187787934E10"
+    },
+    {
+      "tanggal": "2026-05-26",
+      "total_kredit": "4.9258389818E9",
+      "total_debet": "4.9258389818E9"
+    },
+    {
+      "tanggal": "2026-05-27",
+      "total_kredit": "8.5226425129E8",
+      "total_debet": "8.5226425129E8"
+    },
+    {
+      "tanggal": "2026-05-29",
+      "total_kredit": "2.276564714622E10",
+      "total_debet": "2.276564714622E10"
+    },
+    {
+      "tanggal": "2026-05-30",
+      "total_kredit": "3.71799134379E9",
+      "total_debet": "3.71799134379E9"
+    },
+    {
+      "tanggal": "2026-05-31",
+      "total_kredit": "1.871142532523E10",
+      "total_debet": "1.871142532523E10"
+    },
+    {
+      "tanggal": "2026-06-01",
+      "total_kredit": "2.00777701461E9",
+      "total_debet": "2.00777701461E9"
+    },
+    {
+      "tanggal": "2026-06-02",
+      "total_kredit": "5.58860687929E9",
+      "total_debet": "5.58860687929E9"
+    },
+    {
+      "tanggal": "2026-06-03",
+      "total_kredit": "4.91352250655E9",
+      "total_debet": "4.91352250655E9"
+    },
+    {
+      "tanggal": "2026-06-05",
+      "total_kredit": "4.47566784865E9",
+      "total_debet": "4.47566784865E9"
+    },
+    {
+      "tanggal": "2026-06-06",
+      "total_kredit": "2.7268812481E9",
+      "total_debet": "2.7268812481E9"
+    },
+    {
+      "tanggal": "2026-06-07",
+      "total_kredit": "9.4044856811E8",
+      "total_debet": "9.4044856811E8"
+    },
+    {
+      "tanggal": "2026-06-08",
+      "total_kredit": "3.87871434418E9",
+      "total_debet": "3.87871434418E9"
+    },
+    {
+      "tanggal": "2026-06-09",
+      "total_kredit": "4.79635865931E9",
+      "total_debet": "4.79635865931E9"
+    },
+    {
+      "tanggal": "2026-06-10",
+      "total_kredit": "4.60762937662E9",
+      "total_debet": "4.60762937662E9"
+    },
+    {
+      "tanggal": "2026-06-12",
+      "total_kredit": "3.37523594025E9",
+      "total_debet": "3.37582854025E9"
+    },
+    {
+      "tanggal": "2026-06-13",
+      "total_kredit": "2.94026999751E9",
+      "total_debet": "2.94026999751E9"
+    },
+    {
+      "tanggal": "2026-06-14",
+      "total_kredit": "6.6615237504E8",
+      "total_debet": "6.6615237504E8"
+    },
+    {
+      "tanggal": "2026-06-15",
+      "total_kredit": "5.73736683161E9",
+      "total_debet": "5.73736683161E9"
+    },
+    {
+      "tanggal": "2026-06-16",
+      "total_kredit": "1.46263399655E9",
+      "total_debet": "1.46263399655E9"
+    },
+    {
+      "tanggal": "2026-06-17",
+      "total_kredit": "6.52650233098E9",
+      "total_debet": "6.52650233098E9"
+    },
+    {
+      "tanggal": "2026-06-19",
+      "total_kredit": "4.15768674708E9",
+      "total_debet": "4.15768674708E9"
+    },
+    {
+      "tanggal": "2026-06-20",
+      "total_kredit": "3.60734402528E9",
+      "total_debet": "3.60734402528E9"
+    },
+    {
+      "tanggal": "2026-06-21",
+      "total_kredit": "8.9463285375E8",
+      "total_debet": "8.9463285375E8"
+    },
+    {
+      "tanggal": "2026-06-22",
+      "total_kredit": "3.28740356832E9",
+      "total_debet": "3.28740356832E9"
+    },
+    {
+      "tanggal": "2026-06-23",
+      "total_kredit": "6.27088654142E9",
+      "total_debet": "6.27088654142E9"
+    },
+    {
+      "tanggal": "2026-06-24",
+      "total_kredit": "4.96918093011E9",
+      "total_debet": "4.96918093011E9"
+    },
+    {
+      "tanggal": "2026-06-26",
+      "total_kredit": "2.06467068665E9",
+      "total_debet": "2.06467068665E9"
+    },
+    {
+      "tanggal": "2026-06-27",
+      "total_kredit": "3.65379408051E9",
+      "total_debet": "3.65415214471E9"
+    },
+    {
+      "tanggal": "2026-06-28",
+      "total_kredit": "4.0446454807E8",
+      "total_debet": "4.0413298453E8"
+    },
+    {
+      "tanggal": "2026-06-29",
+      "total_kredit": "7.7217747478E8",
+      "total_debet": "7.7217747478E8"
+    },
+    {
+      "tanggal": "2026-06-30",
+      "total_kredit": "8.4749473E7",
+      "total_debet": "8.4749473E7"
+    },
+    {
+      "tanggal": "2026-07-01",
+      "total_kredit": "6.4776345642E8",
+      "total_debet": "6.4776345642E8"
+    }
+  ],
+  "pendapatan_per_unit": [
+    {
+      "nama_sub_unit": "[8122] Akuntansi Biaya",
+      "total_kredit": "1.0069097078545E11",
+      "total_debet": "2.957762982043E10",
+      "net": "7.111334096502E10"
+    },
+    {
+      "nama_sub_unit": "[8145] Penagihan",
+      "total_kredit": "4.401899833559E10",
+      "total_debet": "1.695728173836E10",
+      "net": "2.706171659723E10"
+    },
+    {
+      "nama_sub_unit": "[9101] DAPUR",
+      "total_kredit": "8.24584660988E9",
+      "total_debet": "2.15211137421E9",
+      "net": "6.09373523567E9"
+    },
+    {
+      "nama_sub_unit": "101-Gudang Non Obat PT CN",
+      "total_kredit": "2.3447587663E9",
+      "total_debet": "1.86359578711E9",
+      "net": "4.8116297919E8"
+    },
+    {
+      "nama_sub_unit": "[9194] Spesialis Onkologi",
+      "total_kredit": "1.036598722298E10",
+      "total_debet": "1.035556794135E10",
+      "net": "1.041928163E7"
+    },
+    {
+      "nama_sub_unit": "VERIFIKASI & ADMINISTRASI PENAGIHAN",
+      "total_kredit": "2.457938737E7",
+      "total_debet": "1.575020525E7",
+      "net": "8829182.12"
+    },
+    {
+      "nama_sub_unit": "[9206] Poli Bedah Plastik",
+      "total_kredit": "1.1087203732E8",
+      "total_debet": "1.0469308486E8",
+      "net": "6178952.46"
+    },
+    {
+      "nama_sub_unit": "[9177] Poli Psikiatri",
+      "total_kredit": "2.8122362661E8",
+      "total_debet": "2.7647379839E8",
+      "net": "4749828.22"
+    },
+    {
+      "nama_sub_unit": "[9280] Poli BTKV",
+      "total_kredit": "1.1166586275E8",
+      "total_debet": "1.069310642E8",
+      "net": "4734798.55"
+    },
+    {
+      "nama_sub_unit": "[9199] Poli Bedah Saraf",
+      "total_kredit": "1.996965139E8",
+      "total_debet": "1.9496171535E8",
+      "net": "4734798.55"
+    },
+    {
+      "nama_sub_unit": "[9181] Poli Rehabilitasi Medik",
+      "total_kredit": "1.22836765805E9",
+      "total_debet": "1.22382050266E9",
+      "net": "4547155.39"
+    },
+    {
+      "nama_sub_unit": "[9193] Poli Bedah Urologi",
+      "total_kredit": "1.96878530423E9",
+      "total_debet": "1.96443847868E9",
+      "net": "4346825.55"
+    },
+    {
+      "nama_sub_unit": "[9293] POLI SPESIALIS VIP ANDROLOGI",
+      "total_kredit": "1.67084294E7",
+      "total_debet": "1.66786794E7",
+      "net": "29750.0"
+    },
+    {
+      "nama_sub_unit": "[9231] OKUPASI TERAPI",
+      "total_kredit": "7.2771923643E8",
+      "total_debet": "7.2770716467E8",
+      "net": "12071.76"
+    },
+    {
+      "nama_sub_unit": "[9230] Poli Gigi Prosthodonsia",
+      "total_kredit": "295000.0",
+      "total_debet": "295000.0",
+      "net": "0.0"
+    },
+    {
+      "nama_sub_unit": "Non CC",
+      "total_kredit": "8.52412191E8",
+      "total_debet": "8.52412191E8",
+      "net": "0.0"
+    },
+    {
+      "nama_sub_unit": "[9263] POLI SPESIALIS VIP PENYAKIT DALAM",
+      "total_kredit": "6.02503997E7",
+      "total_debet": "6.02503997E7",
+      "net": "0.0"
+    },
+    {
+      "nama_sub_unit": "[9214] Poli Spesialis VIP",
+      "total_kredit": "2640009.14",
+      "total_debet": "2640009.14",
+      "net": "0.0"
+    },
+    {
+      "nama_sub_unit": "[9216] Onkologi Obgyn",
+      "total_kredit": "3338864.91",
+      "total_debet": "3338864.91",
+      "net": "0.0"
+    },
+    {
+      "nama_sub_unit": "[9262] POLI SPESIALIS VIP NEUROLOGI",
+      "total_kredit": "3755680.35",
+      "total_debet": "3755680.35",
+      "net": "0.0"
+    },
+    {
+      "nama_sub_unit": "[8002] Legal Governance Risk Compliance (LGRC)",
+      "total_kredit": "416594.0",
+      "total_debet": "416594.0",
+      "net": "0.0"
+    },
+    {
+      "nama_sub_unit": "[9264] POLI FERTILITAS",
+      "total_kredit": "4.3482664744E8",
+      "total_debet": "4.3482664744E8",
+      "net": "0.0"
+    },
+    {
+      "nama_sub_unit": "[9233] Poli Spesialis VIP Anak",
+      "total_kredit": "2.489516824E7",
+      "total_debet": "2.489516824E7",
+      "net": "0.0"
+    },
+    {
+      "nama_sub_unit": "[9232] Poli Spesialis VIP Obgyn",
+      "total_kredit": "3.2449103787E8",
+      "total_debet": "3.2462253787E8",
+      "net": "-131500.0"
+    },
+    {
+      "nama_sub_unit": "[8140] Keuangan",
+      "total_kredit": "310800.0",
+      "total_debet": "952800.0",
+      "net": "-642000.0"
+    },
+    {
+      "nama_sub_unit": "Seksi Sekretariat & Tata Kelola Perusahaan",
+      "total_kredit": "310506.67",
+      "total_debet": "1392380.02",
+      "net": "-1081873.35"
+    },
+    {
+      "nama_sub_unit": "[9187] KLINIK NYERI (MAN. PAIN)",
+      "total_kredit": "0.0",
+      "total_debet": "1098996.0",
+      "net": "-1098996.0"
+    },
+    {
+      "nama_sub_unit": "[9188] POLI ONKOLOGI - PARU",
+      "total_kredit": "0.0",
+      "total_debet": "1335459.0",
+      "net": "-1335459.0"
+    },
+    {
+      "nama_sub_unit": "[9182] POLIKLINIK PSIKOLOGI",
+      "total_kredit": "0.0",
+      "total_debet": "1335459.0",
+      "net": "-1335459.0"
+    },
+    {
+      "nama_sub_unit": "[9192] SPESIALIS BEDAH ANAK",
+      "total_kredit": "188000.0",
+      "total_debet": "1523459.0",
+      "net": "-1335459.0"
+    },
+    {
+      "nama_sub_unit": "[9197] SPESIALIS BEDAH KEPALA DAN LEHER",
+      "total_kredit": "0.0",
+      "total_debet": "1335459.0",
+      "net": "-1335459.0"
+    },
+    {
+      "nama_sub_unit": "[9215] POLIKLINIK GIZI",
+      "total_kredit": "1365000.0",
+      "total_debet": "2700459.0",
+      "net": "-1335459.0"
+    },
+    {
+      "nama_sub_unit": "[9201] Poli Gigi Orthodontia",
+      "total_kredit": "4.205053808E7",
+      "total_debet": "4.338599708E7",
+      "net": "-1335459.0"
+    },
+    {
+      "nama_sub_unit": "[9179] POLI KOSMETIK",
+      "total_kredit": "7.564000589E7",
+      "total_debet": "7.697546489E7",
+      "net": "-1335459.0"
+    },
+    {
+      "nama_sub_unit": "[9208] POLI GERIATRI",
+      "total_kredit": "2.206172805E7",
+      "total_debet": "2.339718705E7",
+      "net": "-1335459.0"
+    },
+    {
+      "nama_sub_unit": "[9186] SPESIALIS ENDOKRIN ANAK",
+      "total_kredit": "0.0",
+      "total_debet": "1359659.0",
+      "net": "-1359659.0"
+    },
+    {
+      "nama_sub_unit": "POLI SPESIALIS",
+      "total_kredit": "2104716.0",
+      "total_debet": "4095716.34",
+      "net": "-1991000.34"
+    },
+    {
+      "nama_sub_unit": "[9213] Rumah Vaksin",
+      "total_kredit": "1.53698116126E9",
+      "total_debet": "1.53968722019E9",
+      "net": "-2706058.93"
+    },
+    {
+      "nama_sub_unit": "[8115] Gudang & Distribusi",
+      "total_kredit": "507542.47",
+      "total_debet": "3338603.94",
+      "net": "-2831061.47"
+    },
+    {
+      "nama_sub_unit": "[8121] Akuntansi Manajemen",
+      "total_kredit": "0.0",
+      "total_debet": "3603601.0",
+      "net": "-3603601.0"
+    },
+    {
+      "nama_sub_unit": "Komite Koordinasi Pendidikan",
+      "total_kredit": "4.373390884E7",
+      "total_debet": "5.258306545E7",
+      "net": "-8849156.61"
+    },
+    {
+      "nama_sub_unit": "133 - UMUM DAN CETAKAN GRESIK",
+      "total_kredit": "188000.0",
+      "total_debet": "1.27202E7",
+      "net": "-1.25322E7"
+    },
+    {
+      "nama_sub_unit": "[9191] Poli Bedah Umum",
+      "total_kredit": "1.94406722197E9",
+      "total_debet": "1.9611235591E9",
+      "net": "-1.705633713E7"
+    },
+    {
+      "nama_sub_unit": "[9207] SPESIALIS GIGI ANAK",
+      "total_kredit": "1.1031550521E8",
+      "total_debet": "1.2870509908E8",
+      "net": "-1.838959387E7"
+    },
+    {
+      "nama_sub_unit": "[9195] Poli Spesialis Obgyn",
+      "total_kredit": "4.50952236488E9",
+      "total_debet": "4.52816429219E9",
+      "net": "-1.864192731E7"
+    },
+    {
+      "nama_sub_unit": "[9202] Poli Gigi Bedah Mulut",
+      "total_kredit": "9.5086767946E8",
+      "total_debet": "9.7110509074E8",
+      "net": "-2.023741128E7"
+    },
+    {
+      "nama_sub_unit": "[9178] Poli Kulit & Kelamin",
+      "total_kredit": "8.2168691668E8",
+      "total_debet": "8.4436860869E8",
+      "net": "-2.268169201E7"
+    },
+    {
+      "nama_sub_unit": "[9196] Poli THT",
+      "total_kredit": "1.06100633198E9",
+      "total_debet": "1.09364610057E9",
+      "net": "-3.263976859E7"
+    },
+    {
+      "nama_sub_unit": "INSTALASI RAWAT JALAN",
+      "total_kredit": "5.580076234E7",
+      "total_debet": "9.277248358E7",
+      "net": "-3.697172124E7"
+    },
+    {
+      "nama_sub_unit": "[9180] Poli Paru",
+      "total_kredit": "8.445080146E8",
+      "total_debet": "8.8281709092E8",
+      "net": "-3.830907632E7"
+    },
+    {
+      "nama_sub_unit": "[9174] Poli Jantung",
+      "total_kredit": "3.38852901934E9",
+      "total_debet": "3.42858925338E9",
+      "net": "-4.006023404E7"
+    },
+    {
+      "nama_sub_unit": "[9176] Poli Neurologi",
+      "total_kredit": "2.75133097998E9",
+      "total_debet": "2.79638702593E9",
+      "net": "-4.505604595E7"
+    },
+    {
+      "nama_sub_unit": "[9102] LINEN",
+      "total_kredit": "6.248311487E7",
+      "total_debet": "1.0927562137E8",
+      "net": "-4.67925065E7"
+    },
+    {
+      "nama_sub_unit": "[9204] SPESIALIS KONSERVASI GIGI",
+      "total_kredit": "8.1568109551E8",
+      "total_debet": "8.6306145399E8",
+      "net": "-4.738035848E7"
+    },
+    {
+      "nama_sub_unit": "[9183] ENDOSKOPI",
+      "total_kredit": "1.3779052488E8",
+      "total_debet": "1.9271446277E8",
+      "net": "-5.492393789E7"
+    },
+    {
+      "nama_sub_unit": "[9175] Poli Penyakit Dalam",
+      "total_kredit": "8.81068863276E9",
+      "total_debet": "8.86803013027E9",
+      "net": "-5.734149751E7"
+    },
+    {
+      "nama_sub_unit": "[9173] Poli Mata",
+      "total_kredit": "1.61950693517E9",
+      "total_debet": "1.67700692718E9",
+      "net": "-5.749999201E7"
+    },
+    {
+      "nama_sub_unit": "[9198] Poli Bedah Orthopedi",
+      "total_kredit": "2.53203514762E9",
+      "total_debet": "2.59135462006E9",
+      "net": "-5.931947244E7"
+    },
+    {
+      "nama_sub_unit": "[9149] RUANG PERAWATAN STANDAR",
+      "total_kredit": "2.28856409865E9",
+      "total_debet": "2.37076235132E9",
+      "net": "-8.219825267E7"
+    },
+    {
+      "nama_sub_unit": "[8018] K3 RS",
+      "total_kredit": "9260000.0",
+      "total_debet": "1.2071210699E8",
+      "net": "-1.1145210699E8"
+    },
+    {
+      "nama_sub_unit": "[8159] Satuan Pemeriksaan Internal",
+      "total_kredit": "765602.07",
+      "total_debet": "1.1373602644E8",
+      "net": "-1.1297042437E8"
+    },
+    {
+      "nama_sub_unit": "[9012] PENGEMBANGAN LAYANAN DAN MUTU KEPERAWATAN",
+      "total_kredit": "548066.84",
+      "total_debet": "1.2062559178E8",
+      "net": "-1.2007752494E8"
+    },
+    {
+      "nama_sub_unit": "[9172] Poli Spesialis Anak",
+      "total_kredit": "3.96431456892E9",
+      "total_debet": "4.09635440732E9",
+      "net": "-1.320398384E8"
+    },
+    {
+      "nama_sub_unit": "[9148] RUANG LABORATORIUM KATHERISASI",
+      "total_kredit": "8.4256856775E8",
+      "total_debet": "9.8074489971E8",
+      "net": "-1.3817633196E8"
+    },
+    {
+      "nama_sub_unit": "[9147] RUANG PERAWATAN NEONATAL",
+      "total_kredit": "1.13806956262E9",
+      "total_debet": "1.27660885844E9",
+      "net": "-1.3853929582E8"
+    },
+    {
+      "nama_sub_unit": "[9251] USG",
+      "total_kredit": "3308947.83",
+      "total_debet": "1.4929833171E8",
+      "net": "-1.4598938388E8"
+    },
+    {
+      "nama_sub_unit": "Gudang Fixed Asset",
+      "total_kredit": "1.19566685619E9",
+      "total_debet": "1.35286685619E9",
+      "net": "-1.572E8"
+    },
+    {
+      "nama_sub_unit": "[9002] Pengembangan Perusahaan, Riset & Portofolio",
+      "total_kredit": "4.3003854E7",
+      "total_debet": "2.1508707803E8",
+      "net": "-1.7208322403E8"
+    },
+    {
+      "nama_sub_unit": "[9140] INSTALASI RAWAT INAP",
+      "total_kredit": "7.1397421E7",
+      "total_debet": "2.5173706106E8",
+      "net": "-1.8033964006E8"
+    },
+    {
+      "nama_sub_unit": "[9161] Poli Umum",
+      "total_kredit": "1.03590002982E9",
+      "total_debet": "1.22271993855E9",
+      "net": "-1.8681990873E8"
+    },
+    {
+      "nama_sub_unit": "[9004] Seksi Adm Sistem Manajemen dan Inovasi",
+      "total_kredit": "4.133009698E7",
+      "total_debet": "2.329029928E8",
+      "net": "-1.9157289582E8"
+    },
+    {
+      "nama_sub_unit": "[9253] CT-SCAN",
+      "total_kredit": "900000.0",
+      "total_debet": "1.9354355E8",
+      "net": "-1.9264355E8"
+    },
+    {
+      "nama_sub_unit": "[9124] CSSD",
+      "total_kredit": "2.9673570191E8",
+      "total_debet": "4.9363109716E8",
+      "net": "-1.9689539525E8"
+    },
+    {
+      "nama_sub_unit": "[9630] RUANG PERAWATAN PAVILYUN 3",
+      "total_kredit": "2.85722752832E9",
+      "total_debet": "3.09835458024E9",
+      "net": "-2.4112705192E8"
+    },
+    {
+      "nama_sub_unit": "[9200] Poli Gigi umum",
+      "total_kredit": "1.04487369199E9",
+      "total_debet": "1.30995559504E9",
+      "net": "-2.6508190305E8"
+    },
+    {
+      "nama_sub_unit": "[9185] KEMOTERAPI",
+      "total_kredit": "6.8880300791E9",
+      "total_debet": "7.15583150501E9",
+      "net": "-2.6780142591E8"
+    },
+    {
+      "nama_sub_unit": "[9015] Pelayanan Medik",
+      "total_kredit": "4764418.0",
+      "total_debet": "2.8485815228E8",
+      "net": "-2.8009373428E8"
+    },
+    {
+      "nama_sub_unit": "[9252] RONTGEN",
+      "total_kredit": "1.64273569335E9",
+      "total_debet": "1.94249306529E9",
+      "net": "-2.9975737194E8"
+    },
+    {
+      "nama_sub_unit": "[9205] POLIKLINIK FISIOTERAPI",
+      "total_kredit": "2.0419186513E9",
+      "total_debet": "2.40370827053E9",
+      "net": "-3.6178961923E8"
+    },
+    {
+      "nama_sub_unit": "[9146] RUANG PERAWATAN KEBIDANAN & PENY. KANDUNGAN",
+      "total_kredit": "2.47401538276E9",
+      "total_debet": "2.84538418364E9",
+      "net": "-3.7136880088E8"
+    },
+    {
+      "nama_sub_unit": "[8118] Pengembangan Proses Bisnis & ERP",
+      "total_kredit": "1.05094344E8",
+      "total_debet": "4.8365144996E8",
+      "net": "-3.7855710596E8"
+    },
+    {
+      "nama_sub_unit": "[9145] RUANG PERAWATAN ICU",
+      "total_kredit": "3.54011172629E9",
+      "total_debet": "4.01824611779E9",
+      "net": "-4.781343915E8"
+    },
+    {
+      "nama_sub_unit": "[9143] RUANG PERAWATAN PENYAKIT DALAM II",
+      "total_kredit": "2.63805043301E9",
+      "total_debet": "3.11934550501E9",
+      "net": "-4.81295072E8"
+    },
+    {
+      "nama_sub_unit": "[9026] REKAM MEDIK",
+      "total_kredit": "1.321062896E7",
+      "total_debet": "5.082955417E8",
+      "net": "-4.9508491274E8"
+    },
+    {
+      "nama_sub_unit": "[9620] RUANG PERAWATAN PAVILYUN 2",
+      "total_kredit": "3.33412575767E9",
+      "total_debet": "3.83974316619E9",
+      "net": "-5.0561740852E8"
+    },
+    {
+      "nama_sub_unit": "[9220] MCU",
+      "total_kredit": "6.61894984302E9",
+      "total_debet": "7.13747674476E9",
+      "net": "-5.1852690174E8"
+    },
+    {
+      "nama_sub_unit": "[9210] Poli KIA & Kebidanan",
+      "total_kredit": "2.8955356143E8",
+      "total_debet": "8.2877127411E8",
+      "net": "-5.3921771268E8"
+    },
+    {
+      "nama_sub_unit": "[9142] RUANG PERAWATAN PENYAKIT DALAM I",
+      "total_kredit": "1.63014893483E9",
+      "total_debet": "2.19075225179E9",
+      "net": "-5.6060331696E8"
+    },
+    {
+      "nama_sub_unit": "[9154] RUANG PERAWATAN PAVILYUN 1",
+      "total_kredit": "3.80313506095E9",
+      "total_debet": "4.38269569518E9",
+      "net": "-5.7956063423E8"
+    },
+    {
+      "nama_sub_unit": "[8017] PEMASARAN & PENJUALAN",
+      "total_kredit": "2.5292890005E8",
+      "total_debet": "9.4792657075E8",
+      "net": "-6.949976707E8"
+    },
+    {
+      "nama_sub_unit": "[8001] Direksi",
+      "total_kredit": "1.28415282E8",
+      "total_debet": "8.37705789E8",
+      "net": "-7.09290507E8"
+    },
+    {
+      "nama_sub_unit": "[8151] Teknologi Informasi",
+      "total_kredit": "1.6613676697E8",
+      "total_debet": "8.9160835104E8",
+      "net": "-7.2547158407E8"
+    },
+    {
+      "nama_sub_unit": "[9819] DEPO FARMASI IGD",
+      "total_kredit": "6.8793953524E8",
+      "total_debet": "1.5257524862E9",
+      "net": "-8.3781295096E8"
+    },
+    {
+      "nama_sub_unit": "[9144] RUANG PERAWATAN PENYAKIT BEDAH & ANAK",
+      "total_kredit": "6.27339638492E9",
+      "total_debet": "7.18632737899E9",
+      "net": "-9.1293099407E8"
+    },
+    {
+      "nama_sub_unit": "[8111] Pengadaan Barang & Jasa",
+      "total_kredit": "3.437888492E8",
+      "total_debet": "1.56525181047E9",
+      "net": "-1.22146296127E9"
+    },
+    {
+      "nama_sub_unit": "[9111] INSTALASI GAWAT DARURAT",
+      "total_kredit": "1.896227441E10",
+      "total_debet": "2.035281227144E10",
+      "net": "-1.39053786144E9"
+    },
+    {
+      "nama_sub_unit": "[9184] Hemodialisis",
+      "total_kredit": "9.62049879504E9",
+      "total_debet": "1.138809154926E10",
+      "net": "-1.76759275422E9"
+    },
+    {
+      "nama_sub_unit": "[8130] Pajak",
+      "total_kredit": "1.61055030715E9",
+      "total_debet": "3.51853489293E9",
+      "net": "-1.90798458578E9"
+    },
+    {
+      "nama_sub_unit": "[9241] LABORATORIUM",
+      "total_kredit": "5.0229477709E9",
+      "total_debet": "6.95948308598E9",
+      "net": "-1.93653531508E9"
+    },
+    {
+      "nama_sub_unit": "[8011] PELAYANAN UMUM",
+      "total_kredit": "5.1351661955E9",
+      "total_debet": "7.3131535553E9",
+      "net": "-2.1779873598E9"
+    },
+    {
+      "nama_sub_unit": "[9130] FARMASI RAWAT INAP",
+      "total_kredit": "9.8308811767E8",
+      "total_debet": "3.28304434093E9",
+      "net": "-2.29995622326E9"
+    },
+    {
+      "nama_sub_unit": "[9123] KAMAR OPERASI",
+      "total_kredit": "1.651349428477E10",
+      "total_debet": "1.887449446418E10",
+      "net": "-2.36100017941E9"
+    },
+    {
+      "nama_sub_unit": "102-Gudang Obat PT CN ",
+      "total_kredit": "2.127540527709E10",
+      "total_debet": "2.428488980778E10",
+      "net": "-3.00948453069E9"
+    },
+    {
+      "nama_sub_unit": "[8154] PENGELOLAAN JAMINAN KESEHATAN",
+      "total_kredit": "9812913.83",
+      "total_debet": "4.00948487289E9",
+      "net": "-3.99967195906E9"
+    },
+    {
+      "nama_sub_unit": "[9807] FARMASI RAWAT JALAN",
+      "total_kredit": "6.46557131309E9",
+      "total_debet": "1.181645891963E10",
+      "net": "-5.35088760654E9"
+    },
+    {
+      "nama_sub_unit": "[8021] Personalia",
+      "total_kredit": "9.13963819153E9",
+      "total_debet": "1.462922515271E10",
+      "net": "-5.48958696118E9"
+    },
+    {
+      "nama_sub_unit": "[8141] Bendahara",
+      "total_kredit": "1.059057216139E10",
+      "total_debet": "6.905311019113E10",
+      "net": "-5.846253802974E10"
+    }
+  ],
+  "kasir_per_jaminan": [
+    {
+      "jaminan": "BPJS - INACBGS",
+      "total_nominal": "9.276149365E9",
+      "jumlah_transaksi": "11167"
+    },
+    {
+      "jaminan": "UMUM",
+      "total_nominal": "6.457476393E9",
+      "jumlah_transaksi": "9642"
+    },
+    {
+      "jaminan": "PT. Wilmar Nabati Indonesia",
+      "total_nominal": "2.19345403E8",
+      "jumlah_transaksi": "382"
+    },
+    {
+      "jaminan": "SIG INHEALTH PAKET KRONIS",
+      "total_nominal": "1.93338744E8",
+      "jumlah_transaksi": "309"
+    },
+    {
+      "jaminan": "PT Asih Eka Abadi",
+      "total_nominal": "1.77961873E8",
+      "jumlah_transaksi": "283"
+    },
+    {
+      "jaminan": "BRI LIFE MANAGED CARE",
+      "total_nominal": "1.504516E8",
+      "jumlah_transaksi": "246"
+    },
+    {
+      "jaminan": "AJ INHEALTH SIG",
+      "total_nominal": "1.3757114E8",
+      "jumlah_transaksi": "100"
+    },
+    {
+      "jaminan": "Asuransi Allianz Life - Admedika",
+      "total_nominal": "1.22748163E8",
+      "jumlah_transaksi": "30"
+    },
+    {
+      "jaminan": "PT. Smelting",
+      "total_nominal": "7.3025487E7",
+      "jumlah_transaksi": "87"
+    },
+    {
+      "jaminan": "AJ Inhealth Indonesia Paket Akut",
+      "total_nominal": "6.7283129E7",
+      "jumlah_transaksi": "222"
+    },
+    {
+      "jaminan": "PT PETRO OXO NUSANTARA",
+      "total_nominal": "5.395008E7",
+      "jumlah_transaksi": "36"
+    },
+    {
+      "jaminan": "ASURANSI PLN",
+      "total_nominal": "5.3124923E7",
+      "jumlah_transaksi": "11"
+    },
+    {
+      "jaminan": "PT. Asuransi Jiwa Inhealth Indonesia",
+      "total_nominal": "4.7246878E7",
+      "jumlah_transaksi": "24"
+    },
+    {
+      "jaminan": "PT PLN Nusantara Power UP Gresik",
+      "total_nominal": "4.3426038E7",
+      "jumlah_transaksi": "4"
+    },
+    {
+      "jaminan": "PT Pelayaran Nasional Ekalya Purnamasari",
+      "total_nominal": "3.2445E7",
+      "jumlah_transaksi": "9"
+    },
+    {
+      "jaminan": "BPJS Ketenagakerjaan",
+      "total_nominal": "2.8607109E7",
+      "jumlah_transaksi": "12"
+    },
+    {
+      "jaminan": "Asuransi Sinar Mas (SIMAS)",
+      "total_nominal": "2.7859931E7",
+      "jumlah_transaksi": "34"
+    },
+    {
+      "jaminan": "Asuransi Umum Mega - Admedika",
+      "total_nominal": "2.5400186E7",
+      "jumlah_transaksi": "5"
+    },
+    {
+      "jaminan": "PT. PLN NP UMRO",
+      "total_nominal": "2.4729146E7",
+      "jumlah_transaksi": "3"
+    },
+    {
+      "jaminan": "AJ Inhealth Indonesia Paket Kronis",
+      "total_nominal": "2.4313471E7",
+      "jumlah_transaksi": "63"
+    },
+    {
+      "jaminan": "SIG INHEALTH PAKET AKUT",
+      "total_nominal": "2.073242E7",
+      "jumlah_transaksi": "71"
+    },
+    {
+      "jaminan": "BRI LIFE",
+      "total_nominal": "1.9781615E7",
+      "jumlah_transaksi": "167"
+    },
+    {
+      "jaminan": "PT. Petrokimia Kayaku",
+      "total_nominal": "1.8259253E7",
+      "jumlah_transaksi": "34"
+    },
+    {
+      "jaminan": "PT. Petro Oxo Nusantara",
+      "total_nominal": "1.7184844E7",
+      "jumlah_transaksi": "33"
+    },
+    {
+      "jaminan": "PT. Asuransi Astra Buana (Garda Medika)",
+      "total_nominal": "1.7064257E7",
+      "jumlah_transaksi": "33"
+    },
+    {
+      "jaminan": "PT. Angsa Emas Perdana",
+      "total_nominal": "1.651545E7",
+      "jumlah_transaksi": "7"
+    },
+    {
+      "jaminan": "PT. Asuransi Jiwa Central Asia Raya",
+      "total_nominal": "1.4166901E7",
+      "jumlah_transaksi": "13"
+    },
+    {
+      "jaminan": "MEDITAP - Asuransi Takaful",
+      "total_nominal": "1.3793038E7",
+      "jumlah_transaksi": "2"
+    },
+    {
+      "jaminan": "PT. MSIG Life Insurance Indonesia",
+      "total_nominal": "1.1581961E7",
+      "jumlah_transaksi": "90"
+    },
+    {
+      "jaminan": "PT. BNI Life Insurance",
+      "total_nominal": "1.1441239E7",
+      "jumlah_transaksi": "72"
+    },
+    {
+      "jaminan": "PT. Jasa Marga (ADMEDIKA)",
+      "total_nominal": "8552072.0",
+      "jumlah_transaksi": "20"
+    },
+    {
+      "jaminan": "AIA Financial (Ad Medika)",
+      "total_nominal": "8373200.0",
+      "jumlah_transaksi": "25"
+    },
+    {
+      "jaminan": "AJ INHEALTH MI CARE",
+      "total_nominal": "7583916.0",
+      "jumlah_transaksi": "117"
+    },
+    {
+      "jaminan": "PT. Sequis Life-Admedika",
+      "total_nominal": "6300333.0",
+      "jumlah_transaksi": "35"
+    },
+    {
+      "jaminan": "PT. Asuransi Takaful Keluarga",
+      "total_nominal": "4841464.0",
+      "jumlah_transaksi": "6"
+    },
+    {
+      "jaminan": "Zurich Asuransi Indonesia (Medicilin)",
+      "total_nominal": "4625272.0",
+      "jumlah_transaksi": "9"
+    },
+    {
+      "jaminan": "AXA Insurance Indonesia (AXA Insurance)-Admedika",
+      "total_nominal": "3280439.0",
+      "jumlah_transaksi": "18"
+    },
+    {
+      "jaminan": "PT. Asuransi Jiwa Generally Indonesia",
+      "total_nominal": "2558797.0",
+      "jumlah_transaksi": "7"
+    },
+    {
+      "jaminan": "PT JASA RAHARJA (Persero) JAT",
+      "total_nominal": "2000000.0",
+      "jumlah_transaksi": "1"
+    },
+    {
+      "jaminan": "PGN LNG - Admedika",
+      "total_nominal": "1959343.0",
+      "jumlah_transaksi": "1"
+    },
+    {
+      "jaminan": "PT. MEDIA DOKTER INVESTAMA (HALODOC)",
+      "total_nominal": "1722224.0",
+      "jumlah_transaksi": "1"
+    },
+    {
+      "jaminan": "PT. Asuransi Jiwa Astra - Admedika",
+      "total_nominal": "1479594.0",
+      "jumlah_transaksi": "5"
+    },
+    {
+      "jaminan": "Asuransi Prudential-Admedika",
+      "total_nominal": "1210933.0",
+      "jumlah_transaksi": "4"
+    },
+    {
+      "jaminan": "PT. Pertamina Lubricant-Admedika",
+      "total_nominal": "1195000.0",
+      "jumlah_transaksi": "4"
+    },
+    {
+      "jaminan": "Sunday Insurance Indonesia-Admedika",
+      "total_nominal": "1100990.0",
+      "jumlah_transaksi": "6"
+    },
+    {
+      "jaminan": "PT. Aplikanusa Lintasarta (Owlexa)",
+      "total_nominal": "1000000.0",
+      "jumlah_transaksi": "1"
+    },
+    {
+      "jaminan": "PT. Asuransi Central Asia",
+      "total_nominal": "924462.0",
+      "jumlah_transaksi": "10"
+    },
+    {
+      "jaminan": "Yayasan Dana Pensiun Karyawan PT. Semen Gresik",
+      "total_nominal": "868000.0",
+      "jumlah_transaksi": "1"
+    },
+    {
+      "jaminan": "PT. Lippo General Insurance Tbk.",
+      "total_nominal": "796804.0",
+      "jumlah_transaksi": "4"
+    },
+    {
+      "jaminan": "BCA Life-Admedika",
+      "total_nominal": "453135.0",
+      "jumlah_transaksi": "6"
+    },
+    {
+      "jaminan": "Asuransi Jasa Indonesia (ADMEDIKA)",
+      "total_nominal": "268678.0",
+      "jumlah_transaksi": "2"
+    },
+    {
+      "jaminan": "PT. Sompo Insurance Indonesia - Admedika",
+      "total_nominal": "237927.0",
+      "jumlah_transaksi": "2"
+    },
+    {
+      "jaminan": "PT Petrokimia Gresik",
+      "total_nominal": "180000.0",
+      "jumlah_transaksi": "2"
+    },
+    {
+      "jaminan": "PT Great Eastern Life Ind",
+      "total_nominal": "120000.0",
+      "jumlah_transaksi": "2"
+    },
+    {
+      "jaminan": "Fullerton Health Indonesia",
+      "total_nominal": "120000.0",
+      "jumlah_transaksi": "3"
+    },
+    {
+      "jaminan": "Lembaga Penjamin Simpanan (ADMEDIKA)",
+      "total_nominal": "80037.0",
+      "jumlah_transaksi": "2"
+    },
+    {
+      "jaminan": "MSIG LIFE INSURANCE - MEDILINK",
+      "total_nominal": "75000.0",
+      "jumlah_transaksi": "3"
+    },
+    {
+      "jaminan": "CIPUTRA LIFE - ADMEDIKA",
+      "total_nominal": "51884.0",
+      "jumlah_transaksi": "1"
+    },
+    {
+      "jaminan": "Equity Life Indonesia",
+      "total_nominal": "40000.0",
+      "jumlah_transaksi": "5"
+    },
+    {
+      "jaminan": "Asuransi Multi Artha Guna (MAG)",
+      "total_nominal": "38000.0",
+      "jumlah_transaksi": "1"
+    },
+    {
+      "jaminan": "Asuransi BUMIDA - Admedika",
+      "total_nominal": "35000.0",
+      "jumlah_transaksi": "1"
+    },
+    {
+      "jaminan": "International Service Pacific Cross",
+      "total_nominal": "20000.0",
+      "jumlah_transaksi": "4"
+    },
+    {
+      "jaminan": "Tokio Marine Life Insurance (ADMEDIKA)",
+      "total_nominal": "10486.0",
+      "jumlah_transaksi": "1"
+    }
+  ],
+  "kasir_per_tipe": [
+    {
+      "tipe_pembayaran": "TUNAI",
+      "total_nominal": "1.1521411311E10",
+      "jumlah_transaksi": "18301"
+    },
+    {
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "total_nominal": "5.357978436E9",
+      "jumlah_transaksi": "4923"
+    }
+  ],
+  "kasir_harian": [
+    {
+      "tanggal": "2026-03-31",
+      "total_nominal": "1.509668E7",
+      "jumlah_transaksi": "1"
+    },
+    {
+      "tanggal": "2026-04-01",
+      "total_nominal": "2.3965023E7",
+      "jumlah_transaksi": "49"
+    },
+    {
+      "tanggal": "2026-04-02",
+      "total_nominal": "1.18609421E8",
+      "jumlah_transaksi": "127"
+    },
+    {
+      "tanggal": "2026-04-03",
+      "total_nominal": "1.0479779E8",
+      "jumlah_transaksi": "115"
+    },
+    {
+      "tanggal": "2026-04-04",
+      "total_nominal": "6.8195884E7",
+      "jumlah_transaksi": "64"
+    },
+    {
+      "tanggal": "2026-04-05",
+      "total_nominal": "3.2021806E7",
+      "jumlah_transaksi": "63"
+    },
+    {
+      "tanggal": "2026-04-06",
+      "total_nominal": "1.13453303E8",
+      "jumlah_transaksi": "150"
+    },
+    {
+      "tanggal": "2026-04-07",
+      "total_nominal": "2.8445873E7",
+      "jumlah_transaksi": "154"
+    },
+    {
+      "tanggal": "2026-04-08",
+      "total_nominal": "1.10441313E8",
+      "jumlah_transaksi": "175"
+    },
+    {
+      "tanggal": "2026-04-09",
+      "total_nominal": "1.79966396E8",
+      "jumlah_transaksi": "168"
+    },
+    {
+      "tanggal": "2026-04-10",
+      "total_nominal": "8.2366799E7",
+      "jumlah_transaksi": "162"
+    },
+    {
+      "tanggal": "2026-04-11",
+      "total_nominal": "3.327614E7",
+      "jumlah_transaksi": "133"
+    },
+    {
+      "tanggal": "2026-04-12",
+      "total_nominal": "4.3730734E7",
+      "jumlah_transaksi": "93"
+    },
+    {
+      "tanggal": "2026-04-13",
+      "total_nominal": "6.1245275E7",
+      "jumlah_transaksi": "137"
+    },
+    {
+      "tanggal": "2026-04-14",
+      "total_nominal": "8.6736085E7",
+      "jumlah_transaksi": "228"
+    },
+    {
+      "tanggal": "2026-04-15",
+      "total_nominal": "6.0857484E7",
+      "jumlah_transaksi": "90"
+    },
+    {
+      "tanggal": "2026-04-16",
+      "total_nominal": "6.2949977E7",
+      "jumlah_transaksi": "228"
+    },
+    {
+      "tanggal": "2026-04-17",
+      "total_nominal": "8.9128831E7",
+      "jumlah_transaksi": "128"
+    },
+    {
+      "tanggal": "2026-04-18",
+      "total_nominal": "8.1567753E7",
+      "jumlah_transaksi": "131"
+    },
+    {
+      "tanggal": "2026-04-19",
+      "total_nominal": "6.4954877E7",
+      "jumlah_transaksi": "46"
+    },
+    {
+      "tanggal": "2026-04-20",
+      "total_nominal": "1.00322821E8",
+      "jumlah_transaksi": "174"
+    },
+    {
+      "tanggal": "2026-04-21",
+      "total_nominal": "1.31029222E8",
+      "jumlah_transaksi": "174"
+    },
+    {
+      "tanggal": "2026-04-22",
+      "total_nominal": "9.7695259E7",
+      "jumlah_transaksi": "251"
+    },
+    {
+      "tanggal": "2026-04-23",
+      "total_nominal": "6.2138944E7",
+      "jumlah_transaksi": "124"
+    },
+    {
+      "tanggal": "2026-04-24",
+      "total_nominal": "6.5401173E7",
+      "jumlah_transaksi": "126"
+    },
+    {
+      "tanggal": "2026-04-25",
+      "total_nominal": "7.9873975E7",
+      "jumlah_transaksi": "88"
+    },
+    {
+      "tanggal": "2026-04-26",
+      "total_nominal": "1.35769809E8",
+      "jumlah_transaksi": "52"
+    },
+    {
+      "tanggal": "2026-04-27",
+      "total_nominal": "3.9304973E7",
+      "jumlah_transaksi": "166"
+    },
+    {
+      "tanggal": "2026-04-28",
+      "total_nominal": "6443760.0",
+      "jumlah_transaksi": "29"
+    },
+    {
+      "tanggal": "2026-04-29",
+      "total_nominal": "4.8392084E8",
+      "jumlah_transaksi": "370"
+    },
+    {
+      "tanggal": "2026-04-30",
+      "total_nominal": "800000.0",
+      "jumlah_transaksi": "5"
+    },
+    {
+      "tanggal": "2026-05-01",
+      "total_nominal": "4.5958E7",
+      "jumlah_transaksi": "13"
+    },
+    {
+      "tanggal": "2026-05-02",
+      "total_nominal": "2.9267275E7",
+      "jumlah_transaksi": "138"
+    },
+    {
+      "tanggal": "2026-05-03",
+      "total_nominal": "2.52132891E8",
+      "jumlah_transaksi": "398"
+    },
+    {
+      "tanggal": "2026-05-04",
+      "total_nominal": "5.7268084E7",
+      "jumlah_transaksi": "284"
+    },
+    {
+      "tanggal": "2026-05-05",
+      "total_nominal": "3.7698001E7",
+      "jumlah_transaksi": "93"
+    },
+    {
+      "tanggal": "2026-05-06",
+      "total_nominal": "6.4855915E7",
+      "jumlah_transaksi": "259"
+    },
+    {
+      "tanggal": "2026-05-07",
+      "total_nominal": "4.2557311E7",
+      "jumlah_transaksi": "142"
+    },
+    {
+      "tanggal": "2026-05-08",
+      "total_nominal": "9.0505366E7",
+      "jumlah_transaksi": "194"
+    },
+    {
+      "tanggal": "2026-05-09",
+      "total_nominal": "1.05024883E8",
+      "jumlah_transaksi": "50"
+    },
+    {
+      "tanggal": "2026-05-10",
+      "total_nominal": "1.33237927E8",
+      "jumlah_transaksi": "99"
+    },
+    {
+      "tanggal": "2026-05-11",
+      "total_nominal": "7.4815559E7",
+      "jumlah_transaksi": "223"
+    },
+    {
+      "tanggal": "2026-05-12",
+      "total_nominal": "2.34352534E8",
+      "jumlah_transaksi": "183"
+    },
+    {
+      "tanggal": "2026-05-13",
+      "total_nominal": "1.00872382E8",
+      "jumlah_transaksi": "120"
+    },
+    {
+      "tanggal": "2026-05-14",
+      "total_nominal": "3.9238583E7",
+      "jumlah_transaksi": "63"
+    },
+    {
+      "tanggal": "2026-05-15",
+      "total_nominal": "6.4571482E7",
+      "jumlah_transaksi": "139"
+    },
+    {
+      "tanggal": "2026-05-16",
+      "total_nominal": "6.3390776E7",
+      "jumlah_transaksi": "83"
+    },
+    {
+      "tanggal": "2026-05-17",
+      "total_nominal": "3.0335681E7",
+      "jumlah_transaksi": "98"
+    },
+    {
+      "tanggal": "2026-05-18",
+      "total_nominal": "3.2093941E7",
+      "jumlah_transaksi": "138"
+    },
+    {
+      "tanggal": "2026-05-19",
+      "total_nominal": "1.09338524E8",
+      "jumlah_transaksi": "172"
+    },
+    {
+      "tanggal": "2026-05-20",
+      "total_nominal": "9.3375885E7",
+      "jumlah_transaksi": "193"
+    },
+    {
+      "tanggal": "2026-05-21",
+      "total_nominal": "1.11880842E8",
+      "jumlah_transaksi": "185"
+    },
+    {
+      "tanggal": "2026-05-22",
+      "total_nominal": "7.4328586E7",
+      "jumlah_transaksi": "189"
+    },
+    {
+      "tanggal": "2026-05-23",
+      "total_nominal": "1.11727917E8",
+      "jumlah_transaksi": "63"
+    },
+    {
+      "tanggal": "2026-05-24",
+      "total_nominal": "1.98193689E8",
+      "jumlah_transaksi": "476"
+    },
+    {
+      "tanggal": "2026-05-25",
+      "total_nominal": "9.8364886E7",
+      "jumlah_transaksi": "160"
+    },
+    {
+      "tanggal": "2026-05-26",
+      "total_nominal": "5.784468E7",
+      "jumlah_transaksi": "110"
+    },
+    {
+      "tanggal": "2026-05-27",
+      "total_nominal": "2.5711915E7",
+      "jumlah_transaksi": "86"
+    },
+    {
+      "tanggal": "2026-05-28",
+      "total_nominal": "8.413900505E9",
+      "jumlah_transaksi": "11879"
+    },
+    {
+      "tanggal": "2026-05-29",
+      "total_nominal": "1.04793053E8",
+      "jumlah_transaksi": "160"
+    },
+    {
+      "tanggal": "2026-05-30",
+      "total_nominal": "4.257108E7",
+      "jumlah_transaksi": "110"
+    },
+    {
+      "tanggal": "2026-06-01",
+      "total_nominal": "4398018.0",
+      "jumlah_transaksi": "4"
+    },
+    {
+      "tanggal": "2026-06-02",
+      "total_nominal": "1.80616552E8",
+      "jumlah_transaksi": "274"
+    },
+    {
+      "tanggal": "2026-06-03",
+      "total_nominal": "9.445888E7",
+      "jumlah_transaksi": "93"
+    },
+    {
+      "tanggal": "2026-06-04",
+      "total_nominal": "1.62365036E8",
+      "jumlah_transaksi": "204"
+    },
+    {
+      "tanggal": "2026-06-05",
+      "total_nominal": "2.49821018E8",
+      "jumlah_transaksi": "154"
+    },
+    {
+      "tanggal": "2026-06-06",
+      "total_nominal": "2.7262398E8",
+      "jumlah_transaksi": "102"
+    },
+    {
+      "tanggal": "2026-06-07",
+      "total_nominal": "1.55539888E8",
+      "jumlah_transaksi": "96"
+    },
+    {
+      "tanggal": "2026-06-08",
+      "total_nominal": "1.00338392E8",
+      "jumlah_transaksi": "153"
+    },
+    {
+      "tanggal": "2026-06-09",
+      "total_nominal": "1.0270721E8",
+      "jumlah_transaksi": "82"
+    },
+    {
+      "tanggal": "2026-06-10",
+      "total_nominal": "9.9784446E7",
+      "jumlah_transaksi": "202"
+    },
+    {
+      "tanggal": "2026-06-11",
+      "total_nominal": "1.53942222E8",
+      "jumlah_transaksi": "142"
+    },
+    {
+      "tanggal": "2026-06-12",
+      "total_nominal": "1.39135522E8",
+      "jumlah_transaksi": "121"
+    },
+    {
+      "tanggal": "2026-06-13",
+      "total_nominal": "1.73772276E8",
+      "jumlah_transaksi": "33"
+    },
+    {
+      "tanggal": "2026-06-14",
+      "total_nominal": "3.01373324E8",
+      "jumlah_transaksi": "171"
+    },
+    {
+      "tanggal": "2026-06-15",
+      "total_nominal": "6.429E7",
+      "jumlah_transaksi": "25"
+    },
+    {
+      "tanggal": "2026-06-16",
+      "total_nominal": "8.6174028E7",
+      "jumlah_transaksi": "101"
+    },
+    {
+      "tanggal": "2026-06-17",
+      "total_nominal": "2.5183285E8",
+      "jumlah_transaksi": "173"
+    },
+    {
+      "tanggal": "2026-06-18",
+      "total_nominal": "2.34316788E8",
+      "jumlah_transaksi": "143"
+    },
+    {
+      "tanggal": "2026-06-19",
+      "total_nominal": "1.53909098E8",
+      "jumlah_transaksi": "86"
+    },
+    {
+      "tanggal": "2026-06-20",
+      "total_nominal": "1.24433114E8",
+      "jumlah_transaksi": "118"
+    },
+    {
+      "tanggal": "2026-06-21",
+      "total_nominal": "3.35131336E8",
+      "jumlah_transaksi": "110"
+    },
+    {
+      "tanggal": "2026-06-22",
+      "total_nominal": "1.31672856E8",
+      "jumlah_transaksi": "153"
+    },
+    {
+      "tanggal": "2026-06-23",
+      "total_nominal": "1.39553616E8",
+      "jumlah_transaksi": "92"
+    },
+    {
+      "tanggal": "2026-06-24",
+      "total_nominal": "1.0069571E8",
+      "jumlah_transaksi": "164"
+    },
+    {
+      "tanggal": "2026-06-26",
+      "total_nominal": "6496000.0",
+      "jumlah_transaksi": "1"
+    },
+    {
+      "tanggal": "2026-06-29",
+      "total_nominal": "3.4979494E7",
+      "jumlah_transaksi": "3"
+    }
+  ],
+  "pelayanan_per_unit": [],
+  "pelayanan_status": [
+    {
+      "status_tagihan": "Draft",
+      "jumlah_tagihan": "229",
+      "total_tagihan": "0.0"
+    },
+    {
+      "status_tagihan": "Kunci",
+      "jumlah_tagihan": "318",
+      "total_tagihan": "0.0"
+    },
+    {
+      "status_tagihan": "Tutup",
+      "jumlah_tagihan": "29963",
+      "total_tagihan": "0.0"
+    }
+  ]
+}
