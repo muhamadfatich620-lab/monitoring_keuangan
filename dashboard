@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Pendapatan RS</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+<style>
+  :root{
+    --bg:#f4f6f8;
+    --panel:#ffffff;
+    --ink:#1f2a37;
+    --muted:#6b7785;
+    --line:#e3e8ee;
+    --blue:#155e91;
+    --blue-dk:#0c3a5b;
+    --green:#3a7d44;
+    --amber:#a6691b;
+    --red:#b3404a;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+  }
+  header{
+    background:linear-gradient(135deg,var(--blue-dk),var(--blue));
+    color:#fff;
+    padding:22px 28px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  header h1{margin:0;font-size:20px;font-weight:600;}
+  header .sub{font-size:13px;opacity:.85;margin-top:2px;}
+  #updated{font-size:12px;opacity:.9;}
+
+  nav{
+    display:flex;
+    gap:6px;
+    padding:14px 28px 0;
+    background:var(--bg);
+    flex-wrap:wrap;
+  }
+  nav button{
+    border:1px solid var(--line);
+    background:#fff;
+    color:var(--muted);
+    padding:9px 16px;
+    border-radius:8px 8px 0 0;
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+    border-bottom:none;
+  }
+  nav button.active{
+    color:var(--blue-dk);
+    background:var(--panel);
+    border-color:var(--line);
+    box-shadow:0 -2px 0 var(--blue) inset;
+  }
+
+  main{padding:0 28px 36px;}
+  .tab{display:none;}
+  .tab.active{display:block;}
+
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:14px;
+    margin:18px 0;
+  }
+  .card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:16px 18px;
+  }
+  .card .label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;}
+  .card .value{font-size:22px;font-weight:700;margin-top:6px;color:var(--blue-dk);}
+  .card .value.neg{color:var(--red);}
+
+  .panel{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:18px;
+    margin-bottom:18px;
+  }
+  .panel h2{margin:0 0 14px;font-size:15px;color:var(--ink);}
+  .chart-box{position:relative;height:320px;}
+
+  table{width:100%;border-collapse:collapse;font-size:13px;}
+  th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line);}
+  th{color:var(--muted);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.03em;}
+  tr:hover td{background:#f9fbfc;}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
+  .tag{
+    display:inline-block;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:600;
+  }
+  .tag.ok{background:#e4f3e6;color:var(--green);}
+  .tag.warn{background:#fbeee0;color:var(--amber);}
+  .tag.bad{background:#fbe7e9;color:var(--red);}
+
+  #loading,#error{padding:60px 28px;text-align:center;color:var(--muted);}
+  #error{color:var(--red);display:none;}
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>Dashboard Pendapatan Rumah Sakit</h1>
+    <div class="sub">Sumber: BigQuery &middot; diproses otomatis setiap hari</div>
+  </div>
+  <div id="updated">Memuat...</div>
+</header>
+
+<nav id="tabs">
+  <button data-tab="pendapatan" class="active">Pendapatan Unit</button>
+  <button data-tab="kasir">Kasir</button>
+  <button data-tab="pelayanan">Pelayanan Medis</button>
+</nav>
+
+<div id="loading">Memuat data.json ...</div>
+<div id="error"></div>
+
+<main id="main" style="display:none;">
+
+  <!-- ===================== TAB PENDAPATAN ===================== -->
+  <section class="tab active" id="tab-pendapatan">
+    <div class="grid" id="kpi-pendapatan"></div>
+    <div class="panel">
+      <h2>Tren Pendapatan Harian (Kredit vs Debet)</h2>
+      <div class="chart-box"><canvas id="chart-pendapatan-harian"></canvas></div>
+    </div>
+    <div class="panel">
+      <h2>Net Pendapatan per Unit</h2>
+      <div class="chart-box"><canvas id="chart-pendapatan-unit"></canvas></div>
+    </div>
+    <div class="panel">
+      <h2>Detail per Unit</h2>
+      <table id="table-pendapatan-unit">
+        <thead><tr><th>Unit</th><th class="num">Kredit</th><th class="num">Debet</th><th class="num">Net</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===================== TAB KASIR ===================== -->
+  <section class="tab" id="tab-kasir">
+    <div class="grid" id="kpi-kasir"></div>
+    <div class="panel">
+      <h2>Tren Penerimaan Kasir Harian</h2>
+      <div class="chart-box"><canvas id="chart-kasir-harian"></canvas></div>
+    </div>
+    <div class="grid" style="grid-template-columns:1fr 1fr;">
+      <div class="panel">
+        <h2>Per Jaminan</h2>
+        <div class="chart-box" style="height:260px;"><canvas id="chart-kasir-jaminan"></canvas></div>
+      </div>
+      <div class="panel">
+        <h2>Per Tipe Pembayaran</h2>
+        <div class="chart-box" style="height:260px;"><canvas id="chart-kasir-tipe"></canvas></div>
+      </div>
+    </div>
+    <div class="panel">
+      <h2>Detail per Jaminan</h2>
+      <table id="table-kasir-jaminan">
+        <thead><tr><th>Jaminan</th><th class="num">Jumlah Transaksi</th><th class="num">Total Nominal</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===================== TAB PELAYANAN ===================== -->
+  <section class="tab" id="tab-pelayanan">
+    <div class="grid" id="kpi-pelayanan"></div>
+    <div class="panel">
+      <h2>Total Tagihan per Unit</h2>
+      <div class="chart-box"><canvas id="chart-pelayanan-unit"></canvas></div>
+    </div>
+    <div class="panel">
+      <h2>Status Tagihan</h2>
+      <table id="table-pelayanan-status">
+        <thead><tr><th>Status</th><th class="num">Jumlah Tagihan</th><th class="num">Total</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+</main>
+
+<script>
+const DATA_URL = 'data.json'; // file statis hasil export Apps Script, satu folder dengan dashboard ini
+const charts = {};
+
+function rupiah(n){
+  n = Number(n) || 0;
+  return 'Rp' + n.toLocaleString('id-ID', { maximumFractionDigits: 0 });
+}
+function num(n){
+  n = Number(n) || 0;
+  return n.toLocaleString('id-ID', { maximumFractionDigits: 0 });
+}
+
+document.getElementById('tabs').addEventListener('click', (e) => {
+  const btn = e.target.closest('button');
+  if (!btn) return;
+  document.querySelectorAll('#tabs button').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+});
+
+fetch(DATA_URL)
+  .then(r => {
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    return r.json();
+  })
+  .then(data => {
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('main').style.display = 'block';
+    document.getElementById('updated').textContent =
+      'Update terakhir: ' + new Date(data.generated_at).toLocaleString('id-ID');
+    renderPendapatan(data);
+    renderKasir(data);
+    renderPelayanan(data);
+  })
+  .catch(err => {
+    document.getElementById('loading').style.display = 'none';
+    const el = document.getElementById('error');
+    el.style.display = 'block';
+    el.textContent = 'Gagal memuat data.json: ' + err.message +
+      ' (pastikan file data.json ada di folder yang sama dengan dashboard ini)';
+  });
+
+// ===================== RENDER: PENDAPATAN =====================
+function renderPendapatan(data) {
+  const harian = data.pendapatan_harian || [];
+  const perUnit = data.pendapatan_per_unit || [];
+
+  const totalKredit = harian.reduce((s, r) => s + Number(r.total_kredit || 0), 0);
+  const totalDebet = harian.reduce((s, r) => s + Number(r.total_debet || 0), 0);
+  const net = totalKredit - totalDebet;
+
+  document.getElementById('kpi-pendapatan').innerHTML = `
+    <div class="card"><div class="label">Total Kredit</div><div class="value">${rupiah(totalKredit)}</div></div>
+    <div class="card"><div class="label">Total Debet</div><div class="value">${rupiah(totalDebet)}</div></div>
+    <div class="card"><div class="label">Net Pendapatan</div><div class="value ${net < 0 ? 'neg' : ''}">${rupiah(net)}</div></div>
+    <div class="card"><div class="label">Jumlah Unit Aktif</div><div class="value">${perUnit.length}</div></div>
+  `;
+
+  drawChart('chart-pendapatan-harian', 'line', {
+    labels: harian.map(r => r.tanggal),
+    datasets: [
+      { label: 'Kredit', data: harian.map(r => r.total_kredit), borderColor: '#155e91', backgroundColor: 'rgba(21,94,145,.12)', tension: .25, fill: true },
+      { label: 'Debet', data: harian.map(r => r.total_debet), borderColor: '#b3404a', backgroundColor: 'rgba(179,64,74,.10)', tension: .25, fill: true }
+    ]
+  });
+
+  drawChart('chart-pendapatan-unit', 'bar', {
+    labels: perUnit.map(r => r.nama_sub_unit),
+    datasets: [{ label: 'Net', data: perUnit.map(r => r.net), backgroundColor: '#3a7d44' }]
+  }, true);
+
+  fillTable('table-pendapatan-unit', perUnit, r => `
+    <tr>
+      <td>${r.nama_sub_unit ?? '-'}</td>
+      <td class="num">${rupiah(r.total_kredit)}</td>
+      <td class="num">${rupiah(r.total_debet)}</td>
+      <td class="num">${rupiah(r.net)}</td>
+    </tr>`);
+}
+
+// ===================== RENDER: KASIR =====================
+function renderKasir(data) {
+  const harian = data.kasir_harian || [];
+  const perJaminan = data.kasir_per_jaminan || [];
+  const perTipe = data.kasir_per_tipe || [];
+
+  const totalNominal = harian.reduce((s, r) => s + Number(r.total_nominal || 0), 0);
+  const totalTrx = harian.reduce((s, r) => s + Number(r.jumlah_transaksi || 0), 0);
+  const avgTrx = totalTrx ? totalNominal / totalTrx : 0;
+
+  document.getElementById('kpi-kasir').innerHTML = `
+    <div class="card"><div class="label">Total Penerimaan</div><div class="value">${rupiah(totalNominal)}</div></div>
+    <div class="card"><div class="label">Jumlah Transaksi</div><div class="value">${num(totalTrx)}</div></div>
+    <div class="card"><div class="label">Rata-rata / Transaksi</div><div class="value">${rupiah(avgTrx)}</div></div>
+    <div class="card"><div class="label">Jenis Jaminan</div><div class="value">${perJaminan.length}</div></div>
+  `;
+
+  drawChart('chart-kasir-harian', 'bar', {
+    labels: harian.map(r => r.tanggal),
+    datasets: [{ label: 'Penerimaan', data: harian.map(r => r.total_nominal), backgroundColor: '#155e91' }]
+  });
+
+  drawChart('chart-kasir-jaminan', 'doughnut', {
+    labels: perJaminan.map(r => r.jaminan),
+    datasets: [{ data: perJaminan.map(r => r.total_nominal), backgroundColor: palette(perJaminan.length) }]
+  });
+
+  drawChart('chart-kasir-tipe', 'doughnut', {
+    labels: perTipe.map(r => r.tipe_pembayaran),
+    datasets: [{ data: perTipe.map(r => r.total_nominal), backgroundColor: palette(perTipe.length) }]
+  });
+
+  fillTable('table-kasir-jaminan', perJaminan, r => `
+    <tr>
+      <td>${r.jaminan ?? '-'}</td>
+      <td class="num">${num(r.jumlah_transaksi)}</td>
+      <td class="num">${rupiah(r.total_nominal)}</td>
+    </tr>`);
+}
+
+// ===================== RENDER: PELAYANAN MEDIS =====================
+function renderPelayanan(data) {
+  const perUnit = data.pelayanan_per_unit || [];
+  const status = data.pelayanan_status || [];
+
+  const totalTagihan = perUnit.reduce((s, r) => s + Number(r.total_tagihan || 0), 0);
+  const totalJumlah = perUnit.reduce((s, r) => s + Number(r.jumlah_tagihan || 0), 0);
+
+  document.getElementById('kpi-pelayanan').innerHTML = `
+    <div class="card"><div class="label">Total Tagihan</div><div class="value">${rupiah(totalTagihan)}</div></div>
+    <div class="card"><div class="label">Jumlah Tagihan</div><div class="value">${num(totalJumlah)}</div></div>
+    <div class="card"><div class="label">Unit Pelayanan</div><div class="value">${perUnit.length}</div></div>
+    <div class="card"><div class="label">Status Berbeda</div><div class="value">${status.length}</div></div>
+  `;
+
+  drawChart('chart-pelayanan-unit', 'bar', {
+    labels: perUnit.map(r => r.unit),
+    datasets: [{ label: 'Total Tagihan', data: perUnit.map(r => r.total_tagihan), backgroundColor: '#a6691b' }]
+  }, true);
+
+  fillTable('table-pelayanan-status', status, r => {
+    const cls = /lunas|paid|selesai/i.test(r.status_tagihan) ? 'ok'
+      : /batal|cancel/i.test(r.status_tagihan) ? 'bad' : 'warn';
+    return `
+      <tr>
+        <td><span class="tag ${cls}">${r.status_tagihan ?? '-'}</span></td>
+        <td class="num">${num(r.jumlah_tagihan)}</td>
+        <td class="num">${rupiah(r.total_tagihan)}</td>
+      </tr>`;
+  });
+}
+
+// ===================== UTIL =====================
+function drawChart(canvasId, type, data, horizontal) {
+  const ctx = document.getElementById(canvasId);
+  if (!ctx) return;
+  if (charts[canvasId]) charts[canvasId].destroy();
+  charts[canvasId] = new Chart(ctx, {
+    type,
+    data,
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      indexAxis: horizontal ? 'y' : 'x',
+      plugins: { legend: { display: type !== 'bar' || data.datasets.length > 1 } },
+      scales: type === 'doughnut' ? {} : {
+        x: { grid: { display: false } },
+        y: { grid: { color: '#eef1f4' } }
+      }
+    }
+  });
+}
+
+function fillTable(tableId, rows, rowFn) {
+  const tbody = document.querySelector('#' + tableId + ' tbody');
+  if (!tbody) return;
+  tbody.innerHTML = rows.length
+    ? rows.map(rowFn).join('')
+    : '<tr><td colspan="6" style="text-align:center;color:var(--muted);">Tidak ada data</td></tr>';
+}
+
+function palette(n) {
+  const base = ['#155e91','#3a7d44','#a6691b','#b3404a','#6b5b95','#2e8b8b','#cc8400','#5a7a9c'];
+  const out = [];
+  for (let i = 0; i < n; i++) out.push(base[i % base.length]);
+  return out;
+}
+</script>
+
+</body>
+</html>
