@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-08T01:39:00.500Z",
+  "generated_at": "2026-07-08T06:25:36.784Z",
   "kasir_per_kas": [
     {
       "kas": "Bank Mandiri-1400002285626",
@@ -25753,15 +25753,15 @@
       "net": "302851.22"
     },
     {
-      "nama_sub_unit": "[9199] Poli Bedah Saraf",
-      "total_kredit": "1.1928338762E8",
-      "total_debet": "1.1899556607E8",
-      "net": "287821.55"
-    },
-    {
       "nama_sub_unit": "[9280] Poli BTKV",
       "total_kredit": "1.7267518938E8",
       "total_debet": "1.7238736783E8",
+      "net": "287821.55"
+    },
+    {
+      "nama_sub_unit": "[9199] Poli Bedah Saraf",
+      "total_kredit": "1.1928338762E8",
+      "total_debet": "1.1899556607E8",
       "net": "287821.55"
     },
     {
@@ -25777,9 +25777,9 @@
       "net": "12071.76"
     },
     {
-      "nama_sub_unit": "[9216] Onkologi Obgyn",
-      "total_kredit": "3772431.91",
-      "total_debet": "3772431.91",
+      "nama_sub_unit": "[9233] Poli Spesialis VIP Anak",
+      "total_kredit": "2.417491276E7",
+      "total_debet": "2.417491276E7",
       "net": "0.0"
     },
     {
@@ -25789,39 +25789,9 @@
       "net": "0.0"
     },
     {
-      "nama_sub_unit": "[9230] Poli Gigi Prosthodonsia",
-      "total_kredit": "6385400.0",
-      "total_debet": "6385400.0",
-      "net": "0.0"
-    },
-    {
       "nama_sub_unit": "133 - UMUM DAN CETAKAN GRESIK",
       "total_kredit": "188000.0",
       "total_debet": "188000.0",
-      "net": "0.0"
-    },
-    {
-      "nama_sub_unit": "[8002] Legal Governance Risk Compliance (LGRC)",
-      "total_kredit": "624891.0",
-      "total_debet": "624891.0",
-      "net": "0.0"
-    },
-    {
-      "nama_sub_unit": "[9262] POLI SPESIALIS VIP NEUROLOGI",
-      "total_kredit": "5606466.29",
-      "total_debet": "5606466.29",
-      "net": "0.0"
-    },
-    {
-      "nama_sub_unit": "[9296] - POLI SPESIALIS OKUPASI",
-      "total_kredit": "1226600.0",
-      "total_debet": "1226600.0",
-      "net": "0.0"
-    },
-    {
-      "nama_sub_unit": "[9233] Poli Spesialis VIP Anak",
-      "total_kredit": "2.417491276E7",
-      "total_debet": "2.417491276E7",
       "net": "0.0"
     },
     {
@@ -25834,6 +25804,36 @@
       "nama_sub_unit": "[9264] POLI FERTILITAS",
       "total_kredit": "4.7821353052E8",
       "total_debet": "4.7821353052E8",
+      "net": "0.0"
+    },
+    {
+      "nama_sub_unit": "[9262] POLI SPESIALIS VIP NEUROLOGI",
+      "total_kredit": "5606466.29",
+      "total_debet": "5606466.29",
+      "net": "0.0"
+    },
+    {
+      "nama_sub_unit": "[9230] Poli Gigi Prosthodonsia",
+      "total_kredit": "6385400.0",
+      "total_debet": "6385400.0",
+      "net": "0.0"
+    },
+    {
+      "nama_sub_unit": "[9216] Onkologi Obgyn",
+      "total_kredit": "3772431.91",
+      "total_debet": "3772431.91",
+      "net": "0.0"
+    },
+    {
+      "nama_sub_unit": "[8002] Legal Governance Risk Compliance (LGRC)",
+      "total_kredit": "624891.0",
+      "total_debet": "624891.0",
+      "net": "0.0"
+    },
+    {
+      "nama_sub_unit": "[9296] - POLI SPESIALIS OKUPASI",
+      "total_kredit": "1226600.0",
+      "total_debet": "1226600.0",
       "net": "0.0"
     },
     {
@@ -25873,27 +25873,9 @@
       "net": "-1479252.0"
     },
     {
-      "nama_sub_unit": "[9208] POLI GERIATRI",
-      "total_kredit": "3.695054355E7",
-      "total_debet": "3.876720955E7",
-      "net": "-1816666.0"
-    },
-    {
       "nama_sub_unit": "[9201] Poli Gigi Orthodontia",
       "total_kredit": "7.316660912E7",
       "total_debet": "7.498327512E7",
-      "net": "-1816666.0"
-    },
-    {
-      "nama_sub_unit": "[9179] POLI KOSMETIK",
-      "total_kredit": "8.008682429E7",
-      "total_debet": "8.190349029E7",
-      "net": "-1816666.0"
-    },
-    {
-      "nama_sub_unit": "[9215] POLIKLINIK GIZI",
-      "total_kredit": "2600000.0",
-      "total_debet": "4416666.0",
       "net": "-1816666.0"
     },
     {
@@ -25909,9 +25891,27 @@
       "net": "-1816666.0"
     },
     {
+      "nama_sub_unit": "[9179] POLI KOSMETIK",
+      "total_kredit": "8.008682429E7",
+      "total_debet": "8.190349029E7",
+      "net": "-1816666.0"
+    },
+    {
       "nama_sub_unit": "[9197] SPESIALIS BEDAH KEPALA DAN LEHER",
       "total_kredit": "0.0",
       "total_debet": "1816666.0",
+      "net": "-1816666.0"
+    },
+    {
+      "nama_sub_unit": "[9208] POLI GERIATRI",
+      "total_kredit": "3.695054355E7",
+      "total_debet": "3.876720955E7",
+      "net": "-1816666.0"
+    },
+    {
+      "nama_sub_unit": "[9215] POLIKLINIK GIZI",
+      "total_kredit": "2600000.0",
+      "total_debet": "4416666.0",
       "net": "-1816666.0"
     },
     {
@@ -82022,6 +82022,226 @@
       "kredit": "0.0",
       "debet": "70000.0",
       "total": "70000.0"
+    }
+  ],
+  "kasir_per_unit": [
+    {
+      "unit_kasir": "Lainnya",
+      "total_nominal": "2.9589533807E10",
+      "jumlah_transaksi": "34113",
+      "jumlah_pasien": "15144"
+    },
+    {
+      "unit_kasir": "Kasir IRNA",
+      "total_nominal": "3.219725744E9",
+      "jumlah_transaksi": "697",
+      "jumlah_pasien": "489"
+    },
+    {
+      "unit_kasir": "Kasir IPM",
+      "total_nominal": "2.72406194E9",
+      "jumlah_transaksi": "2546",
+      "jumlah_pasien": "1905"
+    },
+    {
+      "unit_kasir": "Kasir IRJ",
+      "total_nominal": "2.492723939E9",
+      "jumlah_transaksi": "12067",
+      "jumlah_pasien": "5023"
+    },
+    {
+      "unit_kasir": "Kasir IGD",
+      "total_nominal": "1.813349546E9",
+      "jumlah_transaksi": "5468",
+      "jumlah_pasien": "3084"
+    },
+    {
+      "unit_kasir": "Kasir Farmasi",
+      "total_nominal": "1.222397651E9",
+      "jumlah_transaksi": "5166",
+      "jumlah_pasien": "2518"
+    },
+    {
+      "unit_kasir": "Kasir Belakang",
+      "total_nominal": "4.19514758E8",
+      "jumlah_transaksi": "263",
+      "jumlah_pasien": "211"
+    },
+    {
+      "unit_kasir": "Kasir MCU",
+      "total_nominal": "2.22806984E8",
+      "jumlah_transaksi": "266",
+      "jumlah_pasien": "207"
+    }
+  ],
+  "kasir_detail_per_unit": [
+    {
+      "unit_kasir": "Kasir Belakang",
+      "nama_kasir": "shabrina.amelia",
+      "total_nominal": "4.18912956E8",
+      "jumlah_transaksi": "260",
+      "jumlah_pasien": "210"
+    },
+    {
+      "unit_kasir": "Kasir Belakang",
+      "nama_kasir": "putri.nur",
+      "total_nominal": "601802.0",
+      "jumlah_transaksi": "3",
+      "jumlah_pasien": "3"
+    },
+    {
+      "unit_kasir": "Kasir Farmasi",
+      "nama_kasir": "ruri.pola",
+      "total_nominal": "6.16680731E8",
+      "jumlah_transaksi": "2784",
+      "jumlah_pasien": "1589"
+    },
+    {
+      "unit_kasir": "Kasir Farmasi",
+      "nama_kasir": "dewi.zulaikhah",
+      "total_nominal": "6.0571692E8",
+      "jumlah_transaksi": "2382",
+      "jumlah_pasien": "1204"
+    },
+    {
+      "unit_kasir": "Kasir IGD",
+      "nama_kasir": "catur.yudha",
+      "total_nominal": "4.8563461E8",
+      "jumlah_transaksi": "1237",
+      "jumlah_pasien": "815"
+    },
+    {
+      "unit_kasir": "Kasir IGD",
+      "nama_kasir": "alfin.fitra",
+      "total_nominal": "4.78590982E8",
+      "jumlah_transaksi": "1423",
+      "jumlah_pasien": "931"
+    },
+    {
+      "unit_kasir": "Kasir IGD",
+      "nama_kasir": "mohammad.lil",
+      "total_nominal": "4.71661194E8",
+      "jumlah_transaksi": "1561",
+      "jumlah_pasien": "1024"
+    },
+    {
+      "unit_kasir": "Kasir IGD",
+      "nama_kasir": "rendy.bintang",
+      "total_nominal": "3.7746276E8",
+      "jumlah_transaksi": "1247",
+      "jumlah_pasien": "776"
+    },
+    {
+      "unit_kasir": "Kasir IPM",
+      "nama_kasir": "mochamad.ridwan",
+      "total_nominal": "1.077380494E9",
+      "jumlah_transaksi": "894",
+      "jumlah_pasien": "769"
+    },
+    {
+      "unit_kasir": "Kasir IPM",
+      "nama_kasir": "cynthia.almaratus",
+      "total_nominal": "1.067872448E9",
+      "jumlah_transaksi": "965",
+      "jumlah_pasien": "826"
+    },
+    {
+      "unit_kasir": "Kasir IPM",
+      "nama_kasir": "shommal.chalik",
+      "total_nominal": "5.78808998E8",
+      "jumlah_transaksi": "687",
+      "jumlah_pasien": "599"
+    },
+    {
+      "unit_kasir": "Kasir IRJ",
+      "nama_kasir": "dyla.layiantoro",
+      "total_nominal": "1.122803063E9",
+      "jumlah_transaksi": "5224",
+      "jumlah_pasien": "2891"
+    },
+    {
+      "unit_kasir": "Kasir IRJ",
+      "nama_kasir": "sri.wanti",
+      "total_nominal": "9.61122308E8",
+      "jumlah_transaksi": "4438",
+      "jumlah_pasien": "2695"
+    },
+    {
+      "unit_kasir": "Kasir IRJ",
+      "nama_kasir": "intan.maulida",
+      "total_nominal": "2.38083321E8",
+      "jumlah_transaksi": "1360",
+      "jumlah_pasien": "940"
+    },
+    {
+      "unit_kasir": "Kasir IRJ",
+      "nama_kasir": "rieke.savana",
+      "total_nominal": "1.70715247E8",
+      "jumlah_transaksi": "1045",
+      "jumlah_pasien": "783"
+    },
+    {
+      "unit_kasir": "Kasir IRNA",
+      "nama_kasir": "rani.ayu",
+      "total_nominal": "2.918968706E9",
+      "jumlah_transaksi": "620",
+      "jumlah_pasien": "441"
+    },
+    {
+      "unit_kasir": "Kasir IRNA",
+      "nama_kasir": "aries.rosita",
+      "total_nominal": "3.00757038E8",
+      "jumlah_transaksi": "77",
+      "jumlah_pasien": "71"
+    },
+    {
+      "unit_kasir": "Kasir MCU",
+      "nama_kasir": "dika.aprilita",
+      "total_nominal": "2.22806984E8",
+      "jumlah_transaksi": "266",
+      "jumlah_pasien": "207"
+    },
+    {
+      "unit_kasir": "Lainnya",
+      "nama_kasir": "indri.nurisa",
+      "total_nominal": "2.8851536235E10",
+      "jumlah_transaksi": "33242",
+      "jumlah_pasien": "14599"
+    },
+    {
+      "unit_kasir": "Lainnya",
+      "nama_kasir": "alfia.hanim",
+      "total_nominal": "2.59286956E8",
+      "jumlah_transaksi": "210",
+      "jumlah_pasien": "184"
+    },
+    {
+      "unit_kasir": "Lainnya",
+      "nama_kasir": "salsabila.putri",
+      "total_nominal": "2.53372228E8",
+      "jumlah_transaksi": "396",
+      "jumlah_pasien": "332"
+    },
+    {
+      "unit_kasir": "Lainnya",
+      "nama_kasir": "fithriyatul.adawiyah",
+      "total_nominal": "2.20178378E8",
+      "jumlah_transaksi": "263",
+      "jumlah_pasien": "184"
+    },
+    {
+      "unit_kasir": "Lainnya",
+      "nama_kasir": "mukholidin",
+      "total_nominal": "2867200.0",
+      "jumlah_transaksi": "1",
+      "jumlah_pasien": "1"
+    },
+    {
+      "unit_kasir": "Lainnya",
+      "nama_kasir": "widiastuti",
+      "total_nominal": "2292810.0",
+      "jumlah_transaksi": "1",
+      "jumlah_pasien": "1"
     }
   ]
 }
