@@ -3,854 +3,1198 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard Keuangan RS</title>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<title>Dashboard Monitoring Keuangan RSSG</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
-:root {
-  --sidebar-w: 220px;
-  --bg: #f0f2f5;
-  --panel: #ffffff;
-  --sidebar-bg: #0f1f35;
-  --sidebar-hover: #1a3152;
-  --sidebar-active: #1e4a7a;
-  --sidebar-accent: #3b9eff;
-  --ink: #1a2332;
-  --muted: #6b7a8d;
-  --line: #e4e8ef;
-  --blue: #1a56a0;
-  --blue-lt: #e8f0fb;
-  --green: #187a45;
-  --green-lt: #e6f4ec;
-  --amber: #b45e00;
-  --amber-lt: #fef3e2;
-  --red: #c0323c;
-  --red-lt: #fdeaeb;
-  --teal: #0e7490;
-  --teal-lt: #e0f7fa;
-  --purple: #6d28d9;
-  --purple-lt: #ede9fe;
-  --radius: 10px;
-  --shadow: 0 1px 4px rgba(0,0,0,.07);
-}
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--ink); display: flex; min-height: 100vh; }
+  :root {
+    --sidebar-w: 240px;
+    --header-h: 56px;
+    --bg: #0f1117;
+    --bg2: #1a1d27;
+    --bg3: #22263a;
+    --border: #2e3347;
+    --text: #e2e8f0;
+    --text2: #8892a4;
+    --text3: #555f72;
+    --blue: #3b82f6;
+    --blue2: #1d4ed8;
+    --green: #22c55e;
+    --red: #ef4444;
+    --amber: #f59e0b;
+    --purple: #a855f7;
+    --teal: #14b8a6;
+    --indigo: #6366f1;
+    --pink: #ec4899;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', sans-serif; font-size: 14px; overflow-x: hidden; }
 
-/* SIDEBAR */
-aside { width: var(--sidebar-w); background: var(--sidebar-bg); min-height: 100vh; position: fixed; top: 0; left: 0; display: flex; flex-direction: column; z-index: 100; }
-.sidebar-logo { padding: 18px 20px 14px; border-bottom: 1px solid rgba(255,255,255,.08); }
-.sidebar-logo .rs-name { font-size: 13px; font-weight: 700; color: #fff; }
-.sidebar-logo .rs-sub { font-size: 11px; color: rgba(255,255,255,.45); margin-top: 2px; }
-.sidebar-section { font-size: 10px; font-weight: 700; letter-spacing: .08em; color: rgba(255,255,255,.3); text-transform: uppercase; padding: 18px 20px 6px; }
-.nav-item { display: flex; align-items: center; gap: 10px; padding: 10px 20px; cursor: pointer; color: rgba(255,255,255,.65); font-size: 13px; font-weight: 500; border-left: 3px solid transparent; transition: background .15s, color .15s; user-select: none; }
-.nav-item:hover { background: var(--sidebar-hover); color: #fff; }
-.nav-item.active { background: var(--sidebar-active); color: #fff; border-left-color: var(--sidebar-accent); }
-.nav-icon { font-size: 16px; width: 20px; text-align: center; }
-.sidebar-footer { margin-top: auto; padding: 14px 20px; font-size: 11px; color: rgba(255,255,255,.3); border-top: 1px solid rgba(255,255,255,.08); }
-#last-update { display: block; margin-top: 3px; color: rgba(255,255,255,.45); font-size: 10px; }
+  /* ── SIDEBAR ── */
+  #sidebar {
+    position: fixed; top: 0; left: 0; height: 100vh; width: var(--sidebar-w);
+    background: var(--bg2); border-right: 1px solid var(--border);
+    display: flex; flex-direction: column; z-index: 100;
+    transition: transform .25s ease;
+  }
+  #sidebar.closed { transform: translateX(calc(-1 * var(--sidebar-w))); }
+  .sidebar-logo {
+    padding: 16px; border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; gap: 10px; min-height: var(--header-h);
+  }
+  .sidebar-logo .logo-icon {
+    width: 32px; height: 32px; background: var(--blue); border-radius: 8px;
+    display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0;
+  }
+  .sidebar-logo .logo-text { font-size: 13px; font-weight: 600; line-height: 1.3; }
+  .sidebar-logo .logo-sub  { font-size: 11px; color: var(--text2); }
+  .sidebar-nav { flex: 1; overflow-y: auto; padding: 12px 8px; }
+  .nav-section { font-size: 10px; font-weight: 600; color: var(--text3); letter-spacing: .08em; text-transform: uppercase; padding: 8px 8px 4px; }
+  .nav-item {
+    display: flex; align-items: center; gap: 10px; padding: 9px 10px;
+    border-radius: 8px; cursor: pointer; color: var(--text2); font-size: 13px;
+    transition: all .15s; margin-bottom: 2px;
+  }
+  .nav-item:hover { background: var(--bg3); color: var(--text); }
+  .nav-item.active { background: rgba(59,130,246,.15); color: var(--blue); }
+  .nav-item .nav-icon { font-size: 16px; width: 20px; text-align: center; flex-shrink: 0; }
+  .nav-badge {
+    margin-left: auto; background: var(--blue); color: #fff;
+    font-size: 10px; padding: 1px 6px; border-radius: 20px; font-weight: 500;
+  }
+  .sidebar-footer { padding: 12px 16px; border-top: 1px solid var(--border); font-size: 11px; color: var(--text3); }
 
-/* MAIN */
-.main-wrap { margin-left: var(--sidebar-w); flex: 1; display: flex; flex-direction: column; }
-header { background: var(--panel); border-bottom: 1px solid var(--line); height: 56px; display: flex; align-items: center; padding: 0 28px; position: sticky; top: 0; z-index: 50; gap: 12px; }
-header h1 { font-size: 16px; font-weight: 600; }
-.badge { font-size: 11px; background: var(--blue-lt); color: var(--blue); padding: 2px 8px; border-radius: 20px; font-weight: 600; }
-.content { padding: 20px 28px 36px; flex: 1; }
-.module { display: none; }
-.module.active { display: block; }
+  /* ── HEADER ── */
+  #header {
+    position: fixed; top: 0; left: var(--sidebar-w); right: 0; height: var(--header-h);
+    background: var(--bg2); border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; gap: 12px; padding: 0 20px;
+    z-index: 90; transition: left .25s ease;
+  }
+  #header.expanded { left: 0; }
+  #toggle-btn {
+    background: none; border: 1px solid var(--border); color: var(--text2);
+    width: 32px; height: 32px; border-radius: 6px; cursor: pointer; font-size: 16px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    transition: all .15s;
+  }
+  #toggle-btn:hover { background: var(--bg3); color: var(--text); }
+  .header-title { font-size: 15px; font-weight: 600; flex: 1; }
+  .header-right { display: flex; align-items: center; gap: 10px; }
+  #last-update { font-size: 11px; color: var(--text2); }
+  #refresh-btn {
+    background: var(--blue); color: #fff; border: none; padding: 6px 14px;
+    border-radius: 6px; cursor: pointer; font-size: 12px; font-weight: 500;
+    transition: background .15s;
+  }
+  #refresh-btn:hover { background: var(--blue2); }
 
-/* KPI CARDS */
-.kpi-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 16px; }
-.kpi { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; box-shadow: var(--shadow); border-top: 3px solid transparent; }
-.kpi.blue { border-top-color: var(--blue); }
-.kpi.green { border-top-color: var(--green); }
-.kpi.amber { border-top-color: var(--amber); }
-.kpi.teal { border-top-color: var(--teal); }
-.kpi.purple { border-top-color: var(--purple); }
-.kpi-label { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
-.kpi-value { font-size: 20px; font-weight: 700; margin-top: 5px; color: var(--ink); }
-.kpi-sub { font-size: 11px; color: var(--muted); margin-top: 3px; }
+  /* ── MAIN CONTENT ── */
+  #main {
+    margin-left: var(--sidebar-w); margin-top: var(--header-h);
+    padding: 20px; min-height: calc(100vh - var(--header-h));
+    transition: margin-left .25s ease;
+  }
+  #main.expanded { margin-left: 0; }
 
-/* REKAP GRID */
-.rekap-section-title { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin: 18px 0 10px; }
-.rekap-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 10px; margin-bottom: 4px; }
-.rekap-card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 13px 15px; box-shadow: var(--shadow); }
-.rekap-name { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .03em; margin-bottom: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.rekap-nominal { font-size: 17px; font-weight: 700; color: var(--blue); }
-.rekap-meta { display: flex; gap: 8px; margin-top: 5px; flex-wrap: wrap; }
-.rekap-meta span { font-size: 11px; color: var(--muted); background: var(--bg); padding: 2px 6px; border-radius: 4px; }
+  /* ── OVERLAY ── */
+  #overlay {
+    display: none; position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 80;
+  }
+  #overlay.show { display: block; }
 
-/* FILTER */
-.filter-bar { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; margin: 16px 0; box-shadow: var(--shadow); }
-.filter-title { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 10px; }
-.filter-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 8px; align-items: end; }
-.fg label { display: block; font-size: 11px; font-weight: 600; color: var(--muted); margin-bottom: 3px; text-transform: uppercase; letter-spacing: .04em; }
-.fg input, .fg select { width: 100%; padding: 7px 9px; border: 1px solid var(--line); border-radius: 6px; font-size: 13px; color: var(--ink); background: var(--bg); outline: none; }
-.fg input:focus, .fg select:focus { border-color: var(--sidebar-accent); background: #fff; }
-.filter-actions { display: flex; gap: 8px; align-items: flex-end; }
-.btn { padding: 7px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; border: none; transition: background .15s; }
-.btn-primary { background: var(--blue); color: #fff; }
-.btn-primary:hover { background: #154a85; }
-.btn-ghost { background: var(--bg); color: var(--muted); border: 1px solid var(--line); }
-.btn-ghost:hover { background: var(--line); }
-.btn-export { background: var(--green-lt); color: var(--green); border: 1px solid #b7dfc5; font-size: 12px; padding: 5px 12px; }
-.btn-export:hover { background: #d0eeda; }
-.btn-export-xl { background: #e8f5e0; color: #2d6a1f; border: 1px solid #b5d9a0; font-size: 12px; padding: 5px 12px; }
-.btn-export-xl:hover { background: #d5edcc; }
+  /* ── PAGE ── */
+  .page { display: none; }
+  .page.active { display: block; }
+  .page-title { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+  .page-sub { font-size: 13px; color: var(--text2); margin-bottom: 20px; }
 
-/* PANEL */
-.panel { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; margin-bottom: 16px; box-shadow: var(--shadow); }
-.panel-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px; }
-.panel-title { font-size: 14px; font-weight: 600; }
-.panel-meta { font-size: 12px; color: var(--muted); }
-.panel-actions { display: flex; align-items: center; gap: 8px; }
-.chart-box { position: relative; height: 280px; }
-.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px; }
+  /* ── FILTER BAR ── */
+  .filter-bar {
+    display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-end;
+    background: var(--bg2); border: 1px solid var(--border); border-radius: 10px;
+    padding: 14px 16px; margin-bottom: 20px;
+  }
+  .filter-group label { font-size: 11px; color: var(--text2); display: block; margin-bottom: 4px; }
+  .filter-group select,
+  .filter-group input {
+    background: var(--bg3); border: 1px solid var(--border); color: var(--text);
+    padding: 6px 10px; border-radius: 6px; font-size: 13px; min-width: 140px;
+  }
+  .filter-group select:focus, .filter-group input:focus { outline: none; border-color: var(--blue); }
+  .btn-apply {
+    background: var(--blue); color: #fff; border: none; padding: 7px 18px;
+    border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 500;
+    transition: background .15s;
+  }
+  .btn-apply:hover { background: var(--blue2); }
+  .btn-reset {
+    background: var(--bg3); color: var(--text2); border: 1px solid var(--border);
+    padding: 7px 14px; border-radius: 6px; cursor: pointer; font-size: 13px;
+    transition: all .15s;
+  }
+  .btn-reset:hover { color: var(--text); }
 
-/* TABLE */
-.table-wrap { overflow-x: auto; }
-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 700px; }
-th, td { padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; }
-th { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; background: var(--bg); }
-tr:hover td { background: #f8fafc; }
-td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
-.tag { display: inline-block; padding: 2px 8px; border-radius: 20px; font-size: 11px; font-weight: 600; }
-.tag-blue { background: var(--blue-lt); color: var(--blue); }
-.tag-green { background: var(--green-lt); color: var(--green); }
-.tag-amber { background: var(--amber-lt); color: var(--amber); }
-.tag-red { background: var(--red-lt); color: var(--red); }
-.tag-teal { background: var(--teal-lt); color: var(--teal); }
-.tag-purple { background: var(--purple-lt); color: var(--purple); }
-.table-note { font-size: 11px; color: var(--muted); padding: 6px 0 4px; }
-.empty { padding: 32px; text-align: center; color: var(--muted); font-size: 13px; }
+  /* ── KPI CARDS ── */
+  .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-bottom: 20px; }
+  .kpi-card {
+    background: var(--bg2); border: 1px solid var(--border); border-radius: 10px;
+    padding: 16px; position: relative; overflow: hidden;
+  }
+  .kpi-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: var(--accent, var(--blue));
+  }
+  .kpi-label { font-size: 11px; color: var(--text2); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 6px; }
+  .kpi-value { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+  .kpi-sub { font-size: 11px; color: var(--text2); }
+  .kpi-icon { position: absolute; top: 14px; right: 14px; font-size: 22px; opacity: .2; }
 
-/* LOADING */
-#loading { position: fixed; inset: 0; background: rgba(255,255,255,.92); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; z-index: 999; }
-.spinner { width: 36px; height: 36px; border: 3px solid var(--line); border-top-color: var(--blue); border-radius: 50%; animation: spin .7s linear infinite; }
-@keyframes spin { to { transform: rotate(360deg); } }
-.error-msg { background: var(--red-lt); color: var(--red); border: 1px solid #f5c2c5; border-radius: var(--radius); padding: 12px 16px; font-size: 13px; margin-bottom: 16px; display: none; }
+  /* ── CHART GRID ── */
+  .chart-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 14px; margin-bottom: 20px; }
+  .chart-card {
+    background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 16px;
+  }
+  .chart-card.full { grid-column: 1 / -1; }
+  .chart-title { font-size: 13px; font-weight: 600; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  .chart-title span { color: var(--text2); font-weight: 400; font-size: 12px; }
+  .chart-wrap { position: relative; }
 
-@media (max-width: 900px) {
-  .two-col { grid-template-columns: 1fr; }
-  .filter-row { grid-template-columns: 1fr 1fr; }
-}
+  /* ── TABLE ── */
+  .table-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 20px; }
+  .table-header { padding: 14px 16px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+  .table-header h3 { font-size: 13px; font-weight: 600; }
+  .table-count { font-size: 11px; color: var(--text2); }
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; }
+  th { padding: 10px 12px; text-align: left; font-size: 11px; font-weight: 600; color: var(--text2); text-transform: uppercase; letter-spacing: .04em; border-bottom: 1px solid var(--border); white-space: nowrap; background: var(--bg3); }
+  td { padding: 9px 12px; font-size: 12px; border-bottom: 1px solid rgba(46,51,71,.5); white-space: nowrap; }
+  tr:hover td { background: rgba(255,255,255,.02); }
+  tr:last-child td { border-bottom: none; }
+  .badge {
+    display: inline-block; padding: 2px 8px; border-radius: 20px; font-size: 11px; font-weight: 500;
+  }
+  .badge-green  { background: rgba(34,197,94,.15);  color: #22c55e; }
+  .badge-blue   { background: rgba(59,130,246,.15); color: #3b82f6; }
+  .badge-red    { background: rgba(239,68,68,.15);  color: #ef4444; }
+  .badge-amber  { background: rgba(245,158,11,.15); color: #f59e0b; }
+  .badge-purple { background: rgba(168,85,247,.15); color: #a855f7; }
+  .badge-teal   { background: rgba(20,184,166,.15); color: #14b8a6; }
+  .badge-gray   { background: rgba(136,146,164,.15);color: #8892a4; }
+  .num { text-align: right; font-variant-numeric: tabular-nums; }
+
+  /* ── UNIT KASIR GRID ── */
+  .unit-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin-bottom: 20px; }
+  .unit-card {
+    background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 16px;
+    cursor: pointer; transition: border-color .15s;
+  }
+  .unit-card:hover, .unit-card.selected { border-color: var(--blue); }
+  .unit-card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+  .unit-name { font-size: 14px; font-weight: 600; }
+  .unit-stats { display: flex; gap: 16px; }
+  .unit-stat label { font-size: 10px; color: var(--text2); display: block; margin-bottom: 2px; }
+  .unit-stat .val { font-size: 15px; font-weight: 600; }
+
+  /* ── REKONSILIASI ── */
+  .rekon-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 20px; }
+  .rekon-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+  .rekon-title { font-size: 12px; color: var(--text2); margin-bottom: 8px; }
+  .rekon-val { font-size: 24px; font-weight: 700; }
+  .rekon-selisih {
+    background: var(--bg2); border: 1px solid var(--border); border-radius: 10px;
+    padding: 16px; margin-bottom: 20px; display: flex; align-items: center; gap: 16px;
+  }
+  .selisih-label { font-size: 13px; color: var(--text2); }
+  .selisih-val { font-size: 28px; font-weight: 700; margin-left: auto; }
+  .selisih-ok { color: var(--green); }
+  .selisih-warn { color: var(--amber); }
+  .selisih-err { color: var(--red); }
+
+  /* ── LOADING ── */
+  #loading {
+    position: fixed; inset: 0; background: var(--bg); z-index: 999;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px;
+  }
+  .spinner {
+    width: 40px; height: 40px; border: 3px solid var(--border);
+    border-top-color: var(--blue); border-radius: 50%; animation: spin .8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  #loading p { color: var(--text2); font-size: 13px; }
+  #loading.hidden { display: none; }
+
+  /* ── EMPTY ── */
+  .empty { text-align: center; padding: 40px; color: var(--text2); font-size: 13px; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    #sidebar { transform: translateX(calc(-1 * var(--sidebar-w))); }
+    #sidebar.open { transform: translateX(0); }
+    #header { left: 0 !important; }
+    #main { margin-left: 0 !important; }
+    .rekon-grid { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
 
+<!-- LOADING -->
 <div id="loading">
   <div class="spinner"></div>
-  <div style="font-size:14px;color:var(--muted)">Memuat data dari BigQuery...</div>
+  <p>Memuat data dashboard...</p>
 </div>
 
-<aside>
+<!-- OVERLAY (mobile) -->
+<div id="overlay" onclick="closeSidebar()"></div>
+
+<!-- SIDEBAR -->
+<nav id="sidebar">
   <div class="sidebar-logo">
-    <div class="rs-name">Dashboard Keuangan</div>
-    <div class="rs-sub">Rumah Sakit</div>
+    <div class="logo-icon">🏥</div>
+    <div>
+      <div class="logo-text">RSSG Monitoring</div>
+      <div class="logo-sub">Keuangan & Akuntansi</div>
+    </div>
   </div>
-  <div class="sidebar-section">Menu</div>
-  <div class="nav-item active" data-mod="kasir"><span class="nav-icon">🏦</span> Kasir</div>
-  <div class="nav-item" data-mod="pelayanan"><span class="nav-icon">🏥</span> Pelayanan Medis</div>
-  <div class="nav-item" data-mod="pendapatan"><span class="nav-icon">📊</span> Pendapatan Unit</div>
-  <div class="nav-item" data-mod="kredit"><span class="nav-icon">💳</span> Penjualan Kredit</div>
-  <div class="sidebar-footer">
-    Sumber: BigQuery
+  <div class="sidebar-nav">
+    <div class="nav-section">Utama</div>
+    <div class="nav-item active" onclick="showPage('dashboard')">
+      <span class="nav-icon">📊</span> Dashboard
+    </div>
+
+    <div class="nav-section">Kasir</div>
+    <div class="nav-item" onclick="showPage('kasir-unit')">
+      <span class="nav-icon">🏧</span> Rekap Per Unit Kasir
+    </div>
+    <div class="nav-item" onclick="showPage('kasir-detail')">
+      <span class="nav-icon">📋</span> Detail Transaksi Kasir
+    </div>
+    <div class="nav-item" onclick="showPage('rekonsiliasi')">
+      <span class="nav-icon">⚖️</span> Rekonsiliasi Kasir
+    </div>
+
+    <div class="nav-section">Pendapatan</div>
+    <div class="nav-item" onclick="showPage('pendapatan-unit')">
+      <span class="nav-icon">🏢</span> Pendapatan Sub Unit
+    </div>
+    <div class="nav-item" onclick="showPage('pendapatan-segment')">
+      <span class="nav-icon">📈</span> Pendapatan Segmen
+    </div>
+    <div class="nav-item" onclick="showPage('volume')">
+      <span class="nav-icon">📦</span> Laporan Volume
+    </div>
+
+    <div class="nav-section">Lainnya</div>
+    <div class="nav-item" onclick="showPage('pelayanan')">
+      <span class="nav-icon">🩺</span> Pelayanan Medis
+    </div>
+    <div class="nav-item" onclick="showPage('kredit')">
+      <span class="nav-icon">💳</span> Penjualan Kredit
+    </div>
+  </div>
+  <div class="sidebar-footer" id="sidebar-update">—</div>
+</nav>
+
+<!-- HEADER -->
+<header id="header">
+  <button id="toggle-btn" onclick="toggleSidebar()">☰</button>
+  <div class="header-title" id="header-title">Dashboard Monitoring Keuangan</div>
+  <div class="header-right">
     <span id="last-update">—</span>
+    <button id="refresh-btn" onclick="loadData()">↻ Refresh</button>
   </div>
-</aside>
+</header>
 
-<div class="main-wrap">
-  <header>
-    <h1 id="page-title">Kasir</h1>
-    <span class="badge" id="page-badge">Laporan Kasir</span>
-  </header>
-  <div class="content">
-    <div id="error-msg" class="error-msg"></div>
+<!-- MAIN CONTENT -->
+<main id="main">
 
-    <!-- ══ KASIR ══ -->
-    <div class="module active" id="mod-kasir">
-      <div class="filter-bar">
-        <div class="filter-title">🔍 Filter Data</div>
-        <div class="filter-row">
-          <div class="fg">
-            <label>Nama Kas</label>
-            <select id="f-kas"><option value="">— Semua —</option></select>
-          </div>
-          <div class="fg">
-            <label>Nama Kasir</label>
-            <select id="f-kasir"><option value="">— Semua —</option></select>
-          </div>
-          <div class="fg">
-            <label>Jaminan</label>
-            <select id="f-jaminan"><option value="">— Semua —</option></select>
-          </div>
-          <div class="fg">
-            <label>Keterangan</label>
-            <select id="f-keterangan"><option value="">— Semua —</option></select>
-          </div>
-          <div class="fg">
-            <label>Nama Pasien</label>
-            <input type="text" id="f-pasien" placeholder="Cari nama pasien...">
-          </div>
-          <div class="fg">
-            <label>Dari Tanggal</label>
-            <input type="date" id="f-dari">
-          </div>
-          <div class="fg">
-            <label>Sampai Tanggal</label>
-            <input type="date" id="f-sampai">
-          </div>
-          <div class="fg filter-actions">
-            <button class="btn btn-primary" onclick="applyFilter()">Terapkan</button>
-            <button class="btn btn-ghost" onclick="resetFilter()">Reset</button>
-          </div>
-        </div>
+  <!-- ════════════════════════════════
+       PAGE: DASHBOARD
+  ════════════════════════════════ -->
+  <div class="page active" id="page-dashboard">
+    <div class="page-title">Dashboard</div>
+    <div class="page-sub">Ringkasan keuangan keseluruhan</div>
+
+    <div class="filter-bar">
+      <div class="filter-group">
+        <label>Dari Tanggal</label>
+        <input type="date" id="db-dari">
       </div>
-
-      <div class="kpi-row" id="kpi-kasir"></div>
-
-      <div class="rekap-section-title">Overview per Kas</div>
-      <div class="rekap-grid" id="rekap-kas"></div>
-
-      <div class="rekap-section-title">Rekap per Jaminan</div>
-      <div class="rekap-grid" id="rekap-jaminan"></div>
-
-      <div class="rekap-section-title">Rekap per Kasir</div>
-      <div class="rekap-grid" id="rekap-kasir-list"></div>
-
-      <div class="panel" style="margin-top:16px;">
-        <div class="panel-head">
-          <span class="panel-title">Detail Transaksi</span>
-          <div class="panel-actions">
-            <span class="panel-meta" id="detail-count">—</span>
-            <button class="btn btn-export" onclick="exportCSV('kasir')">⬇️ Export CSV</button>
-            <button class="btn btn-export-xl" onclick="exportExcel('kasir')">📊 Export Excel</button>
-          </div>
-        </div>
-        <div class="table-note">Data 30 hari terakhir · maks. 2.000 baris</div>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Tanggal</th>
-                <th>No. RM</th>
-                <th>Nama Pasien</th>
-                <th>Kasir</th>
-                <th>Kas</th>
-                <th>Jaminan</th>
-                <th>Tipe Bayar</th>
-                <th class="num">Nominal</th>
-                <th>Keterangan</th>
-              </tr>
-            </thead>
-            <tbody id="tbody-detail"></tbody>
-          </table>
-        </div>
+      <div class="filter-group">
+        <label>Sampai Tanggal</label>
+        <input type="date" id="db-sampai">
       </div>
-
-      <div class="two-col">
-        <div class="panel">
-          <div class="panel-head"><span class="panel-title">Per Jaminan (90 hari)</span></div>
-          <div class="chart-box"><canvas id="chart-kasir-jaminan"></canvas></div>
-        </div>
-        <div class="panel">
-          <div class="panel-head"><span class="panel-title">Per Tipe Pembayaran (90 hari)</span></div>
-          <div class="chart-box"><canvas id="chart-kasir-tipe"></canvas></div>
-        </div>
-      </div>
-      <div class="panel">
-        <div class="panel-head"><span class="panel-title">Tren Penerimaan Harian (90 hari)</span></div>
-        <div class="chart-box"><canvas id="chart-kasir-harian"></canvas></div>
-      </div>
+      <button class="btn-apply" onclick="renderDashboard()">Tampilkan</button>
+      <button class="btn-reset" onclick="resetFilterDashboard()">Reset</button>
     </div>
 
-    <!-- ══ PELAYANAN ══ -->
-    <div class="module" id="mod-pelayanan">
-      <div class="kpi-row" id="kpi-pelayanan"></div>
-      <div class="panel">
-        <div class="panel-head"><span class="panel-title">Total Tagihan per Unit</span></div>
-        <div class="chart-box"><canvas id="chart-pelayanan-unit"></canvas></div>
+    <div class="kpi-grid" id="db-kpi"></div>
+    <div class="chart-grid">
+      <div class="chart-card full">
+        <div class="chart-title">Tren Penerimaan Harian <span id="db-chart-period"></span></div>
+        <div class="chart-wrap"><canvas id="chart-tren" height="80"></canvas></div>
       </div>
-      <div class="panel">
-        <div class="panel-head"><span class="panel-title">Status Tagihan</span></div>
-        <div class="table-wrap">
-          <table id="table-pelayanan-status">
-            <thead><tr><th>Status</th><th class="num">Jumlah Tagihan</th><th class="num">Total Tagihan</th></tr></thead>
-            <tbody></tbody>
-          </table>
-        </div>
+      <div class="chart-card">
+        <div class="chart-title">Per Tipe Pembayaran</div>
+        <div class="chart-wrap"><canvas id="chart-tipe" height="160"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Per Jaminan (Top 8)</div>
+        <div class="chart-wrap"><canvas id="chart-jaminan" height="160"></canvas></div>
       </div>
     </div>
-
-    <!-- ══ PENDAPATAN ══ -->
-    <div class="module" id="mod-pendapatan">
-      <div class="kpi-row" id="kpi-pendapatan"></div>
-      <div class="panel">
-        <div class="panel-head"><span class="panel-title">Tren Pendapatan Harian (Kredit vs Debet)</span></div>
-        <div class="chart-box"><canvas id="chart-pendapatan-harian"></canvas></div>
-      </div>
-      <div class="panel">
-        <div class="panel-head"><span class="panel-title">Net Pendapatan per Unit</span></div>
-        <div class="chart-box"><canvas id="chart-pendapatan-unit"></canvas></div>
-      </div>
-      <div class="panel">
-        <div class="panel-head"><span class="panel-title">Detail per Unit</span></div>
-        <div class="table-wrap">
-          <table id="table-pendapatan-unit">
-            <thead><tr><th>Unit</th><th class="num">Kredit</th><th class="num">Debet</th><th class="num">Net</th></tr></thead>
-            <tbody></tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-
-    <!-- ══ PENJUALAN KREDIT ══ -->
-    <div class="module" id="mod-kredit">
-      <div class="filter-bar">
-        <div class="filter-title">🔍 Filter Data</div>
-        <div class="filter-row">
-          <div class="fg">
-            <label>Nama Penanggung</label>
-            <select id="k-penanggung"><option value="">— Semua —</option></select>
-          </div>
-          <div class="fg">
-            <label>Sub Unit</label>
-            <select id="k-subunit"><option value="">— Semua —</option></select>
-          </div>
-          <div class="fg">
-            <label>Dari Tanggal</label>
-            <input type="date" id="k-dari">
-          </div>
-          <div class="fg">
-            <label>Sampai Tanggal</label>
-            <input type="date" id="k-sampai">
-          </div>
-          <div class="fg filter-actions">
-            <button class="btn btn-primary" onclick="applyFilterKredit()">Terapkan</button>
-            <button class="btn btn-ghost" onclick="resetFilterKredit()">Reset</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="kpi-row" id="kpi-kredit"></div>
-
-      <div class="rekap-section-title">Rekap per Penanggung</div>
-      <div class="rekap-grid" id="rekap-penanggung"></div>
-
-      <div class="two-col">
-        <div class="panel">
-          <div class="panel-head"><span class="panel-title">Distribusi per Segment (90 hari)</span></div>
-          <div class="chart-box"><canvas id="chart-kredit-segment"></canvas></div>
-        </div>
-        <div class="panel">
-          <div class="panel-head"><span class="panel-title">Top Penanggung (90 hari)</span></div>
-          <div class="chart-box"><canvas id="chart-kredit-penanggung"></canvas></div>
-        </div>
-      </div>
-
-      <div class="panel">
-        <div class="panel-head">
-          <span class="panel-title">Detail Transaksi</span>
-          <div class="panel-actions">
-            <span class="panel-meta" id="kredit-detail-count">—</span>
-            <button class="btn btn-export" onclick="exportCSV('kredit')">⬇️ Export CSV</button>
-            <button class="btn btn-export-xl" onclick="exportExcel('kredit')">📊 Export Excel</button>
-          </div>
-        </div>
-        <div class="table-note">Data 90 hari terakhir · maks. 5.000 baris</div>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Tanggal</th>
-                <th>Nama Sub Penerima</th>
-                <th>Penanggung</th>
-                <th>Segment</th>
-                <th>Sub Unit</th>
-                <th>COA</th>
-                <th class="num">Kredit</th>
-                <th class="num">Debet</th>
-                <th class="num">Total</th>
-              </tr>
-            </thead>
-            <tbody id="tbody-kredit-detail"></tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-
   </div>
-</div>
+
+  <!-- ════════════════════════════════
+       PAGE: REKAP PER UNIT KASIR
+  ════════════════════════════════ -->
+  <div class="page" id="page-kasir-unit">
+    <div class="page-title">Rekap Per Unit Kasir</div>
+    <div class="page-sub">Total nominal dan jumlah transaksi per unit</div>
+
+    <div class="filter-bar">
+      <div class="filter-group">
+        <label>Dari Tanggal</label>
+        <input type="date" id="ku-dari">
+      </div>
+      <div class="filter-group">
+        <label>Sampai Tanggal</label>
+        <input type="date" id="ku-sampai">
+      </div>
+      <div class="filter-group">
+        <label>Unit Kasir</label>
+        <select id="ku-unit">
+          <option value="">Semua Unit</option>
+          <option>Kasir IRJ</option>
+          <option>Kasir IGD</option>
+          <option>Kasir Farmasi</option>
+          <option>Kasir IRNA</option>
+          <option>Kasir IPM</option>
+          <option>Kasir MCU</option>
+          <option>Kasir Belakang</option>
+          <option>Lainnya</option>
+        </select>
+      </div>
+      <button class="btn-apply" onclick="renderKasirUnit()">Tampilkan</button>
+      <button class="btn-reset" onclick="resetFilterKasirUnit()">Reset</button>
+    </div>
+
+    <div class="unit-grid" id="ku-cards"></div>
+
+    <div class="chart-grid">
+      <div class="chart-card">
+        <div class="chart-title">Nominal Per Unit</div>
+        <div class="chart-wrap"><canvas id="chart-ku-nominal" height="180"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Transaksi Per Unit</div>
+        <div class="chart-wrap"><canvas id="chart-ku-trx" height="180"></canvas></div>
+      </div>
+    </div>
+
+    <div class="table-card">
+      <div class="table-header">
+        <h3>Detail Per Kasir dalam Unit</h3>
+        <span class="table-count" id="ku-count">—</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Unit</th>
+              <th>Nama Kasir</th>
+              <th class="num">Total Nominal</th>
+              <th class="num">Jml Transaksi</th>
+              <th class="num">Jml Pasien</th>
+            </tr>
+          </thead>
+          <tbody id="ku-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════
+       PAGE: DETAIL TRANSAKSI KASIR
+  ════════════════════════════════ -->
+  <div class="page" id="page-kasir-detail">
+    <div class="page-title">Detail Transaksi Kasir</div>
+    <div class="page-sub">Data transaksi 30 hari terakhir (maks 2000 baris)</div>
+
+    <div class="filter-bar">
+      <div class="filter-group">
+        <label>Unit Kasir</label>
+        <select id="kd-unit">
+          <option value="">Semua Unit</option>
+          <option>Kasir IRJ</option>
+          <option>Kasir IGD</option>
+          <option>Kasir Farmasi</option>
+          <option>Kasir IRNA</option>
+          <option>Kasir IPM</option>
+          <option>Kasir MCU</option>
+          <option>Kasir Belakang</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Keterangan</label>
+        <select id="kd-ket">
+          <option value="">Semua</option>
+          <option>SALDO</option>
+          <option>RETUR</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Cari Pasien</label>
+        <input type="text" id="kd-search" placeholder="Nama pasien...">
+      </div>
+      <button class="btn-apply" onclick="renderKasirDetail()">Filter</button>
+      <button class="btn-reset" onclick="resetFilterKasirDetail()">Reset</button>
+    </div>
+
+    <div class="table-card">
+      <div class="table-header">
+        <h3>Transaksi Kasir</h3>
+        <span class="table-count" id="kd-count">—</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Tanggal</th>
+              <th>Unit</th>
+              <th>Kasir</th>
+              <th>Pasien</th>
+              <th>Jaminan</th>
+              <th>Kas</th>
+              <th>Tipe</th>
+              <th class="num">Nominal</th>
+              <th>Ket</th>
+            </tr>
+          </thead>
+          <tbody id="kd-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════
+       PAGE: REKONSILIASI
+  ════════════════════════════════ -->
+  <div class="page" id="page-rekonsiliasi">
+    <div class="page-title">Rekonsiliasi Kasir</div>
+    <div class="page-sub">Perbandingan penerimaan kasir vs total tagihan pelayanan</div>
+
+    <div class="filter-bar">
+      <div class="filter-group">
+        <label>Dari Tanggal</label>
+        <input type="date" id="rk-dari">
+      </div>
+      <div class="filter-group">
+        <label>Sampai Tanggal</label>
+        <input type="date" id="rk-sampai">
+      </div>
+      <div class="filter-group">
+        <label>Unit Kasir</label>
+        <select id="rk-unit">
+          <option value="">Semua Unit</option>
+          <option>Kasir IRJ</option>
+          <option>Kasir IGD</option>
+          <option>Kasir Farmasi</option>
+          <option>Kasir IRNA</option>
+          <option>Kasir IPM</option>
+          <option>Kasir MCU</option>
+          <option>Kasir Belakang</option>
+        </select>
+      </div>
+      <button class="btn-apply" onclick="renderRekonsiliasi()">Tampilkan</button>
+      <button class="btn-reset" onclick="resetFilterRekonsiliasi()">Reset</button>
+    </div>
+
+    <div class="rekon-grid">
+      <div class="rekon-card">
+        <div class="rekon-title">💰 Total Penerimaan Kasir</div>
+        <div class="rekon-val" id="rk-kasir">—</div>
+        <div style="font-size:11px;color:var(--text2);margin-top:6px" id="rk-kasir-trx">—</div>
+      </div>
+      <div class="rekon-card">
+        <div class="rekon-title">🩺 Total Tagihan Pelayanan</div>
+        <div class="rekon-val" id="rk-pelayanan">—</div>
+        <div style="font-size:11px;color:var(--text2);margin-top:6px" id="rk-pelayanan-trx">—</div>
+      </div>
+    </div>
+    <div class="rekon-selisih">
+      <div>
+        <div class="selisih-label">Selisih (Kasir − Pelayanan)</div>
+        <div style="font-size:11px;color:var(--text2);margin-top:2px">Nilai negatif = kasir lebih kecil dari tagihan</div>
+      </div>
+      <div class="selisih-val" id="rk-selisih">—</div>
+    </div>
+
+    <div class="table-card">
+      <div class="table-header">
+        <h3>Detail Per Unit — Kasir vs Pelayanan</h3>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Unit Kasir</th>
+              <th class="num">Penerimaan Kasir</th>
+              <th class="num">Tagihan Pelayanan</th>
+              <th class="num">Selisih</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="rk-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════
+       PAGE: PENDAPATAN SUB UNIT
+  ════════════════════════════════ -->
+  <div class="page" id="page-pendapatan-unit">
+    <div class="page-title">Pendapatan Sub Unit</div>
+    <div class="page-sub">COA 3.1.* — Pendapatan Usaha per unit layanan</div>
+    <div class="chart-grid">
+      <div class="chart-card full">
+        <div class="chart-title">Pendapatan Per Sub Unit (Top 15)</div>
+        <div class="chart-wrap"><canvas id="chart-pend-unit" height="120"></canvas></div>
+      </div>
+    </div>
+    <div class="table-card">
+      <div class="table-header"><h3>Rincian Pendapatan Per Sub Unit</h3></div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Sub Unit</th><th class="num">Total Kredit</th><th class="num">Total Debet</th><th class="num">Net</th></tr>
+          </thead>
+          <tbody id="pu-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════
+       PAGE: PENDAPATAN SEGMEN
+  ════════════════════════════════ -->
+  <div class="page" id="page-pendapatan-segment">
+    <div class="page-title">Pendapatan Segmen</div>
+    <div class="page-sub">Breakdown pendapatan berdasarkan segmen COA</div>
+    <div class="chart-grid">
+      <div class="chart-card">
+        <div class="chart-title">Distribusi Per Segmen</div>
+        <div class="chart-wrap"><canvas id="chart-seg-pie" height="200"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Kredit vs Debet Per Segmen</div>
+        <div class="chart-wrap"><canvas id="chart-seg-bar" height="200"></canvas></div>
+      </div>
+    </div>
+    <div class="table-card">
+      <div class="table-header"><h3>Rincian Per Segmen</h3></div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Segmen</th><th class="num">Total Kredit</th><th class="num">Total Debet</th><th class="num">Net</th></tr>
+          </thead>
+          <tbody id="seg-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════
+       PAGE: LAPORAN VOLUME
+  ════════════════════════════════ -->
+  <div class="page" id="page-volume">
+    <div class="page-title">Laporan Volume</div>
+    <div class="page-sub">Tren pendapatan harian dari BigQuery</div>
+    <div class="chart-grid">
+      <div class="chart-card full">
+        <div class="chart-title">Tren Kredit Harian</div>
+        <div class="chart-wrap"><canvas id="chart-vol-tren" height="80"></canvas></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════
+       PAGE: PELAYANAN MEDIS
+  ════════════════════════════════ -->
+  <div class="page" id="page-pelayanan">
+    <div class="page-title">Pelayanan Medis</div>
+    <div class="page-sub">Tagihan pelayanan per unit dan status</div>
+    <div class="chart-grid">
+      <div class="chart-card">
+        <div class="chart-title">Tagihan Per Unit</div>
+        <div class="chart-wrap"><canvas id="chart-pel-unit" height="200"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Status Tagihan</div>
+        <div class="chart-wrap"><canvas id="chart-pel-status" height="200"></canvas></div>
+      </div>
+    </div>
+    <div class="table-card">
+      <div class="table-header"><h3>Tagihan Per Unit</h3></div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Unit</th><th class="num">Total Tagihan</th><th class="num">Jml Tagihan</th></tr>
+          </thead>
+          <tbody id="pel-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════
+       PAGE: PENJUALAN KREDIT
+  ════════════════════════════════ -->
+  <div class="page" id="page-kredit">
+    <div class="page-title">Penjualan Kredit</div>
+    <div class="page-sub">Breakdown per penanggung dan segmen</div>
+    <div class="chart-grid">
+      <div class="chart-card">
+        <div class="chart-title">Per Penanggung (Top 10)</div>
+        <div class="chart-wrap"><canvas id="chart-kr-penanggung" height="200"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Per Segmen</div>
+        <div class="chart-wrap"><canvas id="chart-kr-segment" height="200"></canvas></div>
+      </div>
+    </div>
+    <div class="table-card">
+      <div class="table-header"><h3>Detail Penjualan Kredit</h3><span class="table-count" id="kr-count">—</span></div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Tanggal</th><th>Sub Penerima</th><th>Penanggung</th><th>Segmen</th><th>Sub Unit</th><th class="num">Kredit</th><th class="num">Total</th></tr>
+          </thead>
+          <tbody id="kr-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</main>
 
 <script>
-const DATA_URL = 'data.json';
-const charts   = {};
-let rawDetail  = [];
-let rawKredit  = [];
-let filteredKasirRows  = [];
-let filteredKreditRows = [];
+// ════════════════════════════════
+// DATA & KONSTANTA
+// ════════════════════════════════
+const DATA_URL = 'https://muhamadfatich620-lab.github.io/monitoring_keuangan/data.json';
 
-const MOD_META = {
-  kasir     : { title: 'Kasir',               badge: 'Laporan Kasir' },
-  pelayanan : { title: 'Pelayanan Medis',      badge: 'Tagihan & Layanan' },
-  pendapatan: { title: 'Pendapatan Unit',       badge: 'Akuntansi & COA' },
-  kredit    : { title: 'Penjualan Kredit Harian', badge: 'Piutang & Penanggung' }
+const KASIR_UNIT_MAP = {
+  'dyla.layiantoro'  :'Kasir IRJ','catur.yudha':'Kasir IGD','ruri.pola':'Kasir Farmasi',
+  'alfin.fitra'      :'Kasir IGD','aries.rosita':'Kasir IRNA','rendy.bintang':'Kasir IGD',
+  'rani.ayu'         :'Kasir IRNA','dika.aprilita':'Kasir MCU','intan.maulida':'Kasir IRJ',
+  'dewi.zulaikhah'   :'Kasir Farmasi','sri.wanti':'Kasir IRJ','shabrina.amelia':'Kasir Belakang',
+  'cynthia.almaratus':'Kasir IPM','mohammad.lil':'Kasir IGD','mochamad.ridwan':'Kasir IPM',
+  'shommal.chalik'   :'Kasir IPM','rieke.savana':'Kasir IRJ','putri.nur':'Kasir Belakang',
+  'muhammad.khusni'  :'Kasir IPM',
 };
+const UNIT_COLORS = {
+  'Kasir IRJ':'#3b82f6','Kasir IGD':'#22c55e','Kasir Farmasi':'#f59e0b',
+  'Kasir IRNA':'#a855f7','Kasir IPM':'#14b8a6','Kasir MCU':'#ec4899',
+  'Kasir Belakang':'#6366f1','Lainnya':'#8892a4',
+};
+const COLORS = ['#3b82f6','#22c55e','#f59e0b','#a855f7','#14b8a6','#ec4899','#6366f1','#ef4444','#f97316','#06b6d4'];
 
-// ── NAV ──
-document.querySelectorAll('.nav-item').forEach(el => {
-  el.addEventListener('click', () => {
-    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-    document.querySelectorAll('.module').forEach(m => m.classList.remove('active'));
-    el.classList.add('active');
-    const mod = el.dataset.mod;
-    document.getElementById('mod-' + mod).classList.add('active');
-    document.getElementById('page-title').textContent = MOD_META[mod].title;
-    document.getElementById('page-badge').textContent = MOD_META[mod].badge;
-  });
-});
+let RAW = null;
+let charts = {};
 
-// ── LOAD ──
-fetch(DATA_URL)
-  .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-  .then(data => {
-    document.getElementById('loading').style.display = 'none';
-    const dt = new Date(data.generated_at);
-    document.getElementById('last-update').textContent =
-      dt.toLocaleDateString('id-ID') + ' ' + dt.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+// ════════════════════════════════
+// SIDEBAR TOGGLE
+// ════════════════════════════════
+function toggleSidebar() {
+  const sb = document.getElementById('sidebar');
+  const hd = document.getElementById('header');
+  const mn = document.getElementById('main');
+  const ov = document.getElementById('overlay');
+  const isMobile = window.innerWidth <= 768;
 
-    rawDetail = data.kasir_detail || [];
-    initKasirFilters(rawDetail);
-    filteredKasirRows = rawDetail;
-    renderAllKasir(rawDetail);
-    renderKasirCharts(data);
-    renderPelayanan(data);
-    renderPendapatan(data);
-
-    rawKredit = data.penjualan_kredit_detail || [];
-    initKreditFilters(rawKredit);
-    filteredKreditRows = rawKredit;
-    renderAllKredit(rawKredit);
-    renderKreditCharts(data);
-  })
-  .catch(err => {
-    document.getElementById('loading').style.display = 'none';
-    const el = document.getElementById('error-msg');
-    el.style.display = 'block';
-    el.textContent = 'Gagal memuat data.json: ' + err.message;
-  });
-
-// ════════════ KASIR ════════════
-
-function initKasirFilters(rows) {
-  fillSelect('f-kas',        [...new Set(rows.map(r => r.kas).filter(Boolean))].sort());
-  fillSelect('f-kasir',      [...new Set(rows.map(r => r.nama_kasir).filter(Boolean))].sort());
-  fillSelect('f-jaminan',    [...new Set(rows.map(r => r.jaminan).filter(Boolean))].sort());
-  fillSelect('f-keterangan', [...new Set(rows.map(r => r.keterangan).filter(Boolean))].sort());
+  if (isMobile) {
+    sb.classList.toggle('open');
+    ov.classList.toggle('show');
+  } else {
+    sb.classList.toggle('closed');
+    hd.classList.toggle('expanded');
+    mn.classList.toggle('expanded');
+  }
+}
+function closeSidebar() {
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('overlay').classList.remove('show');
 }
 
-function getFiltered() {
-  const kas        = document.getElementById('f-kas').value;
-  const kasir      = document.getElementById('f-kasir').value;
-  const jaminan    = document.getElementById('f-jaminan').value;
-  const keterangan = document.getElementById('f-keterangan').value;
-  const pasien     = document.getElementById('f-pasien').value.toLowerCase().trim();
-  const dari       = document.getElementById('f-dari').value;
-  const sampai     = document.getElementById('f-sampai').value;
+// ════════════════════════════════
+// PAGE NAVIGATION
+// ════════════════════════════════
+const PAGE_TITLES = {
+  'dashboard':'Dashboard','kasir-unit':'Rekap Per Unit Kasir',
+  'kasir-detail':'Detail Transaksi Kasir','rekonsiliasi':'Rekonsiliasi Kasir',
+  'pendapatan-unit':'Pendapatan Sub Unit','pendapatan-segment':'Pendapatan Segmen',
+  'volume':'Laporan Volume','pelayanan':'Pelayanan Medis','kredit':'Penjualan Kredit',
+};
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  document.querySelector(`[onclick="showPage('${id}')"]`).classList.add('active');
+  document.getElementById('header-title').textContent = PAGE_TITLES[id] || id;
+  if (window.innerWidth <= 768) closeSidebar();
+  if (RAW) renderPage(id);
+}
+function renderPage(id) {
+  if (id === 'dashboard')          renderDashboard();
+  if (id === 'kasir-unit')         renderKasirUnit();
+  if (id === 'kasir-detail')       renderKasirDetail();
+  if (id === 'rekonsiliasi')       renderRekonsiliasi();
+  if (id === 'pendapatan-unit')    renderPendapatanUnit();
+  if (id === 'pendapatan-segment') renderPendapatanSegment();
+  if (id === 'volume')             renderVolume();
+  if (id === 'pelayanan')          renderPelayanan();
+  if (id === 'kredit')             renderKredit();
+}
 
-  return rawDetail.filter(r => {
-    if (kas        && (r.kas||'') !== kas) return false;
-    if (kasir      && (r.nama_kasir||'') !== kasir) return false;
-    if (jaminan    && (r.jaminan||'') !== jaminan) return false;
-    if (keterangan && (r.keterangan||'') !== keterangan) return false;
-    if (pasien     && !(r.nama_pasien||'').toLowerCase().includes(pasien)) return false;
-    if (dari || sampai) {
-      const tgl = (r.tanggal_transaksi||'').substring(0, 10);
-      if (dari   && tgl < dari) return false;
-      if (sampai && tgl > sampai) return false;
-    }
+// ════════════════════════════════
+// LOAD DATA
+// ════════════════════════════════
+async function loadData() {
+  document.getElementById('loading').classList.remove('hidden');
+  try {
+    const res = await fetch(DATA_URL + '?t=' + Date.now());
+    RAW = await res.json();
+    const ts = new Date(RAW.generated_at);
+    const tsStr = ts.toLocaleDateString('id-ID') + ' ' + ts.toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit'});
+    document.getElementById('last-update').textContent = 'Update: ' + tsStr;
+    document.getElementById('sidebar-update').textContent = 'Data per ' + tsStr;
+    setDefaultDates();
+    const activePage = document.querySelector('.page.active')?.id?.replace('page-','') || 'dashboard';
+    renderPage(activePage);
+  } catch(e) {
+    document.getElementById('last-update').textContent = 'Gagal memuat data';
+  }
+  document.getElementById('loading').classList.add('hidden');
+}
+
+function setDefaultDates() {
+  const today = new Date();
+  const d30   = new Date(); d30.setDate(d30.getDate() - 30);
+  const fmt   = d => d.toISOString().split('T')[0];
+  ['db-dari','ku-dari','rk-dari'].forEach(id => { const el = document.getElementById(id); if(el) el.value = fmt(d30); });
+  ['db-sampai','ku-sampai','rk-sampai'].forEach(id => { const el = document.getElementById(id); if(el) el.value = fmt(today); });
+}
+
+// ════════════════════════════════
+// HELPERS
+// ════════════════════════════════
+const rp = v => 'Rp ' + (Number(v)||0).toLocaleString('id-ID');
+const rpK = v => { v = Number(v)||0; if(v>=1e9) return 'Rp '+(v/1e9).toFixed(1)+'M'; if(v>=1e6) return 'Rp '+(v/1e6).toFixed(1)+'jt'; return 'Rp '+v.toLocaleString('id-ID'); };
+const unitOf = k => KASIR_UNIT_MAP[k] || 'Lainnya';
+const colorOf = u => UNIT_COLORS[u] || '#8892a4';
+
+function filterByDate(rows, dateKey, dari, sampai) {
+  if (!dari && !sampai) return rows;
+  return rows.filter(r => {
+    const d = (r[dateKey]||'').substring(0,10);
+    if (dari && d < dari) return false;
+    if (sampai && d > sampai) return false;
     return true;
   });
 }
 
-function applyFilter() {
-  filteredKasirRows = getFiltered();
-  renderAllKasir(filteredKasirRows);
-}
-function resetFilter() {
-  ['f-kas','f-kasir','f-jaminan','f-keterangan'].forEach(id => document.getElementById(id).value = '');
-  ['f-pasien','f-dari','f-sampai'].forEach(id => document.getElementById(id).value = '');
-  filteredKasirRows = rawDetail;
-  renderAllKasir(rawDetail);
+function destroyChart(id) {
+  if (charts[id]) { charts[id].destroy(); delete charts[id]; }
 }
 
-function renderAllKasir(rows) {
-  renderKpiKasir(rows);
-  renderRekapKas(rows);
-  renderRekapJaminan(rows);
-  renderRekapKasirList(rows);
-  renderDetailTable(rows);
-}
-
-function renderKpiKasir(rows) {
-  const total = rows.reduce((s, r) => s + Number(r.nominal||0), 0);
-  const trx   = rows.length;
-  const rm    = new Set(rows.map(r => r.nomor_rm).filter(Boolean));
-  document.getElementById('kpi-kasir').innerHTML = `
-    <div class="kpi blue"><div class="kpi-label">Total Penerimaan</div><div class="kpi-value">${rupiah(total)}</div></div>
-    <div class="kpi green"><div class="kpi-label">Jumlah Transaksi</div><div class="kpi-value">${num(trx)}</div></div>
-    <div class="kpi amber"><div class="kpi-label">Jumlah Pasien</div><div class="kpi-value">${num(rm.size)}</div><div class="kpi-sub">unik per RM</div></div>
-    <div class="kpi teal"><div class="kpi-label">Rata-rata / Transaksi</div><div class="kpi-value">${rupiah(trx ? total/trx : 0)}</div></div>
-  `;
-}
-
-function renderRekapKas(rows) {
-  const map = {};
-  rows.forEach(r => {
-    const k = r.kas || '(kosong)';
-    if (!map[k]) map[k] = { nominal: 0, trx: 0, rm: new Set() };
-    map[k].nominal += Number(r.nominal||0);
-    map[k].trx++;
-    if (r.nomor_rm) map[k].rm.add(r.nomor_rm);
-  });
-  const sorted = Object.entries(map).sort((a,b) => b[1].nominal - a[1].nominal);
-  document.getElementById('rekap-kas').innerHTML = sorted.length
-    ? sorted.map(([k,v]) => `<div class="rekap-card">
-        <div class="rekap-name">${k}</div>
-        <div class="rekap-nominal">${rupiah(v.nominal)}</div>
-        <div class="rekap-meta"><span>💳 ${num(v.trx)} transaksi</span><span>👤 ${num(v.rm.size)} pasien</span></div>
-      </div>`).join('')
-    : '<div class="empty">Tidak ada data</div>';
-}
-
-function renderRekapJaminan(rows) {
-  const map = {};
-  rows.forEach(r => {
-    const k = r.jaminan || '(kosong)';
-    if (!map[k]) map[k] = { nominal: 0, trx: 0 };
-    map[k].nominal += Number(r.nominal||0);
-    map[k].trx++;
-  });
-  const sorted = Object.entries(map).sort((a,b) => b[1].nominal - a[1].nominal);
-  const colors = ['tag-blue','tag-green','tag-amber','tag-teal','tag-purple','tag-red'];
-  document.getElementById('rekap-jaminan').innerHTML = sorted.length
-    ? sorted.map(([k,v],i) => `<div class="rekap-card">
-        <div class="rekap-name"><span class="tag ${colors[i%colors.length]}">${k}</span></div>
-        <div class="rekap-nominal" style="margin-top:6px">${rupiah(v.nominal)}</div>
-        <div class="rekap-meta"><span>💳 ${num(v.trx)} transaksi</span></div>
-      </div>`).join('')
-    : '<div class="empty">Tidak ada data</div>';
-}
-
-function renderRekapKasirList(rows) {
-  const map = {};
-  rows.forEach(r => {
-    const k = r.nama_kasir || '(kosong)';
-    if (!map[k]) map[k] = { nominal: 0, trx: 0, rm: new Set() };
-    map[k].nominal += Number(r.nominal||0);
-    map[k].trx++;
-    if (r.nomor_rm) map[k].rm.add(r.nomor_rm);
-  });
-  const sorted = Object.entries(map).sort((a,b) => b[1].nominal - a[1].nominal);
-  document.getElementById('rekap-kasir-list').innerHTML = sorted.length
-    ? sorted.map(([k,v]) => `<div class="rekap-card">
-        <div class="rekap-name">👤 ${k}</div>
-        <div class="rekap-nominal">${rupiah(v.nominal)}</div>
-        <div class="rekap-meta"><span>💳 ${num(v.trx)} transaksi</span><span>🧑‍🤝‍🧑 ${num(v.rm.size)} pasien</span></div>
-      </div>`).join('')
-    : '<div class="empty">Tidak ada data</div>';
-}
-
-function renderDetailTable(rows) {
-  document.getElementById('detail-count').textContent = num(rows.length) + ' baris';
-  const tbody = document.getElementById('tbody-detail');
-  if (!rows.length) {
-    tbody.innerHTML = '<tr><td colspan="9" class="empty">Tidak ada data yang sesuai filter</td></tr>';
-    return;
-  }
-  tbody.innerHTML = rows.map(r => {
-    const tgl  = (r.tanggal_transaksi||'').substring(0,16).replace('T',' ');
-    const jCls = /bpjs/i.test(r.jaminan||'') ? 'tag-blue' : /umum|tunai/i.test(r.jaminan||'') ? 'tag-green' : 'tag-amber';
-    return `<tr>
-      <td>${tgl||'-'}</td><td>${r.nomor_rm||'-'}</td><td>${r.nama_pasien||'-'}</td>
-      <td>${r.nama_kasir||'-'}</td>
-      <td><span class="tag tag-teal">${r.kas||'-'}</span></td>
-      <td><span class="tag ${jCls}">${r.jaminan||'-'}</span></td>
-      <td>${r.tipe_pembayaran||'-'}</td>
-      <td class="num">${rupiah(r.nominal)}</td>
-      <td style="max-width:160px;overflow:hidden;text-overflow:ellipsis">${r.keterangan||'-'}</td>
-    </tr>`;
-  }).join('');
-}
-
-function renderKasirCharts(data) {
-  const pj = data.kasir_per_jaminan || [];
-  const pt = data.kasir_per_tipe    || [];
-  const ph = data.kasir_harian      || [];
-  drawChart('chart-kasir-jaminan', 'doughnut', { labels: pj.map(r=>r.jaminan), datasets:[{ data: pj.map(r=>r.total_nominal), backgroundColor: palette(pj.length) }] });
-  drawChart('chart-kasir-tipe',    'doughnut', { labels: pt.map(r=>r.tipe_pembayaran), datasets:[{ data: pt.map(r=>r.total_nominal), backgroundColor: palette(pt.length) }] });
-  drawChart('chart-kasir-harian',  'bar',      { labels: ph.map(r=>r.tanggal), datasets:[{ label:'Penerimaan', data: ph.map(r=>r.total_nominal), backgroundColor:'#1a56a0', borderRadius:3 }] });
-}
-
-// ════════════ PELAYANAN ════════════
-function renderPelayanan(data) {
-  const pu = data.pelayanan_per_unit || [];
-  const ps = data.pelayanan_status   || [];
-  const tT = pu.reduce((s,r)=>s+Number(r.total_tagihan||0),0);
-  const tJ = pu.reduce((s,r)=>s+Number(r.jumlah_tagihan||0),0);
-  document.getElementById('kpi-pelayanan').innerHTML = `
-    <div class="kpi blue"><div class="kpi-label">Total Tagihan</div><div class="kpi-value">${rupiah(tT)}</div></div>
-    <div class="kpi green"><div class="kpi-label">Jumlah Tagihan</div><div class="kpi-value">${num(tJ)}</div></div>
-    <div class="kpi amber"><div class="kpi-label">Unit Pelayanan</div><div class="kpi-value">${pu.length}</div></div>
-    <div class="kpi teal"><div class="kpi-label">Status Berbeda</div><div class="kpi-value">${ps.length}</div></div>
-  `;
-  drawChart('chart-pelayanan-unit','bar',{ labels:pu.map(r=>r.unit), datasets:[{label:'Total Tagihan',data:pu.map(r=>r.total_tagihan),backgroundColor:'#b45e00',borderRadius:3}] },true);
-  fillTable('table-pelayanan-status', ps, r => {
-    const cls = /lunas|selesai/i.test(r.status_tagihan||'') ? 'tag-green' : /batal|cancel/i.test(r.status_tagihan||'') ? 'tag-red' : 'tag-amber';
-    return `<tr><td><span class="tag ${cls}">${r.status_tagihan||'-'}</span></td><td class="num">${num(r.jumlah_tagihan)}</td><td class="num">${rupiah(r.total_tagihan)}</td></tr>`;
-  });
-}
-
-// ════════════ PENDAPATAN ════════════
-function renderPendapatan(data) {
-  const ph = data.pendapatan_harian   || [];
-  const pu = data.pendapatan_per_unit || [];
-  const tK = ph.reduce((s,r)=>s+Number(r.total_kredit||0),0);
-  const tD = ph.reduce((s,r)=>s+Number(r.total_debet||0),0);
-  const net = tK - tD;
-  document.getElementById('kpi-pendapatan').innerHTML = `
-    <div class="kpi blue"><div class="kpi-label">Total Kredit</div><div class="kpi-value">${rupiah(tK)}</div></div>
-    <div class="kpi ${net<0?'red':'green'}"><div class="kpi-label">Net Pendapatan</div><div class="kpi-value">${rupiah(net)}</div></div>
-    <div class="kpi amber"><div class="kpi-label">Total Debet</div><div class="kpi-value">${rupiah(tD)}</div></div>
-    <div class="kpi teal"><div class="kpi-label">Unit Aktif</div><div class="kpi-value">${pu.length}</div></div>
-  `;
-  drawChart('chart-pendapatan-harian','line',{ labels:ph.map(r=>r.tanggal), datasets:[
-    {label:'Kredit',data:ph.map(r=>r.total_kredit),borderColor:'#1a56a0',backgroundColor:'rgba(26,86,160,.1)',tension:.25,fill:true},
-    {label:'Debet', data:ph.map(r=>r.total_debet), borderColor:'#c0323c',backgroundColor:'rgba(192,50,60,.08)',tension:.25,fill:true}
-  ]});
-  drawChart('chart-pendapatan-unit','bar',{ labels:pu.map(r=>r.nama_sub_unit), datasets:[{label:'Net',data:pu.map(r=>r.net),backgroundColor:'#187a45',borderRadius:3}] },true);
-  fillTable('table-pendapatan-unit', pu, r => `<tr>
-    <td>${r.nama_sub_unit||'-'}</td><td class="num">${rupiah(r.total_kredit)}</td>
-    <td class="num">${rupiah(r.total_debet)}</td><td class="num">${rupiah(r.net)}</td>
-  </tr>`);
-}
-
-// ════════════ PENJUALAN KREDIT ════════════
-function initKreditFilters(rows) {
-  fillSelect('k-penanggung', [...new Set(rows.map(r=>r.Penanggung).filter(Boolean))].sort());
-  fillSelect('k-subunit',    [...new Set(rows.map(r=>r.nama_sub_unit).filter(Boolean))].sort());
-}
-
-function getFilteredKredit() {
-  const penanggung = document.getElementById('k-penanggung').value;
-  const subunit    = document.getElementById('k-subunit').value;
-  const dari       = document.getElementById('k-dari').value;
-  const sampai     = document.getElementById('k-sampai').value;
-  return rawKredit.filter(r => {
-    if (penanggung && (r.Penanggung||'') !== penanggung) return false;
-    if (subunit    && (r.nama_sub_unit||'') !== subunit) return false;
-    if (dari || sampai) {
-      const tgl = (r.tanggal||'').substring(0,10);
-      if (dari   && tgl < dari) return false;
-      if (sampai && tgl > sampai) return false;
-    }
-    return true;
-  });
-}
-
-function applyFilterKredit() {
-  filteredKreditRows = getFilteredKredit();
-  renderAllKredit(filteredKreditRows);
-}
-function resetFilterKredit() {
-  ['k-penanggung','k-subunit'].forEach(id => document.getElementById(id).value = '');
-  ['k-dari','k-sampai'].forEach(id => document.getElementById(id).value = '');
-  filteredKreditRows = rawKredit;
-  renderAllKredit(rawKredit);
-}
-
-function renderAllKredit(rows) {
-  renderKpiKredit(rows);
-  renderRekapPenanggung(rows);
-  renderDetailTableKredit(rows);
-}
-
-function renderKpiKredit(rows) {
-  const tK = rows.reduce((s,r)=>s+Number(r.kredit||0),0);
-  const tD = rows.reduce((s,r)=>s+Number(r.debet||0),0);
-  const net= rows.reduce((s,r)=>s+Number(r.total||0),0);
-  const ps = new Set(rows.map(r=>r.Penanggung).filter(Boolean));
-  document.getElementById('kpi-kredit').innerHTML = `
-    <div class="kpi blue"><div class="kpi-label">Total Kredit</div><div class="kpi-value">${rupiah(tK)}</div></div>
-    <div class="kpi amber"><div class="kpi-label">Total Debet</div><div class="kpi-value">${rupiah(tD)}</div></div>
-    <div class="kpi ${net<0?'red':'green'}"><div class="kpi-label">Net Total</div><div class="kpi-value">${rupiah(net)}</div></div>
-    <div class="kpi teal"><div class="kpi-label">Jumlah Penanggung</div><div class="kpi-value">${num(ps.size)}</div></div>
-  `;
-}
-
-function renderRekapPenanggung(rows) {
-  const map = {};
-  rows.forEach(r => {
-    const k = r.Penanggung || '(kosong)';
-    if (!map[k]) map[k] = { total:0, kredit:0, trx:0 };
-    map[k].total  += Number(r.total||0);
-    map[k].kredit += Number(r.kredit||0);
-    map[k].trx++;
-  });
-  const sorted = Object.entries(map).sort((a,b)=>b[1].total-a[1].total);
-  document.getElementById('rekap-penanggung').innerHTML = sorted.length
-    ? sorted.map(([k,v]) => `<div class="rekap-card">
-        <div class="rekap-name">${k}</div>
-        <div class="rekap-nominal">${rupiah(v.total)}</div>
-        <div class="rekap-meta"><span>💳 ${num(v.trx)} baris</span><span>↑ ${rupiah(v.kredit)}</span></div>
-      </div>`).join('')
-    : '<div class="empty">Tidak ada data</div>';
-}
-
-function renderDetailTableKredit(rows) {
-  document.getElementById('kredit-detail-count').textContent = num(rows.length) + ' baris';
-  const tbody = document.getElementById('tbody-kredit-detail');
-  if (!rows.length) {
-    tbody.innerHTML = '<tr><td colspan="9" class="empty">Tidak ada data yang sesuai filter</td></tr>';
-    return;
-  }
-  tbody.innerHTML = rows.map(r => `<tr>
-    <td>${r.tanggal||'-'}</td>
-    <td>${r.nama_sub_penerima||'-'}</td>
-    <td><span class="tag tag-blue">${r.Penanggung||'-'}</span></td>
-    <td><span class="tag tag-teal">${r.Segment||'-'}</span></td>
-    <td>${r.nama_sub_unit||'-'}</td>
-    <td>${r.Nama_COA||'-'}</td>
-    <td class="num">${rupiah(r.kredit)}</td>
-    <td class="num">${rupiah(r.debet)}</td>
-    <td class="num">${rupiah(r.total)}</td>
-  </tr>`).join('');
-}
-
-function renderKreditCharts(data) {
-  const ps = data.penjualan_kredit_per_segment    || [];
-  const pp = (data.penjualan_kredit_per_penanggung|| []).slice(0,10);
-  drawChart('chart-kredit-segment',    'doughnut', { labels:ps.map(r=>r.Segment), datasets:[{data:ps.map(r=>r.total_nominal),backgroundColor:palette(ps.length)}] });
-  drawChart('chart-kredit-penanggung', 'bar',      { labels:pp.map(r=>r.Penanggung), datasets:[{label:'Total',data:pp.map(r=>r.total_nominal),backgroundColor:'#6d28d9',borderRadius:3}] }, true);
-}
-
-// ════════════ EXPORT ════════════
-function exportCSV(modul) {
-  const rows = modul === 'kasir' ? filteredKasirRows : filteredKreditRows;
-  if (!rows.length) { alert('Tidak ada data untuk diexport.'); return; }
-
-  let headers, lines;
-  if (modul === 'kasir') {
-    headers = ['Tanggal','No. RM','Nama Pasien','Kasir','Kas','Jaminan','Tipe Pembayaran','Nominal','Keterangan'];
-    lines   = [headers.join(','), ...rows.map(r => [
-      (r.tanggal_transaksi||'').substring(0,16).replace('T',' '),
-      r.nomor_rm||'',
-      '"'+(r.nama_pasien||'').replace(/"/g,'""')+'"',
-      '"'+(r.nama_kasir||'').replace(/"/g,'""')+'"',
-      '"'+(r.kas||'').replace(/"/g,'""')+'"',
-      '"'+(r.jaminan||'').replace(/"/g,'""')+'"',
-      '"'+(r.tipe_pembayaran||'').replace(/"/g,'""')+'"',
-      Number(r.nominal||0).toFixed(0),
-      '"'+(r.keterangan||'').replace(/"/g,'""')+'"',
-    ].join(','))];
-  } else {
-    headers = ['Tanggal','Nama Sub Penerima','Penanggung','Segment','Sub Unit','COA','Kredit','Debet','Total'];
-    lines   = [headers.join(','), ...rows.map(r => [
-      r.tanggal||'',
-      '"'+(r.nama_sub_penerima||'').replace(/"/g,'""')+'"',
-      '"'+(r.Penanggung||'').replace(/"/g,'""')+'"',
-      '"'+(r.Segment||'').replace(/"/g,'""')+'"',
-      '"'+(r.nama_sub_unit||'').replace(/"/g,'""')+'"',
-      '"'+(r.Nama_COA||'').replace(/"/g,'""')+'"',
-      Number(r.kredit||0).toFixed(0),
-      Number(r.debet||0).toFixed(0),
-      Number(r.total||0).toFixed(0),
-    ].join(','))];
-  }
-
-  const blob = new Blob(['\uFEFF' + lines.join('\r\n')], { type:'text/csv;charset=utf-8;' });
-  triggerDownload(blob, modul + '_' + today() + '.csv');
-}
-
-function exportExcel(modul) {
-  const rows = modul === 'kasir' ? filteredKasirRows : filteredKreditRows;
-  if (!rows.length) { alert('Tidak ada data untuk diexport.'); return; }
-
-  let headers, dataRows;
-  if (modul === 'kasir') {
-    headers  = ['Tanggal','No. RM','Nama Pasien','Kasir','Kas','Jaminan','Tipe Pembayaran','Nominal','Keterangan'];
-    dataRows = rows.map(r => [
-      (r.tanggal_transaksi||'').substring(0,16).replace('T',' '),
-      r.nomor_rm||'', r.nama_pasien||'', r.nama_kasir||'',
-      r.kas||'', r.jaminan||'', r.tipe_pembayaran||'',
-      Number(r.nominal||0).toFixed(0), r.keterangan||''
-    ]);
-  } else {
-    headers  = ['Tanggal','Nama Sub Penerima','Penanggung','Segment','Sub Unit','COA','Kredit','Debet','Total'];
-    dataRows = rows.map(r => [
-      r.tanggal||'', r.nama_sub_penerima||'', r.Penanggung||'',
-      r.Segment||'', r.nama_sub_unit||'', r.Nama_COA||'',
-      Number(r.kredit||0).toFixed(0), Number(r.debet||0).toFixed(0), Number(r.total||0).toFixed(0)
-    ]);
-  }
-
-  const numCols = modul === 'kasir' ? [7] : [6,7,8];
-  let html = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel"><head><meta charset="UTF-8"></head><body><table border="1">';
-  html += '<tr>' + headers.map(h => `<th style="background:#1a56a0;color:white;font-weight:bold;">${h}</th>`).join('') + '</tr>';
-  dataRows.forEach(cols => {
-    html += '<tr>' + cols.map((c,i) => `<td${numCols.includes(i) ? ' style="mso-number-format:\'#,##0\';"' : ''}>${c}</td>`).join('') + '</tr>';
-  });
-  html += '</table></body></html>';
-
-  const blob = new Blob([html], { type:'application/vnd.ms-excel;charset=utf-8;' });
-  triggerDownload(blob, modul + '_' + today() + '.xls');
-}
-
-function triggerDownload(blob, filename) {
-  const url = URL.createObjectURL(blob);
-  const a   = document.createElement('a');
-  a.href    = url;
-  a.download= filename;
-  a.click();
-  URL.revokeObjectURL(url);
-}
-
-function today() {
-  return new Date().toISOString().substring(0,10);
-}
-
-// ════════════ UTILS ════════════
-function rupiah(n) {
-  return 'Rp' + (Number(n)||0).toLocaleString('id-ID', { maximumFractionDigits:0 });
-}
-function num(n) {
-  return (Number(n)||0).toLocaleString('id-ID', { maximumFractionDigits:0 });
-}
-function fillSelect(id, items) {
-  const sel = document.getElementById(id);
-  while (sel.options.length > 1) sel.remove(1);
-  items.forEach(v => { const o = document.createElement('option'); o.value=v; o.textContent=v; sel.appendChild(o); });
-}
-function drawChart(id, type, data, horizontal) {
+function makeChart(id, type, labels, datasets, opts={}) {
+  destroyChart(id);
   const ctx = document.getElementById(id);
   if (!ctx) return;
-  if (charts[id]) charts[id].destroy();
-  charts[id] = new Chart(ctx, { type, data, options: {
-    responsive:true, maintainAspectRatio:false, indexAxis: horizontal?'y':'x',
-    plugins:{ legend:{ display: type!=='bar' || data.datasets.length>1 } },
-    scales: type==='doughnut' ? {} : {
-      x:{ grid:{ display:!!horizontal } },
-      y:{ grid:{ color:'#eef1f4', display:!horizontal } }
+  charts[id] = new Chart(ctx, {
+    type, data: { labels, datasets },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { labels: { color: '#8892a4', font: { size: 11 } } },
+        tooltip: { callbacks: { label: ctx => ' ' + rpK(ctx.raw) } },
+      },
+      scales: type === 'bar' || type === 'line' ? {
+        x: { ticks: { color: '#8892a4', font: { size: 10 } }, grid: { color: '#2e3347' } },
+        y: { ticks: { color: '#8892a4', font: { size: 10 }, callback: v => rpK(v) }, grid: { color: '#2e3347' } },
+      } : undefined,
+      ...opts,
     }
-  }});
+  });
 }
-function fillTable(tableId, rows, rowFn) {
-  const tbody = document.querySelector('#'+tableId+' tbody');
-  if (!tbody) return;
-  tbody.innerHTML = rows.length ? rows.map(rowFn).join('') : '<tr><td colspan="6" class="empty">Tidak ada data</td></tr>';
+
+// ════════════════════════════════
+// RENDER: DASHBOARD
+// ════════════════════════════════
+function renderDashboard() {
+  if (!RAW) return;
+  const dari   = document.getElementById('db-dari')?.value || '';
+  const sampai = document.getElementById('db-sampai')?.value || '';
+
+  // KPI dari kasir_harian (filter tanggal)
+  let harian = RAW.kasir_harian || [];
+  if (dari || sampai) harian = harian.filter(r => (!dari||r.tanggal>=dari) && (!sampai||r.tanggal<=sampai));
+
+  const totalNominal = harian.reduce((s,r) => s + (Number(r.total_nominal)||0), 0);
+  const totalTrx     = harian.reduce((s,r) => s + (Number(r.jumlah_transaksi)||0), 0);
+
+  // KPI dari tipe
+  let tipe = RAW.kasir_per_tipe || [];
+  const tunai  = tipe.find(t => t.tipe_pembayaran === 'TUNAI');
+  const debet  = tipe.find(t => t.tipe_pembayaran === 'DEBET/KREDIT');
+
+  // KPI
+  document.getElementById('db-kpi').innerHTML = `
+    <div class="kpi-card" style="--accent:var(--blue)">
+      <div class="kpi-label">Total Penerimaan</div>
+      <div class="kpi-value">${rpK(totalNominal)}</div>
+      <div class="kpi-sub">${totalTrx.toLocaleString('id-ID')} transaksi</div>
+      <div class="kpi-icon">💰</div>
+    </div>
+    <div class="kpi-card" style="--accent:var(--green)">
+      <div class="kpi-label">Penerimaan Tunai</div>
+      <div class="kpi-value">${rpK(tunai?.total_nominal||0)}</div>
+      <div class="kpi-sub">${Number(tunai?.jumlah_transaksi||0).toLocaleString('id-ID')} transaksi</div>
+      <div class="kpi-icon">💵</div>
+    </div>
+    <div class="kpi-card" style="--accent:var(--purple)">
+      <div class="kpi-label">Debet/Kredit</div>
+      <div class="kpi-value">${rpK(debet?.total_nominal||0)}</div>
+      <div class="kpi-sub">${Number(debet?.jumlah_transaksi||0).toLocaleString('id-ID')} transaksi</div>
+      <div class="kpi-icon">💳</div>
+    </div>
+    <div class="kpi-card" style="--accent:var(--teal)">
+      <div class="kpi-label">Total Tagihan Pelayanan</div>
+      <div class="kpi-value">${rpK((RAW.pelayanan_per_unit||[]).reduce((s,r)=>s+(Number(r.total_tagihan)||0),0))}</div>
+      <div class="kpi-sub">${(RAW.pelayanan_per_unit||[]).reduce((s,r)=>s+(Number(r.jumlah_tagihan)||0),0).toLocaleString('id-ID')} tagihan</div>
+      <div class="kpi-icon">🩺</div>
+    </div>
+  `;
+
+  // Chart tren
+  document.getElementById('db-chart-period').textContent = dari && sampai ? `(${dari} – ${sampai})` : '';
+  makeChart('chart-tren','line',
+    harian.map(r => r.tanggal?.substring(5)),
+    [{ label:'Penerimaan', data: harian.map(r => Number(r.total_nominal)||0), borderColor:'#3b82f6', backgroundColor:'rgba(59,130,246,.1)', tension:.3, fill:true, pointRadius:2 }]
+  );
+
+  // Chart tipe
+  makeChart('chart-tipe','doughnut',
+    tipe.map(t => t.tipe_pembayaran||'N/A'),
+    [{ data: tipe.map(t => Number(t.total_nominal)||0), backgroundColor: COLORS }]
+  );
+
+  // Chart jaminan
+  const jam = (RAW.kasir_per_jaminan||[]).slice(0,8);
+  makeChart('chart-jaminan','bar',
+    jam.map(j => j.jaminan?.substring(0,20)||'N/A'),
+    [{ label:'Nominal', data: jam.map(j => Number(j.total_nominal)||0), backgroundColor: COLORS }]
+  );
 }
-function palette(n) {
-  const b=['#1a56a0','#187a45','#b45e00','#c0323c','#0e7490','#6d28d9','#b45e00','#0e7490'];
-  return Array.from({length:n},(_,i)=>b[i%b.length]);
+function resetFilterDashboard() { setDefaultDates(); renderDashboard(); }
+
+// ════════════════════════════════
+// RENDER: KASIR UNIT
+// ════════════════════════════════
+function renderKasirUnit() {
+  if (!RAW) return;
+  const dari   = document.getElementById('ku-dari')?.value || '';
+  const sampai = document.getElementById('ku-sampai')?.value || '';
+  const unit   = document.getElementById('ku-unit')?.value || '';
+
+  // Pakai data kasir_detail yang sudah ada unit mapping
+  let detail = (RAW.kasir_detail || []).map(r => ({ ...r, unit_kasir: unitOf(r.nama_kasir) }));
+  if (dari || sampai) detail = detail.filter(r => {
+    const d = (r.tanggal_transaksi||'').substring(0,10);
+    return (!dari||d>=dari) && (!sampai||d<=sampai);
+  });
+  if (unit) detail = detail.filter(r => r.unit_kasir === unit);
+
+  // Agregasi per unit
+  const unitMap = {};
+  detail.forEach(r => {
+    const u = r.unit_kasir;
+    if (!unitMap[u]) unitMap[u] = { unit_kasir: u, total_nominal: 0, jumlah_transaksi: 0, jumlah_pasien: new Set() };
+    unitMap[u].total_nominal += Number(r.nominal)||0;
+    unitMap[u].jumlah_transaksi++;
+    if (r.nomor_rm) unitMap[u].jumlah_pasien.add(r.nomor_rm);
+  });
+  const units = Object.values(unitMap).map(u => ({ ...u, jumlah_pasien: u.jumlah_pasien.size }))
+    .sort((a,b) => b.total_nominal - a.total_nominal);
+
+  // KPI cards per unit
+  document.getElementById('ku-cards').innerHTML = units.map(u => `
+    <div class="unit-card" style="border-top: 3px solid ${colorOf(u.unit_kasir)}">
+      <div class="unit-card-header">
+        <div class="unit-name">${u.unit_kasir}</div>
+        <div class="badge" style="background:${colorOf(u.unit_kasir)}22;color:${colorOf(u.unit_kasir)}">${u.jumlah_pasien} pasien</div>
+      </div>
+      <div class="unit-stats">
+        <div class="unit-stat"><label>Total Nominal</label><div class="val">${rpK(u.total_nominal)}</div></div>
+        <div class="unit-stat"><label>Transaksi</label><div class="val">${u.jumlah_transaksi.toLocaleString('id-ID')}</div></div>
+      </div>
+    </div>
+  `).join('') || '<div class="empty">Tidak ada data</div>';
+
+  // Chart nominal
+  makeChart('chart-ku-nominal','bar',
+    units.map(u => u.unit_kasir.replace('Kasir ','')),
+    [{ label:'Nominal', data: units.map(u => u.total_nominal), backgroundColor: units.map(u => colorOf(u.unit_kasir)) }]
+  );
+
+  // Chart transaksi
+  makeChart('chart-ku-trx','doughnut',
+    units.map(u => u.unit_kasir.replace('Kasir ','')),
+    [{ data: units.map(u => u.jumlah_transaksi), backgroundColor: units.map(u => colorOf(u.unit_kasir)) }]
+  );
+
+  // Agregasi per kasir dalam unit
+  const kasirMap = {};
+  detail.forEach(r => {
+    const k = r.nama_kasir;
+    if (!kasirMap[k]) kasirMap[k] = { unit: unitOf(k), nama: k, nominal: 0, trx: 0, pasien: new Set() };
+    kasirMap[k].nominal += Number(r.nominal)||0;
+    kasirMap[k].trx++;
+    if (r.nomor_rm) kasirMap[k].pasien.add(r.nomor_rm);
+  });
+  const kasirList = Object.values(kasirMap).map(k => ({ ...k, pasien: k.pasien.size }))
+    .sort((a,b) => a.unit.localeCompare(b.unit) || b.nominal - a.nominal);
+
+  document.getElementById('ku-count').textContent = kasirList.length + ' kasir';
+  document.getElementById('ku-tbody').innerHTML = kasirList.map(k => `
+    <tr>
+      <td><span class="badge" style="background:${colorOf(k.unit)}22;color:${colorOf(k.unit)}">${k.unit}</span></td>
+      <td>${k.nama}</td>
+      <td class="num">${rp(k.nominal)}</td>
+      <td class="num">${k.trx.toLocaleString('id-ID')}</td>
+      <td class="num">${k.pasien.toLocaleString('id-ID')}</td>
+    </tr>
+  `).join('') || '<tr><td colspan="5" class="empty">Tidak ada data</td></tr>';
 }
+function resetFilterKasirUnit() { setDefaultDates(); document.getElementById('ku-unit').value=''; renderKasirUnit(); }
+
+// ════════════════════════════════
+// RENDER: KASIR DETAIL
+// ════════════════════════════════
+function renderKasirDetail() {
+  if (!RAW) return;
+  const unit   = document.getElementById('kd-unit')?.value || '';
+  const ket    = document.getElementById('kd-ket')?.value || '';
+  const search = (document.getElementById('kd-search')?.value || '').toLowerCase();
+
+  let rows = (RAW.kasir_detail || []).map(r => ({ ...r, unit_kasir: unitOf(r.nama_kasir) }));
+  if (unit)   rows = rows.filter(r => r.unit_kasir === unit);
+  if (ket)    rows = rows.filter(r => r.keterangan === ket);
+  if (search) rows = rows.filter(r => (r.nama_pasien||'').toLowerCase().includes(search));
+
+  document.getElementById('kd-count').textContent = rows.length + ' baris';
+  document.getElementById('kd-tbody').innerHTML = rows.slice(0,500).map(r => `
+    <tr>
+      <td>${(r.tanggal_transaksi||'').substring(0,10)}</td>
+      <td><span class="badge" style="background:${colorOf(r.unit_kasir)}22;color:${colorOf(r.unit_kasir)}">${r.unit_kasir?.replace('Kasir ','')}</span></td>
+      <td>${r.nama_kasir||'-'}</td>
+      <td>${r.nama_pasien||'-'}</td>
+      <td>${r.jaminan||'-'}</td>
+      <td style="font-size:11px;color:var(--text2)">${(r.kas||'-').substring(0,20)}</td>
+      <td><span class="badge ${r.tipe_pembayaran==='TUNAI'?'badge-green':'badge-blue'}">${r.tipe_pembayaran||'-'}</span></td>
+      <td class="num">${rp(r.nominal)}</td>
+      <td><span class="badge ${r.keterangan==='RETUR'?'badge-red':'badge-purple'}">${r.keterangan||'-'}</span></td>
+    </tr>
+  `).join('') || '<tr><td colspan="9" class="empty">Tidak ada data</td></tr>';
+}
+function resetFilterKasirDetail() {
+  ['kd-unit','kd-ket'].forEach(id => document.getElementById(id).value='');
+  document.getElementById('kd-search').value='';
+  renderKasirDetail();
+}
+
+// ════════════════════════════════
+// RENDER: REKONSILIASI
+// ════════════════════════════════
+function renderRekonsiliasi() {
+  if (!RAW) return;
+  const dari   = document.getElementById('rk-dari')?.value || '';
+  const sampai = document.getElementById('rk-sampai')?.value || '';
+  const unit   = document.getElementById('rk-unit')?.value || '';
+
+  // Total kasir (dari kasir_detail)
+  let kasirRows = (RAW.kasir_detail||[]).map(r => ({ ...r, unit_kasir: unitOf(r.nama_kasir) }));
+  if (dari||sampai) kasirRows = kasirRows.filter(r => {
+    const d = (r.tanggal_transaksi||'').substring(0,10);
+    return (!dari||d>=dari) && (!sampai||d<=sampai);
+  });
+  if (unit) kasirRows = kasirRows.filter(r => r.unit_kasir === unit);
+  const totalKasir = kasirRows.reduce((s,r) => s+(Number(r.nominal)||0), 0);
+
+  // Total pelayanan
+  const pelRows = RAW.pelayanan_per_unit||[];
+  const totalPel = pelRows.reduce((s,r) => s+(Number(r.total_tagihan)||0), 0);
+  const totalTagihan = pelRows.reduce((s,r) => s+(Number(r.jumlah_tagihan)||0), 0);
+
+  document.getElementById('rk-kasir').textContent = rp(totalKasir);
+  document.getElementById('rk-kasir-trx').textContent = kasirRows.length.toLocaleString('id-ID') + ' transaksi';
+  document.getElementById('rk-pelayanan').textContent = rp(totalPel);
+  document.getElementById('rk-pelayanan-trx').textContent = totalTagihan.toLocaleString('id-ID') + ' tagihan';
+
+  const selisih = totalKasir - totalPel;
+  const elSel = document.getElementById('rk-selisih');
+  elSel.textContent = rp(Math.abs(selisih)) + (selisih < 0 ? ' (kurang)' : selisih > 0 ? ' (lebih)' : '');
+  elSel.className = 'selisih-val ' + (Math.abs(selisih) === 0 ? 'selisih-ok' : Math.abs(selisih) < 1000000 ? 'selisih-warn' : 'selisih-err');
+
+  // Per unit kasir vs pelayanan per unit
+  const unitKasir = {};
+  kasirRows.forEach(r => {
+    const u = r.unit_kasir;
+    unitKasir[u] = (unitKasir[u]||0) + (Number(r.nominal)||0);
+  });
+  const unitPel = {};
+  (RAW.pelayanan_per_unit||[]).forEach(r => { unitPel[r.unit||''] = Number(r.total_tagihan)||0; });
+
+  const allUnits = [...new Set([...Object.keys(unitKasir), ...Object.keys(unitPel)])].sort();
+  document.getElementById('rk-tbody').innerHTML = allUnits.map(u => {
+    const k = unitKasir[u]||0;
+    const p = unitPel[u]||0;
+    const s = k - p;
+    const ok = Math.abs(s) < 1000000;
+    return `<tr>
+      <td><span class="badge" style="background:${colorOf(u)}22;color:${colorOf(u)}">${u}</span></td>
+      <td class="num">${rp(k)}</td>
+      <td class="num">${rp(p)}</td>
+      <td class="num" style="color:${s===0?'var(--green)':s<0?'var(--red)':'var(--amber)'}">${rp(Math.abs(s))}${s<0?' ▼':s>0?' ▲':''}</td>
+      <td><span class="badge ${ok?'badge-green':'badge-red'}">${ok?'OK':'Selisih'}</span></td>
+    </tr>`;
+  }).join('') || '<tr><td colspan="5" class="empty">Tidak ada data</td></tr>';
+}
+function resetFilterRekonsiliasi() { setDefaultDates(); document.getElementById('rk-unit').value=''; renderRekonsiliasi(); }
+
+// ════════════════════════════════
+// RENDER: PENDAPATAN UNIT
+// ════════════════════════════════
+function renderPendapatanUnit() {
+  if (!RAW) return;
+  const rows = (RAW.pendapatan_per_unit||[]).slice(0,15);
+  makeChart('chart-pend-unit','bar',
+    rows.map(r => (r.nama_sub_unit||'').substring(0,25)),
+    [
+      { label:'Kredit', data: rows.map(r => Number(r.total_kredit)||0), backgroundColor:'#3b82f6' },
+      { label:'Debet',  data: rows.map(r => Number(r.total_debet)||0),  backgroundColor:'#ef4444' },
+    ]
+  );
+  document.getElementById('pu-tbody').innerHTML = (RAW.pendapatan_per_unit||[]).map(r => `
+    <tr>
+      <td>${r.nama_sub_unit||'-'}</td>
+      <td class="num" style="color:var(--green)">${rp(r.total_kredit)}</td>
+      <td class="num" style="color:var(--red)">${rp(r.total_debet)}</td>
+      <td class="num" style="color:${Number(r.net)>=0?'var(--green)':'var(--red)'}">${rp(r.net)}</td>
+    </tr>
+  `).join('');
+}
+
+// ════════════════════════════════
+// RENDER: PENDAPATAN SEGMEN
+// ════════════════════════════════
+function renderPendapatanSegment() {
+  if (!RAW) return;
+  // Agregasi dari penjualan_kredit_per_segment sebagai proxy segment
+  const rows = RAW.penjualan_kredit_per_segment||[];
+  makeChart('chart-seg-pie','doughnut',
+    rows.map(r => r.Segment||'N/A'),
+    [{ data: rows.map(r => Number(r.total_nominal)||0), backgroundColor: COLORS }]
+  );
+  makeChart('chart-seg-bar','bar',
+    rows.map(r => r.Segment||'N/A'),
+    [{ label:'Total', data: rows.map(r => Number(r.total_nominal)||0), backgroundColor: COLORS }]
+  );
+  document.getElementById('seg-tbody').innerHTML = rows.map(r => `
+    <tr>
+      <td>${r.Segment||'-'}</td>
+      <td class="num" style="color:var(--green)">${rp(r.total_nominal)}</td>
+      <td class="num">—</td>
+      <td class="num">${rp(r.total_nominal)}</td>
+    </tr>
+  `).join('');
+}
+
+// ════════════════════════════════
+// RENDER: VOLUME
+// ════════════════════════════════
+function renderVolume() {
+  if (!RAW) return;
+  const rows = RAW.pendapatan_harian||[];
+  makeChart('chart-vol-tren','line',
+    rows.map(r => (r.tanggal||'').substring(5)),
+    [
+      { label:'Kredit', data: rows.map(r => Number(r.total_kredit)||0), borderColor:'#22c55e', backgroundColor:'rgba(34,197,94,.1)', tension:.3, fill:true, pointRadius:1 },
+      { label:'Debet',  data: rows.map(r => Number(r.total_debet)||0),  borderColor:'#ef4444', backgroundColor:'rgba(239,68,68,.1)',  tension:.3, fill:true, pointRadius:1 },
+    ]
+  );
+}
+
+// ════════════════════════════════
+// RENDER: PELAYANAN MEDIS
+// ════════════════════════════════
+function renderPelayanan() {
+  if (!RAW) return;
+  const unit   = (RAW.pelayanan_per_unit||[]).slice(0,10);
+  const status = RAW.pelayanan_status||[];
+  makeChart('chart-pel-unit','bar',
+    unit.map(r => (r.unit||'N/A').substring(0,20)),
+    [{ label:'Total Tagihan', data: unit.map(r => Number(r.total_tagihan)||0), backgroundColor:'#14b8a6' }]
+  );
+  makeChart('chart-pel-status','doughnut',
+    status.map(r => r.status_tagihan||'N/A'),
+    [{ data: status.map(r => Number(r.total_tagihan)||0), backgroundColor: COLORS }]
+  );
+  document.getElementById('pel-tbody').innerHTML = (RAW.pelayanan_per_unit||[]).map(r => `
+    <tr>
+      <td>${r.unit||'-'}</td>
+      <td class="num">${rp(r.total_tagihan)}</td>
+      <td class="num">${Number(r.jumlah_tagihan||0).toLocaleString('id-ID')}</td>
+    </tr>
+  `).join('');
+}
+
+// ════════════════════════════════
+// RENDER: PENJUALAN KREDIT
+// ════════════════════════════════
+function renderKredit() {
+  if (!RAW) return;
+  const pen = (RAW.penjualan_kredit_per_penanggung||[]).slice(0,10);
+  const seg = RAW.penjualan_kredit_per_segment||[];
+  makeChart('chart-kr-penanggung','bar',
+    pen.map(r => (r.Penanggung||'N/A').substring(0,20)),
+    [{ label:'Total', data: pen.map(r => Number(r.total_nominal)||0), backgroundColor: COLORS }]
+  );
+  makeChart('chart-kr-segment','doughnut',
+    seg.map(r => r.Segment||'N/A'),
+    [{ data: seg.map(r => Number(r.total_nominal)||0), backgroundColor: COLORS }]
+  );
+  const detail = RAW.penjualan_kredit_detail||[];
+  document.getElementById('kr-count').textContent = detail.length + ' baris';
+  document.getElementById('kr-tbody').innerHTML = detail.slice(0,200).map(r => `
+    <tr>
+      <td>${(r.tanggal||'').substring(0,10)}</td>
+      <td style="max-width:150px;overflow:hidden;text-overflow:ellipsis">${r.nama_sub_penerima||'-'}</td>
+      <td style="font-size:11px">${(r.Penanggung||'-').substring(0,25)}</td>
+      <td><span class="badge badge-blue">${r.Segment||'-'}</span></td>
+      <td style="font-size:11px">${(r.nama_sub_unit||'-').substring(0,20)}</td>
+      <td class="num" style="color:var(--green)">${rp(r.kredit)}</td>
+      <td class="num">${rp(r.total)}</td>
+    </tr>
+  `).join('') || '<tr><td colspan="7" class="empty">Tidak ada data</td></tr>';
+}
+
+// ════════════════════════════════
+// INIT
+// ════════════════════════════════
+loadData();
 </script>
 </body>
 </html>
