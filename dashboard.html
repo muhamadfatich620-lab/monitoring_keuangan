@@ -69,7 +69,7 @@ header h1 { font-size: 16px; font-weight: 600; }
 .kpi-value { font-size: 20px; font-weight: 700; margin-top: 5px; color: var(--ink); }
 .kpi-sub { font-size: 11px; color: var(--muted); margin-top: 3px; }
 
-/* REKAP GRID (per kas, per jaminan, per kasir) */
+/* REKAP GRID */
 .rekap-section-title { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin: 18px 0 10px; }
 .rekap-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 10px; margin-bottom: 4px; }
 .rekap-card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 13px 15px; box-shadow: var(--shadow); }
@@ -86,17 +86,22 @@ header h1 { font-size: 16px; font-weight: 600; }
 .fg input, .fg select { width: 100%; padding: 7px 9px; border: 1px solid var(--line); border-radius: 6px; font-size: 13px; color: var(--ink); background: var(--bg); outline: none; }
 .fg input:focus, .fg select:focus { border-color: var(--sidebar-accent); background: #fff; }
 .filter-actions { display: flex; gap: 8px; align-items: flex-end; }
-.btn { padding: 7px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; border: none; }
+.btn { padding: 7px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; border: none; transition: background .15s; }
 .btn-primary { background: var(--blue); color: #fff; }
 .btn-primary:hover { background: #154a85; }
 .btn-ghost { background: var(--bg); color: var(--muted); border: 1px solid var(--line); }
 .btn-ghost:hover { background: var(--line); }
+.btn-export { background: var(--green-lt); color: var(--green); border: 1px solid #b7dfc5; font-size: 12px; padding: 5px 12px; }
+.btn-export:hover { background: #d0eeda; }
+.btn-export-xl { background: #e8f5e0; color: #2d6a1f; border: 1px solid #b5d9a0; font-size: 12px; padding: 5px 12px; }
+.btn-export-xl:hover { background: #d5edcc; }
 
 /* PANEL */
 .panel { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; margin-bottom: 16px; box-shadow: var(--shadow); }
-.panel-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.panel-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px; }
 .panel-title { font-size: 14px; font-weight: 600; }
 .panel-meta { font-size: 12px; color: var(--muted); }
+.panel-actions { display: flex; align-items: center; gap: 8px; }
 .chart-box { position: relative; height: 280px; }
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px; }
 
@@ -162,8 +167,6 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 
     <!-- ══ KASIR ══ -->
     <div class="module active" id="mod-kasir">
-
-      <!-- Filter -->
       <div class="filter-bar">
         <div class="filter-title">🔍 Filter Data</div>
         <div class="filter-row">
@@ -178,6 +181,10 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
           <div class="fg">
             <label>Jaminan</label>
             <select id="f-jaminan"><option value="">— Semua —</option></select>
+          </div>
+          <div class="fg">
+            <label>Keterangan</label>
+            <select id="f-keterangan"><option value="">— Semua —</option></select>
           </div>
           <div class="fg">
             <label>Nama Pasien</label>
@@ -198,26 +205,25 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
         </div>
       </div>
 
-      <!-- KPI ringkasan (reaktif) -->
       <div class="kpi-row" id="kpi-kasir"></div>
 
-      <!-- Rekap per Kas (reaktif) -->
       <div class="rekap-section-title">Overview per Kas</div>
       <div class="rekap-grid" id="rekap-kas"></div>
 
-      <!-- Rekap per Jaminan (reaktif) -->
       <div class="rekap-section-title">Rekap per Jaminan</div>
       <div class="rekap-grid" id="rekap-jaminan"></div>
 
-      <!-- Rekap per Kasir (reaktif) -->
       <div class="rekap-section-title">Rekap per Kasir</div>
       <div class="rekap-grid" id="rekap-kasir-list"></div>
 
-      <!-- Detail tabel (reaktif) -->
       <div class="panel" style="margin-top:16px;">
         <div class="panel-head">
           <span class="panel-title">Detail Transaksi</span>
-          <span class="panel-meta" id="detail-count">—</span>
+          <div class="panel-actions">
+            <span class="panel-meta" id="detail-count">—</span>
+            <button class="btn btn-export" onclick="exportCSV('kasir')">⬇️ Export CSV</button>
+            <button class="btn btn-export-xl" onclick="exportExcel('kasir')">📊 Export Excel</button>
+          </div>
         </div>
         <div class="table-note">Data 30 hari terakhir · maks. 2.000 baris</div>
         <div class="table-wrap">
@@ -240,7 +246,6 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
         </div>
       </div>
 
-      <!-- Tren harian (90 hari, non-filter karena data agregat) -->
       <div class="two-col">
         <div class="panel">
           <div class="panel-head"><span class="panel-title">Per Jaminan (90 hari)</span></div>
@@ -299,7 +304,6 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 
     <!-- ══ PENJUALAN KREDIT ══ -->
     <div class="module" id="mod-kredit">
-
       <div class="filter-bar">
         <div class="filter-title">🔍 Filter Data</div>
         <div class="filter-row">
@@ -345,7 +349,11 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
       <div class="panel">
         <div class="panel-head">
           <span class="panel-title">Detail Transaksi</span>
-          <span class="panel-meta" id="kredit-detail-count">—</span>
+          <div class="panel-actions">
+            <span class="panel-meta" id="kredit-detail-count">—</span>
+            <button class="btn btn-export" onclick="exportCSV('kredit')">⬇️ Export CSV</button>
+            <button class="btn btn-export-xl" onclick="exportExcel('kredit')">📊 Export Excel</button>
+          </div>
         </div>
         <div class="table-note">Data 90 hari terakhir · maks. 5.000 baris</div>
         <div class="table-wrap">
@@ -374,18 +382,20 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 
 <script>
 const DATA_URL = 'data.json';
-const charts = {};
-let rawDetail = [];
-let rawKredit = [];
+const charts   = {};
+let rawDetail  = [];
+let rawKredit  = [];
+let filteredKasirRows  = [];
+let filteredKreditRows = [];
 
 const MOD_META = {
-  kasir:      { title: 'Kasir', badge: 'Laporan Kasir' },
-  pelayanan:  { title: 'Pelayanan Medis', badge: 'Tagihan & Layanan' },
-  pendapatan: { title: 'Pendapatan Unit', badge: 'Akuntansi & COA' },
-  kredit:     { title: 'Penjualan Kredit Harian', badge: 'Piutang & Penanggung' }
+  kasir     : { title: 'Kasir',               badge: 'Laporan Kasir' },
+  pelayanan : { title: 'Pelayanan Medis',      badge: 'Tagihan & Layanan' },
+  pendapatan: { title: 'Pendapatan Unit',       badge: 'Akuntansi & COA' },
+  kredit    : { title: 'Penjualan Kredit Harian', badge: 'Piutang & Penanggung' }
 };
 
-// NAV
+// ── NAV ──
 document.querySelectorAll('.nav-item').forEach(el => {
   el.addEventListener('click', () => {
     document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
@@ -398,7 +408,7 @@ document.querySelectorAll('.nav-item').forEach(el => {
   });
 });
 
-// LOAD
+// ── LOAD ──
 fetch(DATA_URL)
   .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
   .then(data => {
@@ -408,7 +418,8 @@ fetch(DATA_URL)
       dt.toLocaleDateString('id-ID') + ' ' + dt.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
 
     rawDetail = data.kasir_detail || [];
-    initKasirFilters(rawDetail, data);
+    initKasirFilters(rawDetail);
+    filteredKasirRows = rawDetail;
     renderAllKasir(rawDetail);
     renderKasirCharts(data);
     renderPelayanan(data);
@@ -416,6 +427,7 @@ fetch(DATA_URL)
 
     rawKredit = data.penjualan_kredit_detail || [];
     initKreditFilters(rawKredit);
+    filteredKreditRows = rawKredit;
     renderAllKredit(rawKredit);
     renderKreditCharts(data);
   })
@@ -426,41 +438,30 @@ fetch(DATA_URL)
     el.textContent = 'Gagal memuat data.json: ' + err.message;
   });
 
-// ── INIT FILTER DROPDOWNS ──
+// ════════════ KASIR ════════════
+
 function initKasirFilters(rows) {
-  const kasSet    = [...new Set(rows.map(r => r.kas).filter(Boolean))].sort();
-  const kasirSet  = [...new Set(rows.map(r => r.nama_kasir).filter(Boolean))].sort();
-  const jaminanSet= [...new Set(rows.map(r => r.jaminan).filter(Boolean))].sort();
-  fillSelect('f-kas', kasSet);
-  fillSelect('f-kasir', kasirSet);
-  fillSelect('f-jaminan', jaminanSet);
+  fillSelect('f-kas',        [...new Set(rows.map(r => r.kas).filter(Boolean))].sort());
+  fillSelect('f-kasir',      [...new Set(rows.map(r => r.nama_kasir).filter(Boolean))].sort());
+  fillSelect('f-jaminan',    [...new Set(rows.map(r => r.jaminan).filter(Boolean))].sort());
+  fillSelect('f-keterangan', [...new Set(rows.map(r => r.keterangan).filter(Boolean))].sort());
 }
 
-function fillSelect(id, items) {
-  const sel = document.getElementById(id);
-  // hapus opsi lama kecuali "Semua"
-  while (sel.options.length > 1) sel.remove(1);
-  items.forEach(v => {
-    const o = document.createElement('option');
-    o.value = v; o.textContent = v;
-    sel.appendChild(o);
-  });
-}
-
-// ── FILTER KASIR ──
 function getFiltered() {
-  const kas    = document.getElementById('f-kas').value;
-  const kasir  = document.getElementById('f-kasir').value;
-  const jaminan= document.getElementById('f-jaminan').value;
-  const pasien = document.getElementById('f-pasien').value.toLowerCase().trim();
-  const dari   = document.getElementById('f-dari').value;
-  const sampai = document.getElementById('f-sampai').value;
+  const kas        = document.getElementById('f-kas').value;
+  const kasir      = document.getElementById('f-kasir').value;
+  const jaminan    = document.getElementById('f-jaminan').value;
+  const keterangan = document.getElementById('f-keterangan').value;
+  const pasien     = document.getElementById('f-pasien').value.toLowerCase().trim();
+  const dari       = document.getElementById('f-dari').value;
+  const sampai     = document.getElementById('f-sampai').value;
 
   return rawDetail.filter(r => {
-    if (kas     && (r.kas||'') !== kas) return false;
-    if (kasir   && (r.nama_kasir||'') !== kasir) return false;
-    if (jaminan && (r.jaminan||'') !== jaminan) return false;
-    if (pasien  && !(r.nama_pasien||'').toLowerCase().includes(pasien)) return false;
+    if (kas        && (r.kas||'') !== kas) return false;
+    if (kasir      && (r.nama_kasir||'') !== kasir) return false;
+    if (jaminan    && (r.jaminan||'') !== jaminan) return false;
+    if (keterangan && (r.keterangan||'') !== keterangan) return false;
+    if (pasien     && !(r.nama_pasien||'').toLowerCase().includes(pasien)) return false;
     if (dari || sampai) {
       const tgl = (r.tanggal_transaksi||'').substring(0, 10);
       if (dari   && tgl < dari) return false;
@@ -470,14 +471,17 @@ function getFiltered() {
   });
 }
 
-function applyFilter() { renderAllKasir(getFiltered()); }
+function applyFilter() {
+  filteredKasirRows = getFiltered();
+  renderAllKasir(filteredKasirRows);
+}
 function resetFilter() {
-  ['f-kas','f-kasir','f-jaminan'].forEach(id => document.getElementById(id).value = '');
+  ['f-kas','f-kasir','f-jaminan','f-keterangan'].forEach(id => document.getElementById(id).value = '');
   ['f-pasien','f-dari','f-sampai'].forEach(id => document.getElementById(id).value = '');
+  filteredKasirRows = rawDetail;
   renderAllKasir(rawDetail);
 }
 
-// ── RENDER SEMUA KASIR (reaktif terhadap filter) ──
 function renderAllKasir(rows) {
   renderKpiKasir(rows);
   renderRekapKas(rows);
@@ -486,21 +490,18 @@ function renderAllKasir(rows) {
   renderDetailTable(rows);
 }
 
-// KPI
 function renderKpiKasir(rows) {
-  const total   = rows.reduce((s, r) => s + Number(r.nominal||0), 0);
-  const trx     = rows.length;
-  const pasienSet = new Set(rows.map(r => r.nomor_rm).filter(Boolean));
-  const avg     = trx ? total / trx : 0;
+  const total = rows.reduce((s, r) => s + Number(r.nominal||0), 0);
+  const trx   = rows.length;
+  const rm    = new Set(rows.map(r => r.nomor_rm).filter(Boolean));
   document.getElementById('kpi-kasir').innerHTML = `
     <div class="kpi blue"><div class="kpi-label">Total Penerimaan</div><div class="kpi-value">${rupiah(total)}</div></div>
     <div class="kpi green"><div class="kpi-label">Jumlah Transaksi</div><div class="kpi-value">${num(trx)}</div></div>
-    <div class="kpi amber"><div class="kpi-label">Jumlah Pasien</div><div class="kpi-value">${num(pasienSet.size)}</div><div class="kpi-sub">unik per RM</div></div>
-    <div class="kpi teal"><div class="kpi-label">Rata-rata / Transaksi</div><div class="kpi-value">${rupiah(avg)}</div></div>
+    <div class="kpi amber"><div class="kpi-label">Jumlah Pasien</div><div class="kpi-value">${num(rm.size)}</div><div class="kpi-sub">unik per RM</div></div>
+    <div class="kpi teal"><div class="kpi-label">Rata-rata / Transaksi</div><div class="kpi-value">${rupiah(trx ? total/trx : 0)}</div></div>
   `;
 }
 
-// Rekap per Kas
 function renderRekapKas(rows) {
   const map = {};
   rows.forEach(r => {
@@ -512,19 +513,14 @@ function renderRekapKas(rows) {
   });
   const sorted = Object.entries(map).sort((a,b) => b[1].nominal - a[1].nominal);
   document.getElementById('rekap-kas').innerHTML = sorted.length
-    ? sorted.map(([k, v]) => `
-        <div class="rekap-card">
-          <div class="rekap-name">${k}</div>
-          <div class="rekap-nominal">${rupiah(v.nominal)}</div>
-          <div class="rekap-meta">
-            <span>💳 ${num(v.trx)} transaksi</span>
-            <span>👤 ${num(v.rm.size)} pasien</span>
-          </div>
-        </div>`).join('')
+    ? sorted.map(([k,v]) => `<div class="rekap-card">
+        <div class="rekap-name">${k}</div>
+        <div class="rekap-nominal">${rupiah(v.nominal)}</div>
+        <div class="rekap-meta"><span>💳 ${num(v.trx)} transaksi</span><span>👤 ${num(v.rm.size)} pasien</span></div>
+      </div>`).join('')
     : '<div class="empty">Tidak ada data</div>';
 }
 
-// Rekap per Jaminan
 function renderRekapJaminan(rows) {
   const map = {};
   rows.forEach(r => {
@@ -536,16 +532,14 @@ function renderRekapJaminan(rows) {
   const sorted = Object.entries(map).sort((a,b) => b[1].nominal - a[1].nominal);
   const colors = ['tag-blue','tag-green','tag-amber','tag-teal','tag-purple','tag-red'];
   document.getElementById('rekap-jaminan').innerHTML = sorted.length
-    ? sorted.map(([k, v], i) => `
-        <div class="rekap-card">
-          <div class="rekap-name"><span class="tag ${colors[i%colors.length]}">${k}</span></div>
-          <div class="rekap-nominal" style="margin-top:6px">${rupiah(v.nominal)}</div>
-          <div class="rekap-meta"><span>💳 ${num(v.trx)} transaksi</span></div>
-        </div>`).join('')
+    ? sorted.map(([k,v],i) => `<div class="rekap-card">
+        <div class="rekap-name"><span class="tag ${colors[i%colors.length]}">${k}</span></div>
+        <div class="rekap-nominal" style="margin-top:6px">${rupiah(v.nominal)}</div>
+        <div class="rekap-meta"><span>💳 ${num(v.trx)} transaksi</span></div>
+      </div>`).join('')
     : '<div class="empty">Tidak ada data</div>';
 }
 
-// Rekap per Kasir
 function renderRekapKasirList(rows) {
   const map = {};
   rows.forEach(r => {
@@ -557,19 +551,14 @@ function renderRekapKasirList(rows) {
   });
   const sorted = Object.entries(map).sort((a,b) => b[1].nominal - a[1].nominal);
   document.getElementById('rekap-kasir-list').innerHTML = sorted.length
-    ? sorted.map(([k, v]) => `
-        <div class="rekap-card">
-          <div class="rekap-name">👤 ${k}</div>
-          <div class="rekap-nominal">${rupiah(v.nominal)}</div>
-          <div class="rekap-meta">
-            <span>💳 ${num(v.trx)} transaksi</span>
-            <span>🧑‍🤝‍🧑 ${num(v.rm.size)} pasien</span>
-          </div>
-        </div>`).join('')
+    ? sorted.map(([k,v]) => `<div class="rekap-card">
+        <div class="rekap-name">👤 ${k}</div>
+        <div class="rekap-nominal">${rupiah(v.nominal)}</div>
+        <div class="rekap-meta"><span>💳 ${num(v.trx)} transaksi</span><span>🧑‍🤝‍🧑 ${num(v.rm.size)} pasien</span></div>
+      </div>`).join('')
     : '<div class="empty">Tidak ada data</div>';
 }
 
-// Detail tabel kasir
 function renderDetailTable(rows) {
   document.getElementById('detail-count').textContent = num(rows.length) + ' baris';
   const tbody = document.getElementById('tbody-detail');
@@ -578,13 +567,10 @@ function renderDetailTable(rows) {
     return;
   }
   tbody.innerHTML = rows.map(r => {
-    const tgl = (r.tanggal_transaksi||'').substring(0,16).replace('T',' ');
-    const jCls = /bpjs/i.test(r.jaminan||'') ? 'tag-blue' :
-                 /umum|tunai/i.test(r.jaminan||'') ? 'tag-green' : 'tag-amber';
+    const tgl  = (r.tanggal_transaksi||'').substring(0,16).replace('T',' ');
+    const jCls = /bpjs/i.test(r.jaminan||'') ? 'tag-blue' : /umum|tunai/i.test(r.jaminan||'') ? 'tag-green' : 'tag-amber';
     return `<tr>
-      <td>${tgl||'-'}</td>
-      <td>${r.nomor_rm||'-'}</td>
-      <td>${r.nama_pasien||'-'}</td>
+      <td>${tgl||'-'}</td><td>${r.nomor_rm||'-'}</td><td>${r.nama_pasien||'-'}</td>
       <td>${r.nama_kasir||'-'}</td>
       <td><span class="tag tag-teal">${r.kas||'-'}</span></td>
       <td><span class="tag ${jCls}">${r.jaminan||'-'}</span></td>
@@ -595,92 +581,62 @@ function renderDetailTable(rows) {
   }).join('');
 }
 
-// Charts kasir (90 hari, tidak berubah saat filter)
 function renderKasirCharts(data) {
-  const perJaminan = data.kasir_per_jaminan || [];
-  const perTipe    = data.kasir_per_tipe    || [];
-  const harian     = data.kasir_harian      || [];
-  drawChart('chart-kasir-jaminan', 'doughnut', {
-    labels: perJaminan.map(r => r.jaminan),
-    datasets: [{ data: perJaminan.map(r => r.total_nominal), backgroundColor: palette(perJaminan.length) }]
-  });
-  drawChart('chart-kasir-tipe', 'doughnut', {
-    labels: perTipe.map(r => r.tipe_pembayaran),
-    datasets: [{ data: perTipe.map(r => r.total_nominal), backgroundColor: palette(perTipe.length) }]
-  });
-  drawChart('chart-kasir-harian', 'bar', {
-    labels: harian.map(r => r.tanggal),
-    datasets: [{ label: 'Penerimaan', data: harian.map(r => r.total_nominal), backgroundColor: '#1a56a0', borderRadius: 3 }]
-  });
+  const pj = data.kasir_per_jaminan || [];
+  const pt = data.kasir_per_tipe    || [];
+  const ph = data.kasir_harian      || [];
+  drawChart('chart-kasir-jaminan', 'doughnut', { labels: pj.map(r=>r.jaminan), datasets:[{ data: pj.map(r=>r.total_nominal), backgroundColor: palette(pj.length) }] });
+  drawChart('chart-kasir-tipe',    'doughnut', { labels: pt.map(r=>r.tipe_pembayaran), datasets:[{ data: pt.map(r=>r.total_nominal), backgroundColor: palette(pt.length) }] });
+  drawChart('chart-kasir-harian',  'bar',      { labels: ph.map(r=>r.tanggal), datasets:[{ label:'Penerimaan', data: ph.map(r=>r.total_nominal), backgroundColor:'#1a56a0', borderRadius:3 }] });
 }
 
-// ── PELAYANAN ──
+// ════════════ PELAYANAN ════════════
 function renderPelayanan(data) {
-  const perUnit = data.pelayanan_per_unit || [];
-  const status  = data.pelayanan_status   || [];
-  const totalT  = perUnit.reduce((s,r) => s + Number(r.total_tagihan||0), 0);
-  const totalJ  = perUnit.reduce((s,r) => s + Number(r.jumlah_tagihan||0), 0);
+  const pu = data.pelayanan_per_unit || [];
+  const ps = data.pelayanan_status   || [];
+  const tT = pu.reduce((s,r)=>s+Number(r.total_tagihan||0),0);
+  const tJ = pu.reduce((s,r)=>s+Number(r.jumlah_tagihan||0),0);
   document.getElementById('kpi-pelayanan').innerHTML = `
-    <div class="kpi blue"><div class="kpi-label">Total Tagihan</div><div class="kpi-value">${rupiah(totalT)}</div></div>
-    <div class="kpi green"><div class="kpi-label">Jumlah Tagihan</div><div class="kpi-value">${num(totalJ)}</div></div>
-    <div class="kpi amber"><div class="kpi-label">Unit Pelayanan</div><div class="kpi-value">${perUnit.length}</div></div>
-    <div class="kpi teal"><div class="kpi-label">Status Berbeda</div><div class="kpi-value">${status.length}</div></div>
+    <div class="kpi blue"><div class="kpi-label">Total Tagihan</div><div class="kpi-value">${rupiah(tT)}</div></div>
+    <div class="kpi green"><div class="kpi-label">Jumlah Tagihan</div><div class="kpi-value">${num(tJ)}</div></div>
+    <div class="kpi amber"><div class="kpi-label">Unit Pelayanan</div><div class="kpi-value">${pu.length}</div></div>
+    <div class="kpi teal"><div class="kpi-label">Status Berbeda</div><div class="kpi-value">${ps.length}</div></div>
   `;
-  drawChart('chart-pelayanan-unit', 'bar', {
-    labels: perUnit.map(r => r.unit),
-    datasets: [{ label: 'Total Tagihan', data: perUnit.map(r => r.total_tagihan), backgroundColor: '#b45e00', borderRadius: 3 }]
-  }, true);
-  fillTable('table-pelayanan-status', status, r => {
-    const cls = /lunas|selesai/i.test(r.status_tagihan||'') ? 'tag-green' :
-                /batal|cancel/i.test(r.status_tagihan||'') ? 'tag-red' : 'tag-amber';
-    return `<tr>
-      <td><span class="tag ${cls}">${r.status_tagihan||'-'}</span></td>
-      <td class="num">${num(r.jumlah_tagihan)}</td>
-      <td class="num">${rupiah(r.total_tagihan)}</td>
-    </tr>`;
+  drawChart('chart-pelayanan-unit','bar',{ labels:pu.map(r=>r.unit), datasets:[{label:'Total Tagihan',data:pu.map(r=>r.total_tagihan),backgroundColor:'#b45e00',borderRadius:3}] },true);
+  fillTable('table-pelayanan-status', ps, r => {
+    const cls = /lunas|selesai/i.test(r.status_tagihan||'') ? 'tag-green' : /batal|cancel/i.test(r.status_tagihan||'') ? 'tag-red' : 'tag-amber';
+    return `<tr><td><span class="tag ${cls}">${r.status_tagihan||'-'}</span></td><td class="num">${num(r.jumlah_tagihan)}</td><td class="num">${rupiah(r.total_tagihan)}</td></tr>`;
   });
 }
 
-// ── PENDAPATAN ──
+// ════════════ PENDAPATAN ════════════
 function renderPendapatan(data) {
-  const harian  = data.pendapatan_harian  || [];
-  const perUnit = data.pendapatan_per_unit|| [];
-  const totalK  = harian.reduce((s,r) => s + Number(r.total_kredit||0), 0);
-  const totalD  = harian.reduce((s,r) => s + Number(r.total_debet||0), 0);
-  const net     = totalK - totalD;
+  const ph = data.pendapatan_harian   || [];
+  const pu = data.pendapatan_per_unit || [];
+  const tK = ph.reduce((s,r)=>s+Number(r.total_kredit||0),0);
+  const tD = ph.reduce((s,r)=>s+Number(r.total_debet||0),0);
+  const net = tK - tD;
   document.getElementById('kpi-pendapatan').innerHTML = `
-    <div class="kpi blue"><div class="kpi-label">Total Kredit</div><div class="kpi-value">${rupiah(totalK)}</div></div>
+    <div class="kpi blue"><div class="kpi-label">Total Kredit</div><div class="kpi-value">${rupiah(tK)}</div></div>
     <div class="kpi ${net<0?'red':'green'}"><div class="kpi-label">Net Pendapatan</div><div class="kpi-value">${rupiah(net)}</div></div>
-    <div class="kpi amber"><div class="kpi-label">Total Debet</div><div class="kpi-value">${rupiah(totalD)}</div></div>
-    <div class="kpi teal"><div class="kpi-label">Unit Aktif</div><div class="kpi-value">${perUnit.length}</div></div>
+    <div class="kpi amber"><div class="kpi-label">Total Debet</div><div class="kpi-value">${rupiah(tD)}</div></div>
+    <div class="kpi teal"><div class="kpi-label">Unit Aktif</div><div class="kpi-value">${pu.length}</div></div>
   `;
-  drawChart('chart-pendapatan-harian', 'line', {
-    labels: harian.map(r => r.tanggal),
-    datasets: [
-      { label: 'Kredit', data: harian.map(r => r.total_kredit), borderColor: '#1a56a0', backgroundColor: 'rgba(26,86,160,.1)', tension:.25, fill:true },
-      { label: 'Debet',  data: harian.map(r => r.total_debet),  borderColor: '#c0323c', backgroundColor: 'rgba(192,50,60,.08)', tension:.25, fill:true }
-    ]
-  });
-  drawChart('chart-pendapatan-unit', 'bar', {
-    labels: perUnit.map(r => r.nama_sub_unit),
-    datasets: [{ label: 'Net', data: perUnit.map(r => r.net), backgroundColor: '#187a45', borderRadius: 3 }]
-  }, true);
-  fillTable('table-pendapatan-unit', perUnit, r => `
-    <tr>
-      <td>${r.nama_sub_unit||'-'}</td>
-      <td class="num">${rupiah(r.total_kredit)}</td>
-      <td class="num">${rupiah(r.total_debet)}</td>
-      <td class="num">${rupiah(r.net)}</td>
-    </tr>`);
+  drawChart('chart-pendapatan-harian','line',{ labels:ph.map(r=>r.tanggal), datasets:[
+    {label:'Kredit',data:ph.map(r=>r.total_kredit),borderColor:'#1a56a0',backgroundColor:'rgba(26,86,160,.1)',tension:.25,fill:true},
+    {label:'Debet', data:ph.map(r=>r.total_debet), borderColor:'#c0323c',backgroundColor:'rgba(192,50,60,.08)',tension:.25,fill:true}
+  ]});
+  drawChart('chart-pendapatan-unit','bar',{ labels:pu.map(r=>r.nama_sub_unit), datasets:[{label:'Net',data:pu.map(r=>r.net),backgroundColor:'#187a45',borderRadius:3}] },true);
+  fillTable('table-pendapatan-unit', pu, r => `<tr>
+    <td>${r.nama_sub_unit||'-'}</td><td class="num">${rupiah(r.total_kredit)}</td>
+    <td class="num">${rupiah(r.total_debet)}</td><td class="num">${rupiah(r.net)}</td>
+  </tr>`);
 }
 
-// ══════════ MODUL PENJUALAN KREDIT ══════════
-
+// ════════════ PENJUALAN KREDIT ════════════
 function initKreditFilters(rows) {
-  const penanggungSet = [...new Set(rows.map(r => r.Penanggung).filter(Boolean))].sort();
-  const subUnitSet    = [...new Set(rows.map(r => r.nama_sub_unit).filter(Boolean))].sort();
-  fillSelect('k-penanggung', penanggungSet);
-  fillSelect('k-subunit', subUnitSet);
+  fillSelect('k-penanggung', [...new Set(rows.map(r=>r.Penanggung).filter(Boolean))].sort());
+  fillSelect('k-subunit',    [...new Set(rows.map(r=>r.nama_sub_unit).filter(Boolean))].sort());
 }
 
 function getFilteredKredit() {
@@ -688,12 +644,11 @@ function getFilteredKredit() {
   const subunit    = document.getElementById('k-subunit').value;
   const dari       = document.getElementById('k-dari').value;
   const sampai     = document.getElementById('k-sampai').value;
-
   return rawKredit.filter(r => {
     if (penanggung && (r.Penanggung||'') !== penanggung) return false;
-    if (subunit && (r.nama_sub_unit||'') !== subunit) return false;
+    if (subunit    && (r.nama_sub_unit||'') !== subunit) return false;
     if (dari || sampai) {
-      const tgl = (r.tanggal||'').substring(0, 10);
+      const tgl = (r.tanggal||'').substring(0,10);
       if (dari   && tgl < dari) return false;
       if (sampai && tgl > sampai) return false;
     }
@@ -701,10 +656,14 @@ function getFilteredKredit() {
   });
 }
 
-function applyFilterKredit() { renderAllKredit(getFilteredKredit()); }
+function applyFilterKredit() {
+  filteredKreditRows = getFilteredKredit();
+  renderAllKredit(filteredKreditRows);
+}
 function resetFilterKredit() {
   ['k-penanggung','k-subunit'].forEach(id => document.getElementById(id).value = '');
   ['k-dari','k-sampai'].forEach(id => document.getElementById(id).value = '');
+  filteredKreditRows = rawKredit;
   renderAllKredit(rawKredit);
 }
 
@@ -715,15 +674,15 @@ function renderAllKredit(rows) {
 }
 
 function renderKpiKredit(rows) {
-  const totalKredit = rows.reduce((s, r) => s + Number(r.kredit||0), 0);
-  const totalDebet  = rows.reduce((s, r) => s + Number(r.debet||0), 0);
-  const net         = rows.reduce((s, r) => s + Number(r.total||0), 0);
-  const penanggungSet = new Set(rows.map(r => r.Penanggung).filter(Boolean));
+  const tK = rows.reduce((s,r)=>s+Number(r.kredit||0),0);
+  const tD = rows.reduce((s,r)=>s+Number(r.debet||0),0);
+  const net= rows.reduce((s,r)=>s+Number(r.total||0),0);
+  const ps = new Set(rows.map(r=>r.Penanggung).filter(Boolean));
   document.getElementById('kpi-kredit').innerHTML = `
-    <div class="kpi blue"><div class="kpi-label">Total Kredit</div><div class="kpi-value">${rupiah(totalKredit)}</div></div>
-    <div class="kpi amber"><div class="kpi-label">Total Debet</div><div class="kpi-value">${rupiah(totalDebet)}</div></div>
+    <div class="kpi blue"><div class="kpi-label">Total Kredit</div><div class="kpi-value">${rupiah(tK)}</div></div>
+    <div class="kpi amber"><div class="kpi-label">Total Debet</div><div class="kpi-value">${rupiah(tD)}</div></div>
     <div class="kpi ${net<0?'red':'green'}"><div class="kpi-label">Net Total</div><div class="kpi-value">${rupiah(net)}</div></div>
-    <div class="kpi teal"><div class="kpi-label">Jumlah Penanggung</div><div class="kpi-value">${num(penanggungSet.size)}</div></div>
+    <div class="kpi teal"><div class="kpi-label">Jumlah Penanggung</div><div class="kpi-value">${num(ps.size)}</div></div>
   `;
 }
 
@@ -731,23 +690,18 @@ function renderRekapPenanggung(rows) {
   const map = {};
   rows.forEach(r => {
     const k = r.Penanggung || '(kosong)';
-    if (!map[k]) map[k] = { total: 0, kredit: 0, debet: 0, trx: 0 };
+    if (!map[k]) map[k] = { total:0, kredit:0, trx:0 };
     map[k].total  += Number(r.total||0);
     map[k].kredit += Number(r.kredit||0);
-    map[k].debet  += Number(r.debet||0);
     map[k].trx++;
   });
-  const sorted = Object.entries(map).sort((a,b) => b[1].total - a[1].total);
+  const sorted = Object.entries(map).sort((a,b)=>b[1].total-a[1].total);
   document.getElementById('rekap-penanggung').innerHTML = sorted.length
-    ? sorted.map(([k, v]) => `
-        <div class="rekap-card">
-          <div class="rekap-name">${k}</div>
-          <div class="rekap-nominal">${rupiah(v.total)}</div>
-          <div class="rekap-meta">
-            <span>💳 ${num(v.trx)} baris</span>
-            <span>↑ ${rupiah(v.kredit)}</span>
-          </div>
-        </div>`).join('')
+    ? sorted.map(([k,v]) => `<div class="rekap-card">
+        <div class="rekap-name">${k}</div>
+        <div class="rekap-nominal">${rupiah(v.total)}</div>
+        <div class="rekap-meta"><span>💳 ${num(v.trx)} baris</span><span>↑ ${rupiah(v.kredit)}</span></div>
+      </div>`).join('')
     : '<div class="empty">Tidak ada data</div>';
 }
 
@@ -759,67 +713,143 @@ function renderDetailTableKredit(rows) {
     return;
   }
   tbody.innerHTML = rows.map(r => `<tr>
-      <td>${r.tanggal||'-'}</td>
-      <td>${r.nama_sub_penerima||'-'}</td>
-      <td><span class="tag tag-blue">${r.Penanggung||'-'}</span></td>
-      <td><span class="tag tag-teal">${r.Segment||'-'}</span></td>
-      <td>${r.nama_sub_unit||'-'}</td>
-      <td>${r.Nama_COA||'-'}</td>
-      <td class="num">${rupiah(r.kredit)}</td>
-      <td class="num">${rupiah(r.debet)}</td>
-      <td class="num">${rupiah(r.total)}</td>
-    </tr>`).join('');
+    <td>${r.tanggal||'-'}</td>
+    <td>${r.nama_sub_penerima||'-'}</td>
+    <td><span class="tag tag-blue">${r.Penanggung||'-'}</span></td>
+    <td><span class="tag tag-teal">${r.Segment||'-'}</span></td>
+    <td>${r.nama_sub_unit||'-'}</td>
+    <td>${r.Nama_COA||'-'}</td>
+    <td class="num">${rupiah(r.kredit)}</td>
+    <td class="num">${rupiah(r.debet)}</td>
+    <td class="num">${rupiah(r.total)}</td>
+  </tr>`).join('');
 }
 
 function renderKreditCharts(data) {
-  const perSegment    = data.penjualan_kredit_per_segment    || [];
-  const perPenanggung = (data.penjualan_kredit_per_penanggung|| []).slice(0, 10);
-  drawChart('chart-kredit-segment', 'doughnut', {
-    labels: perSegment.map(r => r.Segment),
-    datasets: [{ data: perSegment.map(r => r.total_nominal), backgroundColor: palette(perSegment.length) }]
-  });
-  drawChart('chart-kredit-penanggung', 'bar', {
-    labels: perPenanggung.map(r => r.Penanggung),
-    datasets: [{ label: 'Total', data: perPenanggung.map(r => r.total_nominal), backgroundColor: '#6d28d9', borderRadius: 3 }]
-  }, true);
+  const ps = data.penjualan_kredit_per_segment    || [];
+  const pp = (data.penjualan_kredit_per_penanggung|| []).slice(0,10);
+  drawChart('chart-kredit-segment',    'doughnut', { labels:ps.map(r=>r.Segment), datasets:[{data:ps.map(r=>r.total_nominal),backgroundColor:palette(ps.length)}] });
+  drawChart('chart-kredit-penanggung', 'bar',      { labels:pp.map(r=>r.Penanggung), datasets:[{label:'Total',data:pp.map(r=>r.total_nominal),backgroundColor:'#6d28d9',borderRadius:3}] }, true);
 }
 
-// ── UTILS ──
+// ════════════ EXPORT ════════════
+function exportCSV(modul) {
+  const rows = modul === 'kasir' ? filteredKasirRows : filteredKreditRows;
+  if (!rows.length) { alert('Tidak ada data untuk diexport.'); return; }
+
+  let headers, lines;
+  if (modul === 'kasir') {
+    headers = ['Tanggal','No. RM','Nama Pasien','Kasir','Kas','Jaminan','Tipe Pembayaran','Nominal','Keterangan'];
+    lines   = [headers.join(','), ...rows.map(r => [
+      (r.tanggal_transaksi||'').substring(0,16).replace('T',' '),
+      r.nomor_rm||'',
+      '"'+(r.nama_pasien||'').replace(/"/g,'""')+'"',
+      '"'+(r.nama_kasir||'').replace(/"/g,'""')+'"',
+      '"'+(r.kas||'').replace(/"/g,'""')+'"',
+      '"'+(r.jaminan||'').replace(/"/g,'""')+'"',
+      '"'+(r.tipe_pembayaran||'').replace(/"/g,'""')+'"',
+      Number(r.nominal||0).toFixed(0),
+      '"'+(r.keterangan||'').replace(/"/g,'""')+'"',
+    ].join(','))];
+  } else {
+    headers = ['Tanggal','Nama Sub Penerima','Penanggung','Segment','Sub Unit','COA','Kredit','Debet','Total'];
+    lines   = [headers.join(','), ...rows.map(r => [
+      r.tanggal||'',
+      '"'+(r.nama_sub_penerima||'').replace(/"/g,'""')+'"',
+      '"'+(r.Penanggung||'').replace(/"/g,'""')+'"',
+      '"'+(r.Segment||'').replace(/"/g,'""')+'"',
+      '"'+(r.nama_sub_unit||'').replace(/"/g,'""')+'"',
+      '"'+(r.Nama_COA||'').replace(/"/g,'""')+'"',
+      Number(r.kredit||0).toFixed(0),
+      Number(r.debet||0).toFixed(0),
+      Number(r.total||0).toFixed(0),
+    ].join(','))];
+  }
+
+  const blob = new Blob(['\uFEFF' + lines.join('\r\n')], { type:'text/csv;charset=utf-8;' });
+  triggerDownload(blob, modul + '_' + today() + '.csv');
+}
+
+function exportExcel(modul) {
+  const rows = modul === 'kasir' ? filteredKasirRows : filteredKreditRows;
+  if (!rows.length) { alert('Tidak ada data untuk diexport.'); return; }
+
+  let headers, dataRows;
+  if (modul === 'kasir') {
+    headers  = ['Tanggal','No. RM','Nama Pasien','Kasir','Kas','Jaminan','Tipe Pembayaran','Nominal','Keterangan'];
+    dataRows = rows.map(r => [
+      (r.tanggal_transaksi||'').substring(0,16).replace('T',' '),
+      r.nomor_rm||'', r.nama_pasien||'', r.nama_kasir||'',
+      r.kas||'', r.jaminan||'', r.tipe_pembayaran||'',
+      Number(r.nominal||0).toFixed(0), r.keterangan||''
+    ]);
+  } else {
+    headers  = ['Tanggal','Nama Sub Penerima','Penanggung','Segment','Sub Unit','COA','Kredit','Debet','Total'];
+    dataRows = rows.map(r => [
+      r.tanggal||'', r.nama_sub_penerima||'', r.Penanggung||'',
+      r.Segment||'', r.nama_sub_unit||'', r.Nama_COA||'',
+      Number(r.kredit||0).toFixed(0), Number(r.debet||0).toFixed(0), Number(r.total||0).toFixed(0)
+    ]);
+  }
+
+  const numCols = modul === 'kasir' ? [7] : [6,7,8];
+  let html = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel"><head><meta charset="UTF-8"></head><body><table border="1">';
+  html += '<tr>' + headers.map(h => `<th style="background:#1a56a0;color:white;font-weight:bold;">${h}</th>`).join('') + '</tr>';
+  dataRows.forEach(cols => {
+    html += '<tr>' + cols.map((c,i) => `<td${numCols.includes(i) ? ' style="mso-number-format:\'#,##0\';"' : ''}>${c}</td>`).join('') + '</tr>';
+  });
+  html += '</table></body></html>';
+
+  const blob = new Blob([html], { type:'application/vnd.ms-excel;charset=utf-8;' });
+  triggerDownload(blob, modul + '_' + today() + '.xls');
+}
+
+function triggerDownload(blob, filename) {
+  const url = URL.createObjectURL(blob);
+  const a   = document.createElement('a');
+  a.href    = url;
+  a.download= filename;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function today() {
+  return new Date().toISOString().substring(0,10);
+}
+
+// ════════════ UTILS ════════════
 function rupiah(n) {
-  n = Number(n)||0;
-  return 'Rp' + n.toLocaleString('id-ID', { maximumFractionDigits: 0 });
+  return 'Rp' + (Number(n)||0).toLocaleString('id-ID', { maximumFractionDigits:0 });
 }
 function num(n) {
-  return (Number(n)||0).toLocaleString('id-ID', { maximumFractionDigits: 0 });
+  return (Number(n)||0).toLocaleString('id-ID', { maximumFractionDigits:0 });
+}
+function fillSelect(id, items) {
+  const sel = document.getElementById(id);
+  while (sel.options.length > 1) sel.remove(1);
+  items.forEach(v => { const o = document.createElement('option'); o.value=v; o.textContent=v; sel.appendChild(o); });
 }
 function drawChart(id, type, data, horizontal) {
   const ctx = document.getElementById(id);
   if (!ctx) return;
   if (charts[id]) charts[id].destroy();
-  charts[id] = new Chart(ctx, {
-    type,
-    data,
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      indexAxis: horizontal ? 'y' : 'x',
-      plugins: { legend: { display: type !== 'bar' || data.datasets.length > 1 } },
-      scales: type === 'doughnut' ? {} : {
-        x: { grid: { display: !!horizontal } },
-        y: { grid: { color: '#eef1f4', display: !horizontal } }
-      }
+  charts[id] = new Chart(ctx, { type, data, options: {
+    responsive:true, maintainAspectRatio:false, indexAxis: horizontal?'y':'x',
+    plugins:{ legend:{ display: type!=='bar' || data.datasets.length>1 } },
+    scales: type==='doughnut' ? {} : {
+      x:{ grid:{ display:!!horizontal } },
+      y:{ grid:{ color:'#eef1f4', display:!horizontal } }
     }
-  });
+  }});
 }
 function fillTable(tableId, rows, rowFn) {
-  const tbody = document.querySelector('#' + tableId + ' tbody');
+  const tbody = document.querySelector('#'+tableId+' tbody');
   if (!tbody) return;
-  tbody.innerHTML = rows.length ? rows.map(rowFn).join('') :
-    '<tr><td colspan="6" class="empty">Tidak ada data</td></tr>';
+  tbody.innerHTML = rows.length ? rows.map(rowFn).join('') : '<tr><td colspan="6" class="empty">Tidak ada data</td></tr>';
 }
 function palette(n) {
-  const b = ['#1a56a0','#187a45','#b45e00','#c0323c','#0e7490','#6d28d9','#b45e00','#0e7490'];
-  return Array.from({ length: n }, (_, i) => b[i % b.length]);
+  const b=['#1a56a0','#187a45','#b45e00','#c0323c','#0e7490','#6d28d9','#b45e00','#0e7490'];
+  return Array.from({length:n},(_,i)=>b[i%b.length]);
 }
 </script>
 </body>
