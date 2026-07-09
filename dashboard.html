@@ -475,6 +475,10 @@ tr:hover td { background: rgba(255,255,255,.02); color: var(--text); }
       <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
       Per Jenis Pembayaran
     </button>
+    <button class="nav-item" onclick="showPage('kasir-kas')">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="M16 3H8a2 2 0 0 0-2 2v2h12V5a2 2 0 0 0-2-2z"/><circle cx="12" cy="13.5" r="2.5"/></svg>
+      Per Kas
+    </button>
     <button class="nav-item" onclick="showPage('kasir-detail')">
       <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
       Detail Transaksi
@@ -626,6 +630,22 @@ tr:hover td { background: rgba(255,255,255,.02); color: var(--text); }
     </div>
   </div>
 
+  <!-- ══ PAGE: KASIR PER KAS ══ -->
+  <div class="page" id="page-kasir-kas">
+    <div class="section-card">
+      <div class="section-head">
+        <div><div class="section-title">Rekap Per Kas</div><div class="section-sub">Total nominal & transaksi per akun/kas kasir</div></div>
+      </div>
+      <div class="section-body">
+        <div class="chart-wrap" style="height:300px;margin-bottom:18px"><canvas id="chartKasFull"></canvas></div>
+        <div class="tbl-wrap"><table id="tblKas">
+          <thead><tr><th>Kas</th><th class="td-num">Total Nominal</th><th class="td-num">Jumlah Transaksi</th><th class="td-num">% dari Total</th></tr></thead>
+          <tbody></tbody>
+        </table></div>
+      </div>
+    </div>
+  </div>
+
   <!-- ══ PAGE: DETAIL TRANSAKSI ══ -->
   <div class="page" id="page-kasir-detail">
     <div class="section-card">
@@ -636,6 +656,7 @@ tr:hover td { background: rgba(255,255,255,.02); color: var(--text); }
         <input type="text" id="searchTrx" placeholder="Cari nama pasien..." oninput="filterDetail()"/>
         <select id="fltKasir" onchange="filterDetail()"><option value="">Semua Kasir</option></select>
         <select id="fltUnitKasir" onchange="filterDetail()"><option value="">Semua Unit</option></select>
+        <select id="fltKas" onchange="filterDetail()"><option value="">Semua Kas</option></select>
         <select id="fltJaminan" onchange="filterDetail()"><option value="">Semua Jaminan</option></select>
         <select id="fltKeterangan" onchange="filterDetail()"><option value="">Semua Keterangan</option></select>
         <select id="fltTipe" onchange="filterDetail()"><option value="">Semua Jenis Pembayaran</option></select>
@@ -749,6 +770,7 @@ const PAGE_TITLES = {
   'kasir-unit'      : ['Per Unit Kasir', 'Rekap & Detail'],
   'kasir-jaminan'   : ['Per Jaminan', 'Laporan Kasir'],
   'kasir-tipe'      : ['Per Jenis Pembayaran', 'Laporan Kasir'],
+  'kasir-kas'       : ['Per Kas', 'Laporan Kasir'],
   'kasir-detail'    : ['Detail Transaksi', 'Kasir'],
   'pendapatan-unit' : ['Pendapatan Sub Unit', 'Dari BigQuery'],
   'penjualan-kredit': ['Penjualan Kredit', 'Per Penanggung & Segmen'],
@@ -823,13 +845,14 @@ function buildFiltered() {
 
   // Recalculate semua rekap kasir dari kasir_detail (mengikuti filter tanggal)
   if (FILTERED.kasir_detail) {
-    const unitMap = {}, detailMap = {}, jaminanMap = {}, tipeMap = {}, keteranganMap = {};
+    const unitMap = {}, detailMap = {}, jaminanMap = {}, tipeMap = {}, keteranganMap = {}, kasMap = {};
     FILTERED.kasir_detail.forEach(r => {
       const nominal = parseFloat(r.nominal)||0;
       const unit = r.unit_kasir || 'Lainnya';
       const jaminan = r.jaminan || 'Lainnya';
       const tipe = r.tipe_pembayaran || 'Lainnya';
       const ket = r.keterangan || '-';
+      const kas = r.kas || 'Lainnya';
 
       if (!unitMap[unit]) unitMap[unit] = { unit_kasir: unit, total_nominal: 0, jumlah_transaksi: 0, pasien: new Set() };
       unitMap[unit].total_nominal    += nominal;
@@ -853,6 +876,10 @@ function buildFiltered() {
       if (!keteranganMap[ket]) keteranganMap[ket] = { keterangan: ket, total_nominal: 0, jumlah_transaksi: 0 };
       keteranganMap[ket].total_nominal    += nominal;
       keteranganMap[ket].jumlah_transaksi += 1;
+
+      if (!kasMap[kas]) kasMap[kas] = { kas, total_nominal: 0, jumlah_transaksi: 0 };
+      kasMap[kas].total_nominal    += nominal;
+      kasMap[kas].jumlah_transaksi += 1;
     });
     FILTERED.kasir_per_unit = Object.values(unitMap).map(r => ({
       ...r, jumlah_pasien: r.pasien.size
@@ -863,6 +890,7 @@ function buildFiltered() {
     FILTERED.kasir_per_jaminan = Object.values(jaminanMap).sort((a,b) => b.total_nominal - a.total_nominal);
     FILTERED.kasir_per_tipe = Object.values(tipeMap).sort((a,b) => b.total_nominal - a.total_nominal);
     FILTERED.kasir_per_keterangan = Object.values(keteranganMap).sort((a,b) => b.total_nominal - a.total_nominal);
+    FILTERED.kasir_per_kas = Object.values(kasMap).sort((a,b) => b.total_nominal - a.total_nominal);
   }
 }
 
@@ -918,6 +946,7 @@ function renderPage(id) {
     case 'kasir-unit':       renderKasirUnit(d);       break;
     case 'kasir-jaminan':    renderKasirJaminan(d);    break;
     case 'kasir-tipe':       renderKasirTipe(d);       break;
+    case 'kasir-kas':        renderKasirKas(d);        break;
     case 'kasir-detail':     renderKasirDetail(d);     break;
     case 'pendapatan-unit':  renderPendapatanUnit(d);  break;
     case 'penjualan-kredit': renderPenjualanKredit(d); break;
@@ -1044,6 +1073,21 @@ function renderKasirTipe(d) {
     </tr>`).join('') || '<tr><td colspan="4" class="empty">Tidak ada data</td></tr>';
 }
 
+// ── KASIR PER KAS ──
+function renderKasirKas(d) {
+  const kas = d.kasir_per_kas || [];
+  const totalSemua = kas.reduce((s,r) => s + (parseFloat(r.total_nominal)||0), 0);
+  makeBar('chartKasFull', kas.map(r => (r.kas||'-').substring(0,25)), kas.map(r => parseFloat(r.total_nominal)||0), 'Nominal', { indexAxis:'y' });
+  const tbody = document.querySelector('#tblKas tbody');
+  tbody.innerHTML = kas.map(r => `
+    <tr>
+      <td class="td-bold">${r.kas||'-'}</td>
+      <td class="td-num">${rupiah(r.total_nominal)}</td>
+      <td class="td-num">${num(r.jumlah_transaksi)}</td>
+      <td class="td-num">${pct(r.total_nominal, totalSemua)}</td>
+    </tr>`).join('') || '<tr><td colspan="4" class="empty">Tidak ada data</td></tr>';
+}
+
 // ── KASIR DETAIL ──
 let detailData = [];
 function populateDetailFilterOptions() {
@@ -1059,18 +1103,20 @@ function populateDetailFilterOptions() {
   };
   document.getElementById('fltKasir').dataset.allLabel        = 'Semua Kasir';
   document.getElementById('fltUnitKasir').dataset.allLabel    = 'Semua Unit';
+  document.getElementById('fltKas').dataset.allLabel          = 'Semua Kas';
   document.getElementById('fltJaminan').dataset.allLabel      = 'Semua Jaminan';
   document.getElementById('fltKeterangan').dataset.allLabel   = 'Semua Keterangan';
   document.getElementById('fltTipe').dataset.allLabel         = 'Semua Jenis Pembayaran';
   fill('fltKasir', rows.map(r => r.nama_kasir));
   fill('fltUnitKasir', rows.map(r => r.unit_kasir));
+  fill('fltKas', rows.map(r => r.kas));
   fill('fltJaminan', rows.map(r => r.jaminan));
   fill('fltKeterangan', rows.map(r => r.keterangan));
   fill('fltTipe', rows.map(r => r.tipe_pembayaran));
 }
 function resetDetailFilter() {
   document.getElementById('searchTrx').value = '';
-  ['fltKasir','fltUnitKasir','fltJaminan','fltKeterangan','fltTipe'].forEach(id => document.getElementById(id).value = '');
+  ['fltKasir','fltUnitKasir','fltKas','fltJaminan','fltKeterangan','fltTipe'].forEach(id => document.getElementById(id).value = '');
   filterDetail();
 }
 function renderKasirDetail(d) {
@@ -1082,6 +1128,7 @@ function filterDetail() {
   const q     = (document.getElementById('searchTrx')?.value||'').toLowerCase();
   const kasir = document.getElementById('fltKasir')?.value || '';
   const unit  = document.getElementById('fltUnitKasir')?.value || '';
+  const kas   = document.getElementById('fltKas')?.value || '';
   const jam   = document.getElementById('fltJaminan')?.value || '';
   const ket   = document.getElementById('fltKeterangan')?.value || '';
   const tipe  = document.getElementById('fltTipe')?.value || '';
@@ -1090,6 +1137,7 @@ function filterDetail() {
     (!q   || (r.nama_pasien||'').toLowerCase().includes(q)) &&
     (!kasir || r.nama_kasir === kasir) &&
     (!unit  || r.unit_kasir === unit) &&
+    (!kas   || r.kas === kas) &&
     (!jam   || r.jaminan === jam) &&
     (!ket   || r.keterangan === ket) &&
     (!tipe  || r.tipe_pembayaran === tipe)
