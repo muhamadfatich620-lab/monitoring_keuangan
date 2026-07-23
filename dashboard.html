@@ -711,7 +711,13 @@ tr:hover td { background: rgba(255,255,255,.02); color: var(--text); }
     <div class="section-card">
       <div class="section-head">
         <div><div class="section-title">Detail Penjualan Kredit</div></div>
-        <input type="text" id="searchKredit" placeholder="Cari penanggung..." style="background:var(--bg3);border:1px solid var(--border);border-radius:7px;padding:6px 10px;color:var(--text);font-size:12px;outline:none" oninput="filterKredit()"/>
+      </div>
+      <div class="local-filter-wrap">
+        <select id="fltSubPenerima" onchange="filterKredit()"><option value="">Semua Sub Penerima</option></select>
+        <select id="fltPenanggungKredit" onchange="filterKredit()"><option value="">Semua Penanggung</option></select>
+        <input type="text" id="searchKredit" placeholder="Cari penanggung/sub penerima..." oninput="filterKredit()"/>
+        <button class="btn btn-outline" onclick="resetKreditFilter()">Reset Filter</button>
+        <span class="local-filter-count" id="kreditCount"></span>
       </div>
       <div class="section-body" style="padding:0">
         <div class="tbl-wrap"><table id="tblKredit">
@@ -1283,11 +1289,49 @@ function renderPenjualanKredit(d) {
 
   makeBar('chartPenanggung', penanggung.slice(0,10).map(r => (r.Penanggung||r.penanggung||'-').substring(0,25)), penanggung.slice(0,10).map(r => parseFloat(r.total_nominal)||0), 'Nominal', { indexAxis:'y' });
   makeDoughnut('chartSegmen', segmen.map(r => r.Segment||r.segment||'-'), segmen.map(r => parseFloat(r.total_nominal)||0));
+  populateKreditFilterOptions();
   filterKredit();
 }
+
+// Isi ulang opsi dropdown Sub Penerima & Penanggung sesuai data yang sedang aktif
+function populateKreditFilterOptions() {
+  const fillSelect = (elId, values, allLabel) => {
+    const el = document.getElementById(elId);
+    if (!el) return;
+    const current = el.value;
+    const opts = [...new Set(values.filter(Boolean))].sort();
+    el.innerHTML = `<option value="">${allLabel}</option>` +
+      opts.map(v => `<option value="${v.replace(/"/g,'&quot;')}">${v}</option>`).join('');
+    if (opts.includes(current)) el.value = current;
+  };
+  fillSelect('fltSubPenerima', kreditData.map(r => r.nama_sub_penerima), 'Semua Sub Penerima');
+  fillSelect('fltPenanggungKredit', kreditData.map(r => r.Penanggung || r.penanggung), 'Semua Penanggung');
+}
+
+function resetKreditFilter() {
+  document.getElementById('searchKredit').value = '';
+  document.getElementById('fltSubPenerima').value = '';
+  document.getElementById('fltPenanggungKredit').value = '';
+  filterKredit();
+}
+
 function filterKredit() {
-  const q = (document.getElementById('searchKredit')?.value||'').toLowerCase();
-  const rows = kreditData.filter(r => !q || (r.Penanggung||r.penanggung||'').toLowerCase().includes(q));
+  const q           = (document.getElementById('searchKredit')?.value||'').toLowerCase();
+  const subPenerima = document.getElementById('fltSubPenerima')?.value || '';
+  const penanggungF = document.getElementById('fltPenanggungKredit')?.value || '';
+
+  const rows = kreditData.filter(r => {
+    const sp = r.nama_sub_penerima || '';
+    const pg = r.Penanggung || r.penanggung || '';
+    if (q && !(sp.toLowerCase().includes(q) || pg.toLowerCase().includes(q))) return false;
+    if (subPenerima && sp !== subPenerima) return false;
+    if (penanggungF && pg !== penanggungF) return false;
+    return true;
+  });
+
+  const countEl = document.getElementById('kreditCount');
+  if (countEl) countEl.textContent = `${num(rows.length)} dari ${num(kreditData.length)} baris`;
+
   const tbody = document.querySelector('#tblKredit tbody');
   tbody.innerHTML = rows.slice(0,500).map(r => `
     <tr>
@@ -1297,12 +1341,11 @@ function filterKredit() {
       <td><span class="badge badge-cyan">${r.Segment||r.segment||'-'}</span></td>
       <td style="font-size:11px">${r.nama_sub_unit||'-'}</td>
       <td style="font-size:10px;color:var(--text3)">${r.Nama_COA||r.nama_coa||'-'}</td>
-      <td class="td-num">${rupiah(r.debet)}</td>
       <td class="td-num">${rupiah(r.kredit)}</td>
+      <td class="td-num">${rupiah(r.debet)}</td>
       <td class="td-num td-bold">${rupiah(r.total||r.Total)}</td>
     </tr>`).join('') || '<tr><td colspan="9" class="empty">Tidak ada data</td></tr>';
 }
-
 // ── REKONSILIASI ──
 function renderRekonsiliasi(d) {
   const kasirUnit     = d.kasir_per_unit     || [];
