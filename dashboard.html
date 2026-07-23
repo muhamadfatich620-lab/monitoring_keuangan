@@ -9,24 +9,28 @@
 /* ── RESET & BASE ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --bg:        #0f1117;
-  --bg2:       #181c27;
-  --bg3:       #1f2435;
-  --border:    #2a2f42;
-  --text:      #e8eaf0;
-  --text2:     #8b92a8;
-  --text3:     #555d75;
-  --accent:    #3b82f6;
+  --bg:        #f4f6fa;
+  --bg2:       #ffffff;
+  --bg3:       #eef1f7;
+  --border:    #e3e7ef;
+  --text:      #1e2433;
+  --text2:     #64748b;
+  --text3:     #94a1b5;
+  --accent:    #2563eb;
   --accent2:   #1d4ed8;
-  --green:     #10b981;
-  --red:       #ef4444;
-  --amber:     #f59e0b;
-  --purple:    #8b5cf6;
-  --cyan:      #06b6d4;
+  --green:     #059669;
+  --red:       #dc2626;
+  --amber:     #d97706;
+  --purple:    #7c3aed;
+  --cyan:      #0891b2;
+  --zebra:     #f8fafc;
+  --hover:     #eef2ff;
   --sidebar-w: 240px;
   --header-h:  56px;
   --radius:    10px;
   --transition: 0.22s cubic-bezier(.4,0,.2,1);
+  --shadow-sm: 0 1px 2px rgba(30,36,51,.05);
+  --shadow-md: 0 4px 14px rgba(30,36,51,.06);
 }
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -75,7 +79,7 @@ body {
 }
 .sidebar-section-label {
   font-size: 10px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text3);
   letter-spacing: .08em;
   text-transform: uppercase;
@@ -99,7 +103,7 @@ body {
   text-align: left;
 }
 .nav-item:hover { background: var(--bg3); color: var(--text); }
-.nav-item.active { background: rgba(59,130,246,.15); color: var(--accent); }
+.nav-item.active { background: rgba(37,99,235,.1); color: var(--accent); }
 .nav-item .nav-icon { width: 16px; height: 16px; opacity: .7; flex-shrink: 0; }
 .nav-item.active .nav-icon { opacity: 1; }
 
@@ -110,7 +114,7 @@ body {
   font-size: 11px;
   color: var(--text3);
 }
-#lastUpdate { color: var(--text2); font-weight: 500; }
+#lastUpdate { color: var(--text2); font-weight: 600; }
 
 /* ── HEADER ── */
 .header {
@@ -147,7 +151,7 @@ body {
 
 .header-title {
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text);
   flex: 1;
 }
@@ -188,7 +192,7 @@ body {
 .btn-primary { background: var(--accent); color: #fff; }
 .btn-primary:hover { background: var(--accent2); }
 .btn-primary:disabled { opacity: .6; cursor: wait; }
-.btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text2); }
+.btn-outline { background: var(--bg2); border: 1px solid var(--border); color: var(--text2); }
 .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
 
 /* ── MAIN CONTENT ── */
@@ -198,6 +202,8 @@ body {
   padding: 24px;
   min-height: calc(100vh - var(--header-h));
   transition: margin-left var(--transition);
+  display: flex;
+  flex-direction: column;
 }
 .main.full { margin-left: 0; }
 
@@ -206,13 +212,13 @@ body {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,.5);
+  background: rgba(15,20,30,.4);
   z-index: 99;
 }
 .overlay.show { display: block; }
 
 /* ── PAGE ── */
-.page { display: none; }
+.page { display: none; flex: 1 0 auto; }
 .page.active { display: block; }
 
 /* ── KPI CARDS ── */
@@ -229,12 +235,13 @@ body {
   padding: 16px 18px;
   position: relative;
   overflow: hidden;
+  box-shadow: var(--shadow-sm);
 }
 .kpi-card::before {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0;
-  height: 2px;
+  height: 3px;
 }
 .kpi-card.blue::before   { background: var(--accent); }
 .kpi-card.green::before  { background: var(--green); }
@@ -245,7 +252,7 @@ body {
 
 .kpi-label {
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text2);
   text-transform: uppercase;
   letter-spacing: .06em;
@@ -270,6 +277,7 @@ body {
   border-radius: var(--radius);
   margin-bottom: 20px;
   overflow: hidden;
+  box-shadow: var(--shadow-sm);
 }
 .section-head {
   display: flex;
@@ -282,7 +290,7 @@ body {
 }
 .section-title {
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text);
 }
 .section-sub {
@@ -302,7 +310,12 @@ body {
 @media (max-width: 900px) { .grid-2 { grid-template-columns: 1fr; } }
 
 /* ── TABLE ── */
-.tbl-wrap { overflow-x: auto; }
+.tbl-wrap {
+  overflow: auto;
+  max-height: 460px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
 table {
   width: 100%;
   border-collapse: collapse;
@@ -310,26 +323,47 @@ table {
 }
 th {
   text-align: left;
-  padding: 8px 12px;
+  padding: 9px 12px;
   font-size: 10px;
   font-weight: 700;
-  color: var(--text3);
+  color: var(--text2);
   text-transform: uppercase;
   letter-spacing: .06em;
   border-bottom: 1px solid var(--border);
   white-space: nowrap;
   background: var(--bg3);
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  box-shadow: 0 1px 0 var(--border);
 }
+th[data-key] { cursor: pointer; user-select: none; }
+th[data-key]:hover { color: var(--accent); }
+.sort-ico-wrap { display: inline-block; margin-left: 4px; font-size: 8px; letter-spacing: -1px; color: var(--text3); }
+.sort-ico.active { color: var(--accent); font-weight: 700; }
 td {
   padding: 9px 12px;
-  border-bottom: 1px solid rgba(42,47,66,.6);
+  border-bottom: 1px solid var(--border);
   color: var(--text2);
   white-space: nowrap;
+  background: var(--bg2);
 }
 tr:last-child td { border-bottom: none; }
-tr:hover td { background: rgba(255,255,255,.02); color: var(--text); }
+tbody tr:nth-child(even) td { background: var(--zebra); }
+tbody tr:hover td { background: var(--hover); color: var(--text); }
 .td-num { text-align: right; font-variant-numeric: tabular-nums; font-family: 'SF Mono', 'Fira Code', monospace; }
-.td-bold { font-weight: 600; color: var(--text); }
+.td-bold { font-weight: 700; color: var(--text); }
+tfoot td {
+  position: sticky;
+  bottom: 0;
+  z-index: 3;
+  background: var(--bg3);
+  box-shadow: 0 -1px 0 var(--border);
+  font-weight: 700;
+  color: var(--text);
+}
+.tbl-total-row td { border-bottom: none; }
+.tbl-total-label { text-transform: uppercase; font-size: 11px; letter-spacing: .04em; }
 
 /* ── BADGE ── */
 .badge {
@@ -337,15 +371,15 @@ tr:hover td { background: rgba(255,255,255,.02); color: var(--text); }
   padding: 2px 8px;
   border-radius: 20px;
   font-size: 10px;
-  font-weight: 600;
+  font-weight: 700;
 }
-.badge-blue   { background: rgba(59,130,246,.15);  color: #60a5fa; }
-.badge-green  { background: rgba(16,185,129,.15);  color: #34d399; }
-.badge-amber  { background: rgba(245,158,11,.15);  color: #fbbf24; }
-.badge-purple { background: rgba(139,92,246,.15);  color: #a78bfa; }
-.badge-red    { background: rgba(239,68,68,.15);   color: #f87171; }
-.badge-cyan   { background: rgba(6,182,212,.15);   color: #22d3ee; }
-.badge-gray   { background: rgba(139,148,168,.15); color: #8b94a8; }
+.badge-blue   { background: rgba(37,99,235,.1);  color: #2563eb; }
+.badge-green  { background: rgba(5,150,105,.1);  color: #059669; }
+.badge-amber  { background: rgba(217,119,6,.12); color: #b45309; }
+.badge-purple { background: rgba(124,58,237,.1); color: #7c3aed; }
+.badge-red    { background: rgba(220,38,38,.1);  color: #dc2626; }
+.badge-cyan   { background: rgba(8,145,178,.1);  color: #0891b2; }
+.badge-gray   { background: rgba(100,116,139,.12); color: #475569; }
 
 /* ── UNIT FILTER ── */
 .unit-filter-wrap {
@@ -359,10 +393,10 @@ tr:hover td { background: rgba(255,255,255,.02); color: var(--text); }
   padding: 5px 12px;
   border-radius: 20px;
   border: 1px solid var(--border);
-  background: transparent;
+  background: var(--bg2);
   color: var(--text2);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   transition: all var(--transition);
 }
@@ -399,6 +433,7 @@ tr:hover td { background: rgba(255,255,255,.02); color: var(--text); }
   margin-left: auto;
   font-size: 11px;
   color: var(--text3);
+  font-weight: 600;
 }
 
 /* ── CHART CANVAS ── */
@@ -425,8 +460,8 @@ tr:hover td { background: rgba(255,255,255,.02); color: var(--text); }
 @keyframes spin { to { transform: rotate(360deg); } }
 
 /* ── REKON TABLE ── */
-.rekon-match { color: var(--green); font-weight: 600; }
-.rekon-diff  { color: var(--red);   font-weight: 600; }
+.rekon-match { color: var(--green); font-weight: 700; }
+.rekon-diff  { color: var(--red);   font-weight: 700; }
 
 /* ── EMPTY STATE ── */
 .empty {
@@ -436,10 +471,39 @@ tr:hover td { background: rgba(255,255,255,.02); color: var(--text); }
   font-size: 13px;
 }
 
+/* ── FOOTER ── */
+.app-footer {
+  margin-top: 4px;
+  padding: 16px 20px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 12px;
+  color: var(--text2);
+  box-shadow: var(--shadow-sm);
+}
+.app-footer .footer-brand { display: flex; align-items: center; gap: 8px; }
+.app-footer .footer-brand-badge {
+  width: 30px; height: 30px; border-radius: 8px;
+  background: linear-gradient(135deg, var(--accent), var(--cyan));
+  color: #fff; font-size: 11px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.app-footer strong { color: var(--text); }
+.footer-right { display: flex; gap: 10px; align-items: center; color: var(--text3); flex-wrap: wrap; }
+.footer-right .dot { color: var(--border); }
+
 /* ── SCROLLBAR ── */
-::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #94a1b5; }
 </style>
 </head>
 <body>
@@ -581,8 +645,14 @@ tr:hover td { background: rgba(255,255,255,.02); color: var(--text); }
           <div class="chart-wrap"><canvas id="chartUnitTrx"></canvas></div>
         </div>
         <div class="tbl-wrap"><table id="tblUnit">
-          <thead><tr><th>Unit Kasir</th><th class="td-num">Total Nominal</th><th class="td-num">Jumlah Transaksi</th><th class="td-num">Jumlah Pasien</th></tr></thead>
+          <thead id="head-tblUnit"><tr>
+            <th data-key="unit_kasir" onclick="tblSort('tblUnit','unit_kasir','text')">Unit Kasir <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="total_nominal" onclick="tblSort('tblUnit','total_nominal','number')">Total Nominal <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="jumlah_transaksi" onclick="tblSort('tblUnit','jumlah_transaksi','number')">Jumlah Transaksi <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="jumlah_pasien" onclick="tblSort('tblUnit','jumlah_pasien','number')">Jumlah Pasien <span class="sort-ico-wrap"></span></th>
+          </tr></thead>
           <tbody></tbody>
+          <tfoot></tfoot>
         </table></div>
       </div>
     </div>
@@ -590,10 +660,22 @@ tr:hover td { background: rgba(255,255,255,.02); color: var(--text); }
       <div class="section-head">
         <div><div class="section-title">Detail Per Kasir</div><div class="section-sub" id="unitDetailSub">Semua unit</div></div>
       </div>
-      <div class="section-body">
+      <div class="local-filter-wrap">
+        <input type="text" id="searchUnitDetail" placeholder="Cari nama kasir / unit..." oninput="filterUnitDetail()"/>
+        <button class="btn btn-outline" onclick="resetUnitDetailFilter()">Reset Filter</button>
+        <span class="local-filter-count" id="unitDetailCount"></span>
+      </div>
+      <div class="section-body" style="padding:0">
         <div class="tbl-wrap"><table id="tblUnitDetail">
-          <thead><tr><th>Unit</th><th>Nama Kasir</th><th class="td-num">Total Nominal</th><th class="td-num">Jumlah Transaksi</th><th class="td-num">Jumlah Pasien</th></tr></thead>
+          <thead id="head-tblUnitDetail"><tr>
+            <th data-key="unit_kasir" onclick="tblSort('tblUnitDetail','unit_kasir','text')">Unit <span class="sort-ico-wrap"></span></th>
+            <th data-key="nama_kasir" onclick="tblSort('tblUnitDetail','nama_kasir','text')">Nama Kasir <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="total_nominal" onclick="tblSort('tblUnitDetail','total_nominal','number')">Total Nominal <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="jumlah_transaksi" onclick="tblSort('tblUnitDetail','jumlah_transaksi','number')">Jumlah Transaksi <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="jumlah_pasien" onclick="tblSort('tblUnitDetail','jumlah_pasien','number')">Jumlah Pasien <span class="sort-ico-wrap"></span></th>
+          </tr></thead>
           <tbody></tbody>
+          <tfoot></tfoot>
         </table></div>
       </div>
     </div>
@@ -605,11 +687,21 @@ tr:hover td { background: rgba(255,255,255,.02); color: var(--text); }
       <div class="section-head">
         <div><div class="section-title">Penerimaan Per Jaminan</div></div>
       </div>
+      <div class="local-filter-wrap">
+        <input type="text" id="searchJaminan" placeholder="Cari nama jaminan..." oninput="filterJaminan()"/>
+        <button class="btn btn-outline" onclick="resetJaminanFilter()">Reset Filter</button>
+        <span class="local-filter-count" id="jaminanCount"></span>
+      </div>
       <div class="section-body">
         <div class="chart-wrap" style="height:300px;margin-bottom:18px"><canvas id="chartJaminanFull"></canvas></div>
         <div class="tbl-wrap"><table id="tblJaminan">
-          <thead><tr><th>Jaminan</th><th class="td-num">Total Nominal</th><th class="td-num">Jumlah Transaksi</th></tr></thead>
+          <thead id="head-tblJaminan"><tr>
+            <th data-key="jaminan" onclick="tblSort('tblJaminan','jaminan','text')">Jaminan <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="total_nominal" onclick="tblSort('tblJaminan','total_nominal','number')">Total Nominal <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="jumlah_transaksi" onclick="tblSort('tblJaminan','jumlah_transaksi','number')">Jumlah Transaksi <span class="sort-ico-wrap"></span></th>
+          </tr></thead>
           <tbody></tbody>
+          <tfoot></tfoot>
         </table></div>
       </div>
     </div>
@@ -621,11 +713,22 @@ tr:hover td { background: rgba(255,255,255,.02); color: var(--text); }
       <div class="section-head">
         <div><div class="section-title">Rekap Per Jenis Pembayaran</div><div class="section-sub">Total nominal & transaksi per tipe pembayaran</div></div>
       </div>
+      <div class="local-filter-wrap">
+        <input type="text" id="searchTipe" placeholder="Cari jenis pembayaran..." oninput="filterTipe()"/>
+        <button class="btn btn-outline" onclick="resetTipeFilter()">Reset Filter</button>
+        <span class="local-filter-count" id="tipeCount"></span>
+      </div>
       <div class="section-body">
         <div class="chart-wrap" style="height:300px;margin-bottom:18px"><canvas id="chartTipeFull"></canvas></div>
         <div class="tbl-wrap"><table id="tblTipe">
-          <thead><tr><th>Jenis Pembayaran</th><th class="td-num">Total Nominal</th><th class="td-num">Jumlah Transaksi</th><th class="td-num">% dari Total</th></tr></thead>
+          <thead id="head-tblTipe"><tr>
+            <th data-key="tipe_pembayaran" onclick="tblSort('tblTipe','tipe_pembayaran','text')">Jenis Pembayaran <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="total_nominal" onclick="tblSort('tblTipe','total_nominal','number')">Total Nominal <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="jumlah_transaksi" onclick="tblSort('tblTipe','jumlah_transaksi','number')">Jumlah Transaksi <span class="sort-ico-wrap"></span></th>
+            <th class="td-num">% dari Total</th>
+          </tr></thead>
           <tbody></tbody>
+          <tfoot></tfoot>
         </table></div>
       </div>
     </div>
@@ -637,11 +740,22 @@ tr:hover td { background: rgba(255,255,255,.02); color: var(--text); }
       <div class="section-head">
         <div><div class="section-title">Rekap Per Kas</div><div class="section-sub">Total nominal & transaksi per akun/kas kasir</div></div>
       </div>
+      <div class="local-filter-wrap">
+        <input type="text" id="searchKas" placeholder="Cari nama kas..." oninput="filterKas()"/>
+        <button class="btn btn-outline" onclick="resetKasFilter()">Reset Filter</button>
+        <span class="local-filter-count" id="kasCount"></span>
+      </div>
       <div class="section-body">
         <div class="chart-wrap" style="height:300px;margin-bottom:18px"><canvas id="chartKasFull"></canvas></div>
         <div class="tbl-wrap"><table id="tblKas">
-          <thead><tr><th>Kas</th><th class="td-num">Total Nominal</th><th class="td-num">Jumlah Transaksi</th><th class="td-num">% dari Total</th></tr></thead>
+          <thead id="head-tblKas"><tr>
+            <th data-key="kas" onclick="tblSort('tblKas','kas','text')">Kas <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="total_nominal" onclick="tblSort('tblKas','total_nominal','number')">Total Nominal <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="jumlah_transaksi" onclick="tblSort('tblKas','jumlah_transaksi','number')">Jumlah Transaksi <span class="sort-ico-wrap"></span></th>
+            <th class="td-num">% dari Total</th>
+          </tr></thead>
           <tbody></tbody>
+          <tfoot></tfoot>
         </table></div>
       </div>
     </div>
@@ -651,7 +765,7 @@ tr:hover td { background: rgba(255,255,255,.02); color: var(--text); }
   <div class="page" id="page-kasir-detail">
     <div class="section-card">
       <div class="section-head">
-        <div><div class="section-title">Detail Transaksi Kasir</div><div class="section-sub">Sesuai filter tanggal di atas (menampilkan maks 2000 baris pertama)</div></div>
+        <div><div class="section-title">Detail Transaksi Kasir</div><div class="section-sub">Sesuai filter tanggal di atas (menampilkan maks 2000 baris pertama dari hasil filter)</div></div>
       </div>
       <div class="local-filter-wrap">
         <input type="text" id="searchTrx" placeholder="Cari nama pasien..." oninput="filterDetail()"/>
@@ -666,8 +780,18 @@ tr:hover td { background: rgba(255,255,255,.02); color: var(--text); }
       </div>
       <div class="section-body" style="padding:0">
         <div class="tbl-wrap"><table id="tblDetail">
-          <thead><tr><th>Tanggal</th><th>Kasir</th><th>Pasien</th><th>Jaminan</th><th>Kas</th><th>Tipe</th><th class="td-num">Nominal</th><th>Ket</th></tr></thead>
+          <thead id="head-tblDetail"><tr>
+            <th data-key="tanggal_transaksi" onclick="tblSort('tblDetail','tanggal_transaksi','text')">Tanggal <span class="sort-ico-wrap"></span></th>
+            <th data-key="nama_kasir" onclick="tblSort('tblDetail','nama_kasir','text')">Kasir <span class="sort-ico-wrap"></span></th>
+            <th data-key="nama_pasien" onclick="tblSort('tblDetail','nama_pasien','text')">Pasien <span class="sort-ico-wrap"></span></th>
+            <th data-key="jaminan" onclick="tblSort('tblDetail','jaminan','text')">Jaminan <span class="sort-ico-wrap"></span></th>
+            <th data-key="kas" onclick="tblSort('tblDetail','kas','text')">Kas <span class="sort-ico-wrap"></span></th>
+            <th data-key="tipe_pembayaran" onclick="tblSort('tblDetail','tipe_pembayaran','text')">Tipe <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="nominal" onclick="tblSort('tblDetail','nominal','number')">Nominal <span class="sort-ico-wrap"></span></th>
+            <th data-key="keterangan" onclick="tblSort('tblDetail','keterangan','text')">Ket <span class="sort-ico-wrap"></span></th>
+          </tr></thead>
           <tbody></tbody>
+          <tfoot></tfoot>
         </table></div>
       </div>
     </div>
@@ -679,11 +803,22 @@ tr:hover td { background: rgba(255,255,255,.02); color: var(--text); }
       <div class="section-head">
         <div><div class="section-title">Pendapatan Per Sub Unit</div></div>
       </div>
+      <div class="local-filter-wrap">
+        <input type="text" id="searchPendapatanUnit" placeholder="Cari nama sub unit..." oninput="filterPendapatanUnit()"/>
+        <button class="btn btn-outline" onclick="resetPendapatanUnitFilter()">Reset Filter</button>
+        <span class="local-filter-count" id="pendapatanUnitCount"></span>
+      </div>
       <div class="section-body">
         <div class="chart-wrap" style="height:300px;margin-bottom:18px"><canvas id="chartPendapatanUnit"></canvas></div>
         <div class="tbl-wrap"><table id="tblPendapatanUnit">
-          <thead><tr><th>Sub Unit</th><th class="td-num">Total Debet</th><th class="td-num">Total Kredit</th><th class="td-num">Net</th></tr></thead>
+          <thead id="head-tblPendapatanUnit"><tr>
+            <th data-key="nama_sub_unit" onclick="tblSort('tblPendapatanUnit','nama_sub_unit','text')">Sub Unit <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="total_debet" onclick="tblSort('tblPendapatanUnit','total_debet','number')">Total Debet <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="total_kredit" onclick="tblSort('tblPendapatanUnit','total_kredit','number')">Total Kredit <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="net" onclick="tblSort('tblPendapatanUnit','net','number')">Net <span class="sort-ico-wrap"></span></th>
+          </tr></thead>
           <tbody></tbody>
+          <tfoot></tfoot>
         </table></div>
       </div>
     </div>
@@ -715,14 +850,26 @@ tr:hover td { background: rgba(255,255,255,.02); color: var(--text); }
       <div class="local-filter-wrap">
         <select id="fltSubPenerima" onchange="filterKredit()"><option value="">Semua Sub Penerima</option></select>
         <select id="fltPenanggungKredit" onchange="filterKredit()"><option value="">Semua Penanggung</option></select>
+        <select id="fltSegmenKredit" onchange="filterKredit()"><option value="">Semua Segmen</option></select>
         <input type="text" id="searchKredit" placeholder="Cari penanggung/sub penerima..." oninput="filterKredit()"/>
         <button class="btn btn-outline" onclick="resetKreditFilter()">Reset Filter</button>
         <span class="local-filter-count" id="kreditCount"></span>
       </div>
       <div class="section-body" style="padding:0">
         <div class="tbl-wrap"><table id="tblKredit">
-          <thead><tr><th>Tanggal</th><th>Sub Penerima</th><th>Penanggung</th><th>Segmen</th><th>Sub Unit</th><th>COA</th><th class="td-num">Debet</th><th class="td-num">Kredit</th><th class="td-num">Total</th></tr></thead>
+          <thead id="head-tblKredit"><tr>
+            <th data-key="tanggal" onclick="tblSort('tblKredit','tanggal','text')">Tanggal <span class="sort-ico-wrap"></span></th>
+            <th data-key="nama_sub_penerima" onclick="tblSort('tblKredit','nama_sub_penerima','text')">Sub Penerima <span class="sort-ico-wrap"></span></th>
+            <th data-key="_penanggung" onclick="tblSort('tblKredit','_penanggung','text')">Penanggung <span class="sort-ico-wrap"></span></th>
+            <th data-key="_segmen" onclick="tblSort('tblKredit','_segmen','text')">Segmen <span class="sort-ico-wrap"></span></th>
+            <th data-key="nama_sub_unit" onclick="tblSort('tblKredit','nama_sub_unit','text')">Sub Unit <span class="sort-ico-wrap"></span></th>
+            <th data-key="_coa" onclick="tblSort('tblKredit','_coa','text')">COA <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="kredit" onclick="tblSort('tblKredit','kredit','number')">Debet <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="debet" onclick="tblSort('tblKredit','debet','number')">Kredit <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="_total" onclick="tblSort('tblKredit','_total','number')">Total <span class="sort-ico-wrap"></span></th>
+          </tr></thead>
           <tbody></tbody>
+          <tfoot></tfoot>
         </table></div>
       </div>
     </div>
@@ -735,15 +882,47 @@ tr:hover td { background: rgba(255,255,255,.02); color: var(--text); }
       <div class="section-head">
         <div><div class="section-title">Rekonsiliasi Kasir vs Pelayanan Medis</div><div class="section-sub">Perbandingan total penerimaan kasir dengan total tagihan pelayanan</div></div>
       </div>
+      <div class="local-filter-wrap">
+        <input type="text" id="searchRekon" placeholder="Cari unit pelayanan..." oninput="filterRekon()"/>
+        <select id="fltStatusRekon" onchange="filterRekon()">
+          <option value="">Semua Status</option>
+          <option value="Sesuai">Sesuai</option>
+          <option value="Selisih">Selisih</option>
+        </select>
+        <button class="btn btn-outline" onclick="resetRekonFilter()">Reset Filter</button>
+        <span class="local-filter-count" id="rekonCount"></span>
+      </div>
       <div class="section-body">
         <div class="chart-wrap" style="margin-bottom:18px"><canvas id="chartRekon"></canvas></div>
         <div class="tbl-wrap"><table id="tblRekon">
-          <thead><tr><th>Unit Pelayanan</th><th class="td-num">Total Tagihan Pelayanan</th><th class="td-num">Total Penerimaan Kasir</th><th class="td-num">Selisih</th><th>Status</th></tr></thead>
+          <thead id="head-tblRekon"><tr>
+            <th data-key="unit" onclick="tblSort('tblRekon','unit','text')">Unit Pelayanan <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="total_tagihan" onclick="tblSort('tblRekon','total_tagihan','number')">Total Tagihan Pelayanan <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="kasir_nominal" onclick="tblSort('tblRekon','kasir_nominal','number')">Total Penerimaan Kasir <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="selisih" onclick="tblSort('tblRekon','selisih','number')">Selisih <span class="sort-ico-wrap"></span></th>
+            <th data-key="status" onclick="tblSort('tblRekon','status','text')">Status <span class="sort-ico-wrap"></span></th>
+          </tr></thead>
           <tbody></tbody>
+          <tfoot></tfoot>
         </table></div>
       </div>
     </div>
   </div>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="app-footer">
+    <div class="footer-brand">
+      <div class="footer-brand-badge">PPB</div>
+      <div>
+        <strong>PPB &amp; ERP</strong> — RSSG Monitoring Keuangan
+      </div>
+    </div>
+    <div class="footer-right">
+      <span>Versi 2.0.0</span>
+      <span class="dot">•</span>
+      <span>Update terakhir: <span id="footerLastUpdate">—</span></span>
+    </div>
+  </footer>
 
 </main>
 
@@ -810,6 +989,66 @@ function rupiah(v) {
 }
 function num(v) { return new Intl.NumberFormat('id-ID').format(parseInt(v)||0); }
 function pct(a,b) { return b ? ((a/b)*100).toFixed(1) + '%' : '0%'; }
+function sumBy(arr, key) { return arr.reduce((s,r) => s + (parseFloat(r[key])||0), 0); }
+
+// ══ GENERIC TABLE HELPERS: sort + total row (zebra & sticky header handled via CSS) ══
+const TblState    = {};   // tableId -> { key, dir, type }
+const TblRerender = {};   // tableId -> function that re-renders that table using its current data
+
+function tblGetState(tableId) {
+  return TblState[tableId] || (TblState[tableId] = { key: null, dir: null, type: 'text' });
+}
+function tblSort(tableId, key, type) {
+  const st = tblGetState(tableId);
+  if (st.key === key) {
+    st.dir = st.dir === 'asc' ? 'desc' : (st.dir === 'desc' ? null : 'asc');
+    if (!st.dir) st.key = null;
+  } else {
+    st.key = key; st.dir = 'asc';
+  }
+  st.type = type;
+  if (TblRerender[tableId]) TblRerender[tableId]();
+}
+function tblApplySort(tableId, rows) {
+  const st = TblState[tableId];
+  if (!st || !st.key || !st.dir) return rows;
+  const { key, dir, type } = st;
+  const sorted = rows.slice().sort((a, b) => {
+    let va = a[key], vb = b[key];
+    if (type === 'number') {
+      va = parseFloat(va) || 0; vb = parseFloat(vb) || 0;
+      return dir === 'asc' ? va - vb : vb - va;
+    }
+    va = (va == null ? '' : String(va)).toLowerCase();
+    vb = (vb == null ? '' : String(vb)).toLowerCase();
+    if (va < vb) return dir === 'asc' ? -1 : 1;
+    if (va > vb) return dir === 'asc' ? 1 : -1;
+    return 0;
+  });
+  return sorted;
+}
+function tblSortIconHtml(tableId, key) {
+  const st = TblState[tableId];
+  if (st && st.key === key) return st.dir === 'asc' ? '<span class="sort-ico active">▲</span>' : '<span class="sort-ico active">▼</span>';
+  return '<span class="sort-ico">▲▼</span>';
+}
+function tblRefreshIcons(tableId, headId) {
+  const head = document.getElementById(headId);
+  if (!head) return;
+  head.querySelectorAll('th[data-key]').forEach(th => {
+    const key = th.getAttribute('data-key');
+    const wrap = th.querySelector('.sort-ico-wrap');
+    if (wrap) wrap.innerHTML = tblSortIconHtml(tableId, key);
+  });
+}
+function tblTotalRow(colSpanLabel, cells) {
+  let html = `<td class="td-bold tbl-total-label" colspan="${colSpanLabel}">Total</td>`;
+  cells.forEach(c => {
+    const v = c.type === 'rupiah' ? rupiah(c.value) : c.type === 'num' ? num(c.value) : (c.value ?? '-');
+    html += `<td class="td-num td-bold">${v}</td>`;
+  });
+  return `<tr class="tbl-total-row">${html}</tr>`;
+}
 
 // ══ FILTER (tanggal - global, di header) ══
 function getDateRange() {
@@ -995,13 +1234,13 @@ async function resetFilter() {
 
 // ══ CHART HELPERS ══
 function destroyChart(id) { if (CHARTS[id]) { CHARTS[id].destroy(); delete CHARTS[id]; } }
-const COLORS = ['#3b82f6','#10b981','#f59e0b','#8b5cf6','#06b6d4','#ef4444','#ec4899','#84cc16','#f97316','#14b8a6'];
+const COLORS = ['#2563eb','#059669','#d97706','#7c3aed','#0891b2','#dc2626','#db2777','#65a30d','#ea580c','#0d9488'];
 const CHART_DEFAULTS = {
   responsive: true, maintainAspectRatio: false,
-  plugins: { legend: { labels: { color: '#8b92a8', font: { size: 11 }, boxWidth: 12 } }, tooltip: { callbacks: { label: ctx => ' ' + rupiah(ctx.raw) } } },
+  plugins: { legend: { labels: { color: '#64748b', font: { size: 11 }, boxWidth: 12 } }, tooltip: { callbacks: { label: ctx => ' ' + rupiah(ctx.raw) } } },
   scales: {
-    x: { ticks: { color: '#555d75', font: { size: 10 } }, grid: { color: '#1f2435' } },
-    y: { ticks: { color: '#555d75', font: { size: 10 }, callback: v => rupiah(v) }, grid: { color: '#1f2435' } },
+    x: { ticks: { color: '#94a1b5', font: { size: 10 } }, grid: { color: '#eef1f7' } },
+    y: { ticks: { color: '#94a1b5', font: { size: 10 }, callback: v => rupiah(v) }, grid: { color: '#eef1f7' } },
   }
 };
 
@@ -1022,7 +1261,7 @@ function makeLine(id, labels, datasets, opts={}) {
   CHARTS[id] = new Chart(ctx, {
     type: 'line',
     data: { labels, datasets },
-    options: { ...CHART_DEFAULTS, plugins: { ...CHART_DEFAULTS.plugins, legend: { display: datasets.length > 1, labels: { color: '#8b92a8', font: { size: 11 }, boxWidth: 12 } } }, ...opts }
+    options: { ...CHART_DEFAULTS, plugins: { ...CHART_DEFAULTS.plugins, legend: { display: datasets.length > 1, labels: { color: '#64748b', font: { size: 11 }, boxWidth: 12 } } }, ...opts }
   });
 }
 function makeDoughnut(id, labels, data, opts={}) {
@@ -1032,7 +1271,7 @@ function makeDoughnut(id, labels, data, opts={}) {
   CHARTS[id] = new Chart(ctx, {
     type: 'doughnut',
     data: { labels, datasets: [{ data, backgroundColor: COLORS, borderWidth: 0 }] },
-    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'right', labels: { color: '#8b92a8', font: { size: 10 }, boxWidth: 10 } }, tooltip: { callbacks: { label: ctx => ' ' + rupiah(ctx.raw) } } }, ...opts }
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'right', labels: { color: '#64748b', font: { size: 10 }, boxWidth: 10 } }, tooltip: { callbacks: { label: ctx => ' ' + rupiah(ctx.raw) } } }, ...opts }
   });
 }
 
@@ -1051,6 +1290,9 @@ function renderPage(id) {
     case 'penjualan-kredit': renderPenjualanKredit(d); break;
     case 'rekonsiliasi':     renderRekonsiliasi(d);    break;
   }
+  const fl = document.getElementById('footerLastUpdate');
+  const lu = document.getElementById('lastUpdate');
+  if (fl && lu) fl.textContent = lu.textContent;
 }
 
 // ── DASHBOARD ──
@@ -1072,7 +1314,7 @@ function renderDashboard(d) {
 
   makeLine('chartKasirHarian',
     kasirH.map(r => r.tanggal?.substring(5)),
-    [{ label:'Nominal', data: kasirH.map(r => parseFloat(r.total_nominal)||0), borderColor:'#3b82f6', backgroundColor:'rgba(59,130,246,.1)', fill:true, tension:.3, pointRadius:1, borderWidth:2 }]
+    [{ label:'Nominal', data: kasirH.map(r => parseFloat(r.total_nominal)||0), borderColor:'#2563eb', backgroundColor:'rgba(37,99,235,.08)', fill:true, tension:.3, pointRadius:1, borderWidth:2 }]
   );
 
   makeBar('chartKasirUnit', perUnit.map(r => r.unit_kasir), perUnit.map(r => parseFloat(r.total_nominal)||0), 'Nominal');
@@ -1083,7 +1325,8 @@ function renderDashboard(d) {
 }
 
 // ── KASIR PER UNIT ──
-const UNIT_COLORS = { 'Kasir IRJ':'#3b82f6','Kasir IGD':'#ef4444','Kasir Farmasi':'#10b981','Kasir IRNA':'#f59e0b','Kasir MCU':'#8b5cf6','Kasir Belakang':'#06b6d4','Kasir IPM':'#ec4899','Lainnya':'#555d75' };
+const UNIT_COLORS = { 'Kasir IRJ':'#2563eb','Kasir IGD':'#dc2626','Kasir Farmasi':'#059669','Kasir IRNA':'#d97706','Kasir MCU':'#7c3aed','Kasir Belakang':'#0891b2','Kasir IPM':'#db2777','Lainnya':'#94a1b5' };
+let currentUnitData = { perUnit: [], perDetail: [] };
 
 function renderKasirUnit(d) {
   const perUnit   = d.kasir_per_unit   || [];
@@ -1108,73 +1351,162 @@ function setUnit(unit) {
 }
 
 function renderUnitData(perUnit, perDetail) {
+  currentUnitData = { perUnit, perDetail };
+
   makeBar('chartUnitNominal', perUnit.map(r => r.unit_kasir), perUnit.map(r => parseFloat(r.total_nominal)||0), 'Total Nominal');
   makeBar('chartUnitTrx', perUnit.map(r => r.unit_kasir), perUnit.map(r => parseInt(r.jumlah_transaksi)||0), 'Jumlah Transaksi',
     { plugins: { ...CHART_DEFAULTS.plugins, tooltip: { callbacks: { label: ctx => ' ' + num(ctx.raw) + ' transaksi' } } },
-      scales: { x: CHART_DEFAULTS.scales.x, y: { ticks: { color: '#555d75', font: { size:10 }, callback: v => num(v) }, grid: { color:'#1f2435' } } } }
+      scales: { x: CHART_DEFAULTS.scales.x, y: { ticks: { color: '#94a1b5', font: { size:10 }, callback: v => num(v) }, grid: { color:'#eef1f7' } } } }
   );
 
+  const unitSorted = tblApplySort('tblUnit', perUnit);
   const tbody1 = document.querySelector('#tblUnit tbody');
-  tbody1.innerHTML = perUnit.map(r => `
+  tbody1.innerHTML = unitSorted.map(r => `
     <tr>
       <td class="td-bold">${r.unit_kasir||'-'}</td>
       <td class="td-num">${rupiah(r.total_nominal)}</td>
       <td class="td-num">${num(r.jumlah_transaksi)}</td>
       <td class="td-num">${num(r.jumlah_pasien)}</td>
     </tr>`).join('') || '<tr><td colspan="4" class="empty">Tidak ada data</td></tr>';
+  document.querySelector('#tblUnit tfoot').innerHTML = unitSorted.length ? tblTotalRow(1, [
+    { value: sumBy(unitSorted,'total_nominal'), type: 'rupiah' },
+    { value: sumBy(unitSorted,'jumlah_transaksi'), type: 'num' },
+    { value: sumBy(unitSorted,'jumlah_pasien'), type: 'num' },
+  ]) : '';
+  tblRefreshIcons('tblUnit', 'head-tblUnit');
+
+  filterUnitDetail();
+}
+
+function filterUnitDetail() {
+  const q = (document.getElementById('searchUnitDetail')?.value || '').toLowerCase();
+  const filtered = currentUnitData.perDetail.filter(r =>
+    !q || (r.nama_kasir||'').toLowerCase().includes(q) || (r.unit_kasir||'').toLowerCase().includes(q)
+  );
+  const sorted = tblApplySort('tblUnitDetail', filtered);
 
   const tbody2 = document.querySelector('#tblUnitDetail tbody');
-  tbody2.innerHTML = perDetail.map(r => `
+  tbody2.innerHTML = sorted.map(r => `
     <tr>
-      <td><span class="badge" style="background:${UNIT_COLORS[r.unit_kasir]||'#555'}22;color:${UNIT_COLORS[r.unit_kasir]||'#8b92a8'}">${r.unit_kasir||'-'}</span></td>
+      <td><span class="badge" style="background:${UNIT_COLORS[r.unit_kasir]||'#94a1b5'}22;color:${UNIT_COLORS[r.unit_kasir]||'#64748b'}">${r.unit_kasir||'-'}</span></td>
       <td>${r.nama_kasir||'-'}</td>
       <td class="td-num">${rupiah(r.total_nominal)}</td>
       <td class="td-num">${num(r.jumlah_transaksi)}</td>
       <td class="td-num">${num(r.jumlah_pasien)}</td>
     </tr>`).join('') || '<tr><td colspan="5" class="empty">Tidak ada data</td></tr>';
+  document.querySelector('#tblUnitDetail tfoot').innerHTML = sorted.length ? tblTotalRow(2, [
+    { value: sumBy(sorted,'total_nominal'), type: 'rupiah' },
+    { value: sumBy(sorted,'jumlah_transaksi'), type: 'num' },
+    { value: sumBy(sorted,'jumlah_pasien'), type: 'num' },
+  ]) : '';
+  document.getElementById('unitDetailCount').textContent = `${num(sorted.length)} dari ${num(currentUnitData.perDetail.length)} kasir`;
+  tblRefreshIcons('tblUnitDetail', 'head-tblUnitDetail');
+}
+function resetUnitDetailFilter() {
+  document.getElementById('searchUnitDetail').value = '';
+  filterUnitDetail();
 }
 
 // ── KASIR PER JAMINAN ──
+let currentJaminanData = [];
 function renderKasirJaminan(d) {
-  const jaminan = d.kasir_per_jaminan || [];
-  makeBar('chartJaminanFull', jaminan.map(r => r.jaminan?.substring(0,25)), jaminan.map(r => parseFloat(r.total_nominal)||0), 'Nominal', { indexAxis:'y' });
+  currentJaminanData = d.kasir_per_jaminan || [];
+  filterJaminan();
+}
+function filterJaminan() {
+  const q = (document.getElementById('searchJaminan')?.value || '').toLowerCase();
+  const filtered = currentJaminanData.filter(r => !q || (r.jaminan||'').toLowerCase().includes(q));
+  const rows = tblApplySort('tblJaminan', filtered);
+
+  makeBar('chartJaminanFull', rows.map(r => r.jaminan?.substring(0,25)), rows.map(r => parseFloat(r.total_nominal)||0), 'Nominal', { indexAxis:'y' });
+
   const tbody = document.querySelector('#tblJaminan tbody');
-  tbody.innerHTML = jaminan.map(r => `
+  tbody.innerHTML = rows.map(r => `
     <tr>
       <td class="td-bold">${r.jaminan||'-'}</td>
       <td class="td-num">${rupiah(r.total_nominal)}</td>
       <td class="td-num">${num(r.jumlah_transaksi)}</td>
     </tr>`).join('') || '<tr><td colspan="3" class="empty">Tidak ada data</td></tr>';
+  document.querySelector('#tblJaminan tfoot').innerHTML = rows.length ? tblTotalRow(1, [
+    { value: sumBy(rows,'total_nominal'), type: 'rupiah' },
+    { value: sumBy(rows,'jumlah_transaksi'), type: 'num' },
+  ]) : '';
+  document.getElementById('jaminanCount').textContent = `${num(rows.length)} dari ${num(currentJaminanData.length)} jaminan`;
+  tblRefreshIcons('tblJaminan', 'head-tblJaminan');
+}
+function resetJaminanFilter() {
+  document.getElementById('searchJaminan').value = '';
+  filterJaminan();
 }
 
 // ── KASIR PER JENIS PEMBAYARAN ──
+let currentTipeData = [];
 function renderKasirTipe(d) {
-  const tipe = d.kasir_per_tipe || [];
-  const totalSemua = tipe.reduce((s,r) => s + (parseFloat(r.total_nominal)||0), 0);
-  makeDoughnut('chartTipeFull', tipe.map(r => r.tipe_pembayaran || 'Lainnya'), tipe.map(r => parseFloat(r.total_nominal)||0));
+  currentTipeData = d.kasir_per_tipe || [];
+  filterTipe();
+}
+function filterTipe() {
+  const q = (document.getElementById('searchTipe')?.value || '').toLowerCase();
+  const filtered = currentTipeData.filter(r => !q || (r.tipe_pembayaran||'').toLowerCase().includes(q));
+  const rows = tblApplySort('tblTipe', filtered);
+  const totalSemua = currentTipeData.reduce((s,r) => s + (parseFloat(r.total_nominal)||0), 0);
+
+  makeDoughnut('chartTipeFull', rows.map(r => r.tipe_pembayaran || 'Lainnya'), rows.map(r => parseFloat(r.total_nominal)||0));
+
   const tbody = document.querySelector('#tblTipe tbody');
-  tbody.innerHTML = tipe.map(r => `
+  tbody.innerHTML = rows.map(r => `
     <tr>
       <td class="td-bold">${r.tipe_pembayaran||'-'}</td>
       <td class="td-num">${rupiah(r.total_nominal)}</td>
       <td class="td-num">${num(r.jumlah_transaksi)}</td>
       <td class="td-num">${pct(r.total_nominal, totalSemua)}</td>
     </tr>`).join('') || '<tr><td colspan="4" class="empty">Tidak ada data</td></tr>';
+  document.querySelector('#tblTipe tfoot').innerHTML = rows.length ? tblTotalRow(1, [
+    { value: sumBy(rows,'total_nominal'), type: 'rupiah' },
+    { value: sumBy(rows,'jumlah_transaksi'), type: 'num' },
+    { value: pct(sumBy(rows,'total_nominal'), totalSemua), type: '' },
+  ]) : '';
+  document.getElementById('tipeCount').textContent = `${num(rows.length)} dari ${num(currentTipeData.length)} jenis pembayaran`;
+  tblRefreshIcons('tblTipe', 'head-tblTipe');
+}
+function resetTipeFilter() {
+  document.getElementById('searchTipe').value = '';
+  filterTipe();
 }
 
 // ── KASIR PER KAS ──
+let currentKasData = [];
 function renderKasirKas(d) {
-  const kas = d.kasir_per_kas || [];
-  const totalSemua = kas.reduce((s,r) => s + (parseFloat(r.total_nominal)||0), 0);
-  makeBar('chartKasFull', kas.map(r => (r.kas||'-').substring(0,25)), kas.map(r => parseFloat(r.total_nominal)||0), 'Nominal', { indexAxis:'y' });
+  currentKasData = d.kasir_per_kas || [];
+  filterKas();
+}
+function filterKas() {
+  const q = (document.getElementById('searchKas')?.value || '').toLowerCase();
+  const filtered = currentKasData.filter(r => !q || (r.kas||'').toLowerCase().includes(q));
+  const rows = tblApplySort('tblKas', filtered);
+  const totalSemua = currentKasData.reduce((s,r) => s + (parseFloat(r.total_nominal)||0), 0);
+
+  makeBar('chartKasFull', rows.map(r => (r.kas||'-').substring(0,25)), rows.map(r => parseFloat(r.total_nominal)||0), 'Nominal', { indexAxis:'y' });
+
   const tbody = document.querySelector('#tblKas tbody');
-  tbody.innerHTML = kas.map(r => `
+  tbody.innerHTML = rows.map(r => `
     <tr>
       <td class="td-bold">${r.kas||'-'}</td>
       <td class="td-num">${rupiah(r.total_nominal)}</td>
       <td class="td-num">${num(r.jumlah_transaksi)}</td>
       <td class="td-num">${pct(r.total_nominal, totalSemua)}</td>
     </tr>`).join('') || '<tr><td colspan="4" class="empty">Tidak ada data</td></tr>';
+  document.querySelector('#tblKas tfoot').innerHTML = rows.length ? tblTotalRow(1, [
+    { value: sumBy(rows,'total_nominal'), type: 'rupiah' },
+    { value: sumBy(rows,'jumlah_transaksi'), type: 'num' },
+    { value: pct(sumBy(rows,'total_nominal'), totalSemua), type: '' },
+  ]) : '';
+  document.getElementById('kasCount').textContent = `${num(rows.length)} dari ${num(currentKasData.length)} kas`;
+  tblRefreshIcons('tblKas', 'head-tblKas');
+}
+function resetKasFilter() {
+  document.getElementById('searchKas').value = '';
+  filterKas();
 }
 
 // ── KASIR DETAIL ──
@@ -1222,7 +1554,7 @@ function filterDetail() {
   const ket   = document.getElementById('fltKeterangan')?.value || '';
   const tipe  = document.getElementById('fltTipe')?.value || '';
 
-  const rows = detailData.filter(r =>
+  let rows = detailData.filter(r =>
     (!q   || (r.nama_pasien||'').toLowerCase().includes(q)) &&
     (!kasir || r.nama_kasir === kasir) &&
     (!unit  || r.unit_kasir === unit) &&
@@ -1231,6 +1563,7 @@ function filterDetail() {
     (!ket   || r.keterangan === ket) &&
     (!tipe  || r.tipe_pembayaran === tipe)
   );
+  rows = tblApplySort('tblDetail', rows);
 
   document.getElementById('detailCount').textContent = `${num(rows.length)} dari ${num(detailData.length)} transaksi`;
 
@@ -1246,24 +1579,40 @@ function filterDetail() {
       <td class="td-num td-bold">${rupiah(r.nominal)}</td>
       <td><span class="badge ${r.keterangan==='RETUR'?'badge-red':'badge-purple'}">${r.keterangan||'-'}</span></td>
     </tr>`).join('') || '<tr><td colspan="8" class="empty">Tidak ada data</td></tr>';
+
+  document.querySelector('#tblDetail tfoot').innerHTML = rows.length ? tblTotalRow(6, [
+    { value: sumBy(rows,'nominal'), type: 'rupiah' },
+  ]) : '';
+  tblRefreshIcons('tblDetail', 'head-tblDetail');
 }
 
 // ── PENDAPATAN UNIT (masih dari data.json lama, belum per-bulan) ──
+let currentPendapatanUnitAll = [];
 function renderPendapatanUnit(d) {
-  const units  = (d.pendapatan_per_unit||[]).slice(0,15);
   const harian = d.pendapatan_harian || [];
+  currentPendapatanUnitAll = d.pendapatan_per_unit || [];
 
-  makeBar('chartPendapatanUnit', units.map(r => (r.nama_sub_unit||'-').substring(0,20)), units.map(r => parseFloat(r.net)||0), 'Net', { indexAxis:'y' });
+  // chart tetap memakai top-15 berdasarkan net, sesuai perilaku semula
+  const top15 = [...currentPendapatanUnitAll].sort((a,b) => (parseFloat(b.net)||0) - (parseFloat(a.net)||0)).slice(0,15);
+  makeBar('chartPendapatanUnit', top15.map(r => (r.nama_sub_unit||'-').substring(0,20)), top15.map(r => parseFloat(r.net)||0), 'Net', { indexAxis:'y' });
+
   makeLine('chartPendapatanHarian',
     harian.map(r => r.tanggal?.substring(5)),
     [
-      { label:'Debet',  data: harian.map(r => parseFloat(r.total_debet)||0),  borderColor:'#ef4444', backgroundColor:'rgba(239,68,68,.05)',  fill:true, tension:.3, pointRadius:1, borderWidth:2 },
-      { label:'Kredit', data: harian.map(r => parseFloat(r.total_kredit)||0), borderColor:'#10b981', backgroundColor:'rgba(16,185,129,.1)', fill:true, tension:.3, pointRadius:1, borderWidth:2 },
-          ]
+      { label:'Debet',  data: harian.map(r => parseFloat(r.total_debet)||0),  borderColor:'#dc2626', backgroundColor:'rgba(220,38,38,.05)',  fill:true, tension:.3, pointRadius:1, borderWidth:2 },
+      { label:'Kredit', data: harian.map(r => parseFloat(r.total_kredit)||0), borderColor:'#059669', backgroundColor:'rgba(5,150,105,.08)', fill:true, tension:.3, pointRadius:1, borderWidth:2 },
+    ]
   );
 
+  filterPendapatanUnit();
+}
+function filterPendapatanUnit() {
+  const q = (document.getElementById('searchPendapatanUnit')?.value || '').toLowerCase();
+  const filtered = currentPendapatanUnitAll.filter(r => !q || (r.nama_sub_unit||'').toLowerCase().includes(q));
+  const rows = tblApplySort('tblPendapatanUnit', filtered);
+
   const tbody = document.querySelector('#tblPendapatanUnit tbody');
-  tbody.innerHTML = units.map(r => {
+  tbody.innerHTML = rows.map(r => {
     const net = parseFloat(r.net)||0;
     return `<tr>
       <td class="td-bold">${r.nama_sub_unit||'-'}</td>
@@ -1271,7 +1620,19 @@ function renderPendapatanUnit(d) {
       <td class="td-num">${rupiah(r.total_kredit)}</td>
       <td class="td-num ${net>=0?'rekon-match':'rekon-diff'}">${rupiah(net)}</td>
     </tr>`;
-  }).join('');
+  }).join('') || '<tr><td colspan="4" class="empty">Tidak ada data</td></tr>';
+
+  document.querySelector('#tblPendapatanUnit tfoot').innerHTML = rows.length ? tblTotalRow(1, [
+    { value: sumBy(rows,'total_debet'), type: 'rupiah' },
+    { value: sumBy(rows,'total_kredit'), type: 'rupiah' },
+    { value: sumBy(rows,'net'), type: 'rupiah' },
+  ]) : '';
+  document.getElementById('pendapatanUnitCount').textContent = `${num(rows.length)} dari ${num(currentPendapatanUnitAll.length)} sub unit`;
+  tblRefreshIcons('tblPendapatanUnit', 'head-tblPendapatanUnit');
+}
+function resetPendapatanUnitFilter() {
+  document.getElementById('searchPendapatanUnit').value = '';
+  filterPendapatanUnit();
 }
 
 // ── PENJUALAN KREDIT (masih dari data.json lama, belum per-bulan) ──
@@ -1279,7 +1640,13 @@ let kreditData = [];
 function renderPenjualanKredit(d) {
   const penanggung = d.penjualan_kredit_per_penanggung || [];
   const segmen     = d.penjualan_kredit_per_segment    || [];
-  kreditData       = d.penjualan_kredit_detail          || [];
+  kreditData       = (d.penjualan_kredit_detail || []).map(r => ({
+    ...r,
+    _penanggung: r.Penanggung || r.penanggung || '',
+    _segmen:     r.Segment || r.segment || '',
+    _coa:        r.Nama_COA || r.nama_coa || '',
+    _total:      r.total ?? r.Total ?? 0,
+  }));
 
   const totalKredit = penanggung.reduce((s,r) => s + (parseFloat(r.total_nominal)||0), 0);
   document.getElementById('kpiKredit').innerHTML = `
@@ -1293,7 +1660,7 @@ function renderPenjualanKredit(d) {
   filterKredit();
 }
 
-// Isi ulang opsi dropdown Sub Penerima & Penanggung sesuai data yang sedang aktif
+// Isi ulang opsi dropdown Sub Penerima, Penanggung & Segmen sesuai data yang sedang aktif
 function populateKreditFilterOptions() {
   const fillSelect = (elId, values, allLabel) => {
     const el = document.getElementById(elId);
@@ -1305,13 +1672,15 @@ function populateKreditFilterOptions() {
     if (opts.includes(current)) el.value = current;
   };
   fillSelect('fltSubPenerima', kreditData.map(r => r.nama_sub_penerima), 'Semua Sub Penerima');
-  fillSelect('fltPenanggungKredit', kreditData.map(r => r.Penanggung || r.penanggung), 'Semua Penanggung');
+  fillSelect('fltPenanggungKredit', kreditData.map(r => r._penanggung), 'Semua Penanggung');
+  fillSelect('fltSegmenKredit', kreditData.map(r => r._segmen), 'Semua Segmen');
 }
 
 function resetKreditFilter() {
   document.getElementById('searchKredit').value = '';
   document.getElementById('fltSubPenerima').value = '';
   document.getElementById('fltPenanggungKredit').value = '';
+  document.getElementById('fltSegmenKredit').value = '';
   filterKredit();
 }
 
@@ -1319,15 +1688,19 @@ function filterKredit() {
   const q           = (document.getElementById('searchKredit')?.value||'').toLowerCase();
   const subPenerima = document.getElementById('fltSubPenerima')?.value || '';
   const penanggungF = document.getElementById('fltPenanggungKredit')?.value || '';
+  const segmenF     = document.getElementById('fltSegmenKredit')?.value || '';
 
-  const rows = kreditData.filter(r => {
+  let rows = kreditData.filter(r => {
     const sp = r.nama_sub_penerima || '';
-    const pg = r.Penanggung || r.penanggung || '';
+    const pg = r._penanggung || '';
+    const sg = r._segmen || '';
     if (q && !(sp.toLowerCase().includes(q) || pg.toLowerCase().includes(q))) return false;
     if (subPenerima && sp !== subPenerima) return false;
     if (penanggungF && pg !== penanggungF) return false;
+    if (segmenF && sg !== segmenF) return false;
     return true;
   });
+  rows = tblApplySort('tblKredit', rows);
 
   const countEl = document.getElementById('kreditCount');
   if (countEl) countEl.textContent = `${num(rows.length)} dari ${num(kreditData.length)} baris`;
@@ -1337,28 +1710,37 @@ function filterKredit() {
     <tr>
       <td>${r.tanggal||'-'}</td>
       <td style="font-size:11px">${r.nama_sub_penerima||'-'}</td>
-      <td style="font-size:11px">${r.Penanggung||r.penanggung||'-'}</td>
-      <td><span class="badge badge-cyan">${r.Segment||r.segment||'-'}</span></td>
+      <td style="font-size:11px">${r._penanggung||'-'}</td>
+      <td><span class="badge badge-cyan">${r._segmen||'-'}</span></td>
       <td style="font-size:11px">${r.nama_sub_unit||'-'}</td>
-      <td style="font-size:10px;color:var(--text3)">${r.Nama_COA||r.nama_coa||'-'}</td>
+      <td style="font-size:10px;color:var(--text3)">${r._coa||'-'}</td>
       <td class="td-num">${rupiah(r.kredit)}</td>
       <td class="td-num">${rupiah(r.debet)}</td>
-      <td class="td-num td-bold">${rupiah(r.total||r.Total)}</td>
+      <td class="td-num td-bold">${rupiah(r._total)}</td>
     </tr>`).join('') || '<tr><td colspan="9" class="empty">Tidak ada data</td></tr>';
+
+  document.querySelector('#tblKredit tfoot').innerHTML = rows.length ? tblTotalRow(6, [
+    { value: sumBy(rows,'kredit'), type: 'rupiah' },
+    { value: sumBy(rows,'debet'), type: 'rupiah' },
+    { value: sumBy(rows,'_total'), type: 'rupiah' },
+  ]) : '';
+  tblRefreshIcons('tblKredit', 'head-tblKredit');
 }
+
 // ── REKONSILIASI ──
+let currentRekonAll = [];
 function renderRekonsiliasi(d) {
   const kasirUnit     = d.kasir_per_unit     || [];
   const pelayananUnit = d.pelayanan_per_unit || [];
 
   const totalKasir     = kasirUnit.reduce((s,r) => s + (parseFloat(r.total_nominal)||0), 0);
   const totalPelayanan = pelayananUnit.reduce((s,r) => s + (parseFloat(r.total_tagihan)||0), 0);
-  const selisih        = totalKasir - totalPelayanan;
+  const selisihTotal   = totalKasir - totalPelayanan;
 
   document.getElementById('kpiRekon').innerHTML = `
     <div class="kpi-card green"><div class="kpi-label">Total Kasir</div><div class="kpi-value">${rupiah(totalKasir)}</div></div>
     <div class="kpi-card blue"><div class="kpi-label">Total Pelayanan</div><div class="kpi-value">${rupiah(totalPelayanan)}</div></div>
-    <div class="kpi-card ${Math.abs(selisih)<1000?'green':'red'}"><div class="kpi-label">Selisih</div><div class="kpi-value">${rupiah(selisih)}</div><div class="kpi-sub">${Math.abs(selisih)<1000?'Seimbang':'Ada selisih'}</div></div>
+    <div class="kpi-card ${Math.abs(selisihTotal)<1000?'green':'red'}"><div class="kpi-label">Selisih</div><div class="kpi-value">${rupiah(selisihTotal)}</div><div class="kpi-sub">${Math.abs(selisihTotal)<1000?'Seimbang':'Ada selisih'}</div></div>
   `;
 
   const units = [...new Set([...kasirUnit.map(r=>r.unit_kasir), ...pelayananUnit.map(r=>r.unit)])].filter(Boolean);
@@ -1373,28 +1755,94 @@ function renderRekonsiliasi(d) {
       data: {
         labels: units,
         datasets: [
-          { label:'Kasir',     data: units.map(u => kasirMap[u]||0),     backgroundColor:'rgba(16,185,129,.7)',  borderRadius:4 },
-          { label:'Pelayanan', data: units.map(u => pelayananMap[u]||0), backgroundColor:'rgba(59,130,246,.7)',  borderRadius:4 },
+          { label:'Kasir',     data: units.map(u => kasirMap[u]||0),     backgroundColor:'rgba(5,150,105,.75)',  borderRadius:4 },
+          { label:'Pelayanan', data: units.map(u => pelayananMap[u]||0), backgroundColor:'rgba(37,99,235,.75)',  borderRadius:4 },
         ]
       },
-      options: { ...CHART_DEFAULTS, plugins: { ...CHART_DEFAULTS.plugins, legend: { display:true, labels:{color:'#8b92a8',font:{size:11},boxWidth:12} } } }
+      options: { ...CHART_DEFAULTS, plugins: { ...CHART_DEFAULTS.plugins, legend: { display:true, labels:{color:'#64748b',font:{size:11},boxWidth:12} } } }
     });
   }
 
-  const tbody = document.querySelector('#tblRekon tbody');
-  tbody.innerHTML = pelayananUnit.map(r => {
+  // enriched rows dipakai untuk tabel yang sekarang bisa dicari, difilter status, & disortir
+  currentRekonAll = pelayananUnit.map(r => {
     const kasir = kasirUnit.find(k => k.unit_kasir?.toLowerCase().includes((r.unit||'').substring(0,4).toLowerCase()));
     const kasirNom = kasir ? parseFloat(kasir.total_nominal)||0 : 0;
     const tagihan  = parseFloat(r.total_tagihan)||0;
     const diff     = kasirNom - tagihan;
-    return `<tr>
-      <td class="td-bold">${r.unit||'-'}</td>
-      <td class="td-num">${rupiah(tagihan)}</td>
-      <td class="td-num">${rupiah(kasirNom)}</td>
-      <td class="td-num ${Math.abs(diff)<1000?'rekon-match':'rekon-diff'}">${rupiah(diff)}</td>
-      <td><span class="badge ${Math.abs(diff)<1000?'badge-green':'badge-red'}">${Math.abs(diff)<1000?'Sesuai':'Selisih'}</span></td>
-    </tr>`;
-  }).join('') || '<tr><td colspan="5" class="empty">Tidak ada data</td></tr>';
+    return {
+      unit: r.unit || '-',
+      total_tagihan: tagihan,
+      kasir_nominal: kasirNom,
+      selisih: diff,
+      status: Math.abs(diff) < 1000 ? 'Sesuai' : 'Selisih',
+    };
+  });
+
+  filterRekon();
+}
+function filterRekon() {
+  const q      = (document.getElementById('searchRekon')?.value || '').toLowerCase();
+  const status = document.getElementById('fltStatusRekon')?.value || '';
+
+  let rows = currentRekonAll.filter(r =>
+    (!q || (r.unit||'').toLowerCase().includes(q)) &&
+    (!status || r.status === status)
+  );
+  rows = tblApplySort('tblRekon', rows);
+
+  const tbody = document.querySelector('#tblRekon tbody');
+  tbody.innerHTML = rows.map(r => `<tr>
+      <td class="td-bold">${r.unit}</td>
+      <td class="td-num">${rupiah(r.total_tagihan)}</td>
+      <td class="td-num">${rupiah(r.kasir_nominal)}</td>
+      <td class="td-num ${Math.abs(r.selisih)<1000?'rekon-match':'rekon-diff'}">${rupiah(r.selisih)}</td>
+      <td><span class="badge ${r.status==='Sesuai'?'badge-green':'badge-red'}">${r.status}</span></td>
+    </tr>`).join('') || '<tr><td colspan="5" class="empty">Tidak ada data</td></tr>';
+
+  document.querySelector('#tblRekon tfoot').innerHTML = rows.length ? tblTotalRow(1, [
+    { value: sumBy(rows,'total_tagihan'), type: 'rupiah' },
+    { value: sumBy(rows,'kasir_nominal'), type: 'rupiah' },
+    { value: sumBy(rows,'selisih'), type: 'rupiah' },
+    { value: '-', type: '' },
+  ]) : '';
+  document.getElementById('rekonCount').textContent = `${num(rows.length)} dari ${num(currentRekonAll.length)} unit`;
+  tblRefreshIcons('tblRekon', 'head-tblRekon');
+}
+function resetRekonFilter() {
+  document.getElementById('searchRekon').value = '';
+  document.getElementById('fltStatusRekon').value = '';
+  filterRekon();
+}
+
+// ══ Hubungkan setiap tableId ke fungsi render/filter-nya masing-masing,
+//    supaya klik header sort cukup memanggil tblSort() lalu re-render otomatis ══
+TblRerender.tblUnit          = () => filterUnitDetailAndUnit();
+TblRerender.tblUnitDetail     = filterUnitDetail;
+TblRerender.tblJaminan        = filterJaminan;
+TblRerender.tblTipe           = filterTipe;
+TblRerender.tblKas            = filterKas;
+TblRerender.tblDetail         = filterDetail;
+TblRerender.tblPendapatanUnit = filterPendapatanUnit;
+TblRerender.tblKredit         = filterKredit;
+TblRerender.tblRekon          = filterRekon;
+
+// tblUnit disortir ulang lewat renderUnitData memakai data unit yang sedang aktif
+function filterUnitDetailAndUnit() {
+  const unitSorted = tblApplySort('tblUnit', currentUnitData.perUnit);
+  const tbody1 = document.querySelector('#tblUnit tbody');
+  tbody1.innerHTML = unitSorted.map(r => `
+    <tr>
+      <td class="td-bold">${r.unit_kasir||'-'}</td>
+      <td class="td-num">${rupiah(r.total_nominal)}</td>
+      <td class="td-num">${num(r.jumlah_transaksi)}</td>
+      <td class="td-num">${num(r.jumlah_pasien)}</td>
+    </tr>`).join('') || '<tr><td colspan="4" class="empty">Tidak ada data</td></tr>';
+  document.querySelector('#tblUnit tfoot').innerHTML = unitSorted.length ? tblTotalRow(1, [
+    { value: sumBy(unitSorted,'total_nominal'), type: 'rupiah' },
+    { value: sumBy(unitSorted,'jumlah_transaksi'), type: 'num' },
+    { value: sumBy(unitSorted,'jumlah_pasien'), type: 'num' },
+  ]) : '';
+  tblRefreshIcons('tblUnit', 'head-tblUnit');
 }
 
 // ══ LOAD AWAL ══
@@ -1425,8 +1873,10 @@ async function loadData() {
 
   if (MANIFEST.generated_at) {
     const d = new Date(MANIFEST.generated_at);
-    document.getElementById('lastUpdate').textContent =
-      d.toLocaleDateString('id-ID') + ' ' + d.toLocaleTimeString('id-ID', {hour:'2-digit',minute:'2-digit'});
+    const formatted = d.toLocaleDateString('id-ID') + ' ' + d.toLocaleTimeString('id-ID', {hour:'2-digit',minute:'2-digit'});
+    document.getElementById('lastUpdate').textContent = formatted;
+    const fl = document.getElementById('footerLastUpdate');
+    if (fl) fl.textContent = formatted;
   }
 
   if (!MANIFEST.bulan || MANIFEST.bulan.length === 0) {
