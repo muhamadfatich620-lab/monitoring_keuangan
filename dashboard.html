@@ -1252,8 +1252,8 @@ function renderPendapatanUnit(d) {
     harian.map(r => r.tanggal?.substring(5)),
     [
       { label:'Debet',  data: harian.map(r => parseFloat(r.total_debet)||0),  borderColor:'#ef4444', backgroundColor:'rgba(239,68,68,.05)',  fill:true, tension:.3, pointRadius:1, borderWidth:2 },
-      { label:'Kredit', data: harian.map(r => parseFloat(r.total_kredit)||0), borderColor:'#10b981', backgroundColor:'rgba(16,185,129,.1)', fill:true, tension:.3, pointRadius:1, borderWidth:2 },   
-    ]
+      { label:'Kredit', data: harian.map(r => parseFloat(r.total_kredit)||0), borderColor:'#10b981', backgroundColor:'rgba(16,185,129,.1)', fill:true, tension:.3, pointRadius:1, borderWidth:2 },
+          ]
   );
 
   const tbody = document.querySelector('#tblPendapatanUnit tbody');
@@ -1297,8 +1297,8 @@ function filterKredit() {
       <td><span class="badge badge-cyan">${r.Segment||r.segment||'-'}</span></td>
       <td style="font-size:11px">${r.nama_sub_unit||'-'}</td>
       <td style="font-size:10px;color:var(--text3)">${r.Nama_COA||r.nama_coa||'-'}</td>
-      <td class="td-num">${rupiah(r.kredit)}</td>
       <td class="td-num">${rupiah(r.debet)}</td>
+      <td class="td-num">${rupiah(r.kredit)}</td>
       <td class="td-num td-bold">${rupiah(r.total||r.Total)}</td>
     </tr>`).join('') || '<tr><td colspan="9" class="empty">Tidak ada data</td></tr>';
 }
