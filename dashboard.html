@@ -187,6 +187,7 @@ body {
 }
 .btn-primary { background: var(--accent); color: #fff; }
 .btn-primary:hover { background: var(--accent2); }
+.btn-primary:disabled { opacity: .6; cursor: wait; }
 .btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text2); }
 .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
 
@@ -524,7 +525,7 @@ tr:hover td { background: rgba(255,255,255,.02); color: var(--text); }
     <input type="date" id="fltAwal"/>
     <label>s/d</label>
     <input type="date" id="fltAkhir"/>
-    <button class="btn btn-primary" onclick="applyFilter()">Terapkan</button>
+    <button class="btn btn-primary" id="btnTerapkan" onclick="applyFilter()">Terapkan</button>
     <button class="btn btn-outline" onclick="resetFilter()">Reset</button>
   </div>
 </header>
@@ -650,7 +651,7 @@ tr:hover td { background: rgba(255,255,255,.02); color: var(--text); }
   <div class="page" id="page-kasir-detail">
     <div class="section-card">
       <div class="section-head">
-        <div><div class="section-title">Detail Transaksi Kasir</div><div class="section-sub">Sesuai filter tanggal di atas, maks 2000 data</div></div>
+        <div><div class="section-title">Detail Transaksi Kasir</div><div class="section-sub">Sesuai filter tanggal di atas (menampilkan maks 2000 baris pertama)</div></div>
       </div>
       <div class="local-filter-wrap">
         <input type="text" id="searchTrx" placeholder="Cari nama pasien..." oninput="filterDetail()"/>
@@ -742,11 +743,16 @@ tr:hover td { background: rgba(255,255,255,.02); color: var(--text); }
 
 <script>
 // ══ STATE ══
-let RAW = null;
-let FILTERED = null;
+let MANIFEST  = null;       // { generated_at, bulan: ['2026-01', ...] }
+let AUX       = null;       // data.json lama: pendapatan & penjualan kredit (belum di-refactor per-bulan)
+let FILTERED  = null;       // hasil akhir yang dipakai semua render function
 let activeUnit = 'semua';
 let CHARTS = {};
 let sidebarOpen = true;
+
+// cache file per-bulan yang sudah pernah di-fetch, supaya tidak fetch ulang tiap klik Terapkan
+const CACHE_KASIR = {};      // { '2026-06': [...rows] }
+const CACHE_PELAYANAN = {};  // { '2026-06': [...rows] }
 
 // ══ SIDEBAR TOGGLE ══
 function toggleSidebar() {
@@ -812,86 +818,173 @@ function inRange(tglStr, awal, akhir) {
   if (akhir && d > akhir) return false;
   return true;
 }
-function applyFilter() {
-  if (!RAW) return;
-  buildFiltered();
-  populateDetailFilterOptions();
-  const page = document.querySelector('.nav-item.active')?.getAttribute('onclick')?.match(/'([^']+)'/)?.[1] || 'dashboard';
-  renderPage(page);
+
+// ══ Tentukan bulan (kode 'YYYY-MM') mana saja yang overlap dengan rentang tanggal ══
+function monthsInRange(awal, akhir) {
+  if (!MANIFEST || !MANIFEST.bulan) return [];
+  if (!awal && !akhir) return MANIFEST.bulan; // tanpa filter -> semua bulan yang tersedia
+  return MANIFEST.bulan.filter(kode => {
+    const [y, m] = kode.split('-').map(Number);
+    const bulanAwal  = kode + '-01';
+    const bulanAkhir = new Date(y, m, 0).toISOString().substring(0,10);
+    const mulaiCek = awal  || '0000-01-01';
+    const akhirCek = akhir || '9999-12-31';
+    return bulanAwal <= akhirCek && bulanAkhir >= mulaiCek;
+  });
 }
-function resetFilter() {
+
+// ══ Fetch file per-bulan (pakai cache), gabungkan jadi 1 array ══
+async function fetchBulan(kode, jenis) {
+  const cache = jenis === 'kasir' ? CACHE_KASIR : CACHE_PELAYANAN;
+  if (cache[kode]) return cache[kode];
+  const file = jenis === 'kasir' ? `data/kasir-${kode}.json` : `data/pelayanan-${kode}.json`;
+  try {
+    const r = await fetch(file + '?_=' + Date.now());
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const j = await r.json();
+    const rows = jenis === 'kasir' ? (j.kasir_detail || []) : (j.pelayanan_detail || []);
+    cache[kode] = rows;
+    return rows;
+  } catch (e) {
+    console.warn('Gagal fetch ' + file + ': ' + e.message);
+    cache[kode] = [];
+    return [];
+  }
+}
+
+async function loadKasirPelayananUntukRentang(awal, akhir) {
+  const bulanList = monthsInRange(awal, akhir);
+  const kasirArr     = await Promise.all(bulanList.map(k => fetchBulan(k, 'kasir')));
+  const pelayananArr = await Promise.all(bulanList.map(k => fetchBulan(k, 'pelayanan')));
+  return {
+    kasir: [].concat(...kasirArr),
+    pelayanan: [].concat(...pelayananArr),
+  };
+}
+
+// ══ BUILD FILTERED (sekarang async karena fetch file per-bulan) ══
+async function buildFiltered() {
+  const { awal, akhir } = getDateRange();
+  const { kasir, pelayanan } = await loadKasirPelayananUntukRentang(awal, akhir);
+
+  const kasirRows     = kasir.filter(r => inRange(r.tanggal_transaksi, awal, akhir));
+  const pelayananRows = pelayanan.filter(r => inRange(r.tanggal_tagihan, awal, akhir));
+
+  FILTERED = {
+    generated_at: MANIFEST?.generated_at,
+    kasir_detail: kasirRows,
+    pelayanan_detail: pelayananRows,
+    // dari data.json lama (belum di-refactor per-bulan)
+    pendapatan_harian  : AUX?.pendapatan_harian  || [],
+    pendapatan_per_unit: AUX?.pendapatan_per_unit || [],
+    penjualan_kredit_per_penanggung: AUX?.penjualan_kredit_per_penanggung || [],
+    penjualan_kredit_per_segment   : AUX?.penjualan_kredit_per_segment    || [],
+    penjualan_kredit_detail: (AUX?.penjualan_kredit_detail || []).filter(r => inRange(r.tanggal, awal, akhir)),
+  };
+
+  recomputeKasirAggregates(kasirRows);
+  recomputeKasirHarian(kasirRows);
+  recomputePelayananAggregates(pelayananRows);
+}
+
+// ── Hitung ulang kasir_per_unit, per_jaminan, per_tipe, per_kas, detail_per_unit
+//    dari kasir_detail. Sekarang aman karena unit_kasir sudah dihitung di SQL
+//    export (bukan lagi field yang selalu undefined). ──
+function recomputeKasirAggregates(rows) {
+  const unitMap = {}, detailMap = {}, jaminanMap = {}, tipeMap = {}, keteranganMap = {}, kasMap = {};
+  rows.forEach(r => {
+    const nominal = parseFloat(r.nominal)||0;
+    const unit = r.unit_kasir || 'Lainnya';
+    const jaminan = r.jaminan || 'Lainnya';
+    const tipe = r.tipe_pembayaran || 'Lainnya';
+    const ket = r.keterangan || '-';
+    const kas = r.kas || 'Lainnya';
+
+    if (!unitMap[unit]) unitMap[unit] = { unit_kasir: unit, total_nominal: 0, jumlah_transaksi: 0, pasien: new Set() };
+    unitMap[unit].total_nominal    += nominal;
+    unitMap[unit].jumlah_transaksi += 1;
+    unitMap[unit].pasien.add(r.nomor_rm);
+
+    const key = unit + '|' + r.nama_kasir;
+    if (!detailMap[key]) detailMap[key] = { unit_kasir: unit, nama_kasir: r.nama_kasir, total_nominal:0, jumlah_transaksi:0, pasien: new Set() };
+    detailMap[key].total_nominal    += nominal;
+    detailMap[key].jumlah_transaksi += 1;
+    detailMap[key].pasien.add(r.nomor_rm);
+
+    if (!jaminanMap[jaminan]) jaminanMap[jaminan] = { jaminan, total_nominal: 0, jumlah_transaksi: 0 };
+    jaminanMap[jaminan].total_nominal    += nominal;
+    jaminanMap[jaminan].jumlah_transaksi += 1;
+
+    if (!tipeMap[tipe]) tipeMap[tipe] = { tipe_pembayaran: tipe, total_nominal: 0, jumlah_transaksi: 0 };
+    tipeMap[tipe].total_nominal    += nominal;
+    tipeMap[tipe].jumlah_transaksi += 1;
+
+    if (!keteranganMap[ket]) keteranganMap[ket] = { keterangan: ket, total_nominal: 0, jumlah_transaksi: 0 };
+    keteranganMap[ket].total_nominal    += nominal;
+    keteranganMap[ket].jumlah_transaksi += 1;
+
+    if (!kasMap[kas]) kasMap[kas] = { kas, total_nominal: 0, jumlah_transaksi: 0 };
+    kasMap[kas].total_nominal    += nominal;
+    kasMap[kas].jumlah_transaksi += 1;
+  });
+
+  FILTERED.kasir_per_unit = Object.values(unitMap).map(r => ({ ...r, jumlah_pasien: r.pasien.size }))
+    .sort((a,b) => b.total_nominal - a.total_nominal);
+  FILTERED.kasir_detail_per_unit = Object.values(detailMap).map(r => ({ ...r, jumlah_pasien: r.pasien.size }))
+    .sort((a,b) => b.total_nominal - a.total_nominal);
+  FILTERED.kasir_per_jaminan    = Object.values(jaminanMap).sort((a,b) => b.total_nominal - a.total_nominal);
+  FILTERED.kasir_per_tipe       = Object.values(tipeMap).sort((a,b) => b.total_nominal - a.total_nominal);
+  FILTERED.kasir_per_keterangan = Object.values(keteranganMap).sort((a,b) => b.total_nominal - a.total_nominal);
+  FILTERED.kasir_per_kas        = Object.values(kasMap).sort((a,b) => b.total_nominal - a.total_nominal);
+}
+
+function recomputeKasirHarian(rows) {
+  const map = {};
+  rows.forEach(r => {
+    const tgl = (r.tanggal_transaksi||'').substring(0,10);
+    if (!tgl) return;
+    if (!map[tgl]) map[tgl] = { tanggal: tgl, total_nominal: 0, jumlah_transaksi: 0 };
+    map[tgl].total_nominal    += parseFloat(r.nominal)||0;
+    map[tgl].jumlah_transaksi += 1;
+  });
+  FILTERED.kasir_harian = Object.values(map).sort((a,b) => a.tanggal.localeCompare(b.tanggal));
+}
+
+function recomputePelayananAggregates(rows) {
+  const unitMap = {}, statusMap = {};
+  rows.forEach(r => {
+    const unit = r.unit || 'Lainnya';
+    const status = r.status_tagihan || 'Lainnya';
+    const tagihan = parseFloat(r.total_tagihan) || 0;
+
+    if (!unitMap[unit]) unitMap[unit] = { unit, total_tagihan: 0, jumlah_tagihan: 0 };
+    unitMap[unit].total_tagihan  += tagihan;
+    unitMap[unit].jumlah_tagihan += 1;
+
+    if (!statusMap[status]) statusMap[status] = { status_tagihan: status, jumlah_tagihan: 0, total_tagihan: 0 };
+    statusMap[status].jumlah_tagihan += 1;
+    statusMap[status].total_tagihan  += tagihan;
+  });
+  FILTERED.pelayanan_per_unit = Object.values(unitMap).sort((a,b) => b.total_tagihan - a.total_tagihan);
+  FILTERED.pelayanan_status   = Object.values(statusMap).sort((a,b) => b.total_tagihan - a.total_tagihan);
+}
+
+async function applyFilter() {
+  const btn = document.getElementById('btnTerapkan');
+  btn.disabled = true; btn.textContent = 'Memuat...';
+  try {
+    await buildFiltered();
+    populateDetailFilterOptions();
+    const page = document.querySelector('.nav-item.active')?.getAttribute('onclick')?.match(/'([^']+)'/)?.[1] || 'dashboard';
+    renderPage(page);
+  } finally {
+    btn.disabled = false; btn.textContent = 'Terapkan';
+  }
+}
+async function resetFilter() {
   document.getElementById('fltAwal').value = '';
   document.getElementById('fltAkhir').value = '';
-  applyFilter();
-}
-
-function buildFiltered() {
-  const { awal, akhir } = getDateRange();
-  if (!awal && !akhir) { FILTERED = RAW; } else {
-    FILTERED = JSON.parse(JSON.stringify(RAW));
-    // Filter kasir_harian
-    if (RAW.kasir_harian) {
-      FILTERED.kasir_harian = RAW.kasir_harian.filter(r => inRange(r.tanggal, awal, akhir));
-    }
-    // Filter kasir_detail
-    if (RAW.kasir_detail) {
-      FILTERED.kasir_detail = RAW.kasir_detail.filter(r => inRange(r.tanggal_transaksi, awal, akhir));
-    }
-    // Filter kredit detail
-    if (RAW.penjualan_kredit_detail) {
-      FILTERED.penjualan_kredit_detail = RAW.penjualan_kredit_detail.filter(r => inRange(r.tanggal, awal, akhir));
-    }
-  }
-
-  // Recalculate semua rekap kasir dari kasir_detail (mengikuti filter tanggal)
-  if (FILTERED.kasir_detail) {
-    const unitMap = {}, detailMap = {}, jaminanMap = {}, tipeMap = {}, keteranganMap = {}, kasMap = {};
-    FILTERED.kasir_detail.forEach(r => {
-      const nominal = parseFloat(r.nominal)||0;
-      const unit = r.unit_kasir || 'Lainnya';
-      const jaminan = r.jaminan || 'Lainnya';
-      const tipe = r.tipe_pembayaran || 'Lainnya';
-      const ket = r.keterangan || '-';
-      const kas = r.kas || 'Lainnya';
-
-      if (!unitMap[unit]) unitMap[unit] = { unit_kasir: unit, total_nominal: 0, jumlah_transaksi: 0, pasien: new Set() };
-      unitMap[unit].total_nominal    += nominal;
-      unitMap[unit].jumlah_transaksi += 1;
-      unitMap[unit].pasien.add(r.nomor_rm);
-
-      const key = unit + '|' + r.nama_kasir;
-      if (!detailMap[key]) detailMap[key] = { unit_kasir: unit, nama_kasir: r.nama_kasir, total_nominal:0, jumlah_transaksi:0, pasien: new Set() };
-      detailMap[key].total_nominal    += nominal;
-      detailMap[key].jumlah_transaksi += 1;
-      detailMap[key].pasien.add(r.nomor_rm);
-
-      if (!jaminanMap[jaminan]) jaminanMap[jaminan] = { jaminan, total_nominal: 0, jumlah_transaksi: 0 };
-      jaminanMap[jaminan].total_nominal    += nominal;
-      jaminanMap[jaminan].jumlah_transaksi += 1;
-
-      if (!tipeMap[tipe]) tipeMap[tipe] = { tipe_pembayaran: tipe, total_nominal: 0, jumlah_transaksi: 0 };
-      tipeMap[tipe].total_nominal    += nominal;
-      tipeMap[tipe].jumlah_transaksi += 1;
-
-      if (!keteranganMap[ket]) keteranganMap[ket] = { keterangan: ket, total_nominal: 0, jumlah_transaksi: 0 };
-      keteranganMap[ket].total_nominal    += nominal;
-      keteranganMap[ket].jumlah_transaksi += 1;
-
-      if (!kasMap[kas]) kasMap[kas] = { kas, total_nominal: 0, jumlah_transaksi: 0 };
-      kasMap[kas].total_nominal    += nominal;
-      kasMap[kas].jumlah_transaksi += 1;
-    });
-    FILTERED.kasir_per_unit = Object.values(unitMap).map(r => ({
-      ...r, jumlah_pasien: r.pasien.size
-    })).sort((a,b) => b.total_nominal - a.total_nominal);
-    FILTERED.kasir_detail_per_unit = Object.values(detailMap).map(r => ({
-      ...r, jumlah_pasien: r.pasien.size
-    })).sort((a,b) => b.total_nominal - a.total_nominal);
-    FILTERED.kasir_per_jaminan = Object.values(jaminanMap).sort((a,b) => b.total_nominal - a.total_nominal);
-    FILTERED.kasir_per_tipe = Object.values(tipeMap).sort((a,b) => b.total_nominal - a.total_nominal);
-    FILTERED.kasir_per_keterangan = Object.values(keteranganMap).sort((a,b) => b.total_nominal - a.total_nominal);
-    FILTERED.kasir_per_kas = Object.values(kasMap).sort((a,b) => b.total_nominal - a.total_nominal);
-  }
+  await applyFilter();
 }
 
 // ══ CHART HELPERS ══
@@ -939,7 +1032,7 @@ function makeDoughnut(id, labels, data, opts={}) {
 
 // ══ RENDER PAGES ══
 function renderPage(id) {
-  const d = FILTERED || RAW;
+  const d = FILTERED;
   if (!d) return;
   switch(id) {
     case 'dashboard':        renderDashboard(d);       break;
@@ -956,7 +1049,6 @@ function renderPage(id) {
 
 // ── DASHBOARD ──
 function renderDashboard(d) {
-  // KPI
   const kasirH = d.kasir_harian || [];
   const totalNominal  = kasirH.reduce((s,r) => s + (parseFloat(r.total_nominal)||0), 0);
   const totalTrx      = kasirH.reduce((s,r) => s + (parseInt(r.jumlah_transaksi)||0), 0);
@@ -972,19 +1064,14 @@ function renderDashboard(d) {
     <div class="kpi-card purple"><div class="kpi-label">Unit Kasir Aktif</div><div class="kpi-value">${perUnit.length}</div><div class="kpi-sub">unit beroperasi</div></div>
   `;
 
-  // Chart kasir harian
   makeLine('chartKasirHarian',
     kasirH.map(r => r.tanggal?.substring(5)),
     [{ label:'Nominal', data: kasirH.map(r => parseFloat(r.total_nominal)||0), borderColor:'#3b82f6', backgroundColor:'rgba(59,130,246,.1)', fill:true, tension:.3, pointRadius:1, borderWidth:2 }]
   );
 
-  // Chart kasir per unit
   makeBar('chartKasirUnit', perUnit.map(r => r.unit_kasir), perUnit.map(r => parseFloat(r.total_nominal)||0), 'Nominal');
-
-  // Chart tipe
   makeDoughnut('chartTipe', perTipe.map(r => r.tipe_pembayaran || 'Lainnya'), perTipe.map(r => parseFloat(r.total_nominal)||0));
 
-  // Chart jaminan (top 10)
   const jaminan = (d.kasir_per_jaminan||[]).slice(0,10);
   makeBar('chartJaminan', jaminan.map(r => r.jaminan?.substring(0,20)), jaminan.map(r => parseFloat(r.total_nominal)||0), 'Nominal', { indexAxis:'y' });
 }
@@ -997,7 +1084,6 @@ function renderKasirUnit(d) {
   const perDetail = d.kasir_detail_per_unit || [];
   const units     = ['semua', ...new Set(perUnit.map(r => r.unit_kasir))];
 
-  // Unit chips
   document.getElementById('unitChips').innerHTML = units.map(u =>
     `<button class="unit-chip ${u===activeUnit?'active':''}" onclick="setUnit('${u}')">${u==='semua'?'Semua Unit':u}</button>`
   ).join('');
@@ -1008,7 +1094,7 @@ function renderKasirUnit(d) {
 function setUnit(unit) {
   activeUnit = unit;
   document.querySelectorAll('.unit-chip').forEach(c => c.classList.toggle('active', c.textContent === (unit==='semua'?'Semua Unit':unit)));
-  const d = FILTERED || RAW;
+  const d = FILTERED;
   const perUnit   = (d.kasir_per_unit   || []).filter(r => unit==='semua' || r.unit_kasir===unit);
   const perDetail = (d.kasir_detail_per_unit || []).filter(r => unit==='semua' || r.unit_kasir===unit);
   document.getElementById('unitDetailSub').textContent = unit === 'semua' ? 'Semua unit' : unit;
@@ -1016,14 +1102,12 @@ function setUnit(unit) {
 }
 
 function renderUnitData(perUnit, perDetail) {
-  // Charts
   makeBar('chartUnitNominal', perUnit.map(r => r.unit_kasir), perUnit.map(r => parseFloat(r.total_nominal)||0), 'Total Nominal');
   makeBar('chartUnitTrx', perUnit.map(r => r.unit_kasir), perUnit.map(r => parseInt(r.jumlah_transaksi)||0), 'Jumlah Transaksi',
     { plugins: { ...CHART_DEFAULTS.plugins, tooltip: { callbacks: { label: ctx => ' ' + num(ctx.raw) + ' transaksi' } } },
       scales: { x: CHART_DEFAULTS.scales.x, y: { ticks: { color: '#555d75', font: { size:10 }, callback: v => num(v) }, grid: { color:'#1f2435' } } } }
   );
 
-  // Table unit
   const tbody1 = document.querySelector('#tblUnit tbody');
   tbody1.innerHTML = perUnit.map(r => `
     <tr>
@@ -1033,7 +1117,6 @@ function renderUnitData(perUnit, perDetail) {
       <td class="td-num">${num(r.jumlah_pasien)}</td>
     </tr>`).join('') || '<tr><td colspan="4" class="empty">Tidak ada data</td></tr>';
 
-  // Table detail
   const tbody2 = document.querySelector('#tblUnitDetail tbody');
   tbody2.innerHTML = perDetail.map(r => `
     <tr>
@@ -1091,8 +1174,8 @@ function renderKasirKas(d) {
 // ── KASIR DETAIL ──
 let detailData = [];
 function populateDetailFilterOptions() {
-  const d = FILTERED || RAW;
-  const rows = d.kasir_detail || [];
+  const d = FILTERED;
+  const rows = d?.kasir_detail || [];
   const fill = (elId, values) => {
     const el = document.getElementById(elId);
     if (!el) return;
@@ -1159,7 +1242,7 @@ function filterDetail() {
     </tr>`).join('') || '<tr><td colspan="8" class="empty">Tidak ada data</td></tr>';
 }
 
-// ── PENDAPATAN UNIT ──
+// ── PENDAPATAN UNIT (masih dari data.json lama, belum per-bulan) ──
 function renderPendapatanUnit(d) {
   const units  = (d.pendapatan_per_unit||[]).slice(0,15);
   const harian = d.pendapatan_harian || [];
@@ -1185,7 +1268,7 @@ function renderPendapatanUnit(d) {
   }).join('');
 }
 
-// ── PENJUALAN KREDIT ──
+// ── PENJUALAN KREDIT (masih dari data.json lama, belum per-bulan) ──
 let kreditData = [];
 function renderPenjualanKredit(d) {
   const penanggung = d.penjualan_kredit_per_penanggung || [];
@@ -1222,12 +1305,12 @@ function filterKredit() {
 
 // ── REKONSILIASI ──
 function renderRekonsiliasi(d) {
-  const kasirUnit    = d.kasir_per_unit     || [];
-  const pelayananUnit= d.pelayanan_per_unit || [];
+  const kasirUnit     = d.kasir_per_unit     || [];
+  const pelayananUnit = d.pelayanan_per_unit || [];
 
-  const totalKasir    = kasirUnit.reduce((s,r) => s + (parseFloat(r.total_nominal)||0), 0);
-  const totalPelayanan= pelayananUnit.reduce((s,r) => s + (parseFloat(r.total_tagihan)||0), 0);
-  const selisih       = totalKasir - totalPelayanan;
+  const totalKasir     = kasirUnit.reduce((s,r) => s + (parseFloat(r.total_nominal)||0), 0);
+  const totalPelayanan = pelayananUnit.reduce((s,r) => s + (parseFloat(r.total_tagihan)||0), 0);
+  const selisih        = totalKasir - totalPelayanan;
 
   document.getElementById('kpiRekon').innerHTML = `
     <div class="kpi-card green"><div class="kpi-label">Total Kasir</div><div class="kpi-value">${rupiah(totalKasir)}</div></div>
@@ -1235,10 +1318,9 @@ function renderRekonsiliasi(d) {
     <div class="kpi-card ${Math.abs(selisih)<1000?'green':'red'}"><div class="kpi-label">Selisih</div><div class="kpi-value">${rupiah(selisih)}</div><div class="kpi-sub">${Math.abs(selisih)<1000?'Seimbang':'Ada selisih'}</div></div>
   `;
 
-  // Chart perbandingan
   const units = [...new Set([...kasirUnit.map(r=>r.unit_kasir), ...pelayananUnit.map(r=>r.unit)])].filter(Boolean);
-  const kasirMap    = Object.fromEntries(kasirUnit.map(r    => [r.unit_kasir, parseFloat(r.total_nominal)||0]));
-  const pelayananMap= Object.fromEntries(pelayananUnit.map(r=> [r.unit,      parseFloat(r.total_tagihan)||0]));
+  const kasirMap     = Object.fromEntries(kasirUnit.map(r     => [r.unit_kasir, parseFloat(r.total_nominal)||0]));
+  const pelayananMap = Object.fromEntries(pelayananUnit.map(r => [r.unit,      parseFloat(r.total_tagihan)||0]));
 
   destroyChart('chartRekon');
   const ctx = document.getElementById('chartRekon');
@@ -1256,7 +1338,6 @@ function renderRekonsiliasi(d) {
     });
   }
 
-  // Table rekonsiliasi
   const tbody = document.querySelector('#tblRekon tbody');
   tbody.innerHTML = pelayananUnit.map(r => {
     const kasir = kasirUnit.find(k => k.unit_kasir?.toLowerCase().includes((r.unit||'').substring(0,4).toLowerCase()));
@@ -1273,37 +1354,58 @@ function renderRekonsiliasi(d) {
   }).join('') || '<tr><td colspan="5" class="empty">Tidak ada data</td></tr>';
 }
 
-// ══ LOAD DATA ══
-async function loadData() {
+// ══ LOAD AWAL ══
+async function loadManifest() {
+  try {
+    const r = await fetch('data/manifest.json?_=' + Date.now());
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    MANIFEST = await r.json();
+  } catch (e) {
+    console.warn('Gagal memuat manifest.json: ' + e.message);
+    MANIFEST = { generated_at: null, bulan: [] };
+  }
+}
+async function loadAux() {
   try {
     const r = await fetch('data.json?_=' + Date.now());
-    RAW = await r.json();
-
-    // Update last update
-    if (RAW.generated_at) {
-      const d = new Date(RAW.generated_at);
-      document.getElementById('lastUpdate').textContent =
-        d.toLocaleDateString('id-ID') + ' ' + d.toLocaleTimeString('id-ID', {hour:'2-digit',minute:'2-digit'});
-    }
-
-    // Set default filter: 30 hari terakhir
-    const today = new Date();
-    const dari  = new Date(); dari.setDate(dari.getDate() - 30);
-    document.getElementById('fltAkhir').value = today.toISOString().substring(0,10);
-    document.getElementById('fltAwal').value  = dari.toISOString().substring(0,10);
-
-    buildFiltered();
-    populateDetailFilterOptions();
-    renderPage('dashboard');
-  } catch(e) {
-    document.getElementById('kpiGrid').innerHTML = `<div class="loading" style="color:var(--red)">Gagal memuat data.json — ${e.message}</div>`;
+    AUX = await r.json();
+  } catch (e) {
+    console.warn('Gagal memuat data.json (pendapatan/kredit): ' + e.message);
+    AUX = {};
   }
+}
+
+async function loadData() {
+  document.getElementById('kpiGrid').innerHTML = '<div class="loading"><div class="spinner"></div> Memuat data...</div>';
+
+  await Promise.all([loadManifest(), loadAux()]);
+
+  if (MANIFEST.generated_at) {
+    const d = new Date(MANIFEST.generated_at);
+    document.getElementById('lastUpdate').textContent =
+      d.toLocaleDateString('id-ID') + ' ' + d.toLocaleTimeString('id-ID', {hour:'2-digit',minute:'2-digit'});
+  }
+
+  if (!MANIFEST.bulan || MANIFEST.bulan.length === 0) {
+    document.getElementById('kpiGrid').innerHTML =
+      '<div class="loading" style="color:var(--red)">data/manifest.json belum ada atau kosong. Jalankan backfillSemuaBulan() dulu di Apps Script.</div>';
+    return;
+  }
+
+  // Default filter: bulan berjalan
+  const today = new Date();
+  const awalBulan = new Date(today.getFullYear(), today.getMonth(), 1);
+  document.getElementById('fltAwal').value  = awalBulan.toISOString().substring(0,10);
+  document.getElementById('fltAkhir').value = today.toISOString().substring(0,10);
+
+  await buildFiltered();
+  populateDetailFilterOptions();
+  renderPage('dashboard');
 }
 
 // ══ INIT ══
 loadData();
 
-// Close sidebar on mobile by default
 if (window.innerWidth < 768) closeSidebar();
 </script>
 </body>
