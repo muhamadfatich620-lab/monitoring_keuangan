@@ -938,6 +938,7 @@ let sidebarOpen = true;
 // cache file per-bulan yang sudah pernah di-fetch, supaya tidak fetch ulang tiap klik Terapkan
 const CACHE_KASIR = {};      // { '2026-06': [...rows] }
 const CACHE_PELAYANAN = {};  // { '2026-06': [...rows] }
+const CACHE_KREDIT = {};     // { '2026-06': [...rows] } — penjualan kredit, sekarang per-bulan juga
 
 // ══ SIDEBAR TOGGLE ══
 function toggleSidebar() {
@@ -1079,15 +1080,34 @@ function monthsInRange(awal, akhir) {
 }
 
 // ══ Fetch file per-bulan (pakai cache), gabungkan jadi 1 array ══
+// jenis: 'kasir' | 'pelayanan' | 'kredit' — ketiganya sekarang sama-sama
+// di-export per-bulan oleh Apps Script, jadi filter tanggal berapapun
+// jauhnya ke belakang tetap dapat data lengkap (tidak ada lagi yang
+// bergantung pada satu file data.json yang bisa basi).
+function cacheUntukJenis(jenis) {
+  if (jenis === 'kasir')     return CACHE_KASIR;
+  if (jenis === 'pelayanan') return CACHE_PELAYANAN;
+  return CACHE_KREDIT;
+}
+function fileUntukJenis(kode, jenis) {
+  if (jenis === 'kasir')     return `data/kasir-${kode}.json`;
+  if (jenis === 'pelayanan') return `data/pelayanan-${kode}.json`;
+  return `data/kredit-${kode}.json`;
+}
+function fieldUntukJenis(j, jenis) {
+  if (jenis === 'kasir')     return j.kasir_detail || [];
+  if (jenis === 'pelayanan') return j.pelayanan_detail || [];
+  return j.kredit_detail || [];
+}
 async function fetchBulan(kode, jenis) {
-  const cache = jenis === 'kasir' ? CACHE_KASIR : CACHE_PELAYANAN;
+  const cache = cacheUntukJenis(jenis);
   if (cache[kode]) return cache[kode];
-  const file = jenis === 'kasir' ? `data/kasir-${kode}.json` : `data/pelayanan-${kode}.json`;
+  const file = fileUntukJenis(kode, jenis);
   try {
     const r = await fetch(file + '?_=' + Date.now());
     if (!r.ok) throw new Error('HTTP ' + r.status);
     const j = await r.json();
-    const rows = jenis === 'kasir' ? (j.kasir_detail || []) : (j.pelayanan_detail || []);
+    const rows = fieldUntukJenis(j, jenis);
     cache[kode] = rows;
     return rows;
   } catch (e) {
@@ -1097,39 +1117,66 @@ async function fetchBulan(kode, jenis) {
   }
 }
 
-async function loadKasirPelayananUntukRentang(awal, akhir) {
+async function loadSemuaUntukRentang(awal, akhir) {
   const bulanList = monthsInRange(awal, akhir);
   const kasirArr     = await Promise.all(bulanList.map(k => fetchBulan(k, 'kasir')));
   const pelayananArr = await Promise.all(bulanList.map(k => fetchBulan(k, 'pelayanan')));
+  const kreditArr    = await Promise.all(bulanList.map(k => fetchBulan(k, 'kredit')));
   return {
     kasir: [].concat(...kasirArr),
     pelayanan: [].concat(...pelayananArr),
+    kredit: [].concat(...kreditArr),
   };
 }
 
 // ══ BUILD FILTERED (sekarang async karena fetch file per-bulan) ══
 async function buildFiltered() {
   const { awal, akhir } = getDateRange();
-  const { kasir, pelayanan } = await loadKasirPelayananUntukRentang(awal, akhir);
+  const { kasir, pelayanan, kredit } = await loadSemuaUntukRentang(awal, akhir);
 
   const kasirRows     = kasir.filter(r => inRange(r.tanggal_transaksi, awal, akhir));
   const pelayananRows = pelayanan.filter(r => inRange(r.tanggal_tagihan, awal, akhir));
+  const kreditRows    = kredit.filter(r => inRange(r.tanggal, awal, akhir));
 
   FILTERED = {
     generated_at: MANIFEST?.generated_at,
     kasir_detail: kasirRows,
     pelayanan_detail: pelayananRows,
-    // dari data.json lama (belum di-refactor per-bulan)
+    // pendapatan per sub unit masih dari data.json lama (belum di-refactor
+    // per-bulan — sumbernya project BigQuery lain / PP-DP)
     pendapatan_harian  : AUX?.pendapatan_harian  || [],
     pendapatan_per_unit: AUX?.pendapatan_per_unit || [],
-    penjualan_kredit_per_penanggung: AUX?.penjualan_kredit_per_penanggung || [],
-    penjualan_kredit_per_segment   : AUX?.penjualan_kredit_per_segment    || [],
-    penjualan_kredit_detail: (AUX?.penjualan_kredit_detail || []).filter(r => inRange(r.tanggal, awal, akhir)),
+    // penjualan_kredit_detail sekarang dari file per-bulan data/kredit-YYYY-MM.json,
+    // BUKAN lagi dari data.json — supaya tidak bergantung pada window
+    // RANGE_HARI 90 hari yang bisa basi kalau trigger harian gagal
+    penjualan_kredit_detail: kreditRows,
   };
 
   recomputeKasirAggregates(kasirRows);
   recomputeKasirHarian(kasirRows);
   recomputePelayananAggregates(pelayananRows);
+  recomputeKreditAggregates(kreditRows);
+}
+
+// ── Hitung ulang penjualan_kredit_per_penanggung & per_segment dari
+//    penjualan_kredit_detail (data/kredit-YYYY-MM.json), sama seperti
+//    kasir_per_unit dkk dihitung dari kasir_detail. ──
+function recomputeKreditAggregates(rows) {
+  const penanggungMap = {}, segmentMap = {};
+  rows.forEach(r => {
+    const total = parseFloat(r.total ?? r.Total) || 0;
+    const penanggung = r.Penanggung || r.penanggung || 'Lainnya';
+    const segmen     = r.Segment || r.segment || 'Lainnya';
+
+    if (!penanggungMap[penanggung]) penanggungMap[penanggung] = { Penanggung: penanggung, total_nominal: 0, jumlah_baris: 0 };
+    penanggungMap[penanggung].total_nominal += total;
+    penanggungMap[penanggung].jumlah_baris  += 1;
+
+    if (!segmentMap[segmen]) segmentMap[segmen] = { Segment: segmen, total_nominal: 0 };
+    segmentMap[segmen].total_nominal += total;
+  });
+  FILTERED.penjualan_kredit_per_penanggung = Object.values(penanggungMap).sort((a,b) => b.total_nominal - a.total_nominal);
+  FILTERED.penjualan_kredit_per_segment    = Object.values(segmentMap).sort((a,b) => b.total_nominal - a.total_nominal);
 }
 
 // ── Hitung ulang kasir_per_unit, per_jaminan, per_tipe, per_kas, detail_per_unit
