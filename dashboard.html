@@ -682,7 +682,7 @@ tr:hover td { background: rgba(255,255,255,.02); color: var(--text); }
       <div class="section-body">
         <div class="chart-wrap" style="height:300px;margin-bottom:18px"><canvas id="chartPendapatanUnit"></canvas></div>
         <div class="tbl-wrap"><table id="tblPendapatanUnit">
-          <thead><tr><th>Sub Unit</th><th class="td-num">Total Kredit</th><th class="td-num">Total Debet</th><th class="td-num">Net</th></tr></thead>
+          <thead><tr><th>Sub Unit</th><th class="td-num">Total Debet</th><th class="td-num">Total Kredit</th><th class="td-num">Net</th></tr></thead>
           <tbody></tbody>
         </table></div>
       </div>
@@ -715,7 +715,7 @@ tr:hover td { background: rgba(255,255,255,.02); color: var(--text); }
       </div>
       <div class="section-body" style="padding:0">
         <div class="tbl-wrap"><table id="tblKredit">
-          <thead><tr><th>Tanggal</th><th>Sub Penerima</th><th>Penanggung</th><th>Segmen</th><th>Sub Unit</th><th>COA</th><th class="td-num">Kredit</th><th class="td-num">Debet</th><th class="td-num">Total</th></tr></thead>
+          <thead><tr><th>Tanggal</th><th>Sub Penerima</th><th>Penanggung</th><th>Segmen</th><th>Sub Unit</th><th>COA</th><th class="td-num">Debet</th><th class="td-num">Kredit</th><th class="td-num">Total</th></tr></thead>
           <tbody></tbody>
         </table></div>
       </div>
@@ -1251,8 +1251,8 @@ function renderPendapatanUnit(d) {
   makeLine('chartPendapatanHarian',
     harian.map(r => r.tanggal?.substring(5)),
     [
-      { label:'Kredit', data: harian.map(r => parseFloat(r.total_kredit)||0), borderColor:'#10b981', backgroundColor:'rgba(16,185,129,.1)', fill:true, tension:.3, pointRadius:1, borderWidth:2 },
       { label:'Debet',  data: harian.map(r => parseFloat(r.total_debet)||0),  borderColor:'#ef4444', backgroundColor:'rgba(239,68,68,.05)',  fill:true, tension:.3, pointRadius:1, borderWidth:2 },
+      { label:'Kredit', data: harian.map(r => parseFloat(r.total_kredit)||0), borderColor:'#10b981', backgroundColor:'rgba(16,185,129,.1)', fill:true, tension:.3, pointRadius:1, borderWidth:2 },   
     ]
   );
 
@@ -1261,8 +1261,8 @@ function renderPendapatanUnit(d) {
     const net = parseFloat(r.net)||0;
     return `<tr>
       <td class="td-bold">${r.nama_sub_unit||'-'}</td>
-      <td class="td-num">${rupiah(r.total_kredit)}</td>
       <td class="td-num">${rupiah(r.total_debet)}</td>
+      <td class="td-num">${rupiah(r.total_kredit)}</td>
       <td class="td-num ${net>=0?'rekon-match':'rekon-diff'}">${rupiah(net)}</td>
     </tr>`;
   }).join('');
