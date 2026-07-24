@@ -562,14 +562,6 @@ tfoot td {
     </button>
   </div>
 
-  <div class="sidebar-section">
-    <div class="sidebar-section-label">Rekonsiliasi</div>
-    <button class="nav-item" onclick="showPage('rekonsiliasi')">
-      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-      Kasir vs Pelayanan
-    </button>
-  </div>
-
   <div class="sidebar-footer">
     <div style="margin-bottom:3px">Update terakhir</div>
     <div id="lastUpdate">—</div>
@@ -875,40 +867,6 @@ tfoot td {
     </div>
   </div>
 
-  <!-- ══ PAGE: REKONSILIASI ══ -->
-  <div class="page" id="page-rekonsiliasi">
-    <div class="kpi-grid" id="kpiRekon"></div>
-    <div class="section-card">
-      <div class="section-head">
-        <div><div class="section-title">Rekonsiliasi Kasir vs Pelayanan Medis</div><div class="section-sub">Perbandingan total penerimaan kasir dengan total tagihan pelayanan</div></div>
-      </div>
-      <div class="local-filter-wrap">
-        <input type="text" id="searchRekon" placeholder="Cari unit pelayanan..." oninput="filterRekon()"/>
-        <select id="fltStatusRekon" onchange="filterRekon()">
-          <option value="">Semua Status</option>
-          <option value="Sesuai">Sesuai</option>
-          <option value="Selisih">Selisih</option>
-        </select>
-        <button class="btn btn-outline" onclick="resetRekonFilter()">Reset Filter</button>
-        <span class="local-filter-count" id="rekonCount"></span>
-      </div>
-      <div class="section-body">
-        <div class="chart-wrap" style="margin-bottom:18px"><canvas id="chartRekon"></canvas></div>
-        <div class="tbl-wrap"><table id="tblRekon">
-          <thead id="head-tblRekon"><tr>
-            <th data-key="unit" onclick="tblSort('tblRekon','unit','text')">Unit Pelayanan <span class="sort-ico-wrap"></span></th>
-            <th class="td-num" data-key="total_tagihan" onclick="tblSort('tblRekon','total_tagihan','number')">Total Tagihan Pelayanan <span class="sort-ico-wrap"></span></th>
-            <th class="td-num" data-key="kasir_nominal" onclick="tblSort('tblRekon','kasir_nominal','number')">Total Penerimaan Kasir <span class="sort-ico-wrap"></span></th>
-            <th class="td-num" data-key="selisih" onclick="tblSort('tblRekon','selisih','number')">Selisih <span class="sort-ico-wrap"></span></th>
-            <th data-key="status" onclick="tblSort('tblRekon','status','text')">Status <span class="sort-ico-wrap"></span></th>
-          </tr></thead>
-          <tbody></tbody>
-          <tfoot></tfoot>
-        </table></div>
-      </div>
-    </div>
-  </div>
-
   <!-- ══ FOOTER ══ -->
   <footer class="app-footer">
     <div class="footer-brand">
@@ -936,9 +894,9 @@ let CHARTS = {};
 let sidebarOpen = true;
 
 // cache file per-bulan yang sudah pernah di-fetch, supaya tidak fetch ulang tiap klik Terapkan
-const CACHE_KASIR = {};      // { '2026-06': [...rows] }
-const CACHE_PELAYANAN = {};  // { '2026-06': [...rows] }
-const CACHE_KREDIT = {};     // { '2026-06': [...rows] } — penjualan kredit, sekarang per-bulan juga
+const CACHE_KASIR = {};   // { '2026-06': [...rows] }
+const CACHE_KREDIT = {};  // { '2026-06': [...rows] } — gabungan semua bagian mingguan bulan itu
+const MAX_BAGIAN_KREDIT = 6; // batas aman jumlah file kredit-YYYY-MM-pN.json per bulan (biasanya 4-5)
 
 // ══ SIDEBAR TOGGLE ══
 function toggleSidebar() {
@@ -966,7 +924,6 @@ const PAGE_TITLES = {
   'kasir-detail'    : ['Detail Transaksi', 'Kasir'],
   'pendapatan-unit' : ['Pendapatan Sub Unit', 'Dari BigQuery'],
   'penjualan-kredit': ['Penjualan Kredit', 'Per Penanggung & Segmen'],
-  'rekonsiliasi'    : ['Rekonsiliasi', 'Kasir vs Pelayanan'],
 };
 
 function showPage(id) {
@@ -1080,51 +1037,52 @@ function monthsInRange(awal, akhir) {
 }
 
 // ══ Fetch file per-bulan (pakai cache), gabungkan jadi 1 array ══
-// jenis: 'kasir' | 'pelayanan' | 'kredit' — ketiganya sekarang sama-sama
-// di-export per-bulan oleh Apps Script, jadi filter tanggal berapapun
-// jauhnya ke belakang tetap dapat data lengkap (tidak ada lagi yang
-// bergantung pada satu file data.json yang bisa basi).
-function cacheUntukJenis(jenis) {
-  if (jenis === 'kasir')     return CACHE_KASIR;
-  if (jenis === 'pelayanan') return CACHE_PELAYANAN;
-  return CACHE_KREDIT;
-}
-function fileUntukJenis(kode, jenis) {
-  if (jenis === 'kasir')     return `data/kasir-${kode}.json`;
-  if (jenis === 'pelayanan') return `data/pelayanan-${kode}.json`;
-  return `data/kredit-${kode}.json`;
-}
-function fieldUntukJenis(j, jenis) {
-  if (jenis === 'kasir')     return j.kasir_detail || [];
-  if (jenis === 'pelayanan') return j.pelayanan_detail || [];
-  return j.kredit_detail || [];
-}
-async function fetchBulan(kode, jenis) {
-  const cache = cacheUntukJenis(jenis);
-  if (cache[kode]) return cache[kode];
-  const file = fileUntukJenis(kode, jenis);
+// Kasir di-export 1 file per bulan (data/kasir-YYYY-MM.json).
+// Kredit di-export beberapa file per bulan (data/kredit-YYYY-MM-p1.json,
+// -p2.json, dst — dipecah per ~7 hari di Apps Script supaya tidak
+// Out of Memory), jadi di-fetch berurutan sampai bagian yang tidak
+// ada (404), lalu digabung jadi satu array per bulan.
+async function fetchBulanKasir(kode) {
+  if (CACHE_KASIR[kode]) return CACHE_KASIR[kode];
+  const file = `data/kasir-${kode}.json`;
   try {
     const r = await fetch(file + '?_=' + Date.now());
     if (!r.ok) throw new Error('HTTP ' + r.status);
     const j = await r.json();
-    const rows = fieldUntukJenis(j, jenis);
-    cache[kode] = rows;
+    const rows = j.kasir_detail || [];
+    CACHE_KASIR[kode] = rows;
     return rows;
   } catch (e) {
     console.warn('Gagal fetch ' + file + ': ' + e.message);
-    cache[kode] = [];
+    CACHE_KASIR[kode] = [];
     return [];
   }
 }
 
+async function fetchBulanKredit(kode) {
+  if (CACHE_KREDIT[kode]) return CACHE_KREDIT[kode];
+  let gabungan = [];
+  for (let bagian = 1; bagian <= MAX_BAGIAN_KREDIT; bagian++) {
+    const file = `data/kredit-${kode}-p${bagian}.json`;
+    try {
+      const r = await fetch(file + '?_=' + Date.now());
+      if (!r.ok) break; // bagian ini tidak ada -> sudah habis, berhenti
+      const j = await r.json();
+      gabungan = gabungan.concat(j.kredit_detail || []);
+    } catch (e) {
+      break; // berhenti kalau gagal fetch (jaringan dsb), jangan tebak bagian selanjutnya
+    }
+  }
+  CACHE_KREDIT[kode] = gabungan;
+  return gabungan;
+}
+
 async function loadSemuaUntukRentang(awal, akhir) {
   const bulanList = monthsInRange(awal, akhir);
-  const kasirArr     = await Promise.all(bulanList.map(k => fetchBulan(k, 'kasir')));
-  const pelayananArr = await Promise.all(bulanList.map(k => fetchBulan(k, 'pelayanan')));
-  const kreditArr    = await Promise.all(bulanList.map(k => fetchBulan(k, 'kredit')));
+  const kasirArr  = await Promise.all(bulanList.map(k => fetchBulanKasir(k)));
+  const kreditArr = await Promise.all(bulanList.map(k => fetchBulanKredit(k)));
   return {
     kasir: [].concat(...kasirArr),
-    pelayanan: [].concat(...pelayananArr),
     kredit: [].concat(...kreditArr),
   };
 }
@@ -1132,21 +1090,19 @@ async function loadSemuaUntukRentang(awal, akhir) {
 // ══ BUILD FILTERED (sekarang async karena fetch file per-bulan) ══
 async function buildFiltered() {
   const { awal, akhir } = getDateRange();
-  const { kasir, pelayanan, kredit } = await loadSemuaUntukRentang(awal, akhir);
+  const { kasir, kredit } = await loadSemuaUntukRentang(awal, akhir);
 
-  const kasirRows     = kasir.filter(r => inRange(r.tanggal_transaksi, awal, akhir));
-  const pelayananRows = pelayanan.filter(r => inRange(r.tanggal_tagihan, awal, akhir));
-  const kreditRows    = kredit.filter(r => inRange(r.tanggal, awal, akhir));
+  const kasirRows  = kasir.filter(r => inRange(r.tanggal_transaksi, awal, akhir));
+  const kreditRows = kredit.filter(r => inRange(r.tanggal, awal, akhir));
 
   FILTERED = {
     generated_at: MANIFEST?.generated_at,
     kasir_detail: kasirRows,
-    pelayanan_detail: pelayananRows,
     // pendapatan per sub unit masih dari data.json lama (belum di-refactor
     // per-bulan — sumbernya project BigQuery lain / PP-DP)
     pendapatan_harian  : AUX?.pendapatan_harian  || [],
     pendapatan_per_unit: AUX?.pendapatan_per_unit || [],
-    // penjualan_kredit_detail sekarang dari file per-bulan data/kredit-YYYY-MM.json,
+    // penjualan_kredit_detail sekarang dari file per-bulan data/kredit-YYYY-MM-pN.json,
     // BUKAN lagi dari data.json — supaya tidak bergantung pada window
     // RANGE_HARI 90 hari yang bisa basi kalau trigger harian gagal
     penjualan_kredit_detail: kreditRows,
@@ -1154,12 +1110,11 @@ async function buildFiltered() {
 
   recomputeKasirAggregates(kasirRows);
   recomputeKasirHarian(kasirRows);
-  recomputePelayananAggregates(pelayananRows);
   recomputeKreditAggregates(kreditRows);
 }
 
 // ── Hitung ulang penjualan_kredit_per_penanggung & per_segment dari
-//    penjualan_kredit_detail (data/kredit-YYYY-MM.json), sama seperti
+//    penjualan_kredit_detail (data/kredit-YYYY-MM-pN.json), sama seperti
 //    kasir_per_unit dkk dihitung dari kasir_detail. ──
 function recomputeKreditAggregates(rows) {
   const penanggungMap = {}, segmentMap = {};
@@ -1242,25 +1197,6 @@ function recomputeKasirHarian(rows) {
   FILTERED.kasir_harian = Object.values(map).sort((a,b) => a.tanggal.localeCompare(b.tanggal));
 }
 
-function recomputePelayananAggregates(rows) {
-  const unitMap = {}, statusMap = {};
-  rows.forEach(r => {
-    const unit = r.unit || 'Lainnya';
-    const status = r.status_tagihan || 'Lainnya';
-    const tagihan = parseFloat(r.total_tagihan) || 0;
-
-    if (!unitMap[unit]) unitMap[unit] = { unit, total_tagihan: 0, jumlah_tagihan: 0 };
-    unitMap[unit].total_tagihan  += tagihan;
-    unitMap[unit].jumlah_tagihan += 1;
-
-    if (!statusMap[status]) statusMap[status] = { status_tagihan: status, jumlah_tagihan: 0, total_tagihan: 0 };
-    statusMap[status].jumlah_tagihan += 1;
-    statusMap[status].total_tagihan  += tagihan;
-  });
-  FILTERED.pelayanan_per_unit = Object.values(unitMap).sort((a,b) => b.total_tagihan - a.total_tagihan);
-  FILTERED.pelayanan_status   = Object.values(statusMap).sort((a,b) => b.total_tagihan - a.total_tagihan);
-}
-
 async function applyFilter() {
   const btn = document.getElementById('btnTerapkan');
   btn.disabled = true; btn.textContent = 'Memuat...';
@@ -1335,7 +1271,6 @@ function renderPage(id) {
     case 'kasir-detail':     renderKasirDetail(d);     break;
     case 'pendapatan-unit':  renderPendapatanUnit(d);  break;
     case 'penjualan-kredit': renderPenjualanKredit(d); break;
-    case 'rekonsiliasi':     renderRekonsiliasi(d);    break;
   }
   const fl = document.getElementById('footerLastUpdate');
   const lu = document.getElementById('lastUpdate');
@@ -1774,93 +1709,6 @@ function filterKredit() {
   tblRefreshIcons('tblKredit', 'head-tblKredit');
 }
 
-// ── REKONSILIASI ──
-let currentRekonAll = [];
-function renderRekonsiliasi(d) {
-  const kasirUnit     = d.kasir_per_unit     || [];
-  const pelayananUnit = d.pelayanan_per_unit || [];
-
-  const totalKasir     = kasirUnit.reduce((s,r) => s + (parseFloat(r.total_nominal)||0), 0);
-  const totalPelayanan = pelayananUnit.reduce((s,r) => s + (parseFloat(r.total_tagihan)||0), 0);
-  const selisihTotal   = totalKasir - totalPelayanan;
-
-  document.getElementById('kpiRekon').innerHTML = `
-    <div class="kpi-card green"><div class="kpi-label">Total Kasir</div><div class="kpi-value">${rupiah(totalKasir)}</div></div>
-    <div class="kpi-card blue"><div class="kpi-label">Total Pelayanan</div><div class="kpi-value">${rupiah(totalPelayanan)}</div></div>
-    <div class="kpi-card ${Math.abs(selisihTotal)<1000?'green':'red'}"><div class="kpi-label">Selisih</div><div class="kpi-value">${rupiah(selisihTotal)}</div><div class="kpi-sub">${Math.abs(selisihTotal)<1000?'Seimbang':'Ada selisih'}</div></div>
-  `;
-
-  const units = [...new Set([...kasirUnit.map(r=>r.unit_kasir), ...pelayananUnit.map(r=>r.unit)])].filter(Boolean);
-  const kasirMap     = Object.fromEntries(kasirUnit.map(r     => [r.unit_kasir, parseFloat(r.total_nominal)||0]));
-  const pelayananMap = Object.fromEntries(pelayananUnit.map(r => [r.unit,      parseFloat(r.total_tagihan)||0]));
-
-  destroyChart('chartRekon');
-  const ctx = document.getElementById('chartRekon');
-  if (ctx) {
-    CHARTS['chartRekon'] = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: units,
-        datasets: [
-          { label:'Kasir',     data: units.map(u => kasirMap[u]||0),     backgroundColor:'rgba(5,150,105,.75)',  borderRadius:4 },
-          { label:'Pelayanan', data: units.map(u => pelayananMap[u]||0), backgroundColor:'rgba(37,99,235,.75)',  borderRadius:4 },
-        ]
-      },
-      options: { ...CHART_DEFAULTS, plugins: { ...CHART_DEFAULTS.plugins, legend: { display:true, labels:{color:'#64748b',font:{size:11},boxWidth:12} } } }
-    });
-  }
-
-  // enriched rows dipakai untuk tabel yang sekarang bisa dicari, difilter status, & disortir
-  currentRekonAll = pelayananUnit.map(r => {
-    const kasir = kasirUnit.find(k => k.unit_kasir?.toLowerCase().includes((r.unit||'').substring(0,4).toLowerCase()));
-    const kasirNom = kasir ? parseFloat(kasir.total_nominal)||0 : 0;
-    const tagihan  = parseFloat(r.total_tagihan)||0;
-    const diff     = kasirNom - tagihan;
-    return {
-      unit: r.unit || '-',
-      total_tagihan: tagihan,
-      kasir_nominal: kasirNom,
-      selisih: diff,
-      status: Math.abs(diff) < 1000 ? 'Sesuai' : 'Selisih',
-    };
-  });
-
-  filterRekon();
-}
-function filterRekon() {
-  const q      = (document.getElementById('searchRekon')?.value || '').toLowerCase();
-  const status = document.getElementById('fltStatusRekon')?.value || '';
-
-  let rows = currentRekonAll.filter(r =>
-    (!q || (r.unit||'').toLowerCase().includes(q)) &&
-    (!status || r.status === status)
-  );
-  rows = tblApplySort('tblRekon', rows);
-
-  const tbody = document.querySelector('#tblRekon tbody');
-  tbody.innerHTML = rows.map(r => `<tr>
-      <td class="td-bold">${r.unit}</td>
-      <td class="td-num">${rupiah(r.total_tagihan)}</td>
-      <td class="td-num">${rupiah(r.kasir_nominal)}</td>
-      <td class="td-num ${Math.abs(r.selisih)<1000?'rekon-match':'rekon-diff'}">${rupiah(r.selisih)}</td>
-      <td><span class="badge ${r.status==='Sesuai'?'badge-green':'badge-red'}">${r.status}</span></td>
-    </tr>`).join('') || '<tr><td colspan="5" class="empty">Tidak ada data</td></tr>';
-
-  document.querySelector('#tblRekon tfoot').innerHTML = rows.length ? tblTotalRow(1, [
-    { value: sumBy(rows,'total_tagihan'), type: 'rupiah' },
-    { value: sumBy(rows,'kasir_nominal'), type: 'rupiah' },
-    { value: sumBy(rows,'selisih'), type: 'rupiah' },
-    { value: '-', type: '' },
-  ]) : '';
-  document.getElementById('rekonCount').textContent = `${num(rows.length)} dari ${num(currentRekonAll.length)} unit`;
-  tblRefreshIcons('tblRekon', 'head-tblRekon');
-}
-function resetRekonFilter() {
-  document.getElementById('searchRekon').value = '';
-  document.getElementById('fltStatusRekon').value = '';
-  filterRekon();
-}
-
 // ══ Hubungkan setiap tableId ke fungsi render/filter-nya masing-masing,
 //    supaya klik header sort cukup memanggil tblSort() lalu re-render otomatis ══
 TblRerender.tblUnit          = () => filterUnitDetailAndUnit();
@@ -1871,7 +1719,6 @@ TblRerender.tblKas            = filterKas;
 TblRerender.tblDetail         = filterDetail;
 TblRerender.tblPendapatanUnit = filterPendapatanUnit;
 TblRerender.tblKredit         = filterKredit;
-TblRerender.tblRekon          = filterRekon;
 
 // tblUnit disortir ulang lewat renderUnitData memakai data unit yang sedang aktif
 function filterUnitDetailAndUnit() {
