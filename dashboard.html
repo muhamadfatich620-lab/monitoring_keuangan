@@ -895,8 +895,8 @@ let sidebarOpen = true;
 
 // cache file per-bulan yang sudah pernah di-fetch, supaya tidak fetch ulang tiap klik Terapkan
 const CACHE_KASIR = {};   // { '2026-06': [...rows] }
-const CACHE_KREDIT = {};  // { '2026-06': [...rows] } — gabungan semua bagian mingguan bulan itu
-const MAX_BAGIAN_KREDIT = 6; // batas aman jumlah file kredit-YYYY-MM-pN.json per bulan (biasanya 4-5)
+const CACHE_KREDIT = {};  // { '2026-06': [...rows] } — gabungan semua bagian (halaman BigQuery) bulan itu
+const MAX_BAGIAN_KREDIT = 100; // batas aman jumlah file kredit-YYYY-MM-pN.json per bulan (sekarang tergantung volume data, bisa banyak untuk bulan padat)
 
 // ══ SIDEBAR TOGGLE ══
 function toggleSidebar() {
@@ -1039,8 +1039,9 @@ function monthsInRange(awal, akhir) {
 // ══ Fetch file per-bulan (pakai cache), gabungkan jadi 1 array ══
 // Kasir di-export 1 file per bulan (data/kasir-YYYY-MM.json).
 // Kredit di-export beberapa file per bulan (data/kredit-YYYY-MM-p1.json,
-// -p2.json, dst — dipecah per ~7 hari di Apps Script supaya tidak
-// Out of Memory), jadi di-fetch berurutan sampai bagian yang tidak
+// -p2.json, dst — dipecah per halaman hasil query BigQuery di Apps
+// Script (ukuran tiap file dikontrol jumlah baris, bukan tanggal,
+// supaya tidak Out of Memory apapun kepadatan datanya), jadi di-fetch berurutan sampai bagian yang tidak
 // ada (404), lalu digabung jadi satu array per bulan.
 async function fetchBulanKasir(kode) {
   if (CACHE_KASIR[kode]) return CACHE_KASIR[kode];
