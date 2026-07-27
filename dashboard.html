@@ -560,6 +560,10 @@ tfoot td {
       <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
       Penjualan Kredit
     </button>
+    <button class="nav-item" onclick="showPage('pelunasan-piutang')">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      Pelunasan Piutang
+    </button>
   </div>
 
   <div class="sidebar-footer">
@@ -867,6 +871,69 @@ tfoot td {
     </div>
   </div>
 
+  <!-- ══ PAGE: PELUNASAN PIUTANG ══ -->
+  <div class="page" id="page-pelunasan-piutang">
+    <div class="kpi-grid" id="kpiPelunasan">
+      <div class="loading"><div class="spinner"></div> Memuat data...</div>
+    </div>
+    <div class="section-card">
+      <div class="section-head">
+        <div><div class="section-title">Tren Pelunasan Piutang Harian</div><div class="section-sub">Total nominal pelunasan per hari, sesuai filter tanggal di atas</div></div>
+      </div>
+      <div class="section-body"><div class="chart-wrap" style="height:280px"><canvas id="chartPelunasanHarian"></canvas></div></div>
+    </div>
+    <div class="section-card">
+      <div class="section-head">
+        <div><div class="section-title">Rekap Harian Pelunasan Piutang</div><div class="section-sub">Kolom Total = jumlah nominal pelunasan pada tanggal tersebut</div></div>
+      </div>
+      <div class="local-filter-wrap">
+        <input type="text" id="searchPelunasanHarian" placeholder="Cari tanggal (YYYY-MM-DD)..." oninput="filterPelunasanHarian()"/>
+        <button class="btn btn-outline" onclick="resetPelunasanHarianFilter()">Reset Filter</button>
+        <span class="local-filter-count" id="pelunasanHarianCount"></span>
+      </div>
+      <div class="section-body" style="padding:0">
+        <div class="tbl-wrap"><table id="tblPelunasanHarian">
+          <thead id="head-tblPelunasanHarian"><tr>
+            <th data-key="tanggal" onclick="tblSort('tblPelunasanHarian','tanggal','text')">Tanggal <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="jumlah_transaksi" onclick="tblSort('tblPelunasanHarian','jumlah_transaksi','number')">Jumlah Transaksi <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="total" onclick="tblSort('tblPelunasanHarian','total','number')">Total <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="kumulatif" onclick="tblSort('tblPelunasanHarian','kumulatif','number')">Kumulatif <span class="sort-ico-wrap"></span></th>
+          </tr></thead>
+          <tbody></tbody>
+          <tfoot></tfoot>
+        </table></div>
+      </div>
+    </div>
+    <div class="section-card">
+      <div class="section-head">
+        <div><div class="section-title">Detail Pelunasan Piutang</div><div class="section-sub">Menampilkan maks 2000 baris pertama dari hasil filter</div></div>
+      </div>
+      <div class="local-filter-wrap">
+        <input type="text" id="searchPelunasanDetail" placeholder="Cari sub unit / penanggung / keterangan..." oninput="filterPelunasanDetail()"/>
+        <select id="fltPelunasanSubUnit" onchange="filterPelunasanDetail()"><option value="">Semua Sub Unit</option></select>
+        <select id="fltPelunasanPenanggung" onchange="filterPelunasanDetail()"><option value="">Semua Penanggung</option></select>
+        <select id="fltPelunasanSegmen" onchange="filterPelunasanDetail()"><option value="">Semua Segmen</option></select>
+        <button class="btn btn-outline" onclick="resetPelunasanDetailFilter()">Reset Filter</button>
+        <span class="local-filter-count" id="pelunasanDetailCount"></span>
+      </div>
+      <div class="section-body" style="padding:0">
+        <div class="tbl-wrap"><table id="tblPelunasanDetail">
+          <thead id="head-tblPelunasanDetail"><tr>
+            <th data-key="tanggal_sub_transaksi" onclick="tblSort('tblPelunasanDetail','tanggal_sub_transaksi','text')">Tanggal <span class="sort-ico-wrap"></span></th>
+            <th data-key="nama_sub_unit" onclick="tblSort('tblPelunasanDetail','nama_sub_unit','text')">Sub Unit <span class="sort-ico-wrap"></span></th>
+            <th data-key="Penanggung" onclick="tblSort('tblPelunasanDetail','Penanggung','text')">Penanggung <span class="sort-ico-wrap"></span></th>
+            <th data-key="Segment" onclick="tblSort('tblPelunasanDetail','Segment','text')">Segmen <span class="sort-ico-wrap"></span></th>
+            <th data-key="nama_sub_penerima" onclick="tblSort('tblPelunasanDetail','nama_sub_penerima','text')">Sub Penerima <span class="sort-ico-wrap"></span></th>
+            <th data-key="operasional" onclick="tblSort('tblPelunasanDetail','operasional','text')">Keterangan <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="_nominal" onclick="tblSort('tblPelunasanDetail','_nominal','number')">Nominal <span class="sort-ico-wrap"></span></th>
+          </tr></thead>
+          <tbody></tbody>
+          <tfoot></tfoot>
+        </table></div>
+      </div>
+    </div>
+  </div>
+
   <!-- ══ FOOTER ══ -->
   <footer class="app-footer">
     <div class="footer-brand">
@@ -887,16 +954,18 @@ tfoot td {
 <script>
 // ══ STATE ══
 let MANIFEST  = null;       // { generated_at, bulan: ['2026-01', ...] }
-let AUX       = null;       // data.json lama: pendapatan & penjualan kredit (belum di-refactor per-bulan)
+let AUX       = null;       // data.json lama: pendapatan (belum di-refactor per-bulan)
+let PELUNASAN = null;       // pelunasan-piutang.json: { generated_at, pelunasan_detail: [...] }
 let FILTERED  = null;       // hasil akhir yang dipakai semua render function
 let activeUnit = 'semua';
 let CHARTS = {};
 let sidebarOpen = true;
 
 // cache file per-bulan yang sudah pernah di-fetch, supaya tidak fetch ulang tiap klik Terapkan
-const CACHE_KASIR = {};   // { '2026-06': [...rows] }
+const CACHE_KASIR = {};   // { '2026-06': [...rows] } — gabungan semua bagian (pN) bulan itu
 const CACHE_KREDIT = {};  // { '2026-06': [...rows] } — gabungan semua bagian (halaman BigQuery) bulan itu
-const MAX_BAGIAN_KREDIT = 100; // batas aman jumlah file kredit-YYYY-MM-pN.json per bulan (sekarang tergantung volume data, bisa banyak untuk bulan padat)
+const MAX_BAGIAN_KASIR  = 200; // batas aman jumlah file kasir-YYYY-MM-pN.json per bulan
+const MAX_BAGIAN_KREDIT = 200; // batas aman jumlah file kredit-YYYY-MM-pN.json per bulan (sekarang tergantung volume data, bisa banyak untuk bulan padat)
 
 // ══ SIDEBAR TOGGLE ══
 function toggleSidebar() {
@@ -916,14 +985,15 @@ function closeSidebar() {
 
 // ══ PAGE NAVIGATION ══
 const PAGE_TITLES = {
-  'dashboard'       : ['Dashboard', 'Ringkasan Keuangan'],
-  'kasir-unit'      : ['Per Unit Kasir', 'Rekap & Detail'],
-  'kasir-jaminan'   : ['Per Jaminan', 'Laporan Kasir'],
-  'kasir-tipe'      : ['Per Jenis Pembayaran', 'Laporan Kasir'],
-  'kasir-kas'       : ['Per Kas', 'Laporan Kasir'],
-  'kasir-detail'    : ['Detail Transaksi', 'Kasir'],
-  'pendapatan-unit' : ['Pendapatan Sub Unit', 'Dari BigQuery'],
-  'penjualan-kredit': ['Penjualan Kredit', 'Per Penanggung & Segmen'],
+  'dashboard'         : ['Dashboard', 'Ringkasan Keuangan'],
+  'kasir-unit'        : ['Per Unit Kasir', 'Rekap & Detail'],
+  'kasir-jaminan'     : ['Per Jaminan', 'Laporan Kasir'],
+  'kasir-tipe'        : ['Per Jenis Pembayaran', 'Laporan Kasir'],
+  'kasir-kas'         : ['Per Kas', 'Laporan Kasir'],
+  'kasir-detail'      : ['Detail Transaksi', 'Kasir'],
+  'pendapatan-unit'   : ['Pendapatan Sub Unit', 'Dari BigQuery'],
+  'penjualan-kredit'  : ['Penjualan Kredit', 'Per Penanggung & Segmen'],
+  'pelunasan-piutang' : ['Pelunasan Piutang', 'Monitoring Harian'],
 };
 
 function showPage(id) {
@@ -1037,45 +1107,41 @@ function monthsInRange(awal, akhir) {
 }
 
 // ══ Fetch file per-bulan (pakai cache), gabungkan jadi 1 array ══
-// Kasir di-export 1 file per bulan (data/kasir-YYYY-MM.json).
-// Kredit di-export beberapa file per bulan (data/kredit-YYYY-MM-p1.json,
-// -p2.json, dst — dipecah per halaman hasil query BigQuery di Apps
-// Script (ukuran tiap file dikontrol jumlah baris, bukan tanggal,
-// supaya tidak Out of Memory apapun kepadatan datanya), jadi di-fetch berurutan sampai bagian yang tidak
-// ada (404), lalu digabung jadi satu array per bulan.
-async function fetchBulanKasir(kode) {
-  if (CACHE_KASIR[kode]) return CACHE_KASIR[kode];
-  const file = `data/kasir-${kode}.json`;
-  try {
-    const r = await fetch(file + '?_=' + Date.now());
-    if (!r.ok) throw new Error('HTTP ' + r.status);
-    const j = await r.json();
-    const rows = j.kasir_detail || [];
-    CACHE_KASIR[kode] = rows;
-    return rows;
-  } catch (e) {
-    console.warn('Gagal fetch ' + file + ': ' + e.message);
-    CACHE_KASIR[kode] = [];
-    return [];
-  }
-}
-
-async function fetchBulanKredit(kode) {
-  if (CACHE_KREDIT[kode]) return CACHE_KREDIT[kode];
+// Kasir & Kredit sekarang SAMA-SAMA di-export multi-file per bulan:
+//   data/kasir-YYYY-MM-p1.json, -p2.json, dst
+//   data/kredit-YYYY-MM-p1.json, -p2.json, dst
+// Ukuran tiap file dikontrol jumlah baris (lihat export-apps-script.gs), bukan
+// tanggal, supaya tidak Out of Memory apapun kepadatan datanya. Di-fetch
+// berurutan sampai bagian yang tidak ada (404), lalu digabung jadi satu
+// array per bulan.
+async function fetchBagianBerurutan(prefix, kode, maxBagian, arrKey) {
   let gabungan = [];
-  for (let bagian = 1; bagian <= MAX_BAGIAN_KREDIT; bagian++) {
-    const file = `data/kredit-${kode}-p${bagian}.json`;
+  for (let bagian = 1; bagian <= maxBagian; bagian++) {
+    const file = `data/${prefix}-${kode}-p${bagian}.json`;
     try {
       const r = await fetch(file + '?_=' + Date.now());
       if (!r.ok) break; // bagian ini tidak ada -> sudah habis, berhenti
       const j = await r.json();
-      gabungan = gabungan.concat(j.kredit_detail || []);
+      gabungan = gabungan.concat(j[arrKey] || []);
     } catch (e) {
       break; // berhenti kalau gagal fetch (jaringan dsb), jangan tebak bagian selanjutnya
     }
   }
-  CACHE_KREDIT[kode] = gabungan;
   return gabungan;
+}
+
+async function fetchBulanKasir(kode) {
+  if (CACHE_KASIR[kode]) return CACHE_KASIR[kode];
+  const rows = await fetchBagianBerurutan('kasir', kode, MAX_BAGIAN_KASIR, 'kasir_detail');
+  CACHE_KASIR[kode] = rows;
+  return rows;
+}
+
+async function fetchBulanKredit(kode) {
+  if (CACHE_KREDIT[kode]) return CACHE_KREDIT[kode];
+  const rows = await fetchBagianBerurutan('kredit', kode, MAX_BAGIAN_KREDIT, 'kredit_detail');
+  CACHE_KREDIT[kode] = rows;
+  return rows;
 }
 
 async function loadSemuaUntukRentang(awal, akhir) {
@@ -1088,13 +1154,14 @@ async function loadSemuaUntukRentang(awal, akhir) {
   };
 }
 
-// ══ BUILD FILTERED (sekarang async karena fetch file per-bulan) ══
+// ══ BUILD FILTERED (async karena fetch file per-bulan) ══
 async function buildFiltered() {
   const { awal, akhir } = getDateRange();
   const { kasir, kredit } = await loadSemuaUntukRentang(awal, akhir);
 
   const kasirRows  = kasir.filter(r => inRange(r.tanggal_transaksi, awal, akhir));
   const kreditRows = kredit.filter(r => inRange(r.tanggal, awal, akhir));
+  const pelunasanRows = (PELUNASAN?.pelunasan_detail || []).filter(r => inRange(r.tanggal_sub_transaksi, awal, akhir));
 
   FILTERED = {
     generated_at: MANIFEST?.generated_at,
@@ -1103,15 +1170,17 @@ async function buildFiltered() {
     // per-bulan — sumbernya project BigQuery lain / PP-DP)
     pendapatan_harian  : AUX?.pendapatan_harian  || [],
     pendapatan_per_unit: AUX?.pendapatan_per_unit || [],
-    // penjualan_kredit_detail sekarang dari file per-bulan data/kredit-YYYY-MM-pN.json,
-    // BUKAN lagi dari data.json — supaya tidak bergantung pada window
-    // RANGE_HARI 90 hari yang bisa basi kalau trigger harian gagal
+    // penjualan_kredit_detail dari file per-bulan data/kredit-YYYY-MM-pN.json
     penjualan_kredit_detail: kreditRows,
+    // pelunasan_detail dari data/pelunasan-piutang.json (single file, di-cache
+    // sekali saat load, difilter tanggal di sisi client)
+    pelunasan_detail: pelunasanRows,
   };
 
   recomputeKasirAggregates(kasirRows);
   recomputeKasirHarian(kasirRows);
   recomputeKreditAggregates(kreditRows);
+  recomputePelunasanAggregates(pelunasanRows);
 }
 
 // ── Hitung ulang penjualan_kredit_per_penanggung & per_segment dari
@@ -1136,8 +1205,7 @@ function recomputeKreditAggregates(rows) {
 }
 
 // ── Hitung ulang kasir_per_unit, per_jaminan, per_tipe, per_kas, detail_per_unit
-//    dari kasir_detail. Sekarang aman karena unit_kasir sudah dihitung di SQL
-//    export (bukan lagi field yang selalu undefined). ──
+//    dari kasir_detail. ──
 function recomputeKasirAggregates(rows) {
   const unitMap = {}, detailMap = {}, jaminanMap = {}, tipeMap = {}, keteranganMap = {}, kasMap = {};
   rows.forEach(r => {
@@ -1196,6 +1264,35 @@ function recomputeKasirHarian(rows) {
     map[tgl].jumlah_transaksi += 1;
   });
   FILTERED.kasir_harian = Object.values(map).sort((a,b) => a.tanggal.localeCompare(b.tanggal));
+}
+
+// ── Nominal pelunasan per baris. Baris pelunasan piutang dicatat sebagai
+//    entri akuntansi (debet/kredit), field "Total" bisa negatif tergantung
+//    arah jurnal. Untuk tujuan monitoring "berapa yang sudah dilunasi",
+//    kita pakai nilai absolut. ──
+function pelunasanNominal(r) {
+  const t = parseFloat(r.Total ?? r.total);
+  if (!isNaN(t) && t !== 0) return Math.abs(t);
+  const k = parseFloat(r.kredit) || 0;
+  const dbt = parseFloat(r.debet) || 0;
+  return Math.abs(k || dbt);
+}
+
+// ── Hitung rekap harian & ringkasan pelunasan piutang dari pelunasan_detail ──
+function recomputePelunasanAggregates(rows) {
+  const map = {};
+  rows.forEach(r => {
+    const tgl = (r.tanggal_sub_transaksi||'').substring(0,10);
+    if (!tgl) return;
+    if (!map[tgl]) map[tgl] = { tanggal: tgl, jumlah_transaksi: 0, total: 0 };
+    map[tgl].jumlah_transaksi += 1;
+    map[tgl].total            += pelunasanNominal(r);
+  });
+  const harian = Object.values(map).sort((a,b) => a.tanggal.localeCompare(b.tanggal));
+  // kumulatif berjalan sesuai urutan tanggal (dalam rentang yang sedang difilter)
+  let running = 0;
+  harian.forEach(h => { running += h.total; h.kumulatif = running; });
+  FILTERED.pelunasan_harian = harian;
 }
 
 async function applyFilter() {
@@ -1264,14 +1361,15 @@ function renderPage(id) {
   const d = FILTERED;
   if (!d) return;
   switch(id) {
-    case 'dashboard':        renderDashboard(d);       break;
-    case 'kasir-unit':       renderKasirUnit(d);       break;
-    case 'kasir-jaminan':    renderKasirJaminan(d);    break;
-    case 'kasir-tipe':       renderKasirTipe(d);       break;
-    case 'kasir-kas':        renderKasirKas(d);        break;
-    case 'kasir-detail':     renderKasirDetail(d);     break;
-    case 'pendapatan-unit':  renderPendapatanUnit(d);  break;
-    case 'penjualan-kredit': renderPenjualanKredit(d); break;
+    case 'dashboard':          renderDashboard(d);         break;
+    case 'kasir-unit':         renderKasirUnit(d);         break;
+    case 'kasir-jaminan':      renderKasirJaminan(d);      break;
+    case 'kasir-tipe':         renderKasirTipe(d);         break;
+    case 'kasir-kas':          renderKasirKas(d);          break;
+    case 'kasir-detail':       renderKasirDetail(d);       break;
+    case 'pendapatan-unit':    renderPendapatanUnit(d);    break;
+    case 'penjualan-kredit':   renderPenjualanKredit(d);   break;
+    case 'pelunasan-piutang':  renderPelunasanPiutang(d);  break;
   }
   const fl = document.getElementById('footerLastUpdate');
   const lu = document.getElementById('lastUpdate');
@@ -1618,7 +1716,7 @@ function resetPendapatanUnitFilter() {
   filterPendapatanUnit();
 }
 
-// ── PENJUALAN KREDIT (masih dari data.json lama, belum per-bulan) ──
+// ── PENJUALAN KREDIT (dari file per-bulan data/kredit-YYYY-MM-pN.json) ──
 let kreditData = [];
 function renderPenjualanKredit(d) {
   const penanggung = d.penjualan_kredit_per_penanggung || [];
@@ -1710,16 +1808,137 @@ function filterKredit() {
   tblRefreshIcons('tblKredit', 'head-tblKredit');
 }
 
+// ── PELUNASAN PIUTANG (dari data/pelunasan-piutang.json) ──
+let currentPelunasanHarian  = [];
+let currentPelunasanDetail  = [];
+
+function renderPelunasanPiutang(d) {
+  const detail = (d.pelunasan_detail || []).map(r => ({ ...r, _nominal: pelunasanNominal(r) }));
+  const harian = d.pelunasan_harian || [];
+  currentPelunasanDetail = detail;
+  currentPelunasanHarian = harian;
+
+  const totalPeriode = harian.reduce((s,r) => s + (parseFloat(r.total)||0), 0);
+  const totalTrx     = harian.reduce((s,r) => s + (parseInt(r.jumlah_transaksi)||0), 0);
+  const rataHarian   = harian.length ? totalPeriode / harian.length : 0;
+  const hariTertinggi = harian.reduce((best,r) => (!best || r.total > best.total) ? r : best, null);
+
+  document.getElementById('kpiPelunasan').innerHTML = `
+    <div class="kpi-card blue"><div class="kpi-label">Total Pelunasan (Periode)</div><div class="kpi-value">${rupiah(totalPeriode)}</div><div class="kpi-sub">${num(totalTrx)} transaksi</div></div>
+    <div class="kpi-card green"><div class="kpi-label">Rata-rata Harian</div><div class="kpi-value">${rupiah(rataHarian)}</div><div class="kpi-sub">${harian.length} hari tercatat</div></div>
+    <div class="kpi-card amber"><div class="kpi-label">Hari Tertinggi</div><div class="kpi-value">${hariTertinggi ? rupiah(hariTertinggi.total) : '-'}</div><div class="kpi-sub">${hariTertinggi ? hariTertinggi.tanggal : '-'}</div></div>
+    <div class="kpi-card purple"><div class="kpi-label">Jumlah Baris</div><div class="kpi-value">${num(detail.length)}</div><div class="kpi-sub">baris pelunasan sesuai filter</div></div>
+  `;
+
+  makeLine('chartPelunasanHarian',
+    harian.map(r => r.tanggal?.substring(5)),
+    [{ label:'Total Pelunasan', data: harian.map(r => parseFloat(r.total)||0), borderColor:'#059669', backgroundColor:'rgba(5,150,105,.08)', fill:true, tension:.3, pointRadius:2, borderWidth:2 }]
+  );
+
+  populatePelunasanFilterOptions();
+  filterPelunasanHarian();
+  filterPelunasanDetail();
+}
+
+function filterPelunasanHarian() {
+  const q = (document.getElementById('searchPelunasanHarian')?.value || '').toLowerCase();
+  const rows = tblApplySort('tblPelunasanHarian', currentPelunasanHarian.filter(r => !q || (r.tanggal||'').toLowerCase().includes(q)));
+
+  const tbody = document.querySelector('#tblPelunasanHarian tbody');
+  tbody.innerHTML = rows.map(r => `
+    <tr>
+      <td class="td-bold">${r.tanggal||'-'}</td>
+      <td class="td-num">${num(r.jumlah_transaksi)}</td>
+      <td class="td-num td-bold">${rupiah(r.total)}</td>
+      <td class="td-num">${rupiah(r.kumulatif)}</td>
+    </tr>`).join('') || '<tr><td colspan="4" class="empty">Tidak ada data</td></tr>';
+
+  document.querySelector('#tblPelunasanHarian tfoot').innerHTML = rows.length ? tblTotalRow(1, [
+    { value: sumBy(rows,'jumlah_transaksi'), type: 'num' },
+    { value: sumBy(rows,'total'), type: 'rupiah' },
+    { value: rows.length ? rows[rows.length-1].kumulatif : 0, type: 'rupiah' },
+  ]) : '';
+  document.getElementById('pelunasanHarianCount').textContent = `${num(rows.length)} dari ${num(currentPelunasanHarian.length)} hari`;
+  tblRefreshIcons('tblPelunasanHarian', 'head-tblPelunasanHarian');
+}
+function resetPelunasanHarianFilter() {
+  document.getElementById('searchPelunasanHarian').value = '';
+  filterPelunasanHarian();
+}
+
+function populatePelunasanFilterOptions() {
+  const fillSelect = (elId, values, allLabel) => {
+    const el = document.getElementById(elId);
+    if (!el) return;
+    const current = el.value;
+    const opts = [...new Set(values.filter(Boolean))].sort();
+    el.innerHTML = `<option value="">${allLabel}</option>` +
+      opts.map(v => `<option value="${v.replace(/"/g,'&quot;')}">${v}</option>`).join('');
+    if (opts.includes(current)) el.value = current;
+  };
+  fillSelect('fltPelunasanSubUnit', currentPelunasanDetail.map(r => r.nama_sub_unit), 'Semua Sub Unit');
+  fillSelect('fltPelunasanPenanggung', currentPelunasanDetail.map(r => r.Penanggung), 'Semua Penanggung');
+  fillSelect('fltPelunasanSegmen', currentPelunasanDetail.map(r => r.Segment), 'Semua Segmen');
+}
+
+function filterPelunasanDetail() {
+  const q         = (document.getElementById('searchPelunasanDetail')?.value || '').toLowerCase();
+  const subUnit   = document.getElementById('fltPelunasanSubUnit')?.value || '';
+  const penanggung= document.getElementById('fltPelunasanPenanggung')?.value || '';
+  const segmen    = document.getElementById('fltPelunasanSegmen')?.value || '';
+
+  let rows = currentPelunasanDetail.filter(r => {
+    const su = r.nama_sub_unit || '';
+    const pg = r.Penanggung || '';
+    const sg = r.Segment || '';
+    const ket = r.operasional || '';
+    if (q && !(su.toLowerCase().includes(q) || pg.toLowerCase().includes(q) || ket.toLowerCase().includes(q))) return false;
+    if (subUnit && su !== subUnit) return false;
+    if (penanggung && pg !== penanggung) return false;
+    if (segmen && sg !== segmen) return false;
+    return true;
+  });
+  rows = tblApplySort('tblPelunasanDetail', rows);
+
+  document.getElementById('pelunasanDetailCount').textContent = `${num(rows.length)} dari ${num(currentPelunasanDetail.length)} baris`;
+
+  const tbody = document.querySelector('#tblPelunasanDetail tbody');
+  tbody.innerHTML = rows.slice(0,2000).map(r => `
+    <tr>
+      <td>${(r.tanggal_sub_transaksi||'').substring(0,10)}</td>
+      <td style="font-size:11px">${r.nama_sub_unit||'-'}</td>
+      <td style="font-size:11px">${r.Penanggung||'-'}</td>
+      <td><span class="badge badge-cyan">${r.Segment||'-'}</span></td>
+      <td style="font-size:11px">${r.nama_sub_penerima||'-'}</td>
+      <td style="font-size:10px;color:var(--text3)">${r.operasional||'-'}</td>
+      <td class="td-num td-bold">${rupiah(r._nominal)}</td>
+    </tr>`).join('') || '<tr><td colspan="7" class="empty">Tidak ada data</td></tr>';
+
+  document.querySelector('#tblPelunasanDetail tfoot').innerHTML = rows.length ? tblTotalRow(6, [
+    { value: sumBy(rows,'_nominal'), type: 'rupiah' },
+  ]) : '';
+  tblRefreshIcons('tblPelunasanDetail', 'head-tblPelunasanDetail');
+}
+function resetPelunasanDetailFilter() {
+  document.getElementById('searchPelunasanDetail').value = '';
+  document.getElementById('fltPelunasanSubUnit').value = '';
+  document.getElementById('fltPelunasanPenanggung').value = '';
+  document.getElementById('fltPelunasanSegmen').value = '';
+  filterPelunasanDetail();
+}
+
 // ══ Hubungkan setiap tableId ke fungsi render/filter-nya masing-masing,
 //    supaya klik header sort cukup memanggil tblSort() lalu re-render otomatis ══
-TblRerender.tblUnit          = () => filterUnitDetailAndUnit();
-TblRerender.tblUnitDetail     = filterUnitDetail;
-TblRerender.tblJaminan        = filterJaminan;
-TblRerender.tblTipe           = filterTipe;
-TblRerender.tblKas            = filterKas;
-TblRerender.tblDetail         = filterDetail;
-TblRerender.tblPendapatanUnit = filterPendapatanUnit;
-TblRerender.tblKredit         = filterKredit;
+TblRerender.tblUnit             = () => filterUnitDetailAndUnit();
+TblRerender.tblUnitDetail        = filterUnitDetail;
+TblRerender.tblJaminan           = filterJaminan;
+TblRerender.tblTipe              = filterTipe;
+TblRerender.tblKas               = filterKas;
+TblRerender.tblDetail            = filterDetail;
+TblRerender.tblPendapatanUnit    = filterPendapatanUnit;
+TblRerender.tblKredit            = filterKredit;
+TblRerender.tblPelunasanHarian   = filterPelunasanHarian;
+TblRerender.tblPelunasanDetail   = filterPelunasanDetail;
 
 // tblUnit disortir ulang lewat renderUnitData memakai data unit yang sedang aktif
 function filterUnitDetailAndUnit() {
@@ -1756,15 +1975,25 @@ async function loadAux() {
     const r = await fetch('data.json?_=' + Date.now());
     AUX = await r.json();
   } catch (e) {
-    console.warn('Gagal memuat data.json (pendapatan/kredit): ' + e.message);
+    console.warn('Gagal memuat data.json (pendapatan): ' + e.message);
     AUX = {};
+  }
+}
+async function loadPelunasan() {
+  try {
+    const r = await fetch('data/pelunasan-piutang.json?_=' + Date.now());
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    PELUNASAN = await r.json();
+  } catch (e) {
+    console.warn('Gagal memuat data/pelunasan-piutang.json: ' + e.message);
+    PELUNASAN = { pelunasan_detail: [] };
   }
 }
 
 async function loadData() {
   document.getElementById('kpiGrid').innerHTML = '<div class="loading"><div class="spinner"></div> Memuat data...</div>';
 
-  await Promise.all([loadManifest(), loadAux()]);
+  await Promise.all([loadManifest(), loadAux(), loadPelunasan()]);
 
   if (MANIFEST.generated_at) {
     const d = new Date(MANIFEST.generated_at);
@@ -1795,6 +2024,7 @@ async function loadData() {
 loadData();
 
 if (window.innerWidth < 768) closeSidebar();
+
 </script>
 </body>
 </html>
