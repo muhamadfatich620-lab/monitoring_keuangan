@@ -896,6 +896,8 @@ tfoot td {
           <thead id="head-tblPelunasanHarian"><tr>
             <th data-key="tanggal" onclick="tblSort('tblPelunasanHarian','tanggal','text')">Tanggal <span class="sort-ico-wrap"></span></th>
             <th class="td-num" data-key="jumlah_transaksi" onclick="tblSort('tblPelunasanHarian','jumlah_transaksi','number')">Jumlah Transaksi <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="total_debet" onclick="tblSort('tblPelunasanHarian','total_debet','number')">Debet <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="total_kredit" onclick="tblSort('tblPelunasanHarian','total_kredit','number')">Kredit <span class="sort-ico-wrap"></span></th>
             <th class="td-num" data-key="total" onclick="tblSort('tblPelunasanHarian','total','number')">Total <span class="sort-ico-wrap"></span></th>
             <th class="td-num" data-key="kumulatif" onclick="tblSort('tblPelunasanHarian','kumulatif','number')">Kumulatif <span class="sort-ico-wrap"></span></th>
           </tr></thead>
@@ -921,10 +923,12 @@ tfoot td {
           <thead id="head-tblPelunasanDetail"><tr>
             <th data-key="tanggal_sub_transaksi" onclick="tblSort('tblPelunasanDetail','tanggal_sub_transaksi','text')">Tanggal <span class="sort-ico-wrap"></span></th>
             <th data-key="nama_sub_unit" onclick="tblSort('tblPelunasanDetail','nama_sub_unit','text')">Sub Unit <span class="sort-ico-wrap"></span></th>
-            <th data-key="Penanggung" onclick="tblSort('tblPelunasanDetail','Penanggung','text')">Penanggung <span class="sort-ico-wrap"></span></th>
+            <th data-key="_penanggung" onclick="tblSort('tblPelunasanDetail','_penanggung','text')">Penanggung <span class="sort-ico-wrap"></span></th>
             <th data-key="Segment" onclick="tblSort('tblPelunasanDetail','Segment','text')">Segmen <span class="sort-ico-wrap"></span></th>
             <th data-key="nama_sub_penerima" onclick="tblSort('tblPelunasanDetail','nama_sub_penerima','text')">Sub Penerima <span class="sort-ico-wrap"></span></th>
             <th data-key="operasional" onclick="tblSort('tblPelunasanDetail','operasional','text')">Keterangan <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="_debet" onclick="tblSort('tblPelunasanDetail','_debet','number')">Debet <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="_kredit" onclick="tblSort('tblPelunasanDetail','_kredit','number')">Kredit <span class="sort-ico-wrap"></span></th>
             <th class="td-num" data-key="_nominal" onclick="tblSort('tblPelunasanDetail','_nominal','number')">Nominal <span class="sort-ico-wrap"></span></th>
           </tr></thead>
           <tbody></tbody>
@@ -1093,10 +1097,15 @@ function inRange(tglStr, awal, akhir) {
 }
 
 // ══ Tentukan bulan (kode 'YYYY-MM') mana saja yang overlap dengan rentang tanggal ══
+// Di-dedupe dengan Set — kalau manifest.json sampai berisi kode bulan ganda
+// (mis. karena proses export mingguan menambahkan bulan yang sama lebih dari
+// sekali), tanpa dedupe di sini bulan itu akan di-fetch & digabung dua kali,
+// yang berujung pada baris transaksi yang tampak duplikat di dashboard.
 function monthsInRange(awal, akhir) {
   if (!MANIFEST || !MANIFEST.bulan) return [];
-  if (!awal && !akhir) return MANIFEST.bulan; // tanpa filter -> semua bulan yang tersedia
-  return MANIFEST.bulan.filter(kode => {
+  const semuaBulan = [...new Set(MANIFEST.bulan)];
+  if (!awal && !akhir) return semuaBulan; // tanpa filter -> semua bulan yang tersedia
+  return semuaBulan.filter(kode => {
     const [y, m] = kode.split('-').map(Number);
     const bulanAwal  = kode + '-01';
     const bulanAkhir = new Date(y, m, 0).toISOString().substring(0,10);
@@ -1104,6 +1113,21 @@ function monthsInRange(awal, akhir) {
     const akhirCek = akhir || '9999-12-31';
     return bulanAwal <= akhirCek && bulanAkhir >= mulaiCek;
   });
+}
+
+// ══ Buang baris yang isinya PERSIS SAMA (semua kolom identik) ══
+// Dipakai sebagai pengaman terhadap data duplikat, misalnya kalau file
+// export per-minggu/per-bagian saling overlap (baris tanggal batas minggu
+// ikut ke-export di dua file sekaligus) sehingga transaksi yang sama bisa
+// muncul lebih dari sekali setelah semua file digabung.
+function dedupeExact(rows) {
+  const seen = new Set();
+  const out = [];
+  for (const r of rows) {
+    const key = JSON.stringify(r);
+    if (!seen.has(key)) { seen.add(key); out.push(r); }
+  }
+  return out;
 }
 
 // ══ Fetch file per-bulan (pakai cache), gabungkan jadi 1 array ══
@@ -1149,8 +1173,8 @@ async function loadSemuaUntukRentang(awal, akhir) {
   const kasirArr  = await Promise.all(bulanList.map(k => fetchBulanKasir(k)));
   const kreditArr = await Promise.all(bulanList.map(k => fetchBulanKredit(k)));
   return {
-    kasir: [].concat(...kasirArr),
-    kredit: [].concat(...kreditArr),
+    kasir: dedupeExact([].concat(...kasirArr)),
+    kredit: dedupeExact([].concat(...kreditArr)),
   };
 }
 
@@ -1277,6 +1301,14 @@ function pelunasanNominal(r) {
   const dbt = parseFloat(r.debet) || 0;
   return Math.abs(k || dbt);
 }
+function pelunasanDebet(r)  { return Math.abs(parseFloat(r.debet)  || 0); }
+function pelunasanKredit(r) { return Math.abs(parseFloat(r.kredit) || 0); }
+
+// ── Kolom "Penanggung" pada Pelunasan Piutang diambil dari kolom nama
+//    penerima (bukan dari field Penanggung), sesuai data pelunasan piutang. ──
+function pelunasanPenanggung(r) {
+  return r.nama_penerima || r.Nama_Penerima || r.NAMA_PENERIMA || r.nama_sub_penerima || '-';
+}
 
 // ── Hitung rekap harian & ringkasan pelunasan piutang dari pelunasan_detail ──
 function recomputePelunasanAggregates(rows) {
@@ -1284,9 +1316,11 @@ function recomputePelunasanAggregates(rows) {
   rows.forEach(r => {
     const tgl = (r.tanggal_sub_transaksi||'').substring(0,10);
     if (!tgl) return;
-    if (!map[tgl]) map[tgl] = { tanggal: tgl, jumlah_transaksi: 0, total: 0 };
+    if (!map[tgl]) map[tgl] = { tanggal: tgl, jumlah_transaksi: 0, total: 0, total_debet: 0, total_kredit: 0 };
     map[tgl].jumlah_transaksi += 1;
     map[tgl].total            += pelunasanNominal(r);
+    map[tgl].total_debet      += pelunasanDebet(r);
+    map[tgl].total_kredit     += pelunasanKredit(r);
   });
   const harian = Object.values(map).sort((a,b) => a.tanggal.localeCompare(b.tanggal));
   // kumulatif berjalan sesuai urutan tanggal (dalam rentang yang sedang difilter)
@@ -1813,7 +1847,13 @@ let currentPelunasanHarian  = [];
 let currentPelunasanDetail  = [];
 
 function renderPelunasanPiutang(d) {
-  const detail = (d.pelunasan_detail || []).map(r => ({ ...r, _nominal: pelunasanNominal(r) }));
+  const detail = (d.pelunasan_detail || []).map(r => ({
+    ...r,
+    _nominal: pelunasanNominal(r),
+    _debet: pelunasanDebet(r),
+    _kredit: pelunasanKredit(r),
+    _penanggung: pelunasanPenanggung(r),
+  }));
   const harian = d.pelunasan_harian || [];
   currentPelunasanDetail = detail;
   currentPelunasanHarian = harian;
@@ -1849,12 +1889,16 @@ function filterPelunasanHarian() {
     <tr>
       <td class="td-bold">${r.tanggal||'-'}</td>
       <td class="td-num">${num(r.jumlah_transaksi)}</td>
+      <td class="td-num">${rupiah(r.total_debet)}</td>
+      <td class="td-num">${rupiah(r.total_kredit)}</td>
       <td class="td-num td-bold">${rupiah(r.total)}</td>
       <td class="td-num">${rupiah(r.kumulatif)}</td>
-    </tr>`).join('') || '<tr><td colspan="4" class="empty">Tidak ada data</td></tr>';
+    </tr>`).join('') || '<tr><td colspan="6" class="empty">Tidak ada data</td></tr>';
 
   document.querySelector('#tblPelunasanHarian tfoot').innerHTML = rows.length ? tblTotalRow(1, [
     { value: sumBy(rows,'jumlah_transaksi'), type: 'num' },
+    { value: sumBy(rows,'total_debet'), type: 'rupiah' },
+    { value: sumBy(rows,'total_kredit'), type: 'rupiah' },
     { value: sumBy(rows,'total'), type: 'rupiah' },
     { value: rows.length ? rows[rows.length-1].kumulatif : 0, type: 'rupiah' },
   ]) : '';
@@ -1877,7 +1921,7 @@ function populatePelunasanFilterOptions() {
     if (opts.includes(current)) el.value = current;
   };
   fillSelect('fltPelunasanSubUnit', currentPelunasanDetail.map(r => r.nama_sub_unit), 'Semua Sub Unit');
-  fillSelect('fltPelunasanPenanggung', currentPelunasanDetail.map(r => r.Penanggung), 'Semua Penanggung');
+  fillSelect('fltPelunasanPenanggung', currentPelunasanDetail.map(r => r._penanggung), 'Semua Penanggung');
   fillSelect('fltPelunasanSegmen', currentPelunasanDetail.map(r => r.Segment), 'Semua Segmen');
 }
 
@@ -1889,7 +1933,7 @@ function filterPelunasanDetail() {
 
   let rows = currentPelunasanDetail.filter(r => {
     const su = r.nama_sub_unit || '';
-    const pg = r.Penanggung || '';
+    const pg = r._penanggung || '';
     const sg = r.Segment || '';
     const ket = r.operasional || '';
     if (q && !(su.toLowerCase().includes(q) || pg.toLowerCase().includes(q) || ket.toLowerCase().includes(q))) return false;
@@ -1907,14 +1951,18 @@ function filterPelunasanDetail() {
     <tr>
       <td>${(r.tanggal_sub_transaksi||'').substring(0,10)}</td>
       <td style="font-size:11px">${r.nama_sub_unit||'-'}</td>
-      <td style="font-size:11px">${r.Penanggung||'-'}</td>
+      <td style="font-size:11px">${r._penanggung||'-'}</td>
       <td><span class="badge badge-cyan">${r.Segment||'-'}</span></td>
       <td style="font-size:11px">${r.nama_sub_penerima||'-'}</td>
       <td style="font-size:10px;color:var(--text3)">${r.operasional||'-'}</td>
+      <td class="td-num">${rupiah(r._debet)}</td>
+      <td class="td-num">${rupiah(r._kredit)}</td>
       <td class="td-num td-bold">${rupiah(r._nominal)}</td>
-    </tr>`).join('') || '<tr><td colspan="7" class="empty">Tidak ada data</td></tr>';
+    </tr>`).join('') || '<tr><td colspan="9" class="empty">Tidak ada data</td></tr>';
 
   document.querySelector('#tblPelunasanDetail tfoot').innerHTML = rows.length ? tblTotalRow(6, [
+    { value: sumBy(rows,'_debet'), type: 'rupiah' },
+    { value: sumBy(rows,'_kredit'), type: 'rupiah' },
     { value: sumBy(rows,'_nominal'), type: 'rupiah' },
   ]) : '';
   tblRefreshIcons('tblPelunasanDetail', 'head-tblPelunasanDetail');
