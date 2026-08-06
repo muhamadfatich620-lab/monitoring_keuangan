@@ -316,7 +316,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "22746",
       "tanggal_transaksi": "2026-03-07 13:46:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -329,7 +329,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "22746",
       "tanggal_transaksi": "2026-03-07 13:46:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -342,7 +342,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "22746",
       "tanggal_transaksi": "2026-03-07 13:46:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -355,7 +355,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "22746",
       "tanggal_transaksi": "2026-03-07 13:46:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -368,7 +368,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "22746",
       "tanggal_transaksi": "2026-03-07 13:46:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -381,7 +381,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "22746",
       "tanggal_transaksi": "2026-03-07 13:46:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -394,7 +394,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "22746",
       "tanggal_transaksi": "2026-03-07 13:46:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -446,7 +446,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "22762",
       "tanggal_transaksi": "2026-03-07 13:47:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -472,7 +472,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "22762",
       "tanggal_transaksi": "2026-03-07 13:47:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -498,7 +498,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "22762",
       "tanggal_transaksi": "2026-03-07 13:47:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -511,59 +511,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
-      "id_transaksi": "22762",
-      "tanggal_transaksi": "2026-03-07 13:47:00",
-      "nama_kasir": "fithriyatul.adawiyah",
-      "nomor_rm": "545510",
-      "nama_pasien": "WINOTO (PT. MEGANAGA)",
-      "jaminan": "UMUM",
-      "kas": "Bank BCA-1500317473",
-      "tipe_pembayaran": "DEBET/KREDIT",
-      "nominal": "331800.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir IRJ",
-      "id_transaksi": "22344",
-      "tanggal_transaksi": "2026-03-07 13:47:00",
-      "nama_kasir": "sri.wanti",
-      "nomor_rm": "585519",
-      "nama_pasien": "MUZAROAH",
-      "jaminan": "UMUM",
-      "kas": "Bank Mandiri-1400002285626",
-      "tipe_pembayaran": "DEBET/KREDIT",
-      "nominal": "361077.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Lainnya",
-      "id_transaksi": "22762",
-      "tanggal_transaksi": "2026-03-07 13:47:00",
-      "nama_kasir": "fithriyatul.adawiyah",
-      "nomor_rm": "545510",
-      "nama_pasien": "WINOTO (PT. MEGANAGA)",
-      "jaminan": "UMUM",
-      "kas": "Bank BCA-1500317473",
-      "tipe_pembayaran": "DEBET/KREDIT",
-      "nominal": "331800.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Lainnya",
-      "id_transaksi": "22762",
-      "tanggal_transaksi": "2026-03-07 13:47:00",
-      "nama_kasir": "fithriyatul.adawiyah",
-      "nomor_rm": "545510",
-      "nama_pasien": "WINOTO (PT. MEGANAGA)",
-      "jaminan": "UMUM",
-      "kas": "Bank BCA-1500317473",
-      "tipe_pembayaran": "DEBET/KREDIT",
-      "nominal": "331800.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "22762",
       "tanggal_transaksi": "2026-03-07 13:47:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -589,7 +537,59 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
+      "id_transaksi": "22762",
+      "tanggal_transaksi": "2026-03-07 13:47:00",
+      "nama_kasir": "fithriyatul.adawiyah",
+      "nomor_rm": "545510",
+      "nama_pasien": "WINOTO (PT. MEGANAGA)",
+      "jaminan": "UMUM",
+      "kas": "Bank BCA-1500317473",
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "nominal": "331800.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir MCU",
+      "id_transaksi": "22762",
+      "tanggal_transaksi": "2026-03-07 13:47:00",
+      "nama_kasir": "fithriyatul.adawiyah",
+      "nomor_rm": "545510",
+      "nama_pasien": "WINOTO (PT. MEGANAGA)",
+      "jaminan": "UMUM",
+      "kas": "Bank BCA-1500317473",
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "nominal": "331800.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir MCU",
+      "id_transaksi": "22762",
+      "tanggal_transaksi": "2026-03-07 13:47:00",
+      "nama_kasir": "fithriyatul.adawiyah",
+      "nomor_rm": "545510",
+      "nama_pasien": "WINOTO (PT. MEGANAGA)",
+      "jaminan": "UMUM",
+      "kas": "Bank BCA-1500317473",
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "nominal": "331800.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir IRJ",
+      "id_transaksi": "22344",
+      "tanggal_transaksi": "2026-03-07 13:47:00",
+      "nama_kasir": "sri.wanti",
+      "nomor_rm": "585519",
+      "nama_pasien": "MUZAROAH",
+      "jaminan": "UMUM",
+      "kas": "Bank Mandiri-1400002285626",
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "nominal": "361077.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "22804",
       "tanggal_transaksi": "2026-03-07 13:48:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -602,7 +602,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "22804",
       "tanggal_transaksi": "2026-03-07 13:48:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -615,7 +615,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "22804",
       "tanggal_transaksi": "2026-03-07 13:48:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -628,7 +628,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "22804",
       "tanggal_transaksi": "2026-03-07 13:48:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -641,7 +641,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "22804",
       "tanggal_transaksi": "2026-03-07 13:48:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -654,7 +654,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "22804",
       "tanggal_transaksi": "2026-03-07 13:48:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -667,7 +667,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "22804",
       "tanggal_transaksi": "2026-03-07 13:48:00",
       "nama_kasir": "fithriyatul.adawiyah",
