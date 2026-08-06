@@ -33336,7 +33336,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52156",
       "tanggal_transaksi": "2026-05-18 07:38:00",
       "nama_kasir": "salsabila.putri",
@@ -33349,7 +33349,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52156",
       "tanggal_transaksi": "2026-05-18 07:38:00",
       "nama_kasir": "salsabila.putri",
@@ -33362,7 +33362,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52156",
       "tanggal_transaksi": "2026-05-18 07:38:00",
       "nama_kasir": "salsabila.putri",
@@ -33375,7 +33375,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52156",
       "tanggal_transaksi": "2026-05-18 07:38:00",
       "nama_kasir": "salsabila.putri",
@@ -33388,7 +33388,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52156",
       "tanggal_transaksi": "2026-05-18 07:38:00",
       "nama_kasir": "salsabila.putri",
@@ -33401,7 +33401,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52156",
       "tanggal_transaksi": "2026-05-18 07:38:00",
       "nama_kasir": "salsabila.putri",
@@ -33414,7 +33414,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52156",
       "tanggal_transaksi": "2026-05-18 07:38:00",
       "nama_kasir": "salsabila.putri",
@@ -33427,7 +33427,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52184",
       "tanggal_transaksi": "2026-05-18 07:43:00",
       "nama_kasir": "salsabila.putri",
@@ -33440,7 +33440,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52184",
       "tanggal_transaksi": "2026-05-18 07:43:00",
       "nama_kasir": "salsabila.putri",
@@ -33453,7 +33453,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52183",
       "tanggal_transaksi": "2026-05-18 07:43:00",
       "nama_kasir": "salsabila.putri",
@@ -33466,7 +33466,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52184",
       "tanggal_transaksi": "2026-05-18 07:43:00",
       "nama_kasir": "salsabila.putri",
@@ -33492,7 +33492,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52183",
       "tanggal_transaksi": "2026-05-18 07:43:00",
       "nama_kasir": "salsabila.putri",
@@ -33505,7 +33505,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52184",
       "tanggal_transaksi": "2026-05-18 07:43:00",
       "nama_kasir": "salsabila.putri",
@@ -33531,7 +33531,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52184",
       "tanggal_transaksi": "2026-05-18 07:43:00",
       "nama_kasir": "salsabila.putri",
@@ -33544,59 +33544,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
-      "id_transaksi": "52183",
-      "tanggal_transaksi": "2026-05-18 07:43:00",
-      "nama_kasir": "salsabila.putri",
-      "nomor_rm": "599866",
-      "nama_pasien": "NOR ROCHMAT",
-      "jaminan": "UMUM",
-      "kas": "KAS BESAR",
-      "tipe_pembayaran": "TUNAI",
-      "nominal": "370000.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir IPM",
-      "id_transaksi": "52182",
-      "tanggal_transaksi": "2026-05-18 07:43:00",
-      "nama_kasir": "mochamad.ridwan",
-      "nomor_rm": "312055",
-      "nama_pasien": "MASROH",
-      "jaminan": "UMUM",
-      "kas": "KAS BESAR",
-      "tipe_pembayaran": "TUNAI",
-      "nominal": "709000.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir IPM",
-      "id_transaksi": "52182",
-      "tanggal_transaksi": "2026-05-18 07:43:00",
-      "nama_kasir": "mochamad.ridwan",
-      "nomor_rm": "312055",
-      "nama_pasien": "MASROH",
-      "jaminan": "UMUM",
-      "kas": "KAS BESAR",
-      "tipe_pembayaran": "TUNAI",
-      "nominal": "709000.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Lainnya",
-      "id_transaksi": "52184",
-      "tanggal_transaksi": "2026-05-18 07:43:00",
-      "nama_kasir": "salsabila.putri",
-      "nomor_rm": "613433",
-      "nama_pasien": "MUHAMMAD GUNAWAN SAPUTRA",
-      "jaminan": "UMUM",
-      "kas": "KAS BESAR",
-      "tipe_pembayaran": "TUNAI",
-      "nominal": "370000.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52183",
       "tanggal_transaksi": "2026-05-18 07:43:00",
       "nama_kasir": "salsabila.putri",
@@ -33635,20 +33583,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
-      "id_transaksi": "52183",
-      "tanggal_transaksi": "2026-05-18 07:43:00",
-      "nama_kasir": "salsabila.putri",
-      "nomor_rm": "599866",
-      "nama_pasien": "NOR ROCHMAT",
-      "jaminan": "UMUM",
-      "kas": "KAS BESAR",
-      "tipe_pembayaran": "TUNAI",
-      "nominal": "370000.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52184",
       "tanggal_transaksi": "2026-05-18 07:43:00",
       "nama_kasir": "salsabila.putri",
@@ -33661,7 +33596,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52183",
       "tanggal_transaksi": "2026-05-18 07:43:00",
       "nama_kasir": "salsabila.putri",
@@ -33687,7 +33622,72 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir IPM",
+      "id_transaksi": "52182",
+      "tanggal_transaksi": "2026-05-18 07:43:00",
+      "nama_kasir": "mochamad.ridwan",
+      "nomor_rm": "312055",
+      "nama_pasien": "MASROH",
+      "jaminan": "UMUM",
+      "kas": "KAS BESAR",
+      "tipe_pembayaran": "TUNAI",
+      "nominal": "709000.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir MCU",
+      "id_transaksi": "52183",
+      "tanggal_transaksi": "2026-05-18 07:43:00",
+      "nama_kasir": "salsabila.putri",
+      "nomor_rm": "599866",
+      "nama_pasien": "NOR ROCHMAT",
+      "jaminan": "UMUM",
+      "kas": "KAS BESAR",
+      "tipe_pembayaran": "TUNAI",
+      "nominal": "370000.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir MCU",
+      "id_transaksi": "52184",
+      "tanggal_transaksi": "2026-05-18 07:43:00",
+      "nama_kasir": "salsabila.putri",
+      "nomor_rm": "613433",
+      "nama_pasien": "MUHAMMAD GUNAWAN SAPUTRA",
+      "jaminan": "UMUM",
+      "kas": "KAS BESAR",
+      "tipe_pembayaran": "TUNAI",
+      "nominal": "370000.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir MCU",
+      "id_transaksi": "52183",
+      "tanggal_transaksi": "2026-05-18 07:43:00",
+      "nama_kasir": "salsabila.putri",
+      "nomor_rm": "599866",
+      "nama_pasien": "NOR ROCHMAT",
+      "jaminan": "UMUM",
+      "kas": "KAS BESAR",
+      "tipe_pembayaran": "TUNAI",
+      "nominal": "370000.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir IPM",
+      "id_transaksi": "52182",
+      "tanggal_transaksi": "2026-05-18 07:43:00",
+      "nama_kasir": "mochamad.ridwan",
+      "nomor_rm": "312055",
+      "nama_pasien": "MASROH",
+      "jaminan": "UMUM",
+      "kas": "KAS BESAR",
+      "tipe_pembayaran": "TUNAI",
+      "nominal": "709000.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52183",
       "tanggal_transaksi": "2026-05-18 07:43:00",
       "nama_kasir": "salsabila.putri",
@@ -33791,7 +33791,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52186",
       "tanggal_transaksi": "2026-05-18 07:48:00",
       "nama_kasir": "salsabila.putri",
@@ -33804,7 +33804,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52186",
       "tanggal_transaksi": "2026-05-18 07:48:00",
       "nama_kasir": "salsabila.putri",
@@ -33817,7 +33817,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52186",
       "tanggal_transaksi": "2026-05-18 07:48:00",
       "nama_kasir": "salsabila.putri",
@@ -33830,7 +33830,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52186",
       "tanggal_transaksi": "2026-05-18 07:48:00",
       "nama_kasir": "salsabila.putri",
@@ -33843,7 +33843,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52186",
       "tanggal_transaksi": "2026-05-18 07:48:00",
       "nama_kasir": "salsabila.putri",
@@ -33856,7 +33856,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52186",
       "tanggal_transaksi": "2026-05-18 07:48:00",
       "nama_kasir": "salsabila.putri",
@@ -33869,7 +33869,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52186",
       "tanggal_transaksi": "2026-05-18 07:48:00",
       "nama_kasir": "salsabila.putri",
@@ -34701,7 +34701,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52207",
       "tanggal_transaksi": "2026-05-18 08:36:00",
       "nama_kasir": "salsabila.putri",
@@ -34714,7 +34714,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52207",
       "tanggal_transaksi": "2026-05-18 08:36:00",
       "nama_kasir": "salsabila.putri",
@@ -34727,7 +34727,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52207",
       "tanggal_transaksi": "2026-05-18 08:36:00",
       "nama_kasir": "salsabila.putri",
@@ -34740,7 +34740,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52207",
       "tanggal_transaksi": "2026-05-18 08:36:00",
       "nama_kasir": "salsabila.putri",
@@ -34753,7 +34753,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52207",
       "tanggal_transaksi": "2026-05-18 08:36:00",
       "nama_kasir": "salsabila.putri",
@@ -34766,7 +34766,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52207",
       "tanggal_transaksi": "2026-05-18 08:36:00",
       "nama_kasir": "salsabila.putri",
@@ -34779,7 +34779,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52207",
       "tanggal_transaksi": "2026-05-18 08:36:00",
       "nama_kasir": "salsabila.putri",
@@ -36885,7 +36885,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52251",
       "tanggal_transaksi": "2026-05-18 10:10:00",
       "nama_kasir": "salsabila.putri",
@@ -36898,7 +36898,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52251",
       "tanggal_transaksi": "2026-05-18 10:10:00",
       "nama_kasir": "salsabila.putri",
@@ -36911,7 +36911,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52251",
       "tanggal_transaksi": "2026-05-18 10:10:00",
       "nama_kasir": "salsabila.putri",
@@ -36924,7 +36924,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52251",
       "tanggal_transaksi": "2026-05-18 10:10:00",
       "nama_kasir": "salsabila.putri",
@@ -36937,7 +36937,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52251",
       "tanggal_transaksi": "2026-05-18 10:10:00",
       "nama_kasir": "salsabila.putri",
@@ -36950,7 +36950,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52251",
       "tanggal_transaksi": "2026-05-18 10:10:00",
       "nama_kasir": "salsabila.putri",
@@ -36963,7 +36963,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52251",
       "tanggal_transaksi": "2026-05-18 10:10:00",
       "nama_kasir": "salsabila.putri",
@@ -37249,7 +37249,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "54105",
       "tanggal_transaksi": "2026-05-18 10:17:00",
       "nama_kasir": "shabrina.amelia",
@@ -37262,33 +37262,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
-      "id_transaksi": "54105",
-      "tanggal_transaksi": "2026-05-18 10:17:00",
-      "nama_kasir": "shabrina.amelia",
-      "nomor_rm": "172066",
-      "nama_pasien": "LIKA NURHAYATI, ST",
-      "jaminan": "UMUM",
-      "kas": "Bank Mandiri-1400002285626",
-      "tipe_pembayaran": "DEBET/KREDIT",
-      "nominal": "485000.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir Farmasi",
-      "id_transaksi": "52257",
-      "tanggal_transaksi": "2026-05-18 10:17:00",
-      "nama_kasir": "ruri.pola",
-      "nomor_rm": "614001",
-      "nama_pasien": "MAFAZAH LINTANG MAZIYA",
-      "jaminan": "UMUM",
-      "kas": "Bank BCA-1500317473",
-      "tipe_pembayaran": "DEBET/KREDIT",
-      "nominal": "270215.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "54105",
       "tanggal_transaksi": "2026-05-18 10:17:00",
       "nama_kasir": "shabrina.amelia",
@@ -37314,46 +37288,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Farmasi",
-      "id_transaksi": "52257",
-      "tanggal_transaksi": "2026-05-18 10:17:00",
-      "nama_kasir": "ruri.pola",
-      "nomor_rm": "614001",
-      "nama_pasien": "MAFAZAH LINTANG MAZIYA",
-      "jaminan": "UMUM",
-      "kas": "Bank BCA-1500317473",
-      "tipe_pembayaran": "DEBET/KREDIT",
-      "nominal": "270215.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir Farmasi",
-      "id_transaksi": "52257",
-      "tanggal_transaksi": "2026-05-18 10:17:00",
-      "nama_kasir": "ruri.pola",
-      "nomor_rm": "614001",
-      "nama_pasien": "MAFAZAH LINTANG MAZIYA",
-      "jaminan": "UMUM",
-      "kas": "Bank BCA-1500317473",
-      "tipe_pembayaran": "DEBET/KREDIT",
-      "nominal": "270215.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir Belakang",
-      "id_transaksi": "54105",
-      "tanggal_transaksi": "2026-05-18 10:17:00",
-      "nama_kasir": "shabrina.amelia",
-      "nomor_rm": "172066",
-      "nama_pasien": "LIKA NURHAYATI, ST",
-      "jaminan": "UMUM",
-      "kas": "Bank Mandiri-1400002285626",
-      "tipe_pembayaran": "DEBET/KREDIT",
-      "nominal": "485000.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "54105",
       "tanggal_transaksi": "2026-05-18 10:17:00",
       "nama_kasir": "shabrina.amelia",
@@ -37405,7 +37340,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "54105",
       "tanggal_transaksi": "2026-05-18 10:17:00",
       "nama_kasir": "shabrina.amelia",
@@ -37418,7 +37353,72 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
+      "id_transaksi": "54105",
+      "tanggal_transaksi": "2026-05-18 10:17:00",
+      "nama_kasir": "shabrina.amelia",
+      "nomor_rm": "172066",
+      "nama_pasien": "LIKA NURHAYATI, ST",
+      "jaminan": "UMUM",
+      "kas": "Bank Mandiri-1400002285626",
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "nominal": "485000.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir Farmasi",
+      "id_transaksi": "52257",
+      "tanggal_transaksi": "2026-05-18 10:17:00",
+      "nama_kasir": "ruri.pola",
+      "nomor_rm": "614001",
+      "nama_pasien": "MAFAZAH LINTANG MAZIYA",
+      "jaminan": "UMUM",
+      "kas": "Bank BCA-1500317473",
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "nominal": "270215.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir Farmasi",
+      "id_transaksi": "52257",
+      "tanggal_transaksi": "2026-05-18 10:17:00",
+      "nama_kasir": "ruri.pola",
+      "nomor_rm": "614001",
+      "nama_pasien": "MAFAZAH LINTANG MAZIYA",
+      "jaminan": "UMUM",
+      "kas": "Bank BCA-1500317473",
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "nominal": "270215.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir Farmasi",
+      "id_transaksi": "52257",
+      "tanggal_transaksi": "2026-05-18 10:17:00",
+      "nama_kasir": "ruri.pola",
+      "nomor_rm": "614001",
+      "nama_pasien": "MAFAZAH LINTANG MAZIYA",
+      "jaminan": "UMUM",
+      "kas": "Bank BCA-1500317473",
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "nominal": "270215.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir AR",
+      "id_transaksi": "54105",
+      "tanggal_transaksi": "2026-05-18 10:17:00",
+      "nama_kasir": "shabrina.amelia",
+      "nomor_rm": "172066",
+      "nama_pasien": "LIKA NURHAYATI, ST",
+      "jaminan": "UMUM",
+      "kas": "Bank Mandiri-1400002285626",
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "nominal": "485000.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "54105",
       "tanggal_transaksi": "2026-05-18 10:17:00",
       "nama_kasir": "shabrina.amelia",
@@ -37561,7 +37561,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "54110",
       "tanggal_transaksi": "2026-05-18 10:24:00",
       "nama_kasir": "shabrina.amelia",
@@ -37574,7 +37574,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "54110",
       "tanggal_transaksi": "2026-05-18 10:24:00",
       "nama_kasir": "shabrina.amelia",
@@ -37587,7 +37587,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "54110",
       "tanggal_transaksi": "2026-05-18 10:24:00",
       "nama_kasir": "shabrina.amelia",
@@ -37600,46 +37600,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
-      "id_transaksi": "54110",
-      "tanggal_transaksi": "2026-05-18 10:24:00",
-      "nama_kasir": "shabrina.amelia",
-      "nomor_rm": "282369",
-      "nama_pasien": "WISNU PRABOWO",
-      "jaminan": "UMUM",
-      "kas": "Bank BCA-1500317473",
-      "tipe_pembayaran": "DEBET/KREDIT",
-      "nominal": "280142.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir IRNA",
-      "id_transaksi": "52259",
-      "tanggal_transaksi": "2026-05-18 10:24:00",
-      "nama_kasir": "rani.ayu",
-      "nomor_rm": "594694",
-      "nama_pasien": "AMALIA HIDAYANTI",
-      "jaminan": "UMUM",
-      "kas": "KAS BESAR",
-      "tipe_pembayaran": "TUNAI",
-      "nominal": "271000.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir IRNA",
-      "id_transaksi": "52259",
-      "tanggal_transaksi": "2026-05-18 10:24:00",
-      "nama_kasir": "rani.ayu",
-      "nomor_rm": "594694",
-      "nama_pasien": "AMALIA HIDAYANTI",
-      "jaminan": "UMUM",
-      "kas": "KAS BESAR",
-      "tipe_pembayaran": "TUNAI",
-      "nominal": "271000.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "54110",
       "tanggal_transaksi": "2026-05-18 10:24:00",
       "nama_kasir": "shabrina.amelia",
@@ -37665,7 +37626,20 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir IRNA",
+      "id_transaksi": "52259",
+      "tanggal_transaksi": "2026-05-18 10:24:00",
+      "nama_kasir": "rani.ayu",
+      "nomor_rm": "594694",
+      "nama_pasien": "AMALIA HIDAYANTI",
+      "jaminan": "UMUM",
+      "kas": "KAS BESAR",
+      "tipe_pembayaran": "TUNAI",
+      "nominal": "271000.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "54110",
       "tanggal_transaksi": "2026-05-18 10:24:00",
       "nama_kasir": "shabrina.amelia",
@@ -37691,7 +37665,33 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
+      "id_transaksi": "54110",
+      "tanggal_transaksi": "2026-05-18 10:24:00",
+      "nama_kasir": "shabrina.amelia",
+      "nomor_rm": "282369",
+      "nama_pasien": "WISNU PRABOWO",
+      "jaminan": "UMUM",
+      "kas": "Bank BCA-1500317473",
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "nominal": "280142.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir IRNA",
+      "id_transaksi": "52259",
+      "tanggal_transaksi": "2026-05-18 10:24:00",
+      "nama_kasir": "rani.ayu",
+      "nomor_rm": "594694",
+      "nama_pasien": "AMALIA HIDAYANTI",
+      "jaminan": "UMUM",
+      "kas": "KAS BESAR",
+      "tipe_pembayaran": "TUNAI",
+      "nominal": "271000.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "54110",
       "tanggal_transaksi": "2026-05-18 10:24:00",
       "nama_kasir": "shabrina.amelia",
@@ -38068,7 +38068,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52305",
       "tanggal_transaksi": "2026-05-18 10:44:00",
       "nama_kasir": "salsabila.putri",
@@ -38081,7 +38081,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52305",
       "tanggal_transaksi": "2026-05-18 10:44:00",
       "nama_kasir": "salsabila.putri",
@@ -38094,7 +38094,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52305",
       "tanggal_transaksi": "2026-05-18 10:44:00",
       "nama_kasir": "salsabila.putri",
@@ -38107,7 +38107,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52305",
       "tanggal_transaksi": "2026-05-18 10:44:00",
       "nama_kasir": "salsabila.putri",
@@ -38120,7 +38120,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52305",
       "tanggal_transaksi": "2026-05-18 10:44:00",
       "nama_kasir": "salsabila.putri",
@@ -38133,7 +38133,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52305",
       "tanggal_transaksi": "2026-05-18 10:44:00",
       "nama_kasir": "salsabila.putri",
@@ -38146,7 +38146,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52305",
       "tanggal_transaksi": "2026-05-18 10:44:00",
       "nama_kasir": "salsabila.putri",
@@ -38185,7 +38185,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "54118",
       "tanggal_transaksi": "2026-05-18 10:45:00",
       "nama_kasir": "shabrina.amelia",
@@ -38198,7 +38198,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "54118",
       "tanggal_transaksi": "2026-05-18 10:45:00",
       "nama_kasir": "shabrina.amelia",
@@ -38211,46 +38211,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
-      "id_transaksi": "54118",
-      "tanggal_transaksi": "2026-05-18 10:45:00",
-      "nama_kasir": "shabrina.amelia",
-      "nomor_rm": "327798",
-      "nama_pasien": "RETNO TWISTIANDAYANI",
-      "jaminan": "UMUM",
-      "kas": "Bank BRI-002601000472300",
-      "tipe_pembayaran": "DEBET/KREDIT",
-      "nominal": "426799.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir Farmasi",
-      "id_transaksi": "52304",
-      "tanggal_transaksi": "2026-05-18 10:45:00",
-      "nama_kasir": "ruri.pola",
-      "nomor_rm": "",
-      "nama_pasien": "BU ULFA",
-      "jaminan": "UMUM",
-      "kas": "KAS BESAR",
-      "tipe_pembayaran": "TUNAI",
-      "nominal": "7417.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir Belakang",
-      "id_transaksi": "54118",
-      "tanggal_transaksi": "2026-05-18 10:45:00",
-      "nama_kasir": "shabrina.amelia",
-      "nomor_rm": "327798",
-      "nama_pasien": "RETNO TWISTIANDAYANI",
-      "jaminan": "UMUM",
-      "kas": "Bank BRI-002601000472300",
-      "tipe_pembayaran": "DEBET/KREDIT",
-      "nominal": "426799.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "54118",
       "tanggal_transaksi": "2026-05-18 10:45:00",
       "nama_kasir": "shabrina.amelia",
@@ -38276,33 +38237,20 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Farmasi",
-      "id_transaksi": "52304",
+      "unit_kasir": "Kasir AR",
+      "id_transaksi": "54118",
       "tanggal_transaksi": "2026-05-18 10:45:00",
-      "nama_kasir": "ruri.pola",
-      "nomor_rm": "",
-      "nama_pasien": "BU ULFA",
+      "nama_kasir": "shabrina.amelia",
+      "nomor_rm": "327798",
+      "nama_pasien": "RETNO TWISTIANDAYANI",
       "jaminan": "UMUM",
-      "kas": "KAS BESAR",
-      "tipe_pembayaran": "TUNAI",
-      "nominal": "7417.0",
+      "kas": "Bank BRI-002601000472300",
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "nominal": "426799.0",
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Farmasi",
-      "id_transaksi": "52304",
-      "tanggal_transaksi": "2026-05-18 10:45:00",
-      "nama_kasir": "ruri.pola",
-      "nomor_rm": "",
-      "nama_pasien": "BU ULFA",
-      "jaminan": "UMUM",
-      "kas": "KAS BESAR",
-      "tipe_pembayaran": "TUNAI",
-      "nominal": "7417.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "54118",
       "tanggal_transaksi": "2026-05-18 10:45:00",
       "nama_kasir": "shabrina.amelia",
@@ -38328,7 +38276,59 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir Farmasi",
+      "id_transaksi": "52304",
+      "tanggal_transaksi": "2026-05-18 10:45:00",
+      "nama_kasir": "ruri.pola",
+      "nomor_rm": "",
+      "nama_pasien": "BU ULFA",
+      "jaminan": "UMUM",
+      "kas": "KAS BESAR",
+      "tipe_pembayaran": "TUNAI",
+      "nominal": "7417.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir Farmasi",
+      "id_transaksi": "52304",
+      "tanggal_transaksi": "2026-05-18 10:45:00",
+      "nama_kasir": "ruri.pola",
+      "nomor_rm": "",
+      "nama_pasien": "BU ULFA",
+      "jaminan": "UMUM",
+      "kas": "KAS BESAR",
+      "tipe_pembayaran": "TUNAI",
+      "nominal": "7417.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir AR",
+      "id_transaksi": "54118",
+      "tanggal_transaksi": "2026-05-18 10:45:00",
+      "nama_kasir": "shabrina.amelia",
+      "nomor_rm": "327798",
+      "nama_pasien": "RETNO TWISTIANDAYANI",
+      "jaminan": "UMUM",
+      "kas": "Bank BRI-002601000472300",
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "nominal": "426799.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir Farmasi",
+      "id_transaksi": "52304",
+      "tanggal_transaksi": "2026-05-18 10:45:00",
+      "nama_kasir": "ruri.pola",
+      "nomor_rm": "",
+      "nama_pasien": "BU ULFA",
+      "jaminan": "UMUM",
+      "kas": "KAS BESAR",
+      "tipe_pembayaran": "TUNAI",
+      "nominal": "7417.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "54118",
       "tanggal_transaksi": "2026-05-18 10:45:00",
       "nama_kasir": "shabrina.amelia",
@@ -38432,7 +38432,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52316",
       "tanggal_transaksi": "2026-05-18 10:54:00",
       "nama_kasir": "salsabila.putri",
@@ -38445,7 +38445,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52316",
       "tanggal_transaksi": "2026-05-18 10:54:00",
       "nama_kasir": "salsabila.putri",
@@ -38458,7 +38458,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52316",
       "tanggal_transaksi": "2026-05-18 10:54:00",
       "nama_kasir": "salsabila.putri",
@@ -38471,7 +38471,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52316",
       "tanggal_transaksi": "2026-05-18 10:54:00",
       "nama_kasir": "salsabila.putri",
@@ -38484,7 +38484,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52316",
       "tanggal_transaksi": "2026-05-18 10:54:00",
       "nama_kasir": "salsabila.putri",
@@ -38497,7 +38497,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52316",
       "tanggal_transaksi": "2026-05-18 10:54:00",
       "nama_kasir": "salsabila.putri",
@@ -38510,7 +38510,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "52316",
       "tanggal_transaksi": "2026-05-18 10:54:00",
       "nama_kasir": "salsabila.putri",
