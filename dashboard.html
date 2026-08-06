@@ -965,6 +965,9 @@ let activeUnit = 'semua';
 let CHARTS = {};
 let sidebarOpen = true;
 
+// ══ Nama sub penerima yang dikecualikan dari SELURUH data Laporan Kasir ══
+const KASIR_EXCLUDE_SUB_PENERIMA = ['indri.nurisa'];
+
 // cache file per-bulan yang sudah pernah di-fetch, supaya tidak fetch ulang tiap klik Terapkan
 const CACHE_KASIR = {};   // { '2026-06': [...rows] } — gabungan semua bagian (pN) bulan itu
 const CACHE_KREDIT = {};  // { '2026-06': [...rows] } — gabungan semua bagian (halaman BigQuery) bulan itu
@@ -1096,6 +1099,26 @@ function inRange(tglStr, awal, akhir) {
   return true;
 }
 
+// ══ Cek apakah sebuah baris kasir termasuk sub penerima yang dikecualikan ══
+// Nama field sumber datanya bisa bervariasi (nama_sub_penerima / sub_penerima /
+// Sub_Penerima, dst), jadi semua kemungkinan dicek sekaligus, dibandingkan
+// case-insensitive & setelah di-trim supaya tidak lolos hanya karena beda
+// kapitalisasi atau spasi.
+function kasirSubPenerimaDikecualikan(r) {
+  const kandidat = [
+    r.nama_sub_penerima, r.Nama_Sub_Penerima,
+    r.sub_penerima, r.Sub_Penerima, r.SubPenerima,
+  ];
+  return kandidat.some(v => {
+    if (!v) return false;
+    const bersih = String(v).trim().toLowerCase();
+    return KASIR_EXCLUDE_SUB_PENERIMA.includes(bersih);
+  });
+}
+function filterKasirExcludeSubPenerima(rows) {
+  return rows.filter(r => !kasirSubPenerimaDikecualikan(r));
+}
+
 // ══ Tentukan bulan (kode 'YYYY-MM') mana saja yang overlap dengan rentang tanggal ══
 // Di-dedupe dengan Set — kalau manifest.json sampai berisi kode bulan ganda
 // (mis. karena proses export mingguan menambahkan bulan yang sama lebih dari
@@ -1135,23 +1158,29 @@ function dedupeExact(rows) {
 //   data/kasir-YYYY-MM-p1.json, -p2.json, dst
 //   data/kredit-YYYY-MM-p1.json, -p2.json, dst
 // Ukuran tiap file dikontrol jumlah baris (lihat export-apps-script.gs), bukan
-// tanggal, supaya tidak Out of Memory apapun kepadatan datanya. Di-fetch
-// berurutan sampai bagian yang tidak ada (404), lalu digabung jadi satu
-// array per bulan.
+// tanggal, supaya tidak Out of Memory apapun kepadatan datanya.
+//
+// PENTING: nomor bagian TIDAK SELALU mulai dari p1 untuk setiap bulan —
+// mis. untuk Juni ternyata bagian pertama yang ada adalah kredit-2026-06-p37.json
+// (penomoran lanjut/tidak direset per bulan di proses export). Karena itu kita
+// TIDAK BOLEH fetch berurutan lalu berhenti begitu ada 404 pertama (itu akan
+// berhenti langsung di p1 dan tidak pernah sampai ke p37). Sebagai gantinya,
+// semua nomor bagian dari 1..maxBagian dicoba fetch secara paralel, dan yang
+// 404/gagal cukup diabaikan (bukan dijadikan sinyal berhenti).
 async function fetchBagianBerurutan(prefix, kode, maxBagian, arrKey) {
-  let gabungan = [];
-  for (let bagian = 1; bagian <= maxBagian; bagian++) {
+  const nomorBagian = Array.from({ length: maxBagian }, (_, i) => i + 1);
+  const hasil = await Promise.all(nomorBagian.map(async (bagian) => {
     const file = `data/${prefix}-${kode}-p${bagian}.json`;
     try {
       const r = await fetch(file + '?_=' + Date.now());
-      if (!r.ok) break; // bagian ini tidak ada -> sudah habis, berhenti
+      if (!r.ok) return []; // bagian ini tidak ada untuk bulan ini -> lewati saja
       const j = await r.json();
-      gabungan = gabungan.concat(j[arrKey] || []);
+      return j[arrKey] || [];
     } catch (e) {
-      break; // berhenti kalau gagal fetch (jaringan dsb), jangan tebak bagian selanjutnya
+      return []; // gagal fetch (jaringan dsb) -> lewati, jangan hentikan bagian lain
     }
-  }
-  return gabungan;
+  }));
+  return [].concat(...hasil);
 }
 
 async function fetchBulanKasir(kode) {
@@ -1183,7 +1212,13 @@ async function buildFiltered() {
   const { awal, akhir } = getDateRange();
   const { kasir, kredit } = await loadSemuaUntukRentang(awal, akhir);
 
-  const kasirRows  = kasir.filter(r => inRange(r.tanggal_transaksi, awal, akhir));
+  let kasirRows  = kasir.filter(r => inRange(r.tanggal_transaksi, awal, akhir));
+  // Laporan Kasir: buang seluruh baris dengan sub penerima yang dikecualikan
+  // (mis. 'indri.nurisa') SEBELUM dipakai untuk agregat & tabel manapun,
+  // supaya konsisten di semua halaman Laporan Kasir (dashboard, per unit,
+  // per jaminan, per tipe, per kas, detail transaksi).
+  kasirRows = filterKasirExcludeSubPenerima(kasirRows);
+
   const kreditRows = kredit.filter(r => inRange(r.tanggal, awal, akhir));
   const pelunasanRows = (PELUNASAN?.pelunasan_detail || []).filter(r => inRange(r.tanggal_sub_transaksi, awal, akhir));
 
