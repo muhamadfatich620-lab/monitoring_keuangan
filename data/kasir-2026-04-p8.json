@@ -3137,7 +3137,7 @@
       "keterangan": "SALDO"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "35322",
       "tanggal_transaksi": "2026-04-09 14:01:00",
       "nama_kasir": "salsabila.putri",
@@ -3150,7 +3150,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "35322",
       "tanggal_transaksi": "2026-04-09 14:01:00",
       "nama_kasir": "salsabila.putri",
@@ -3163,33 +3163,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
-      "id_transaksi": "35322",
-      "tanggal_transaksi": "2026-04-09 14:01:00",
-      "nama_kasir": "salsabila.putri",
-      "nomor_rm": "65370",
-      "nama_pasien": "ARYA PINANDHITA S.W",
-      "jaminan": "UMUM",
-      "kas": "Bank BCA-1500317473",
-      "tipe_pembayaran": "DEBET/KREDIT",
-      "nominal": "1152000.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir IGD",
-      "id_transaksi": "35321",
-      "tanggal_transaksi": "2026-04-09 14:01:00",
-      "nama_kasir": "alfin.fitra",
-      "nomor_rm": "",
-      "nama_pasien": "MERRY",
-      "jaminan": "UMUM",
-      "kas": "Bank BCA-1500317473",
-      "tipe_pembayaran": "DEBET/KREDIT",
-      "nominal": "57452.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "35322",
       "tanggal_transaksi": "2026-04-09 14:01:00",
       "nama_kasir": "salsabila.putri",
@@ -3215,46 +3189,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir IGD",
-      "id_transaksi": "35321",
-      "tanggal_transaksi": "2026-04-09 14:01:00",
-      "nama_kasir": "alfin.fitra",
-      "nomor_rm": "",
-      "nama_pasien": "MERRY",
-      "jaminan": "UMUM",
-      "kas": "Bank BCA-1500317473",
-      "tipe_pembayaran": "DEBET/KREDIT",
-      "nominal": "57452.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Lainnya",
-      "id_transaksi": "35322",
-      "tanggal_transaksi": "2026-04-09 14:01:00",
-      "nama_kasir": "salsabila.putri",
-      "nomor_rm": "65370",
-      "nama_pasien": "ARYA PINANDHITA S.W",
-      "jaminan": "UMUM",
-      "kas": "Bank BCA-1500317473",
-      "tipe_pembayaran": "DEBET/KREDIT",
-      "nominal": "1152000.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir IGD",
-      "id_transaksi": "35321",
-      "tanggal_transaksi": "2026-04-09 14:01:00",
-      "nama_kasir": "alfin.fitra",
-      "nomor_rm": "",
-      "nama_pasien": "MERRY",
-      "jaminan": "UMUM",
-      "kas": "Bank BCA-1500317473",
-      "tipe_pembayaran": "DEBET/KREDIT",
-      "nominal": "57452.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "35322",
       "tanggal_transaksi": "2026-04-09 14:01:00",
       "nama_kasir": "salsabila.putri",
@@ -3293,7 +3228,72 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
+      "id_transaksi": "35322",
+      "tanggal_transaksi": "2026-04-09 14:01:00",
+      "nama_kasir": "salsabila.putri",
+      "nomor_rm": "65370",
+      "nama_pasien": "ARYA PINANDHITA S.W",
+      "jaminan": "UMUM",
+      "kas": "Bank BCA-1500317473",
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "nominal": "1152000.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir IGD",
+      "id_transaksi": "35321",
+      "tanggal_transaksi": "2026-04-09 14:01:00",
+      "nama_kasir": "alfin.fitra",
+      "nomor_rm": "",
+      "nama_pasien": "MERRY",
+      "jaminan": "UMUM",
+      "kas": "Bank BCA-1500317473",
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "nominal": "57452.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir MCU",
+      "id_transaksi": "35322",
+      "tanggal_transaksi": "2026-04-09 14:01:00",
+      "nama_kasir": "salsabila.putri",
+      "nomor_rm": "65370",
+      "nama_pasien": "ARYA PINANDHITA S.W",
+      "jaminan": "UMUM",
+      "kas": "Bank BCA-1500317473",
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "nominal": "1152000.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir IGD",
+      "id_transaksi": "35321",
+      "tanggal_transaksi": "2026-04-09 14:01:00",
+      "nama_kasir": "alfin.fitra",
+      "nomor_rm": "",
+      "nama_pasien": "MERRY",
+      "jaminan": "UMUM",
+      "kas": "Bank BCA-1500317473",
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "nominal": "57452.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir IGD",
+      "id_transaksi": "35321",
+      "tanggal_transaksi": "2026-04-09 14:01:00",
+      "nama_kasir": "alfin.fitra",
+      "nomor_rm": "",
+      "nama_pasien": "MERRY",
+      "jaminan": "UMUM",
+      "kas": "Bank BCA-1500317473",
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "nominal": "57452.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "35322",
       "tanggal_transaksi": "2026-04-09 14:01:00",
       "nama_kasir": "salsabila.putri",
@@ -6231,7 +6231,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "35365",
       "tanggal_transaksi": "2026-04-09 15:58:00",
       "nama_kasir": "salsabila.putri",
@@ -6244,7 +6244,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "35365",
       "tanggal_transaksi": "2026-04-09 15:58:00",
       "nama_kasir": "salsabila.putri",
@@ -6257,7 +6257,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "35365",
       "tanggal_transaksi": "2026-04-09 15:58:00",
       "nama_kasir": "salsabila.putri",
@@ -6270,7 +6270,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "35365",
       "tanggal_transaksi": "2026-04-09 15:58:00",
       "nama_kasir": "salsabila.putri",
@@ -6283,7 +6283,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "35365",
       "tanggal_transaksi": "2026-04-09 15:58:00",
       "nama_kasir": "salsabila.putri",
@@ -6296,7 +6296,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "35365",
       "tanggal_transaksi": "2026-04-09 15:58:00",
       "nama_kasir": "salsabila.putri",
@@ -6309,7 +6309,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "35365",
       "tanggal_transaksi": "2026-04-09 15:58:00",
       "nama_kasir": "salsabila.putri",
@@ -8415,7 +8415,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "38902",
       "tanggal_transaksi": "2026-04-09 17:39:00",
       "nama_kasir": "salsabila.putri",
@@ -8428,7 +8428,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "38902",
       "tanggal_transaksi": "2026-04-09 17:39:00",
       "nama_kasir": "salsabila.putri",
@@ -8441,7 +8441,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "38902",
       "tanggal_transaksi": "2026-04-09 17:39:00",
       "nama_kasir": "salsabila.putri",
@@ -8454,7 +8454,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "38902",
       "tanggal_transaksi": "2026-04-09 17:39:00",
       "nama_kasir": "salsabila.putri",
@@ -8467,7 +8467,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "38902",
       "tanggal_transaksi": "2026-04-09 17:39:00",
       "nama_kasir": "salsabila.putri",
@@ -8480,7 +8480,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "38902",
       "tanggal_transaksi": "2026-04-09 17:39:00",
       "nama_kasir": "salsabila.putri",
@@ -8493,7 +8493,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "38902",
       "tanggal_transaksi": "2026-04-09 17:39:00",
       "nama_kasir": "salsabila.putri",
