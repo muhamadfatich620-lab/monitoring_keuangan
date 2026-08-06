@@ -7219,7 +7219,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "1459",
       "tanggal_transaksi": "2026-07-06 09:43:00",
       "nama_kasir": "shabrina.amelia",
@@ -7232,7 +7232,7 @@
       "keterangan": "RETUR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "1459",
       "tanggal_transaksi": "2026-07-06 09:43:00",
       "nama_kasir": "shabrina.amelia",
@@ -7245,7 +7245,7 @@
       "keterangan": "RETUR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "1459",
       "tanggal_transaksi": "2026-07-06 09:43:00",
       "nama_kasir": "shabrina.amelia",
@@ -7258,7 +7258,7 @@
       "keterangan": "RETUR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "1459",
       "tanggal_transaksi": "2026-07-06 09:43:00",
       "nama_kasir": "shabrina.amelia",
@@ -7271,7 +7271,7 @@
       "keterangan": "RETUR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "1459",
       "tanggal_transaksi": "2026-07-06 09:43:00",
       "nama_kasir": "shabrina.amelia",
@@ -7284,7 +7284,7 @@
       "keterangan": "RETUR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "1459",
       "tanggal_transaksi": "2026-07-06 09:43:00",
       "nama_kasir": "shabrina.amelia",
@@ -7297,7 +7297,7 @@
       "keterangan": "RETUR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "1459",
       "tanggal_transaksi": "2026-07-06 09:43:00",
       "nama_kasir": "shabrina.amelia",
@@ -19231,7 +19231,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "98958",
       "tanggal_transaksi": "2026-07-06 15:46:00",
       "nama_kasir": "putri.nur",
@@ -19244,7 +19244,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "98958",
       "tanggal_transaksi": "2026-07-06 15:46:00",
       "nama_kasir": "putri.nur",
@@ -19257,33 +19257,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
-      "id_transaksi": "98958",
-      "tanggal_transaksi": "2026-07-06 15:46:00",
-      "nama_kasir": "putri.nur",
-      "nomor_rm": "367509",
-      "nama_pasien": "ANINDITA KEYSYA ZAHRA BB LAB 354RB (22-1-26)",
-      "jaminan": "PT. MSIG Life Insurance Indonesia",
-      "kas": "KAS BESAR",
-      "tipe_pembayaran": "TUNAI",
-      "nominal": "46962.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir Farmasi",
-      "id_transaksi": "98957",
-      "tanggal_transaksi": "2026-07-06 15:46:00",
-      "nama_kasir": "ruri.pola",
-      "nomor_rm": "456515",
-      "nama_pasien": "SYIFAK",
-      "jaminan": "UMUM",
-      "kas": "KAS BESAR",
-      "tipe_pembayaran": "TUNAI",
-      "nominal": "131127.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "98958",
       "tanggal_transaksi": "2026-07-06 15:46:00",
       "nama_kasir": "putri.nur",
@@ -19309,7 +19283,33 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
+      "id_transaksi": "98958",
+      "tanggal_transaksi": "2026-07-06 15:46:00",
+      "nama_kasir": "putri.nur",
+      "nomor_rm": "367509",
+      "nama_pasien": "ANINDITA KEYSYA ZAHRA BB LAB 354RB (22-1-26)",
+      "jaminan": "PT. MSIG Life Insurance Indonesia",
+      "kas": "KAS BESAR",
+      "tipe_pembayaran": "TUNAI",
+      "nominal": "46962.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir Farmasi",
+      "id_transaksi": "98957",
+      "tanggal_transaksi": "2026-07-06 15:46:00",
+      "nama_kasir": "ruri.pola",
+      "nomor_rm": "456515",
+      "nama_pasien": "SYIFAK",
+      "jaminan": "UMUM",
+      "kas": "KAS BESAR",
+      "tipe_pembayaran": "TUNAI",
+      "nominal": "131127.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "98958",
       "tanggal_transaksi": "2026-07-06 15:46:00",
       "nama_kasir": "putri.nur",
