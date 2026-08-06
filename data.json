@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-06T00:25:16.010Z",
+  "generated_at": "2026-08-06T01:36:31.813Z",
   "pendapatan_harian": [
     {
       "tanggal": "2026-05-08",
@@ -537,9 +537,27 @@
       "net": "12071.76"
     },
     {
-      "nama_sub_unit": "[9257] USG-ICU",
-      "total_kredit": "549120.0",
-      "total_debet": "549120.0",
+      "nama_sub_unit": "[8002] Legal Governance Risk Compliance (LGRC)",
+      "total_kredit": "624891.0",
+      "total_debet": "624891.0",
+      "net": "0.0"
+    },
+    {
+      "nama_sub_unit": "[9261] HOME CARE",
+      "total_kredit": "720000.0",
+      "total_debet": "720000.0",
+      "net": "0.0"
+    },
+    {
+      "nama_sub_unit": "[9230] Poli Gigi Prosthodonsia",
+      "total_kredit": "1.6629616E7",
+      "total_debet": "1.6629616E7",
+      "net": "0.0"
+    },
+    {
+      "nama_sub_unit": "[8140] Keuangan",
+      "total_kredit": "466200.0",
+      "total_debet": "466200.0",
       "net": "0.0"
     },
     {
@@ -555,21 +573,9 @@
       "net": "0.0"
     },
     {
-      "nama_sub_unit": "[9233] Poli Spesialis VIP Anak",
-      "total_kredit": "1.238525013E7",
-      "total_debet": "1.238525013E7",
-      "net": "0.0"
-    },
-    {
-      "nama_sub_unit": "[9261] HOME CARE",
-      "total_kredit": "720000.0",
-      "total_debet": "720000.0",
-      "net": "0.0"
-    },
-    {
-      "nama_sub_unit": "[9296] - POLI SPESIALIS OKUPASI",
-      "total_kredit": "2737600.0",
-      "total_debet": "2737600.0",
+      "nama_sub_unit": "[9216] Onkologi Obgyn",
+      "total_kredit": "1300701.0",
+      "total_debet": "1300701.0",
       "net": "0.0"
     },
     {
@@ -579,33 +585,27 @@
       "net": "0.0"
     },
     {
+      "nama_sub_unit": "[9233] Poli Spesialis VIP Anak",
+      "total_kredit": "1.238525013E7",
+      "total_debet": "1.238525013E7",
+      "net": "0.0"
+    },
+    {
       "nama_sub_unit": "[9293] POLI SPESIALIS VIP ANDROLOGI",
       "total_kredit": "5.095081569E7",
       "total_debet": "5.095081569E7",
       "net": "0.0"
     },
     {
-      "nama_sub_unit": "[9230] Poli Gigi Prosthodonsia",
-      "total_kredit": "1.6629616E7",
-      "total_debet": "1.6629616E7",
+      "nama_sub_unit": "[9296] - POLI SPESIALIS OKUPASI",
+      "total_kredit": "2737600.0",
+      "total_debet": "2737600.0",
       "net": "0.0"
     },
     {
-      "nama_sub_unit": "[9216] Onkologi Obgyn",
-      "total_kredit": "1300701.0",
-      "total_debet": "1300701.0",
-      "net": "0.0"
-    },
-    {
-      "nama_sub_unit": "[8002] Legal Governance Risk Compliance (LGRC)",
-      "total_kredit": "624891.0",
-      "total_debet": "624891.0",
-      "net": "0.0"
-    },
-    {
-      "nama_sub_unit": "[8140] Keuangan",
-      "total_kredit": "466200.0",
-      "total_debet": "466200.0",
+      "nama_sub_unit": "[9257] USG-ICU",
+      "total_kredit": "549120.0",
+      "total_debet": "549120.0",
       "net": "0.0"
     },
     {
@@ -627,6 +627,18 @@
       "net": "-1485723.0"
     },
     {
+      "nama_sub_unit": "[9208] POLI GERIATRI",
+      "total_kredit": "1.855093528E7",
+      "total_debet": "2.036363328E7",
+      "net": "-1812698.0"
+    },
+    {
+      "nama_sub_unit": "[9197] SPESIALIS BEDAH KEPALA DAN LEHER",
+      "total_kredit": "0.0",
+      "total_debet": "1812698.0",
+      "net": "-1812698.0"
+    },
+    {
       "nama_sub_unit": "[9192] SPESIALIS BEDAH ANAK",
       "total_kredit": "0.0",
       "total_debet": "1812698.0",
@@ -639,6 +651,18 @@
       "net": "-1812698.0"
     },
     {
+      "nama_sub_unit": "[9179] POLI KOSMETIK",
+      "total_kredit": "8.196477936E7",
+      "total_debet": "8.377747736E7",
+      "net": "-1812698.0"
+    },
+    {
+      "nama_sub_unit": "[9182] POLIKLINIK PSIKOLOGI",
+      "total_kredit": "0.0",
+      "total_debet": "1812698.0",
+      "net": "-1812698.0"
+    },
+    {
       "nama_sub_unit": "[9188] POLI ONKOLOGI - PARU",
       "total_kredit": "0.0",
       "total_debet": "1812698.0",
@@ -648,30 +672,6 @@
       "nama_sub_unit": "[9215] POLIKLINIK GIZI",
       "total_kredit": "2990000.0",
       "total_debet": "4802698.0",
-      "net": "-1812698.0"
-    },
-    {
-      "nama_sub_unit": "[9179] POLI KOSMETIK",
-      "total_kredit": "8.196477936E7",
-      "total_debet": "8.377747736E7",
-      "net": "-1812698.0"
-    },
-    {
-      "nama_sub_unit": "[9197] SPESIALIS BEDAH KEPALA DAN LEHER",
-      "total_kredit": "0.0",
-      "total_debet": "1812698.0",
-      "net": "-1812698.0"
-    },
-    {
-      "nama_sub_unit": "[9208] POLI GERIATRI",
-      "total_kredit": "1.855093528E7",
-      "total_debet": "2.036363328E7",
-      "net": "-1812698.0"
-    },
-    {
-      "nama_sub_unit": "[9182] POLIKLINIK PSIKOLOGI",
-      "total_kredit": "0.0",
-      "total_debet": "1812698.0",
       "net": "-1812698.0"
     },
     {
