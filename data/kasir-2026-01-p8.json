@@ -10963,7 +10963,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "7378",
       "tanggal_transaksi": "2026-01-09 17:16:00",
       "nama_kasir": "putri.nur",
@@ -10976,7 +10976,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "7378",
       "tanggal_transaksi": "2026-01-09 17:16:00",
       "nama_kasir": "putri.nur",
@@ -10989,7 +10989,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "7378",
       "tanggal_transaksi": "2026-01-09 17:16:00",
       "nama_kasir": "putri.nur",
@@ -11002,7 +11002,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "7378",
       "tanggal_transaksi": "2026-01-09 17:16:00",
       "nama_kasir": "putri.nur",
@@ -11015,7 +11015,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "7378",
       "tanggal_transaksi": "2026-01-09 17:16:00",
       "nama_kasir": "putri.nur",
@@ -11028,7 +11028,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "7378",
       "tanggal_transaksi": "2026-01-09 17:16:00",
       "nama_kasir": "putri.nur",
@@ -11041,7 +11041,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "7378",
       "tanggal_transaksi": "2026-01-09 17:16:00",
       "nama_kasir": "putri.nur",
@@ -11054,7 +11054,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "7378",
       "tanggal_transaksi": "2026-01-09 17:16:00",
       "nama_kasir": "putri.nur",
@@ -11067,7 +11067,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "7378",
       "tanggal_transaksi": "2026-01-09 17:16:00",
       "nama_kasir": "putri.nur",
@@ -11431,7 +11431,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "14506",
       "tanggal_transaksi": "2026-01-09 17:31:00",
       "nama_kasir": "putri.nur",
@@ -11457,85 +11457,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
-      "id_transaksi": "14506",
-      "tanggal_transaksi": "2026-01-09 17:31:00",
-      "nama_kasir": "putri.nur",
-      "nomor_rm": "599327",
-      "nama_pasien": "SRI HARTATIK",
-      "jaminan": "UMUM",
-      "kas": "Bank Mandiri-1400002285626",
-      "tipe_pembayaran": "DEBET/KREDIT",
-      "nominal": "131000.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir IRJ",
-      "id_transaksi": "2458",
-      "tanggal_transaksi": "2026-01-09 17:31:00",
-      "nama_kasir": "sri.wanti",
-      "nomor_rm": "612569",
-      "nama_pasien": "SULASEH",
-      "jaminan": "UMUM",
-      "kas": "KAS BESAR",
-      "tipe_pembayaran": "TUNAI",
-      "nominal": "38187.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir IRJ",
-      "id_transaksi": "2458",
-      "tanggal_transaksi": "2026-01-09 17:31:00",
-      "nama_kasir": "sri.wanti",
-      "nomor_rm": "612569",
-      "nama_pasien": "SULASEH",
-      "jaminan": "UMUM",
-      "kas": "KAS BESAR",
-      "tipe_pembayaran": "TUNAI",
-      "nominal": "38187.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir AR",
-      "id_transaksi": "14506",
-      "tanggal_transaksi": "2026-01-09 17:31:00",
-      "nama_kasir": "putri.nur",
-      "nomor_rm": "599327",
-      "nama_pasien": "SRI HARTATIK",
-      "jaminan": "UMUM",
-      "kas": "Bank Mandiri-1400002285626",
-      "tipe_pembayaran": "DEBET/KREDIT",
-      "nominal": "131000.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir AR",
-      "id_transaksi": "14506",
-      "tanggal_transaksi": "2026-01-09 17:31:00",
-      "nama_kasir": "putri.nur",
-      "nomor_rm": "599327",
-      "nama_pasien": "SRI HARTATIK",
-      "jaminan": "UMUM",
-      "kas": "Bank Mandiri-1400002285626",
-      "tipe_pembayaran": "DEBET/KREDIT",
-      "nominal": "131000.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir IRJ",
-      "id_transaksi": "2458",
-      "tanggal_transaksi": "2026-01-09 17:31:00",
-      "nama_kasir": "sri.wanti",
-      "nomor_rm": "612569",
-      "nama_pasien": "SULASEH",
-      "jaminan": "UMUM",
-      "kas": "KAS BESAR",
-      "tipe_pembayaran": "TUNAI",
-      "nominal": "38187.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "14506",
       "tanggal_transaksi": "2026-01-09 17:31:00",
       "nama_kasir": "putri.nur",
@@ -11574,6 +11496,71 @@
       "keterangan": "BAYAR"
     },
     {
+      "unit_kasir": "Admin AR",
+      "id_transaksi": "14506",
+      "tanggal_transaksi": "2026-01-09 17:31:00",
+      "nama_kasir": "putri.nur",
+      "nomor_rm": "599327",
+      "nama_pasien": "SRI HARTATIK",
+      "jaminan": "UMUM",
+      "kas": "Bank Mandiri-1400002285626",
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "nominal": "131000.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Admin AR",
+      "id_transaksi": "14506",
+      "tanggal_transaksi": "2026-01-09 17:31:00",
+      "nama_kasir": "putri.nur",
+      "nomor_rm": "599327",
+      "nama_pasien": "SRI HARTATIK",
+      "jaminan": "UMUM",
+      "kas": "Bank Mandiri-1400002285626",
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "nominal": "131000.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir IRJ",
+      "id_transaksi": "2458",
+      "tanggal_transaksi": "2026-01-09 17:31:00",
+      "nama_kasir": "sri.wanti",
+      "nomor_rm": "612569",
+      "nama_pasien": "SULASEH",
+      "jaminan": "UMUM",
+      "kas": "KAS BESAR",
+      "tipe_pembayaran": "TUNAI",
+      "nominal": "38187.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Admin AR",
+      "id_transaksi": "14506",
+      "tanggal_transaksi": "2026-01-09 17:31:00",
+      "nama_kasir": "putri.nur",
+      "nomor_rm": "599327",
+      "nama_pasien": "SRI HARTATIK",
+      "jaminan": "UMUM",
+      "kas": "Bank Mandiri-1400002285626",
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "nominal": "131000.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir IRJ",
+      "id_transaksi": "2458",
+      "tanggal_transaksi": "2026-01-09 17:31:00",
+      "nama_kasir": "sri.wanti",
+      "nomor_rm": "612569",
+      "nama_pasien": "SULASEH",
+      "jaminan": "UMUM",
+      "kas": "KAS BESAR",
+      "tipe_pembayaran": "TUNAI",
+      "nominal": "38187.0",
+      "keterangan": "BAYAR"
+    },
+    {
       "unit_kasir": "Kasir IRJ",
       "id_transaksi": "2458",
       "tanggal_transaksi": "2026-01-09 17:31:00",
@@ -11600,7 +11587,20 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Kasir IRJ",
+      "id_transaksi": "2458",
+      "tanggal_transaksi": "2026-01-09 17:31:00",
+      "nama_kasir": "sri.wanti",
+      "nomor_rm": "612569",
+      "nama_pasien": "SULASEH",
+      "jaminan": "UMUM",
+      "kas": "KAS BESAR",
+      "tipe_pembayaran": "TUNAI",
+      "nominal": "38187.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Admin AR",
       "id_transaksi": "14506",
       "tanggal_transaksi": "2026-01-09 17:31:00",
       "nama_kasir": "putri.nur",
@@ -11626,7 +11626,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "14506",
       "tanggal_transaksi": "2026-01-09 17:31:00",
       "nama_kasir": "putri.nur",
@@ -11639,7 +11639,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "14506",
       "tanggal_transaksi": "2026-01-09 17:31:00",
       "nama_kasir": "putri.nur",
@@ -11652,7 +11652,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "14506",
       "tanggal_transaksi": "2026-01-09 17:31:00",
       "nama_kasir": "putri.nur",
