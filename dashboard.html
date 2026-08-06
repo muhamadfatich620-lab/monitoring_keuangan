@@ -965,8 +965,8 @@ let activeUnit = 'semua';
 let CHARTS = {};
 let sidebarOpen = true;
 
-// ══ Nama sub penerima yang dikecualikan dari SELURUH data Laporan Kasir ══
-const KASIR_EXCLUDE_SUB_PENERIMA = ['indri.nurisa'];
+// ══ Nama kasir yang dikecualikan dari SELURUH data Laporan Kasir ══
+const KASIR_EXCLUDE_NAMA_KASIR = ['indri.nurisa'];
 
 // cache file per-bulan yang sudah pernah di-fetch, supaya tidak fetch ulang tiap klik Terapkan
 const CACHE_KASIR = {};   // { '2026-06': [...rows] } — gabungan semua bagian (pN) bulan itu
@@ -1099,24 +1099,22 @@ function inRange(tglStr, awal, akhir) {
   return true;
 }
 
-// ══ Cek apakah sebuah baris kasir termasuk sub penerima yang dikecualikan ══
-// Nama field sumber datanya bisa bervariasi (nama_sub_penerima / sub_penerima /
-// Sub_Penerima, dst), jadi semua kemungkinan dicek sekaligus, dibandingkan
-// case-insensitive & setelah di-trim supaya tidak lolos hanya karena beda
-// kapitalisasi atau spasi.
-function kasirSubPenerimaDikecualikan(r) {
+// ══ Cek apakah sebuah baris kasir termasuk nama kasir yang dikecualikan ══
+// Nama field sumber datanya bisa bervariasi (nama_kasir / Nama_Kasir, dst),
+// jadi semua kemungkinan dicek sekaligus, dibandingkan case-insensitive &
+// setelah di-trim supaya tidak lolos hanya karena beda kapitalisasi atau spasi.
+function kasirNamaKasirDikecualikan(r) {
   const kandidat = [
-    r.nama_sub_penerima, r.Nama_Sub_Penerima,
-    r.sub_penerima, r.Sub_Penerima, r.SubPenerima,
+    r.nama_kasir, r.Nama_Kasir, r.NamaKasir,
   ];
   return kandidat.some(v => {
     if (!v) return false;
     const bersih = String(v).trim().toLowerCase();
-    return KASIR_EXCLUDE_SUB_PENERIMA.includes(bersih);
+    return KASIR_EXCLUDE_NAMA_KASIR.includes(bersih);
   });
 }
 function filterKasirExcludeSubPenerima(rows) {
-  return rows.filter(r => !kasirSubPenerimaDikecualikan(r));
+  return rows.filter(r => !kasirNamaKasirDikecualikan(r));
 }
 
 // ══ Tentukan bulan (kode 'YYYY-MM') mana saja yang overlap dengan rentang tanggal ══
@@ -1213,7 +1211,7 @@ async function buildFiltered() {
   const { kasir, kredit } = await loadSemuaUntukRentang(awal, akhir);
 
   let kasirRows  = kasir.filter(r => inRange(r.tanggal_transaksi, awal, akhir));
-  // Laporan Kasir: buang seluruh baris dengan sub penerima yang dikecualikan
+  // Laporan Kasir: buang seluruh baris dengan nama kasir yang dikecualikan
   // (mis. 'indri.nurisa') SEBELUM dipakai untuk agregat & tabel manapun,
   // supaya konsisten di semua halaman Laporan Kasir (dashboard, per unit,
   // per jaminan, per tipe, per kas, detail transaksi).
