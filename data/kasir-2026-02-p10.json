@@ -34467,7 +34467,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "22580",
       "tanggal_transaksi": "2026-02-13 08:28:00",
       "nama_kasir": "shabrina.amelia",
@@ -34506,7 +34506,7 @@
       "keterangan": "SALDO"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "22580",
       "tanggal_transaksi": "2026-02-13 08:28:00",
       "nama_kasir": "shabrina.amelia",
@@ -34597,7 +34597,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "22580",
       "tanggal_transaksi": "2026-02-13 08:28:00",
       "nama_kasir": "shabrina.amelia",
@@ -34636,7 +34636,7 @@
       "keterangan": "SALDO"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "22580",
       "tanggal_transaksi": "2026-02-13 08:28:00",
       "nama_kasir": "shabrina.amelia",
@@ -34662,7 +34662,7 @@
       "keterangan": "SALDO"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "22580",
       "tanggal_transaksi": "2026-02-13 08:28:00",
       "nama_kasir": "shabrina.amelia",
@@ -34714,7 +34714,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "22580",
       "tanggal_transaksi": "2026-02-13 08:28:00",
       "nama_kasir": "shabrina.amelia",
@@ -34738,58 +34738,6 @@
       "tipe_pembayaran": "DEBET/KREDIT",
       "nominal": "176856.0",
       "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir IRNA",
-      "id_transaksi": "4958",
-      "tanggal_transaksi": "2026-02-13 08:28:00",
-      "nama_kasir": "aries.rosita",
-      "nomor_rm": "920913",
-      "nama_pasien": "BY NY YUDITIA NABILA BIKRI",
-      "jaminan": "UMUM",
-      "kas": "Bank BCA-1500317473",
-      "tipe_pembayaran": "DEBET/KREDIT",
-      "nominal": "2000000.0",
-      "keterangan": "SALDO"
-    },
-    {
-      "unit_kasir": "Kasir IRNA",
-      "id_transaksi": "4957",
-      "tanggal_transaksi": "2026-02-13 08:28:00",
-      "nama_kasir": "aries.rosita",
-      "nomor_rm": "5944",
-      "nama_pasien": "YUDITIA NABILA BIKRI",
-      "jaminan": "UMUM",
-      "kas": "Bank BCA-1500317473",
-      "tipe_pembayaran": "DEBET/KREDIT",
-      "nominal": "2.5E7",
-      "keterangan": "SALDO"
-    },
-    {
-      "unit_kasir": "Kasir IRJ",
-      "id_transaksi": "14674",
-      "tanggal_transaksi": "2026-02-13 08:28:00",
-      "nama_kasir": "sri.wanti",
-      "nomor_rm": "234180",
-      "nama_pasien": "RADINA SHIFAIYAH NURIL RAHMA",
-      "jaminan": "UMUM",
-      "kas": "Bank Mandiri-1400002285626",
-      "tipe_pembayaran": "DEBET/KREDIT",
-      "nominal": "176856.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir IRNA",
-      "id_transaksi": "4958",
-      "tanggal_transaksi": "2026-02-13 08:28:00",
-      "nama_kasir": "aries.rosita",
-      "nomor_rm": "920913",
-      "nama_pasien": "BY NY YUDITIA NABILA BIKRI",
-      "jaminan": "UMUM",
-      "kas": "Bank BCA-1500317473",
-      "tipe_pembayaran": "DEBET/KREDIT",
-      "nominal": "2000000.0",
-      "keterangan": "SALDO"
     },
     {
       "unit_kasir": "Kasir IRNA",
@@ -34818,7 +34766,59 @@
       "keterangan": "SALDO"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Kasir IRJ",
+      "id_transaksi": "14674",
+      "tanggal_transaksi": "2026-02-13 08:28:00",
+      "nama_kasir": "sri.wanti",
+      "nomor_rm": "234180",
+      "nama_pasien": "RADINA SHIFAIYAH NURIL RAHMA",
+      "jaminan": "UMUM",
+      "kas": "Bank Mandiri-1400002285626",
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "nominal": "176856.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir IRNA",
+      "id_transaksi": "4958",
+      "tanggal_transaksi": "2026-02-13 08:28:00",
+      "nama_kasir": "aries.rosita",
+      "nomor_rm": "920913",
+      "nama_pasien": "BY NY YUDITIA NABILA BIKRI",
+      "jaminan": "UMUM",
+      "kas": "Bank BCA-1500317473",
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "nominal": "2000000.0",
+      "keterangan": "SALDO"
+    },
+    {
+      "unit_kasir": "Kasir IRNA",
+      "id_transaksi": "4958",
+      "tanggal_transaksi": "2026-02-13 08:28:00",
+      "nama_kasir": "aries.rosita",
+      "nomor_rm": "920913",
+      "nama_pasien": "BY NY YUDITIA NABILA BIKRI",
+      "jaminan": "UMUM",
+      "kas": "Bank BCA-1500317473",
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "nominal": "2000000.0",
+      "keterangan": "SALDO"
+    },
+    {
+      "unit_kasir": "Kasir IRNA",
+      "id_transaksi": "4957",
+      "tanggal_transaksi": "2026-02-13 08:28:00",
+      "nama_kasir": "aries.rosita",
+      "nomor_rm": "5944",
+      "nama_pasien": "YUDITIA NABILA BIKRI",
+      "jaminan": "UMUM",
+      "kas": "Bank BCA-1500317473",
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "nominal": "2.5E7",
+      "keterangan": "SALDO"
+    },
+    {
+      "unit_kasir": "Admin AR",
       "id_transaksi": "22580",
       "tanggal_transaksi": "2026-02-13 08:28:00",
       "nama_kasir": "shabrina.amelia",
