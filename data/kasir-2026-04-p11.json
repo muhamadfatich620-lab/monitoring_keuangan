@@ -12536,7 +12536,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "48879",
       "tanggal_transaksi": "2026-04-13 11:07:00",
       "nama_kasir": "shabrina.amelia",
@@ -12562,7 +12562,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "48879",
       "tanggal_transaksi": "2026-04-13 11:07:00",
       "nama_kasir": "shabrina.amelia",
@@ -12575,7 +12575,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "48879",
       "tanggal_transaksi": "2026-04-13 11:07:00",
       "nama_kasir": "shabrina.amelia",
@@ -12588,7 +12588,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "48879",
       "tanggal_transaksi": "2026-04-13 11:07:00",
       "nama_kasir": "shabrina.amelia",
@@ -12601,46 +12601,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
-      "id_transaksi": "48879",
-      "tanggal_transaksi": "2026-04-13 11:07:00",
-      "nama_kasir": "shabrina.amelia",
-      "nomor_rm": "644518",
-      "nama_pasien": "AMIN BURHANI",
-      "jaminan": "UMUM",
-      "kas": "Bank BRI-002601000472300",
-      "tipe_pembayaran": "DEBET/KREDIT",
-      "nominal": "858130.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir IRJ",
-      "id_transaksi": "36622",
-      "tanggal_transaksi": "2026-04-13 11:07:00",
-      "nama_kasir": "sri.wanti",
-      "nomor_rm": "559651",
-      "nama_pasien": "DZAKY ALFARIZQI",
-      "jaminan": "UMUM",
-      "kas": "Bank Mandiri-1400002285626",
-      "tipe_pembayaran": "DEBET/KREDIT",
-      "nominal": "43352.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir IRJ",
-      "id_transaksi": "36622",
-      "tanggal_transaksi": "2026-04-13 11:07:00",
-      "nama_kasir": "sri.wanti",
-      "nomor_rm": "559651",
-      "nama_pasien": "DZAKY ALFARIZQI",
-      "jaminan": "UMUM",
-      "kas": "Bank Mandiri-1400002285626",
-      "tipe_pembayaran": "DEBET/KREDIT",
-      "nominal": "43352.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "48879",
       "tanggal_transaksi": "2026-04-13 11:07:00",
       "nama_kasir": "shabrina.amelia",
@@ -12679,6 +12640,19 @@
       "keterangan": "BAYAR"
     },
     {
+      "unit_kasir": "Kasir AR",
+      "id_transaksi": "48879",
+      "tanggal_transaksi": "2026-04-13 11:07:00",
+      "nama_kasir": "shabrina.amelia",
+      "nomor_rm": "644518",
+      "nama_pasien": "AMIN BURHANI",
+      "jaminan": "UMUM",
+      "kas": "Bank BRI-002601000472300",
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "nominal": "858130.0",
+      "keterangan": "BAYAR"
+    },
+    {
       "unit_kasir": "Kasir IRJ",
       "id_transaksi": "36622",
       "tanggal_transaksi": "2026-04-13 11:07:00",
@@ -12692,7 +12666,33 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir IRJ",
+      "id_transaksi": "36622",
+      "tanggal_transaksi": "2026-04-13 11:07:00",
+      "nama_kasir": "sri.wanti",
+      "nomor_rm": "559651",
+      "nama_pasien": "DZAKY ALFARIZQI",
+      "jaminan": "UMUM",
+      "kas": "Bank Mandiri-1400002285626",
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "nominal": "43352.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir IRJ",
+      "id_transaksi": "36622",
+      "tanggal_transaksi": "2026-04-13 11:07:00",
+      "nama_kasir": "sri.wanti",
+      "nomor_rm": "559651",
+      "nama_pasien": "DZAKY ALFARIZQI",
+      "jaminan": "UMUM",
+      "kas": "Bank Mandiri-1400002285626",
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "nominal": "43352.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "48879",
       "tanggal_transaksi": "2026-04-13 11:07:00",
       "nama_kasir": "shabrina.amelia",
