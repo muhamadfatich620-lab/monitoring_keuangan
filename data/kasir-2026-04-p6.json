@@ -3514,7 +3514,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "40727",
       "tanggal_transaksi": "2026-04-07 15:48:00",
       "nama_kasir": "shabrina.amelia",
@@ -3527,7 +3527,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "40727",
       "tanggal_transaksi": "2026-04-07 15:48:00",
       "nama_kasir": "shabrina.amelia",
@@ -3540,85 +3540,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
-      "id_transaksi": "40727",
-      "tanggal_transaksi": "2026-04-07 15:48:00",
-      "nama_kasir": "shabrina.amelia",
-      "nomor_rm": "34985",
-      "nama_pasien": "MASFUFAH NOER AINI",
-      "jaminan": "PT. MSIG Life Insurance Indonesia",
-      "kas": "KAS BESAR",
-      "tipe_pembayaran": "TUNAI",
-      "nominal": "29474.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir IPM",
-      "id_transaksi": "34495",
-      "tanggal_transaksi": "2026-04-07 15:48:00",
-      "nama_kasir": "mochamad.ridwan",
-      "nomor_rm": "626171",
-      "nama_pasien": "ABDULLAH",
-      "jaminan": "UMUM",
-      "kas": "KAS BESAR",
-      "tipe_pembayaran": "TUNAI",
-      "nominal": "338000.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir IPM",
-      "id_transaksi": "34495",
-      "tanggal_transaksi": "2026-04-07 15:48:00",
-      "nama_kasir": "mochamad.ridwan",
-      "nomor_rm": "626171",
-      "nama_pasien": "ABDULLAH",
-      "jaminan": "UMUM",
-      "kas": "KAS BESAR",
-      "tipe_pembayaran": "TUNAI",
-      "nominal": "338000.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir IPM",
-      "id_transaksi": "34495",
-      "tanggal_transaksi": "2026-04-07 15:48:00",
-      "nama_kasir": "mochamad.ridwan",
-      "nomor_rm": "626171",
-      "nama_pasien": "ABDULLAH",
-      "jaminan": "UMUM",
-      "kas": "KAS BESAR",
-      "tipe_pembayaran": "TUNAI",
-      "nominal": "338000.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir IPM",
-      "id_transaksi": "34495",
-      "tanggal_transaksi": "2026-04-07 15:48:00",
-      "nama_kasir": "mochamad.ridwan",
-      "nomor_rm": "626171",
-      "nama_pasien": "ABDULLAH",
-      "jaminan": "UMUM",
-      "kas": "KAS BESAR",
-      "tipe_pembayaran": "TUNAI",
-      "nominal": "338000.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir Belakang",
-      "id_transaksi": "40727",
-      "tanggal_transaksi": "2026-04-07 15:48:00",
-      "nama_kasir": "shabrina.amelia",
-      "nomor_rm": "34985",
-      "nama_pasien": "MASFUFAH NOER AINI",
-      "jaminan": "PT. MSIG Life Insurance Indonesia",
-      "kas": "KAS BESAR",
-      "tipe_pembayaran": "TUNAI",
-      "nominal": "29474.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "40727",
       "tanggal_transaksi": "2026-04-07 15:48:00",
       "nama_kasir": "shabrina.amelia",
@@ -3657,7 +3579,33 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir IPM",
+      "id_transaksi": "34495",
+      "tanggal_transaksi": "2026-04-07 15:48:00",
+      "nama_kasir": "mochamad.ridwan",
+      "nomor_rm": "626171",
+      "nama_pasien": "ABDULLAH",
+      "jaminan": "UMUM",
+      "kas": "KAS BESAR",
+      "tipe_pembayaran": "TUNAI",
+      "nominal": "338000.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir IPM",
+      "id_transaksi": "34495",
+      "tanggal_transaksi": "2026-04-07 15:48:00",
+      "nama_kasir": "mochamad.ridwan",
+      "nomor_rm": "626171",
+      "nama_pasien": "ABDULLAH",
+      "jaminan": "UMUM",
+      "kas": "KAS BESAR",
+      "tipe_pembayaran": "TUNAI",
+      "nominal": "338000.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "40727",
       "tanggal_transaksi": "2026-04-07 15:48:00",
       "nama_kasir": "shabrina.amelia",
@@ -3670,7 +3618,59 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
+      "id_transaksi": "40727",
+      "tanggal_transaksi": "2026-04-07 15:48:00",
+      "nama_kasir": "shabrina.amelia",
+      "nomor_rm": "34985",
+      "nama_pasien": "MASFUFAH NOER AINI",
+      "jaminan": "PT. MSIG Life Insurance Indonesia",
+      "kas": "KAS BESAR",
+      "tipe_pembayaran": "TUNAI",
+      "nominal": "29474.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir IPM",
+      "id_transaksi": "34495",
+      "tanggal_transaksi": "2026-04-07 15:48:00",
+      "nama_kasir": "mochamad.ridwan",
+      "nomor_rm": "626171",
+      "nama_pasien": "ABDULLAH",
+      "jaminan": "UMUM",
+      "kas": "KAS BESAR",
+      "tipe_pembayaran": "TUNAI",
+      "nominal": "338000.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir IPM",
+      "id_transaksi": "34495",
+      "tanggal_transaksi": "2026-04-07 15:48:00",
+      "nama_kasir": "mochamad.ridwan",
+      "nomor_rm": "626171",
+      "nama_pasien": "ABDULLAH",
+      "jaminan": "UMUM",
+      "kas": "KAS BESAR",
+      "tipe_pembayaran": "TUNAI",
+      "nominal": "338000.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir AR",
+      "id_transaksi": "40727",
+      "tanggal_transaksi": "2026-04-07 15:48:00",
+      "nama_kasir": "shabrina.amelia",
+      "nomor_rm": "34985",
+      "nama_pasien": "MASFUFAH NOER AINI",
+      "jaminan": "PT. MSIG Life Insurance Indonesia",
+      "kas": "KAS BESAR",
+      "tipe_pembayaran": "TUNAI",
+      "nominal": "29474.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "40727",
       "tanggal_transaksi": "2026-04-07 15:48:00",
       "nama_kasir": "shabrina.amelia",
@@ -3878,7 +3878,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34500",
       "tanggal_transaksi": "2026-04-07 15:53:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -3891,7 +3891,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34500",
       "tanggal_transaksi": "2026-04-07 15:53:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -3904,7 +3904,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34500",
       "tanggal_transaksi": "2026-04-07 15:53:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -3917,7 +3917,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34500",
       "tanggal_transaksi": "2026-04-07 15:53:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -3930,7 +3930,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34500",
       "tanggal_transaksi": "2026-04-07 15:53:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -3943,7 +3943,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34500",
       "tanggal_transaksi": "2026-04-07 15:53:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -3956,7 +3956,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34500",
       "tanggal_transaksi": "2026-04-07 15:53:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -4333,7 +4333,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "48593",
       "tanggal_transaksi": "2026-04-07 16:14:00",
       "nama_kasir": "shabrina.amelia",
@@ -4346,7 +4346,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "48593",
       "tanggal_transaksi": "2026-04-07 16:14:00",
       "nama_kasir": "shabrina.amelia",
@@ -4359,7 +4359,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "48593",
       "tanggal_transaksi": "2026-04-07 16:14:00",
       "nama_kasir": "shabrina.amelia",
@@ -4372,7 +4372,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "48593",
       "tanggal_transaksi": "2026-04-07 16:14:00",
       "nama_kasir": "shabrina.amelia",
@@ -4385,7 +4385,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "48593",
       "tanggal_transaksi": "2026-04-07 16:14:00",
       "nama_kasir": "shabrina.amelia",
@@ -4398,7 +4398,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "48593",
       "tanggal_transaksi": "2026-04-07 16:14:00",
       "nama_kasir": "shabrina.amelia",
@@ -4411,7 +4411,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "48593",
       "tanggal_transaksi": "2026-04-07 16:14:00",
       "nama_kasir": "shabrina.amelia",
@@ -5607,7 +5607,7 @@
       "keterangan": "RETUR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34544",
       "tanggal_transaksi": "2026-04-07 16:57:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -5620,7 +5620,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34544",
       "tanggal_transaksi": "2026-04-07 16:57:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -5633,7 +5633,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34544",
       "tanggal_transaksi": "2026-04-07 16:57:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -5646,7 +5646,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34544",
       "tanggal_transaksi": "2026-04-07 16:57:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -5659,7 +5659,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34544",
       "tanggal_transaksi": "2026-04-07 16:57:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -5672,7 +5672,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34544",
       "tanggal_transaksi": "2026-04-07 16:57:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -5685,7 +5685,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34544",
       "tanggal_transaksi": "2026-04-07 16:57:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -13615,7 +13615,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "35129",
       "tanggal_transaksi": "2026-04-08 07:00:00",
       "nama_kasir": "salsabila.putri",
@@ -13628,7 +13628,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "35129",
       "tanggal_transaksi": "2026-04-08 07:00:00",
       "nama_kasir": "salsabila.putri",
@@ -13641,7 +13641,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "35129",
       "tanggal_transaksi": "2026-04-08 07:00:00",
       "nama_kasir": "salsabila.putri",
@@ -13654,7 +13654,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "35129",
       "tanggal_transaksi": "2026-04-08 07:00:00",
       "nama_kasir": "salsabila.putri",
@@ -13667,7 +13667,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "35129",
       "tanggal_transaksi": "2026-04-08 07:00:00",
       "nama_kasir": "salsabila.putri",
@@ -13680,7 +13680,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "35129",
       "tanggal_transaksi": "2026-04-08 07:00:00",
       "nama_kasir": "salsabila.putri",
@@ -13693,7 +13693,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "35129",
       "tanggal_transaksi": "2026-04-08 07:00:00",
       "nama_kasir": "salsabila.putri",
@@ -13797,7 +13797,7 @@
       "keterangan": "SALDO"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "10830",
       "tanggal_transaksi": "2026-04-08 07:03:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -13810,7 +13810,7 @@
       "keterangan": "SALDO"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "10830",
       "tanggal_transaksi": "2026-04-08 07:03:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -13823,7 +13823,7 @@
       "keterangan": "SALDO"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "10832",
       "tanggal_transaksi": "2026-04-08 07:03:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -13836,7 +13836,7 @@
       "keterangan": "SALDO"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "10831",
       "tanggal_transaksi": "2026-04-08 07:03:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -13849,7 +13849,7 @@
       "keterangan": "SALDO"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "10830",
       "tanggal_transaksi": "2026-04-08 07:03:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -13862,7 +13862,7 @@
       "keterangan": "SALDO"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "10832",
       "tanggal_transaksi": "2026-04-08 07:03:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -13875,7 +13875,7 @@
       "keterangan": "SALDO"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "10831",
       "tanggal_transaksi": "2026-04-08 07:03:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -13888,7 +13888,7 @@
       "keterangan": "SALDO"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "10832",
       "tanggal_transaksi": "2026-04-08 07:03:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -13901,7 +13901,7 @@
       "keterangan": "SALDO"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "10831",
       "tanggal_transaksi": "2026-04-08 07:03:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -13914,7 +13914,7 @@
       "keterangan": "SALDO"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "10830",
       "tanggal_transaksi": "2026-04-08 07:03:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -13927,7 +13927,7 @@
       "keterangan": "SALDO"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "10832",
       "tanggal_transaksi": "2026-04-08 07:03:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -13940,7 +13940,7 @@
       "keterangan": "SALDO"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "10831",
       "tanggal_transaksi": "2026-04-08 07:03:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -13953,7 +13953,7 @@
       "keterangan": "SALDO"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "10830",
       "tanggal_transaksi": "2026-04-08 07:03:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -13966,7 +13966,7 @@
       "keterangan": "SALDO"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "10830",
       "tanggal_transaksi": "2026-04-08 07:03:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -13979,7 +13979,7 @@
       "keterangan": "SALDO"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "10830",
       "tanggal_transaksi": "2026-04-08 07:03:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -13992,7 +13992,7 @@
       "keterangan": "SALDO"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "10831",
       "tanggal_transaksi": "2026-04-08 07:03:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -14005,7 +14005,7 @@
       "keterangan": "SALDO"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "10832",
       "tanggal_transaksi": "2026-04-08 07:03:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -14018,7 +14018,7 @@
       "keterangan": "SALDO"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "10832",
       "tanggal_transaksi": "2026-04-08 07:03:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -14031,7 +14031,7 @@
       "keterangan": "SALDO"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "10831",
       "tanggal_transaksi": "2026-04-08 07:03:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -14044,7 +14044,7 @@
       "keterangan": "SALDO"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "10832",
       "tanggal_transaksi": "2026-04-08 07:03:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -14057,7 +14057,7 @@
       "keterangan": "SALDO"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "10831",
       "tanggal_transaksi": "2026-04-08 07:03:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -23352,7 +23352,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "38143",
       "tanggal_transaksi": "2026-04-08 09:28:00",
       "nama_kasir": "shabrina.amelia",
@@ -23365,7 +23365,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "38143",
       "tanggal_transaksi": "2026-04-08 09:28:00",
       "nama_kasir": "shabrina.amelia",
@@ -23378,7 +23378,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "38143",
       "tanggal_transaksi": "2026-04-08 09:28:00",
       "nama_kasir": "shabrina.amelia",
@@ -23391,7 +23391,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "38143",
       "tanggal_transaksi": "2026-04-08 09:28:00",
       "nama_kasir": "shabrina.amelia",
@@ -23404,7 +23404,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "38143",
       "tanggal_transaksi": "2026-04-08 09:28:00",
       "nama_kasir": "shabrina.amelia",
@@ -23417,7 +23417,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "38143",
       "tanggal_transaksi": "2026-04-08 09:28:00",
       "nama_kasir": "shabrina.amelia",
@@ -23430,7 +23430,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "38143",
       "tanggal_transaksi": "2026-04-08 09:28:00",
       "nama_kasir": "shabrina.amelia",
@@ -24171,7 +24171,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "37067",
       "tanggal_transaksi": "2026-04-08 09:56:00",
       "nama_kasir": "shabrina.amelia",
@@ -24197,7 +24197,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "37067",
       "tanggal_transaksi": "2026-04-08 09:56:00",
       "nama_kasir": "shabrina.amelia",
@@ -24210,7 +24210,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "37067",
       "tanggal_transaksi": "2026-04-08 09:56:00",
       "nama_kasir": "shabrina.amelia",
@@ -24223,7 +24223,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "37067",
       "tanggal_transaksi": "2026-04-08 09:56:00",
       "nama_kasir": "shabrina.amelia",
@@ -24262,7 +24262,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "37067",
       "tanggal_transaksi": "2026-04-08 09:56:00",
       "nama_kasir": "shabrina.amelia",
@@ -24275,7 +24275,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "37067",
       "tanggal_transaksi": "2026-04-08 09:56:00",
       "nama_kasir": "shabrina.amelia",
@@ -24288,7 +24288,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "37067",
       "tanggal_transaksi": "2026-04-08 09:56:00",
       "nama_kasir": "shabrina.amelia",
@@ -24626,7 +24626,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34774",
       "tanggal_transaksi": "2026-04-08 10:10:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -24639,7 +24639,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34774",
       "tanggal_transaksi": "2026-04-08 10:10:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -24652,7 +24652,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34774",
       "tanggal_transaksi": "2026-04-08 10:10:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -24665,7 +24665,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34774",
       "tanggal_transaksi": "2026-04-08 10:10:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -24678,7 +24678,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34774",
       "tanggal_transaksi": "2026-04-08 10:10:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -24691,7 +24691,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34774",
       "tanggal_transaksi": "2026-04-08 10:10:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -24704,7 +24704,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34774",
       "tanggal_transaksi": "2026-04-08 10:10:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -24717,7 +24717,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34777",
       "tanggal_transaksi": "2026-04-08 10:11:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -24769,7 +24769,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34777",
       "tanggal_transaksi": "2026-04-08 10:11:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -24782,46 +24782,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
-      "id_transaksi": "34777",
-      "tanggal_transaksi": "2026-04-08 10:11:00",
-      "nama_kasir": "fithriyatul.adawiyah",
-      "nomor_rm": "923207",
-      "nama_pasien": "ANDIKA BAYU PRATAMA",
-      "jaminan": "UMUM",
-      "kas": "Bank Mandiri-1400002285626",
-      "tipe_pembayaran": "DEBET/KREDIT",
-      "nominal": "331800.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir IRJ",
-      "id_transaksi": "34778",
-      "tanggal_transaksi": "2026-04-08 10:11:00",
-      "nama_kasir": "dyla.layiantoro",
-      "nomor_rm": "553793",
-      "nama_pasien": "SADI",
-      "jaminan": "UMUM",
-      "kas": "Bank Mandiri-1400002285626",
-      "tipe_pembayaran": "DEBET/KREDIT",
-      "nominal": "224672.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Lainnya",
-      "id_transaksi": "34777",
-      "tanggal_transaksi": "2026-04-08 10:11:00",
-      "nama_kasir": "fithriyatul.adawiyah",
-      "nomor_rm": "923207",
-      "nama_pasien": "ANDIKA BAYU PRATAMA",
-      "jaminan": "UMUM",
-      "kas": "Bank Mandiri-1400002285626",
-      "tipe_pembayaran": "DEBET/KREDIT",
-      "nominal": "331800.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34777",
       "tanggal_transaksi": "2026-04-08 10:11:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -24847,6 +24808,32 @@
       "keterangan": "BAYAR"
     },
     {
+      "unit_kasir": "Kasir MCU",
+      "id_transaksi": "34777",
+      "tanggal_transaksi": "2026-04-08 10:11:00",
+      "nama_kasir": "fithriyatul.adawiyah",
+      "nomor_rm": "923207",
+      "nama_pasien": "ANDIKA BAYU PRATAMA",
+      "jaminan": "UMUM",
+      "kas": "Bank Mandiri-1400002285626",
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "nominal": "331800.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir MCU",
+      "id_transaksi": "34777",
+      "tanggal_transaksi": "2026-04-08 10:11:00",
+      "nama_kasir": "fithriyatul.adawiyah",
+      "nomor_rm": "923207",
+      "nama_pasien": "ANDIKA BAYU PRATAMA",
+      "jaminan": "UMUM",
+      "kas": "Bank Mandiri-1400002285626",
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "nominal": "331800.0",
+      "keterangan": "BAYAR"
+    },
+    {
       "unit_kasir": "Kasir IRJ",
       "id_transaksi": "34778",
       "tanggal_transaksi": "2026-04-08 10:11:00",
@@ -24860,7 +24847,20 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir IRJ",
+      "id_transaksi": "34778",
+      "tanggal_transaksi": "2026-04-08 10:11:00",
+      "nama_kasir": "dyla.layiantoro",
+      "nomor_rm": "553793",
+      "nama_pasien": "SADI",
+      "jaminan": "UMUM",
+      "kas": "Bank Mandiri-1400002285626",
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "nominal": "224672.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34777",
       "tanggal_transaksi": "2026-04-08 10:11:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -24873,7 +24873,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34777",
       "tanggal_transaksi": "2026-04-08 10:11:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -25263,7 +25263,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34783",
       "tanggal_transaksi": "2026-04-08 10:24:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -25276,7 +25276,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34783",
       "tanggal_transaksi": "2026-04-08 10:24:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -25289,7 +25289,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34783",
       "tanggal_transaksi": "2026-04-08 10:24:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -25302,7 +25302,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34783",
       "tanggal_transaksi": "2026-04-08 10:24:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -25315,7 +25315,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34783",
       "tanggal_transaksi": "2026-04-08 10:24:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -25328,7 +25328,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34783",
       "tanggal_transaksi": "2026-04-08 10:24:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -25341,7 +25341,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34783",
       "tanggal_transaksi": "2026-04-08 10:24:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -25354,7 +25354,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34785",
       "tanggal_transaksi": "2026-04-08 10:26:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -25367,7 +25367,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34785",
       "tanggal_transaksi": "2026-04-08 10:26:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -25380,7 +25380,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34785",
       "tanggal_transaksi": "2026-04-08 10:26:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -25393,7 +25393,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34785",
       "tanggal_transaksi": "2026-04-08 10:26:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -25406,7 +25406,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34785",
       "tanggal_transaksi": "2026-04-08 10:26:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -25419,7 +25419,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34785",
       "tanggal_transaksi": "2026-04-08 10:26:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -25432,7 +25432,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34785",
       "tanggal_transaksi": "2026-04-08 10:26:00",
       "nama_kasir": "fithriyatul.adawiyah",
@@ -27447,7 +27447,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "666",
       "tanggal_transaksi": "2026-04-08 11:19:00",
       "nama_kasir": "shabrina.amelia",
@@ -27473,7 +27473,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "666",
       "tanggal_transaksi": "2026-04-08 11:19:00",
       "nama_kasir": "shabrina.amelia",
@@ -27486,7 +27486,7 @@
       "keterangan": "RETUR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "666",
       "tanggal_transaksi": "2026-04-08 11:19:00",
       "nama_kasir": "shabrina.amelia",
@@ -27499,7 +27499,7 @@
       "keterangan": "RETUR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "666",
       "tanggal_transaksi": "2026-04-08 11:19:00",
       "nama_kasir": "shabrina.amelia",
@@ -27512,33 +27512,7 @@
       "keterangan": "RETUR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
-      "id_transaksi": "666",
-      "tanggal_transaksi": "2026-04-08 11:19:00",
-      "nama_kasir": "shabrina.amelia",
-      "nomor_rm": "7004",
-      "nama_pasien": "M. SOFFAN HERI, SH., MH.",
-      "jaminan": "UMUM",
-      "kas": "Bank Mandiri-1400002285626",
-      "tipe_pembayaran": null,
-      "nominal": "1.6E7",
-      "keterangan": "RETUR"
-    },
-    {
-      "unit_kasir": "Kasir IGD",
-      "id_transaksi": "34833",
-      "tanggal_transaksi": "2026-04-08 11:19:00",
-      "nama_kasir": "mohammad.lil",
-      "nomor_rm": "540338",
-      "nama_pasien": "JAMI'ATUN",
-      "jaminan": "UMUM",
-      "kas": "KAS BESAR",
-      "tipe_pembayaran": "TUNAI",
-      "nominal": "423816.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "666",
       "tanggal_transaksi": "2026-04-08 11:19:00",
       "nama_kasir": "shabrina.amelia",
@@ -27564,17 +27538,17 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir IGD",
-      "id_transaksi": "34833",
+      "unit_kasir": "Kasir AR",
+      "id_transaksi": "666",
       "tanggal_transaksi": "2026-04-08 11:19:00",
-      "nama_kasir": "mohammad.lil",
-      "nomor_rm": "540338",
-      "nama_pasien": "JAMI'ATUN",
+      "nama_kasir": "shabrina.amelia",
+      "nomor_rm": "7004",
+      "nama_pasien": "M. SOFFAN HERI, SH., MH.",
       "jaminan": "UMUM",
-      "kas": "KAS BESAR",
-      "tipe_pembayaran": "TUNAI",
-      "nominal": "423816.0",
-      "keterangan": "BAYAR"
+      "kas": "Bank Mandiri-1400002285626",
+      "tipe_pembayaran": null,
+      "nominal": "1.6E7",
+      "keterangan": "RETUR"
     },
     {
       "unit_kasir": "Kasir IGD",
@@ -27616,7 +27590,33 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir IGD",
+      "id_transaksi": "34833",
+      "tanggal_transaksi": "2026-04-08 11:19:00",
+      "nama_kasir": "mohammad.lil",
+      "nomor_rm": "540338",
+      "nama_pasien": "JAMI'ATUN",
+      "jaminan": "UMUM",
+      "kas": "KAS BESAR",
+      "tipe_pembayaran": "TUNAI",
+      "nominal": "423816.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir IGD",
+      "id_transaksi": "34833",
+      "tanggal_transaksi": "2026-04-08 11:19:00",
+      "nama_kasir": "mohammad.lil",
+      "nomor_rm": "540338",
+      "nama_pasien": "JAMI'ATUN",
+      "jaminan": "UMUM",
+      "kas": "KAS BESAR",
+      "tipe_pembayaran": "TUNAI",
+      "nominal": "423816.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "666",
       "tanggal_transaksi": "2026-04-08 11:19:00",
       "nama_kasir": "shabrina.amelia",
@@ -29449,7 +29449,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "37838",
       "tanggal_transaksi": "2026-04-08 13:18:00",
       "nama_kasir": "shabrina.amelia",
@@ -29462,7 +29462,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "37838",
       "tanggal_transaksi": "2026-04-08 13:18:00",
       "nama_kasir": "shabrina.amelia",
@@ -29475,72 +29475,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
-      "id_transaksi": "37838",
-      "tanggal_transaksi": "2026-04-08 13:18:00",
-      "nama_kasir": "shabrina.amelia",
-      "nomor_rm": "222389",
-      "nama_pasien": "NUR KHOLIFATUR RAHMA",
-      "jaminan": "UMUM",
-      "kas": "KAS BESAR",
-      "tipe_pembayaran": "TUNAI",
-      "nominal": "325000.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir IRJ",
-      "id_transaksi": "34895",
-      "tanggal_transaksi": "2026-04-08 13:18:00",
-      "nama_kasir": "dyla.layiantoro",
-      "nomor_rm": "83358",
-      "nama_pasien": "SITI MARMAH",
-      "jaminan": "UMUM",
-      "kas": "KAS BESAR",
-      "tipe_pembayaran": "TUNAI",
-      "nominal": "133005.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir IRJ",
-      "id_transaksi": "34895",
-      "tanggal_transaksi": "2026-04-08 13:18:00",
-      "nama_kasir": "dyla.layiantoro",
-      "nomor_rm": "83358",
-      "nama_pasien": "SITI MARMAH",
-      "jaminan": "UMUM",
-      "kas": "KAS BESAR",
-      "tipe_pembayaran": "TUNAI",
-      "nominal": "133005.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir IRJ",
-      "id_transaksi": "34895",
-      "tanggal_transaksi": "2026-04-08 13:18:00",
-      "nama_kasir": "dyla.layiantoro",
-      "nomor_rm": "83358",
-      "nama_pasien": "SITI MARMAH",
-      "jaminan": "UMUM",
-      "kas": "KAS BESAR",
-      "tipe_pembayaran": "TUNAI",
-      "nominal": "133005.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir IRJ",
-      "id_transaksi": "34895",
-      "tanggal_transaksi": "2026-04-08 13:18:00",
-      "nama_kasir": "dyla.layiantoro",
-      "nomor_rm": "83358",
-      "nama_pasien": "SITI MARMAH",
-      "jaminan": "UMUM",
-      "kas": "KAS BESAR",
-      "tipe_pembayaran": "TUNAI",
-      "nominal": "133005.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "37838",
       "tanggal_transaksi": "2026-04-08 13:18:00",
       "nama_kasir": "shabrina.amelia",
@@ -29579,7 +29514,33 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir IRJ",
+      "id_transaksi": "34895",
+      "tanggal_transaksi": "2026-04-08 13:18:00",
+      "nama_kasir": "dyla.layiantoro",
+      "nomor_rm": "83358",
+      "nama_pasien": "SITI MARMAH",
+      "jaminan": "UMUM",
+      "kas": "KAS BESAR",
+      "tipe_pembayaran": "TUNAI",
+      "nominal": "133005.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir IRJ",
+      "id_transaksi": "34895",
+      "tanggal_transaksi": "2026-04-08 13:18:00",
+      "nama_kasir": "dyla.layiantoro",
+      "nomor_rm": "83358",
+      "nama_pasien": "SITI MARMAH",
+      "jaminan": "UMUM",
+      "kas": "KAS BESAR",
+      "tipe_pembayaran": "TUNAI",
+      "nominal": "133005.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "37838",
       "tanggal_transaksi": "2026-04-08 13:18:00",
       "nama_kasir": "shabrina.amelia",
@@ -29592,7 +29553,33 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir IRJ",
+      "id_transaksi": "34895",
+      "tanggal_transaksi": "2026-04-08 13:18:00",
+      "nama_kasir": "dyla.layiantoro",
+      "nomor_rm": "83358",
+      "nama_pasien": "SITI MARMAH",
+      "jaminan": "UMUM",
+      "kas": "KAS BESAR",
+      "tipe_pembayaran": "TUNAI",
+      "nominal": "133005.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir IRJ",
+      "id_transaksi": "34895",
+      "tanggal_transaksi": "2026-04-08 13:18:00",
+      "nama_kasir": "dyla.layiantoro",
+      "nomor_rm": "83358",
+      "nama_pasien": "SITI MARMAH",
+      "jaminan": "UMUM",
+      "kas": "KAS BESAR",
+      "tipe_pembayaran": "TUNAI",
+      "nominal": "133005.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "37838",
       "tanggal_transaksi": "2026-04-08 13:18:00",
       "nama_kasir": "shabrina.amelia",
@@ -29605,7 +29592,20 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
+      "id_transaksi": "37838",
+      "tanggal_transaksi": "2026-04-08 13:18:00",
+      "nama_kasir": "shabrina.amelia",
+      "nomor_rm": "222389",
+      "nama_pasien": "NUR KHOLIFATUR RAHMA",
+      "jaminan": "UMUM",
+      "kas": "KAS BESAR",
+      "tipe_pembayaran": "TUNAI",
+      "nominal": "325000.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "37838",
       "tanggal_transaksi": "2026-04-08 13:18:00",
       "nama_kasir": "shabrina.amelia",
@@ -37561,7 +37561,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34977",
       "tanggal_transaksi": "2026-04-08 15:42:00",
       "nama_kasir": "salsabila.putri",
@@ -37587,7 +37587,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34977",
       "tanggal_transaksi": "2026-04-08 15:42:00",
       "nama_kasir": "salsabila.putri",
@@ -37600,59 +37600,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
-      "id_transaksi": "34977",
-      "tanggal_transaksi": "2026-04-08 15:42:00",
-      "nama_kasir": "salsabila.putri",
-      "nomor_rm": "558316",
-      "nama_pasien": "HALIMATUS SA'DIYAH",
-      "jaminan": "UMUM",
-      "kas": "Bank BRI-002601000472300",
-      "tipe_pembayaran": "DEBET/KREDIT",
-      "nominal": "274162.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir IRJ",
-      "id_transaksi": "34976",
-      "tanggal_transaksi": "2026-04-08 15:42:00",
-      "nama_kasir": "sri.wanti",
-      "nomor_rm": "310365",
-      "nama_pasien": "SHODIKIN",
-      "jaminan": "UMUM",
-      "kas": "KAS BESAR",
-      "tipe_pembayaran": "TUNAI",
-      "nominal": "265905.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir IRJ",
-      "id_transaksi": "34976",
-      "tanggal_transaksi": "2026-04-08 15:42:00",
-      "nama_kasir": "sri.wanti",
-      "nomor_rm": "310365",
-      "nama_pasien": "SHODIKIN",
-      "jaminan": "UMUM",
-      "kas": "KAS BESAR",
-      "tipe_pembayaran": "TUNAI",
-      "nominal": "265905.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Lainnya",
-      "id_transaksi": "34977",
-      "tanggal_transaksi": "2026-04-08 15:42:00",
-      "nama_kasir": "salsabila.putri",
-      "nomor_rm": "558316",
-      "nama_pasien": "HALIMATUS SA'DIYAH",
-      "jaminan": "UMUM",
-      "kas": "Bank BRI-002601000472300",
-      "tipe_pembayaran": "DEBET/KREDIT",
-      "nominal": "274162.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34977",
       "tanggal_transaksi": "2026-04-08 15:42:00",
       "nama_kasir": "salsabila.putri",
@@ -37691,6 +37639,32 @@
       "keterangan": "BAYAR"
     },
     {
+      "unit_kasir": "Kasir MCU",
+      "id_transaksi": "34977",
+      "tanggal_transaksi": "2026-04-08 15:42:00",
+      "nama_kasir": "salsabila.putri",
+      "nomor_rm": "558316",
+      "nama_pasien": "HALIMATUS SA'DIYAH",
+      "jaminan": "UMUM",
+      "kas": "Bank BRI-002601000472300",
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "nominal": "274162.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir MCU",
+      "id_transaksi": "34977",
+      "tanggal_transaksi": "2026-04-08 15:42:00",
+      "nama_kasir": "salsabila.putri",
+      "nomor_rm": "558316",
+      "nama_pasien": "HALIMATUS SA'DIYAH",
+      "jaminan": "UMUM",
+      "kas": "Bank BRI-002601000472300",
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "nominal": "274162.0",
+      "keterangan": "BAYAR"
+    },
+    {
       "unit_kasir": "Kasir IRJ",
       "id_transaksi": "34976",
       "tanggal_transaksi": "2026-04-08 15:42:00",
@@ -37704,7 +37678,33 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir IRJ",
+      "id_transaksi": "34976",
+      "tanggal_transaksi": "2026-04-08 15:42:00",
+      "nama_kasir": "sri.wanti",
+      "nomor_rm": "310365",
+      "nama_pasien": "SHODIKIN",
+      "jaminan": "UMUM",
+      "kas": "KAS BESAR",
+      "tipe_pembayaran": "TUNAI",
+      "nominal": "265905.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir IRJ",
+      "id_transaksi": "34976",
+      "tanggal_transaksi": "2026-04-08 15:42:00",
+      "nama_kasir": "sri.wanti",
+      "nomor_rm": "310365",
+      "nama_pasien": "SHODIKIN",
+      "jaminan": "UMUM",
+      "kas": "KAS BESAR",
+      "tipe_pembayaran": "TUNAI",
+      "nominal": "265905.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34977",
       "tanggal_transaksi": "2026-04-08 15:42:00",
       "nama_kasir": "salsabila.putri",
@@ -37717,7 +37717,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Lainnya",
+      "unit_kasir": "Kasir MCU",
       "id_transaksi": "34977",
       "tanggal_transaksi": "2026-04-08 15:42:00",
       "nama_kasir": "salsabila.putri",
@@ -37730,7 +37730,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "38846",
       "tanggal_transaksi": "2026-04-08 15:43:00",
       "nama_kasir": "shabrina.amelia",
@@ -37743,7 +37743,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "38846",
       "tanggal_transaksi": "2026-04-08 15:43:00",
       "nama_kasir": "shabrina.amelia",
@@ -37756,7 +37756,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "38846",
       "tanggal_transaksi": "2026-04-08 15:43:00",
       "nama_kasir": "shabrina.amelia",
@@ -37769,7 +37769,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "38846",
       "tanggal_transaksi": "2026-04-08 15:43:00",
       "nama_kasir": "shabrina.amelia",
@@ -37782,7 +37782,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "38846",
       "tanggal_transaksi": "2026-04-08 15:43:00",
       "nama_kasir": "shabrina.amelia",
@@ -37795,7 +37795,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "38846",
       "tanggal_transaksi": "2026-04-08 15:43:00",
       "nama_kasir": "shabrina.amelia",
@@ -37808,7 +37808,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir Belakang",
+      "unit_kasir": "Kasir AR",
       "id_transaksi": "38846",
       "tanggal_transaksi": "2026-04-08 15:43:00",
       "nama_kasir": "shabrina.amelia",
