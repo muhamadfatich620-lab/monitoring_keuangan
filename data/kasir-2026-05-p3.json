@@ -6751,7 +6751,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "948",
       "tanggal_transaksi": "2026-05-04 07:17:00",
       "nama_kasir": "shabrina.amelia",
@@ -6764,7 +6764,7 @@
       "keterangan": "RETUR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "949",
       "tanggal_transaksi": "2026-05-04 07:17:00",
       "nama_kasir": "shabrina.amelia",
@@ -6777,7 +6777,7 @@
       "keterangan": "RETUR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "949",
       "tanggal_transaksi": "2026-05-04 07:17:00",
       "nama_kasir": "shabrina.amelia",
@@ -6790,7 +6790,7 @@
       "keterangan": "RETUR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "948",
       "tanggal_transaksi": "2026-05-04 07:17:00",
       "nama_kasir": "shabrina.amelia",
@@ -6803,7 +6803,7 @@
       "keterangan": "RETUR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "948",
       "tanggal_transaksi": "2026-05-04 07:17:00",
       "nama_kasir": "shabrina.amelia",
@@ -6816,7 +6816,7 @@
       "keterangan": "RETUR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "949",
       "tanggal_transaksi": "2026-05-04 07:17:00",
       "nama_kasir": "shabrina.amelia",
@@ -6829,7 +6829,7 @@
       "keterangan": "RETUR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "949",
       "tanggal_transaksi": "2026-05-04 07:17:00",
       "nama_kasir": "shabrina.amelia",
@@ -6842,7 +6842,7 @@
       "keterangan": "RETUR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "949",
       "tanggal_transaksi": "2026-05-04 07:17:00",
       "nama_kasir": "shabrina.amelia",
@@ -6855,7 +6855,7 @@
       "keterangan": "RETUR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "948",
       "tanggal_transaksi": "2026-05-04 07:17:00",
       "nama_kasir": "shabrina.amelia",
@@ -6868,7 +6868,7 @@
       "keterangan": "RETUR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "949",
       "tanggal_transaksi": "2026-05-04 07:17:00",
       "nama_kasir": "shabrina.amelia",
@@ -6881,7 +6881,7 @@
       "keterangan": "RETUR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "948",
       "tanggal_transaksi": "2026-05-04 07:17:00",
       "nama_kasir": "shabrina.amelia",
@@ -6894,7 +6894,7 @@
       "keterangan": "RETUR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "949",
       "tanggal_transaksi": "2026-05-04 07:17:00",
       "nama_kasir": "shabrina.amelia",
@@ -6907,7 +6907,7 @@
       "keterangan": "RETUR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "948",
       "tanggal_transaksi": "2026-05-04 07:17:00",
       "nama_kasir": "shabrina.amelia",
@@ -6920,7 +6920,7 @@
       "keterangan": "RETUR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "948",
       "tanggal_transaksi": "2026-05-04 07:17:00",
       "nama_kasir": "shabrina.amelia",
@@ -17411,7 +17411,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "49772",
       "tanggal_transaksi": "2026-05-04 11:04:00",
       "nama_kasir": "shabrina.amelia",
@@ -17437,98 +17437,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
-      "id_transaksi": "49772",
-      "tanggal_transaksi": "2026-05-04 11:04:00",
-      "nama_kasir": "shabrina.amelia",
-      "nomor_rm": "320078",
-      "nama_pasien": "NATASYA ADELIA MUSDALIFAH",
-      "jaminan": "UMUM",
-      "kas": "Bank BCA-1500317473",
-      "tipe_pembayaran": "TUNAI",
-      "nominal": "480000.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir Farmasi",
-      "id_transaksi": "45403",
-      "tanggal_transaksi": "2026-05-04 11:04:00",
-      "nama_kasir": "ruri.pola",
-      "nomor_rm": "924365",
-      "nama_pasien": "IR TJIPTO KUSUMO",
-      "jaminan": "UMUM",
-      "kas": "Bank Mandiri-1400002285626",
-      "tipe_pembayaran": "DEBET/KREDIT",
-      "nominal": "135918.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir Farmasi",
-      "id_transaksi": "45403",
-      "tanggal_transaksi": "2026-05-04 11:04:00",
-      "nama_kasir": "ruri.pola",
-      "nomor_rm": "924365",
-      "nama_pasien": "IR TJIPTO KUSUMO",
-      "jaminan": "UMUM",
-      "kas": "Bank Mandiri-1400002285626",
-      "tipe_pembayaran": "DEBET/KREDIT",
-      "nominal": "135918.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir AR",
-      "id_transaksi": "49772",
-      "tanggal_transaksi": "2026-05-04 11:04:00",
-      "nama_kasir": "shabrina.amelia",
-      "nomor_rm": "320078",
-      "nama_pasien": "NATASYA ADELIA MUSDALIFAH",
-      "jaminan": "UMUM",
-      "kas": "Bank BCA-1500317473",
-      "tipe_pembayaran": "TUNAI",
-      "nominal": "480000.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir AR",
-      "id_transaksi": "49772",
-      "tanggal_transaksi": "2026-05-04 11:04:00",
-      "nama_kasir": "shabrina.amelia",
-      "nomor_rm": "320078",
-      "nama_pasien": "NATASYA ADELIA MUSDALIFAH",
-      "jaminan": "UMUM",
-      "kas": "Bank BCA-1500317473",
-      "tipe_pembayaran": "TUNAI",
-      "nominal": "480000.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir AR",
-      "id_transaksi": "49772",
-      "tanggal_transaksi": "2026-05-04 11:04:00",
-      "nama_kasir": "shabrina.amelia",
-      "nomor_rm": "320078",
-      "nama_pasien": "NATASYA ADELIA MUSDALIFAH",
-      "jaminan": "UMUM",
-      "kas": "Bank BCA-1500317473",
-      "tipe_pembayaran": "TUNAI",
-      "nominal": "480000.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir Farmasi",
-      "id_transaksi": "45403",
-      "tanggal_transaksi": "2026-05-04 11:04:00",
-      "nama_kasir": "ruri.pola",
-      "nomor_rm": "924365",
-      "nama_pasien": "IR TJIPTO KUSUMO",
-      "jaminan": "UMUM",
-      "kas": "Bank Mandiri-1400002285626",
-      "tipe_pembayaran": "DEBET/KREDIT",
-      "nominal": "135918.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "49772",
       "tanggal_transaksi": "2026-05-04 11:04:00",
       "nama_kasir": "shabrina.amelia",
@@ -17567,7 +17476,98 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
+      "id_transaksi": "49772",
+      "tanggal_transaksi": "2026-05-04 11:04:00",
+      "nama_kasir": "shabrina.amelia",
+      "nomor_rm": "320078",
+      "nama_pasien": "NATASYA ADELIA MUSDALIFAH",
+      "jaminan": "UMUM",
+      "kas": "Bank BCA-1500317473",
+      "tipe_pembayaran": "TUNAI",
+      "nominal": "480000.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Admin AR",
+      "id_transaksi": "49772",
+      "tanggal_transaksi": "2026-05-04 11:04:00",
+      "nama_kasir": "shabrina.amelia",
+      "nomor_rm": "320078",
+      "nama_pasien": "NATASYA ADELIA MUSDALIFAH",
+      "jaminan": "UMUM",
+      "kas": "Bank BCA-1500317473",
+      "tipe_pembayaran": "TUNAI",
+      "nominal": "480000.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Admin AR",
+      "id_transaksi": "49772",
+      "tanggal_transaksi": "2026-05-04 11:04:00",
+      "nama_kasir": "shabrina.amelia",
+      "nomor_rm": "320078",
+      "nama_pasien": "NATASYA ADELIA MUSDALIFAH",
+      "jaminan": "UMUM",
+      "kas": "Bank BCA-1500317473",
+      "tipe_pembayaran": "TUNAI",
+      "nominal": "480000.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir Farmasi",
+      "id_transaksi": "45403",
+      "tanggal_transaksi": "2026-05-04 11:04:00",
+      "nama_kasir": "ruri.pola",
+      "nomor_rm": "924365",
+      "nama_pasien": "IR TJIPTO KUSUMO",
+      "jaminan": "UMUM",
+      "kas": "Bank Mandiri-1400002285626",
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "nominal": "135918.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Admin AR",
+      "id_transaksi": "49772",
+      "tanggal_transaksi": "2026-05-04 11:04:00",
+      "nama_kasir": "shabrina.amelia",
+      "nomor_rm": "320078",
+      "nama_pasien": "NATASYA ADELIA MUSDALIFAH",
+      "jaminan": "UMUM",
+      "kas": "Bank BCA-1500317473",
+      "tipe_pembayaran": "TUNAI",
+      "nominal": "480000.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir Farmasi",
+      "id_transaksi": "45403",
+      "tanggal_transaksi": "2026-05-04 11:04:00",
+      "nama_kasir": "ruri.pola",
+      "nomor_rm": "924365",
+      "nama_pasien": "IR TJIPTO KUSUMO",
+      "jaminan": "UMUM",
+      "kas": "Bank Mandiri-1400002285626",
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "nominal": "135918.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir Farmasi",
+      "id_transaksi": "45403",
+      "tanggal_transaksi": "2026-05-04 11:04:00",
+      "nama_kasir": "ruri.pola",
+      "nomor_rm": "924365",
+      "nama_pasien": "IR TJIPTO KUSUMO",
+      "jaminan": "UMUM",
+      "kas": "Bank Mandiri-1400002285626",
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "nominal": "135918.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Admin AR",
       "id_transaksi": "49772",
       "tanggal_transaksi": "2026-05-04 11:04:00",
       "nama_kasir": "shabrina.amelia",
@@ -17606,7 +17606,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "49775",
       "tanggal_transaksi": "2026-05-04 11:06:00",
       "nama_kasir": "shabrina.amelia",
@@ -17619,85 +17619,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
-      "id_transaksi": "49775",
-      "tanggal_transaksi": "2026-05-04 11:06:00",
-      "nama_kasir": "shabrina.amelia",
-      "nomor_rm": "236421",
-      "nama_pasien": "NABILA SAZKIA METARIFA",
-      "jaminan": "UMUM",
-      "kas": "Bank BCA-1500317473",
-      "tipe_pembayaran": "DEBET/KREDIT",
-      "nominal": "390000.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir IGD",
-      "id_transaksi": "45405",
-      "tanggal_transaksi": "2026-05-04 11:06:00",
-      "nama_kasir": "mohammad.lil",
-      "nomor_rm": "300716",
-      "nama_pasien": "SUDARWATI",
-      "jaminan": "UMUM",
-      "kas": "KAS BESAR",
-      "tipe_pembayaran": "TUNAI",
-      "nominal": "144986.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir IGD",
-      "id_transaksi": "45405",
-      "tanggal_transaksi": "2026-05-04 11:06:00",
-      "nama_kasir": "mohammad.lil",
-      "nomor_rm": "300716",
-      "nama_pasien": "SUDARWATI",
-      "jaminan": "UMUM",
-      "kas": "KAS BESAR",
-      "tipe_pembayaran": "TUNAI",
-      "nominal": "144986.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir AR",
-      "id_transaksi": "49775",
-      "tanggal_transaksi": "2026-05-04 11:06:00",
-      "nama_kasir": "shabrina.amelia",
-      "nomor_rm": "236421",
-      "nama_pasien": "NABILA SAZKIA METARIFA",
-      "jaminan": "UMUM",
-      "kas": "Bank BCA-1500317473",
-      "tipe_pembayaran": "DEBET/KREDIT",
-      "nominal": "390000.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir IGD",
-      "id_transaksi": "45405",
-      "tanggal_transaksi": "2026-05-04 11:06:00",
-      "nama_kasir": "mohammad.lil",
-      "nomor_rm": "300716",
-      "nama_pasien": "SUDARWATI",
-      "jaminan": "UMUM",
-      "kas": "KAS BESAR",
-      "tipe_pembayaran": "TUNAI",
-      "nominal": "144986.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir AR",
-      "id_transaksi": "49775",
-      "tanggal_transaksi": "2026-05-04 11:06:00",
-      "nama_kasir": "shabrina.amelia",
-      "nomor_rm": "236421",
-      "nama_pasien": "NABILA SAZKIA METARIFA",
-      "jaminan": "UMUM",
-      "kas": "Bank BCA-1500317473",
-      "tipe_pembayaran": "DEBET/KREDIT",
-      "nominal": "390000.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "49775",
       "tanggal_transaksi": "2026-05-04 11:06:00",
       "nama_kasir": "shabrina.amelia",
@@ -17736,7 +17658,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "49775",
       "tanggal_transaksi": "2026-05-04 11:06:00",
       "nama_kasir": "shabrina.amelia",
@@ -17749,7 +17671,85 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Kasir IGD",
+      "id_transaksi": "45405",
+      "tanggal_transaksi": "2026-05-04 11:06:00",
+      "nama_kasir": "mohammad.lil",
+      "nomor_rm": "300716",
+      "nama_pasien": "SUDARWATI",
+      "jaminan": "UMUM",
+      "kas": "KAS BESAR",
+      "tipe_pembayaran": "TUNAI",
+      "nominal": "144986.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Admin AR",
+      "id_transaksi": "49775",
+      "tanggal_transaksi": "2026-05-04 11:06:00",
+      "nama_kasir": "shabrina.amelia",
+      "nomor_rm": "236421",
+      "nama_pasien": "NABILA SAZKIA METARIFA",
+      "jaminan": "UMUM",
+      "kas": "Bank BCA-1500317473",
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "nominal": "390000.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Admin AR",
+      "id_transaksi": "49775",
+      "tanggal_transaksi": "2026-05-04 11:06:00",
+      "nama_kasir": "shabrina.amelia",
+      "nomor_rm": "236421",
+      "nama_pasien": "NABILA SAZKIA METARIFA",
+      "jaminan": "UMUM",
+      "kas": "Bank BCA-1500317473",
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "nominal": "390000.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir IGD",
+      "id_transaksi": "45405",
+      "tanggal_transaksi": "2026-05-04 11:06:00",
+      "nama_kasir": "mohammad.lil",
+      "nomor_rm": "300716",
+      "nama_pasien": "SUDARWATI",
+      "jaminan": "UMUM",
+      "kas": "KAS BESAR",
+      "tipe_pembayaran": "TUNAI",
+      "nominal": "144986.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir IGD",
+      "id_transaksi": "45405",
+      "tanggal_transaksi": "2026-05-04 11:06:00",
+      "nama_kasir": "mohammad.lil",
+      "nomor_rm": "300716",
+      "nama_pasien": "SUDARWATI",
+      "jaminan": "UMUM",
+      "kas": "KAS BESAR",
+      "tipe_pembayaran": "TUNAI",
+      "nominal": "144986.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Admin AR",
+      "id_transaksi": "49775",
+      "tanggal_transaksi": "2026-05-04 11:06:00",
+      "nama_kasir": "shabrina.amelia",
+      "nomor_rm": "236421",
+      "nama_pasien": "NABILA SAZKIA METARIFA",
+      "jaminan": "UMUM",
+      "kas": "Bank BCA-1500317473",
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "nominal": "390000.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Admin AR",
       "id_transaksi": "49775",
       "tanggal_transaksi": "2026-05-04 11:06:00",
       "nama_kasir": "shabrina.amelia",
