@@ -3436,7 +3436,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "29989",
       "tanggal_transaksi": "2026-03-11 08:46:00",
       "nama_kasir": "shabrina.amelia",
@@ -3449,7 +3449,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "29989",
       "tanggal_transaksi": "2026-03-11 08:46:00",
       "nama_kasir": "shabrina.amelia",
@@ -3462,33 +3462,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
-      "id_transaksi": "29989",
-      "tanggal_transaksi": "2026-03-11 08:46:00",
-      "nama_kasir": "shabrina.amelia",
-      "nomor_rm": "110308",
-      "nama_pasien": "ANNISA CHINTIA DEVI",
-      "jaminan": "PT. Asuransi Takaful Keluarga",
-      "kas": "Bank Mandiri-1400002285626",
-      "tipe_pembayaran": "DEBET/KREDIT",
-      "nominal": "80000.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir IRJ",
-      "id_transaksi": "23508",
-      "tanggal_transaksi": "2026-03-11 08:46:00",
-      "nama_kasir": "dyla.layiantoro",
-      "nomor_rm": "",
-      "nama_pasien": "CHOIROTUN NISA",
-      "jaminan": "UMUM",
-      "kas": "Bank Mandiri-1400002285626",
-      "tipe_pembayaran": "DEBET/KREDIT",
-      "nominal": "114234.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "29989",
       "tanggal_transaksi": "2026-03-11 08:46:00",
       "nama_kasir": "shabrina.amelia",
@@ -3514,33 +3488,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir IRJ",
-      "id_transaksi": "23508",
-      "tanggal_transaksi": "2026-03-11 08:46:00",
-      "nama_kasir": "dyla.layiantoro",
-      "nomor_rm": "",
-      "nama_pasien": "CHOIROTUN NISA",
-      "jaminan": "UMUM",
-      "kas": "Bank Mandiri-1400002285626",
-      "tipe_pembayaran": "DEBET/KREDIT",
-      "nominal": "114234.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir AR",
-      "id_transaksi": "29989",
-      "tanggal_transaksi": "2026-03-11 08:46:00",
-      "nama_kasir": "shabrina.amelia",
-      "nomor_rm": "110308",
-      "nama_pasien": "ANNISA CHINTIA DEVI",
-      "jaminan": "PT. Asuransi Takaful Keluarga",
-      "kas": "Bank Mandiri-1400002285626",
-      "tipe_pembayaran": "DEBET/KREDIT",
-      "nominal": "80000.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "29989",
       "tanggal_transaksi": "2026-03-11 08:46:00",
       "nama_kasir": "shabrina.amelia",
@@ -3579,6 +3527,32 @@
       "keterangan": "BAYAR"
     },
     {
+      "unit_kasir": "Admin AR",
+      "id_transaksi": "29989",
+      "tanggal_transaksi": "2026-03-11 08:46:00",
+      "nama_kasir": "shabrina.amelia",
+      "nomor_rm": "110308",
+      "nama_pasien": "ANNISA CHINTIA DEVI",
+      "jaminan": "PT. Asuransi Takaful Keluarga",
+      "kas": "Bank Mandiri-1400002285626",
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "nominal": "80000.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Admin AR",
+      "id_transaksi": "29989",
+      "tanggal_transaksi": "2026-03-11 08:46:00",
+      "nama_kasir": "shabrina.amelia",
+      "nomor_rm": "110308",
+      "nama_pasien": "ANNISA CHINTIA DEVI",
+      "jaminan": "PT. Asuransi Takaful Keluarga",
+      "kas": "Bank Mandiri-1400002285626",
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "nominal": "80000.0",
+      "keterangan": "BAYAR"
+    },
+    {
       "unit_kasir": "Kasir IRJ",
       "id_transaksi": "23508",
       "tanggal_transaksi": "2026-03-11 08:46:00",
@@ -3592,7 +3566,33 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Kasir IRJ",
+      "id_transaksi": "23508",
+      "tanggal_transaksi": "2026-03-11 08:46:00",
+      "nama_kasir": "dyla.layiantoro",
+      "nomor_rm": "",
+      "nama_pasien": "CHOIROTUN NISA",
+      "jaminan": "UMUM",
+      "kas": "Bank Mandiri-1400002285626",
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "nominal": "114234.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Kasir IRJ",
+      "id_transaksi": "23508",
+      "tanggal_transaksi": "2026-03-11 08:46:00",
+      "nama_kasir": "dyla.layiantoro",
+      "nomor_rm": "",
+      "nama_pasien": "CHOIROTUN NISA",
+      "jaminan": "UMUM",
+      "kas": "Bank Mandiri-1400002285626",
+      "tipe_pembayaran": "DEBET/KREDIT",
+      "nominal": "114234.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Admin AR",
       "id_transaksi": "29989",
       "tanggal_transaksi": "2026-03-11 08:46:00",
       "nama_kasir": "shabrina.amelia",
@@ -30827,7 +30827,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "494",
       "tanggal_transaksi": "2026-03-12 08:51:00",
       "nama_kasir": "shabrina.amelia",
@@ -30840,7 +30840,7 @@
       "keterangan": "RETUR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "494",
       "tanggal_transaksi": "2026-03-12 08:51:00",
       "nama_kasir": "shabrina.amelia",
@@ -30853,7 +30853,7 @@
       "keterangan": "RETUR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "494",
       "tanggal_transaksi": "2026-03-12 08:51:00",
       "nama_kasir": "shabrina.amelia",
@@ -30866,7 +30866,7 @@
       "keterangan": "RETUR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "494",
       "tanggal_transaksi": "2026-03-12 08:51:00",
       "nama_kasir": "shabrina.amelia",
@@ -30879,7 +30879,7 @@
       "keterangan": "RETUR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "494",
       "tanggal_transaksi": "2026-03-12 08:51:00",
       "nama_kasir": "shabrina.amelia",
@@ -30892,7 +30892,7 @@
       "keterangan": "RETUR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "494",
       "tanggal_transaksi": "2026-03-12 08:51:00",
       "nama_kasir": "shabrina.amelia",
@@ -30905,7 +30905,7 @@
       "keterangan": "RETUR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "494",
       "tanggal_transaksi": "2026-03-12 08:51:00",
       "nama_kasir": "shabrina.amelia",
