@@ -1158,27 +1158,58 @@ function dedupeExact(rows) {
 // Ukuran tiap file dikontrol jumlah baris (lihat export-apps-script.gs), bukan
 // tanggal, supaya tidak Out of Memory apapun kepadatan datanya.
 //
-// PENTING: nomor bagian TIDAK SELALU mulai dari p1 untuk setiap bulan —
-// mis. untuk Juni ternyata bagian pertama yang ada adalah kredit-2026-06-p37.json
-// (penomoran lanjut/tidak direset per bulan di proses export). Karena itu kita
-// TIDAK BOLEH fetch berurutan lalu berhenti begitu ada 404 pertama (itu akan
-// berhenti langsung di p1 dan tidak pernah sampai ke p37). Sebagai gantinya,
-// semua nomor bagian dari 1..maxBagian dicoba fetch secara paralel, dan yang
-// 404/gagal cukup diabaikan (bukan dijadikan sinyal berhenti).
-async function fetchBagianBerurutan(prefix, kode, maxBagian, arrKey) {
-  const nomorBagian = Array.from({ length: maxBagian }, (_, i) => i + 1);
-  const hasil = await Promise.all(nomorBagian.map(async (bagian) => {
-    const file = `data/${prefix}-${kode}-p${bagian}.json`;
+// PENTING: nomor bagian TIDAK SELALU mulai dari p1 untuk setiap bulan, dan
+// gap di tengah (mis. p5..p9 hilang lalu p10 ada lagi) pernah terjadi. Karena
+// itu kita TIDAK BOLEH fetch berurutan lalu berhenti begitu ada 404 pertama.
+// Semua nomor bagian dari 1..maxBagian tetap harus dicoba.
+//
+// TAPI: bulan-bulan padat sekarang bisa punya 20-30+ bagian (Juli 2026 = 27
+// bagian kasir). Kalau semua nomor 1..maxBagian (200) di-fetch SEKALIGUS
+// secara paralel, itu berarti ratusan request bersamaan ke CDN GitHub untuk
+// satu bulan saja (dan berkali lipat kalau beberapa bulan sekaligus di rentang
+// filter) — ini memicu rate-limit di sisi CDN, yang membuat sebagian request
+// gagal (bukan 404 "beneran", tapi mis. 429/503 karena kebanyakan request
+// bersamaan) dan SALAH diperlakukan sebagai "bagian tidak ada", padahal
+// bagian itu sebenarnya ADA. Akibatnya: sebagian data (mis. tanggal-tanggal
+// tertentu) hilang secara acak/tidak konsisten dari dashboard.
+//
+// FIX: fetch di-batch dengan concurrency terbatas (FETCH_CONCURRENCY per
+// waktu, bukan semua sekaligus), DAN respons non-404 yang gagal (network
+// error, 429, 5xx) di-retry beberapa kali dengan jeda sebelum benar-benar
+// dianggap tidak ada — supaya rate-limit sesaat tidak menghilangkan data.
+const FETCH_CONCURRENCY = 12; // jumlah request paralel per batch, dijaga aman dari rate-limit CDN
+
+async function fetchSatuBagianDenganRetry(file, arrKey, maxRetry) {
+  maxRetry = maxRetry || 3;
+  for (let attempt = 1; attempt <= maxRetry; attempt++) {
     try {
       const r = await fetch(file + '?_=' + Date.now());
-      if (!r.ok) return []; // bagian ini tidak ada untuk bulan ini -> lewati saja
+      if (r.status === 404) return []; // beneran tidak ada -> tidak perlu retry
+      if (!r.ok) throw new Error('HTTP ' + r.status); // mis. 429/5xx -> retry
       const j = await r.json();
       return j[arrKey] || [];
     } catch (e) {
-      return []; // gagal fetch (jaringan dsb) -> lewati, jangan hentikan bagian lain
+      if (attempt === maxRetry) {
+        console.warn('Gagal fetch ' + file + ' setelah ' + maxRetry + ' percobaan: ' + e.message);
+        return [];
+      }
+      await new Promise(res => setTimeout(res, 300 * attempt)); // jeda sebelum retry
     }
-  }));
-  return [].concat(...hasil);
+  }
+  return [];
+}
+
+async function fetchBagianBerurutan(prefix, kode, maxBagian, arrKey) {
+  const nomorBagian = Array.from({ length: maxBagian }, (_, i) => i + 1);
+  let gabungan = [];
+  for (let i = 0; i < nomorBagian.length; i += FETCH_CONCURRENCY) {
+    const batch = nomorBagian.slice(i, i + FETCH_CONCURRENCY);
+    const hasilBatch = await Promise.all(batch.map(bagian =>
+      fetchSatuBagianDenganRetry(`data/${prefix}-${kode}-p${bagian}.json`, arrKey)
+    ));
+    hasilBatch.forEach(rows => { gabungan = gabungan.concat(rows); });
+  }
+  return gabungan;
 }
 
 async function fetchBulanKasir(kode) {
