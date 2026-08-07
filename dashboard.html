@@ -1117,6 +1117,28 @@ function filterKasirExcludeSubPenerima(rows) {
   return rows.filter(r => !kasirNamaKasirDikecualikan(r));
 }
 
+// ══ Format sebuah objek Date jadi string 'YYYY-MM-DD' pakai komponen
+//    tanggal LOKAL (getFullYear/getMonth/getDate) ══
+// PENTING: JANGAN pakai toISOString() untuk ini. toISOString() mengonversi
+// Date ke UTC dulu sebelum diformat — di timezone WIB (UTC+7), Date jam
+// 00:00 lokal itu sama dengan jam 17:00 HARI SEBELUMNYA di UTC, jadi
+// toISOString() bisa menggeser tanggal mundur 1 hari (mis. 31 Juli jadi
+// "2026-07-30", atau tanggal hari ini jadi "kemarin" kalau dibuka dini hari
+// WIB jam 00:00-06:59). Dipakai di beberapa tempat: menghitung tanggal
+// akhir bulan (monthsInRange) dan default filter tanggal saat halaman
+// dimuat (loadData) — dua-duanya pernah kena bug pergeseran ini.
+function tanggalLokalStr(d) {
+  const yyyy = d.getFullYear();
+  const mm = String(d.getMonth() + 1).padStart(2, '0');
+  const dd = String(d.getDate()).padStart(2, '0');
+  return `${yyyy}-${mm}-${dd}`;
+}
+
+// ══ Hitung tanggal terakhir suatu bulan sebagai string 'YYYY-MM-DD' ══
+function tanggalAkhirBulanStr(y, m) {
+  return tanggalLokalStr(new Date(y, m, 0)); // local date = hari terakhir bulan m (1-indexed)
+}
+
 // ══ Tentukan bulan (kode 'YYYY-MM') mana saja yang overlap dengan rentang tanggal ══
 // Di-dedupe dengan Set — kalau manifest.json sampai berisi kode bulan ganda
 // (mis. karena proses export mingguan menambahkan bulan yang sama lebih dari
@@ -1129,7 +1151,7 @@ function monthsInRange(awal, akhir) {
   return semuaBulan.filter(kode => {
     const [y, m] = kode.split('-').map(Number);
     const bulanAwal  = kode + '-01';
-    const bulanAkhir = new Date(y, m, 0).toISOString().substring(0,10);
+    const bulanAkhir = tanggalAkhirBulanStr(y, m);
     const mulaiCek = awal  || '0000-01-01';
     const akhirCek = akhir || '9999-12-31';
     return bulanAwal <= akhirCek && bulanAkhir >= mulaiCek;
@@ -2122,10 +2144,15 @@ async function loadData() {
   }
 
   // Default filter: bulan berjalan
+  // PENTING: pakai tanggalLokalStr() (komponen tanggal LOKAL), BUKAN
+  // toISOString() — masalahnya sama seperti tanggalAkhirBulanStr() di atas:
+  // toISOString() mengonversi ke UTC dulu, yang di timezone WIB (UTC+7) bisa
+  // menggeser tanggal mundur 1 hari (paling kentara kalau dashboard dibuka
+  // dini hari WIB, jam 00:00-06:59, saat UTC masih di tanggal "kemarin").
   const today = new Date();
   const awalBulan = new Date(today.getFullYear(), today.getMonth(), 1);
-  document.getElementById('fltAwal').value  = awalBulan.toISOString().substring(0,10);
-  document.getElementById('fltAkhir').value = today.toISOString().substring(0,10);
+  document.getElementById('fltAwal').value  = tanggalLokalStr(awalBulan);
+  document.getElementById('fltAkhir').value = tanggalLokalStr(today);
 
   await buildFiltered();
   populateDetailFilterOptions();
