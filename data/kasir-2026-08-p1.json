@@ -5802,7 +5802,7 @@
       "keterangan": "SALDO"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "1767",
       "tanggal_transaksi": "2026-08-01 07:12:00",
       "nama_kasir": "shabrina.amelia",
@@ -5841,7 +5841,7 @@
       "keterangan": "SALDO"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "1767",
       "tanggal_transaksi": "2026-08-01 07:12:00",
       "nama_kasir": "shabrina.amelia",
@@ -6062,7 +6062,7 @@
       "keterangan": "SALDO"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "1767",
       "tanggal_transaksi": "2026-08-01 07:12:00",
       "nama_kasir": "shabrina.amelia",
@@ -6361,7 +6361,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "1758",
       "tanggal_transaksi": "2026-08-01 08:04:00",
       "nama_kasir": "shabrina.amelia",
@@ -6374,7 +6374,7 @@
       "keterangan": "RETUR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "1758",
       "tanggal_transaksi": "2026-08-01 08:04:00",
       "nama_kasir": "shabrina.amelia",
@@ -6387,7 +6387,7 @@
       "keterangan": "RETUR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "1758",
       "tanggal_transaksi": "2026-08-01 08:04:00",
       "nama_kasir": "shabrina.amelia",
@@ -21545,7 +21545,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "1776",
       "tanggal_transaksi": "2026-08-03 07:12:00",
       "nama_kasir": "shabrina.amelia",
@@ -21558,7 +21558,7 @@
       "keterangan": "RETUR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "1776",
       "tanggal_transaksi": "2026-08-03 07:12:00",
       "nama_kasir": "shabrina.amelia",
@@ -21571,7 +21571,7 @@
       "keterangan": "RETUR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "1776",
       "tanggal_transaksi": "2026-08-03 07:12:00",
       "nama_kasir": "shabrina.amelia",
@@ -29241,7 +29241,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "119388",
       "tanggal_transaksi": "2026-08-03 14:09:00",
       "nama_kasir": "shabrina.amelia",
@@ -29254,7 +29254,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "119388",
       "tanggal_transaksi": "2026-08-03 14:09:00",
       "nama_kasir": "shabrina.amelia",
@@ -29293,7 +29293,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "119388",
       "tanggal_transaksi": "2026-08-03 14:09:00",
       "nama_kasir": "shabrina.amelia",
@@ -29332,7 +29332,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "119391",
       "tanggal_transaksi": "2026-08-03 14:14:00",
       "nama_kasir": "putri.nur",
@@ -29358,7 +29358,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "119391",
       "tanggal_transaksi": "2026-08-03 14:14:00",
       "nama_kasir": "putri.nur",
@@ -29371,7 +29371,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "119391",
       "tanggal_transaksi": "2026-08-03 14:14:00",
       "nama_kasir": "putri.nur",
