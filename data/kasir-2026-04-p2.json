@@ -667,7 +667,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "38846",
       "tanggal_transaksi": "2026-04-08 15:43:00",
       "nama_kasir": "shabrina.amelia",
@@ -4541,7 +4541,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "659",
       "tanggal_transaksi": "2026-04-09 07:33:00",
       "nama_kasir": "shabrina.amelia",
@@ -5360,7 +5360,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "40188",
       "tanggal_transaksi": "2026-04-09 11:37:00",
       "nama_kasir": "shabrina.amelia",
@@ -13953,7 +13953,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "48103",
       "tanggal_transaksi": "2026-04-10 14:47:00",
       "nama_kasir": "shabrina.amelia",
@@ -19868,7 +19868,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "39826",
       "tanggal_transaksi": "2026-04-11 16:48:00",
       "nama_kasir": "shabrina.amelia",
@@ -24938,7 +24938,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "48879",
       "tanggal_transaksi": "2026-04-13 11:07:00",
       "nama_kasir": "shabrina.amelia",
@@ -30411,7 +30411,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "37020",
       "tanggal_transaksi": "2026-04-14 08:43:00",
       "nama_kasir": "shabrina.amelia",
@@ -32140,7 +32140,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "38790",
       "tanggal_transaksi": "2026-04-14 14:19:00",
       "nama_kasir": "shabrina.amelia",
@@ -38341,7 +38341,7 @@
       "keterangan": "SALDO"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "13604",
       "tanggal_transaksi": "2026-04-15 07:56:00",
       "nama_kasir": "shabrina.amelia",
