@@ -13472,7 +13472,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "48333",
       "tanggal_transaksi": "2026-04-30 07:54:00",
       "nama_kasir": "putri.nur",
@@ -14486,7 +14486,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "47957",
       "tanggal_transaksi": "2026-04-30 11:28:00",
       "nama_kasir": "shabrina.amelia",
