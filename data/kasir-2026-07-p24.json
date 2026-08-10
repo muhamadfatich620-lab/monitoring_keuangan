@@ -27811,7 +27811,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "110859",
       "tanggal_transaksi": "2026-07-29 15:12:00",
       "nama_kasir": "shabrina.amelia",
@@ -27824,33 +27824,7 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
-      "id_transaksi": "110859",
-      "tanggal_transaksi": "2026-07-29 15:12:00",
-      "nama_kasir": "shabrina.amelia",
-      "nomor_rm": "619772",
-      "nama_pasien": "MUHAMMAD IRFANSYAH",
-      "jaminan": "UMUM",
-      "kas": "KAS BESAR",
-      "tipe_pembayaran": "TUNAI",
-      "nominal": "674082.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir IGD",
-      "id_transaksi": "110860",
-      "tanggal_transaksi": "2026-07-29 15:12:00",
-      "nama_kasir": "catur.yudha",
-      "nomor_rm": "",
-      "nama_pasien": "MUHIMATUL",
-      "jaminan": "UMUM",
-      "kas": "KAS BESAR",
-      "tipe_pembayaran": "TUNAI",
-      "nominal": "131203.0",
-      "keterangan": "BAYAR"
-    },
-    {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Admin AR",
       "id_transaksi": "110859",
       "tanggal_transaksi": "2026-07-29 15:12:00",
       "nama_kasir": "shabrina.amelia",
@@ -27876,6 +27850,19 @@
       "keterangan": "BAYAR"
     },
     {
+      "unit_kasir": "Admin AR",
+      "id_transaksi": "110859",
+      "tanggal_transaksi": "2026-07-29 15:12:00",
+      "nama_kasir": "shabrina.amelia",
+      "nomor_rm": "619772",
+      "nama_pasien": "MUHAMMAD IRFANSYAH",
+      "jaminan": "UMUM",
+      "kas": "KAS BESAR",
+      "tipe_pembayaran": "TUNAI",
+      "nominal": "674082.0",
+      "keterangan": "BAYAR"
+    },
+    {
       "unit_kasir": "Kasir IGD",
       "id_transaksi": "110860",
       "tanggal_transaksi": "2026-07-29 15:12:00",
@@ -27889,7 +27876,20 @@
       "keterangan": "BAYAR"
     },
     {
-      "unit_kasir": "Kasir AR",
+      "unit_kasir": "Kasir IGD",
+      "id_transaksi": "110860",
+      "tanggal_transaksi": "2026-07-29 15:12:00",
+      "nama_kasir": "catur.yudha",
+      "nomor_rm": "",
+      "nama_pasien": "MUHIMATUL",
+      "jaminan": "UMUM",
+      "kas": "KAS BESAR",
+      "tipe_pembayaran": "TUNAI",
+      "nominal": "131203.0",
+      "keterangan": "BAYAR"
+    },
+    {
+      "unit_kasir": "Admin AR",
       "id_transaksi": "110859",
       "tanggal_transaksi": "2026-07-29 15:12:00",
       "nama_kasir": "shabrina.amelia",
