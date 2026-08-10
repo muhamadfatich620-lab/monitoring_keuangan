@@ -564,6 +564,10 @@ tfoot td {
       <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
       Pelunasan Piutang
     </button>
+    <button class="nav-item" onclick="showPage('pengeluaran-kas')">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 7H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/><polyline points="8 2 8 6 4 6"/></svg>
+      Pengeluaran Kas
+    </button>
   </div>
 
   <div class="sidebar-footer">
@@ -938,6 +942,73 @@ tfoot td {
     </div>
   </div>
 
+  <!-- ══ PAGE: PENGELUARAN KAS ══ -->
+  <div class="page" id="page-pengeluaran-kas">
+    <div class="kpi-grid" id="kpiPengeluaranKas">
+      <div class="loading"><div class="spinner"></div> Memuat data...</div>
+    </div>
+    <div class="section-card">
+      <div class="section-head">
+        <div><div class="section-title">Tren Pengeluaran Kas Harian</div><div class="section-sub">Total nominal pengeluaran per hari, sesuai filter tanggal di atas</div></div>
+      </div>
+      <div class="section-body"><div class="chart-wrap" style="height:280px"><canvas id="chartPengeluaranKasHarian"></canvas></div></div>
+    </div>
+    <div class="section-card">
+      <div class="section-head">
+        <div><div class="section-title">Rekap Harian Pengeluaran Kas</div><div class="section-sub">Kolom Total = jumlah nominal pengeluaran pada tanggal tersebut</div></div>
+      </div>
+      <div class="local-filter-wrap">
+        <input type="text" id="searchPengeluaranKasHarian" placeholder="Cari tanggal (YYYY-MM-DD)..." oninput="filterPengeluaranKasHarian()"/>
+        <button class="btn btn-outline" onclick="resetPengeluaranKasHarianFilter()">Reset Filter</button>
+        <span class="local-filter-count" id="pengeluaranKasHarianCount"></span>
+      </div>
+      <div class="section-body" style="padding:0">
+        <div class="tbl-wrap"><table id="tblPengeluaranKasHarian">
+          <thead id="head-tblPengeluaranKasHarian"><tr>
+            <th data-key="tanggal" onclick="tblSort('tblPengeluaranKasHarian','tanggal','text')">Tanggal <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="jumlah_transaksi" onclick="tblSort('tblPengeluaranKasHarian','jumlah_transaksi','number')">Jumlah Transaksi <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="total_debet" onclick="tblSort('tblPengeluaranKasHarian','total_debet','number')">Debet <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="total_kredit" onclick="tblSort('tblPengeluaranKasHarian','total_kredit','number')">Kredit <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="total" onclick="tblSort('tblPengeluaranKasHarian','total','number')">Total <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="kumulatif" onclick="tblSort('tblPengeluaranKasHarian','kumulatif','number')">Kumulatif <span class="sort-ico-wrap"></span></th>
+          </tr></thead>
+          <tbody></tbody>
+          <tfoot></tfoot>
+        </table></div>
+      </div>
+    </div>
+    <div class="section-card">
+      <div class="section-head">
+        <div><div class="section-title">Detail Pengeluaran Kas</div><div class="section-sub">Menampilkan maks 2000 baris pertama dari hasil filter</div></div>
+      </div>
+      <div class="local-filter-wrap">
+        <input type="text" id="searchPengeluaranKasDetail" placeholder="Cari sub unit / penanggung / keterangan..." oninput="filterPengeluaranKasDetail()"/>
+        <select id="fltPengeluaranKasSubUnit" onchange="filterPengeluaranKasDetail()"><option value="">Semua Sub Unit</option></select>
+        <select id="fltPengeluaranKasPenanggung" onchange="filterPengeluaranKasDetail()"><option value="">Semua Penanggung</option></select>
+        <select id="fltPengeluaranKasSegmen" onchange="filterPengeluaranKasDetail()"><option value="">Semua Segmen</option></select>
+        <button class="btn btn-outline" onclick="resetPengeluaranKasDetailFilter()">Reset Filter</button>
+        <span class="local-filter-count" id="pengeluaranKasDetailCount"></span>
+      </div>
+      <div class="section-body" style="padding:0">
+        <div class="tbl-wrap"><table id="tblPengeluaranKasDetail">
+          <thead id="head-tblPengeluaranKasDetail"><tr>
+            <th data-key="tanggal_sub_transaksi" onclick="tblSort('tblPengeluaranKasDetail','tanggal_sub_transaksi','text')">Tanggal <span class="sort-ico-wrap"></span></th>
+            <th data-key="nama_sub_unit" onclick="tblSort('tblPengeluaranKasDetail','nama_sub_unit','text')">Sub Unit <span class="sort-ico-wrap"></span></th>
+            <th data-key="nama_penerima" onclick="tblSort('tblPengeluaranKasDetail','nama_penerima','text')">nama_penerima <span class="sort-ico-wrap"></span></th>
+            <th data-key="Segment" onclick="tblSort('tblPengeluaranKasDetail','Segment','text')">Segmen <span class="sort-ico-wrap"></span></th>
+            <th data-key="nama_sub_penerima" onclick="tblSort('tblPengeluaranKasDetail','nama_sub_penerima','text')">Sub Penerima <span class="sort-ico-wrap"></span></th>
+            <th data-key="operasional" onclick="tblSort('tblPengeluaranKasDetail','operasional','text')">Keterangan <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="_debet" onclick="tblSort('tblPengeluaranKasDetail','_debet','number')">Debet <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="_kredit" onclick="tblSort('tblPengeluaranKasDetail','_kredit','number')">Kredit <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="_nominal" onclick="tblSort('tblPengeluaranKasDetail','_nominal','number')">Nominal <span class="sort-ico-wrap"></span></th>
+          </tr></thead>
+          <tbody></tbody>
+          <tfoot></tfoot>
+        </table></div>
+      </div>
+    </div>
+  </div>
+
   <!-- ══ FOOTER ══ -->
   <footer class="app-footer">
     <div class="footer-brand">
@@ -947,7 +1018,7 @@ tfoot td {
       </div>
     </div>
     <div class="footer-right">
-      <span>Versi 2.0.0</span>
+      <span>Versi 2.1.0</span>
       <span class="dot">•</span>
       <span>Update terakhir: <span id="footerLastUpdate">—</span></span>
     </div>
@@ -960,6 +1031,7 @@ tfoot td {
 let MANIFEST  = null;       // { generated_at, bulan: ['2026-01', ...] }
 let AUX       = null;       // data.json lama: pendapatan (belum di-refactor per-bulan)
 let PELUNASAN = null;       // pelunasan-piutang.json: { generated_at, pelunasan_detail: [...] }
+let PENGELUARAN_KAS = null; // pengeluaran-kas.json: { generated_at, pengeluaran_detail: [...] }
 let FILTERED  = null;       // hasil akhir yang dipakai semua render function
 let activeUnit = 'semua';
 let CHARTS = {};
@@ -1001,6 +1073,7 @@ const PAGE_TITLES = {
   'pendapatan-unit'   : ['Pendapatan Sub Unit', 'Dari BigQuery'],
   'penjualan-kredit'  : ['Penjualan Kredit', 'Per Penanggung & Segmen'],
   'pelunasan-piutang' : ['Pelunasan Piutang', 'Monitoring Harian'],
+  'pengeluaran-kas'   : ['Pengeluaran Kas', 'Monitoring Harian'],
 };
 
 function showPage(id) {
@@ -1272,6 +1345,7 @@ async function buildFiltered() {
 
   const kreditRows = kredit.filter(r => inRange(r.tanggal, awal, akhir));
   const pelunasanRows = (PELUNASAN?.pelunasan_detail || []).filter(r => inRange(r.tanggal_sub_transaksi, awal, akhir));
+  const pengeluaranKasRows = (PENGELUARAN_KAS?.pengeluaran_detail || []).filter(r => inRange(r.tanggal_sub_transaksi, awal, akhir));
 
   FILTERED = {
     generated_at: MANIFEST?.generated_at,
@@ -1283,14 +1357,21 @@ async function buildFiltered() {
     // penjualan_kredit_detail dari file per-bulan data/kredit-YYYY-MM-pN.json
     penjualan_kredit_detail: kreditRows,
     // pelunasan_detail dari data/pelunasan-piutang.json (single file, di-cache
-    // sekali saat load, difilter tanggal di sisi client)
+    // sekali saat load, difilter tanggal di sisi client). Sumbernya sekarang
+    // tabel `routing-dokumen.monitoring_keuangan.pelunasan_piutang`, yang
+    // di-refresh otomatis lewat scheduled query dari pendapatan_unit.
     pelunasan_detail: pelunasanRows,
+    // pengeluaran_detail dari data/pengeluaran-kas.json (single file, di-cache
+    // sekali saat load, difilter tanggal di sisi client). Sumbernya tabel
+    // `routing-dokumen.monitoring_keuangan.pengeluaran_kas`.
+    pengeluaran_detail: pengeluaranKasRows,
   };
 
   recomputeKasirAggregates(kasirRows);
   recomputeKasirHarian(kasirRows);
   recomputeKreditAggregates(kreditRows);
   recomputePelunasanAggregates(pelunasanRows);
+  recomputePengeluaranKasAggregates(pengeluaranKasRows);
 }
 
 // ── Hitung ulang penjualan_kredit_per_penanggung & per_segment dari
@@ -1376,25 +1457,32 @@ function recomputeKasirHarian(rows) {
   FILTERED.kasir_harian = Object.values(map).sort((a,b) => a.tanggal.localeCompare(b.tanggal));
 }
 
-// ── Nominal pelunasan per baris. Baris pelunasan piutang dicatat sebagai
-//    entri akuntansi (debet/kredit), field "Total" bisa negatif tergantung
-//    arah jurnal. Untuk tujuan monitoring "berapa yang sudah dilunasi",
-//    kita pakai nilai absolut. ──
-function pelunasanNominal(r) {
+// ── Nominal per baris untuk data akuntansi (pelunasan piutang & pengeluaran
+//    kas). Baris dicatat sebagai entri akuntansi (debet/kredit), field
+//    "Total" bisa negatif tergantung arah jurnal. Untuk tujuan monitoring
+//    "berapa yang sudah terjadi", kita pakai nilai absolut. Dipakai bersama
+//    oleh modul Pelunasan Piutang & Pengeluaran Kas karena skema datanya sama
+//    (keduanya berasal dari tabel pendapatan_unit, difilter coa_code berbeda). ──
+function akuntansiNominal(r) {
   const t = parseFloat(r.Total ?? r.total);
   if (!isNaN(t) && t !== 0) return Math.abs(t);
   const k = parseFloat(r.kredit) || 0;
   const dbt = parseFloat(r.debet) || 0;
   return Math.abs(k || dbt);
 }
-function pelunasanDebet(r)  { return Math.abs(parseFloat(r.debet)  || 0); }
-function pelunasanKredit(r) { return Math.abs(parseFloat(r.kredit) || 0); }
+function akuntansiDebet(r)  { return Math.abs(parseFloat(r.debet)  || 0); }
+function akuntansiKredit(r) { return Math.abs(parseFloat(r.kredit) || 0); }
 
-// ── Kolom "Penanggung" pada Pelunasan Piutang diambil dari kolom nama
-//    penerima (bukan dari field Penanggung), sesuai data pelunasan piutang. ──
-function pelunasanPenanggung(r) {
+// ── Kolom "Penanggung" diambil dari kolom nama penerima (bukan dari field
+//    Penanggung), sesuai data pelunasan piutang / pengeluaran kas. ──
+function akuntansiPenanggung(r) {
   return r.nama_penerima || r.Nama_Penerima || r.NAMA_PENERIMA || r.nama_sub_penerima || '-';
 }
+// alias lama, tetap dipertahankan supaya tidak mengubah perilaku modul Pelunasan Piutang
+function pelunasanNominal(r)    { return akuntansiNominal(r); }
+function pelunasanDebet(r)      { return akuntansiDebet(r); }
+function pelunasanKredit(r)     { return akuntansiKredit(r); }
+function pelunasanPenanggung(r) { return akuntansiPenanggung(r); }
 
 // ── Hitung rekap harian & ringkasan pelunasan piutang dari pelunasan_detail ──
 function recomputePelunasanAggregates(rows) {
@@ -1413,6 +1501,27 @@ function recomputePelunasanAggregates(rows) {
   let running = 0;
   harian.forEach(h => { running += h.total; h.kumulatif = running; });
   FILTERED.pelunasan_harian = harian;
+}
+
+// ── Hitung rekap harian & ringkasan pengeluaran kas dari pengeluaran_detail.
+//    Sama persis strukturnya dengan recomputePelunasanAggregates, karena
+//    pengeluaran_detail memakai skema kolom yang sama (dari tabel
+//    routing-dokumen.monitoring_keuangan.pengeluaran_kas). ──
+function recomputePengeluaranKasAggregates(rows) {
+  const map = {};
+  rows.forEach(r => {
+    const tgl = (r.tanggal_sub_transaksi||'').substring(0,10);
+    if (!tgl) return;
+    if (!map[tgl]) map[tgl] = { tanggal: tgl, jumlah_transaksi: 0, total: 0, total_debet: 0, total_kredit: 0 };
+    map[tgl].jumlah_transaksi += 1;
+    map[tgl].total            += akuntansiNominal(r);
+    map[tgl].total_debet      += akuntansiDebet(r);
+    map[tgl].total_kredit     += akuntansiKredit(r);
+  });
+  const harian = Object.values(map).sort((a,b) => a.tanggal.localeCompare(b.tanggal));
+  let running = 0;
+  harian.forEach(h => { running += h.total; h.kumulatif = running; });
+  FILTERED.pengeluaran_kas_harian = harian;
 }
 
 async function applyFilter() {
@@ -1490,6 +1599,7 @@ function renderPage(id) {
     case 'pendapatan-unit':    renderPendapatanUnit(d);    break;
     case 'penjualan-kredit':   renderPenjualanKredit(d);   break;
     case 'pelunasan-piutang':  renderPelunasanPiutang(d);  break;
+    case 'pengeluaran-kas':    renderPengeluaranKas(d);    break;
   }
   const fl = document.getElementById('footerLastUpdate');
   const lu = document.getElementById('lastUpdate');
@@ -1928,7 +2038,8 @@ function filterKredit() {
   tblRefreshIcons('tblKredit', 'head-tblKredit');
 }
 
-// ── PELUNASAN PIUTANG (dari data/pelunasan-piutang.json) ──
+// ── PELUNASAN PIUTANG (dari data/pelunasan-piutang.json, sumber tabel
+//    routing-dokumen.monitoring_keuangan.pelunasan_piutang) ──
 let currentPelunasanHarian  = [];
 let currentPelunasanDetail  = [];
 
@@ -2061,6 +2172,143 @@ function resetPelunasanDetailFilter() {
   filterPelunasanDetail();
 }
 
+// ── PENGELUARAN KAS (dari data/pengeluaran-kas.json, sumber tabel
+//    routing-dokumen.monitoring_keuangan.pengeluaran_kas). Struktur & fungsi
+//    di bawah ini SENGAJA dibuat sejajar/mirip dengan modul Pelunasan
+//    Piutang di atas, karena skema datanya sama persis (sama-sama berasal
+//    dari tabel pendapatan_unit, hanya beda filter coa_code). ──
+let currentPengeluaranKasHarian = [];
+let currentPengeluaranKasDetail = [];
+
+function renderPengeluaranKas(d) {
+  const detail = (d.pengeluaran_detail || []).map(r => ({
+    ...r,
+    _nominal: akuntansiNominal(r),
+    _debet: akuntansiDebet(r),
+    _kredit: akuntansiKredit(r),
+    _penanggung: akuntansiPenanggung(r),
+  }));
+  const harian = d.pengeluaran_kas_harian || [];
+  currentPengeluaranKasDetail = detail;
+  currentPengeluaranKasHarian = harian;
+
+  const totalPeriode = harian.reduce((s,r) => s + (parseFloat(r.total)||0), 0);
+  const totalTrx     = harian.reduce((s,r) => s + (parseInt(r.jumlah_transaksi)||0), 0);
+  const rataHarian   = harian.length ? totalPeriode / harian.length : 0;
+  const hariTertinggi = harian.reduce((best,r) => (!best || r.total > best.total) ? r : best, null);
+
+  document.getElementById('kpiPengeluaranKas').innerHTML = `
+    <div class="kpi-card blue"><div class="kpi-label">Total Pengeluaran (Periode)</div><div class="kpi-value">${rupiah(totalPeriode)}</div><div class="kpi-sub">${num(totalTrx)} transaksi</div></div>
+    <div class="kpi-card green"><div class="kpi-label">Rata-rata Harian</div><div class="kpi-value">${rupiah(rataHarian)}</div><div class="kpi-sub">${harian.length} hari tercatat</div></div>
+    <div class="kpi-card amber"><div class="kpi-label">Hari Tertinggi</div><div class="kpi-value">${hariTertinggi ? rupiah(hariTertinggi.total) : '-'}</div><div class="kpi-sub">${hariTertinggi ? hariTertinggi.tanggal : '-'}</div></div>
+    <div class="kpi-card purple"><div class="kpi-label">Jumlah Baris</div><div class="kpi-value">${num(detail.length)}</div><div class="kpi-sub">baris pengeluaran sesuai filter</div></div>
+  `;
+
+  makeLine('chartPengeluaranKasHarian',
+    harian.map(r => r.tanggal?.substring(5)),
+    [{ label:'Total Pengeluaran', data: harian.map(r => parseFloat(r.total)||0), borderColor:'#dc2626', backgroundColor:'rgba(220,38,38,.08)', fill:true, tension:.3, pointRadius:2, borderWidth:2 }]
+  );
+
+  populatePengeluaranKasFilterOptions();
+  filterPengeluaranKasHarian();
+  filterPengeluaranKasDetail();
+}
+
+function filterPengeluaranKasHarian() {
+  const q = (document.getElementById('searchPengeluaranKasHarian')?.value || '').toLowerCase();
+  const rows = tblApplySort('tblPengeluaranKasHarian', currentPengeluaranKasHarian.filter(r => !q || (r.tanggal||'').toLowerCase().includes(q)));
+
+  const tbody = document.querySelector('#tblPengeluaranKasHarian tbody');
+  tbody.innerHTML = rows.map(r => `
+    <tr>
+      <td class="td-bold">${r.tanggal||'-'}</td>
+      <td class="td-num">${num(r.jumlah_transaksi)}</td>
+      <td class="td-num">${rupiah(r.total_debet)}</td>
+      <td class="td-num">${rupiah(r.total_kredit)}</td>
+      <td class="td-num td-bold">${rupiah(r.total)}</td>
+      <td class="td-num">${rupiah(r.kumulatif)}</td>
+    </tr>`).join('') || '<tr><td colspan="6" class="empty">Tidak ada data</td></tr>';
+
+  document.querySelector('#tblPengeluaranKasHarian tfoot').innerHTML = rows.length ? tblTotalRow(1, [
+    { value: sumBy(rows,'jumlah_transaksi'), type: 'num' },
+    { value: sumBy(rows,'total_debet'), type: 'rupiah' },
+    { value: sumBy(rows,'total_kredit'), type: 'rupiah' },
+    { value: sumBy(rows,'total'), type: 'rupiah' },
+    { value: rows.length ? rows[rows.length-1].kumulatif : 0, type: 'rupiah' },
+  ]) : '';
+  document.getElementById('pengeluaranKasHarianCount').textContent = `${num(rows.length)} dari ${num(currentPengeluaranKasHarian.length)} hari`;
+  tblRefreshIcons('tblPengeluaranKasHarian', 'head-tblPengeluaranKasHarian');
+}
+function resetPengeluaranKasHarianFilter() {
+  document.getElementById('searchPengeluaranKasHarian').value = '';
+  filterPengeluaranKasHarian();
+}
+
+function populatePengeluaranKasFilterOptions() {
+  const fillSelect = (elId, values, allLabel) => {
+    const el = document.getElementById(elId);
+    if (!el) return;
+    const current = el.value;
+    const opts = [...new Set(values.filter(Boolean))].sort();
+    el.innerHTML = `<option value="">${allLabel}</option>` +
+      opts.map(v => `<option value="${v.replace(/"/g,'&quot;')}">${v}</option>`).join('');
+    if (opts.includes(current)) el.value = current;
+  };
+  fillSelect('fltPengeluaranKasSubUnit', currentPengeluaranKasDetail.map(r => r.nama_sub_unit), 'Semua Sub Unit');
+  fillSelect('fltPengeluaranKasPenanggung', currentPengeluaranKasDetail.map(r => r._penanggung), 'Semua Penanggung');
+  fillSelect('fltPengeluaranKasSegmen', currentPengeluaranKasDetail.map(r => r.Segment), 'Semua Segmen');
+}
+
+function filterPengeluaranKasDetail() {
+  const q         = (document.getElementById('searchPengeluaranKasDetail')?.value || '').toLowerCase();
+  const subUnit   = document.getElementById('fltPengeluaranKasSubUnit')?.value || '';
+  const penanggung= document.getElementById('fltPengeluaranKasPenanggung')?.value || '';
+  const segmen    = document.getElementById('fltPengeluaranKasSegmen')?.value || '';
+
+  let rows = currentPengeluaranKasDetail.filter(r => {
+    const su = r.nama_sub_unit || '';
+    const pg = r._penanggung || '';
+    const sg = r.Segment || '';
+    const ket = r.operasional || '';
+    if (q && !(su.toLowerCase().includes(q) || pg.toLowerCase().includes(q) || ket.toLowerCase().includes(q))) return false;
+    if (subUnit && su !== subUnit) return false;
+    if (penanggung && pg !== penanggung) return false;
+    if (segmen && sg !== segmen) return false;
+    return true;
+  });
+  rows = tblApplySort('tblPengeluaranKasDetail', rows);
+
+  document.getElementById('pengeluaranKasDetailCount').textContent = `${num(rows.length)} dari ${num(currentPengeluaranKasDetail.length)} baris`;
+
+  const tbody = document.querySelector('#tblPengeluaranKasDetail tbody');
+  tbody.innerHTML = rows.slice(0,2000).map(r => `
+    <tr>
+      <td>${(r.tanggal_sub_transaksi||'').substring(0,10)}</td>
+      <td style="font-size:11px">${r.nama_sub_unit||'-'}</td>
+      <td style="font-size:11px">${r.penanggung||'-'}</td>
+      <td><span class="badge badge-cyan">${r.Segment||'-'}</span></td>
+      <td style="font-size:11px">${r.nama_sub_penerima||'-'}</td>
+      <td style="font-size:10px;color:var(--text3)">${r.operasional||'-'}</td>
+      <td class="td-num">${rupiah(r._debet)}</td>
+      <td class="td-num">${rupiah(r._kredit)}</td>
+      <td class="td-num td-bold">${rupiah(r._nominal)}</td>
+    </tr>`).join('') || '<tr><td colspan="9" class="empty">Tidak ada data</td></tr>';
+
+  document.querySelector('#tblPengeluaranKasDetail tfoot').innerHTML = rows.length ? tblTotalRow(6, [
+    { value: sumBy(rows,'_debet'), type: 'rupiah' },
+    { value: sumBy(rows,'_kredit'), type: 'rupiah' },
+    { value: sumBy(rows,'_nominal'), type: 'rupiah' },
+  ]) : '';
+  tblRefreshIcons('tblPengeluaranKasDetail', 'head-tblPengeluaranKasDetail');
+}
+function resetPengeluaranKasDetailFilter() {
+  document.getElementById('searchPengeluaranKasDetail').value = '';
+  document.getElementById('fltPengeluaranKasSubUnit').value = '';
+  document.getElementById('fltPengeluaranKasPenanggung').value = '';
+  document.getElementById('fltPengeluaranKasSegmen').value = '';
+  filterPengeluaranKasDetail();
+}
+
 // ══ Hubungkan setiap tableId ke fungsi render/filter-nya masing-masing,
 //    supaya klik header sort cukup memanggil tblSort() lalu re-render otomatis ══
 TblRerender.tblUnit             = () => filterUnitDetailAndUnit();
@@ -2073,6 +2321,8 @@ TblRerender.tblPendapatanUnit    = filterPendapatanUnit;
 TblRerender.tblKredit            = filterKredit;
 TblRerender.tblPelunasanHarian   = filterPelunasanHarian;
 TblRerender.tblPelunasanDetail   = filterPelunasanDetail;
+TblRerender.tblPengeluaranKasHarian = filterPengeluaranKasHarian;
+TblRerender.tblPengeluaranKasDetail = filterPengeluaranKasDetail;
 
 // tblUnit disortir ulang lewat renderUnitData memakai data unit yang sedang aktif
 function filterUnitDetailAndUnit() {
@@ -2123,11 +2373,21 @@ async function loadPelunasan() {
     PELUNASAN = { pelunasan_detail: [] };
   }
 }
+async function loadPengeluaranKas() {
+  try {
+    const r = await fetch('data/pengeluaran-kas.json?_=' + Date.now());
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    PENGELUARAN_KAS = await r.json();
+  } catch (e) {
+    console.warn('Gagal memuat data/pengeluaran-kas.json: ' + e.message);
+    PENGELUARAN_KAS = { pengeluaran_detail: [] };
+  }
+}
 
 async function loadData() {
   document.getElementById('kpiGrid').innerHTML = '<div class="loading"><div class="spinner"></div> Memuat data...</div>';
 
-  await Promise.all([loadManifest(), loadAux(), loadPelunasan()]);
+  await Promise.all([loadManifest(), loadAux(), loadPelunasan(), loadPengeluaranKas()]);
 
   if (MANIFEST.generated_at) {
     const d = new Date(MANIFEST.generated_at);
