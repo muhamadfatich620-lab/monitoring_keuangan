@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Monitoring Keuangan — RSSG</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 <style>
 /* ── RESET & BASE ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -912,13 +913,38 @@ tfoot td {
     </div>
     <div class="section-card">
       <div class="section-head">
-        <div><div class="section-title">Detail Pelunasan Piutang</div><div class="section-sub">Menampilkan maks 2000 baris pertama dari hasil filter</div></div>
+        <div><div class="section-title">Rekap Per Bank</div><div class="section-sub">Total nominal & transaksi pelunasan per akun bank/deposito (berdasarkan COA)</div></div>
+      </div>
+      <div class="local-filter-wrap">
+        <input type="text" id="searchPelunasanBank" placeholder="Cari nama bank..." oninput="filterPelunasanBank()"/>
+        <button class="btn btn-outline" onclick="resetPelunasanBankFilter()">Reset Filter</button>
+        <span class="local-filter-count" id="pelunasanBankCount"></span>
+      </div>
+      <div class="section-body">
+        <div class="chart-wrap" style="height:300px;margin-bottom:18px"><canvas id="chartPelunasanBank"></canvas></div>
+        <div class="tbl-wrap"><table id="tblPelunasanBank">
+          <thead id="head-tblPelunasanBank"><tr>
+            <th data-key="bank" onclick="tblSort('tblPelunasanBank','bank','text')">Bank <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="total_nominal" onclick="tblSort('tblPelunasanBank','total_nominal','number')">Total Nominal <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="jumlah_transaksi" onclick="tblSort('tblPelunasanBank','jumlah_transaksi','number')">Jumlah Transaksi <span class="sort-ico-wrap"></span></th>
+          </tr></thead>
+          <tbody></tbody>
+          <tfoot></tfoot>
+        </table></div>
+      </div>
+    </div>
+    <div class="section-card">
+      <div class="section-head">
+        <div><div class="section-title">Detail Pelunasan Piutang</div><div class="section-sub">Menampilkan maks 2000 baris pertama dari hasil filter — gunakan Cetak Excel untuk mengambil seluruh hasil filter</div></div>
+        <button class="btn btn-primary" onclick="exportPelunasanExcel()">Cetak Excel</button>
       </div>
       <div class="local-filter-wrap">
         <input type="text" id="searchPelunasanDetail" placeholder="Cari sub unit / penanggung / keterangan..." oninput="filterPelunasanDetail()"/>
         <select id="fltPelunasanSubUnit" onchange="filterPelunasanDetail()"><option value="">Semua Sub Unit</option></select>
         <select id="fltPelunasanPenanggung" onchange="filterPelunasanDetail()"><option value="">Semua Penanggung</option></select>
         <select id="fltPelunasanSegmen" onchange="filterPelunasanDetail()"><option value="">Semua Segmen</option></select>
+        <select id="fltPelunasanKeterangan" onchange="filterPelunasanDetail()"><option value="">Semua Keterangan</option></select>
+        <select id="fltPelunasanBankDetail" onchange="filterPelunasanDetail()"><option value="">Semua Bank</option></select>
         <button class="btn btn-outline" onclick="resetPelunasanDetailFilter()">Reset Filter</button>
         <span class="local-filter-count" id="pelunasanDetailCount"></span>
       </div>
@@ -927,10 +953,11 @@ tfoot td {
           <thead id="head-tblPelunasanDetail"><tr>
             <th data-key="tanggal_sub_transaksi" onclick="tblSort('tblPelunasanDetail','tanggal_sub_transaksi','text')">Tanggal <span class="sort-ico-wrap"></span></th>
             <th data-key="nama_sub_unit" onclick="tblSort('tblPelunasanDetail','nama_sub_unit','text')">Sub Unit <span class="sort-ico-wrap"></span></th>
-            <th data-key="nama_penerima" onclick="tblSort('tblPelunasanDetail','nama_penerima','text')">nama_penerima <span class="sort-ico-wrap"></span></th>
+            <th data-key="_penanggungOperasional" onclick="tblSort('tblPelunasanDetail','_penanggungOperasional','text')">Penanggung <span class="sort-ico-wrap"></span></th>
             <th data-key="Segment" onclick="tblSort('tblPelunasanDetail','Segment','text')">Segmen <span class="sort-ico-wrap"></span></th>
             <th data-key="nama_sub_penerima" onclick="tblSort('tblPelunasanDetail','nama_sub_penerima','text')">Sub Penerima <span class="sort-ico-wrap"></span></th>
-            <th data-key="operasional" onclick="tblSort('tblPelunasanDetail','operasional','text')">Keterangan <span class="sort-ico-wrap"></span></th>
+            <th data-key="_bank" onclick="tblSort('tblPelunasanDetail','_bank','text')">Bank (COA) <span class="sort-ico-wrap"></span></th>
+            <th data-key="_keterangan" onclick="tblSort('tblPelunasanDetail','_keterangan','text')">Keterangan <span class="sort-ico-wrap"></span></th>
             <th class="td-num" data-key="_debet" onclick="tblSort('tblPelunasanDetail','_debet','number')">Debet <span class="sort-ico-wrap"></span></th>
             <th class="td-num" data-key="_kredit" onclick="tblSort('tblPelunasanDetail','_kredit','number')">Kredit <span class="sort-ico-wrap"></span></th>
             <th class="td-num" data-key="_nominal" onclick="tblSort('tblPelunasanDetail','_nominal','number')">Nominal <span class="sort-ico-wrap"></span></th>
@@ -1483,6 +1510,66 @@ function pelunasanNominal(r)    { return akuntansiNominal(r); }
 function pelunasanDebet(r)      { return akuntansiDebet(r); }
 function pelunasanKredit(r)     { return akuntansiKredit(r); }
 function pelunasanPenanggung(r) { return akuntansiPenanggung(r); }
+
+// ══ Lookup nama bank/deposito dari coa_code, khusus modul Pelunasan Piutang ══
+// (tabel pelunasan_piutang adalah hasil CREATE TABLE ... AS SELECT * dari
+// pendapatan_unit, jadi kolom coa_code ikut terbawa apa adanya)
+const COA_BANK_MAP = {
+  '1.1.1.2'      : 'Bank & Deposito',
+  '1.1.1.2.1'    : 'Bank - RSSG',
+  '1.1.1.2.1.1'  : 'Bank Mandiri-142285626',
+  '1.1.1.2.1.10' : 'Bank Mayapada - 2438919',
+  '1.1.1.2.1.11' : 'Bank Danamon Syariah',
+  '1.1.1.2.1.2'  : 'Bank Mandiri Escrow-178257673',
+  '1.1.1.2.1.3'  : 'Bank BRI-2614723',
+  '1.1.1.2.1.4'  : 'Bank BCA-15317473',
+  '1.1.1.2.1.5'  : 'Bank BNI Gresik-4453742',
+  '1.1.1.2.1.6'  : 'Bank Syariah Indonesia',
+  '1.1.1.2.1.7'  : 'Bank Syariah Indonesia Escrow Bpjs-7147783552',
+  '1.1.1.2.1.8'  : 'Bank Syariah Indonesia Esc Covid-7148627058',
+  '1.1.1.2.1.9'  : 'Bank Panin Dubai Syariah',
+  '1.1.1.2.4.1'  : 'Deposito Bank Mandiri - RSSG',
+  '1.1.1.2.4.10' : 'Deposito Bank Danamon Syariah - RSSG',
+  '1.1.1.2.4.2'  : 'Deposito Bank BRI - RSSG',
+  '1.1.1.2.4.4'  : 'Deposito Bank Negara Indonesia - RSSG',
+  '1.1.1.2.4.5'  : 'Deposito Bank Syariah Indonesia - RSSG',
+  '1.1.1.2.4.6'  : 'Deposito Bank Panin Dubai Syariah - RSSG',
+  '1.1.1.2.4.7'  : 'Deposito Bank Mayapada - RSSG',
+  '1.1.1.2.4.8'  : 'Deposito Bank BTPN Syariah - RSSG',
+  '1.1.1.2.4.9'  : 'Deposito Bank Muamalat - RSSG',
+};
+function namaBankDariCoa(r) {
+  const kode = String(r.coa_code || r.Coa_Code || r.COA_CODE || r.kode_coa || '').trim();
+  if (!kode) return r.Nama_COA || r.nama_coa || '-';
+  return COA_BANK_MAP[kode] || (r.Nama_COA || r.nama_coa || ('COA ' + kode));
+}
+
+// ══ Pisahkan kolom "operasional" pelunasan piutang menjadi Keterangan
+//    (frasa baku yang dikenali) & Penanggung (sisa kalimat) ══
+const OPERASIONAL_KETERANGAN_PATTERNS = [
+  'pelunasan piutang',
+  'kelebihan pembayaran',
+  'kurang bayar',
+  'biaya ekses',
+  'materai',
+  'alokasi sub unit',
+];
+function parseOperasionalPelunasan(teks) {
+  let sisa = String(teks || '');
+  const ditemukan = [];
+  OPERASIONAL_KETERANGAN_PATTERNS.forEach(frasa => {
+    const re = new RegExp(frasa.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
+    if (re.test(sisa)) {
+      ditemukan.push(frasa.replace(/\b\w/g, c => c.toUpperCase()));
+      sisa = sisa.replace(re, ' ');
+    }
+  });
+  sisa = sisa.replace(/\s{2,}/g, ' ').replace(/^[\s,.\-:]+|[\s,.\-:]+$/g, '').trim();
+  return {
+    keterangan: ditemukan.length ? ditemukan.join(', ') : '-',
+    penanggung: sisa || '-',
+  };
+}
 
 // ── Hitung rekap harian & ringkasan pelunasan piutang dari pelunasan_detail ──
 function recomputePelunasanAggregates(rows) {
@@ -2042,18 +2129,36 @@ function filterKredit() {
 //    routing-dokumen.monitoring_keuangan.pelunasan_piutang) ──
 let currentPelunasanHarian  = [];
 let currentPelunasanDetail  = [];
+let currentPelunasanBank    = [];
+let lastPelunasanDetailRows = []; // hasil filter+sort TANPA batas 2000 baris, dipakai oleh Cetak Excel
 
 function renderPelunasanPiutang(d) {
-  const detail = (d.pelunasan_detail || []).map(r => ({
-    ...r,
-    _nominal: pelunasanNominal(r),
-    _debet: pelunasanDebet(r),
-    _kredit: pelunasanKredit(r),
-    _penanggung: pelunasanPenanggung(r),
-  }));
+  const detail = (d.pelunasan_detail || []).map(r => {
+    const opParsed = parseOperasionalPelunasan(r.operasional);
+    return {
+      ...r,
+      _nominal: pelunasanNominal(r),
+      _debet: pelunasanDebet(r),
+      _kredit: pelunasanKredit(r),
+      _penanggung: pelunasanPenanggung(r),
+      _keterangan: opParsed.keterangan,
+      _penanggungOperasional: opParsed.penanggung,
+      _bank: namaBankDariCoa(r),
+    };
+  });
   const harian = d.pelunasan_harian || [];
   currentPelunasanDetail = detail;
   currentPelunasanHarian = harian;
+
+  // Rekap per bank, dihitung dari detail yang baru saja diperkaya field _bank & _nominal
+  const bankMap = {};
+  detail.forEach(r => {
+    const bank = r._bank || 'Lainnya';
+    if (!bankMap[bank]) bankMap[bank] = { bank, total_nominal: 0, jumlah_transaksi: 0 };
+    bankMap[bank].total_nominal    += r._nominal;
+    bankMap[bank].jumlah_transaksi += 1;
+  });
+  currentPelunasanBank = Object.values(bankMap).sort((a,b) => b.total_nominal - a.total_nominal);
 
   const totalPeriode = harian.reduce((s,r) => s + (parseFloat(r.total)||0), 0);
   const totalTrx     = harian.reduce((s,r) => s + (parseInt(r.jumlah_transaksi)||0), 0);
@@ -2074,7 +2179,34 @@ function renderPelunasanPiutang(d) {
 
   populatePelunasanFilterOptions();
   filterPelunasanHarian();
+  filterPelunasanBank();
   filterPelunasanDetail();
+}
+
+function filterPelunasanBank() {
+  const q = (document.getElementById('searchPelunasanBank')?.value || '').toLowerCase();
+  const filtered = currentPelunasanBank.filter(r => !q || (r.bank||'').toLowerCase().includes(q));
+  const rows = tblApplySort('tblPelunasanBank', filtered);
+
+  makeBar('chartPelunasanBank', rows.map(r => (r.bank||'-').substring(0,28)), rows.map(r => parseFloat(r.total_nominal)||0), 'Nominal', { indexAxis:'y' });
+
+  const tbody = document.querySelector('#tblPelunasanBank tbody');
+  tbody.innerHTML = rows.map(r => `
+    <tr>
+      <td class="td-bold">${r.bank||'-'}</td>
+      <td class="td-num">${rupiah(r.total_nominal)}</td>
+      <td class="td-num">${num(r.jumlah_transaksi)}</td>
+    </tr>`).join('') || '<tr><td colspan="3" class="empty">Tidak ada data</td></tr>';
+  document.querySelector('#tblPelunasanBank tfoot').innerHTML = rows.length ? tblTotalRow(1, [
+    { value: sumBy(rows,'total_nominal'), type: 'rupiah' },
+    { value: sumBy(rows,'jumlah_transaksi'), type: 'num' },
+  ]) : '';
+  document.getElementById('pelunasanBankCount').textContent = `${num(rows.length)} dari ${num(currentPelunasanBank.length)} bank`;
+  tblRefreshIcons('tblPelunasanBank', 'head-tblPelunasanBank');
+}
+function resetPelunasanBankFilter() {
+  document.getElementById('searchPelunasanBank').value = '';
+  filterPelunasanBank();
 }
 
 function filterPelunasanHarian() {
@@ -2118,8 +2250,10 @@ function populatePelunasanFilterOptions() {
     if (opts.includes(current)) el.value = current;
   };
   fillSelect('fltPelunasanSubUnit', currentPelunasanDetail.map(r => r.nama_sub_unit), 'Semua Sub Unit');
-  fillSelect('fltPelunasanPenanggung', currentPelunasanDetail.map(r => r._penanggung), 'Semua Penanggung');
+  fillSelect('fltPelunasanPenanggung', currentPelunasanDetail.map(r => r._penanggungOperasional), 'Semua Penanggung');
   fillSelect('fltPelunasanSegmen', currentPelunasanDetail.map(r => r.Segment), 'Semua Segmen');
+  fillSelect('fltPelunasanKeterangan', currentPelunasanDetail.map(r => r._keterangan), 'Semua Keterangan');
+  fillSelect('fltPelunasanBankDetail', currentPelunasanDetail.map(r => r._bank), 'Semua Bank');
 }
 
 function filterPelunasanDetail() {
@@ -2127,19 +2261,25 @@ function filterPelunasanDetail() {
   const subUnit   = document.getElementById('fltPelunasanSubUnit')?.value || '';
   const penanggung= document.getElementById('fltPelunasanPenanggung')?.value || '';
   const segmen    = document.getElementById('fltPelunasanSegmen')?.value || '';
+  const ket       = document.getElementById('fltPelunasanKeterangan')?.value || '';
+  const bank      = document.getElementById('fltPelunasanBankDetail')?.value || '';
 
   let rows = currentPelunasanDetail.filter(r => {
     const su = r.nama_sub_unit || '';
-    const pg = r._penanggung || '';
+    const pg = r._penanggungOperasional || '';
     const sg = r.Segment || '';
-    const ket = r.operasional || '';
-    if (q && !(su.toLowerCase().includes(q) || pg.toLowerCase().includes(q) || ket.toLowerCase().includes(q))) return false;
+    const kt = r._keterangan || '';
+    const bk = r._bank || '';
+    if (q && !(su.toLowerCase().includes(q) || pg.toLowerCase().includes(q) || kt.toLowerCase().includes(q))) return false;
     if (subUnit && su !== subUnit) return false;
     if (penanggung && pg !== penanggung) return false;
     if (segmen && sg !== segmen) return false;
+    if (ket && kt !== ket) return false;
+    if (bank && bk !== bank) return false;
     return true;
   });
   rows = tblApplySort('tblPelunasanDetail', rows);
+  lastPelunasanDetailRows = rows; // simpan versi LENGKAP (tanpa batas 2000) untuk Cetak Excel
 
   document.getElementById('pelunasanDetailCount').textContent = `${num(rows.length)} dari ${num(currentPelunasanDetail.length)} baris`;
 
@@ -2148,16 +2288,17 @@ function filterPelunasanDetail() {
     <tr>
       <td>${(r.tanggal_sub_transaksi||'').substring(0,10)}</td>
       <td style="font-size:11px">${r.nama_sub_unit||'-'}</td>
-      <td style="font-size:11px">${r.penanggung||'-'}</td>
+      <td style="font-size:11px">${r._penanggungOperasional||'-'}</td>
       <td><span class="badge badge-cyan">${r.Segment||'-'}</span></td>
       <td style="font-size:11px">${r.nama_sub_penerima||'-'}</td>
-      <td style="font-size:10px;color:var(--text3)">${r.operasional||'-'}</td>
+      <td style="font-size:10px;color:var(--text3)">${r._bank||'-'}</td>
+      <td><span class="badge badge-purple" style="font-size:10px">${r._keterangan||'-'}</span></td>
       <td class="td-num">${rupiah(r._debet)}</td>
       <td class="td-num">${rupiah(r._kredit)}</td>
       <td class="td-num td-bold">${rupiah(r._nominal)}</td>
-    </tr>`).join('') || '<tr><td colspan="9" class="empty">Tidak ada data</td></tr>';
+    </tr>`).join('') || '<tr><td colspan="10" class="empty">Tidak ada data</td></tr>';
 
-  document.querySelector('#tblPelunasanDetail tfoot').innerHTML = rows.length ? tblTotalRow(6, [
+  document.querySelector('#tblPelunasanDetail tfoot').innerHTML = rows.length ? tblTotalRow(7, [
     { value: sumBy(rows,'_debet'), type: 'rupiah' },
     { value: sumBy(rows,'_kredit'), type: 'rupiah' },
     { value: sumBy(rows,'_nominal'), type: 'rupiah' },
@@ -2169,7 +2310,42 @@ function resetPelunasanDetailFilter() {
   document.getElementById('fltPelunasanSubUnit').value = '';
   document.getElementById('fltPelunasanPenanggung').value = '';
   document.getElementById('fltPelunasanSegmen').value = '';
+  document.getElementById('fltPelunasanKeterangan').value = '';
+  document.getElementById('fltPelunasanBankDetail').value = '';
   filterPelunasanDetail();
+}
+
+// ── Cetak Excel: ekspor SELURUH baris hasil filter saat ini (tidak
+//    dibatasi 2000 baris seperti tampilan tabel di layar) ──
+function exportPelunasanExcel() {
+  const rows = lastPelunasanDetailRows || [];
+  if (!rows.length) { alert('Tidak ada data untuk diekspor sesuai filter saat ini.'); return; }
+  if (typeof XLSX === 'undefined') { alert('Modul Excel gagal dimuat. Coba refresh halaman.'); return; }
+
+  const data = rows.map(r => ({
+    'Tanggal'      : (r.tanggal_sub_transaksi || '').substring(0,10),
+    'Sub Unit'     : r.nama_sub_unit || '-',
+    'Penanggung'   : r._penanggungOperasional || '-',
+    'Segmen'       : r.Segment || '-',
+    'Sub Penerima' : r.nama_sub_penerima || '-',
+    'Bank (COA)'   : r._bank || '-',
+    'Keterangan'   : r._keterangan || '-',
+    'Debet'        : r._debet || 0,
+    'Kredit'       : r._kredit || 0,
+    'Nominal'      : r._nominal || 0,
+  }));
+
+  const ws = XLSX.utils.json_to_sheet(data);
+  ws['!cols'] = [
+    { wch: 12 }, { wch: 18 }, { wch: 24 }, { wch: 14 }, { wch: 18 },
+    { wch: 30 }, { wch: 22 }, { wch: 16 }, { wch: 16 }, { wch: 16 },
+  ];
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, 'Pelunasan Piutang');
+
+  const { awal, akhir } = getDateRange();
+  const namaFile = `pelunasan-piutang_${awal || 'semua'}_${akhir || 'semua'}.xlsx`;
+  XLSX.writeFile(wb, namaFile);
 }
 
 // ── PENGELUARAN KAS (dari data/pengeluaran-kas.json, sumber tabel
@@ -2320,6 +2496,7 @@ TblRerender.tblDetail            = filterDetail;
 TblRerender.tblPendapatanUnit    = filterPendapatanUnit;
 TblRerender.tblKredit            = filterKredit;
 TblRerender.tblPelunasanHarian   = filterPelunasanHarian;
+TblRerender.tblPelunasanBank     = filterPelunasanBank;
 TblRerender.tblPelunasanDetail   = filterPelunasanDetail;
 TblRerender.tblPengeluaranKasHarian = filterPengeluaranKasHarian;
 TblRerender.tblPengeluaranKasDetail = filterPengeluaranKasDetail;
