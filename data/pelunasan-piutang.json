@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-29T01:30:06.634Z",
-  "jumlah_baris": 833,
+  "generated_at": "2026-08-30T01:08:12.866Z",
+  "jumlah_baris": 834,
   "pelunasan_detail": [
     {
       "id_sub_transaksi": "6439099",
@@ -146,6 +146,19 @@
       "nama_penerima": "indri.nurisa"
     },
     {
+      "id_sub_transaksi": "6456122",
+      "tanggal_sub_transaksi": "2026-08-14",
+      "coa_code": "1.1.1.2.1.11",
+      "debet": "647701.0",
+      "kredit": "0.0",
+      "nama_sub_unit": "[8122] Akuntansi Biaya",
+      "nama_cc": "Non CC",
+      "operasional": "PELUNASAN PIUTANG - PT Wasa Mitra Engineering",
+      "nama_sub_penerima": "indri.nurisa",
+      "loaded_at": "1.787907866489E9",
+      "nama_penerima": "indri.nurisa"
+    },
+    {
       "id_sub_transaksi": "6340554",
       "tanggal_sub_transaksi": "2026-08-14",
       "coa_code": "1.1.1.2.1.1",
@@ -155,7 +168,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - BRI Life Managed Care",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.78771275285E9",
+      "loaded_at": "1.787907854869E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -168,7 +181,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - Bri Life Managed Care",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.78771275285E9",
+      "loaded_at": "1.787907854869E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -181,7 +194,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT Asih Eka Abadi",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.787712740934E9",
+      "loaded_at": "1.78790784062E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -194,7 +207,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT Knauf Plasterboard Indonesia",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.787712647294E9",
+      "loaded_at": "1.787907750853E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -207,7 +220,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG -  BPJS Kesehatan Kantor Cabang Gresik - SUSULAN RITL -RJTL BUPEL MEI 2026",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.787712740934E9",
+      "loaded_at": "1.78790784062E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -220,7 +233,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT Asuransi Jiwa Astra (Admedika)",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.78771270225E9",
+      "loaded_at": "1.78790780483E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -233,7 +246,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - Bri Life Managed Care",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.787712679876E9",
+      "loaded_at": "1.787907784186E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -246,7 +259,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT SMELTING ",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.787712647294E9",
+      "loaded_at": "1.787907750853E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -259,7 +272,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT SMELTING",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.787712647294E9",
+      "loaded_at": "1.787907750853E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -272,33 +285,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - ASURANSI PLN ",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.787712538116E9",
-      "nama_penerima": "indri.nurisa"
-    },
-    {
-      "id_sub_transaksi": "6340489",
-      "tanggal_sub_transaksi": "2026-08-10",
-      "coa_code": "1.1.1.2.1.1",
-      "debet": "2065470.0",
-      "kredit": "0.0",
-      "nama_sub_unit": "[8122] Akuntansi Biaya",
-      "nama_cc": "Non CC",
-      "operasional": "PELUNASAN PIUTANG - BRI Life Managed Care",
-      "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.787712561332E9",
-      "nama_penerima": "indri.nurisa"
-    },
-    {
-      "id_sub_transaksi": "6111948",
-      "tanggal_sub_transaksi": "2026-08-10",
-      "coa_code": "1.1.1.2.1.1",
-      "debet": "671950.0",
-      "kredit": "0.0",
-      "nama_sub_unit": "[8122] Akuntansi Biaya",
-      "nama_cc": "Non CC",
-      "operasional": "PELUNASAN PIUTANG - Bri Life Managed Care",
-      "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.787712538116E9",
+      "loaded_at": "1.787907387595E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -311,7 +298,33 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - ASURANSI BRI LIFE",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.787712538116E9",
+      "loaded_at": "1.787907387595E9",
+      "nama_penerima": "indri.nurisa"
+    },
+    {
+      "id_sub_transaksi": "6111948",
+      "tanggal_sub_transaksi": "2026-08-10",
+      "coa_code": "1.1.1.2.1.1",
+      "debet": "671950.0",
+      "kredit": "0.0",
+      "nama_sub_unit": "[8122] Akuntansi Biaya",
+      "nama_cc": "Non CC",
+      "operasional": "PELUNASAN PIUTANG - Bri Life Managed Care",
+      "nama_sub_penerima": "indri.nurisa",
+      "loaded_at": "1.787907387595E9",
+      "nama_penerima": "indri.nurisa"
+    },
+    {
+      "id_sub_transaksi": "6340489",
+      "tanggal_sub_transaksi": "2026-08-10",
+      "coa_code": "1.1.1.2.1.1",
+      "debet": "2065470.0",
+      "kredit": "0.0",
+      "nama_sub_unit": "[8122] Akuntansi Biaya",
+      "nama_cc": "Non CC",
+      "operasional": "PELUNASAN PIUTANG - BRI Life Managed Care",
+      "nama_sub_penerima": "indri.nurisa",
+      "loaded_at": "1.787907409353E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -324,7 +337,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASNA PIUTANG - BRI Life Managed Care",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.787712319473E9",
+      "loaded_at": "1.787906988802E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -337,7 +350,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - ASURANSI PLN",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.787712308529E9",
+      "loaded_at": "1.787906978965E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -350,7 +363,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT PETROKIMIA GRESIK",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.787712319473E9",
+      "loaded_at": "1.787906988802E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -363,7 +376,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT Asuransi Jiwa Astra (Admedika)",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.787712308529E9",
+      "loaded_at": "1.787906978965E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -376,7 +389,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT. Barata Indonesia",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.787712298097E9",
+      "loaded_at": "1.787906958825E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -389,7 +402,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT Mitra Hadina Sejahtera",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.787712298097E9",
+      "loaded_at": "1.787906958825E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -402,7 +415,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT Surya Manunggal Semesta",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.787712287708E9",
+      "loaded_at": "1.787906958825E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -415,7 +428,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - ASURANSI RELIANCE INDONESIA",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.787712287708E9",
+      "loaded_at": "1.787906958825E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -428,7 +441,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT. Semen Indonesia (Persero) Tbk.",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.787712287708E9",
+      "loaded_at": "1.787906958825E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -441,7 +454,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT Buana Pratama Abadi",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.787712275833E9",
+      "loaded_at": "1.787906948592E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -454,7 +467,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - ASURANSI PLN",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.787712287708E9",
+      "loaded_at": "1.787906958825E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -467,7 +480,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - ASURANSI PLN",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.787712009544E9",
+      "loaded_at": "1.787906685957E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -480,7 +493,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - ASURANSI PLN",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.787712009544E9",
+      "loaded_at": "1.787906685957E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -493,7 +506,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT M3 Ketapang Sejahtera",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.787712009544E9",
+      "loaded_at": "1.787906685957E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -506,7 +519,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - Asuransi Bri Life",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.787712009544E9",
+      "loaded_at": "1.787906685957E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -519,7 +532,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - BRI Life Managed Care",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.787712009544E9",
+      "loaded_at": "1.787906685957E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -532,7 +545,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - ASURANSI PLN",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.787712009544E9",
+      "loaded_at": "1.787906685957E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -545,7 +558,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - BPJS Kesehatan Kantor Cabang Gresik - SUSULAN ORJTL - ORITL BUPEL APRIL 2026",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.787711998821E9",
+      "loaded_at": "1.787906674156E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -558,7 +571,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT Asuransi Takaful Keluarga (Admedika)",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.787711898578E9",
+      "loaded_at": "1.78790657264E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -571,7 +584,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - ASKES RAMAYANA-ADMEDIKA",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.78771187757E9",
+      "loaded_at": "1.787906550263E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -584,7 +597,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT Hikari Teknologi Indonesia",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.78771187757E9",
+      "loaded_at": "1.787906550263E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -597,7 +610,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - BPJS Kesehatan Kantor Cabang Gresik - SUSULAN ORJTL BUPEL FEBRUARI 2026",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.787711822101E9",
+      "loaded_at": "1.787906493502E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -610,20 +623,20 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - BRI LIFE MANAGED CARE ",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.787711822101E9",
+      "loaded_at": "1.787906493502E9",
       "nama_penerima": "indri.nurisa"
     },
     {
-      "id_sub_transaksi": "5700476",
+      "id_sub_transaksi": "5590795",
       "tanggal_sub_transaksi": "2026-07-30",
       "coa_code": "1.1.1.2.1.1",
-      "debet": "140000.0",
+      "debet": "2931028.0",
       "kredit": "0.0",
       "nama_sub_unit": "[8122] Akuntansi Biaya",
       "nama_cc": "Non CC",
-      "operasional": "PELUNASAN PIUTANG - PT Jasa Raharja (Persero) JAT",
+      "operasional": "PELUNASAN PIUTANG PT WILMAR NABATI INDONESIA",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.787711734152E9",
+      "loaded_at": "1.787711687915E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -640,16 +653,16 @@
       "nama_penerima": "indri.nurisa"
     },
     {
-      "id_sub_transaksi": "5590795",
+      "id_sub_transaksi": "5700476",
       "tanggal_sub_transaksi": "2026-07-30",
       "coa_code": "1.1.1.2.1.1",
-      "debet": "2931028.0",
+      "debet": "140000.0",
       "kredit": "0.0",
       "nama_sub_unit": "[8122] Akuntansi Biaya",
       "nama_cc": "Non CC",
-      "operasional": "PELUNASAN PIUTANG PT WILMAR NABATI INDONESIA",
+      "operasional": "PELUNASAN PIUTANG - PT Jasa Raharja (Persero) JAT",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.787711687915E9",
+      "loaded_at": "1.787711734152E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -757,16 +770,16 @@
       "nama_penerima": "indri.nurisa"
     },
     {
-      "id_sub_transaksi": "5586773",
+      "id_sub_transaksi": "5333923",
       "tanggal_sub_transaksi": "2026-07-24",
-      "coa_code": "1.1.1.2.1.1",
-      "debet": "497939.0",
+      "coa_code": "1.1.1.2.1.11",
+      "debet": "2.015075E7",
       "kredit": "0.0",
       "nama_sub_unit": "[8122] Akuntansi Biaya",
       "nama_cc": "Non CC",
-      "operasional": "PELUNASAN PIUTANG -  ASURANSI JIWA INHELATH  INDONESIA",
+      "operasional": "PELUNASNA PIUTANG - Fullerton Health Indonesia",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.787711479712E9",
+      "loaded_at": "1.787711298586E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -783,16 +796,16 @@
       "nama_penerima": "indri.nurisa"
     },
     {
-      "id_sub_transaksi": "5333923",
+      "id_sub_transaksi": "5586773",
       "tanggal_sub_transaksi": "2026-07-24",
-      "coa_code": "1.1.1.2.1.11",
-      "debet": "2.015075E7",
+      "coa_code": "1.1.1.2.1.1",
+      "debet": "497939.0",
       "kredit": "0.0",
       "nama_sub_unit": "[8122] Akuntansi Biaya",
       "nama_cc": "Non CC",
-      "operasional": "PELUNASNA PIUTANG - Fullerton Health Indonesia",
+      "operasional": "PELUNASAN PIUTANG -  ASURANSI JIWA INHELATH  INDONESIA",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.787711298586E9",
+      "loaded_at": "1.787711479712E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -952,19 +965,6 @@
       "nama_penerima": "indri.nurisa"
     },
     {
-      "id_sub_transaksi": "5144165",
-      "tanggal_sub_transaksi": "2026-07-14",
-      "coa_code": "1.1.1.2.1.1",
-      "debet": "1723350.0",
-      "kredit": "0.0",
-      "nama_sub_unit": "[8122] Akuntansi Biaya",
-      "nama_cc": "Non CC",
-      "operasional": "PELUNASAN PIUTANG - BRI Life Managed Care",
-      "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.787710714554E9",
-      "nama_penerima": "indri.nurisa"
-    },
-    {
       "id_sub_transaksi": "5092579",
       "tanggal_sub_transaksi": "2026-07-14",
       "coa_code": "1.1.1.2.1.1",
@@ -975,6 +975,19 @@
       "operasional": "PELUNASAN PIUTANG - ASURANSI PLN",
       "nama_sub_penerima": "indri.nurisa",
       "loaded_at": "1.787710693665E9",
+      "nama_penerima": "indri.nurisa"
+    },
+    {
+      "id_sub_transaksi": "5144165",
+      "tanggal_sub_transaksi": "2026-07-14",
+      "coa_code": "1.1.1.2.1.1",
+      "debet": "1723350.0",
+      "kredit": "0.0",
+      "nama_sub_unit": "[8122] Akuntansi Biaya",
+      "nama_cc": "Non CC",
+      "operasional": "PELUNASAN PIUTANG - BRI Life Managed Care",
+      "nama_sub_penerima": "indri.nurisa",
+      "loaded_at": "1.787710714554E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2642,19 +2655,6 @@
       "nama_penerima": "indri.nurisa"
     },
     {
-      "id_sub_transaksi": "3315097",
-      "tanggal_sub_transaksi": "2026-05-18",
-      "coa_code": "1.1.1.2.1.1",
-      "debet": "1.0153548E8",
-      "kredit": "0.0",
-      "nama_sub_unit": "[8122] Akuntansi Biaya",
-      "nama_cc": "Non CC",
-      "operasional": "PELUNASAN PIUTANG - PT. Asuka Engineering Indonesia",
-      "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.784103287173E9",
-      "nama_penerima": "indri.nurisa"
-    },
-    {
       "id_sub_transaksi": "3413820",
       "tanggal_sub_transaksi": "2026-05-18",
       "coa_code": "1.1.1.2.1.11",
@@ -2678,6 +2678,19 @@
       "operasional": "PELUNASAN PIUTANG - Asuransi Simas",
       "nama_sub_penerima": "indri.nurisa",
       "loaded_at": "1.784103309567E9",
+      "nama_penerima": "indri.nurisa"
+    },
+    {
+      "id_sub_transaksi": "3315097",
+      "tanggal_sub_transaksi": "2026-05-18",
+      "coa_code": "1.1.1.2.1.1",
+      "debet": "1.0153548E8",
+      "kredit": "0.0",
+      "nama_sub_unit": "[8122] Akuntansi Biaya",
+      "nama_cc": "Non CC",
+      "operasional": "PELUNASAN PIUTANG - PT. Asuka Engineering Indonesia",
+      "nama_sub_penerima": "indri.nurisa",
+      "loaded_at": "1.784103287173E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3574,7 +3587,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT BNI Life Insurance",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.782811820951E9",
+      "loaded_at": "1.782811840786E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3587,7 +3600,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT BNI Life Insurance",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.782811840786E9",
+      "loaded_at": "1.782811820951E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3652,7 +3665,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT. INDOSPRING",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.78281185194E9",
+      "loaded_at": "1.78281183086E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3665,7 +3678,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT. INDOSPRING",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.78281183086E9",
+      "loaded_at": "1.78281185194E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3677,6 +3690,71 @@
       "nama_sub_unit": "[8122] Akuntansi Biaya",
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT. WILMAR CONSULTANCY SERVICES",
+      "nama_sub_penerima": "indri.nurisa",
+      "loaded_at": "1.782811799185E9",
+      "nama_penerima": "indri.nurisa"
+    },
+    {
+      "id_sub_transaksi": "2588536",
+      "tanggal_sub_transaksi": "2026-04-17",
+      "coa_code": "1.1.1.2.1.11",
+      "debet": "2.3855235E7",
+      "kredit": "0.0",
+      "nama_sub_unit": "[8122] Akuntansi Biaya",
+      "nama_cc": "Non CC",
+      "operasional": "PELUNASAN PIUTANG - PT Petro Oxo Nusantara",
+      "nama_sub_penerima": "indri.nurisa",
+      "loaded_at": "1.782811840786E9",
+      "nama_penerima": "indri.nurisa"
+    },
+    {
+      "id_sub_transaksi": "2311129",
+      "tanggal_sub_transaksi": "2026-04-17",
+      "coa_code": "1.1.1.2.1.1",
+      "debet": "819002.0",
+      "kredit": "0.0",
+      "nama_sub_unit": "[8122] Akuntansi Biaya",
+      "nama_cc": "Non CC",
+      "operasional": "PELUNASAN PIUTANG - PT Asuransi Jiwa Generali Indonesia",
+      "nama_sub_penerima": "indri.nurisa",
+      "loaded_at": "1.782811799185E9",
+      "nama_penerima": "indri.nurisa"
+    },
+    {
+      "id_sub_transaksi": "2311129",
+      "tanggal_sub_transaksi": "2026-04-17",
+      "coa_code": "1.1.1.2.1.1",
+      "debet": "819002.0",
+      "kredit": "0.0",
+      "nama_sub_unit": "[8122] Akuntansi Biaya",
+      "nama_cc": "Non CC",
+      "operasional": "PELUNASAN PIUTANG - PT Asuransi Jiwa Generali Indonesia",
+      "nama_sub_penerima": "indri.nurisa",
+      "loaded_at": "1.782811780335E9",
+      "nama_penerima": "indri.nurisa"
+    },
+    {
+      "id_sub_transaksi": "2306277",
+      "tanggal_sub_transaksi": "2026-04-17",
+      "coa_code": "1.1.1.2.1.1",
+      "debet": "4.4090561E7",
+      "kredit": "0.0",
+      "nama_sub_unit": "[8122] Akuntansi Biaya",
+      "nama_cc": "Non CC",
+      "operasional": "PELUNASAN PIUTANG - PT. ASUKA ENGINEERING INDONESIA",
+      "nama_sub_penerima": "indri.nurisa",
+      "loaded_at": "1.782811799185E9",
+      "nama_penerima": "indri.nurisa"
+    },
+    {
+      "id_sub_transaksi": "2306277",
+      "tanggal_sub_transaksi": "2026-04-17",
+      "coa_code": "1.1.1.2.1.1",
+      "debet": "4.4090561E7",
+      "kredit": "0.0",
+      "nama_sub_unit": "[8122] Akuntansi Biaya",
+      "nama_cc": "Non CC",
+      "operasional": "PELUNASAN PIUTANG - PT. ASUKA ENGINEERING INDONESIA",
       "nama_sub_penerima": "indri.nurisa",
       "loaded_at": "1.782811780335E9",
       "nama_penerima": "indri.nurisa"
@@ -3695,71 +3773,6 @@
       "nama_penerima": "indri.nurisa"
     },
     {
-      "id_sub_transaksi": "2311129",
-      "tanggal_sub_transaksi": "2026-04-17",
-      "coa_code": "1.1.1.2.1.1",
-      "debet": "819002.0",
-      "kredit": "0.0",
-      "nama_sub_unit": "[8122] Akuntansi Biaya",
-      "nama_cc": "Non CC",
-      "operasional": "PELUNASAN PIUTANG - PT Asuransi Jiwa Generali Indonesia",
-      "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.782811780335E9",
-      "nama_penerima": "indri.nurisa"
-    },
-    {
-      "id_sub_transaksi": "2311129",
-      "tanggal_sub_transaksi": "2026-04-17",
-      "coa_code": "1.1.1.2.1.1",
-      "debet": "819002.0",
-      "kredit": "0.0",
-      "nama_sub_unit": "[8122] Akuntansi Biaya",
-      "nama_cc": "Non CC",
-      "operasional": "PELUNASAN PIUTANG - PT Asuransi Jiwa Generali Indonesia",
-      "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.782811799185E9",
-      "nama_penerima": "indri.nurisa"
-    },
-    {
-      "id_sub_transaksi": "2306277",
-      "tanggal_sub_transaksi": "2026-04-17",
-      "coa_code": "1.1.1.2.1.1",
-      "debet": "4.4090561E7",
-      "kredit": "0.0",
-      "nama_sub_unit": "[8122] Akuntansi Biaya",
-      "nama_cc": "Non CC",
-      "operasional": "PELUNASAN PIUTANG - PT. ASUKA ENGINEERING INDONESIA",
-      "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.782811799185E9",
-      "nama_penerima": "indri.nurisa"
-    },
-    {
-      "id_sub_transaksi": "2306277",
-      "tanggal_sub_transaksi": "2026-04-17",
-      "coa_code": "1.1.1.2.1.1",
-      "debet": "4.4090561E7",
-      "kredit": "0.0",
-      "nama_sub_unit": "[8122] Akuntansi Biaya",
-      "nama_cc": "Non CC",
-      "operasional": "PELUNASAN PIUTANG - PT. ASUKA ENGINEERING INDONESIA",
-      "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.782811780335E9",
-      "nama_penerima": "indri.nurisa"
-    },
-    {
-      "id_sub_transaksi": "2588536",
-      "tanggal_sub_transaksi": "2026-04-17",
-      "coa_code": "1.1.1.2.1.11",
-      "debet": "2.3855235E7",
-      "kredit": "0.0",
-      "nama_sub_unit": "[8122] Akuntansi Biaya",
-      "nama_cc": "Non CC",
-      "operasional": "PELUNASAN PIUTANG - PT Petro Oxo Nusantara",
-      "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.782811840786E9",
-      "nama_penerima": "indri.nurisa"
-    },
-    {
       "id_sub_transaksi": "2306012",
       "tanggal_sub_transaksi": "2026-04-17",
       "coa_code": "1.1.1.2.1.1",
@@ -3769,20 +3782,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT. WILMAR CONSULTANCY SERVICES",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.782811799185E9",
-      "nama_penerima": "indri.nurisa"
-    },
-    {
-      "id_sub_transaksi": "2214942",
-      "tanggal_sub_transaksi": "2026-04-17",
-      "coa_code": "1.1.1.2.1.1",
-      "debet": "5593016.0",
-      "kredit": "0.0",
-      "nama_sub_unit": "[8145] Penagihan",
-      "nama_cc": "Non CC",
-      "operasional": "Alokasi 88 - PELUNASAN INVOICE 0524/KEU/RSSG/IV/2026 PERIODE MARET 2026 - PT Asuransi Jiwa Generali Indonesia - Manual",
-      "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.782811695557E9",
+      "loaded_at": "1.782811780335E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3796,6 +3796,19 @@
       "operasional": "Alokasi 88 - PELUNASAN INVOICE 0524/KEU/RSSG/IV/2026 PERIODE MARET 2026 - PT Asuransi Jiwa Generali Indonesia - Manual",
       "nama_sub_penerima": "indri.nurisa",
       "loaded_at": "1.78281171511E9",
+      "nama_penerima": "indri.nurisa"
+    },
+    {
+      "id_sub_transaksi": "2214942",
+      "tanggal_sub_transaksi": "2026-04-17",
+      "coa_code": "1.1.1.2.1.1",
+      "debet": "5593016.0",
+      "kredit": "0.0",
+      "nama_sub_unit": "[8145] Penagihan",
+      "nama_cc": "Non CC",
+      "operasional": "Alokasi 88 - PELUNASAN INVOICE 0524/KEU/RSSG/IV/2026 PERIODE MARET 2026 - PT Asuransi Jiwa Generali Indonesia - Manual",
+      "nama_sub_penerima": "indri.nurisa",
+      "loaded_at": "1.782811695557E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3834,7 +3847,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - Asuransi Bri Life",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.782811652696E9",
+      "loaded_at": "1.782811632967E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3847,19 +3860,6 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - Asuransi Bri Life",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.782811632967E9",
-      "nama_penerima": "indri.nurisa"
-    },
-    {
-      "id_sub_transaksi": "2133154",
-      "tanggal_sub_transaksi": "2026-04-16",
-      "coa_code": "1.1.1.2.1.1",
-      "debet": "673500.0",
-      "kredit": "0.0",
-      "nama_sub_unit": "[8122] Akuntansi Biaya",
-      "nama_cc": "Non CC",
-      "operasional": "PELUNASAN PIUTANG - Wilmar Group ( PT. Petro Andalan Nusantara )",
-      "nama_sub_penerima": "indri.nurisa",
       "loaded_at": "1.782811652696E9",
       "nama_penerima": "indri.nurisa"
     },
@@ -3874,6 +3874,19 @@
       "operasional": "PELUNASAN PIUTANG - Wilmar Group ( PT. Petro Andalan Nusantara )",
       "nama_sub_penerima": "indri.nurisa",
       "loaded_at": "1.782811632967E9",
+      "nama_penerima": "indri.nurisa"
+    },
+    {
+      "id_sub_transaksi": "2133154",
+      "tanggal_sub_transaksi": "2026-04-16",
+      "coa_code": "1.1.1.2.1.1",
+      "debet": "673500.0",
+      "kredit": "0.0",
+      "nama_sub_unit": "[8122] Akuntansi Biaya",
+      "nama_cc": "Non CC",
+      "operasional": "PELUNASAN PIUTANG - Wilmar Group ( PT. Petro Andalan Nusantara )",
+      "nama_sub_penerima": "indri.nurisa",
+      "loaded_at": "1.782811652696E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3912,7 +3925,7 @@
       "nama_cc": "Non CC",
       "operasional": "Alokasi 88 - PELUNASAN INVOICE 0475/KEU/RSSG/III/2026 PERIODE MARET 2026 - ASURANSI PRUDENTIAL  - Manual",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.782811632967E9",
+      "loaded_at": "1.782811652696E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3925,7 +3938,7 @@
       "nama_cc": "Non CC",
       "operasional": "Alokasi 88 - PELUNASAN INVOICE 0475/KEU/RSSG/III/2026 PERIODE MARET 2026 - ASURANSI PRUDENTIAL  - Manual",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.782811652696E9",
+      "loaded_at": "1.782811632967E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -5333,14 +5346,14 @@
       "nama_penerima": "indri.nurisa"
     },
     {
-      "id_sub_transaksi": "1168588",
+      "id_sub_transaksi": "1168627",
       "tanggal_sub_transaksi": "2026-03-06",
       "coa_code": "1.1.1.2.1.1",
-      "debet": "1.024865E7",
+      "debet": "309000.0",
       "kredit": "0.0",
       "nama_sub_unit": "[8122] Akuntansi Biaya",
       "nama_cc": "Non CC",
-      "operasional": "PELUNASAN PIUTANG - Equity Life Indonesia",
+      "operasional": "PELUNASAN PIUTANG - PT Asuransi Jiwa Central Asia Raya",
       "nama_sub_penerima": "indri.nurisa",
       "loaded_at": "1.782809283418E9",
       "nama_penerima": "indri.nurisa"
@@ -5385,14 +5398,14 @@
       "nama_penerima": "indri.nurisa"
     },
     {
-      "id_sub_transaksi": "1168627",
+      "id_sub_transaksi": "1168588",
       "tanggal_sub_transaksi": "2026-03-06",
       "coa_code": "1.1.1.2.1.1",
-      "debet": "309000.0",
+      "debet": "1.024865E7",
       "kredit": "0.0",
       "nama_sub_unit": "[8122] Akuntansi Biaya",
       "nama_cc": "Non CC",
-      "operasional": "PELUNASAN PIUTANG - PT Asuransi Jiwa Central Asia Raya",
+      "operasional": "PELUNASAN PIUTANG - Equity Life Indonesia",
       "nama_sub_penerima": "indri.nurisa",
       "loaded_at": "1.782809283418E9",
       "nama_penerima": "indri.nurisa"
@@ -5463,19 +5476,6 @@
       "nama_penerima": "indri.nurisa"
     },
     {
-      "id_sub_transaksi": "1224375",
-      "tanggal_sub_transaksi": "2026-03-05",
-      "coa_code": "1.1.1.2.1.11",
-      "debet": "7562000.0",
-      "kredit": "0.0",
-      "nama_sub_unit": "[8122] Akuntansi Biaya",
-      "nama_cc": "Non CC",
-      "operasional": "Double pembayaran invoice 0231/KEU/RSSG/II/2026 - PT Bahari Bakti Jaya Surya",
-      "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.782809047219E9",
-      "nama_penerima": "indri.nurisa"
-    },
-    {
       "id_sub_transaksi": "1708117",
       "tanggal_sub_transaksi": "2026-03-05",
       "coa_code": "1.1.1.2.1.1",
@@ -5484,6 +5484,19 @@
       "nama_sub_unit": "[8122] Akuntansi Biaya",
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - BPJS KETENAGAKERJAAN GRESIK",
+      "nama_sub_penerima": "indri.nurisa",
+      "loaded_at": "1.782809047219E9",
+      "nama_penerima": "indri.nurisa"
+    },
+    {
+      "id_sub_transaksi": "1224375",
+      "tanggal_sub_transaksi": "2026-03-05",
+      "coa_code": "1.1.1.2.1.11",
+      "debet": "7562000.0",
+      "kredit": "0.0",
+      "nama_sub_unit": "[8122] Akuntansi Biaya",
+      "nama_cc": "Non CC",
+      "operasional": "Double pembayaran invoice 0231/KEU/RSSG/II/2026 - PT Bahari Bakti Jaya Surya",
       "nama_sub_penerima": "indri.nurisa",
       "loaded_at": "1.782809047219E9",
       "nama_penerima": "indri.nurisa"
