@@ -1,7 +1,7 @@
 {
   "bulan": "2026-03",
   "bagian": 1,
-  "generated_at": "2026-09-01T01:02:10.629Z",
+  "generated_at": "2026-09-01T06:12:16.738Z",
   "uang_muka_pjk_detail": [
     {
       "id_sub_transaksi": "987206",
@@ -180,8 +180,8 @@
       "nama_sub_penerima": "may.azmianty",
       "loaded_at": "1.782809127768E9",
       "nama_penerima": "ayu.cahya",
-      "keterangan": "-",
-      "keterangan_pencocokan": "Alokasi 88 - UANG MUKA DAPUR BULAN MARET 2026 - Manual"
+      "keterangan": "Uang Muka",
+      "keterangan_pencocokan": "DAPUR BULAN MARET 2026 - Manual"
     },
     {
       "id_sub_transaksi": "1149341",
@@ -388,7 +388,7 @@
       "nama_cc": "Non CC",
       "operasional": "Alokasi 88 - UM BINGKISAN IDUL FITRI 1447 H ( 2026 ) BAGI RELASI WARTAWAN - Manual",
       "nama_sub_penerima": "may.azmianty",
-      "loaded_at": "1.782809732571E9",
+      "loaded_at": "1.782809648588E9",
       "nama_penerima": "ibnu.chris",
       "keterangan": "Uang Muka",
       "keterangan_pencocokan": "BINGKISAN IDUL FITRI 1447 H ( 2026 ) BAGI RELASI WARTAWAN - Manual"
@@ -403,7 +403,7 @@
       "nama_cc": "Non CC",
       "operasional": "Alokasi 88 - UM BINGKISAN IDUL FITRI 1447 H ( 2026 ) BAGI RELASI WARTAWAN - Manual",
       "nama_sub_penerima": "may.azmianty",
-      "loaded_at": "1.782809648588E9",
+      "loaded_at": "1.782809732571E9",
       "nama_penerima": "ibnu.chris",
       "keterangan": "Uang Muka",
       "keterangan_pencocokan": "BINGKISAN IDUL FITRI 1447 H ( 2026 ) BAGI RELASI WARTAWAN - Manual"
@@ -433,10 +433,10 @@
       "nama_cc": "Non CC",
       "operasional": "Alokasi 88 - UANG MUKA DAPUR MARET 2026 - Manual",
       "nama_sub_penerima": "may.azmianty",
-      "loaded_at": "1.78280968293E9",
+      "loaded_at": "1.78280976435E9",
       "nama_penerima": "ayu.cahya",
-      "keterangan": "-",
-      "keterangan_pencocokan": "Alokasi 88 - UANG MUKA DAPUR MARET 2026 - Manual"
+      "keterangan": "Uang Muka",
+      "keterangan_pencocokan": "DAPUR MARET 2026 - Manual"
     },
     {
       "id_sub_transaksi": "1239623",
@@ -448,10 +448,10 @@
       "nama_cc": "Non CC",
       "operasional": "Alokasi 88 - UANG MUKA DAPUR MARET 2026 - Manual",
       "nama_sub_penerima": "may.azmianty",
-      "loaded_at": "1.78280976435E9",
+      "loaded_at": "1.78280968293E9",
       "nama_penerima": "ayu.cahya",
-      "keterangan": "-",
-      "keterangan_pencocokan": "Alokasi 88 - UANG MUKA DAPUR MARET 2026 - Manual"
+      "keterangan": "Uang Muka",
+      "keterangan_pencocokan": "DAPUR MARET 2026 - Manual"
     },
     {
       "id_sub_transaksi": "1291254",
@@ -555,8 +555,8 @@
       "nama_sub_penerima": "may.azmianty",
       "loaded_at": "1.782809902404E9",
       "nama_penerima": "ayu.cahya",
-      "keterangan": "-",
-      "keterangan_pencocokan": "Alokasi 88 - UANG MUKA HALAL BIHALAL CIPTA NIRMALA GROUP 2026 - Manual"
+      "keterangan": "Uang Muka",
+      "keterangan_pencocokan": "HALAL BIHALAL CIPTA NIRMALA GROUP 2026 - Manual"
     },
     {
       "id_sub_transaksi": "1308170",
@@ -724,11 +724,11 @@
       "keterangan_pencocokan": "REKLAS JU-1251"
     },
     {
-      "id_sub_transaksi": "1726578",
+      "id_sub_transaksi": "1726581",
       "tanggal_sub_transaksi": "2026-03-31",
       "coa_code": "1.1.6.1",
-      "debet": "570799.0",
-      "kredit": "0.0",
+      "debet": "0.0",
+      "kredit": "2.6070799E7",
       "nama_sub_unit": "[9101] DAPUR",
       "nama_cc": "131 - SUB DAPUR GRESIK | LOGISTIK",
       "operasional": "PJK UM BAHAN MAKAN DAPUR JANUARI-FEBRUARI 2026",
@@ -739,11 +739,11 @@
       "keterangan_pencocokan": "UM BAHAN MAKAN DAPUR JANUARI-FEBRUARI 2026"
     },
     {
-      "id_sub_transaksi": "1726581",
+      "id_sub_transaksi": "1726578",
       "tanggal_sub_transaksi": "2026-03-31",
       "coa_code": "1.1.6.1",
-      "debet": "0.0",
-      "kredit": "2.6070799E7",
+      "debet": "570799.0",
+      "kredit": "0.0",
       "nama_sub_unit": "[9101] DAPUR",
       "nama_cc": "131 - SUB DAPUR GRESIK | LOGISTIK",
       "operasional": "PJK UM BAHAN MAKAN DAPUR JANUARI-FEBRUARI 2026",
