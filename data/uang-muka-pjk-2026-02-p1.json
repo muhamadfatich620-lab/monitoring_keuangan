@@ -1,7 +1,7 @@
 {
   "bulan": "2026-02",
   "bagian": 1,
-  "generated_at": "2026-09-01T01:02:07.156Z",
+  "generated_at": "2026-09-01T06:12:13.331Z",
   "uang_muka_pjk_detail": [
     {
       "id_sub_transaksi": "482826",
@@ -19,21 +19,6 @@
       "keterangan_pencocokan": "Alokasi 88 - UM. PELATIHAN AHLI K3 UMUM SERTIFIKASI KEMENAKER RI - Manual"
     },
     {
-      "id_sub_transaksi": "421714",
-      "tanggal_sub_transaksi": "2026-02-02",
-      "coa_code": "1.1.6.3",
-      "debet": "0.0",
-      "kredit": "7816803.0",
-      "nama_sub_unit": "[8021] Personalia",
-      "nama_cc": "Non CC",
-      "operasional": null,
-      "nama_sub_penerima": null,
-      "loaded_at": "1.782807340299E9",
-      "nama_penerima": null,
-      "keterangan": "-",
-      "keterangan_pencocokan": null
-    },
-    {
       "id_sub_transaksi": "485410",
       "tanggal_sub_transaksi": "2026-02-02",
       "coa_code": "1.1.6.3",
@@ -44,6 +29,21 @@
       "operasional": null,
       "nama_sub_penerima": null,
       "loaded_at": "1.782807352399E9",
+      "nama_penerima": null,
+      "keterangan": "-",
+      "keterangan_pencocokan": null
+    },
+    {
+      "id_sub_transaksi": "421714",
+      "tanggal_sub_transaksi": "2026-02-02",
+      "coa_code": "1.1.6.3",
+      "debet": "0.0",
+      "kredit": "7816803.0",
+      "nama_sub_unit": "[8021] Personalia",
+      "nama_cc": "Non CC",
+      "operasional": null,
+      "nama_sub_penerima": null,
+      "loaded_at": "1.782807340299E9",
       "nama_penerima": null,
       "keterangan": "-",
       "keterangan_pencocokan": null
@@ -60,7 +60,7 @@
       "nama_sub_penerima": "fajar.aldiansyah",
       "loaded_at": "1.782807352399E9",
       "nama_penerima": "ayu.cahya",
-      "keterangan": "-",
+      "keterangan": "PJK",
       "keterangan_pencocokan": "Alokasi 88 - REAL. AKOMODASI PELATIHAN KEPERAWATAN KARDIOVASKULER TINGKAT DASAR (PKKVTD) NUR FARIDA - Manual"
     },
     {
@@ -75,8 +75,8 @@
       "nama_sub_penerima": "may.azmianty",
       "loaded_at": "1.7828073853E9",
       "nama_penerima": "rusdiana.yatiningsih",
-      "keterangan": "-",
-      "keterangan_pencocokan": "Alokasi 88 - Uang Muka Dapur Periode januari -februari 2026 - Manual"
+      "keterangan": "Uang Muka",
+      "keterangan_pencocokan": "Dapur Periode januari -februari 2026 - Manual"
     },
     {
       "id_sub_transaksi": "539682",
@@ -91,7 +91,7 @@
       "loaded_at": "1.782807441941E9",
       "nama_penerima": "ayu.cahya",
       "keterangan": "PJK",
-      "keterangan_pencocokan": "Alokasi 88 - SETOR PJK. REAL BIAYA AKOMODASI DESEMBER 2025 PRE-OJT ANESTHESIA \"DEVELOPING SKILLED NURSE FOR SAFE AND EFFECTIVE ANESTHESIA CARE\" - Manual"
+      "keterangan_pencocokan": "BIAYA AKOMODASI DESEMBER 2025 PRE-OJT ANESTHESIA \"DEVELOPING SKILLED NURSE FOR SAFE AND EFFECTIVE ANESTHESIA CARE\" - Manual"
     },
     {
       "id_sub_transaksi": "780414",
@@ -120,8 +120,8 @@
       "nama_sub_penerima": "may.azmianty",
       "loaded_at": "1.782807452196E9",
       "nama_penerima": "moch.rivnaldy",
-      "keterangan": "-",
-      "keterangan_pencocokan": "Alokasi 88 - Uang Muka  Filter Oli  Genset - Manual"
+      "keterangan": "Uang Muka",
+      "keterangan_pencocokan": "Filter Oli  Genset - Manual"
     },
     {
       "id_sub_transaksi": "538320",
@@ -270,8 +270,8 @@
       "nama_sub_penerima": "fajar.aldiansyah",
       "loaded_at": "1.782808125111E9",
       "nama_penerima": "ibnu.chris",
-      "keterangan": "-",
-      "keterangan_pencocokan": "Alokasi 88 - Uang Muka seminar Awam Sehat Menjelang Puasa - Manual"
+      "keterangan": "Uang Muka",
+      "keterangan_pencocokan": "seminar Awam Sehat Menjelang Puasa - Manual"
     },
     {
       "id_sub_transaksi": "791646",
@@ -334,21 +334,6 @@
       "keterangan_pencocokan": "Alokasi 88 - UM. WORKSHOP PROGRAMMING AKSELERASI INTEGRASI SIMRS NUHA - Manual"
     },
     {
-      "id_sub_transaksi": "723734",
-      "tanggal_sub_transaksi": "2026-02-16",
-      "coa_code": "1.1.6.1",
-      "debet": "6.68E7",
-      "kredit": "0.0",
-      "nama_sub_unit": "[8111] Pengadaan Barang & Jasa",
-      "nama_cc": "Non CC",
-      "operasional": "Alokasi 88 - UM Pembelian Hardware SIMRS - Manual",
-      "nama_sub_penerima": "may.azmianty",
-      "loaded_at": "1.782808143239E9",
-      "nama_penerima": "moch.rivnaldy",
-      "keterangan": "Uang Muka",
-      "keterangan_pencocokan": "Pembelian Hardware SIMRS - Manual"
-    },
-    {
       "id_sub_transaksi": "734928",
       "tanggal_sub_transaksi": "2026-02-16",
       "coa_code": "1.1.6.3",
@@ -362,6 +347,21 @@
       "nama_penerima": null,
       "keterangan": "-",
       "keterangan_pencocokan": "-"
+    },
+    {
+      "id_sub_transaksi": "723734",
+      "tanggal_sub_transaksi": "2026-02-16",
+      "coa_code": "1.1.6.1",
+      "debet": "6.68E7",
+      "kredit": "0.0",
+      "nama_sub_unit": "[8111] Pengadaan Barang & Jasa",
+      "nama_cc": "Non CC",
+      "operasional": "Alokasi 88 - UM Pembelian Hardware SIMRS - Manual",
+      "nama_sub_penerima": "may.azmianty",
+      "loaded_at": "1.782808143239E9",
+      "nama_penerima": "moch.rivnaldy",
+      "keterangan": "Uang Muka",
+      "keterangan_pencocokan": "Pembelian Hardware SIMRS - Manual"
     },
     {
       "id_sub_transaksi": "727002",
@@ -409,12 +409,12 @@
       "keterangan_pencocokan": "-"
     },
     {
-      "id_sub_transaksi": "771817",
+      "id_sub_transaksi": "770193",
       "tanggal_sub_transaksi": "2026-02-19",
       "coa_code": "1.1.6.3",
       "debet": "0.0",
-      "kredit": "3.385978E7",
-      "nama_sub_unit": "[9002] Pengembangan Perusahaan, Riset & Portofolio",
+      "kredit": "2669000.0",
+      "nama_sub_unit": "[8021] Personalia",
       "nama_cc": "Non CC",
       "operasional": "-",
       "nama_sub_penerima": null,
@@ -424,12 +424,12 @@
       "keterangan_pencocokan": "-"
     },
     {
-      "id_sub_transaksi": "770193",
+      "id_sub_transaksi": "771817",
       "tanggal_sub_transaksi": "2026-02-19",
       "coa_code": "1.1.6.3",
       "debet": "0.0",
-      "kredit": "2669000.0",
-      "nama_sub_unit": "[8021] Personalia",
+      "kredit": "3.385978E7",
+      "nama_sub_unit": "[9002] Pengembangan Perusahaan, Riset & Portofolio",
       "nama_cc": "Non CC",
       "operasional": "-",
       "nama_sub_penerima": null,
@@ -495,8 +495,8 @@
       "nama_sub_penerima": "may.azmianty",
       "loaded_at": "1.78280859971E9",
       "nama_penerima": "ayu.cahya",
-      "keterangan": "-",
-      "keterangan_pencocokan": "Alokasi 88 - UANG MUKA BUKA PUASA BERSAMA DENGAN FKTP 2026 - Manual"
+      "keterangan": "Uang Muka",
+      "keterangan_pencocokan": "BUKA PUASA BERSAMA DENGAN FKTP 2026 - Manual"
     },
     {
       "id_sub_transaksi": "888609",
@@ -510,8 +510,8 @@
       "nama_sub_penerima": "may.azmianty",
       "loaded_at": "1.78280859971E9",
       "nama_penerima": "ayu.cahya",
-      "keterangan": "-",
-      "keterangan_pencocokan": "Alokasi 88 - UANG MUKA BUKA PUASA BERSAMA DENGAN MITRA KEPOLISIAN, JASA RAHARJA & BPJS KETENAGAKERJAAN 2026 - Manual"
+      "keterangan": "Uang Muka",
+      "keterangan_pencocokan": "BUKA PUASA BERSAMA DENGAN MITRA KEPOLISIAN, JASA RAHARJA & BPJS KETENAGAKERJAAN 2026 - Manual"
     },
     {
       "id_sub_transaksi": "889684",
@@ -529,21 +529,6 @@
       "keterangan_pencocokan": "AKOMODASI PELATIHAN KEPERAWATAN KATETERISASI JANTUNG BAGI PERAWAT DI RS TAHAP SEP 2025  - Manual"
     },
     {
-      "id_sub_transaksi": "893411",
-      "tanggal_sub_transaksi": "2026-02-25",
-      "coa_code": "1.1.6.3",
-      "debet": "0.0",
-      "kredit": "1.677155E7",
-      "nama_sub_unit": "[8021] Personalia",
-      "nama_cc": "PERSONALIA | LOGISTIK",
-      "operasional": "-",
-      "nama_sub_penerima": null,
-      "loaded_at": "1.78280859971E9",
-      "nama_penerima": null,
-      "keterangan": "-",
-      "keterangan_pencocokan": "-"
-    },
-    {
       "id_sub_transaksi": "899009",
       "tanggal_sub_transaksi": "2026-02-25",
       "coa_code": "1.1.6.3",
@@ -557,6 +542,21 @@
       "nama_penerima": null,
       "keterangan": "-",
       "keterangan_pencocokan": null
+    },
+    {
+      "id_sub_transaksi": "893411",
+      "tanggal_sub_transaksi": "2026-02-25",
+      "coa_code": "1.1.6.3",
+      "debet": "0.0",
+      "kredit": "1.677155E7",
+      "nama_sub_unit": "[8021] Personalia",
+      "nama_cc": "PERSONALIA | LOGISTIK",
+      "operasional": "-",
+      "nama_sub_penerima": null,
+      "loaded_at": "1.78280859971E9",
+      "nama_penerima": null,
+      "keterangan": "-",
+      "keterangan_pencocokan": "-"
     },
     {
       "id_sub_transaksi": "901484",
@@ -630,8 +630,8 @@
       "nama_sub_penerima": "may.azmianty",
       "loaded_at": "1.782808665866E9",
       "nama_penerima": "ibnu.chris",
-      "keterangan": "-",
-      "keterangan_pencocokan": "Alokasi 88 - UANG MUKA SERVICE PENGGANTIAN LCD LAPTOP ASUS VIVOBOOK GO 14 OLED - Manual"
+      "keterangan": "Uang Muka",
+      "keterangan_pencocokan": "SERVICE PENGGANTIAN LCD LAPTOP ASUS VIVOBOOK GO 14 OLED - Manual"
     },
     {
       "id_sub_transaksi": "934427",
