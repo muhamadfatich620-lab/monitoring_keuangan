@@ -569,6 +569,18 @@ tfoot td {
       <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 7H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/><polyline points="8 2 8 6 4 6"/></svg>
       Pengeluaran Kas
     </button>
+    <button class="nav-item" onclick="showPage('uang-muka-pjk')">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>
+      Uang Muka & PJK
+    </button>
+    <button class="nav-item" onclick="showPage('biaya-bahan')">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg>
+      Biaya Bahan
+    </button>
+    <button class="nav-item" onclick="showPage('biaya-umum')">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 12l3-3 3 3 5-5"/></svg>
+      Biaya Umum
+    </button>
   </div>
 
   <div class="sidebar-footer">
@@ -1036,6 +1048,161 @@ tfoot td {
     </div>
   </div>
 
+  <!-- ══ PAGE: UANG MUKA & PJK ══ -->
+  <div class="page" id="page-uang-muka-pjk">
+    <div class="kpi-grid" id="kpiUmPjk">
+      <div class="loading"><div class="spinner"></div> Memuat data...</div>
+    </div>
+    <div class="section-card">
+      <div class="section-head">
+        <div><div class="section-title">Rekap Per Sub Unit — Uang Muka vs PJK</div><div class="section-sub">Perbandingan total Uang Muka dan realisasi PJK per sub unit</div></div>
+      </div>
+      <div class="local-filter-wrap">
+        <input type="text" id="searchUmPjkSubUnit" placeholder="Cari sub unit..." oninput="filterUmPjkSubUnit()"/>
+        <button class="btn btn-outline" onclick="resetUmPjkSubUnitFilter()">Reset Filter</button>
+        <span class="local-filter-count" id="umPjkSubUnitCount"></span>
+      </div>
+      <div class="section-body">
+        <div class="chart-wrap" style="height:300px;margin-bottom:18px"><canvas id="chartUmPjkSubUnit"></canvas></div>
+        <div class="tbl-wrap"><table id="tblUmPjkSubUnit">
+          <thead id="head-tblUmPjkSubUnit"><tr>
+            <th data-key="sub_unit" onclick="tblSort('tblUmPjkSubUnit','sub_unit','text')">Sub Unit <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="total_um" onclick="tblSort('tblUmPjkSubUnit','total_um','number')">Total Uang Muka <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="jumlah_um" onclick="tblSort('tblUmPjkSubUnit','jumlah_um','number')">Jumlah UM <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="total_pjk" onclick="tblSort('tblUmPjkSubUnit','total_pjk','number')">Total PJK <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="jumlah_pjk" onclick="tblSort('tblUmPjkSubUnit','jumlah_pjk','number')">Jumlah PJK <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="selisih" onclick="tblSort('tblUmPjkSubUnit','selisih','number')">Selisih (UM - PJK) <span class="sort-ico-wrap"></span></th>
+          </tr></thead>
+          <tbody></tbody>
+          <tfoot></tfoot>
+        </table></div>
+      </div>
+    </div>
+    <div class="section-card">
+      <div class="section-head">
+        <div><div class="section-title">Detail Uang Muka & PJK</div><div class="section-sub">Menampilkan maks 2000 baris pertama dari hasil filter</div></div>
+      </div>
+      <div class="local-filter-wrap">
+        <input type="text" id="searchUmPjkOperasional" placeholder="Cari operasional / keterangan pencocokan..." oninput="filterUmPjkDetail()"/>
+        <select id="fltUmPjkSubUnitDetail" onchange="filterUmPjkDetail()"><option value="">Semua Sub Unit</option></select>
+        <select id="fltUmPjkKeterangan" onchange="filterUmPjkDetail()"><option value="">Semua Keterangan (UM/PJK)</option></select>
+        <select id="fltUmPjkStatus" onchange="filterUmPjkDetail()"><option value="">Semua Status</option></select>
+        <button class="btn btn-outline" onclick="resetUmPjkDetailFilter()">Reset Filter</button>
+        <span class="local-filter-count" id="umPjkDetailCount"></span>
+      </div>
+      <div class="section-body" style="padding:0">
+        <div class="tbl-wrap"><table id="tblUmPjkDetail">
+          <thead id="head-tblUmPjkDetail"><tr>
+            <th data-key="tanggal_sub_transaksi" onclick="tblSort('tblUmPjkDetail','tanggal_sub_transaksi','text')">Tanggal <span class="sort-ico-wrap"></span></th>
+            <th data-key="nama_sub_unit" onclick="tblSort('tblUmPjkDetail','nama_sub_unit','text')">Sub Unit <span class="sort-ico-wrap"></span></th>
+            <th data-key="Segment" onclick="tblSort('tblUmPjkDetail','Segment','text')">Segmen <span class="sort-ico-wrap"></span></th>
+            <th data-key="nama_sub_penerima" onclick="tblSort('tblUmPjkDetail','nama_sub_penerima','text')">Sub Penerima <span class="sort-ico-wrap"></span></th>
+            <th data-key="keterangan" onclick="tblSort('tblUmPjkDetail','keterangan','text')">Keterangan <span class="sort-ico-wrap"></span></th>
+            <th data-key="keterangan_pencocokan" onclick="tblSort('tblUmPjkDetail','keterangan_pencocokan','text')">Keterangan Pencocokan <span class="sort-ico-wrap"></span></th>
+            <th data-key="_statusUm" onclick="tblSort('tblUmPjkDetail','_statusUm','text')">Status <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="_debet" onclick="tblSort('tblUmPjkDetail','_debet','number')">Debet <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="_kredit" onclick="tblSort('tblUmPjkDetail','_kredit','number')">Kredit <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="_nominal" onclick="tblSort('tblUmPjkDetail','_nominal','number')">Nominal <span class="sort-ico-wrap"></span></th>
+          </tr></thead>
+          <tbody></tbody>
+          <tfoot></tfoot>
+        </table></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PAGE: BIAYA BAHAN ══ -->
+  <div class="page" id="page-biaya-bahan">
+    <div class="kpi-grid" id="kpiBiayaBahan">
+      <div class="loading"><div class="spinner"></div> Memuat data...</div>
+    </div>
+    <div class="grid-2">
+      <div class="section-card">
+        <div class="section-head"><div class="section-title">Per Nama COA</div></div>
+        <div class="section-body"><div class="chart-wrap"><canvas id="chartBiayaBahanCoa"></canvas></div></div>
+      </div>
+      <div class="section-card">
+        <div class="section-head"><div class="section-title">Per Kategori Jurnal</div></div>
+        <div class="section-body"><div class="chart-wrap"><canvas id="chartBiayaBahanKategori"></canvas></div></div>
+      </div>
+    </div>
+    <div class="section-card">
+      <div class="section-head">
+        <div><div class="section-title">Detail Biaya Bahan</div><div class="section-sub">Menampilkan maks 2000 baris pertama dari hasil filter</div></div>
+      </div>
+      <div class="local-filter-wrap">
+        <input type="text" id="searchBiayaBahanDetail" placeholder="Cari sub unit / keterangan..." oninput="filterBiayaBahanDetail()"/>
+        <select id="fltBiayaBahanCoa" onchange="filterBiayaBahanDetail()"><option value="">Semua Nama COA</option></select>
+        <select id="fltBiayaBahanKategori" onchange="filterBiayaBahanDetail()"><option value="">Semua Kategori Jurnal</option></select>
+        <select id="fltBiayaBahanSubUnit" onchange="filterBiayaBahanDetail()"><option value="">Semua Sub Unit</option></select>
+        <button class="btn btn-outline" onclick="resetBiayaBahanDetailFilter()">Reset Filter</button>
+        <span class="local-filter-count" id="biayaBahanDetailCount"></span>
+      </div>
+      <div class="section-body" style="padding:0">
+        <div class="tbl-wrap"><table id="tblBiayaBahanDetail">
+          <thead id="head-tblBiayaBahanDetail"><tr>
+            <th data-key="tanggal_sub_transaksi" onclick="tblSort('tblBiayaBahanDetail','tanggal_sub_transaksi','text')">Tanggal <span class="sort-ico-wrap"></span></th>
+            <th data-key="nama_sub_unit" onclick="tblSort('tblBiayaBahanDetail','nama_sub_unit','text')">Sub Unit <span class="sort-ico-wrap"></span></th>
+            <th data-key="_namaCoa" onclick="tblSort('tblBiayaBahanDetail','_namaCoa','text')">Nama COA <span class="sort-ico-wrap"></span></th>
+            <th data-key="_kodeCoa" onclick="tblSort('tblBiayaBahanDetail','_kodeCoa','text')">Kode COA <span class="sort-ico-wrap"></span></th>
+            <th data-key="keterangan" onclick="tblSort('tblBiayaBahanDetail','keterangan','text')">Kategori Jurnal <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="_debet" onclick="tblSort('tblBiayaBahanDetail','_debet','number')">Debet <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="_kredit" onclick="tblSort('tblBiayaBahanDetail','_kredit','number')">Kredit <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="_nominal" onclick="tblSort('tblBiayaBahanDetail','_nominal','number')">Nominal <span class="sort-ico-wrap"></span></th>
+          </tr></thead>
+          <tbody></tbody>
+          <tfoot></tfoot>
+        </table></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PAGE: BIAYA UMUM ══ -->
+  <div class="page" id="page-biaya-umum">
+    <div class="kpi-grid" id="kpiBiayaUmum">
+      <div class="loading"><div class="spinner"></div> Memuat data...</div>
+    </div>
+    <div class="grid-2">
+      <div class="section-card">
+        <div class="section-head"><div class="section-title">Per Nama COA</div></div>
+        <div class="section-body"><div class="chart-wrap"><canvas id="chartBiayaUmumCoa"></canvas></div></div>
+      </div>
+      <div class="section-card">
+        <div class="section-head"><div class="section-title">Per Kategori Jurnal</div></div>
+        <div class="section-body"><div class="chart-wrap"><canvas id="chartBiayaUmumKategori"></canvas></div></div>
+      </div>
+    </div>
+    <div class="section-card">
+      <div class="section-head">
+        <div><div class="section-title">Detail Biaya Umum</div><div class="section-sub">Menampilkan maks 2000 baris pertama dari hasil filter</div></div>
+      </div>
+      <div class="local-filter-wrap">
+        <input type="text" id="searchBiayaUmumDetail" placeholder="Cari sub unit / keterangan..." oninput="filterBiayaUmumDetail()"/>
+        <select id="fltBiayaUmumCoa" onchange="filterBiayaUmumDetail()"><option value="">Semua Nama COA</option></select>
+        <select id="fltBiayaUmumKategori" onchange="filterBiayaUmumDetail()"><option value="">Semua Kategori Jurnal</option></select>
+        <select id="fltBiayaUmumSubUnit" onchange="filterBiayaUmumDetail()"><option value="">Semua Sub Unit</option></select>
+        <button class="btn btn-outline" onclick="resetBiayaUmumDetailFilter()">Reset Filter</button>
+        <span class="local-filter-count" id="biayaUmumDetailCount"></span>
+      </div>
+      <div class="section-body" style="padding:0">
+        <div class="tbl-wrap"><table id="tblBiayaUmumDetail">
+          <thead id="head-tblBiayaUmumDetail"><tr>
+            <th data-key="tanggal_sub_transaksi" onclick="tblSort('tblBiayaUmumDetail','tanggal_sub_transaksi','text')">Tanggal <span class="sort-ico-wrap"></span></th>
+            <th data-key="nama_sub_unit" onclick="tblSort('tblBiayaUmumDetail','nama_sub_unit','text')">Sub Unit <span class="sort-ico-wrap"></span></th>
+            <th data-key="_namaCoa" onclick="tblSort('tblBiayaUmumDetail','_namaCoa','text')">Nama COA <span class="sort-ico-wrap"></span></th>
+            <th data-key="_kodeCoa" onclick="tblSort('tblBiayaUmumDetail','_kodeCoa','text')">Kode COA <span class="sort-ico-wrap"></span></th>
+            <th data-key="keterangan" onclick="tblSort('tblBiayaUmumDetail','keterangan','text')">Kategori Jurnal <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="_debet" onclick="tblSort('tblBiayaUmumDetail','_debet','number')">Debet <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="_kredit" onclick="tblSort('tblBiayaUmumDetail','_kredit','number')">Kredit <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="_nominal" onclick="tblSort('tblBiayaUmumDetail','_nominal','number')">Nominal <span class="sort-ico-wrap"></span></th>
+          </tr></thead>
+          <tbody></tbody>
+          <tfoot></tfoot>
+        </table></div>
+      </div>
+    </div>
+  </div>
+
   <!-- ══ FOOTER ══ -->
   <footer class="app-footer">
     <div class="footer-brand">
@@ -1059,6 +1226,9 @@ let MANIFEST  = null;       // { generated_at, bulan: ['2026-01', ...] }
 let AUX       = null;       // data.json lama: pendapatan (belum di-refactor per-bulan)
 let PELUNASAN = null;       // pelunasan-piutang.json: { generated_at, pelunasan_detail: [...] }
 let PENGELUARAN_KAS = null; // pengeluaran-kas.json: { generated_at, pengeluaran_detail: [...] }
+let UANG_MUKA_PJK = null;   // uang-muka-pjk.json: { generated_at, uang_muka_pjk_detail: [...] }
+let BIAYA_BAHAN = null;     // biaya-bahan.json: { generated_at, biaya_bahan_detail: [...] }
+let BIAYA_UMUM = null;      // biaya-umum.json: { generated_at, biaya_umum_detail: [...] }
 let FILTERED  = null;       // hasil akhir yang dipakai semua render function
 let activeUnit = 'semua';
 let CHARTS = {};
@@ -1101,6 +1271,9 @@ const PAGE_TITLES = {
   'penjualan-kredit'  : ['Penjualan Kredit', 'Per Penanggung & Segmen'],
   'pelunasan-piutang' : ['Pelunasan Piutang', 'Monitoring Harian'],
   'pengeluaran-kas'   : ['Pengeluaran Kas', 'Monitoring Harian'],
+  'uang-muka-pjk'     : ['Uang Muka & PJK', 'Rekonsiliasi Pertanggungjawaban'],
+  'biaya-bahan'       : ['Biaya Bahan', 'Monitoring Biaya'],
+  'biaya-umum'        : ['Biaya Umum', 'Monitoring Biaya'],
 };
 
 function showPage(id) {
@@ -1373,6 +1546,9 @@ async function buildFiltered() {
   const kreditRows = kredit.filter(r => inRange(r.tanggal, awal, akhir));
   const pelunasanRows = (PELUNASAN?.pelunasan_detail || []).filter(r => inRange(r.tanggal_sub_transaksi, awal, akhir));
   const pengeluaranKasRows = (PENGELUARAN_KAS?.pengeluaran_detail || []).filter(r => inRange(r.tanggal_sub_transaksi, awal, akhir));
+  const umPjkRows = (UANG_MUKA_PJK?.uang_muka_pjk_detail || []).filter(r => inRange(r.tanggal_sub_transaksi, awal, akhir));
+  const biayaBahanRows = (BIAYA_BAHAN?.biaya_bahan_detail || []).filter(r => inRange(r.tanggal_sub_transaksi, awal, akhir));
+  const biayaUmumRows = (BIAYA_UMUM?.biaya_umum_detail || []).filter(r => inRange(r.tanggal_sub_transaksi, awal, akhir));
 
   FILTERED = {
     generated_at: MANIFEST?.generated_at,
@@ -1392,6 +1568,15 @@ async function buildFiltered() {
     // sekali saat load, difilter tanggal di sisi client). Sumbernya tabel
     // `routing-dokumen.monitoring_keuangan.pengeluaran_kas`.
     pengeluaran_detail: pengeluaranKasRows,
+    // uang_muka_pjk_detail dari data/uang-muka-pjk.json. Sumbernya tabel
+    // `routing-dokumen.monitoring_keuangan.uang_muka_pjk`.
+    uang_muka_pjk_detail: umPjkRows,
+    // biaya_bahan_detail dari data/biaya-bahan.json. Sumbernya tabel
+    // `routing-dokumen.monitoring_keuangan.biaya_bahan`.
+    biaya_bahan_detail: biayaBahanRows,
+    // biaya_umum_detail dari data/biaya-umum.json. Sumbernya tabel
+    // `routing-dokumen.monitoring_keuangan.biaya_umum`.
+    biaya_umum_detail: biayaUmumRows,
   };
 
   recomputeKasirAggregates(kasirRows);
@@ -1544,6 +1729,59 @@ function namaBankDariCoa(r) {
   return COA_BANK_MAP[kode] || (r.Nama_COA || r.nama_coa || ('COA ' + kode));
 }
 
+// ══ Lookup nama COA untuk modul Biaya Bahan & Biaya Umum ══
+const COA_BIAYA_MAP = {
+  '4.1'   : 'Biaya Bahan Medis',
+  '4.1.1' : 'Biaya Bahan Tablet',
+  '4.1.2' : 'Biaya Bahan Syrup',
+  '4.1.3' : 'Biaya Bahan Injeksi',
+  '4.1.4' : 'Biaya Bahan Salep',
+  '4.1.5' : 'Biaya Bahan Chemicalien',
+  '4.1.6' : 'Biaya Bahan Alkes',
+  '4.1.7' : 'Biaya Bahan O2 & NO2',
+  '4.2'   : 'Biaya Bahan Non Medis',
+  '4.2.1' : 'Biaya Bahan Makan',
+  '4.2.2' : 'Biaya Bahan Cucian',
+  '4.2.3' : 'Biaya Bahan Pembersih',
+  '4.2.4' : 'Biaya Bahan Linen',
+  '4.2.5' : 'Biaya Bahan Bakar L.P.G.',
+  '4.2.6' : 'Biaya Bahan Non Medis Klinik',
+};
+function namaCoaBiaya(r) {
+  const kode = String(r.coa_code || r.Coa_Code || r.COA_CODE || r.kode_coa || '').trim();
+  if (!kode) return r.Nama_COA || r.nama_coa || '-';
+  return COA_BIAYA_MAP[kode] || (r.Nama_COA || r.nama_coa || ('COA ' + kode));
+}
+function kodeCoaBiaya(r) {
+  return String(r.coa_code || r.Coa_Code || r.COA_CODE || r.kode_coa || '-').trim() || '-';
+}
+
+// ══ Uang Muka & PJK: pisahkan kolom "keterangan" (Uang Muka/PJK) yang sudah
+//    dihitung di BigQuery, dan siapkan status pencocokan (sudah/belum
+//    dipertanggungjawabkan) berdasarkan kolom "keterangan_pencocokan" ══
+// Sebuah baris "Uang Muka" dianggap SUDAH dipertanggungjawabkan kalau ada
+// minimal satu baris "PJK" dengan keterangan_pencocokan yang SAMA PERSIS
+// (case-insensitive, trimmed) di dalam data yang sedang difilter.
+function hitungStatusUmPjk(rows) {
+  const kunciPjk = new Set();
+  rows.forEach(r => {
+    if (r.keterangan === 'PJK') {
+      const kunci = String(r.keterangan_pencocokan || '').trim().toLowerCase();
+      if (kunci) kunciPjk.add(kunci);
+    }
+  });
+  return rows.map(r => {
+    let status = '-';
+    if (r.keterangan === 'Uang Muka') {
+      const kunci = String(r.keterangan_pencocokan || '').trim().toLowerCase();
+      status = (kunci && kunciPjk.has(kunci)) ? 'Sudah Dipertanggungjawabkan' : 'Belum Dipertanggungjawabkan';
+    } else if (r.keterangan === 'PJK') {
+      status = 'Realisasi';
+    }
+    return { ...r, _statusUm: status };
+  });
+}
+
 // ══ Pisahkan kolom "operasional" pelunasan piutang menjadi Keterangan
 //    (frasa baku yang dikenali) & Penanggung (sisa kalimat) ══
 const OPERASIONAL_KETERANGAN_PATTERNS = [
@@ -1687,6 +1925,9 @@ function renderPage(id) {
     case 'penjualan-kredit':   renderPenjualanKredit(d);   break;
     case 'pelunasan-piutang':  renderPelunasanPiutang(d);  break;
     case 'pengeluaran-kas':    renderPengeluaranKas(d);    break;
+    case 'uang-muka-pjk':      renderUmPjk(d);             break;
+    case 'biaya-bahan':        renderBiayaBahan(d);        break;
+    case 'biaya-umum':         renderBiayaUmum(d);         break;
   }
   const fl = document.getElementById('footerLastUpdate');
   const lu = document.getElementById('lastUpdate');
@@ -2485,6 +2726,320 @@ function resetPengeluaranKasDetailFilter() {
   filterPengeluaranKasDetail();
 }
 
+// ── UANG MUKA & PJK (dari data/uang-muka-pjk.json, sumber tabel
+//    routing-dokumen.monitoring_keuangan.uang_muka_pjk). Kolom `keterangan`
+//    (Uang Muka/PJK) dan `keterangan_pencocokan` sudah dihitung di BigQuery;
+//    status pertanggungjawaban dihitung di sini (lihat hitungStatusUmPjk). ──
+let currentUmPjkDetail  = [];
+let currentUmPjkSubUnit = [];
+
+function renderUmPjk(d) {
+  const mentah = d.uang_muka_pjk_detail || [];
+  const denganStatus = hitungStatusUmPjk(mentah);
+  const detail = denganStatus.map(r => ({
+    ...r,
+    _debet: akuntansiDebet(r),
+    _kredit: akuntansiKredit(r),
+    _nominal: akuntansiNominal(r),
+  }));
+  currentUmPjkDetail = detail;
+
+  // Rekap per sub unit: total UM vs total PJK berdampingan
+  const subUnitMap = {};
+  detail.forEach(r => {
+    const su = r.nama_sub_unit || 'Lainnya';
+    if (!subUnitMap[su]) subUnitMap[su] = { sub_unit: su, total_um: 0, jumlah_um: 0, total_pjk: 0, jumlah_pjk: 0 };
+    if (r.keterangan === 'Uang Muka') { subUnitMap[su].total_um += r._nominal; subUnitMap[su].jumlah_um += 1; }
+    else if (r.keterangan === 'PJK')  { subUnitMap[su].total_pjk += r._nominal; subUnitMap[su].jumlah_pjk += 1; }
+  });
+  currentUmPjkSubUnit = Object.values(subUnitMap)
+    .map(r => ({ ...r, selisih: r.total_um - r.total_pjk }))
+    .sort((a,b) => b.total_um - a.total_um);
+
+  const totalUm  = detail.filter(r => r.keterangan === 'Uang Muka').reduce((s,r) => s + r._nominal, 0);
+  const totalPjk = detail.filter(r => r.keterangan === 'PJK').reduce((s,r) => s + r._nominal, 0);
+  const belumList = detail.filter(r => r._statusUm === 'Belum Dipertanggungjawabkan');
+  const belumTotal = belumList.reduce((s,r) => s + r._nominal, 0);
+
+  document.getElementById('kpiUmPjk').innerHTML = `
+    <div class="kpi-card blue"><div class="kpi-label">Total Uang Muka</div><div class="kpi-value">${rupiah(totalUm)}</div><div class="kpi-sub">${num(detail.filter(r=>r.keterangan==='Uang Muka').length)} baris</div></div>
+    <div class="kpi-card green"><div class="kpi-label">Total PJK (Realisasi)</div><div class="kpi-value">${rupiah(totalPjk)}</div><div class="kpi-sub">${num(detail.filter(r=>r.keterangan==='PJK').length)} baris</div></div>
+    <div class="kpi-card red"><div class="kpi-label">Belum Dipertanggungjawabkan</div><div class="kpi-value">${rupiah(belumTotal)}</div><div class="kpi-sub">${num(belumList.length)} baris UM</div></div>
+    <div class="kpi-card purple"><div class="kpi-label">Selisih UM - PJK</div><div class="kpi-value">${rupiah(totalUm - totalPjk)}</div><div class="kpi-sub">seluruh sub unit</div></div>
+  `;
+
+  populateUmPjkFilterOptions();
+  filterUmPjkSubUnit();
+  filterUmPjkDetail();
+}
+
+function filterUmPjkSubUnit() {
+  const q = (document.getElementById('searchUmPjkSubUnit')?.value || '').toLowerCase();
+  const filtered = currentUmPjkSubUnit.filter(r => !q || (r.sub_unit||'').toLowerCase().includes(q));
+  const rows = tblApplySort('tblUmPjkSubUnit', filtered);
+
+  destroyChart('chartUmPjkSubUnit');
+  const ctx = document.getElementById('chartUmPjkSubUnit');
+  if (ctx) {
+    CHARTS['chartUmPjkSubUnit'] = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: rows.map(r => (r.sub_unit||'-').substring(0,20)),
+        datasets: [
+          { label: 'Uang Muka', data: rows.map(r => r.total_um), backgroundColor: '#2563eb', borderRadius: 5 },
+          { label: 'PJK',       data: rows.map(r => r.total_pjk), backgroundColor: '#059669', borderRadius: 5 },
+        ]
+      },
+      options: CHART_DEFAULTS
+    });
+  }
+
+  const tbody = document.querySelector('#tblUmPjkSubUnit tbody');
+  tbody.innerHTML = rows.map(r => `
+    <tr>
+      <td class="td-bold">${r.sub_unit||'-'}</td>
+      <td class="td-num">${rupiah(r.total_um)}</td>
+      <td class="td-num">${num(r.jumlah_um)}</td>
+      <td class="td-num">${rupiah(r.total_pjk)}</td>
+      <td class="td-num">${num(r.jumlah_pjk)}</td>
+      <td class="td-num ${r.selisih>=0?'rekon-diff':'rekon-match'}">${rupiah(r.selisih)}</td>
+    </tr>`).join('') || '<tr><td colspan="6" class="empty">Tidak ada data</td></tr>';
+  document.querySelector('#tblUmPjkSubUnit tfoot').innerHTML = rows.length ? tblTotalRow(1, [
+    { value: sumBy(rows,'total_um'), type: 'rupiah' },
+    { value: sumBy(rows,'jumlah_um'), type: 'num' },
+    { value: sumBy(rows,'total_pjk'), type: 'rupiah' },
+    { value: sumBy(rows,'jumlah_pjk'), type: 'num' },
+    { value: sumBy(rows,'total_um') - sumBy(rows,'total_pjk'), type: 'rupiah' },
+  ]) : '';
+  document.getElementById('umPjkSubUnitCount').textContent = `${num(rows.length)} dari ${num(currentUmPjkSubUnit.length)} sub unit`;
+  tblRefreshIcons('tblUmPjkSubUnit', 'head-tblUmPjkSubUnit');
+}
+function resetUmPjkSubUnitFilter() {
+  document.getElementById('searchUmPjkSubUnit').value = '';
+  filterUmPjkSubUnit();
+}
+
+function populateUmPjkFilterOptions() {
+  const fillSelect = (elId, values, allLabel) => {
+    const el = document.getElementById(elId);
+    if (!el) return;
+    const current = el.value;
+    const opts = [...new Set(values.filter(Boolean))].sort();
+    el.innerHTML = `<option value="">${allLabel}</option>` +
+      opts.map(v => `<option value="${v.replace(/"/g,'&quot;')}">${v}</option>`).join('');
+    if (opts.includes(current)) el.value = current;
+  };
+  fillSelect('fltUmPjkSubUnitDetail', currentUmPjkDetail.map(r => r.nama_sub_unit), 'Semua Sub Unit');
+  fillSelect('fltUmPjkKeterangan', currentUmPjkDetail.map(r => r.keterangan), 'Semua Keterangan (UM/PJK)');
+  fillSelect('fltUmPjkStatus', currentUmPjkDetail.map(r => r._statusUm).filter(s => s && s !== '-'), 'Semua Status');
+}
+
+function filterUmPjkDetail() {
+  const q       = (document.getElementById('searchUmPjkOperasional')?.value || '').toLowerCase();
+  const subUnit = document.getElementById('fltUmPjkSubUnitDetail')?.value || '';
+  const ket     = document.getElementById('fltUmPjkKeterangan')?.value || '';
+  const status  = document.getElementById('fltUmPjkStatus')?.value || '';
+
+  let rows = currentUmPjkDetail.filter(r => {
+    const su = r.nama_sub_unit || '';
+    const op = r.operasional || '';
+    const kp = r.keterangan_pencocokan || '';
+    if (q && !(op.toLowerCase().includes(q) || kp.toLowerCase().includes(q))) return false;
+    if (subUnit && su !== subUnit) return false;
+    if (ket && r.keterangan !== ket) return false;
+    if (status && r._statusUm !== status) return false;
+    return true;
+  });
+  rows = tblApplySort('tblUmPjkDetail', rows);
+
+  document.getElementById('umPjkDetailCount').textContent = `${num(rows.length)} dari ${num(currentUmPjkDetail.length)} baris`;
+
+  const tbody = document.querySelector('#tblUmPjkDetail tbody');
+  tbody.innerHTML = rows.slice(0,2000).map(r => `
+    <tr>
+      <td>${(r.tanggal_sub_transaksi||'').substring(0,10)}</td>
+      <td style="font-size:11px">${r.nama_sub_unit||'-'}</td>
+      <td><span class="badge badge-cyan">${r.Segment||'-'}</span></td>
+      <td style="font-size:11px">${r.nama_sub_penerima||'-'}</td>
+      <td><span class="badge ${r.keterangan==='Uang Muka'?'badge-blue':'badge-green'}">${r.keterangan||'-'}</span></td>
+      <td style="font-size:10px;color:var(--text3)">${r.keterangan_pencocokan||'-'}</td>
+      <td><span class="badge ${r._statusUm==='Belum Dipertanggungjawabkan'?'badge-red':(r._statusUm==='Sudah Dipertanggungjawabkan'?'badge-green':'badge-gray')}">${r._statusUm||'-'}</span></td>
+      <td class="td-num">${rupiah(r._debet)}</td>
+      <td class="td-num">${rupiah(r._kredit)}</td>
+      <td class="td-num td-bold">${rupiah(r._nominal)}</td>
+    </tr>`).join('') || '<tr><td colspan="10" class="empty">Tidak ada data</td></tr>';
+
+  document.querySelector('#tblUmPjkDetail tfoot').innerHTML = rows.length ? tblTotalRow(7, [
+    { value: sumBy(rows,'_debet'), type: 'rupiah' },
+    { value: sumBy(rows,'_kredit'), type: 'rupiah' },
+    { value: sumBy(rows,'_nominal'), type: 'rupiah' },
+  ]) : '';
+  tblRefreshIcons('tblUmPjkDetail', 'head-tblUmPjkDetail');
+}
+function resetUmPjkDetailFilter() {
+  document.getElementById('searchUmPjkOperasional').value = '';
+  document.getElementById('fltUmPjkSubUnitDetail').value = '';
+  document.getElementById('fltUmPjkKeterangan').value = '';
+  document.getElementById('fltUmPjkStatus').value = '';
+  filterUmPjkDetail();
+}
+
+// ── BIAYA BAHAN & BIAYA UMUM ──
+// Kedua modul ini strukturnya identik (sama-sama dari pendapatan_unit,
+// kolom `keterangan` = kategori jurnal sudah dihitung di BigQuery, kolom
+// coa_code perlu di-lookup ke nama COA via COA_BIAYA_MAP). Ditulis sebagai
+// satu fungsi generik `renderBiayaGeneric` yang dipanggil oleh masing-masing
+// modul, supaya perilakunya konsisten dan tidak dobel logika.
+let currentBiayaBahanDetail = [];
+let currentBiayaUmumDetail  = [];
+
+function renderBiayaGeneric(rowsMentah) {
+  return rowsMentah.map(r => ({
+    ...r,
+    _debet: akuntansiDebet(r),
+    _kredit: akuntansiKredit(r),
+    _nominal: akuntansiNominal(r),
+    _namaCoa: namaCoaBiaya(r),
+    _kodeCoa: kodeCoaBiaya(r),
+  }));
+}
+function rekapBiayaPerCoa(detail) {
+  const map = {};
+  detail.forEach(r => {
+    const key = r._namaCoa || 'Lainnya';
+    if (!map[key]) map[key] = { nama: key, total_nominal: 0, jumlah: 0 };
+    map[key].total_nominal += r._nominal;
+    map[key].jumlah += 1;
+  });
+  return Object.values(map).sort((a,b) => b.total_nominal - a.total_nominal);
+}
+function rekapBiayaPerKategori(detail) {
+  const map = {};
+  detail.forEach(r => {
+    const key = r.keterangan || 'Lainnya';
+    if (!map[key]) map[key] = { nama: key, total_nominal: 0, jumlah: 0 };
+    map[key].total_nominal += r._nominal;
+    map[key].jumlah += 1;
+  });
+  return Object.values(map).sort((a,b) => b.total_nominal - a.total_nominal);
+}
+function populateBiayaFilterOptions(prefix, detail) {
+  const fillSelect = (elId, values, allLabel) => {
+    const el = document.getElementById(elId);
+    if (!el) return;
+    const current = el.value;
+    const opts = [...new Set(values.filter(Boolean))].sort();
+    el.innerHTML = `<option value="">${allLabel}</option>` +
+      opts.map(v => `<option value="${v.replace(/"/g,'&quot;')}">${v}</option>`).join('');
+    if (opts.includes(current)) el.value = current;
+  };
+  fillSelect(`flt${prefix}Coa`, detail.map(r => r._namaCoa), 'Semua Nama COA');
+  fillSelect(`flt${prefix}Kategori`, detail.map(r => r.keterangan), 'Semua Kategori Jurnal');
+  fillSelect(`flt${prefix}SubUnit`, detail.map(r => r.nama_sub_unit), 'Semua Sub Unit');
+}
+function filterBiayaGeneric(prefix, sourceDetail, tableId, headId) {
+  const q       = (document.getElementById(`search${prefix}Detail`)?.value || '').toLowerCase();
+  const coa     = document.getElementById(`flt${prefix}Coa`)?.value || '';
+  const kategori= document.getElementById(`flt${prefix}Kategori`)?.value || '';
+  const subUnit = document.getElementById(`flt${prefix}SubUnit`)?.value || '';
+
+  let rows = sourceDetail.filter(r => {
+    const su = r.nama_sub_unit || '';
+    const kt = r.keterangan || '';
+    if (q && !(su.toLowerCase().includes(q) || kt.toLowerCase().includes(q))) return false;
+    if (coa && r._namaCoa !== coa) return false;
+    if (kategori && kt !== kategori) return false;
+    if (subUnit && su !== subUnit) return false;
+    return true;
+  });
+  rows = tblApplySort(tableId, rows);
+
+  document.getElementById(`${prefix.charAt(0).toLowerCase()}${prefix.slice(1)}DetailCount`).textContent = `${num(rows.length)} dari ${num(sourceDetail.length)} baris`;
+
+  const tbody = document.querySelector(`#${tableId} tbody`);
+  tbody.innerHTML = rows.slice(0,2000).map(r => `
+    <tr>
+      <td>${(r.tanggal_sub_transaksi||'').substring(0,10)}</td>
+      <td style="font-size:11px">${r.nama_sub_unit||'-'}</td>
+      <td style="font-size:11px">${r._namaCoa||'-'}</td>
+      <td style="font-size:10px;color:var(--text3)">${r._kodeCoa||'-'}</td>
+      <td><span class="badge badge-purple" style="font-size:10px">${r.keterangan||'-'}</span></td>
+      <td class="td-num">${rupiah(r._debet)}</td>
+      <td class="td-num">${rupiah(r._kredit)}</td>
+      <td class="td-num td-bold">${rupiah(r._nominal)}</td>
+    </tr>`).join('') || '<tr><td colspan="8" class="empty">Tidak ada data</td></tr>';
+
+  document.querySelector(`#${tableId} tfoot`).innerHTML = rows.length ? tblTotalRow(5, [
+    { value: sumBy(rows,'_debet'), type: 'rupiah' },
+    { value: sumBy(rows,'_kredit'), type: 'rupiah' },
+    { value: sumBy(rows,'_nominal'), type: 'rupiah' },
+  ]) : '';
+  tblRefreshIcons(tableId, headId);
+  return rows;
+}
+
+function renderBiayaBahan(d) {
+  const detail = renderBiayaGeneric(d.biaya_bahan_detail || []);
+  currentBiayaBahanDetail = detail;
+
+  const totalNominal = detail.reduce((s,r) => s + r._nominal, 0);
+  const perCoa = rekapBiayaPerCoa(detail);
+  const perKategori = rekapBiayaPerKategori(detail);
+
+  document.getElementById('kpiBiayaBahan').innerHTML = `
+    <div class="kpi-card blue"><div class="kpi-label">Total Biaya Bahan</div><div class="kpi-value">${rupiah(totalNominal)}</div><div class="kpi-sub">${num(detail.length)} baris</div></div>
+    <div class="kpi-card purple"><div class="kpi-label">Jumlah Nama COA</div><div class="kpi-value">${perCoa.length}</div><div class="kpi-sub">akun aktif</div></div>
+    <div class="kpi-card amber"><div class="kpi-label">Jumlah Kategori Jurnal</div><div class="kpi-value">${perKategori.length}</div><div class="kpi-sub">kategori aktif</div></div>
+  `;
+
+  makeBar('chartBiayaBahanCoa', perCoa.slice(0,15).map(r => r.nama.substring(0,22)), perCoa.slice(0,15).map(r => r.total_nominal), 'Nominal', { indexAxis:'y' });
+  makeDoughnut('chartBiayaBahanKategori', perKategori.map(r => r.nama), perKategori.map(r => r.total_nominal));
+
+  populateBiayaFilterOptions('BiayaBahan', detail);
+  filterBiayaBahanDetail();
+}
+function filterBiayaBahanDetail() {
+  filterBiayaGeneric('BiayaBahan', currentBiayaBahanDetail, 'tblBiayaBahanDetail', 'head-tblBiayaBahanDetail');
+}
+function resetBiayaBahanDetailFilter() {
+  document.getElementById('searchBiayaBahanDetail').value = '';
+  document.getElementById('fltBiayaBahanCoa').value = '';
+  document.getElementById('fltBiayaBahanKategori').value = '';
+  document.getElementById('fltBiayaBahanSubUnit').value = '';
+  filterBiayaBahanDetail();
+}
+
+function renderBiayaUmum(d) {
+  const detail = renderBiayaGeneric(d.biaya_umum_detail || []);
+  currentBiayaUmumDetail = detail;
+
+  const totalNominal = detail.reduce((s,r) => s + r._nominal, 0);
+  const perCoa = rekapBiayaPerCoa(detail);
+  const perKategori = rekapBiayaPerKategori(detail);
+
+  document.getElementById('kpiBiayaUmum').innerHTML = `
+    <div class="kpi-card blue"><div class="kpi-label">Total Biaya Umum</div><div class="kpi-value">${rupiah(totalNominal)}</div><div class="kpi-sub">${num(detail.length)} baris</div></div>
+    <div class="kpi-card purple"><div class="kpi-label">Jumlah Nama COA</div><div class="kpi-value">${perCoa.length}</div><div class="kpi-sub">akun aktif</div></div>
+    <div class="kpi-card amber"><div class="kpi-label">Jumlah Kategori Jurnal</div><div class="kpi-value">${perKategori.length}</div><div class="kpi-sub">kategori aktif</div></div>
+  `;
+
+  makeBar('chartBiayaUmumCoa', perCoa.slice(0,15).map(r => r.nama.substring(0,22)), perCoa.slice(0,15).map(r => r.total_nominal), 'Nominal', { indexAxis:'y' });
+  makeDoughnut('chartBiayaUmumKategori', perKategori.map(r => r.nama), perKategori.map(r => r.total_nominal));
+
+  populateBiayaFilterOptions('BiayaUmum', detail);
+  filterBiayaUmumDetail();
+}
+function filterBiayaUmumDetail() {
+  filterBiayaGeneric('BiayaUmum', currentBiayaUmumDetail, 'tblBiayaUmumDetail', 'head-tblBiayaUmumDetail');
+}
+function resetBiayaUmumDetailFilter() {
+  document.getElementById('searchBiayaUmumDetail').value = '';
+  document.getElementById('fltBiayaUmumCoa').value = '';
+  document.getElementById('fltBiayaUmumKategori').value = '';
+  document.getElementById('fltBiayaUmumSubUnit').value = '';
+  filterBiayaUmumDetail();
+}
+
 // ══ Hubungkan setiap tableId ke fungsi render/filter-nya masing-masing,
 //    supaya klik header sort cukup memanggil tblSort() lalu re-render otomatis ══
 TblRerender.tblUnit             = () => filterUnitDetailAndUnit();
@@ -2500,6 +3055,10 @@ TblRerender.tblPelunasanBank     = filterPelunasanBank;
 TblRerender.tblPelunasanDetail   = filterPelunasanDetail;
 TblRerender.tblPengeluaranKasHarian = filterPengeluaranKasHarian;
 TblRerender.tblPengeluaranKasDetail = filterPengeluaranKasDetail;
+TblRerender.tblUmPjkSubUnit = filterUmPjkSubUnit;
+TblRerender.tblUmPjkDetail  = filterUmPjkDetail;
+TblRerender.tblBiayaBahanDetail = filterBiayaBahanDetail;
+TblRerender.tblBiayaUmumDetail  = filterBiayaUmumDetail;
 
 // tblUnit disortir ulang lewat renderUnitData memakai data unit yang sedang aktif
 function filterUnitDetailAndUnit() {
@@ -2560,11 +3119,41 @@ async function loadPengeluaranKas() {
     PENGELUARAN_KAS = { pengeluaran_detail: [] };
   }
 }
+async function loadUangMukaPjk() {
+  try {
+    const r = await fetch('data/uang-muka-pjk.json?_=' + Date.now());
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    UANG_MUKA_PJK = await r.json();
+  } catch (e) {
+    console.warn('Gagal memuat data/uang-muka-pjk.json: ' + e.message);
+    UANG_MUKA_PJK = { uang_muka_pjk_detail: [] };
+  }
+}
+async function loadBiayaBahan() {
+  try {
+    const r = await fetch('data/biaya-bahan.json?_=' + Date.now());
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    BIAYA_BAHAN = await r.json();
+  } catch (e) {
+    console.warn('Gagal memuat data/biaya-bahan.json: ' + e.message);
+    BIAYA_BAHAN = { biaya_bahan_detail: [] };
+  }
+}
+async function loadBiayaUmum() {
+  try {
+    const r = await fetch('data/biaya-umum.json?_=' + Date.now());
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    BIAYA_UMUM = await r.json();
+  } catch (e) {
+    console.warn('Gagal memuat data/biaya-umum.json: ' + e.message);
+    BIAYA_UMUM = { biaya_umum_detail: [] };
+  }
+}
 
 async function loadData() {
   document.getElementById('kpiGrid').innerHTML = '<div class="loading"><div class="spinner"></div> Memuat data...</div>';
 
-  await Promise.all([loadManifest(), loadAux(), loadPelunasan(), loadPengeluaranKas()]);
+  await Promise.all([loadManifest(), loadAux(), loadPelunasan(), loadPengeluaranKas(), loadUangMukaPjk(), loadBiayaBahan(), loadBiayaUmum()]);
 
   if (MANIFEST.generated_at) {
     const d = new Date(MANIFEST.generated_at);
