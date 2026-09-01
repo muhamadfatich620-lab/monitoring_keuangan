@@ -1,7 +1,7 @@
 {
   "bulan": "2026-07",
   "bagian": 1,
-  "generated_at": "2026-09-01T01:02:23.557Z",
+  "generated_at": "2026-09-01T06:12:30.326Z",
   "uang_muka_pjk_detail": [
     {
       "id_sub_transaksi": "4969725",
@@ -585,8 +585,8 @@
       "nama_sub_penerima": "may.azmianty",
       "loaded_at": "1.787711552877E9",
       "nama_penerima": "ayu.cahya",
-      "keterangan": "-",
-      "keterangan_pencocokan": "Alokasi Sub Unit 88 - UANG MUKA SUPPORTING KEGIATAN KEMASYARAKATAN (IBI GRESIK, RT 003 RW 007 SIDOMORO, IDI GRESIK) - Manual ke - 0"
+      "keterangan": "Uang Muka",
+      "keterangan_pencocokan": "SUPPORTING KEGIATAN KEMASYARAKATAN (IBI GRESIK, RT 003 RW 007 SIDOMORO, IDI GRESIK) - Manual ke - 0"
     },
     {
       "id_sub_transaksi": "5446336",
