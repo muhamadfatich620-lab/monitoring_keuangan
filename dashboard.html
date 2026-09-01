@@ -1239,9 +1239,18 @@ const KASIR_EXCLUDE_NAMA_KASIR = ['indri.nurisa'];
 
 // cache file per-bulan yang sudah pernah di-fetch, supaya tidak fetch ulang tiap klik Terapkan
 const CACHE_KASIR = {};   // { '2026-06': [...rows] } — gabungan semua bagian (pN) bulan itu
-const CACHE_KREDIT = {};  // { '2026-06': [...rows] } — gabungan semua bagian (halaman BigQuery) bulan itu
-const MAX_BAGIAN_KASIR  = 200; // batas aman jumlah file kasir-YYYY-MM-pN.json per bulan
-const MAX_BAGIAN_KREDIT = 200; // batas aman jumlah file kredit-YYYY-MM-pN.json per bulan (sekarang tergantung volume data, bisa banyak untuk bulan padat)
+const CACHE_KREDIT = {};  // { '2026-06': [...rows] } — gabungan semua bagian (pN) bulan itu
+const CACHE_BIAYA_BAHAN = {};
+const CACHE_BIAYA_UMUM = {};
+const CACHE_PENGELUARAN_KAS = {};
+const CACHE_UANG_MUKA_PJK = {};
+
+const MAX_BAGIAN_KASIR = 200;
+const MAX_BAGIAN_KREDIT = 200;
+const MAX_BAGIAN_BIAYA_BAHAN = 200;
+const MAX_BAGIAN_BIAYA_UMUM = 200;
+const MAX_BAGIAN_PENGELUARAN_KAS = 200;
+const MAX_BAGIAN_UANG_MUKA_PJK = 200;
 
 // ══ SIDEBAR TOGGLE ══
 function toggleSidebar() {
@@ -1521,20 +1530,67 @@ async function fetchBulanKredit(kode) {
   return rows;
 }
 
+// Empat sumber berikut mengikuti pola pengambilan data Kasir:
+//   data/{prefix}-YYYY-MM-pN.json
+// Contoh:
+//   biaya-bahan-2026-08-p1.json
+//   biaya-umum-2026-08-p1.json
+//   pengeluaran-kas-2026-08-p1.json
+//   uang-muka-pjk-2026-08-p1.json
+async function fetchBulanBiayaBahan(kode) {
+  if (CACHE_BIAYA_BAHAN[kode]) return CACHE_BIAYA_BAHAN[kode];
+  const rows = await fetchBagianBerurutan('biaya-bahan', kode, MAX_BAGIAN_BIAYA_BAHAN, 'biaya_bahan_detail');
+  CACHE_BIAYA_BAHAN[kode] = rows;
+  return rows;
+}
+
+async function fetchBulanBiayaUmum(kode) {
+  if (CACHE_BIAYA_UMUM[kode]) return CACHE_BIAYA_UMUM[kode];
+  const rows = await fetchBagianBerurutan('biaya-umum', kode, MAX_BAGIAN_BIAYA_UMUM, 'biaya_umum_detail');
+  CACHE_BIAYA_UMUM[kode] = rows;
+  return rows;
+}
+
+async function fetchBulanPengeluaranKas(kode) {
+  if (CACHE_PENGELUARAN_KAS[kode]) return CACHE_PENGELUARAN_KAS[kode];
+  const rows = await fetchBagianBerurutan('pengeluaran-kas', kode, MAX_BAGIAN_PENGELUARAN_KAS, 'pengeluaran_detail');
+  CACHE_PENGELUARAN_KAS[kode] = rows;
+  return rows;
+}
+
+async function fetchBulanUangMukaPjk(kode) {
+  if (CACHE_UANG_MUKA_PJK[kode]) return CACHE_UANG_MUKA_PJK[kode];
+  const rows = await fetchBagianBerurutan('uang-muka-pjk', kode, MAX_BAGIAN_UANG_MUKA_PJK, 'uang_muka_pjk_detail');
+  CACHE_UANG_MUKA_PJK[kode] = rows;
+  return rows;
+}
+
 async function loadSemuaUntukRentang(awal, akhir) {
   const bulanList = monthsInRange(awal, akhir);
-  const kasirArr  = await Promise.all(bulanList.map(k => fetchBulanKasir(k)));
-  const kreditArr = await Promise.all(bulanList.map(k => fetchBulanKredit(k)));
+
+  const [kasirArr, kreditArr, biayaBahanArr, biayaUmumArr, pengeluaranKasArr, umPjkArr] = await Promise.all([
+    Promise.all(bulanList.map(k => fetchBulanKasir(k))),
+    Promise.all(bulanList.map(k => fetchBulanKredit(k))),
+    Promise.all(bulanList.map(k => fetchBulanBiayaBahan(k))),
+    Promise.all(bulanList.map(k => fetchBulanBiayaUmum(k))),
+    Promise.all(bulanList.map(k => fetchBulanPengeluaranKas(k))),
+    Promise.all(bulanList.map(k => fetchBulanUangMukaPjk(k))),
+  ]);
+
   return {
     kasir: dedupeExact([].concat(...kasirArr)),
     kredit: dedupeExact([].concat(...kreditArr)),
+    biayaBahan: dedupeExact([].concat(...biayaBahanArr)),
+    biayaUmum: dedupeExact([].concat(...biayaUmumArr)),
+    pengeluaranKas: dedupeExact([].concat(...pengeluaranKasArr)),
+    umPjk: dedupeExact([].concat(...umPjkArr)),
   };
 }
 
 // ══ BUILD FILTERED (async karena fetch file per-bulan) ══
 async function buildFiltered() {
   const { awal, akhir } = getDateRange();
-  const { kasir, kredit } = await loadSemuaUntukRentang(awal, akhir);
+  const { kasir, kredit, biayaBahan, biayaUmum, pengeluaranKas, umPjk } = await loadSemuaUntukRentang(awal, akhir);
 
   let kasirRows  = kasir.filter(r => inRange(r.tanggal_transaksi, awal, akhir));
   // Laporan Kasir: buang seluruh baris dengan nama kasir yang dikecualikan
@@ -1545,10 +1601,10 @@ async function buildFiltered() {
 
   const kreditRows = kredit.filter(r => inRange(r.tanggal, awal, akhir));
   const pelunasanRows = (PELUNASAN?.pelunasan_detail || []).filter(r => inRange(r.tanggal_sub_transaksi, awal, akhir));
-  const pengeluaranKasRows = (PENGELUARAN_KAS?.pengeluaran_detail || []).filter(r => inRange(r.tanggal_sub_transaksi, awal, akhir));
-  const umPjkRows = (UANG_MUKA_PJK?.uang_muka_pjk_detail || []).filter(r => inRange(r.tanggal_sub_transaksi, awal, akhir));
-  const biayaBahanRows = (BIAYA_BAHAN?.biaya_bahan_detail || []).filter(r => inRange(r.tanggal_sub_transaksi, awal, akhir));
-  const biayaUmumRows = (BIAYA_UMUM?.biaya_umum_detail || []).filter(r => inRange(r.tanggal_sub_transaksi, awal, akhir));
+  const pengeluaranKasRows = pengeluaranKas.filter(r => inRange(r.tanggal_sub_transaksi, awal, akhir));
+  const umPjkRows = umPjk.filter(r => inRange(r.tanggal_sub_transaksi, awal, akhir));
+  const biayaBahanRows = biayaBahan.filter(r => inRange(r.tanggal_sub_transaksi, awal, akhir));
+  const biayaUmumRows = biayaUmum.filter(r => inRange(r.tanggal_sub_transaksi, awal, akhir));
 
   FILTERED = {
     generated_at: MANIFEST?.generated_at,
@@ -1564,18 +1620,13 @@ async function buildFiltered() {
     // tabel `routing-dokumen.monitoring_keuangan.pelunasan_piutang`, yang
     // di-refresh otomatis lewat scheduled query dari pendapatan_unit.
     pelunasan_detail: pelunasanRows,
-    // pengeluaran_detail dari data/pengeluaran-kas.json (single file, di-cache
-    // sekali saat load, difilter tanggal di sisi client). Sumbernya tabel
-    // `routing-dokumen.monitoring_keuangan.pengeluaran_kas`.
+    // pengeluaran_detail dari data/pengeluaran-kas-YYYY-MM-pN.json.
     pengeluaran_detail: pengeluaranKasRows,
-    // uang_muka_pjk_detail dari data/uang-muka-pjk.json. Sumbernya tabel
-    // `routing-dokumen.monitoring_keuangan.uang_muka_pjk`.
+    // uang_muka_pjk_detail dari data/uang-muka-pjk-YYYY-MM-pN.json.
     uang_muka_pjk_detail: umPjkRows,
-    // biaya_bahan_detail dari data/biaya-bahan.json. Sumbernya tabel
-    // `routing-dokumen.monitoring_keuangan.biaya_bahan`.
+    // biaya_bahan_detail dari data/biaya-bahan-YYYY-MM-pN.json.
     biaya_bahan_detail: biayaBahanRows,
-    // biaya_umum_detail dari data/biaya-umum.json. Sumbernya tabel
-    // `routing-dokumen.monitoring_keuangan.biaya_umum`.
+    // biaya_umum_detail dari data/biaya-umum-YYYY-MM-pN.json.
     biaya_umum_detail: biayaUmumRows,
   };
 
@@ -2589,7 +2640,7 @@ function exportPelunasanExcel() {
   XLSX.writeFile(wb, namaFile);
 }
 
-// ── PENGELUARAN KAS (dari data/pengeluaran-kas.json, sumber tabel
+// ── PENGELUARAN KAS (dari data/pengeluaran-kas-YYYY-MM-pN.json, sumber tabel
 //    routing-dokumen.monitoring_keuangan.pengeluaran_kas). Struktur & fungsi
 //    di bawah ini SENGAJA dibuat sejajar/mirip dengan modul Pelunasan
 //    Piutang di atas, karena skema datanya sama persis (sama-sama berasal
@@ -2726,7 +2777,7 @@ function resetPengeluaranKasDetailFilter() {
   filterPengeluaranKasDetail();
 }
 
-// ── UANG MUKA & PJK (dari data/uang-muka-pjk.json, sumber tabel
+// ── UANG MUKA & PJK (dari data/uang-muka-pjk-YYYY-MM-pN.json, sumber tabel
 //    routing-dokumen.monitoring_keuangan.uang_muka_pjk). Kolom `keterangan`
 //    (Uang Muka/PJK) dan `keterangan_pencocokan` sudah dihitung di BigQuery;
 //    status pertanggungjawaban dihitung di sini (lihat hitungStatusUmPjk). ──
@@ -3109,51 +3160,10 @@ async function loadPelunasan() {
     PELUNASAN = { pelunasan_detail: [] };
   }
 }
-async function loadPengeluaranKas() {
-  try {
-    const r = await fetch('data/pengeluaran-kas.json?_=' + Date.now());
-    if (!r.ok) throw new Error('HTTP ' + r.status);
-    PENGELUARAN_KAS = await r.json();
-  } catch (e) {
-    console.warn('Gagal memuat data/pengeluaran-kas.json: ' + e.message);
-    PENGELUARAN_KAS = { pengeluaran_detail: [] };
-  }
-}
-async function loadUangMukaPjk() {
-  try {
-    const r = await fetch('data/uang-muka-pjk.json?_=' + Date.now());
-    if (!r.ok) throw new Error('HTTP ' + r.status);
-    UANG_MUKA_PJK = await r.json();
-  } catch (e) {
-    console.warn('Gagal memuat data/uang-muka-pjk.json: ' + e.message);
-    UANG_MUKA_PJK = { uang_muka_pjk_detail: [] };
-  }
-}
-async function loadBiayaBahan() {
-  try {
-    const r = await fetch('data/biaya-bahan.json?_=' + Date.now());
-    if (!r.ok) throw new Error('HTTP ' + r.status);
-    BIAYA_BAHAN = await r.json();
-  } catch (e) {
-    console.warn('Gagal memuat data/biaya-bahan.json: ' + e.message);
-    BIAYA_BAHAN = { biaya_bahan_detail: [] };
-  }
-}
-async function loadBiayaUmum() {
-  try {
-    const r = await fetch('data/biaya-umum.json?_=' + Date.now());
-    if (!r.ok) throw new Error('HTTP ' + r.status);
-    BIAYA_UMUM = await r.json();
-  } catch (e) {
-    console.warn('Gagal memuat data/biaya-umum.json: ' + e.message);
-    BIAYA_UMUM = { biaya_umum_detail: [] };
-  }
-}
-
 async function loadData() {
   document.getElementById('kpiGrid').innerHTML = '<div class="loading"><div class="spinner"></div> Memuat data...</div>';
 
-  await Promise.all([loadManifest(), loadAux(), loadPelunasan(), loadPengeluaranKas(), loadUangMukaPjk(), loadBiayaBahan(), loadBiayaUmum()]);
+  await Promise.all([loadManifest(), loadAux(), loadPelunasan()]);
 
   if (MANIFEST.generated_at) {
     const d = new Date(MANIFEST.generated_at);
