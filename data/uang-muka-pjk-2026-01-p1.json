@@ -1,7 +1,7 @@
 {
   "bulan": "2026-01",
   "bagian": 1,
-  "generated_at": "2026-09-01T01:02:03.926Z",
+  "generated_at": "2026-09-01T06:12:09.435Z",
   "uang_muka_pjk_detail": [
     {
       "id_sub_transaksi": "343796",
@@ -15,8 +15,8 @@
       "nama_sub_penerima": "fajar.aldiansyah",
       "loaded_at": "1.782805632857E9",
       "nama_penerima": "fajar.aldiansyah",
-      "keterangan": "-",
-      "keterangan_pencocokan": "Uang Muka Pembelian Macbook Apple Direksi"
+      "keterangan": "Uang Muka",
+      "keterangan_pencocokan": "Pembelian Macbook Apple Direksi"
     },
     {
       "id_sub_transaksi": "387143",
@@ -60,7 +60,7 @@
       "nama_sub_penerima": "fajar.aldiansyah",
       "loaded_at": "1.782805934761E9",
       "nama_penerima": "ayu.cahya",
-      "keterangan": "-",
+      "keterangan": "PJK",
       "keterangan_pencocokan": "REAL. AKOMODASI PELATIHAN ANESTHESIA DEVELOPING SKILLED NURSE FOR SAFE AND EFFECTIVE ANESTHESIA CARE BULAN NOVEMBER 2025"
     },
     {
@@ -150,8 +150,8 @@
       "nama_sub_penerima": "may.azmianty",
       "loaded_at": "1.782805800413E9",
       "nama_penerima": "rusdiana.yatiningsih",
-      "keterangan": "-",
-      "keterangan_pencocokan": "uang muka dapur periode januari - februari 2026"
+      "keterangan": "Uang Muka",
+      "keterangan_pencocokan": "dapur periode januari - februari 2026"
     },
     {
       "id_sub_transaksi": "146210",
@@ -210,8 +210,8 @@
       "nama_sub_penerima": "fajar.aldiansyah",
       "loaded_at": "1.782806276054E9",
       "nama_penerima": "RODIYAH",
-      "keterangan": "-",
-      "keterangan_pencocokan": "Alokasi 88 - Pengajuan Uang Muka Rapat Kerja CNG 2026 - Manual"
+      "keterangan": "Uang Muka",
+      "keterangan_pencocokan": "Rapat Kerja CNG 2026 - Manual"
     },
     {
       "id_sub_transaksi": "207129",
@@ -300,7 +300,7 @@
       "nama_sub_penerima": "may.azmianty",
       "loaded_at": "1.782807207535E9",
       "nama_penerima": "ayu.cahya",
-      "keterangan": "-",
+      "keterangan": "PJK",
       "keterangan_pencocokan": "Alokasi 88 - REAL. PERPANJANG STNK TAHUNAN 1822, 1823, 1824 & BUS MCU 7478 - Manual"
     },
     {
