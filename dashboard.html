@@ -1116,19 +1116,14 @@ tfoot td {
     <div class="kpi-grid" id="kpiBiayaBahan">
       <div class="loading"><div class="spinner"></div> Memuat data...</div>
     </div>
-    <div class="grid-2">
-      <div class="section-card">
-        <div class="section-head"><div class="section-title">Per Nama COA</div></div>
-        <div class="section-body"><div class="chart-wrap"><canvas id="chartBiayaBahanCoa"></canvas></div></div>
-      </div>
-      <div class="section-card">
-        <div class="section-head"><div class="section-title">Per Kategori Jurnal</div></div>
-        <div class="section-body"><div class="chart-wrap"><canvas id="chartBiayaBahanKategori"></canvas></div></div>
-      </div>
-    </div>
-    <div class="section-card">
+
+    <!-- FILTER UTAMA: semua rekap + detail mengikuti filter ini -->
+    <div class="section-card" style="margin-bottom:18px">
       <div class="section-head">
-        <div><div class="section-title">Detail Biaya Bahan</div><div class="section-sub">Menampilkan maks 2000 baris pertama dari hasil filter</div></div>
+        <div>
+          <div class="section-title">Filter Biaya Bahan</div>
+          <div class="section-sub">Rekap Nama COA, Kategori, Sub Unit, dan total akan otomatis berubah mengikuti filter.</div>
+        </div>
       </div>
       <div class="local-filter-wrap">
         <input type="text" id="searchBiayaBahanDetail" placeholder="Cari sub unit / keterangan..." oninput="filterBiayaBahanDetail()"/>
@@ -1137,6 +1132,70 @@ tfoot td {
         <select id="fltBiayaBahanSubUnit" onchange="filterBiayaBahanDetail()"><option value="">Semua Sub Unit</option></select>
         <button class="btn btn-outline" onclick="resetBiayaBahanDetailFilter()">Reset Filter</button>
         <span class="local-filter-count" id="biayaBahanDetailCount"></span>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="section-card">
+        <div class="section-head"><div class="section-title">Grafik Per Nama COA</div></div>
+        <div class="section-body"><div class="chart-wrap"><canvas id="chartBiayaBahanCoa"></canvas></div></div>
+      </div>
+      <div class="section-card">
+        <div class="section-head"><div class="section-title">Grafik Per Kategori</div></div>
+        <div class="section-body"><div class="chart-wrap"><canvas id="chartBiayaBahanKategori"></canvas></div></div>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-top:18px">
+      <div class="section-card">
+        <div class="section-head">
+          <div><div class="section-title">Rekap Per Nama COA</div><div class="section-sub">Total mengikuti filter aktif</div></div>
+        </div>
+        <div class="section-body" style="padding:0">
+          <div class="tbl-wrap"><table id="tblBiayaBahanCoa">
+            <thead id="head-tblBiayaBahanCoa"><tr>
+              <th data-key="nama" onclick="tblSort('tblBiayaBahanCoa','nama','text')">Nama COA <span class="sort-ico-wrap"></span></th>
+              <th class="td-num" data-key="jumlah" onclick="tblSort('tblBiayaBahanCoa','jumlah','number')">Jumlah Baris <span class="sort-ico-wrap"></span></th>
+              <th class="td-num" data-key="total_nominal" onclick="tblSort('tblBiayaBahanCoa','total_nominal','number')">Total Nominal <span class="sort-ico-wrap"></span></th>
+            </tr></thead><tbody></tbody><tfoot></tfoot>
+          </table></div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-head">
+          <div><div class="section-title">Rekap Per Kategori Jurnal</div><div class="section-sub">Total mengikuti filter aktif</div></div>
+        </div>
+        <div class="section-body" style="padding:0">
+          <div class="tbl-wrap"><table id="tblBiayaBahanKategori">
+            <thead id="head-tblBiayaBahanKategori"><tr>
+              <th data-key="nama" onclick="tblSort('tblBiayaBahanKategori','nama','text')">Kategori Jurnal <span class="sort-ico-wrap"></span></th>
+              <th class="td-num" data-key="jumlah" onclick="tblSort('tblBiayaBahanKategori','jumlah','number')">Jumlah Baris <span class="sort-ico-wrap"></span></th>
+              <th class="td-num" data-key="total_nominal" onclick="tblSort('tblBiayaBahanKategori','total_nominal','number')">Total Nominal <span class="sort-ico-wrap"></span></th>
+            </tr></thead><tbody></tbody><tfoot></tfoot>
+          </table></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card" style="margin-top:18px">
+      <div class="section-head">
+        <div><div class="section-title">Rekap Per Sub Unit</div><div class="section-sub">Total mengikuti filter aktif</div></div>
+      </div>
+      <div class="section-body" style="padding:0">
+        <div class="tbl-wrap"><table id="tblBiayaBahanSubUnit">
+          <thead id="head-tblBiayaBahanSubUnit"><tr>
+            <th data-key="nama" onclick="tblSort('tblBiayaBahanSubUnit','nama','text')">Sub Unit <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="jumlah" onclick="tblSort('tblBiayaBahanSubUnit','jumlah','number')">Jumlah Baris <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="total_nominal" onclick="tblSort('tblBiayaBahanSubUnit','total_nominal','number')">Total Nominal <span class="sort-ico-wrap"></span></th>
+          </tr></thead><tbody></tbody><tfoot></tfoot>
+        </table></div>
+      </div>
+    </div>
+
+    <div class="section-card" style="margin-top:18px">
+      <div class="section-head">
+        <div><div class="section-title">Detail Biaya Bahan</div><div class="section-sub">Menampilkan maks 2000 baris pertama dari hasil filter</div></div>
       </div>
       <div class="section-body" style="padding:0">
         <div class="tbl-wrap"><table id="tblBiayaBahanDetail">
@@ -1149,9 +1208,7 @@ tfoot td {
             <th class="td-num" data-key="_debet" onclick="tblSort('tblBiayaBahanDetail','_debet','number')">Debet <span class="sort-ico-wrap"></span></th>
             <th class="td-num" data-key="_kredit" onclick="tblSort('tblBiayaBahanDetail','_kredit','number')">Kredit <span class="sort-ico-wrap"></span></th>
             <th class="td-num" data-key="_nominal" onclick="tblSort('tblBiayaBahanDetail','_nominal','number')">Nominal <span class="sort-ico-wrap"></span></th>
-          </tr></thead>
-          <tbody></tbody>
-          <tfoot></tfoot>
+          </tr></thead><tbody></tbody><tfoot></tfoot>
         </table></div>
       </div>
     </div>
@@ -1162,19 +1219,13 @@ tfoot td {
     <div class="kpi-grid" id="kpiBiayaUmum">
       <div class="loading"><div class="spinner"></div> Memuat data...</div>
     </div>
-    <div class="grid-2">
-      <div class="section-card">
-        <div class="section-head"><div class="section-title">Per Nama COA</div></div>
-        <div class="section-body"><div class="chart-wrap"><canvas id="chartBiayaUmumCoa"></canvas></div></div>
-      </div>
-      <div class="section-card">
-        <div class="section-head"><div class="section-title">Per Kategori Jurnal</div></div>
-        <div class="section-body"><div class="chart-wrap"><canvas id="chartBiayaUmumKategori"></canvas></div></div>
-      </div>
-    </div>
-    <div class="section-card">
+
+    <div class="section-card" style="margin-bottom:18px">
       <div class="section-head">
-        <div><div class="section-title">Detail Biaya Umum</div><div class="section-sub">Menampilkan maks 2000 baris pertama dari hasil filter</div></div>
+        <div>
+          <div class="section-title">Filter Biaya Umum</div>
+          <div class="section-sub">Rekap Nama COA, Kategori, Sub Unit, dan total akan otomatis berubah mengikuti filter.</div>
+        </div>
       </div>
       <div class="local-filter-wrap">
         <input type="text" id="searchBiayaUmumDetail" placeholder="Cari sub unit / keterangan..." oninput="filterBiayaUmumDetail()"/>
@@ -1183,6 +1234,70 @@ tfoot td {
         <select id="fltBiayaUmumSubUnit" onchange="filterBiayaUmumDetail()"><option value="">Semua Sub Unit</option></select>
         <button class="btn btn-outline" onclick="resetBiayaUmumDetailFilter()">Reset Filter</button>
         <span class="local-filter-count" id="biayaUmumDetailCount"></span>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="section-card">
+        <div class="section-head"><div class="section-title">Grafik Per Nama COA</div></div>
+        <div class="section-body"><div class="chart-wrap"><canvas id="chartBiayaUmumCoa"></canvas></div></div>
+      </div>
+      <div class="section-card">
+        <div class="section-head"><div class="section-title">Grafik Per Kategori</div></div>
+        <div class="section-body"><div class="chart-wrap"><canvas id="chartBiayaUmumKategori"></canvas></div></div>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-top:18px">
+      <div class="section-card">
+        <div class="section-head">
+          <div><div class="section-title">Rekap Per Nama COA</div><div class="section-sub">Total mengikuti filter aktif</div></div>
+        </div>
+        <div class="section-body" style="padding:0">
+          <div class="tbl-wrap"><table id="tblBiayaUmumCoa">
+            <thead id="head-tblBiayaUmumCoa"><tr>
+              <th data-key="nama" onclick="tblSort('tblBiayaUmumCoa','nama','text')">Nama COA <span class="sort-ico-wrap"></span></th>
+              <th class="td-num" data-key="jumlah" onclick="tblSort('tblBiayaUmumCoa','jumlah','number')">Jumlah Baris <span class="sort-ico-wrap"></span></th>
+              <th class="td-num" data-key="total_nominal" onclick="tblSort('tblBiayaUmumCoa','total_nominal','number')">Total Nominal <span class="sort-ico-wrap"></span></th>
+            </tr></thead><tbody></tbody><tfoot></tfoot>
+          </table></div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-head">
+          <div><div class="section-title">Rekap Per Kategori Jurnal</div><div class="section-sub">Total mengikuti filter aktif</div></div>
+        </div>
+        <div class="section-body" style="padding:0">
+          <div class="tbl-wrap"><table id="tblBiayaUmumKategori">
+            <thead id="head-tblBiayaUmumKategori"><tr>
+              <th data-key="nama" onclick="tblSort('tblBiayaUmumKategori','nama','text')">Kategori Jurnal <span class="sort-ico-wrap"></span></th>
+              <th class="td-num" data-key="jumlah" onclick="tblSort('tblBiayaUmumKategori','jumlah','number')">Jumlah Baris <span class="sort-ico-wrap"></span></th>
+              <th class="td-num" data-key="total_nominal" onclick="tblSort('tblBiayaUmumKategori','total_nominal','number')">Total Nominal <span class="sort-ico-wrap"></span></th>
+            </tr></thead><tbody></tbody><tfoot></tfoot>
+          </table></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card" style="margin-top:18px">
+      <div class="section-head">
+        <div><div class="section-title">Rekap Per Sub Unit</div><div class="section-sub">Total mengikuti filter aktif</div></div>
+      </div>
+      <div class="section-body" style="padding:0">
+        <div class="tbl-wrap"><table id="tblBiayaUmumSubUnit">
+          <thead id="head-tblBiayaUmumSubUnit"><tr>
+            <th data-key="nama" onclick="tblSort('tblBiayaUmumSubUnit','nama','text')">Sub Unit <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="jumlah" onclick="tblSort('tblBiayaUmumSubUnit','jumlah','number')">Jumlah Baris <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="total_nominal" onclick="tblSort('tblBiayaUmumSubUnit','total_nominal','number')">Total Nominal <span class="sort-ico-wrap"></span></th>
+          </tr></thead><tbody></tbody><tfoot></tfoot>
+        </table></div>
+      </div>
+    </div>
+
+    <div class="section-card" style="margin-top:18px">
+      <div class="section-head">
+        <div><div class="section-title">Detail Biaya Umum</div><div class="section-sub">Menampilkan maks 2000 baris pertama dari hasil filter</div></div>
       </div>
       <div class="section-body" style="padding:0">
         <div class="tbl-wrap"><table id="tblBiayaUmumDetail">
@@ -1195,9 +1310,7 @@ tfoot td {
             <th class="td-num" data-key="_debet" onclick="tblSort('tblBiayaUmumDetail','_debet','number')">Debet <span class="sort-ico-wrap"></span></th>
             <th class="td-num" data-key="_kredit" onclick="tblSort('tblBiayaUmumDetail','_kredit','number')">Kredit <span class="sort-ico-wrap"></span></th>
             <th class="td-num" data-key="_nominal" onclick="tblSort('tblBiayaUmumDetail','_nominal','number')">Nominal <span class="sort-ico-wrap"></span></th>
-          </tr></thead>
-          <tbody></tbody>
-          <tfoot></tfoot>
+          </tr></thead><tbody></tbody><tfoot></tfoot>
         </table></div>
       </div>
     </div>
@@ -2954,58 +3067,95 @@ function renderBiayaGeneric(rowsMentah) {
     _kodeCoa: kodeCoaBiaya(r),
   }));
 }
-function rekapBiayaPerCoa(detail) {
+function rekapBiayaByField(detail, field, fallback) {
   const map = {};
   detail.forEach(r => {
-    const key = r._namaCoa || 'Lainnya';
+    const raw = r[field];
+    const key = (raw === undefined || raw === null || String(raw).trim() === '') ? fallback : String(raw);
     if (!map[key]) map[key] = { nama: key, total_nominal: 0, jumlah: 0 };
-    map[key].total_nominal += r._nominal;
+    map[key].total_nominal += Number(r._nominal) || 0;
     map[key].jumlah += 1;
   });
   return Object.values(map).sort((a,b) => b.total_nominal - a.total_nominal);
+}
+function rekapBiayaPerCoa(detail) {
+  return rekapBiayaByField(detail, '_namaCoa', 'Lainnya');
 }
 function rekapBiayaPerKategori(detail) {
-  const map = {};
-  detail.forEach(r => {
-    const key = r.keterangan || 'Lainnya';
-    if (!map[key]) map[key] = { nama: key, total_nominal: 0, jumlah: 0 };
-    map[key].total_nominal += r._nominal;
-    map[key].jumlah += 1;
-  });
-  return Object.values(map).sort((a,b) => b.total_nominal - a.total_nominal);
+  return rekapBiayaByField(detail, 'keterangan', 'Lainnya');
 }
+function rekapBiayaPerSubUnit(detail) {
+  return rekapBiayaByField(detail, 'nama_sub_unit', 'Lainnya');
+}
+
 function populateBiayaFilterOptions(prefix, detail) {
   const fillSelect = (elId, values, allLabel) => {
     const el = document.getElementById(elId);
     if (!el) return;
     const current = el.value;
-    const opts = [...new Set(values.filter(Boolean))].sort();
+    const opts = [...new Set(values.filter(v => v !== null && v !== undefined && String(v).trim() !== '').map(String))].sort((a,b) => a.localeCompare(b, 'id'));
     el.innerHTML = `<option value="">${allLabel}</option>` +
-      opts.map(v => `<option value="${v.replace(/"/g,'&quot;')}">${v}</option>`).join('');
+      opts.map(v => `<option value="${v.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}">${v}</option>`).join('');
     if (opts.includes(current)) el.value = current;
   };
   fillSelect(`flt${prefix}Coa`, detail.map(r => r._namaCoa), 'Semua Nama COA');
   fillSelect(`flt${prefix}Kategori`, detail.map(r => r.keterangan), 'Semua Kategori Jurnal');
   fillSelect(`flt${prefix}SubUnit`, detail.map(r => r.nama_sub_unit), 'Semua Sub Unit');
 }
+
+function renderBiayaRekapTable(tableId, headId, rows) {
+  const sorted = tblApplySort(tableId, rows);
+  const tbody = document.querySelector(`#${tableId} tbody`);
+  if (!tbody) return;
+  tbody.innerHTML = sorted.map(r => `
+    <tr>
+      <td style="font-size:11px">${r.nama || '-'}</td>
+      <td class="td-num">${num(r.jumlah)}</td>
+      <td class="td-num td-bold">${rupiah(r.total_nominal)}</td>
+    </tr>`).join('') || '<tr><td colspan="3" class="empty">Tidak ada data</td></tr>';
+  document.querySelector(`#${tableId} tfoot`).innerHTML = sorted.length ? tblTotalRow(0, [
+    { value: sumBy(sorted,'jumlah'), type: 'num' },
+    { value: sumBy(sorted,'total_nominal'), type: 'rupiah' },
+  ]) : '';
+  tblRefreshIcons(tableId, headId);
+}
+
+function renderBiayaRekap(prefix, detail) {
+  const perCoa = rekapBiayaPerCoa(detail);
+  const perKategori = rekapBiayaPerKategori(detail);
+  const perSubUnit = rekapBiayaPerSubUnit(detail);
+
+  renderBiayaRekapTable(`tbl${prefix}Coa`, `head-tbl${prefix}Coa`, perCoa);
+  renderBiayaRekapTable(`tbl${prefix}Kategori`, `head-tbl${prefix}Kategori`, perKategori);
+  renderBiayaRekapTable(`tbl${prefix}SubUnit`, `head-tbl${prefix}SubUnit`, perSubUnit);
+
+  const chartCoa = perCoa.slice(0,15);
+  const chartKategori = perKategori;
+  makeBar(`chart${prefix}Coa`, chartCoa.map(r => r.nama.substring(0,22)), chartCoa.map(r => r.total_nominal), 'Nominal', { indexAxis:'y' });
+  makeDoughnut(`chart${prefix}Kategori`, chartKategori.map(r => r.nama), chartKategori.map(r => r.total_nominal));
+}
+
 function filterBiayaGeneric(prefix, sourceDetail, tableId, headId) {
-  const q       = (document.getElementById(`search${prefix}Detail`)?.value || '').toLowerCase();
+  const q       = (document.getElementById(`search${prefix}Detail`)?.value || '').trim().toLowerCase();
   const coa     = document.getElementById(`flt${prefix}Coa`)?.value || '';
   const kategori= document.getElementById(`flt${prefix}Kategori`)?.value || '';
   const subUnit = document.getElementById(`flt${prefix}SubUnit`)?.value || '';
 
   let rows = sourceDetail.filter(r => {
-    const su = r.nama_sub_unit || '';
-    const kt = r.keterangan || '';
-    if (q && !(su.toLowerCase().includes(q) || kt.toLowerCase().includes(q))) return false;
+    const su = String(r.nama_sub_unit || '');
+    const kt = String(r.keterangan || '');
+    const namaCoa = String(r._namaCoa || '');
+    if (q && !(su.toLowerCase().includes(q) || kt.toLowerCase().includes(q) || namaCoa.toLowerCase().includes(q))) return false;
     if (coa && r._namaCoa !== coa) return false;
     if (kategori && kt !== kategori) return false;
     if (subUnit && su !== subUnit) return false;
     return true;
   });
+
   rows = tblApplySort(tableId, rows);
 
-  document.getElementById(`${prefix.charAt(0).toLowerCase()}${prefix.slice(1)}DetailCount`).textContent = `${num(rows.length)} dari ${num(sourceDetail.length)} baris`;
+  const countEl = document.getElementById(`${prefix.charAt(0).toLowerCase()}${prefix.slice(1)}DetailCount`);
+  if (countEl) countEl.textContent = `${num(rows.length)} dari ${num(sourceDetail.length)} baris`;
 
   const tbody = document.querySelector(`#${tableId} tbody`);
   tbody.innerHTML = rows.slice(0,2000).map(r => `
@@ -3026,31 +3176,37 @@ function filterBiayaGeneric(prefix, sourceDetail, tableId, headId) {
     { value: sumBy(rows,'_nominal'), type: 'rupiah' },
   ]) : '';
   tblRefreshIcons(tableId, headId);
+
+  // PENTING: rekap dihitung ulang dari BARIS YANG SUDAH TERFILTER.
+  // Dengan demikian total per COA, kategori, dan sub unit ikut berubah.
+  const recapPrefix = prefix;
+  renderBiayaRekap(recapPrefix, rows);
+
+  const totalNominal = sumBy(rows, '_nominal');
+  const totalDebet = sumBy(rows, '_debet');
+  const totalKredit = sumBy(rows, '_kredit');
+  const kpiId = prefix === 'BiayaBahan' ? 'kpiBiayaBahan' : 'kpiBiayaUmum';
+  const label = prefix === 'BiayaBahan' ? 'Total Biaya Bahan' : 'Total Biaya Umum';
+  const jumlahCoa = rekapBiayaPerCoa(rows).length;
+  const jumlahKategori = rekapBiayaPerKategori(rows).length;
+  const jumlahSubUnit = rekapBiayaPerSubUnit(rows).length;
+  document.getElementById(kpiId).innerHTML = `
+    <div class="kpi-card blue"><div class="kpi-label">${label}</div><div class="kpi-value">${rupiah(totalNominal)}</div><div class="kpi-sub">${num(rows.length)} baris terfilter</div></div>
+    <div class="kpi-card purple"><div class="kpi-label">Jumlah Nama COA</div><div class="kpi-value">${num(jumlahCoa)}</div><div class="kpi-sub">COA pada filter</div></div>
+    <div class="kpi-card amber"><div class="kpi-label">Jumlah Kategori</div><div class="kpi-value">${num(jumlahKategori)}</div><div class="kpi-sub">kategori pada filter</div></div>
+    <div class="kpi-card green"><div class="kpi-label">Jumlah Sub Unit</div><div class="kpi-value">${num(jumlahSubUnit)}</div><div class="kpi-sub">sub unit pada filter</div></div>
+  `;
   return rows;
 }
 
 function renderBiayaBahan(d) {
   const detail = renderBiayaGeneric(d.biaya_bahan_detail || []);
   currentBiayaBahanDetail = detail;
-
-  const totalNominal = detail.reduce((s,r) => s + r._nominal, 0);
-  const perCoa = rekapBiayaPerCoa(detail);
-  const perKategori = rekapBiayaPerKategori(detail);
-
-  document.getElementById('kpiBiayaBahan').innerHTML = `
-    <div class="kpi-card blue"><div class="kpi-label">Total Biaya Bahan</div><div class="kpi-value">${rupiah(totalNominal)}</div><div class="kpi-sub">${num(detail.length)} baris</div></div>
-    <div class="kpi-card purple"><div class="kpi-label">Jumlah Nama COA</div><div class="kpi-value">${perCoa.length}</div><div class="kpi-sub">akun aktif</div></div>
-    <div class="kpi-card amber"><div class="kpi-label">Jumlah Kategori Jurnal</div><div class="kpi-value">${perKategori.length}</div><div class="kpi-sub">kategori aktif</div></div>
-  `;
-
-  makeBar('chartBiayaBahanCoa', perCoa.slice(0,15).map(r => r.nama.substring(0,22)), perCoa.slice(0,15).map(r => r.total_nominal), 'Nominal', { indexAxis:'y' });
-  makeDoughnut('chartBiayaBahanKategori', perKategori.map(r => r.nama), perKategori.map(r => r.total_nominal));
-
   populateBiayaFilterOptions('BiayaBahan', detail);
   filterBiayaBahanDetail();
 }
 function filterBiayaBahanDetail() {
-  filterBiayaGeneric('BiayaBahan', currentBiayaBahanDetail, 'tblBiayaBahanDetail', 'head-tblBiayaBahanDetail');
+  return filterBiayaGeneric('BiayaBahan', currentBiayaBahanDetail, 'tblBiayaBahanDetail', 'head-tblBiayaBahanDetail');
 }
 function resetBiayaBahanDetailFilter() {
   document.getElementById('searchBiayaBahanDetail').value = '';
@@ -3063,25 +3219,11 @@ function resetBiayaBahanDetailFilter() {
 function renderBiayaUmum(d) {
   const detail = renderBiayaGeneric(d.biaya_umum_detail || []);
   currentBiayaUmumDetail = detail;
-
-  const totalNominal = detail.reduce((s,r) => s + r._nominal, 0);
-  const perCoa = rekapBiayaPerCoa(detail);
-  const perKategori = rekapBiayaPerKategori(detail);
-
-  document.getElementById('kpiBiayaUmum').innerHTML = `
-    <div class="kpi-card blue"><div class="kpi-label">Total Biaya Umum</div><div class="kpi-value">${rupiah(totalNominal)}</div><div class="kpi-sub">${num(detail.length)} baris</div></div>
-    <div class="kpi-card purple"><div class="kpi-label">Jumlah Nama COA</div><div class="kpi-value">${perCoa.length}</div><div class="kpi-sub">akun aktif</div></div>
-    <div class="kpi-card amber"><div class="kpi-label">Jumlah Kategori Jurnal</div><div class="kpi-value">${perKategori.length}</div><div class="kpi-sub">kategori aktif</div></div>
-  `;
-
-  makeBar('chartBiayaUmumCoa', perCoa.slice(0,15).map(r => r.nama.substring(0,22)), perCoa.slice(0,15).map(r => r.total_nominal), 'Nominal', { indexAxis:'y' });
-  makeDoughnut('chartBiayaUmumKategori', perKategori.map(r => r.nama), perKategori.map(r => r.total_nominal));
-
   populateBiayaFilterOptions('BiayaUmum', detail);
   filterBiayaUmumDetail();
 }
 function filterBiayaUmumDetail() {
-  filterBiayaGeneric('BiayaUmum', currentBiayaUmumDetail, 'tblBiayaUmumDetail', 'head-tblBiayaUmumDetail');
+  return filterBiayaGeneric('BiayaUmum', currentBiayaUmumDetail, 'tblBiayaUmumDetail', 'head-tblBiayaUmumDetail');
 }
 function resetBiayaUmumDetailFilter() {
   document.getElementById('searchBiayaUmumDetail').value = '';
@@ -3110,6 +3252,12 @@ TblRerender.tblUmPjkSubUnit = filterUmPjkSubUnit;
 TblRerender.tblUmPjkDetail  = filterUmPjkDetail;
 TblRerender.tblBiayaBahanDetail = filterBiayaBahanDetail;
 TblRerender.tblBiayaUmumDetail  = filterBiayaUmumDetail;
+TblRerender.tblBiayaBahanCoa = () => renderBiayaRekapTable('tblBiayaBahanCoa','head-tblBiayaBahanCoa', rekapBiayaPerCoa(currentBiayaBahanDetail));
+TblRerender.tblBiayaBahanKategori = () => renderBiayaRekapTable('tblBiayaBahanKategori','head-tblBiayaBahanKategori', rekapBiayaPerKategori(currentBiayaBahanDetail));
+TblRerender.tblBiayaBahanSubUnit = () => renderBiayaRekapTable('tblBiayaBahanSubUnit','head-tblBiayaBahanSubUnit', rekapBiayaPerSubUnit(currentBiayaBahanDetail));
+TblRerender.tblBiayaUmumCoa = () => renderBiayaRekapTable('tblBiayaUmumCoa','head-tblBiayaUmumCoa', rekapBiayaPerCoa(currentBiayaUmumDetail));
+TblRerender.tblBiayaUmumKategori = () => renderBiayaRekapTable('tblBiayaUmumKategori','head-tblBiayaUmumKategori', rekapBiayaPerKategori(currentBiayaUmumDetail));
+TblRerender.tblBiayaUmumSubUnit = () => renderBiayaRekapTable('tblBiayaUmumSubUnit','head-tblBiayaUmumSubUnit', rekapBiayaPerSubUnit(currentBiayaUmumDetail));
 
 // tblUnit disortir ulang lewat renderUnitData memakai data unit yang sedang aktif
 function filterUnitDetailAndUnit() {
