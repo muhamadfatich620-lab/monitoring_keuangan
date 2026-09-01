@@ -1,7 +1,7 @@
 {
   "bulan": "2026-08",
   "bagian": 1,
-  "generated_at": "2026-09-01T01:02:26.849Z",
+  "generated_at": "2026-09-01T06:12:33.388Z",
   "uang_muka_pjk_detail": [
     {
       "id_sub_transaksi": "5644145",
@@ -15,8 +15,8 @@
       "nama_sub_penerima": "fajar.aldiansyah",
       "loaded_at": "1.787906538519E9",
       "nama_penerima": "ayu.cahya",
-      "keterangan": "-",
-      "keterangan_pencocokan": "Alokasi Sub Unit 88 - UANG MUKA SPONSORSHIP PERAYAAN HARI KEMERDEKAAN DI PT SMELTING - Manual ke - 0"
+      "keterangan": "Uang Muka",
+      "keterangan_pencocokan": "SPONSORSHIP PERAYAAN HARI KEMERDEKAAN DI PT SMELTING - Manual ke - 0"
     },
     {
       "id_sub_transaksi": "5705061",
