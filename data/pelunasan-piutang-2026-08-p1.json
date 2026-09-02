@@ -1,7 +1,7 @@
 {
   "bulan": "2026-08",
   "bagian": 1,
-  "generated_at": "2026-09-01T01:30:08.941Z",
+  "generated_at": "2026-09-02T01:08:14.119Z",
   "pelunasan_detail": [
     {
       "id_sub_transaksi": "5941815",
@@ -611,7 +611,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - ASKES RAMAYANA-ADMEDIKA",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788149758654E9",
+      "loaded_at": "1.788234734242E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -624,7 +624,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT MSIG Life Insurance Indonesia Tbk",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788149758654E9",
+      "loaded_at": "1.788234734242E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -637,7 +637,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - Asuransi BRi Life",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788149758654E9",
+      "loaded_at": "1.788234734242E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -650,7 +650,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT Adikari Wisesa Indonesia",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788149769055E9",
+      "loaded_at": "1.788234734242E9",
       "nama_penerima": "indri.nurisa"
     }
   ]
