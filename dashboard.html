@@ -2832,7 +2832,6 @@ function filterPelunasanDetail() {
     if (q && !(su.toLowerCase().includes(q) || pg.toLowerCase().includes(q) || kt.toLowerCase().includes(q))) return false;
     if (subUnit && su !== subUnit) return false;
     if (penanggung && pg !== penanggung) return false;
-    if (penanggungQ && !pg.toLowerCase().includes(penanggungQ)) return false;
     if (segmen && sg !== segmen) return false;
     if (ket && kt !== ket) return false;
     if (bank && bk !== bank) return false;
@@ -3010,7 +3009,6 @@ function filterPengeluaranKasDetail() {
     if (q && !(su.toLowerCase().includes(q) || pg.toLowerCase().includes(q) || ket.toLowerCase().includes(q))) return false;
     if (subUnit && su !== subUnit) return false;
     if (penanggung && pg !== penanggung) return false;
-    if (penanggungQ && !pg.toLowerCase().includes(penanggungQ)) return false;
     if (segmen && sg !== segmen) return false;
     return true;
   });
