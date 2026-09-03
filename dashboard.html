@@ -1074,8 +1074,7 @@ tfoot td {
             <th data-key="sub_unit" onclick="tblSort('tblUmPjkSubUnit','sub_unit','text')">Sub Unit <span class="sort-ico-wrap"></span></th>
             <th class="td-num" data-key="total_um" onclick="tblSort('tblUmPjkSubUnit','total_um','number')">Total Uang Muka <span class="sort-ico-wrap"></span></th>
             <th class="td-num" data-key="jumlah_um" onclick="tblSort('tblUmPjkSubUnit','jumlah_um','number')">Jumlah UM <span class="sort-ico-wrap"></span></th>
-            <th class="td-num" data-key="jumlah_belum_pjk" onclick="tblSort('tblUmPjkSubUnit','jumlah_belum_pjk','number')">Belum PJK (Jumlah) <span class="sort-ico-wrap"></span></th>
-            <th class="td-num" data-key="total_belum_pjk" onclick="tblSort('tblUmPjkSubUnit','total_belum_pjk','number')">Belum PJK (Rp) <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="jumlah_belum_pjk" onclick="tblSort('tblUmPjkSubUnit','jumlah_belum_pjk','number')">Belum PJK <span class="sort-ico-wrap"></span></th>
           </tr></thead>
           <tbody></tbody>
           <tfoot></tfoot>
@@ -3141,10 +3140,10 @@ function renderUmPjk(d) {
   const subUnitMap = {};
   detail.filter(r => r.keterangan === 'Uang Muka').forEach(r => {
     const su = r.nama_sub_unit || 'Lainnya';
-    if (!subUnitMap[su]) subUnitMap[su] = { sub_unit: su, total_um: 0, jumlah_um: 0, jumlah_belum_pjk: 0, total_belum_pjk: 0 };
+    if (!subUnitMap[su]) subUnitMap[su] = { sub_unit: su, total_um: 0, jumlah_um: 0, jumlah_belum_pjk: 0 };
     subUnitMap[su].total_um += r._nominal;
     subUnitMap[su].jumlah_um += 1;
-    if (r._statusUm === 'Belum Dipertanggungjawabkan') { subUnitMap[su].jumlah_belum_pjk += 1; subUnitMap[su].total_belum_pjk += r._nominal; }
+    if (r._statusUm === 'Belum Dipertanggungjawabkan') subUnitMap[su].jumlah_belum_pjk += 1;
   });
   currentUmPjkSubUnit = Object.values(subUnitMap)
     .sort((a,b) => b.total_um - a.total_um);
@@ -3193,13 +3192,11 @@ function filterUmPjkSubUnit() {
       <td class="td-num">${rupiah(r.total_um)}</td>
       <td class="td-num">${num(r.jumlah_um)}</td>
       <td class="td-num"><span class="badge ${r.jumlah_belum_pjk > 0 ? 'badge-red' : 'badge-green'}">${num(r.jumlah_belum_pjk)}</span></td>
-      <td class="td-num td-bold">${rupiah(r.total_belum_pjk)}</td>
-    </tr>`).join('') || '<tr><td colspan="5" class="empty">Tidak ada data</td></tr>';
+    </tr>`).join('') || '<tr><td colspan="4" class="empty">Tidak ada data</td></tr>';
   document.querySelector('#tblUmPjkSubUnit tfoot').innerHTML = rows.length ? tblTotalRow(1, [
     { value: sumBy(rows,'total_um'), type: 'rupiah' },
     { value: sumBy(rows,'jumlah_um'), type: 'num' },
-    { value: sumBy(rows,'jumlah_belum_pjk'), type: 'num' },
-    { value: sumBy(rows,'total_belum_pjk'), type: 'rupiah' }
+    { value: sumBy(rows,'jumlah_belum_pjk'), type: 'num' }
   ]) : '';
   document.getElementById('umPjkSubUnitCount').textContent = `${num(rows.length)} dari ${num(currentUmPjkSubUnit.length)} sub unit`;
   tblRefreshIcons('tblUmPjkSubUnit', 'head-tblUmPjkSubUnit');
