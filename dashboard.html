@@ -1074,6 +1074,8 @@ tfoot td {
             <th data-key="sub_unit" onclick="tblSort('tblUmPjkSubUnit','sub_unit','text')">Sub Unit <span class="sort-ico-wrap"></span></th>
             <th class="td-num" data-key="total_um" onclick="tblSort('tblUmPjkSubUnit','total_um','number')">Total Uang Muka <span class="sort-ico-wrap"></span></th>
             <th class="td-num" data-key="jumlah_um" onclick="tblSort('tblUmPjkSubUnit','jumlah_um','number')">Jumlah UM <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="jumlah_belum_pjk" onclick="tblSort('tblUmPjkSubUnit','jumlah_belum_pjk','number')">Belum PJK (Jumlah) <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="total_belum_pjk" onclick="tblSort('tblUmPjkSubUnit','total_belum_pjk','number')">Belum PJK (Rp) <span class="sort-ico-wrap"></span></th>
           </tr></thead>
           <tbody></tbody>
           <tfoot></tfoot>
@@ -2063,21 +2065,41 @@ function similarityText(a,b) {
   const A = matchTokens(a), B = matchTokens(b);
   if (!A.size || !B.size) return 0;
   let common = 0; A.forEach(x => { if (B.has(x)) common++; });
-  return common / Math.max(A.size, B.size);
+  // Gunakan Dice + coverage agar perbedaan 1 kata tidak langsung dianggap berbeda.
+  // Contoh: 4 kata sama dari 5 kata -> skor 0.89, bukan 0.80.
+  const dice = (2 * common) / (A.size + B.size);
+  const coverage = common / Math.min(A.size, B.size);
+  return Math.max(dice, coverage * 0.90);
 }
 function umPjkMatchScore(um, pjk) {
   const suUm = normalizeMatchText(um.nama_sub_unit), suPjk = normalizeMatchText(pjk.nama_sub_unit);
   if (suUm && suPjk && suUm !== suPjk) return 0;
+
+  const cpUm = normalizeMatchText(um.keterangan_pencocokan);
+  const cpPjk = normalizeMatchText(pjk.keterangan_pencocokan);
+  const opUm = normalizeMatchText(um.operasional);
+  const opPjk = normalizeMatchText(pjk.operasional);
+
   const textsUm = [um.keterangan_pencocokan, um.operasional, um.nama_sub_penerima, um.nama_penerima].filter(Boolean).join(' ');
   const textsPjk = [pjk.keterangan_pencocokan, pjk.operasional, pjk.nama_sub_penerima, pjk.nama_penerima].filter(Boolean).join(' ');
-  const sim = Math.max(similarityText(textsUm, textsPjk), similarityText(um.keterangan_pencocokan, pjk.keterangan_pencocokan));
+
+  const simGabungan = similarityText(textsUm, textsPjk);
+  const simKeterangan = similarityText(cpUm, cpPjk);
+  const simOperasional = similarityText(opUm, opPjk);
+  const sim = Math.max(simGabungan, simKeterangan * .95, simOperasional * .85);
+
   const nUm = Math.abs(akuntansiNominal(um)), nPjk = Math.abs(akuntansiNominal(pjk));
   let amountScore = 0;
   if (nUm > 0 && nPjk > 0) {
     const ratio = Math.min(nUm,nPjk) / Math.max(nUm,nPjk);
-    amountScore = ratio >= .95 ? .30 : ratio >= .80 ? .20 : ratio >= .60 ? .10 : 0;
+    amountScore = ratio >= .95 ? .35 : ratio >= .80 ? .25 : ratio >= .60 ? .12 : 0;
   }
-  return sim * .70 + amountScore;
+
+  // Jika hampir seluruh kata keterangan sama dan nominal sama, berikan bonus
+  // agar kasus beda 1 kata tetap terdeteksi sebagai PJK.
+  const strongText = Math.max(simKeterangan, simGabungan);
+  const nearExactBonus = strongText >= .80 ? .08 : 0;
+  return sim * .62 + amountScore + nearExactBonus;
 }
 function hitungStatusUmPjk(rows) {
   const pjks = rows.filter(r => r.keterangan === 'PJK');
@@ -3119,9 +3141,10 @@ function renderUmPjk(d) {
   const subUnitMap = {};
   detail.filter(r => r.keterangan === 'Uang Muka').forEach(r => {
     const su = r.nama_sub_unit || 'Lainnya';
-    if (!subUnitMap[su]) subUnitMap[su] = { sub_unit: su, total_um: 0, jumlah_um: 0 };
+    if (!subUnitMap[su]) subUnitMap[su] = { sub_unit: su, total_um: 0, jumlah_um: 0, jumlah_belum_pjk: 0, total_belum_pjk: 0 };
     subUnitMap[su].total_um += r._nominal;
     subUnitMap[su].jumlah_um += 1;
+    if (r._statusUm === 'Belum Dipertanggungjawabkan') { subUnitMap[su].jumlah_belum_pjk += 1; subUnitMap[su].total_belum_pjk += r._nominal; }
   });
   currentUmPjkSubUnit = Object.values(subUnitMap)
     .sort((a,b) => b.total_um - a.total_um);
@@ -3169,10 +3192,14 @@ function filterUmPjkSubUnit() {
       <td class="td-bold">${r.sub_unit||'-'}</td>
       <td class="td-num">${rupiah(r.total_um)}</td>
       <td class="td-num">${num(r.jumlah_um)}</td>
-    </tr>`).join('') || '<tr><td colspan="3" class="empty">Tidak ada data</td></tr>';
+      <td class="td-num"><span class="badge ${r.jumlah_belum_pjk > 0 ? 'badge-red' : 'badge-green'}">${num(r.jumlah_belum_pjk)}</span></td>
+      <td class="td-num td-bold">${rupiah(r.total_belum_pjk)}</td>
+    </tr>`).join('') || '<tr><td colspan="5" class="empty">Tidak ada data</td></tr>';
   document.querySelector('#tblUmPjkSubUnit tfoot').innerHTML = rows.length ? tblTotalRow(1, [
     { value: sumBy(rows,'total_um'), type: 'rupiah' },
-    { value: sumBy(rows,'jumlah_um'), type: 'num' }
+    { value: sumBy(rows,'jumlah_um'), type: 'num' },
+    { value: sumBy(rows,'jumlah_belum_pjk'), type: 'num' },
+    { value: sumBy(rows,'total_belum_pjk'), type: 'rupiah' }
   ]) : '';
   document.getElementById('umPjkSubUnitCount').textContent = `${num(rows.length)} dari ${num(currentUmPjkSubUnit.length)} sub unit`;
   tblRefreshIcons('tblUmPjkSubUnit', 'head-tblUmPjkSubUnit');
