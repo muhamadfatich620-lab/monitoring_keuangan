@@ -1074,8 +1074,6 @@ tfoot td {
             <th data-key="sub_unit" onclick="tblSort('tblUmPjkSubUnit','sub_unit','text')">Sub Unit <span class="sort-ico-wrap"></span></th>
             <th class="td-num" data-key="total_um" onclick="tblSort('tblUmPjkSubUnit','total_um','number')">Total Uang Muka <span class="sort-ico-wrap"></span></th>
             <th class="td-num" data-key="jumlah_um" onclick="tblSort('tblUmPjkSubUnit','jumlah_um','number')">Jumlah UM <span class="sort-ico-wrap"></span></th>
-            <th class="td-num" data-key="total_um" onclick="tblSort('tblUmPjkSubUnit','total_um','number')">Total Uang Muka <span class="sort-ico-wrap"></span></th>
-            <th class="td-num" data-key="jumlah_um" onclick="tblSort('tblUmPjkSubUnit','jumlah_um','number')">Jumlah UM <span class="sort-ico-wrap"></span></th>
           </tr></thead>
           <tbody></tbody>
           <tfoot></tfoot>
@@ -3223,6 +3221,8 @@ function filterUmPjkDetail() {
   tbody.innerHTML = rows.slice(0,2000).map(r => `
     <tr>
       <td>${(r.tanggal_sub_transaksi||'').substring(0,10)}</td>
+      <td>${r.keterangan === 'Uang Muka' ? formatTanggal(r._tanggalJatuhTempo) : '-'}</td>
+      <td class="td-num">${r.keterangan === 'Uang Muka' ? labelSisaJatuhTempo(r._sisaJatuhTempoHari) : '-'}</td>
       <td style="font-size:11px">${r.nama_sub_unit||'-'}</td>
       <td><span class="badge badge-cyan">${r.Segment||'-'}</span></td>
       <td style="font-size:11px">${r.nama_sub_penerima||'-'}</td>
