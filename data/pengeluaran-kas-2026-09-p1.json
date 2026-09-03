@@ -1,7 +1,7 @@
 {
   "bulan": "2026-09",
   "bagian": 1,
-  "generated_at": "2026-09-02T04:11:02.018Z",
+  "generated_at": "2026-09-03T01:20:45.771Z",
   "pengeluaran_detail": [
     {
       "id_sub_transaksi": "6638994",
@@ -15,32 +15,6 @@
       "nama_sub_penerima": "sri.wanti",
       "loaded_at": "1.788220674703E9",
       "nama_penerima": "DRS.KH. MULYADI,MM"
-    },
-    {
-      "id_sub_transaksi": "6638336",
-      "tanggal_sub_transaksi": "2026-09-01",
-      "coa_code": "1.1.1.2.1.1",
-      "debet": "301994.0",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9111] INSTALASI GAWAT DARURAT",
-      "nama_cc": "Non CC",
-      "operasional": null,
-      "nama_sub_penerima": "alfin.fitra",
-      "loaded_at": "1.788220674703E9",
-      "nama_penerima": "alfin.fitra"
-    },
-    {
-      "id_sub_transaksi": "6638668",
-      "tanggal_sub_transaksi": "2026-09-01",
-      "coa_code": "1.1.1.2.1.1",
-      "debet": "939335.2",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9111] INSTALASI GAWAT DARURAT",
-      "nama_cc": "Non CC",
-      "operasional": null,
-      "nama_sub_penerima": "alfin.fitra",
-      "loaded_at": "1.788220674703E9",
-      "nama_penerima": "alfin.fitra"
     },
     {
       "id_sub_transaksi": "6637726",
@@ -82,6 +56,32 @@
       "nama_penerima": "alfin.fitra"
     },
     {
+      "id_sub_transaksi": "6638336",
+      "tanggal_sub_transaksi": "2026-09-01",
+      "coa_code": "1.1.1.2.1.1",
+      "debet": "301994.0",
+      "kredit": "0.0",
+      "nama_sub_unit": "[9111] INSTALASI GAWAT DARURAT",
+      "nama_cc": "Non CC",
+      "operasional": null,
+      "nama_sub_penerima": "alfin.fitra",
+      "loaded_at": "1.788220674703E9",
+      "nama_penerima": "alfin.fitra"
+    },
+    {
+      "id_sub_transaksi": "6638668",
+      "tanggal_sub_transaksi": "2026-09-01",
+      "coa_code": "1.1.1.2.1.1",
+      "debet": "939335.2",
+      "kredit": "0.0",
+      "nama_sub_unit": "[9111] INSTALASI GAWAT DARURAT",
+      "nama_cc": "Non CC",
+      "operasional": null,
+      "nama_sub_penerima": "alfin.fitra",
+      "loaded_at": "1.788220674703E9",
+      "nama_penerima": "alfin.fitra"
+    },
+    {
       "id_sub_transaksi": "6637846",
       "tanggal_sub_transaksi": "2026-09-01",
       "coa_code": "1.1.1.1.1",
@@ -99,6 +99,32 @@
       "tanggal_sub_transaksi": "2026-09-01",
       "coa_code": "1.1.1.1.1",
       "debet": "455000.0",
+      "kredit": "0.0",
+      "nama_sub_unit": "[9241] LABORATORIUM",
+      "nama_cc": "Non CC",
+      "operasional": null,
+      "nama_sub_penerima": "cynthia.almaratus",
+      "loaded_at": "1.788220674703E9",
+      "nama_penerima": "cynthia.almaratus"
+    },
+    {
+      "id_sub_transaksi": "6637882",
+      "tanggal_sub_transaksi": "2026-09-01",
+      "coa_code": "1.1.1.1.1",
+      "debet": "94000.0",
+      "kredit": "0.0",
+      "nama_sub_unit": "Non CC",
+      "nama_cc": "Non CC",
+      "operasional": null,
+      "nama_sub_penerima": "cynthia.almaratus",
+      "loaded_at": "1.788220674703E9",
+      "nama_penerima": "cynthia.almaratus"
+    },
+    {
+      "id_sub_transaksi": "6638696",
+      "tanggal_sub_transaksi": "2026-09-01",
+      "coa_code": "1.1.1.1.1",
+      "debet": "131000.0",
       "kredit": "0.0",
       "nama_sub_unit": "[9241] LABORATORIUM",
       "nama_cc": "Non CC",
@@ -134,32 +160,6 @@
       "nama_penerima": "cynthia.almaratus"
     },
     {
-      "id_sub_transaksi": "6637882",
-      "tanggal_sub_transaksi": "2026-09-01",
-      "coa_code": "1.1.1.1.1",
-      "debet": "94000.0",
-      "kredit": "0.0",
-      "nama_sub_unit": "Non CC",
-      "nama_cc": "Non CC",
-      "operasional": null,
-      "nama_sub_penerima": "cynthia.almaratus",
-      "loaded_at": "1.788220674703E9",
-      "nama_penerima": "cynthia.almaratus"
-    },
-    {
-      "id_sub_transaksi": "6638696",
-      "tanggal_sub_transaksi": "2026-09-01",
-      "coa_code": "1.1.1.1.1",
-      "debet": "131000.0",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9241] LABORATORIUM",
-      "nama_cc": "Non CC",
-      "operasional": null,
-      "nama_sub_penerima": "cynthia.almaratus",
-      "loaded_at": "1.788220674703E9",
-      "nama_penerima": "cynthia.almaratus"
-    },
-    {
       "id_sub_transaksi": "6638031",
       "tanggal_sub_transaksi": "2026-09-01",
       "coa_code": "1.1.1.1.1",
@@ -173,10 +173,10 @@
       "nama_penerima": "rendy.bintang"
     },
     {
-      "id_sub_transaksi": "6638010",
+      "id_sub_transaksi": "6637951",
       "tanggal_sub_transaksi": "2026-09-01",
       "coa_code": "1.1.1.1.1",
-      "debet": "35381.3",
+      "debet": "106938.0",
       "kredit": "0.0",
       "nama_sub_unit": "[9111] INSTALASI GAWAT DARURAT",
       "nama_cc": "Non CC",
@@ -186,10 +186,10 @@
       "nama_penerima": "rendy.bintang"
     },
     {
-      "id_sub_transaksi": "6637951",
+      "id_sub_transaksi": "6638010",
       "tanggal_sub_transaksi": "2026-09-01",
       "coa_code": "1.1.1.1.1",
-      "debet": "106938.0",
+      "debet": "35381.3",
       "kredit": "0.0",
       "nama_sub_unit": "[9111] INSTALASI GAWAT DARURAT",
       "nama_cc": "Non CC",
