@@ -1074,7 +1074,8 @@ tfoot td {
             <th data-key="sub_unit" onclick="tblSort('tblUmPjkSubUnit','sub_unit','text')">Sub Unit <span class="sort-ico-wrap"></span></th>
             <th class="td-num" data-key="total_um" onclick="tblSort('tblUmPjkSubUnit','total_um','number')">Total Uang Muka <span class="sort-ico-wrap"></span></th>
             <th class="td-num" data-key="jumlah_um" onclick="tblSort('tblUmPjkSubUnit','jumlah_um','number')">Jumlah UM <span class="sort-ico-wrap"></span></th>
-            <th class="td-num" data-key="jumlah_belum_pjk" onclick="tblSort('tblUmPjkSubUnit','jumlah_belum_pjk','number')">Belum PJK <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="jumlah_belum_pjk" onclick="tblSort('tblUmPjkSubUnit','jumlah_belum_pjk','number')">Belum PJK (Jumlah) <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="total_belum_pjk" onclick="tblSort('tblUmPjkSubUnit','total_belum_pjk','number')">Belum PJK (Rp) <span class="sort-ico-wrap"></span></th>
           </tr></thead>
           <tbody></tbody>
           <tfoot></tfoot>
@@ -2051,6 +2052,7 @@ function kodeCoaBiaya(r) {
 // Sebuah baris "Uang Muka" dianggap SUDAH dipertanggungjawabkan kalau ada
 // minimal satu baris "PJK" dengan keterangan_pencocokan yang SAMA PERSIS
 // (case-insensitive, trimmed) di dalam data yang sedang difilter.
+// UM dengan nilai kredit != 0 dikeluarkan dari monitoring UM.
 function normalizeMatchText(v) {
   return String(v || '').toLowerCase()
     .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
@@ -2101,20 +2103,22 @@ function umPjkMatchScore(um, pjk) {
   return sim * .62 + amountScore + nearExactBonus;
 }
 function hitungStatusUmPjk(rows) {
-  const pjks = rows.filter(r => r.keterangan === 'PJK');
+  const kunciPjk = new Set();
+  rows.forEach(r => {
+    if (r.keterangan === 'PJK') {
+      const kunci = String(r.keterangan_pencocokan || '').trim().toLowerCase();
+      if (kunci) kunciPjk.add(kunci);
+    }
+  });
   return rows.map(r => {
     let status = '-';
-    let best = null, bestScore = 0;
     if (r.keterangan === 'Uang Muka') {
-      pjks.forEach(p => {
-        const score = umPjkMatchScore(r,p);
-        if (score > bestScore) { bestScore = score; best = p; }
-      });
-      status = bestScore >= 0.42 ? 'Sudah Dipertanggungjawabkan' : 'Belum Dipertanggungjawabkan';
-      return { ...r, _statusUm: status, _matchScore: bestScore, _matchedPjk: best ? (best.keterangan_pencocokan || best.operasional || '') : '' };
+      const kunci = String(r.keterangan_pencocokan || '').trim().toLowerCase();
+      status = (kunci && kunciPjk.has(kunci)) ? 'Sudah Dipertanggungjawabkan' : 'Belum Dipertanggungjawabkan';
+    } else if (r.keterangan === 'PJK') {
+      status = 'Realisasi';
     }
-    if (r.keterangan === 'PJK') status = 'Realisasi';
-    return { ...r, _statusUm: status, _matchScore: 1, _matchedPjk: '' };
+    return { ...r, _statusUm: status };
   });
 }
 
@@ -3123,7 +3127,13 @@ function labelSisaJatuhTempo(hari) {
 }
 
 function renderUmPjk(d) {
-  const mentah = d.uang_muka_pjk_detail || [];
+  // Uang Muka dengan nilai kredit != 0 bukan transaksi UM yang dipantau,
+  // sehingga dikeluarkan. Baris PJK tetap dipertahankan untuk pencocokan.
+  const semuaRows = d.uang_muka_pjk_detail || [];
+  const mentah = semuaRows.filter(r => {
+    if (r.keterangan !== 'Uang Muka') return true;
+    return (parseFloat(r.kredit) || 0) === 0;
+  });
   const denganStatus = hitungStatusUmPjk(mentah);
   const detail = denganStatus.map(r => ({
     ...r,
@@ -3140,10 +3150,10 @@ function renderUmPjk(d) {
   const subUnitMap = {};
   detail.filter(r => r.keterangan === 'Uang Muka').forEach(r => {
     const su = r.nama_sub_unit || 'Lainnya';
-    if (!subUnitMap[su]) subUnitMap[su] = { sub_unit: su, total_um: 0, jumlah_um: 0, jumlah_belum_pjk: 0 };
+    if (!subUnitMap[su]) subUnitMap[su] = { sub_unit: su, total_um: 0, jumlah_um: 0, jumlah_belum_pjk: 0, total_belum_pjk: 0 };
     subUnitMap[su].total_um += r._nominal;
     subUnitMap[su].jumlah_um += 1;
-    if (r._statusUm === 'Belum Dipertanggungjawabkan') subUnitMap[su].jumlah_belum_pjk += 1;
+    if (r._statusUm === 'Belum Dipertanggungjawabkan') { subUnitMap[su].jumlah_belum_pjk += 1; subUnitMap[su].total_belum_pjk += r._nominal; }
   });
   currentUmPjkSubUnit = Object.values(subUnitMap)
     .sort((a,b) => b.total_um - a.total_um);
@@ -3192,11 +3202,13 @@ function filterUmPjkSubUnit() {
       <td class="td-num">${rupiah(r.total_um)}</td>
       <td class="td-num">${num(r.jumlah_um)}</td>
       <td class="td-num"><span class="badge ${r.jumlah_belum_pjk > 0 ? 'badge-red' : 'badge-green'}">${num(r.jumlah_belum_pjk)}</span></td>
-    </tr>`).join('') || '<tr><td colspan="4" class="empty">Tidak ada data</td></tr>';
+      <td class="td-num td-bold">${rupiah(r.total_belum_pjk)}</td>
+    </tr>`).join('') || '<tr><td colspan="5" class="empty">Tidak ada data</td></tr>';
   document.querySelector('#tblUmPjkSubUnit tfoot').innerHTML = rows.length ? tblTotalRow(1, [
     { value: sumBy(rows,'total_um'), type: 'rupiah' },
     { value: sumBy(rows,'jumlah_um'), type: 'num' },
-    { value: sumBy(rows,'jumlah_belum_pjk'), type: 'num' }
+    { value: sumBy(rows,'jumlah_belum_pjk'), type: 'num' },
+    { value: sumBy(rows,'total_belum_pjk'), type: 'rupiah' }
   ]) : '';
   document.getElementById('umPjkSubUnitCount').textContent = `${num(rows.length)} dari ${num(currentUmPjkSubUnit.length)} sub unit`;
   tblRefreshIcons('tblUmPjkSubUnit', 'head-tblUmPjkSubUnit');
