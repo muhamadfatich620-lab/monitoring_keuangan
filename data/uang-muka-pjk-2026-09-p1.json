@@ -1,6 +1,52 @@
 {
   "bulan": "2026-09",
   "bagian": 1,
-  "generated_at": "2026-09-01T06:12:36.982Z",
-  "uang_muka_pjk_detail": []
+  "generated_at": "2026-09-04T00:26:51.199Z",
+  "uang_muka_pjk_detail": [
+    {
+      "id_sub_transaksi": "6689074",
+      "tanggal_sub_transaksi": "2026-09-02",
+      "coa_code": "1.1.6.1",
+      "debet": "1.5665E7",
+      "kredit": "0.0",
+      "nama_sub_unit": "[9101] DAPUR",
+      "nama_cc": "Non CC",
+      "operasional": "Alokasi Sub Unit 88 - UM DAPUR PERIODE SEPTEMBER 2026 - Manual ke - 0",
+      "nama_sub_penerima": "may.azmianty",
+      "loaded_at": "1.788401038451E9",
+      "nama_penerima": "ayu.cahya",
+      "keterangan": "Uang Muka",
+      "keterangan_pencocokan": "DAPUR PERIODE SEPTEMBER 2026 - Manual ke - 0"
+    },
+    {
+      "id_sub_transaksi": "6689316",
+      "tanggal_sub_transaksi": "2026-09-02",
+      "coa_code": "1.1.6.3",
+      "debet": "2545000.0",
+      "kredit": "0.0",
+      "nama_sub_unit": "[8021] Personalia",
+      "nama_cc": "Non CC",
+      "operasional": "Alokasi Sub Unit 88 - UM PROGRAM 100 DAYS CHALLENGE BODY FIT TH 2026 - Manual ke - 0",
+      "nama_sub_penerima": "may.azmianty",
+      "loaded_at": "1.788401038451E9",
+      "nama_penerima": "ayu.cahya",
+      "keterangan": "Uang Muka",
+      "keterangan_pencocokan": "PROGRAM 100 DAYS CHALLENGE BODY FIT TH 2026 - Manual ke - 0"
+    },
+    {
+      "id_sub_transaksi": "6689151",
+      "tanggal_sub_transaksi": "2026-09-02",
+      "coa_code": "1.1.6.3",
+      "debet": "2320000.0",
+      "kredit": "0.0",
+      "nama_sub_unit": "[8017] PEMASARAN & PENJUALAN",
+      "nama_cc": "Non CC",
+      "operasional": "Alokasi Sub Unit 88 - UM SUPPORTING MINI MCU HUT RI KE 81 DESA YOSOWILANGUN & PERUMDIN SIG GRESIK - Manual ke - 0",
+      "nama_sub_penerima": "may.azmianty",
+      "loaded_at": "1.788401038451E9",
+      "nama_penerima": "ayu.cahya",
+      "keterangan": "Uang Muka",
+      "keterangan_pencocokan": "SUPPORTING MINI MCU HUT RI KE 81 DESA YOSOWILANGUN & PERUMDIN SIG GRESIK - Manual ke - 0"
+    }
+  ]
 }
