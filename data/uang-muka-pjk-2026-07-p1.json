@@ -1,7 +1,7 @@
 {
   "bulan": "2026-07",
   "bagian": 1,
-  "generated_at": "2026-09-01T06:12:30.326Z",
+  "generated_at": "2026-09-04T00:26:44.243Z",
   "uang_muka_pjk_detail": [
     {
       "id_sub_transaksi": "4969725",
@@ -484,11 +484,11 @@
       "keterangan_pencocokan": "DAPUR PERIODE JULI-AGUSTUS 2026 - Manual ke - 0"
     },
     {
-      "id_sub_transaksi": "5459755",
+      "id_sub_transaksi": "5459701",
       "tanggal_sub_transaksi": "2026-07-27",
       "coa_code": "1.1.6.1",
-      "debet": "688749.0",
-      "kredit": "0.0",
+      "debet": "0.0",
+      "kredit": "3.4188749E7",
       "nama_sub_unit": "[8111] Pengadaan Barang & Jasa",
       "nama_cc": "Non CC",
       "operasional": "Alokasi Sub Unit 88 - PJK DAPUR PERIODE JULI 2026 - Manual ke - 0",
@@ -499,11 +499,11 @@
       "keterangan_pencocokan": "DAPUR PERIODE JULI 2026 - Manual ke - 0"
     },
     {
-      "id_sub_transaksi": "5459701",
+      "id_sub_transaksi": "5459755",
       "tanggal_sub_transaksi": "2026-07-27",
       "coa_code": "1.1.6.1",
-      "debet": "0.0",
-      "kredit": "3.4188749E7",
+      "debet": "688749.0",
+      "kredit": "0.0",
       "nama_sub_unit": "[8111] Pengadaan Barang & Jasa",
       "nama_cc": "Non CC",
       "operasional": "Alokasi Sub Unit 88 - PJK DAPUR PERIODE JULI 2026 - Manual ke - 0",
