@@ -1,7 +1,7 @@
 {
   "bulan": "2026-08",
   "bagian": 1,
-  "generated_at": "2026-09-01T06:12:33.388Z",
+  "generated_at": "2026-09-04T00:26:47.865Z",
   "uang_muka_pjk_detail": [
     {
       "id_sub_transaksi": "5644145",
@@ -583,7 +583,7 @@
       "nama_cc": "Non CC",
       "operasional": "Alokasi Sub Unit 88 - PJK SEMINAR MEMBANGUN RS TANGGUH MELALUI INTEGRASI DATA,TRANSFORMASI PEMBIAYAAN DAN TATA KELOLA ADAPTIF.SERTA WORKSHOP TRANSFORMASI2-FINANCIAL SUSTAINABILITY AND UNIT COST & WORKSHOP TRANSFORMASI4 -AI AND DIGITAL SERVICE INNOVATION - Manual ke - 0",
       "nama_sub_penerima": "may.azmianty",
-      "loaded_at": "1.788149735206E9",
+      "loaded_at": "1.788396092897E9",
       "nama_penerima": "may.azmianty",
       "keterangan": "PJK",
       "keterangan_pencocokan": "SEMINAR MEMBANGUN RS TANGGUH MELALUI INTEGRASI DATA,TRANSFORMASI PEMBIAYAAN DAN TATA KELOLA ADAPTIF.SERTA WORKSHOP TRANSFORMASI2-FINANCIAL SUSTAINABILITY AND UNIT COST & WORKSHOP TRANSFORMASI4 -AI AND DIGITAL SERVICE INNOVATION - Manual ke - 0"
@@ -598,7 +598,7 @@
       "nama_cc": "PERSONALIA | LOGISTIK",
       "operasional": "Jurnal Umum V3 - ID Sub Unit 80 - ID Jurnal Umum Detail 9036 - PJK SEMINAR MEMBANGUN RS TANGGUH MELALUI INTEGRASI DATA,TRANSFORMASI PEMBIAYAAN DAN TATA KELOLA ADAPTIF.SERTA WORKSHOP TRANSFORMASI2-FINANCIAL SUSTAINABILITY AND UNIT COST & WORKSHOP TRANSFORMASI4 -AI AND DIGITAL SERVICE INNOVATION",
       "nama_sub_penerima": "may.azmianty",
-      "loaded_at": "1.788149735206E9",
+      "loaded_at": "1.788396092897E9",
       "nama_penerima": "may.azmianty",
       "keterangan": "PJK",
       "keterangan_pencocokan": "SEMINAR MEMBANGUN RS TANGGUH MELALUI INTEGRASI DATA,TRANSFORMASI PEMBIAYAAN DAN TATA KELOLA ADAPTIF.SERTA WORKSHOP TRANSFORMASI2-FINANCIAL SUSTAINABILITY AND UNIT COST & WORKSHOP TRANSFORMASI4 -AI AND DIGITAL SERVICE INNOVATION"
@@ -613,7 +613,7 @@
       "nama_cc": "Non CC",
       "operasional": "Alokasi Sub Unit 88 - PJK BIAYA KEGIATAN SEMARAK DIRGAHAYU KEMERDEKAAN INDONESIA KE 81 - Manual ke - 0",
       "nama_sub_penerima": "may.azmianty",
-      "loaded_at": "1.788151942828E9",
+      "loaded_at": "1.788400968499E9",
       "nama_penerima": "may.azmianty",
       "keterangan": "PJK",
       "keterangan_pencocokan": "BIAYA KEGIATAN SEMARAK DIRGAHAYU KEMERDEKAAN INDONESIA KE 81 - Manual ke - 0"
@@ -628,7 +628,7 @@
       "nama_cc": "PENGADAAN | LOGISTIK",
       "operasional": "Jurnal Umum V3 - ID Sub Unit 78 - ID Jurnal Umum Detail 9345 - PJK RENOVASI DAPUR",
       "nama_sub_penerima": "may.azmianty",
-      "loaded_at": "1.788151954531E9",
+      "loaded_at": "1.788400968499E9",
       "nama_penerima": "may.azmianty",
       "keterangan": "PJK",
       "keterangan_pencocokan": "RENOVASI DAPUR"
@@ -643,7 +643,7 @@
       "nama_cc": "PERSONALIA | LOGISTIK",
       "operasional": "Jurnal Umum V3 - ID Sub Unit 80 - ID Jurnal Umum Detail 9317 - PJK BIAYA KEGIATAN SEMARAK DIRGAHAYU KEMERDEKAAN INDONESIA KE 81",
       "nama_sub_penerima": "may.azmianty",
-      "loaded_at": "1.788151942828E9",
+      "loaded_at": "1.788400968499E9",
       "nama_penerima": "may.azmianty",
       "keterangan": "PJK",
       "keterangan_pencocokan": "BIAYA KEGIATAN SEMARAK DIRGAHAYU KEMERDEKAAN INDONESIA KE 81"
@@ -658,7 +658,7 @@
       "nama_cc": "Non CC",
       "operasional": "Alokasi Sub Unit 88 - PJK RENOVASI DAPUR - Manual ke - 0",
       "nama_sub_penerima": "may.azmianty",
-      "loaded_at": "1.788151954531E9",
+      "loaded_at": "1.788400968499E9",
       "nama_penerima": "may.azmianty",
       "keterangan": "PJK",
       "keterangan_pencocokan": "RENOVASI DAPUR - Manual ke - 0"
