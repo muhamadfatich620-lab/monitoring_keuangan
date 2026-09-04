@@ -1,7 +1,7 @@
 {
   "bulan": "2026-06",
   "bagian": 1,
-  "generated_at": "2026-09-01T06:12:27.172Z",
+  "generated_at": "2026-09-04T00:26:40.581Z",
   "uang_muka_pjk_detail": [
     {
       "id_sub_transaksi": "4608329",
@@ -19,21 +19,6 @@
       "keterangan_pencocokan": "UM Operasional JU-2319"
     },
     {
-      "id_sub_transaksi": "3579508",
-      "tanggal_sub_transaksi": "2026-06-02",
-      "coa_code": "1.1.6.3",
-      "debet": "0.0",
-      "kredit": "5259266.0",
-      "nama_sub_unit": "[8021] Personalia",
-      "nama_cc": "Non CC",
-      "operasional": null,
-      "nama_sub_penerima": null,
-      "loaded_at": "1.785666350641E9",
-      "nama_penerima": null,
-      "keterangan": "-",
-      "keterangan_pencocokan": null
-    },
-    {
       "id_sub_transaksi": "3579821",
       "tanggal_sub_transaksi": "2026-06-02",
       "coa_code": "1.1.6.3",
@@ -47,6 +32,21 @@
       "nama_penerima": "may.azmianty",
       "keterangan": "PJK",
       "keterangan_pencocokan": "WORKSHOP BULK PURCHASING , HOSPITAL COST LEADERSHIP THOUGH BULK PURCHASING - Manual"
+    },
+    {
+      "id_sub_transaksi": "3579508",
+      "tanggal_sub_transaksi": "2026-06-02",
+      "coa_code": "1.1.6.3",
+      "debet": "0.0",
+      "kredit": "5259266.0",
+      "nama_sub_unit": "[8021] Personalia",
+      "nama_cc": "Non CC",
+      "operasional": null,
+      "nama_sub_penerima": null,
+      "loaded_at": "1.785666350641E9",
+      "nama_penerima": null,
+      "keterangan": "-",
+      "keterangan_pencocokan": null
     },
     {
       "id_sub_transaksi": "3561005",
@@ -109,21 +109,6 @@
       "keterangan_pencocokan": "TOP UP WHATSAPP BUSINESS TPPRJ - Manual"
     },
     {
-      "id_sub_transaksi": "3790654",
-      "tanggal_sub_transaksi": "2026-06-09",
-      "coa_code": "1.1.6.3",
-      "debet": "0.0",
-      "kredit": "2.1029648E7",
-      "nama_sub_unit": "[9004] Seksi Adm Sistem Manajemen dan Inovasi",
-      "nama_cc": "Non CC",
-      "operasional": null,
-      "nama_sub_penerima": null,
-      "loaded_at": "1.785666631898E9",
-      "nama_penerima": null,
-      "keterangan": "-",
-      "keterangan_pencocokan": null
-    },
-    {
       "id_sub_transaksi": "3790740",
       "tanggal_sub_transaksi": "2026-06-09",
       "coa_code": "1.1.6.3",
@@ -137,6 +122,21 @@
       "nama_penerima": "may.azmianty",
       "keterangan": "PJK",
       "keterangan_pencocokan": "AUDIT ISO 9001 :2015 TAHUN 2026 - Manual"
+    },
+    {
+      "id_sub_transaksi": "3790654",
+      "tanggal_sub_transaksi": "2026-06-09",
+      "coa_code": "1.1.6.3",
+      "debet": "0.0",
+      "kredit": "2.1029648E7",
+      "nama_sub_unit": "[9004] Seksi Adm Sistem Manajemen dan Inovasi",
+      "nama_cc": "Non CC",
+      "operasional": null,
+      "nama_sub_penerima": null,
+      "loaded_at": "1.785666631898E9",
+      "nama_penerima": null,
+      "keterangan": "-",
+      "keterangan_pencocokan": null
     },
     {
       "id_sub_transaksi": "3812057",
@@ -154,49 +154,19 @@
       "keterangan_pencocokan": "AKREDITASI RSSG TAHUN 2026 TGL 30 JUNI 2026, 01-02 JULI 2026 - Manual"
     },
     {
-      "id_sub_transaksi": "3873657",
+      "id_sub_transaksi": "3873890",
       "tanggal_sub_transaksi": "2026-06-11",
       "coa_code": "1.1.6.3",
       "debet": "0.0",
-      "kredit": "1957500.0",
+      "kredit": "731500.0",
       "nama_sub_unit": "[8141] Bendahara",
       "nama_cc": "Non CC",
-      "operasional": "Alokasi 88 - PJK AKOMODASI PELATIHAN PERAWAT MAHIR DIALISIS AYNIYATUNNISATIN BULAN APRIL 2026 - Manual",
+      "operasional": "Alokasi 88 - PJK AKOMODASI PELATIHAN PERAWAT MAHIR DIALISIS LAILI HIMAWATI   BULAN APRIL 2026 - Manual",
       "nama_sub_penerima": "may.azmianty",
       "loaded_at": "1.785666885936E9",
       "nama_penerima": "may.azmianty",
       "keterangan": "PJK",
-      "keterangan_pencocokan": "AKOMODASI PELATIHAN PERAWAT MAHIR DIALISIS AYNIYATUNNISATIN BULAN APRIL 2026 - Manual"
-    },
-    {
-      "id_sub_transaksi": "3873884",
-      "tanggal_sub_transaksi": "2026-06-11",
-      "coa_code": "1.1.6.3",
-      "debet": "0.0",
-      "kredit": "1768500.0",
-      "nama_sub_unit": "[8021] Personalia",
-      "nama_cc": "Non CC",
-      "operasional": null,
-      "nama_sub_penerima": null,
-      "loaded_at": "1.785666885936E9",
-      "nama_penerima": null,
-      "keterangan": "-",
-      "keterangan_pencocokan": null
-    },
-    {
-      "id_sub_transaksi": "3873612",
-      "tanggal_sub_transaksi": "2026-06-11",
-      "coa_code": "1.1.6.3",
-      "debet": "0.0",
-      "kredit": "542500.0",
-      "nama_sub_unit": "[8021] Personalia",
-      "nama_cc": "Non CC",
-      "operasional": null,
-      "nama_sub_penerima": null,
-      "loaded_at": "1.785666885936E9",
-      "nama_penerima": null,
-      "keterangan": "-",
-      "keterangan_pencocokan": null
+      "keterangan_pencocokan": "AKOMODASI PELATIHAN PERAWAT MAHIR DIALISIS LAILI HIMAWATI   BULAN APRIL 2026 - Manual"
     },
     {
       "id_sub_transaksi": "3873831",
@@ -214,19 +184,34 @@
       "keterangan_pencocokan": "AKOMODASI PELATIHAN PERAWAT MAHIR DIALISIS INTAN FIDYATUL FUAIDAH  BULAN APRIL 2026 - Manual"
     },
     {
-      "id_sub_transaksi": "3873890",
+      "id_sub_transaksi": "3873657",
       "tanggal_sub_transaksi": "2026-06-11",
       "coa_code": "1.1.6.3",
       "debet": "0.0",
-      "kredit": "731500.0",
+      "kredit": "1957500.0",
       "nama_sub_unit": "[8141] Bendahara",
       "nama_cc": "Non CC",
-      "operasional": "Alokasi 88 - PJK AKOMODASI PELATIHAN PERAWAT MAHIR DIALISIS LAILI HIMAWATI   BULAN APRIL 2026 - Manual",
+      "operasional": "Alokasi 88 - PJK AKOMODASI PELATIHAN PERAWAT MAHIR DIALISIS AYNIYATUNNISATIN BULAN APRIL 2026 - Manual",
       "nama_sub_penerima": "may.azmianty",
       "loaded_at": "1.785666885936E9",
       "nama_penerima": "may.azmianty",
       "keterangan": "PJK",
-      "keterangan_pencocokan": "AKOMODASI PELATIHAN PERAWAT MAHIR DIALISIS LAILI HIMAWATI   BULAN APRIL 2026 - Manual"
+      "keterangan_pencocokan": "AKOMODASI PELATIHAN PERAWAT MAHIR DIALISIS AYNIYATUNNISATIN BULAN APRIL 2026 - Manual"
+    },
+    {
+      "id_sub_transaksi": "3873612",
+      "tanggal_sub_transaksi": "2026-06-11",
+      "coa_code": "1.1.6.3",
+      "debet": "0.0",
+      "kredit": "542500.0",
+      "nama_sub_unit": "[8021] Personalia",
+      "nama_cc": "Non CC",
+      "operasional": null,
+      "nama_sub_penerima": null,
+      "loaded_at": "1.785666885936E9",
+      "nama_penerima": null,
+      "keterangan": "-",
+      "keterangan_pencocokan": null
     },
     {
       "id_sub_transaksi": "3873795",
@@ -259,19 +244,19 @@
       "keterangan_pencocokan": "BIAYA IURAN KEANGGOTAAN PERSI TH 2026"
     },
     {
-      "id_sub_transaksi": "3982221",
-      "tanggal_sub_transaksi": "2026-06-15",
+      "id_sub_transaksi": "3873884",
+      "tanggal_sub_transaksi": "2026-06-11",
       "coa_code": "1.1.6.3",
       "debet": "0.0",
-      "kredit": "84450.0",
-      "nama_sub_unit": "[8141] Bendahara",
+      "kredit": "1768500.0",
+      "nama_sub_unit": "[8021] Personalia",
       "nama_cc": "Non CC",
-      "operasional": "Alokasi 88 - PJK TOP UP WHATSAPP BUSINESS TPPRJ - Manual",
-      "nama_sub_penerima": "may.azmianty",
-      "loaded_at": "1.785666972723E9",
-      "nama_penerima": "may.azmianty",
-      "keterangan": "PJK",
-      "keterangan_pencocokan": "TOP UP WHATSAPP BUSINESS TPPRJ - Manual"
+      "operasional": null,
+      "nama_sub_penerima": null,
+      "loaded_at": "1.785666885936E9",
+      "nama_penerima": null,
+      "keterangan": "-",
+      "keterangan_pencocokan": null
     },
     {
       "id_sub_transaksi": "4047902",
@@ -302,6 +287,21 @@
       "nama_penerima": null,
       "keterangan": "-",
       "keterangan_pencocokan": null
+    },
+    {
+      "id_sub_transaksi": "3982221",
+      "tanggal_sub_transaksi": "2026-06-15",
+      "coa_code": "1.1.6.3",
+      "debet": "0.0",
+      "kredit": "84450.0",
+      "nama_sub_unit": "[8141] Bendahara",
+      "nama_cc": "Non CC",
+      "operasional": "Alokasi 88 - PJK TOP UP WHATSAPP BUSINESS TPPRJ - Manual",
+      "nama_sub_penerima": "may.azmianty",
+      "loaded_at": "1.785666972723E9",
+      "nama_penerima": "may.azmianty",
+      "keterangan": "PJK",
+      "keterangan_pencocokan": "TOP UP WHATSAPP BUSINESS TPPRJ - Manual"
     },
     {
       "id_sub_transaksi": "4047846",
@@ -364,34 +364,19 @@
       "keterangan_pencocokan": "Pelatihan Penatalaksanaan  Perioperatif Pasien di kamar bedah bagi perawat 31 Agustus - 25 November 2026 di RSUD Saiful Anwar Malang , Jawa Timur (KK-1459) - Manual ke - 0"
     },
     {
-      "id_sub_transaksi": "4540759",
+      "id_sub_transaksi": "4216007",
       "tanggal_sub_transaksi": "2026-06-23",
       "coa_code": "1.1.6.1",
       "debet": "0.0",
-      "kredit": "5.2491894E7",
-      "nama_sub_unit": "[8111] Pengadaan Barang & Jasa",
+      "kredit": "8.4683106E7",
+      "nama_sub_unit": "[8141] Bendahara",
       "nama_cc": "Non CC",
-      "operasional": null,
-      "nama_sub_penerima": "0",
-      "loaded_at": "1.785667560505E9",
-      "nama_penerima": "0",
-      "keterangan": "-",
-      "keterangan_pencocokan": null
-    },
-    {
-      "id_sub_transaksi": "4216373",
-      "tanggal_sub_transaksi": "2026-06-23",
-      "coa_code": "1.1.6.1",
-      "debet": "0.0",
-      "kredit": "5.26377E7",
-      "nama_sub_unit": "[8111] Pengadaan Barang & Jasa",
-      "nama_cc": "Non CC",
-      "operasional": null,
-      "nama_sub_penerima": null,
+      "operasional": "Alokasi Sub Unit 88 - PJK HARDWARE SIMRS CNH - Manual ke - 0",
+      "nama_sub_penerima": "may.azmianty",
       "loaded_at": "1.785667372104E9",
-      "nama_penerima": null,
-      "keterangan": "-",
-      "keterangan_pencocokan": null
+      "nama_penerima": "may.azmianty",
+      "keterangan": "PJK",
+      "keterangan_pencocokan": "HARDWARE SIMRS CNH - Manual ke - 0"
     },
     {
       "id_sub_transaksi": "4216513",
@@ -409,19 +394,34 @@
       "keterangan_pencocokan": "HARDWARE SIMRS CN - Manual ke - 0"
     },
     {
-      "id_sub_transaksi": "4216007",
+      "id_sub_transaksi": "4216373",
       "tanggal_sub_transaksi": "2026-06-23",
       "coa_code": "1.1.6.1",
       "debet": "0.0",
-      "kredit": "8.4683106E7",
-      "nama_sub_unit": "[8141] Bendahara",
+      "kredit": "5.26377E7",
+      "nama_sub_unit": "[8111] Pengadaan Barang & Jasa",
       "nama_cc": "Non CC",
-      "operasional": "Alokasi Sub Unit 88 - PJK HARDWARE SIMRS CNH - Manual ke - 0",
-      "nama_sub_penerima": "may.azmianty",
+      "operasional": null,
+      "nama_sub_penerima": null,
       "loaded_at": "1.785667372104E9",
-      "nama_penerima": "may.azmianty",
-      "keterangan": "PJK",
-      "keterangan_pencocokan": "HARDWARE SIMRS CNH - Manual ke - 0"
+      "nama_penerima": null,
+      "keterangan": "-",
+      "keterangan_pencocokan": null
+    },
+    {
+      "id_sub_transaksi": "4540759",
+      "tanggal_sub_transaksi": "2026-06-23",
+      "coa_code": "1.1.6.1",
+      "debet": "0.0",
+      "kredit": "5.2491894E7",
+      "nama_sub_unit": "[8111] Pengadaan Barang & Jasa",
+      "nama_cc": "Non CC",
+      "operasional": null,
+      "nama_sub_penerima": "0",
+      "loaded_at": "1.785667560505E9",
+      "nama_penerima": "0",
+      "keterangan": "-",
+      "keterangan_pencocokan": null
     },
     {
       "id_sub_transaksi": "4695988",
@@ -454,6 +454,36 @@
       "keterangan_pencocokan": "TALI ASIH PEGAWAI PURNA TUGAS PERIODE JUNI 2025 S/D MEI 2026 - Manual ke - 0"
     },
     {
+      "id_sub_transaksi": "4316541",
+      "tanggal_sub_transaksi": "2026-06-25",
+      "coa_code": "1.1.6.1",
+      "debet": "3010099.0",
+      "kredit": "0.0",
+      "nama_sub_unit": "[8111] Pengadaan Barang & Jasa",
+      "nama_cc": "Non CC",
+      "operasional": "Alokasi Sub Unit 88 - PJK DAPUR PERIODE MEI - JUNI - Manual ke - 0",
+      "nama_sub_penerima": "fajar.aldiansyah",
+      "loaded_at": "1.785667456566E9",
+      "nama_penerima": "fajar.aldiansyah",
+      "keterangan": "PJK",
+      "keterangan_pencocokan": "DAPUR PERIODE MEI - JUNI - Manual ke - 0"
+    },
+    {
+      "id_sub_transaksi": "4298869",
+      "tanggal_sub_transaksi": "2026-06-25",
+      "coa_code": "1.1.6.3",
+      "debet": "0.0",
+      "kredit": "1.11503E7",
+      "nama_sub_unit": "[8021] Personalia",
+      "nama_cc": "Non CC",
+      "operasional": null,
+      "nama_sub_penerima": null,
+      "loaded_at": "1.785667436668E9",
+      "nama_penerima": null,
+      "keterangan": "-",
+      "keterangan_pencocokan": null
+    },
+    {
       "id_sub_transaksi": "4316595",
       "tanggal_sub_transaksi": "2026-06-25",
       "coa_code": "1.1.6.1",
@@ -469,19 +499,19 @@
       "keterangan_pencocokan": "DAPUR PERIODE MEI - JUNI - Manual ke - 0"
     },
     {
-      "id_sub_transaksi": "4316541",
+      "id_sub_transaksi": "4297071",
       "tanggal_sub_transaksi": "2026-06-25",
-      "coa_code": "1.1.6.1",
-      "debet": "3010099.0",
-      "kredit": "0.0",
+      "coa_code": "1.1.6.3",
+      "debet": "0.0",
+      "kredit": "3.46116E7",
       "nama_sub_unit": "[8111] Pengadaan Barang & Jasa",
       "nama_cc": "Non CC",
-      "operasional": "Alokasi Sub Unit 88 - PJK DAPUR PERIODE MEI - JUNI - Manual ke - 0",
-      "nama_sub_penerima": "fajar.aldiansyah",
-      "loaded_at": "1.785667456566E9",
-      "nama_penerima": "fajar.aldiansyah",
-      "keterangan": "PJK",
-      "keterangan_pencocokan": "DAPUR PERIODE MEI - JUNI - Manual ke - 0"
+      "operasional": null,
+      "nama_sub_penerima": null,
+      "loaded_at": "1.785667436668E9",
+      "nama_penerima": null,
+      "keterangan": "-",
+      "keterangan_pencocokan": null
     },
     {
       "id_sub_transaksi": "4298953",
@@ -514,34 +544,19 @@
       "keterangan_pencocokan": "PEMBELIAN TLD SEL TUBUH (6 PCS) DAN TLD MATA (6 PCS) - Manual ke - 0"
     },
     {
-      "id_sub_transaksi": "4298869",
-      "tanggal_sub_transaksi": "2026-06-25",
+      "id_sub_transaksi": "4355174",
+      "tanggal_sub_transaksi": "2026-06-26",
       "coa_code": "1.1.6.3",
       "debet": "0.0",
-      "kredit": "1.11503E7",
-      "nama_sub_unit": "[8021] Personalia",
+      "kredit": "1493000.0",
+      "nama_sub_unit": "[8141] Bendahara",
       "nama_cc": "Non CC",
-      "operasional": null,
-      "nama_sub_penerima": null,
-      "loaded_at": "1.785667436668E9",
-      "nama_penerima": null,
-      "keterangan": "-",
-      "keterangan_pencocokan": null
-    },
-    {
-      "id_sub_transaksi": "4297071",
-      "tanggal_sub_transaksi": "2026-06-25",
-      "coa_code": "1.1.6.3",
-      "debet": "0.0",
-      "kredit": "3.46116E7",
-      "nama_sub_unit": "[8111] Pengadaan Barang & Jasa",
-      "nama_cc": "Non CC",
-      "operasional": null,
-      "nama_sub_penerima": null,
-      "loaded_at": "1.785667436668E9",
-      "nama_penerima": null,
-      "keterangan": "-",
-      "keterangan_pencocokan": null
+      "operasional": "Alokasi Sub Unit 88 - PJK AKOMODASI PELATIHAN PERAWAT MAHIR DIALISIS AYNIYATUNNISATIN BULAN MEI 2026 - Manual ke - 0",
+      "nama_sub_penerima": "may.azmianty",
+      "loaded_at": "1.785667623468E9",
+      "nama_penerima": "may.azmianty",
+      "keterangan": "PJK",
+      "keterangan_pencocokan": "AKOMODASI PELATIHAN PERAWAT MAHIR DIALISIS AYNIYATUNNISATIN BULAN MEI 2026 - Manual ke - 0"
     },
     {
       "id_sub_transaksi": "4355121",
@@ -559,34 +574,19 @@
       "keterangan_pencocokan": null
     },
     {
-      "id_sub_transaksi": "4355174",
-      "tanggal_sub_transaksi": "2026-06-26",
-      "coa_code": "1.1.6.3",
-      "debet": "0.0",
-      "kredit": "1493000.0",
-      "nama_sub_unit": "[8141] Bendahara",
-      "nama_cc": "Non CC",
-      "operasional": "Alokasi Sub Unit 88 - PJK AKOMODASI PELATIHAN PERAWAT MAHIR DIALISIS AYNIYATUNNISATIN BULAN MEI 2026 - Manual ke - 0",
-      "nama_sub_penerima": "may.azmianty",
-      "loaded_at": "1.785667623468E9",
-      "nama_penerima": "may.azmianty",
-      "keterangan": "PJK",
-      "keterangan_pencocokan": "AKOMODASI PELATIHAN PERAWAT MAHIR DIALISIS AYNIYATUNNISATIN BULAN MEI 2026 - Manual ke - 0"
-    },
-    {
-      "id_sub_transaksi": "4487247",
+      "id_sub_transaksi": "4400386",
       "tanggal_sub_transaksi": "2026-06-29",
       "coa_code": "1.1.6.3",
-      "debet": "0.0",
-      "kredit": "4139818.0",
-      "nama_sub_unit": "[8017] PEMASARAN & PENJUALAN",
+      "debet": "5236000.0",
+      "kredit": "0.0",
+      "nama_sub_unit": "[8021] Personalia",
       "nama_cc": "Non CC",
-      "operasional": "Alokasi Sub Unit 88 - PJK KEGIATAN PENYEMBELIHAN HEWAN QURBAN IDUL ADHA 2026 - Manual ke - 0",
-      "nama_sub_penerima": "fajar.aldiansyah",
-      "loaded_at": "1.785667743234E9",
-      "nama_penerima": "fajar.aldiansyah",
-      "keterangan": "PJK",
-      "keterangan_pencocokan": "KEGIATAN PENYEMBELIHAN HEWAN QURBAN IDUL ADHA 2026 - Manual ke - 0"
+      "operasional": "Alokasi Sub Unit 88 - UM INVITATION TO AME GATHERING 2026 - Manual ke - 0",
+      "nama_sub_penerima": "may.azmianty",
+      "loaded_at": "1.785667657274E9",
+      "nama_penerima": "ayu.cahya",
+      "keterangan": "Uang Muka",
+      "keterangan_pencocokan": "INVITATION TO AME GATHERING 2026 - Manual ke - 0"
     },
     {
       "id_sub_transaksi": "4400440",
@@ -604,21 +604,6 @@
       "keterangan_pencocokan": "WORKSHOP PEDIATRIC REHABILITATION (WS 10) - Manual ke - 0"
     },
     {
-      "id_sub_transaksi": "4400386",
-      "tanggal_sub_transaksi": "2026-06-29",
-      "coa_code": "1.1.6.3",
-      "debet": "5236000.0",
-      "kredit": "0.0",
-      "nama_sub_unit": "[8021] Personalia",
-      "nama_cc": "Non CC",
-      "operasional": "Alokasi Sub Unit 88 - UM INVITATION TO AME GATHERING 2026 - Manual ke - 0",
-      "nama_sub_penerima": "may.azmianty",
-      "loaded_at": "1.785667657274E9",
-      "nama_penerima": "ayu.cahya",
-      "keterangan": "Uang Muka",
-      "keterangan_pencocokan": "INVITATION TO AME GATHERING 2026 - Manual ke - 0"
-    },
-    {
       "id_sub_transaksi": "4458433",
       "tanggal_sub_transaksi": "2026-06-29",
       "coa_code": "1.1.6.3",
@@ -632,6 +617,36 @@
       "nama_penerima": "-",
       "keterangan": "-",
       "keterangan_pencocokan": "-"
+    },
+    {
+      "id_sub_transaksi": "4487247",
+      "tanggal_sub_transaksi": "2026-06-29",
+      "coa_code": "1.1.6.3",
+      "debet": "0.0",
+      "kredit": "4139818.0",
+      "nama_sub_unit": "[8017] PEMASARAN & PENJUALAN",
+      "nama_cc": "Non CC",
+      "operasional": "Alokasi Sub Unit 88 - PJK KEGIATAN PENYEMBELIHAN HEWAN QURBAN IDUL ADHA 2026 - Manual ke - 0",
+      "nama_sub_penerima": "fajar.aldiansyah",
+      "loaded_at": "1.785667743234E9",
+      "nama_penerima": "fajar.aldiansyah",
+      "keterangan": "PJK",
+      "keterangan_pencocokan": "KEGIATAN PENYEMBELIHAN HEWAN QURBAN IDUL ADHA 2026 - Manual ke - 0"
+    },
+    {
+      "id_sub_transaksi": "4471052",
+      "tanggal_sub_transaksi": "2026-06-30",
+      "coa_code": "1.1.6.3",
+      "debet": "0.0",
+      "kredit": "4278000.0",
+      "nama_sub_unit": "[8021] Personalia",
+      "nama_cc": "Non CC",
+      "operasional": null,
+      "nama_sub_penerima": null,
+      "loaded_at": "1.786350102117E9",
+      "nama_penerima": null,
+      "keterangan": "-",
+      "keterangan_pencocokan": null
     },
     {
       "id_sub_transaksi": "4471124",
@@ -662,21 +677,6 @@
       "nama_penerima": "may.azmianty",
       "keterangan": "PJK",
       "keterangan_pencocokan": "AKOMODASI PELATIHAN PERAWAT MAHIR DIALISIS LAILI HIMAWATI BULAN MEI 2026 - Manual ke - 0"
-    },
-    {
-      "id_sub_transaksi": "4471052",
-      "tanggal_sub_transaksi": "2026-06-30",
-      "coa_code": "1.1.6.3",
-      "debet": "0.0",
-      "kredit": "4278000.0",
-      "nama_sub_unit": "[8021] Personalia",
-      "nama_cc": "Non CC",
-      "operasional": null,
-      "nama_sub_penerima": null,
-      "loaded_at": "1.786350102117E9",
-      "nama_penerima": null,
-      "keterangan": "-",
-      "keterangan_pencocokan": null
     },
     {
       "id_sub_transaksi": "4471288",
