@@ -1,7 +1,7 @@
 {
   "bulan": "2026-03",
   "bagian": 1,
-  "generated_at": "2026-09-01T06:12:16.738Z",
+  "generated_at": "2026-09-04T00:26:28.999Z",
   "uang_muka_pjk_detail": [
     {
       "id_sub_transaksi": "987206",
@@ -268,7 +268,7 @@
       "nama_cc": "Non CC",
       "operasional": "Alokasi 88 - PJK BIAYA BUKA BERSAMA DENGAN KEPOLISIAN, JASA RAHARJA, BPJS KETENAGAKERJAAN 2026 - Manual",
       "nama_sub_penerima": "may.azmianty",
-      "loaded_at": "1.782809659273E9",
+      "loaded_at": "1.782809743221E9",
       "nama_penerima": "ayu.cahya",
       "keterangan": "PJK",
       "keterangan_pencocokan": "BIAYA BUKA BERSAMA DENGAN KEPOLISIAN, JASA RAHARJA, BPJS KETENAGAKERJAAN 2026 - Manual"
@@ -343,7 +343,7 @@
       "nama_cc": "Non CC",
       "operasional": "Alokasi 88 - PJK BIAYA BUKA BERSAMA DENGAN KEPOLISIAN, JASA RAHARJA, BPJS KETENAGAKERJAAN 2026 - Manual",
       "nama_sub_penerima": "may.azmianty",
-      "loaded_at": "1.782809743221E9",
+      "loaded_at": "1.782809659273E9",
       "nama_penerima": "ayu.cahya",
       "keterangan": "PJK",
       "keterangan_pencocokan": "BIAYA BUKA BERSAMA DENGAN KEPOLISIAN, JASA RAHARJA, BPJS KETENAGAKERJAAN 2026 - Manual"
@@ -358,7 +358,7 @@
       "nama_cc": "Non CC",
       "operasional": "Alokasi 88 - PJK REAL PELATIHAN AHLI K3 UMUM SERTIFIKASI KEMENAKER RI - Manual",
       "nama_sub_penerima": "may.azmianty",
-      "loaded_at": "1.782809732571E9",
+      "loaded_at": "1.782809648588E9",
       "nama_penerima": "ayu.cahya",
       "keterangan": "PJK",
       "keterangan_pencocokan": "REAL PELATIHAN AHLI K3 UMUM SERTIFIKASI KEMENAKER RI - Manual"
@@ -418,7 +418,7 @@
       "nama_cc": "Non CC",
       "operasional": "Alokasi 88 - PJK REAL PELATIHAN AHLI K3 UMUM SERTIFIKASI KEMENAKER RI - Manual",
       "nama_sub_penerima": "may.azmianty",
-      "loaded_at": "1.782809648588E9",
+      "loaded_at": "1.782809732571E9",
       "nama_penerima": "ayu.cahya",
       "keterangan": "PJK",
       "keterangan_pencocokan": "REAL PELATIHAN AHLI K3 UMUM SERTIFIKASI KEMENAKER RI - Manual"
@@ -433,7 +433,7 @@
       "nama_cc": "Non CC",
       "operasional": "Alokasi 88 - UANG MUKA DAPUR MARET 2026 - Manual",
       "nama_sub_penerima": "may.azmianty",
-      "loaded_at": "1.78280976435E9",
+      "loaded_at": "1.78280968293E9",
       "nama_penerima": "ayu.cahya",
       "keterangan": "Uang Muka",
       "keterangan_pencocokan": "DAPUR MARET 2026 - Manual"
@@ -448,7 +448,7 @@
       "nama_cc": "Non CC",
       "operasional": "Alokasi 88 - UANG MUKA DAPUR MARET 2026 - Manual",
       "nama_sub_penerima": "may.azmianty",
-      "loaded_at": "1.78280968293E9",
+      "loaded_at": "1.78280976435E9",
       "nama_penerima": "ayu.cahya",
       "keterangan": "Uang Muka",
       "keterangan_pencocokan": "DAPUR MARET 2026 - Manual"
