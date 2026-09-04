@@ -1,7 +1,7 @@
 {
   "bulan": "2026-01",
   "bagian": 1,
-  "generated_at": "2026-09-01T06:12:09.435Z",
+  "generated_at": "2026-09-04T00:26:21.175Z",
   "uang_muka_pjk_detail": [
     {
       "id_sub_transaksi": "343796",
@@ -214,11 +214,11 @@
       "keterangan_pencocokan": "Rapat Kerja CNG 2026 - Manual"
     },
     {
-      "id_sub_transaksi": "207129",
+      "id_sub_transaksi": "206837",
       "tanggal_sub_transaksi": "2026-01-15",
       "coa_code": "1.1.6.3",
       "debet": "0.0",
-      "kredit": "9732804.0",
+      "kredit": "500000.0",
       "nama_sub_unit": "[8021] Personalia",
       "nama_cc": "Non CC",
       "operasional": null,
@@ -244,11 +244,11 @@
       "keterangan_pencocokan": null
     },
     {
-      "id_sub_transaksi": "206837",
+      "id_sub_transaksi": "207129",
       "tanggal_sub_transaksi": "2026-01-15",
       "coa_code": "1.1.6.3",
       "debet": "0.0",
-      "kredit": "500000.0",
+      "kredit": "9732804.0",
       "nama_sub_unit": "[8021] Personalia",
       "nama_cc": "Non CC",
       "operasional": null,
