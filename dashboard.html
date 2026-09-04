@@ -2052,7 +2052,6 @@ function kodeCoaBiaya(r) {
 // Sebuah baris "Uang Muka" dianggap SUDAH dipertanggungjawabkan kalau ada
 // minimal satu baris "PJK" dengan keterangan_pencocokan yang SAMA PERSIS
 // (case-insensitive, trimmed) di dalam data yang sedang difilter.
-// UM dengan nilai kredit != 0 dikeluarkan dari monitoring UM.
 function normalizeMatchText(v) {
   return String(v || '').toLowerCase()
     .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
@@ -2103,22 +2102,20 @@ function umPjkMatchScore(um, pjk) {
   return sim * .62 + amountScore + nearExactBonus;
 }
 function hitungStatusUmPjk(rows) {
-  const kunciPjk = new Set();
-  rows.forEach(r => {
-    if (r.keterangan === 'PJK') {
-      const kunci = String(r.keterangan_pencocokan || '').trim().toLowerCase();
-      if (kunci) kunciPjk.add(kunci);
-    }
-  });
+  const pjks = rows.filter(r => r.keterangan === 'PJK');
   return rows.map(r => {
     let status = '-';
+    let best = null, bestScore = 0;
     if (r.keterangan === 'Uang Muka') {
-      const kunci = String(r.keterangan_pencocokan || '').trim().toLowerCase();
-      status = (kunci && kunciPjk.has(kunci)) ? 'Sudah Dipertanggungjawabkan' : 'Belum Dipertanggungjawabkan';
-    } else if (r.keterangan === 'PJK') {
-      status = 'Realisasi';
+      pjks.forEach(p => {
+        const score = umPjkMatchScore(r,p);
+        if (score > bestScore) { bestScore = score; best = p; }
+      });
+      status = bestScore >= 0.42 ? 'Sudah Dipertanggungjawabkan' : 'Belum Dipertanggungjawabkan';
+      return { ...r, _statusUm: status, _matchScore: bestScore, _matchedPjk: best ? (best.keterangan_pencocokan || best.operasional || '') : '' };
     }
-    return { ...r, _statusUm: status };
+    if (r.keterangan === 'PJK') status = 'Realisasi';
+    return { ...r, _statusUm: status, _matchScore: 1, _matchedPjk: '' };
   });
 }
 
@@ -3127,13 +3124,7 @@ function labelSisaJatuhTempo(hari) {
 }
 
 function renderUmPjk(d) {
-  // Uang Muka dengan nilai kredit != 0 bukan transaksi UM yang dipantau,
-  // sehingga dikeluarkan. Baris PJK tetap dipertahankan untuk pencocokan.
-  const semuaRows = d.uang_muka_pjk_detail || [];
-  const mentah = semuaRows.filter(r => {
-    if (r.keterangan !== 'Uang Muka') return true;
-    return (parseFloat(r.kredit) || 0) === 0;
-  });
+  const mentah = d.uang_muka_pjk_detail || [];
   const denganStatus = hitungStatusUmPjk(mentah);
   const detail = denganStatus.map(r => ({
     ...r,
