@@ -1,7 +1,7 @@
 {
   "bulan": "2026-02",
   "bagian": 1,
-  "generated_at": "2026-09-01T06:12:13.331Z",
+  "generated_at": "2026-09-04T00:26:25.113Z",
   "uang_muka_pjk_detail": [
     {
       "id_sub_transaksi": "482826",
@@ -17,21 +17,6 @@
       "nama_penerima": "andyka.tofan",
       "keterangan": "Uang Muka",
       "keterangan_pencocokan": "Alokasi 88 - UM. PELATIHAN AHLI K3 UMUM SERTIFIKASI KEMENAKER RI - Manual"
-    },
-    {
-      "id_sub_transaksi": "485410",
-      "tanggal_sub_transaksi": "2026-02-02",
-      "coa_code": "1.1.6.3",
-      "debet": "0.0",
-      "kredit": "2.15E7",
-      "nama_sub_unit": "[8021] Personalia",
-      "nama_cc": "Non CC",
-      "operasional": null,
-      "nama_sub_penerima": null,
-      "loaded_at": "1.782807352399E9",
-      "nama_penerima": null,
-      "keterangan": "-",
-      "keterangan_pencocokan": null
     },
     {
       "id_sub_transaksi": "421714",
@@ -64,6 +49,21 @@
       "keterangan_pencocokan": "Alokasi 88 - REAL. AKOMODASI PELATIHAN KEPERAWATAN KARDIOVASKULER TINGKAT DASAR (PKKVTD) NUR FARIDA - Manual"
     },
     {
+      "id_sub_transaksi": "485410",
+      "tanggal_sub_transaksi": "2026-02-02",
+      "coa_code": "1.1.6.3",
+      "debet": "0.0",
+      "kredit": "2.15E7",
+      "nama_sub_unit": "[8021] Personalia",
+      "nama_cc": "Non CC",
+      "operasional": null,
+      "nama_sub_penerima": null,
+      "loaded_at": "1.782807352399E9",
+      "nama_penerima": null,
+      "keterangan": "-",
+      "keterangan_pencocokan": null
+    },
+    {
       "id_sub_transaksi": "502025",
       "tanggal_sub_transaksi": "2026-02-03",
       "coa_code": "1.1.6.1",
@@ -94,19 +94,19 @@
       "keterangan_pencocokan": "BIAYA AKOMODASI DESEMBER 2025 PRE-OJT ANESTHESIA \"DEVELOPING SKILLED NURSE FOR SAFE AND EFFECTIVE ANESTHESIA CARE\" - Manual"
     },
     {
-      "id_sub_transaksi": "780414",
+      "id_sub_transaksi": "540163",
       "tanggal_sub_transaksi": "2026-02-05",
       "coa_code": "1.1.6.3",
-      "debet": "0.0",
-      "kredit": "3000000.0",
+      "debet": "11803.0",
+      "kredit": "0.0",
       "nama_sub_unit": "[8021] Personalia",
       "nama_cc": "Non CC",
-      "operasional": "Alokasi 88 - Batal UM Silaturahmi Strava BFS - Manual",
+      "operasional": "Alokasi 88 - PJK REAL. REDEEM POINT KNOWLEDGE MANAGEMENT (KM) PERIODE 2025 - Manual",
       "nama_sub_penerima": "tasya.salsabila",
-      "loaded_at": "1.782807566158E9",
-      "nama_penerima": "tasya.salsabila",
-      "keterangan": "Uang Muka",
-      "keterangan_pencocokan": "Silaturahmi Strava BFS - Manual"
+      "loaded_at": "1.782807441941E9",
+      "nama_penerima": "ayu.cahya",
+      "keterangan": "PJK",
+      "keterangan_pencocokan": "REAL. REDEEM POINT KNOWLEDGE MANAGEMENT (KM) PERIODE 2025 - Manual"
     },
     {
       "id_sub_transaksi": "541876",
@@ -154,19 +154,19 @@
       "keterangan_pencocokan": "PEMBELIAN SERTIFIKAT MCU PELAUT - Manual"
     },
     {
-      "id_sub_transaksi": "540163",
+      "id_sub_transaksi": "780414",
       "tanggal_sub_transaksi": "2026-02-05",
       "coa_code": "1.1.6.3",
-      "debet": "11803.0",
-      "kredit": "0.0",
+      "debet": "0.0",
+      "kredit": "3000000.0",
       "nama_sub_unit": "[8021] Personalia",
       "nama_cc": "Non CC",
-      "operasional": "Alokasi 88 - PJK REAL. REDEEM POINT KNOWLEDGE MANAGEMENT (KM) PERIODE 2025 - Manual",
+      "operasional": "Alokasi 88 - Batal UM Silaturahmi Strava BFS - Manual",
       "nama_sub_penerima": "tasya.salsabila",
-      "loaded_at": "1.782807441941E9",
-      "nama_penerima": "ayu.cahya",
-      "keterangan": "PJK",
-      "keterangan_pencocokan": "REAL. REDEEM POINT KNOWLEDGE MANAGEMENT (KM) PERIODE 2025 - Manual"
+      "loaded_at": "1.782807566158E9",
+      "nama_penerima": "tasya.salsabila",
+      "keterangan": "Uang Muka",
+      "keterangan_pencocokan": "Silaturahmi Strava BFS - Manual"
     },
     {
       "id_sub_transaksi": "438181",
@@ -409,6 +409,21 @@
       "keterangan_pencocokan": "-"
     },
     {
+      "id_sub_transaksi": "769637",
+      "tanggal_sub_transaksi": "2026-02-19",
+      "coa_code": "1.1.6.3",
+      "debet": "0.0",
+      "kredit": "1.7598E7",
+      "nama_sub_unit": "[8021] Personalia",
+      "nama_cc": "Non CC",
+      "operasional": "-",
+      "nama_sub_penerima": null,
+      "loaded_at": "1.782808226331E9",
+      "nama_penerima": null,
+      "keterangan": "-",
+      "keterangan_pencocokan": "-"
+    },
+    {
       "id_sub_transaksi": "770193",
       "tanggal_sub_transaksi": "2026-02-19",
       "coa_code": "1.1.6.3",
@@ -444,21 +459,6 @@
       "coa_code": "1.1.6.3",
       "debet": "0.0",
       "kredit": "7368000.0",
-      "nama_sub_unit": "[8021] Personalia",
-      "nama_cc": "Non CC",
-      "operasional": "-",
-      "nama_sub_penerima": null,
-      "loaded_at": "1.782808226331E9",
-      "nama_penerima": null,
-      "keterangan": "-",
-      "keterangan_pencocokan": "-"
-    },
-    {
-      "id_sub_transaksi": "769637",
-      "tanggal_sub_transaksi": "2026-02-19",
-      "coa_code": "1.1.6.3",
-      "debet": "0.0",
-      "kredit": "1.7598E7",
       "nama_sub_unit": "[8021] Personalia",
       "nama_cc": "Non CC",
       "operasional": "-",
