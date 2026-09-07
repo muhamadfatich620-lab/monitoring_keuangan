@@ -1,7 +1,7 @@
 {
   "bulan": "2026-08",
   "bagian": 1,
-  "generated_at": "2026-09-06T01:30:12.652Z",
+  "generated_at": "2026-09-07T01:08:14.936Z",
   "pelunasan_detail": [
     {
       "id_sub_transaksi": "5939605",
@@ -13,7 +13,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT Fortuna Abadi Bersama",
-      "loaded_at": "1.788484729865E9",
+      "loaded_at": "1.788611117092E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -26,7 +26,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - BPJS Kesehatan Kantor Cabang Gresik - SUSULAN ORJTL - ORITL BUPEL APRIL 2026",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788484729865E9",
+      "loaded_at": "1.788611117092E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -39,7 +39,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. BABCOCK & WILCOX ASIA",
-      "loaded_at": "1.788484729865E9",
+      "loaded_at": "1.788611117092E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -52,7 +52,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "ASURANSI PLN",
-      "loaded_at": "1.788484741778E9",
+      "loaded_at": "1.788611129144E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -65,7 +65,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "ASURANSI PLN",
-      "loaded_at": "1.788484741778E9",
+      "loaded_at": "1.788611129144E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -78,7 +78,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "ASURANSI PLN",
-      "loaded_at": "1.788484741778E9",
+      "loaded_at": "1.788611129144E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -91,7 +91,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "BPJS Ketenagakerjaan",
-      "loaded_at": "1.788484741778E9",
+      "loaded_at": "1.788611129144E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -104,7 +104,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "BPJS Ketenagakerjaan",
-      "loaded_at": "1.788484741778E9",
+      "loaded_at": "1.788611129144E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -117,7 +117,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. M3 Ketapang Sejahtera",
-      "loaded_at": "1.788484741778E9",
+      "loaded_at": "1.788611129144E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -130,7 +130,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. M3 Ketapang Sejahtera",
-      "loaded_at": "1.788484741778E9",
+      "loaded_at": "1.788611129144E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -143,7 +143,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Asuransi Sinar Mas (SIMAS)",
-      "loaded_at": "1.788484729865E9",
+      "loaded_at": "1.788611117092E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -156,7 +156,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT M3 Ketapang Sejahtera",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788484741778E9",
+      "loaded_at": "1.788611129144E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -169,7 +169,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Asuransi Sinar Mas (SIMAS)",
-      "loaded_at": "1.788484729865E9",
+      "loaded_at": "1.788611117092E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -182,7 +182,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Asuransi Sinar Mas (SIMAS)",
-      "loaded_at": "1.788484729865E9",
+      "loaded_at": "1.788611117092E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -195,7 +195,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Asuransi Sinar Mas (SIMAS)",
-      "loaded_at": "1.788484729865E9",
+      "loaded_at": "1.788611117092E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -208,7 +208,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - BRI Life Managed Care",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788484741778E9",
+      "loaded_at": "1.788611129144E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -221,7 +221,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - Asuransi Bri Life",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788484741778E9",
+      "loaded_at": "1.788611129144E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -234,7 +234,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - ASURANSI PLN",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788484741778E9",
+      "loaded_at": "1.788611129144E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -247,7 +247,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - ASURANSI PLN",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788484741778E9",
+      "loaded_at": "1.788611129144E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -260,7 +260,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - ASURANSI PLN",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788484741778E9",
+      "loaded_at": "1.788611129144E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -273,7 +273,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Jiwa Central Asia Raya",
-      "loaded_at": "1.788484729865E9",
+      "loaded_at": "1.788611117092E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -286,7 +286,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. BABCOCK & WILCOX ASIA",
-      "loaded_at": "1.788484729865E9",
+      "loaded_at": "1.788611117092E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -299,7 +299,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "BPJS Ketenagakerjaan",
-      "loaded_at": "1.788484741778E9",
+      "loaded_at": "1.788611129144E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -312,7 +312,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT Teknologi Pamadya (Meditap)",
-      "loaded_at": "1.788484729865E9",
+      "loaded_at": "1.788611117092E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -325,7 +325,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Asuransi Prudential-Admedika",
-      "loaded_at": "1.788484729865E9",
+      "loaded_at": "1.788611117092E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -338,7 +338,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "ASURANSI PLN",
-      "loaded_at": "1.788484741778E9",
+      "loaded_at": "1.788611129144E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -351,7 +351,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Jiwa Generally Indonesia",
-      "loaded_at": "1.788484729865E9",
+      "loaded_at": "1.788611117092E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -364,7 +364,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT Distributor Komponen Utama",
-      "loaded_at": "1.788484729865E9",
+      "loaded_at": "1.788611117092E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -377,7 +377,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT Distributor Komponen Utama",
-      "loaded_at": "1.788484729865E9",
+      "loaded_at": "1.788611117092E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -390,7 +390,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT Distributor Komponen Utama",
-      "loaded_at": "1.788484729865E9",
+      "loaded_at": "1.788611117092E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -403,7 +403,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Lippo General Insurance Tbk.",
-      "loaded_at": "1.788484729865E9",
+      "loaded_at": "1.788611117092E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -416,7 +416,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. BABCOCK & WILCOX ASIA",
-      "loaded_at": "1.788484729865E9",
+      "loaded_at": "1.788611117092E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -429,7 +429,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. BABCOCK & WILCOX ASIA",
-      "loaded_at": "1.788484729865E9",
+      "loaded_at": "1.788611117092E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -442,7 +442,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. BABCOCK & WILCOX ASIA",
-      "loaded_at": "1.788484729865E9",
+      "loaded_at": "1.788611117092E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -455,7 +455,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Sequis Life-Admedika",
-      "loaded_at": "1.788485007367E9",
+      "loaded_at": "1.788611364114E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -468,7 +468,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - ASURANSI PLN",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788484996578E9",
+      "loaded_at": "1.788611352115E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -481,7 +481,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT Margabumi Matraraya",
-      "loaded_at": "1.788484996578E9",
+      "loaded_at": "1.788611352115E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -494,7 +494,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Asuransi Prudential-Admedika",
-      "loaded_at": "1.788484996578E9",
+      "loaded_at": "1.788611352115E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -507,7 +507,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Jiwa Generally Indonesia",
-      "loaded_at": "1.788484996578E9",
+      "loaded_at": "1.788611352115E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -520,7 +520,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Asuransi Sinar Mas (SIMAS)",
-      "loaded_at": "1.788484996578E9",
+      "loaded_at": "1.788611352115E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -533,7 +533,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Asuransi Multi Artha Guna (MAG)",
-      "loaded_at": "1.788485007367E9",
+      "loaded_at": "1.788611364114E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -546,7 +546,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Jiwa Astra - Admedika",
-      "loaded_at": "1.788485019377E9",
+      "loaded_at": "1.788611376081E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -559,7 +559,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT JASA RAHARJA (Persero) JAT",
-      "loaded_at": "1.788485029682E9",
+      "loaded_at": "1.788611386344E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -572,7 +572,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Sunday Insurance Indonesia-Admedika",
-      "loaded_at": "1.788484984562E9",
+      "loaded_at": "1.788611339915E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -585,7 +585,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT INDOSPRING",
-      "loaded_at": "1.788484984562E9",
+      "loaded_at": "1.788611339915E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -598,7 +598,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Sunday Insurance Indonesia-Admedika",
-      "loaded_at": "1.788484984562E9",
+      "loaded_at": "1.788611339915E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -611,7 +611,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "BCA Life-Admedika",
-      "loaded_at": "1.788484984562E9",
+      "loaded_at": "1.788611339915E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -624,7 +624,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "CIPUTRA LIFE - ADMEDIKA",
-      "loaded_at": "1.788484984562E9",
+      "loaded_at": "1.788611339915E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -637,7 +637,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT Buana Pratama Abadi",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788484984562E9",
+      "loaded_at": "1.788611339915E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -650,7 +650,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT. Semen Indonesia (Persero) Tbk.",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788484996578E9",
+      "loaded_at": "1.788611352115E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -663,7 +663,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "AXA Mandiri-Admedika",
-      "loaded_at": "1.788484996578E9",
+      "loaded_at": "1.788611352115E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -676,7 +676,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT Great Eastern Life Ind",
-      "loaded_at": "1.788484996578E9",
+      "loaded_at": "1.788611352115E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -689,7 +689,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT Great Eastern Life Ind",
-      "loaded_at": "1.788484996578E9",
+      "loaded_at": "1.788611352115E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -702,7 +702,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "ASURANSI PLN",
-      "loaded_at": "1.788485019377E9",
+      "loaded_at": "1.788611376081E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -715,7 +715,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT Ceria Utama Admedika",
-      "loaded_at": "1.788484996578E9",
+      "loaded_at": "1.788611352115E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -728,7 +728,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Zurich Asuransi Indonesia (Medicilin)",
-      "loaded_at": "1.788484996578E9",
+      "loaded_at": "1.788611352115E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -741,7 +741,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "International Service Pacific Cross",
-      "loaded_at": "1.788484996578E9",
+      "loaded_at": "1.788611352115E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -754,7 +754,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Fullerton Health Indonesia",
-      "loaded_at": "1.788485029682E9",
+      "loaded_at": "1.788611386344E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -767,7 +767,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT SMELTING GRESIK MANAJEMEN",
-      "loaded_at": "1.788484996578E9",
+      "loaded_at": "1.788611352115E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -780,7 +780,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Asuransi Multi Artha Guna (MAG)",
-      "loaded_at": "1.788485029682E9",
+      "loaded_at": "1.788611386344E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -793,7 +793,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Asuransi Sinar Mas (SIMAS)",
-      "loaded_at": "1.788485029682E9",
+      "loaded_at": "1.788611386344E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -806,7 +806,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Fullerton Health Indonesia",
-      "loaded_at": "1.788485029682E9",
+      "loaded_at": "1.788611386344E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -819,7 +819,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "BPJS Ketenagakerjaan",
-      "loaded_at": "1.788485029682E9",
+      "loaded_at": "1.788611386344E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -832,7 +832,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "BPJS Ketenagakerjaan",
-      "loaded_at": "1.788485029682E9",
+      "loaded_at": "1.788611386344E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -845,7 +845,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PGN LNG - Admedika",
-      "loaded_at": "1.788484984562E9",
+      "loaded_at": "1.788611339915E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -858,7 +858,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "BPJS Ketenagakerjaan",
-      "loaded_at": "1.788485029682E9",
+      "loaded_at": "1.788611386344E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -871,7 +871,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "BPJS Ketenagakerjaan",
-      "loaded_at": "1.788485029682E9",
+      "loaded_at": "1.788611386344E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -884,7 +884,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT Petrokimia Gresik",
-      "loaded_at": "1.788484996578E9",
+      "loaded_at": "1.788611352115E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -897,7 +897,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT Petrokimia Gresik",
-      "loaded_at": "1.788484996578E9",
+      "loaded_at": "1.788611352115E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -910,7 +910,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "BRI LIFE",
-      "loaded_at": "1.788484996578E9",
+      "loaded_at": "1.788611352115E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -923,7 +923,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "International Service Pacific Cross",
-      "loaded_at": "1.788484996578E9",
+      "loaded_at": "1.788611352115E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -936,7 +936,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "BRI LIFE",
-      "loaded_at": "1.788484996578E9",
+      "loaded_at": "1.788611352115E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -949,7 +949,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Asuransi Prudential-Admedika",
-      "loaded_at": "1.788484996578E9",
+      "loaded_at": "1.788611352115E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -962,7 +962,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT Great Eastern Life Ind",
-      "loaded_at": "1.788484996578E9",
+      "loaded_at": "1.788611352115E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -975,7 +975,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "BPJS Ketenagakerjaan",
-      "loaded_at": "1.788485029682E9",
+      "loaded_at": "1.788611386344E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -988,7 +988,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "BPJS Ketenagakerjaan",
-      "loaded_at": "1.788485029682E9",
+      "loaded_at": "1.788611386344E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1001,7 +1001,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "BRI LIFE",
-      "loaded_at": "1.788484996578E9",
+      "loaded_at": "1.788611352115E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1014,7 +1014,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "BRI LIFE",
-      "loaded_at": "1.788484996578E9",
+      "loaded_at": "1.788611352115E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1027,7 +1027,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Barata Indonesia (Persero) Tbk.",
-      "loaded_at": "1.788484996578E9",
+      "loaded_at": "1.788611352115E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1040,7 +1040,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT Surya Manunggal Semesta",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788484996578E9",
+      "loaded_at": "1.788611352115E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1053,7 +1053,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT Global Arrow",
-      "loaded_at": "1.788484984562E9",
+      "loaded_at": "1.788611339915E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1066,7 +1066,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT Mitra Hadina Sejahtera",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788484996578E9",
+      "loaded_at": "1.788611352115E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1079,7 +1079,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT Asuransi Jiwa Astra (Admedika)",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788485019377E9",
+      "loaded_at": "1.788611376081E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1092,7 +1092,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Barata Indonesia (Persero) Tbk.",
-      "loaded_at": "1.788484996578E9",
+      "loaded_at": "1.788611352115E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1105,7 +1105,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT Petrokimia Gresik",
-      "loaded_at": "1.788484996578E9",
+      "loaded_at": "1.788611352115E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1118,7 +1118,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - ASURANSI RELIANCE INDONESIA",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788484996578E9",
+      "loaded_at": "1.788611352115E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1131,7 +1131,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT PETROKIMIA GRESIK",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788485029682E9",
+      "loaded_at": "1.788611386344E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1144,7 +1144,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT Petrokimia Gresik",
-      "loaded_at": "1.788485029682E9",
+      "loaded_at": "1.788611386344E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1157,7 +1157,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT JASA RAHARJA (Persero) JAT",
-      "loaded_at": "1.788485029682E9",
+      "loaded_at": "1.788611386344E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1170,7 +1170,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT. Barata Indonesia",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788484996578E9",
+      "loaded_at": "1.788611352115E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1183,7 +1183,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Jiwa Astra - Admedika",
-      "loaded_at": "1.788485019377E9",
+      "loaded_at": "1.788611376081E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1196,7 +1196,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "BCA Life-Admedika",
-      "loaded_at": "1.788484984562E9",
+      "loaded_at": "1.788611339915E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1209,7 +1209,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Barata Indonesia (Persero) Tbk.",
-      "loaded_at": "1.788484984562E9",
+      "loaded_at": "1.788611339915E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1222,7 +1222,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PERTALIFE INSURANCE - ADMEDIKA",
-      "loaded_at": "1.788484984562E9",
+      "loaded_at": "1.788611339915E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1235,7 +1235,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT Asuka Intiblast Indonesia",
-      "loaded_at": "1.788484996578E9",
+      "loaded_at": "1.788611352115E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1248,7 +1248,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Knauf Plasterboard Indonesia",
-      "loaded_at": "1.788484996578E9",
+      "loaded_at": "1.788611352115E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1261,7 +1261,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Knauf Plasterboard Indonesia",
-      "loaded_at": "1.788484996578E9",
+      "loaded_at": "1.788611352115E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1274,7 +1274,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT LINTECH FUJIKEN ENGINEERING",
-      "loaded_at": "1.788484996578E9",
+      "loaded_at": "1.788611352115E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1287,7 +1287,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT Petrokimia Gresik",
-      "loaded_at": "1.788484996578E9",
+      "loaded_at": "1.788611352115E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1300,7 +1300,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "BRI LIFE",
-      "loaded_at": "1.788484996578E9",
+      "loaded_at": "1.788611352115E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1313,7 +1313,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Jiwa Central Asia Raya",
-      "loaded_at": "1.788485019377E9",
+      "loaded_at": "1.788611376081E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1326,7 +1326,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Asuransi Sinar Mas (SIMAS)",
-      "loaded_at": "1.788485007367E9",
+      "loaded_at": "1.788611364114E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1339,7 +1339,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT PETRO OXO NUSANTARA",
-      "loaded_at": "1.788484984562E9",
+      "loaded_at": "1.788611339915E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1352,7 +1352,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Jiwa Central Asia Raya",
-      "loaded_at": "1.788485019377E9",
+      "loaded_at": "1.788611376081E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1365,7 +1365,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASNA PIUTANG - BRI Life Managed Care",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788485029682E9",
+      "loaded_at": "1.788611386344E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1378,7 +1378,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - ASURANSI PLN",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788485019377E9",
+      "loaded_at": "1.788611376081E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1391,7 +1391,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Jiwa Central Asia Raya",
-      "loaded_at": "1.788485019377E9",
+      "loaded_at": "1.788611376081E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1404,7 +1404,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Petro Oxo Nusantara",
-      "loaded_at": "1.788484984562E9",
+      "loaded_at": "1.788611339915E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1417,7 +1417,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT SUPRABAKTI MANDIRI",
-      "loaded_at": "1.788484996578E9",
+      "loaded_at": "1.788611352115E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1430,7 +1430,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Asuransi Allianz Life - Admedika",
-      "loaded_at": "1.788484996578E9",
+      "loaded_at": "1.788611352115E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1443,7 +1443,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Takaful Keluarga",
-      "loaded_at": "1.788484996578E9",
+      "loaded_at": "1.788611352115E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1456,7 +1456,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "BCA Life-Admedika",
-      "loaded_at": "1.788484984562E9",
+      "loaded_at": "1.788611339915E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1469,7 +1469,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "AVRIST",
-      "loaded_at": "1.788484984562E9",
+      "loaded_at": "1.788611339915E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1482,7 +1482,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT ALDZAMA",
-      "loaded_at": "1.788484984562E9",
+      "loaded_at": "1.788611339915E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1495,7 +1495,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Zurich Asuransi Indonesia (Medicilin)",
-      "loaded_at": "1.788484984562E9",
+      "loaded_at": "1.788611339915E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1508,7 +1508,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Zurich Asuransi Indonesia (Medicilin)",
-      "loaded_at": "1.788484984562E9",
+      "loaded_at": "1.788611339915E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1521,7 +1521,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Sinergi Mitra Investama",
-      "loaded_at": "1.788484984562E9",
+      "loaded_at": "1.788611339915E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1534,7 +1534,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Aplikanusa Lintasarta (Owlexa)",
-      "loaded_at": "1.788484984562E9",
+      "loaded_at": "1.788611339915E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1547,7 +1547,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Asuransi Sinar Mas (SIMAS)",
-      "loaded_at": "1.788485007367E9",
+      "loaded_at": "1.788611364114E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1560,7 +1560,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "RS PKU Muhammadiyah Sekapuk",
-      "loaded_at": "1.788485080585E9",
+      "loaded_at": "1.788611437112E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1573,7 +1573,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "BRI LIFE",
-      "loaded_at": "1.788485123193E9",
+      "loaded_at": "1.78861147933E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1586,7 +1586,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Jiwa Central Asia Raya",
-      "loaded_at": "1.788485207063E9",
+      "loaded_at": "1.788611568991E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1599,7 +1599,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "ASURANSI BOSOWA-ADMEDIKA",
-      "loaded_at": "1.78848516566E9",
+      "loaded_at": "1.78861152494E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1612,7 +1612,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "BRI LIFE",
-      "loaded_at": "1.788485123193E9",
+      "loaded_at": "1.78861147933E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1625,7 +1625,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "BRI LIFE",
-      "loaded_at": "1.788485123193E9",
+      "loaded_at": "1.78861147933E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1638,7 +1638,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "BPJS Ketenagakerjaan",
-      "loaded_at": "1.788485251185E9",
+      "loaded_at": "1.788611612843E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1651,7 +1651,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "BPJS Ketenagakerjaan",
-      "loaded_at": "1.788485251185E9",
+      "loaded_at": "1.788611612843E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1664,7 +1664,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT JASA RAHARJA (Persero) JAT",
-      "loaded_at": "1.788485251185E9",
+      "loaded_at": "1.788611612843E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1677,7 +1677,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Asuransi Sinar Mas (SIMAS)",
-      "loaded_at": "1.78848516566E9",
+      "loaded_at": "1.78861152494E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1690,7 +1690,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT LINTECH FUJIKEN ENGINEERING",
-      "loaded_at": "1.788485111862E9",
+      "loaded_at": "1.788611469533E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1703,7 +1703,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Medika Plaza International Clinic",
-      "loaded_at": "1.788485196675E9",
+      "loaded_at": "1.788611559058E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1716,7 +1716,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - ASURANSI BRI LIFE",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788485229693E9",
+      "loaded_at": "1.788611590597E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1729,7 +1729,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - Bri Life Managed Care",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788485229693E9",
+      "loaded_at": "1.788611590597E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1742,7 +1742,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - BRI Life Managed Care",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788485251185E9",
+      "loaded_at": "1.788611612843E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1755,7 +1755,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Takaful Keluarga",
-      "loaded_at": "1.78848516566E9",
+      "loaded_at": "1.78861152494E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1768,7 +1768,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Jiwa Central Asia Raya",
-      "loaded_at": "1.788485207063E9",
+      "loaded_at": "1.788611568991E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1781,7 +1781,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Jiwa Central Asia Raya",
-      "loaded_at": "1.788485207063E9",
+      "loaded_at": "1.788611568991E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1794,7 +1794,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Jiwa Central Asia Raya",
-      "loaded_at": "1.788485207063E9",
+      "loaded_at": "1.788611568991E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1807,7 +1807,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "AIA Financial (Ad Medika)",
-      "loaded_at": "1.788485218386E9",
+      "loaded_at": "1.788611579021E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1820,7 +1820,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Jiwa Central Asia Raya",
-      "loaded_at": "1.788485218386E9",
+      "loaded_at": "1.788611579021E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1833,7 +1833,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT Bermaks Indonesia",
-      "loaded_at": "1.78848516566E9",
+      "loaded_at": "1.78861152494E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1846,7 +1846,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Tokio Marine Life Insurance (ADMEDIKA)",
-      "loaded_at": "1.78848516566E9",
+      "loaded_at": "1.78861152494E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1859,7 +1859,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Fullerton Health Indonesia",
-      "loaded_at": "1.78848516566E9",
+      "loaded_at": "1.78861152494E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1872,7 +1872,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - ASURANSI PLN ",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788485229693E9",
+      "loaded_at": "1.788611590597E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1885,7 +1885,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Fullerton Health Indonesia",
-      "loaded_at": "1.78848516566E9",
+      "loaded_at": "1.78861152494E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1898,7 +1898,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Fullerton Health Indonesia",
-      "loaded_at": "1.78848516566E9",
+      "loaded_at": "1.78861152494E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1911,7 +1911,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Fullerton Health Indonesia",
-      "loaded_at": "1.78848516566E9",
+      "loaded_at": "1.78861152494E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1924,7 +1924,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG -  BPJS Kesehatan Kantor Cabang Gresik - SUSULAN RITL -RJTL BUPEL MEI 2026",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788485773601E9",
+      "loaded_at": "1.788611790107E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1937,7 +1937,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Zurich Asuransi Indonesia (Medicilin)",
-      "loaded_at": "1.788485661334E9",
+      "loaded_at": "1.788611679239E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1950,7 +1950,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - Bri Life Managed Care",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788485715365E9",
+      "loaded_at": "1.788611736237E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1963,7 +1963,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Smelting",
-      "loaded_at": "1.788485682143E9",
+      "loaded_at": "1.788611700885E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1976,7 +1976,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT SMELTING ",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788485682143E9",
+      "loaded_at": "1.788611700885E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -1989,7 +1989,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT SMELTING GRESIK MANAJEMEN",
-      "loaded_at": "1.788485682143E9",
+      "loaded_at": "1.788611700885E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2002,7 +2002,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Jiwa Astra - Admedika",
-      "loaded_at": "1.788485739619E9",
+      "loaded_at": "1.788611756979E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2015,7 +2015,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT SMELTING",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788485682143E9",
+      "loaded_at": "1.788611700885E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2028,7 +2028,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "BPJS Ketenagakerjaan",
-      "loaded_at": "1.788485795941E9",
+      "loaded_at": "1.78861181386E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2041,7 +2041,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT Asuransi Jiwa Astra (Admedika)",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788485739619E9",
+      "loaded_at": "1.788611756979E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2054,7 +2054,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT Sumber Tunas Mandiri",
-      "loaded_at": "1.788485661334E9",
+      "loaded_at": "1.788611679239E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2067,7 +2067,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Smelting",
-      "loaded_at": "1.788485682143E9",
+      "loaded_at": "1.788611700885E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2080,7 +2080,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT SMELTING GRESIK MANAJEMEN",
-      "loaded_at": "1.788485682143E9",
+      "loaded_at": "1.788611700885E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2093,7 +2093,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "ASURANSI PLN",
-      "loaded_at": "1.788485715365E9",
+      "loaded_at": "1.788611736237E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2106,7 +2106,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT JASA RAHARJA (Persero) JAT",
-      "loaded_at": "1.788485784764E9",
+      "loaded_at": "1.788611802178E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2119,7 +2119,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Medika Plaza International Clinic",
-      "loaded_at": "1.788485661334E9",
+      "loaded_at": "1.788611679239E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2132,7 +2132,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Sinergi Salam Berkah",
-      "loaded_at": "1.788485750484E9",
+      "loaded_at": "1.788611769024E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2145,7 +2145,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Sinergi Salam Berkah",
-      "loaded_at": "1.788485750484E9",
+      "loaded_at": "1.788611769024E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2158,7 +2158,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PERTALIFE INSURANCE - ADMEDIKA",
-      "loaded_at": "1.788485750484E9",
+      "loaded_at": "1.788611769024E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2171,7 +2171,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. PERTA LIFE INSURANCE",
-      "loaded_at": "1.788485750484E9",
+      "loaded_at": "1.788611769024E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2184,7 +2184,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PERTALIFE INSURANCE - ADMEDIKA",
-      "loaded_at": "1.788485750484E9",
+      "loaded_at": "1.788611769024E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2197,7 +2197,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT Asih Eka Abadi",
-      "loaded_at": "1.788485750484E9",
+      "loaded_at": "1.788611769024E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2210,7 +2210,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT Asih Eka Abadi",
-      "loaded_at": "1.788485750484E9",
+      "loaded_at": "1.788611769024E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2223,7 +2223,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT Asih Eka Abadi",
-      "loaded_at": "1.788485750484E9",
+      "loaded_at": "1.788611769024E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2236,7 +2236,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT JASA RAHARJA (Persero) JAT",
-      "loaded_at": "1.788485784764E9",
+      "loaded_at": "1.788611802178E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2249,7 +2249,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Equira Life - Admedika",
-      "loaded_at": "1.788485773601E9",
+      "loaded_at": "1.788611790107E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2262,7 +2262,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - Bri Life Managed Care",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788485784764E9",
+      "loaded_at": "1.788611802178E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2275,7 +2275,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT Knauf Plasterboard Indonesia",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788485682143E9",
+      "loaded_at": "1.788611700885E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2288,7 +2288,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Asuransi Allianz Life - Admedika",
-      "loaded_at": "1.788485773601E9",
+      "loaded_at": "1.788611790107E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2301,7 +2301,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "International Service Pacific Cross",
-      "loaded_at": "1.788485773601E9",
+      "loaded_at": "1.788611790107E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2314,7 +2314,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Jiwa Central Asia Raya",
-      "loaded_at": "1.788485773601E9",
+      "loaded_at": "1.788611790107E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2327,7 +2327,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Asuransi Jasa Indonesia (ADMEDIKA)",
-      "loaded_at": "1.788485773601E9",
+      "loaded_at": "1.788611790107E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2340,7 +2340,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT Asih Eka Abadi",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788485773601E9",
+      "loaded_at": "1.788611790107E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2353,7 +2353,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Central Asia",
-      "loaded_at": "1.788485773601E9",
+      "loaded_at": "1.788611790107E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2366,7 +2366,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT SUPRABAKTI MANDIRI",
-      "loaded_at": "1.788485773601E9",
+      "loaded_at": "1.788611790107E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2379,7 +2379,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - BRI Life Managed Care",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788485784764E9",
+      "loaded_at": "1.788611802178E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2392,7 +2392,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT Wasa Mitra Engineering",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788485784764E9",
+      "loaded_at": "1.788611802178E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2405,7 +2405,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Sinergi Mitra Investama",
-      "loaded_at": "1.788485750484E9",
+      "loaded_at": "1.788611769024E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2418,7 +2418,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Ume Sembada",
-      "loaded_at": "1.788485750484E9",
+      "loaded_at": "1.788611769024E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2431,7 +2431,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Ume Sembada",
-      "loaded_at": "1.788485750484E9",
+      "loaded_at": "1.788611769024E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2444,7 +2444,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Wasa Mitra Engineering",
-      "loaded_at": "1.788485750484E9",
+      "loaded_at": "1.788611769024E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2457,7 +2457,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT PETRO OXO NUSANTARA",
-      "loaded_at": "1.788485750484E9",
+      "loaded_at": "1.788611769024E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2470,7 +2470,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Petro Oxo Nusantara",
-      "loaded_at": "1.788485750484E9",
+      "loaded_at": "1.788611769024E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2483,7 +2483,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Asuransi Multi Artha Guna (MAG)",
-      "loaded_at": "1.788485750484E9",
+      "loaded_at": "1.788611769024E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2496,7 +2496,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Jiwa Central Asia Raya",
-      "loaded_at": "1.788485773601E9",
+      "loaded_at": "1.788611790107E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2509,7 +2509,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Jiwa Central Asia Raya",
-      "loaded_at": "1.788485773601E9",
+      "loaded_at": "1.788611790107E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2522,7 +2522,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Jiwa Central Asia Raya",
-      "loaded_at": "1.788485773601E9",
+      "loaded_at": "1.788611790107E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2535,7 +2535,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Kawasan Industri Gresik",
-      "loaded_at": "1.788485784764E9",
+      "loaded_at": "1.788611802178E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2548,7 +2548,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Wasa Mitra Engineering",
-      "loaded_at": "1.788485784764E9",
+      "loaded_at": "1.788611802178E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2561,7 +2561,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Equity Life Indonesia",
-      "loaded_at": "1.788485773601E9",
+      "loaded_at": "1.788611790107E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2574,7 +2574,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Jiwa Astra - Admedika",
-      "loaded_at": "1.788485784764E9",
+      "loaded_at": "1.788611802178E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2587,7 +2587,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Medika Plaza International Clinic",
-      "loaded_at": "1.788485784764E9",
+      "loaded_at": "1.788611802178E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2600,7 +2600,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Takaful Keluarga",
-      "loaded_at": "1.788485750484E9",
+      "loaded_at": "1.788611769024E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2613,7 +2613,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - BPJS Kesehatan Kantor Cabang Gresik - ORJTL - ORITL BUPEL JUNI 2026",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788485908992E9",
+      "loaded_at": "1.788611923882E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2626,7 +2626,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Takaful Keluarga",
-      "loaded_at": "1.788485874441E9",
+      "loaded_at": "1.788611892285E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2639,7 +2639,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT JASA RAHARJA ( PERSERO ) JAT",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788485998305E9",
+      "loaded_at": "1.788612015503E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2652,7 +2652,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Jiwa Central Asia Raya",
-      "loaded_at": "1.788485874441E9",
+      "loaded_at": "1.788611892285E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2665,7 +2665,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT JASA RAHARJA (Persero) JAT",
-      "loaded_at": "1.788485998305E9",
+      "loaded_at": "1.788612015503E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2678,7 +2678,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Jiwa Central Asia Raya",
-      "loaded_at": "1.788485874441E9",
+      "loaded_at": "1.788611892285E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2691,7 +2691,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT SMELTING GRESIK MANAJEMEN",
-      "loaded_at": "1.788485874441E9",
+      "loaded_at": "1.788611892285E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2704,7 +2704,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Jiwa Generally Indonesia",
-      "loaded_at": "1.788485874441E9",
+      "loaded_at": "1.788611892285E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2717,7 +2717,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Semen Indonesia Foundation (SIF)",
-      "loaded_at": "1.788485874441E9",
+      "loaded_at": "1.788611892285E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2730,7 +2730,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Semen Indonesia Foundation (SIF)",
-      "loaded_at": "1.788485874441E9",
+      "loaded_at": "1.788611892285E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2743,7 +2743,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Takaful Keluarga",
-      "loaded_at": "1.788485874441E9",
+      "loaded_at": "1.788611892285E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2756,7 +2756,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. BNI Life Insurance",
-      "loaded_at": "1.788485963964E9",
+      "loaded_at": "1.788611979753E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2769,7 +2769,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Asuransi Allianz Life - Admedika",
-      "loaded_at": "1.788485874441E9",
+      "loaded_at": "1.788611892285E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2782,7 +2782,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Medika Plaza International Clinic",
-      "loaded_at": "1.788485874441E9",
+      "loaded_at": "1.788611892285E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2795,7 +2795,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT JAPFA COMFEED - ADMEDIKA",
-      "loaded_at": "1.788485874441E9",
+      "loaded_at": "1.788611892285E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2808,7 +2808,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Aplikanusa Lintasarta (Owlexa)",
-      "loaded_at": "1.788485874441E9",
+      "loaded_at": "1.788611892285E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2821,7 +2821,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Asuransi Allianz Life - Admedika",
-      "loaded_at": "1.788485874441E9",
+      "loaded_at": "1.788611892285E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2834,7 +2834,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Takaful Keluarga",
-      "loaded_at": "1.788485874441E9",
+      "loaded_at": "1.788611892285E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2847,7 +2847,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Takaful Keluarga",
-      "loaded_at": "1.788485874441E9",
+      "loaded_at": "1.788611892285E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2860,7 +2860,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - Asuransi Bri Life",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788485963964E9",
+      "loaded_at": "1.788611979753E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2873,7 +2873,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - BPJS Kesehatan Kantor Cabang Gresik - Ambulance RI-RJ & ALKES Juni",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788485908992E9",
+      "loaded_at": "1.788611923882E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2886,7 +2886,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Jiwa Central Asia Raya",
-      "loaded_at": "1.788485874441E9",
+      "loaded_at": "1.788611892285E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2899,7 +2899,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Sequis Life-Admedika",
-      "loaded_at": "1.78848583898E9",
+      "loaded_at": "1.788611859331E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2912,7 +2912,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "International Service Pacific Cross",
-      "loaded_at": "1.78848598608E9",
+      "loaded_at": "1.78861200535E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2925,7 +2925,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Zurich Asuransi Indonesia (Medicilin)",
-      "loaded_at": "1.788485908992E9",
+      "loaded_at": "1.788611923882E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2938,7 +2938,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT Great Eastern Life Ind",
-      "loaded_at": "1.788485908992E9",
+      "loaded_at": "1.788611923882E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2951,7 +2951,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Jiwa Astra - Admedika",
-      "loaded_at": "1.788485974106E9",
+      "loaded_at": "1.788611991471E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2964,7 +2964,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Asuransi Sinar Mas (SIMAS)",
-      "loaded_at": "1.788485974106E9",
+      "loaded_at": "1.788611991471E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2977,7 +2977,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Asuransi Sinar Mas (SIMAS)",
-      "loaded_at": "1.788485974106E9",
+      "loaded_at": "1.788611991471E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -2990,7 +2990,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Ume Persada Indonesia",
-      "loaded_at": "1.788485974106E9",
+      "loaded_at": "1.788611991471E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3003,7 +3003,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT Abhitech",
-      "loaded_at": "1.788485974106E9",
+      "loaded_at": "1.788611991471E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3016,7 +3016,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Fullerton Health Indonesia",
-      "loaded_at": "1.788485974106E9",
+      "loaded_at": "1.788611991471E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3029,7 +3029,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Fullerton Health Indonesia",
-      "loaded_at": "1.788485974106E9",
+      "loaded_at": "1.788611991471E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3042,7 +3042,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Semen Gresik",
-      "loaded_at": "1.788485908992E9",
+      "loaded_at": "1.788611923882E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3055,7 +3055,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Ciputra Life - Health Metrics",
-      "loaded_at": "1.788485908992E9",
+      "loaded_at": "1.788611923882E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3068,7 +3068,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Sequis Life-Admedika",
-      "loaded_at": "1.788485874441E9",
+      "loaded_at": "1.788611892285E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3081,7 +3081,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. PERTAMINA DRILLING SERVICE INDONESIA (ADMEDIKA)",
-      "loaded_at": "1.788485874441E9",
+      "loaded_at": "1.788611892285E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3094,7 +3094,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Asuransi Multi Artha Guna (MAG)",
-      "loaded_at": "1.788485874441E9",
+      "loaded_at": "1.788611892285E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3107,7 +3107,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - Asuransi Sinar Mas (SIMAS)",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788485974106E9",
+      "loaded_at": "1.788611991471E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3120,7 +3120,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Fullerton Health Indonesia",
-      "loaded_at": "1.788486222603E9",
+      "loaded_at": "1.78861278015E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3133,7 +3133,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT Great Eastern Life Ind",
-      "loaded_at": "1.788486289952E9",
+      "loaded_at": "1.788612855625E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3146,7 +3146,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT JASA RAHARJA ( PERSERO ) JAT",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788486313919E9",
+      "loaded_at": "1.78861287787E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3159,7 +3159,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Asuransi Multi Artha Guna (MAG)",
-      "loaded_at": "1.788486222603E9",
+      "loaded_at": "1.78861278015E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3172,7 +3172,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Fullerton Health Indonesia",
-      "loaded_at": "1.788486222603E9",
+      "loaded_at": "1.78861278015E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3185,7 +3185,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT JASA RAHARJA (Persero) JAT",
-      "loaded_at": "1.788486313919E9",
+      "loaded_at": "1.78861287787E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3198,7 +3198,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Nayaka Era Husada",
-      "loaded_at": "1.788486289952E9",
+      "loaded_at": "1.788612855625E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3211,7 +3211,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT Citra Nusantara Energi",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788486289952E9",
+      "loaded_at": "1.788612855625E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3224,7 +3224,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Smelting",
-      "loaded_at": "1.788486289952E9",
+      "loaded_at": "1.788612855625E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3237,7 +3237,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Asuransi Sinar Mas (SIMAS)",
-      "loaded_at": "1.788486289952E9",
+      "loaded_at": "1.788612855625E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3250,7 +3250,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. MSIG Life Insurance Indonesia",
-      "loaded_at": "1.788486289952E9",
+      "loaded_at": "1.788612855625E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3263,7 +3263,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "International Service Pacific Cross",
-      "loaded_at": "1.788486289952E9",
+      "loaded_at": "1.788612855625E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3276,7 +3276,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "International Service Pacific Cross",
-      "loaded_at": "1.788486289952E9",
+      "loaded_at": "1.788612855625E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3289,7 +3289,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT Abhitech",
-      "loaded_at": "1.788486222603E9",
+      "loaded_at": "1.78861278015E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3302,7 +3302,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT ALDZAMA",
-      "loaded_at": "1.788486222603E9",
+      "loaded_at": "1.78861278015E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3315,7 +3315,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Asuransi Sinar Mas (SIMAS)",
-      "loaded_at": "1.788486222603E9",
+      "loaded_at": "1.78861278015E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3328,7 +3328,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Jiwa Generally Indonesia",
-      "loaded_at": "1.788486289952E9",
+      "loaded_at": "1.788612855625E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3341,7 +3341,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. MEDIA DOKTER INVESTAMA (HALODOC)",
-      "loaded_at": "1.788486277914E9",
+      "loaded_at": "1.788612843923E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3354,7 +3354,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Asuransi Allianz Life - Admedika",
-      "loaded_at": "1.788486277914E9",
+      "loaded_at": "1.788612843923E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3367,7 +3367,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. M3 Ketapang Sejahtera",
-      "loaded_at": "1.788486222603E9",
+      "loaded_at": "1.78861278015E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3380,7 +3380,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Jiwa Generally Indonesia",
-      "loaded_at": "1.788486289952E9",
+      "loaded_at": "1.788612855625E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3393,7 +3393,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Asuransi Sinar Mas (SIMAS)",
-      "loaded_at": "1.788486222603E9",
+      "loaded_at": "1.78861278015E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3406,7 +3406,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Mesitech Mitra Purnabangun",
-      "loaded_at": "1.788486277914E9",
+      "loaded_at": "1.788612843923E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3419,7 +3419,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT PERTAMINA PGN - ADMEDIKA",
-      "loaded_at": "1.788486222603E9",
+      "loaded_at": "1.78861278015E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3432,7 +3432,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT PERTAMINA PGN - ADMEDIKA",
-      "loaded_at": "1.788486222603E9",
+      "loaded_at": "1.78861278015E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3445,7 +3445,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Sunday Insurance Indonesia-Admedika",
-      "loaded_at": "1.788486222603E9",
+      "loaded_at": "1.78861278015E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3458,7 +3458,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Fullerton Health Indonesia",
-      "loaded_at": "1.788486222603E9",
+      "loaded_at": "1.78861278015E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3471,7 +3471,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Hikari Teknologi Indonesia",
-      "loaded_at": "1.788486277914E9",
+      "loaded_at": "1.788612843923E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3484,7 +3484,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PERTALIFE INSURANCE - ADMEDIKA",
-      "loaded_at": "1.788486222603E9",
+      "loaded_at": "1.78861278015E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3497,7 +3497,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "BPJS Ketenagakerjaan",
-      "loaded_at": "1.788486324033E9",
+      "loaded_at": "1.788612889869E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3510,7 +3510,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "JACCS MPM FINANCE INDONESIA - ADMEDIKA",
-      "loaded_at": "1.788486289952E9",
+      "loaded_at": "1.788612855625E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3523,7 +3523,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Sunday Insurance Indonesia-Admedika",
-      "loaded_at": "1.788486289952E9",
+      "loaded_at": "1.788612855625E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3536,7 +3536,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Sunday Insurance Indonesia-Admedika",
-      "loaded_at": "1.788486289952E9",
+      "loaded_at": "1.788612855625E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3549,7 +3549,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Harvestar Flour Mills",
-      "loaded_at": "1.788486289952E9",
+      "loaded_at": "1.788612855625E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3562,7 +3562,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Lippo General Insurance Tbk.",
-      "loaded_at": "1.788486378614E9",
+      "loaded_at": "1.788612949353E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3575,7 +3575,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Sentana Adidaya Pratama (Wilmar Group)",
-      "loaded_at": "1.788486388892E9",
+      "loaded_at": "1.788612959758E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3588,7 +3588,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Jiwa Astra - Admedika",
-      "loaded_at": "1.788486409567E9",
+      "loaded_at": "1.788612981718E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3601,7 +3601,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Asuransi Sinar Mas (SIMAS)",
-      "loaded_at": "1.788486409567E9",
+      "loaded_at": "1.788612981718E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3614,7 +3614,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Zurich Asuransi Indonesia (Medicilin)",
-      "loaded_at": "1.788486378614E9",
+      "loaded_at": "1.788612949353E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3627,7 +3627,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Wilmar Nabati Indonesia",
-      "loaded_at": "1.788486388892E9",
+      "loaded_at": "1.788612959758E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3640,7 +3640,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Sentana Adidaya Pratama (Wilmar Group)",
-      "loaded_at": "1.788486388892E9",
+      "loaded_at": "1.788612959758E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3653,7 +3653,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Wilmar Nabati Indonesia",
-      "loaded_at": "1.788486388892E9",
+      "loaded_at": "1.788612959758E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3666,7 +3666,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "ASURANSI PLN",
-      "loaded_at": "1.788486419662E9",
+      "loaded_at": "1.788612992544E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3679,7 +3679,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "ASURANSI PLN",
-      "loaded_at": "1.788486419662E9",
+      "loaded_at": "1.788612992544E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3692,7 +3692,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT Suasa Benua Maritim",
-      "loaded_at": "1.788486378614E9",
+      "loaded_at": "1.788612949353E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3705,7 +3705,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - BPJS Kesehatan Kantor Cabang Gresik - Susulan RITL-RJTL BUPEL MARET 2026",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788486378614E9",
+      "loaded_at": "1.788612949353E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3718,7 +3718,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Wilmar Consultancy Services",
-      "loaded_at": "1.788486388892E9",
+      "loaded_at": "1.788612959758E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3731,7 +3731,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Wilmar Consultancy Services",
-      "loaded_at": "1.788486388892E9",
+      "loaded_at": "1.788612959758E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3744,7 +3744,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - BPJS Kesehatan Kantor Cabang Gresik - Susulan ORJTL  BUPEL MEI 2026",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788486378614E9",
+      "loaded_at": "1.788612949353E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3757,7 +3757,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT Hikari Teknologi Indonesia",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788486388892E9",
+      "loaded_at": "1.788612959758E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3770,7 +3770,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Wilmar Chemical Indonesia (WCI)",
-      "loaded_at": "1.788486388892E9",
+      "loaded_at": "1.788612959758E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3783,7 +3783,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Volac Wilmar Feed Ingredients Indonesia (Wilmar Group)",
-      "loaded_at": "1.788486388892E9",
+      "loaded_at": "1.788612959758E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3796,7 +3796,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Petro Andalan Nusantara (Wilmar Group)",
-      "loaded_at": "1.788486378614E9",
+      "loaded_at": "1.788612949353E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3809,7 +3809,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Petro Andalan Nusantara (Wilmar Group)",
-      "loaded_at": "1.788486378614E9",
+      "loaded_at": "1.788612949353E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3822,7 +3822,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Jiwa Central Asia Raya",
-      "loaded_at": "1.788486378614E9",
+      "loaded_at": "1.788612949353E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3835,7 +3835,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT. Semen Indonesia (Persero) Tbk.",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788486388892E9",
+      "loaded_at": "1.788612959758E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3848,7 +3848,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT Volac Wilmar Feed Ingridients Indonesia (Wilmar Group)",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788486388892E9",
+      "loaded_at": "1.788612959758E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3861,7 +3861,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Jiwa Central Asia Raya",
-      "loaded_at": "1.788486378614E9",
+      "loaded_at": "1.788612949353E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3874,7 +3874,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT Sentana Adidaya Pratama  (Wilmar Group)",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788486388892E9",
+      "loaded_at": "1.788612959758E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3887,7 +3887,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - PT Wilmar Nabati Indonesia",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788486388892E9",
+      "loaded_at": "1.788612959758E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3900,7 +3900,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Semen Indonesia (Persero) Tbk.",
-      "loaded_at": "1.788486388892E9",
+      "loaded_at": "1.788612959758E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3913,7 +3913,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. PLN NP UMRO",
-      "loaded_at": "1.788486388892E9",
+      "loaded_at": "1.788612959758E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3926,7 +3926,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. PLN NP UMRO",
-      "loaded_at": "1.788486388892E9",
+      "loaded_at": "1.788612959758E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3939,7 +3939,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Jiwa Bumi Asih Jaya",
-      "loaded_at": "1.788486378614E9",
+      "loaded_at": "1.788612949353E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3952,7 +3952,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT PLN Nusantara Power UP Gresik",
-      "loaded_at": "1.788486388892E9",
+      "loaded_at": "1.788612959758E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3965,7 +3965,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Jiwa Generally Indonesia",
-      "loaded_at": "1.788486388892E9",
+      "loaded_at": "1.788612959758E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3978,7 +3978,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Lippo General Insurance Tbk.",
-      "loaded_at": "1.788486378614E9",
+      "loaded_at": "1.788612949353E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -3991,7 +3991,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Takaful Keluarga",
-      "loaded_at": "1.788486409567E9",
+      "loaded_at": "1.788612981718E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4004,7 +4004,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT INDOSPRING",
-      "loaded_at": "1.788486485961E9",
+      "loaded_at": "1.7886130615E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4017,7 +4017,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "AVRIST",
-      "loaded_at": "1.788486485961E9",
+      "loaded_at": "1.7886130615E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4030,7 +4030,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "AIA Financial (Ad Medika)",
-      "loaded_at": "1.788486442176E9",
+      "loaded_at": "1.788613015098E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4043,7 +4043,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Jiwa Generally Indonesia",
-      "loaded_at": "1.788486442176E9",
+      "loaded_at": "1.788613015098E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4056,7 +4056,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Jasa Marga (ADMEDIKA)",
-      "loaded_at": "1.788486409567E9",
+      "loaded_at": "1.788612981718E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4069,7 +4069,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Jasa Marga (ADMEDIKA)",
-      "loaded_at": "1.788486409567E9",
+      "loaded_at": "1.788612981718E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4082,7 +4082,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Jiwa Generally Indonesia",
-      "loaded_at": "1.788486442176E9",
+      "loaded_at": "1.788613015098E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4095,7 +4095,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Zurich Asuransi Indonesia (Medicilin)",
-      "loaded_at": "1.788486442176E9",
+      "loaded_at": "1.788613015098E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4108,7 +4108,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT PAN PACIFIC - ADMEDIKA",
-      "loaded_at": "1.788486485961E9",
+      "loaded_at": "1.7886130615E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4121,7 +4121,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PERTALIFE INSURANCE - ADMEDIKA",
-      "loaded_at": "1.788486485961E9",
+      "loaded_at": "1.7886130615E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4134,7 +4134,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Harvestar Flour Mills",
-      "loaded_at": "1.788486485961E9",
+      "loaded_at": "1.7886130615E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4147,7 +4147,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Asuransi Umum Mega - Admedika",
-      "loaded_at": "1.788486485961E9",
+      "loaded_at": "1.7886130615E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4160,7 +4160,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Asuransi Umum Mega - Admedika",
-      "loaded_at": "1.788486485961E9",
+      "loaded_at": "1.7886130615E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4173,7 +4173,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "ASURANSI PLN",
-      "loaded_at": "1.788486485961E9",
+      "loaded_at": "1.7886130615E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4186,7 +4186,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - ASURANSI UMUM MEGA - ADMEDIKA",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788486485961E9",
+      "loaded_at": "1.7886130615E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4199,7 +4199,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Aplikanusa Lintasarta (Owlexa)",
-      "loaded_at": "1.788486442176E9",
+      "loaded_at": "1.788613015098E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4212,7 +4212,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Smelting",
-      "loaded_at": "1.788486442176E9",
+      "loaded_at": "1.788613015098E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4225,7 +4225,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT JASA RAHARJA (Persero) JAT",
-      "loaded_at": "1.788486452799E9",
+      "loaded_at": "1.78861302732E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4238,7 +4238,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Takaful Keluarga",
-      "loaded_at": "1.788486485961E9",
+      "loaded_at": "1.7886130615E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4251,7 +4251,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PERTALIFE INSURANCE - ADMEDIKA",
-      "loaded_at": "1.788486485961E9",
+      "loaded_at": "1.7886130615E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4264,7 +4264,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - BRI Life Managed Care",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788486485961E9",
+      "loaded_at": "1.7886130615E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4277,7 +4277,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "BCA Life-Admedika",
-      "loaded_at": "1.788486485961E9",
+      "loaded_at": "1.7886130615E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4290,7 +4290,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Semen Indonesia Foundation (SIF)",
-      "loaded_at": "1.788486485961E9",
+      "loaded_at": "1.7886130615E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4303,7 +4303,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Semen Indonesia Foundation (SIF)",
-      "loaded_at": "1.788486485961E9",
+      "loaded_at": "1.7886130615E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4693,7 +4693,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Asuransi Prudential-Admedika",
-      "loaded_at": "1.788486867149E9",
+      "loaded_at": "1.788612466866E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4706,7 +4706,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Fullerton Health Indonesia",
-      "loaded_at": "1.788486855256E9",
+      "loaded_at": "1.788612456557E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4719,7 +4719,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT Great Eastern Life Ind",
-      "loaded_at": "1.788486867149E9",
+      "loaded_at": "1.788612466866E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4732,7 +4732,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Managed Care Pertamedika (MPPK)",
-      "loaded_at": "1.788486867149E9",
+      "loaded_at": "1.788612466866E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4745,7 +4745,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Managed Care Pertamedika (MPPK)",
-      "loaded_at": "1.788486867149E9",
+      "loaded_at": "1.788612466866E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4758,7 +4758,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Managed Care Pertamedika (MPPK)",
-      "loaded_at": "1.788486867149E9",
+      "loaded_at": "1.788612466866E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4771,7 +4771,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Managed Care Pertamedika (MPPK)",
-      "loaded_at": "1.788486867149E9",
+      "loaded_at": "1.788612466866E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4784,7 +4784,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Lippo General Insurance Tbk.",
-      "loaded_at": "1.788486867149E9",
+      "loaded_at": "1.788612466866E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4797,7 +4797,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Fullerton Health Indonesia",
-      "loaded_at": "1.788486891879E9",
+      "loaded_at": "1.788612495973E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4810,7 +4810,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Fullerton Health Indonesia",
-      "loaded_at": "1.788486891879E9",
+      "loaded_at": "1.788612495973E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4823,7 +4823,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Fullerton Health Indonesia",
-      "loaded_at": "1.788486891879E9",
+      "loaded_at": "1.788612495973E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4836,7 +4836,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Fullerton Health Indonesia",
-      "loaded_at": "1.78848690203E9",
+      "loaded_at": "1.788612495973E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4849,7 +4849,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Jiwa Generally Indonesia",
-      "loaded_at": "1.788486867149E9",
+      "loaded_at": "1.788612466866E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4862,7 +4862,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Fullerton Health Indonesia",
-      "loaded_at": "1.788486914714E9",
+      "loaded_at": "1.788612518873E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4875,7 +4875,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Jiwa Generally Indonesia",
-      "loaded_at": "1.788486867149E9",
+      "loaded_at": "1.788612466866E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4888,7 +4888,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Fullerton Health Indonesia",
-      "loaded_at": "1.788486914714E9",
+      "loaded_at": "1.788612518873E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4901,7 +4901,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Fullerton Health Indonesia",
-      "loaded_at": "1.788486924986E9",
+      "loaded_at": "1.788612518873E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4914,7 +4914,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Jiwa Central Asia Raya",
-      "loaded_at": "1.788486867149E9",
+      "loaded_at": "1.788612466866E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4927,7 +4927,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT Suasa Benua Maritim",
-      "loaded_at": "1.788486867149E9",
+      "loaded_at": "1.788612466866E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4940,7 +4940,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Asuransi Sinar Mas (SIMAS)",
-      "loaded_at": "1.788486867149E9",
+      "loaded_at": "1.788612466866E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4953,7 +4953,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT Asih Eka Abadi",
-      "loaded_at": "1.788486855256E9",
+      "loaded_at": "1.788612456557E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4966,7 +4966,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT Asih Eka Abadi",
-      "loaded_at": "1.788486855256E9",
+      "loaded_at": "1.788612456557E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4979,7 +4979,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT Asih Eka Abadi",
-      "loaded_at": "1.788486855256E9",
+      "loaded_at": "1.788612456557E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -4992,7 +4992,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT Asih Eka Abadi",
-      "loaded_at": "1.788486855256E9",
+      "loaded_at": "1.788612456557E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -5005,7 +5005,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Astra Buana (Garda Medika)",
-      "loaded_at": "1.788486855256E9",
+      "loaded_at": "1.788612456557E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -5018,7 +5018,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Harvestar Flour Mills",
-      "loaded_at": "1.788486855256E9",
+      "loaded_at": "1.788612456557E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -5031,7 +5031,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. BNI Life Insurance",
-      "loaded_at": "1.788486855256E9",
+      "loaded_at": "1.788612456557E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -5044,7 +5044,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - Managed Care Pertamedika (MPPK)",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788486867149E9",
+      "loaded_at": "1.788612466866E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -5057,7 +5057,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "Sunday Insurance Indonesia-Admedika",
-      "loaded_at": "1.788486822157E9",
+      "loaded_at": "1.788612423773E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -5070,7 +5070,7 @@
       "nama_cc": "Non CC",
       "operasional": "PELUNASAN PIUTANG - Fullerton Health Indonesia",
       "nama_sub_penerima": "indri.nurisa",
-      "loaded_at": "1.788486969751E9",
+      "loaded_at": "1.788612570639E9",
       "nama_penerima": "indri.nurisa"
     },
     {
@@ -5083,7 +5083,7 @@
       "nama_cc": "Non CC",
       "operasional": null,
       "nama_sub_penerima": "PT. Asuransi Jiwa Central Asia Raya",
-      "loaded_at": "1.788486867149E9",
+      "loaded_at": "1.788612466866E9",
       "nama_penerima": "indri.nurisa"
     }
   ]
