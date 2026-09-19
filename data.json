@@ -1,11 +1,6 @@
 {
-  "generated_at": "2026-09-18T01:36:31.324Z",
+  "generated_at": "2026-09-19T01:36:31.054Z",
   "pendapatan_harian": [
-    {
-      "tanggal": "2026-07-21",
-      "total_kredit": "4.45612285091E9",
-      "total_debet": "4.45612285091E9"
-    },
     {
       "tanggal": "2026-07-22",
       "total_kredit": "6.71381084049E9",
@@ -305,98 +300,50 @@
   "pendapatan_per_unit": [
     {
       "nama_sub_unit": "[8122] Akuntansi Biaya",
-      "total_kredit": "6.656527132656E10",
-      "total_debet": "9.32026749329E9",
-      "net": "5.724500383327E10"
+      "total_kredit": "6.539132642756E10",
+      "total_debet": "9.19386345329E9",
+      "net": "5.619746297427E10"
     },
     {
       "nama_sub_unit": "[9101] DAPUR",
-      "total_kredit": "1.580233091624E10",
-      "total_debet": "1.93170563619E9",
-      "net": "1.387062528005E10"
+      "total_kredit": "1.539747162921E10",
+      "total_debet": "1.92799768699E9",
+      "net": "1.346947394222E10"
     },
     {
       "nama_sub_unit": "[8145] Penagihan",
-      "total_kredit": "2.357071276256E10",
-      "total_debet": "1.658473937793E10",
-      "net": "6.98597338463E9"
+      "total_kredit": "2.329635248911E10",
+      "total_debet": "1.643204254748E10",
+      "net": "6.86430994163E9"
     },
     {
       "nama_sub_unit": "102-Gudang Obat PT CN ",
-      "total_kredit": "2.551887317279E10",
-      "total_debet": "2.250039284393E10",
-      "net": "3.01848032886E9"
+      "total_kredit": "2.533061999578E10",
+      "total_debet": "2.20888836782E10",
+      "net": "3.24173631758E9"
     },
     {
       "nama_sub_unit": "101-Gudang Non Obat PT CN",
-      "total_kredit": "2.61383692683E9",
-      "total_debet": "2.21147082218E9",
-      "net": "4.0236610465E8"
+      "total_kredit": "2.58098229662E9",
+      "total_debet": "2.19451478278E9",
+      "net": "3.8646751384E8"
     },
     {
       "nama_sub_unit": "[9102] LINEN",
-      "total_kredit": "1.6779886141E8",
-      "total_debet": "1.521452922E8",
+      "total_kredit": "1.5050683741E8",
+      "total_debet": "1.348532682E8",
       "net": "1.565356921E7"
     },
     {
       "nama_sub_unit": "[9194] Spesialis Onkologi",
-      "total_kredit": "6.49849241915E9",
-      "total_debet": "6.49800298605E9",
+      "total_kredit": "6.28368712076E9",
+      "total_debet": "6.28319768766E9",
       "net": "489433.1"
-    },
-    {
-      "nama_sub_unit": "POLI SPESIALIS",
-      "total_kredit": "2104716.0",
-      "total_debet": "2104716.0",
-      "net": "0.0"
-    },
-    {
-      "nama_sub_unit": "[9232] Poli Spesialis VIP Obgyn",
-      "total_kredit": "1.1694061119E8",
-      "total_debet": "1.1694061119E8",
-      "net": "0.0"
     },
     {
       "nama_sub_unit": "[9216] Onkologi Obgyn",
       "total_kredit": "867134.0",
       "total_debet": "867134.0",
-      "net": "0.0"
-    },
-    {
-      "nama_sub_unit": "[8140] Keuangan",
-      "total_kredit": "310800.0",
-      "total_debet": "310800.0",
-      "net": "0.0"
-    },
-    {
-      "nama_sub_unit": "[9230] Poli Gigi Prosthodonsia",
-      "total_kredit": "7.2387956E7",
-      "total_debet": "7.2387956E7",
-      "net": "0.0"
-    },
-    {
-      "nama_sub_unit": "[9231] OKUPASI TERAPI",
-      "total_kredit": "6.7782331372E8",
-      "total_debet": "6.7782331372E8",
-      "net": "0.0"
-    },
-    {
-      "nama_sub_unit": "[9264] POLI FERTILITAS",
-      "total_kredit": "4.8500844879E8",
-      "total_debet": "4.8500844879E8",
-      "net": "0.0"
-    },
-    {
-      "nama_sub_unit": "[9257] USG-ICU",
-      "total_kredit": "1.82468E7",
-      "total_debet": "1.82468E7",
-      "net": "0.0"
-    },
-    {
-      "nama_sub_unit": "[9297] POLI SPESIALIS VIP JANTUNG",
-      "total_kredit": "7905381.32",
-      "total_debet": "7905381.32",
       "net": "0.0"
     },
     {
@@ -406,9 +353,9 @@
       "net": "0.0"
     },
     {
-      "nama_sub_unit": "[9233] Poli Spesialis VIP Anak",
-      "total_kredit": "3.660454952E7",
-      "total_debet": "3.660454952E7",
+      "nama_sub_unit": "[9231] OKUPASI TERAPI",
+      "total_kredit": "6.6213058767E8",
+      "total_debet": "6.6213058767E8",
       "net": "0.0"
     },
     {
@@ -418,27 +365,33 @@
       "net": "0.0"
     },
     {
-      "nama_sub_unit": "[9293] POLI SPESIALIS VIP ANDROLOGI",
-      "total_kredit": "2.726170868E7",
-      "total_debet": "2.726170868E7",
-      "net": "0.0"
-    },
-    {
       "nama_sub_unit": "[9214] Poli Spesialis VIP",
       "total_kredit": "1846031.45",
       "total_debet": "1846031.45",
       "net": "0.0"
     },
     {
-      "nama_sub_unit": "[9206] Poli Bedah Plastik",
-      "total_kredit": "7.376532568E7",
-      "total_debet": "7.376532568E7",
+      "nama_sub_unit": "POLI SPESIALIS",
+      "total_kredit": "2104716.0",
+      "total_debet": "2104716.0",
+      "net": "0.0"
+    },
+    {
+      "nama_sub_unit": "[9230] Poli Gigi Prosthodonsia",
+      "total_kredit": "7.2387956E7",
+      "total_debet": "7.2387956E7",
       "net": "0.0"
     },
     {
       "nama_sub_unit": "Non CC",
-      "total_kredit": "8.1608342037E8",
-      "total_debet": "8.1608342037E8",
+      "total_kredit": "8.0391795025E8",
+      "total_debet": "8.0391795025E8",
+      "net": "0.0"
+    },
+    {
+      "nama_sub_unit": "[9232] Poli Spesialis VIP Obgyn",
+      "total_kredit": "1.1694061119E8",
+      "total_debet": "1.1694061119E8",
       "net": "0.0"
     },
     {
@@ -448,9 +401,57 @@
       "net": "0.0"
     },
     {
+      "nama_sub_unit": "[9257] USG-ICU",
+      "total_kredit": "1.82468E7",
+      "total_debet": "1.82468E7",
+      "net": "0.0"
+    },
+    {
+      "nama_sub_unit": "[9233] Poli Spesialis VIP Anak",
+      "total_kredit": "3.660454952E7",
+      "total_debet": "3.660454952E7",
+      "net": "0.0"
+    },
+    {
+      "nama_sub_unit": "[9293] POLI SPESIALIS VIP ANDROLOGI",
+      "total_kredit": "2.636170868E7",
+      "total_debet": "2.636170868E7",
+      "net": "0.0"
+    },
+    {
+      "nama_sub_unit": "[8140] Keuangan",
+      "total_kredit": "310800.0",
+      "total_debet": "310800.0",
+      "net": "0.0"
+    },
+    {
+      "nama_sub_unit": "[9264] POLI FERTILITAS",
+      "total_kredit": "4.6731494266E8",
+      "total_debet": "4.6731494266E8",
+      "net": "0.0"
+    },
+    {
+      "nama_sub_unit": "[9206] Poli Bedah Plastik",
+      "total_kredit": "7.376532568E7",
+      "total_debet": "7.376532568E7",
+      "net": "0.0"
+    },
+    {
+      "nama_sub_unit": "[9297] POLI SPESIALIS VIP JANTUNG",
+      "total_kredit": "7905381.32",
+      "total_debet": "7905381.32",
+      "net": "0.0"
+    },
+    {
+      "nama_sub_unit": "Seksi Sekretariat & Tata Kelola Perusahaan",
+      "total_kredit": "1772471.49",
+      "total_debet": "2561133.93",
+      "net": "-788662.44"
+    },
+    {
       "nama_sub_unit": "[9193] Poli Bedah Urologi",
-      "total_kredit": "1.46937828969E9",
-      "total_debet": "1.47030462169E9",
+      "total_kredit": "1.44726489058E9",
+      "total_debet": "1.44819122258E9",
       "net": "-926332.0"
     },
     {
@@ -462,61 +463,13 @@
     {
       "nama_sub_unit": "[8115] Gudang & Distribusi",
       "total_kredit": "444598.61",
-      "total_debet": "1473109.94",
-      "net": "-1028511.33"
-    },
-    {
-      "nama_sub_unit": "Seksi Sekretariat & Tata Kelola Perusahaan",
-      "total_kredit": "1772471.49",
-      "total_debet": "2861133.93",
-      "net": "-1088662.44"
-    },
-    {
-      "nama_sub_unit": "[9188] POLI ONKOLOGI - PARU",
-      "total_kredit": "0.0",
-      "total_debet": "1176332.0",
-      "net": "-1176332.0"
-    },
-    {
-      "nama_sub_unit": "[9280] Poli BTKV",
-      "total_kredit": "9.703541879E7",
-      "total_debet": "9.821175079E7",
-      "net": "-1176332.0"
+      "total_debet": "1464009.86",
+      "net": "-1019411.25"
     },
     {
       "nama_sub_unit": "[9179] POLI KOSMETIK",
       "total_kredit": "6.028455692E7",
       "total_debet": "6.146088892E7",
-      "net": "-1176332.0"
-    },
-    {
-      "nama_sub_unit": "[9208] POLI GERIATRI",
-      "total_kredit": "1135701.24",
-      "total_debet": "2312033.24",
-      "net": "-1176332.0"
-    },
-    {
-      "nama_sub_unit": "[9192] SPESIALIS BEDAH ANAK",
-      "total_kredit": "0.0",
-      "total_debet": "1176332.0",
-      "net": "-1176332.0"
-    },
-    {
-      "nama_sub_unit": "[9177] Poli Psikiatri",
-      "total_kredit": "3.5132002061E8",
-      "total_debet": "3.5249635261E8",
-      "net": "-1176332.0"
-    },
-    {
-      "nama_sub_unit": "[9199] Poli Bedah Saraf",
-      "total_kredit": "8.285799773E7",
-      "total_debet": "8.403432973E7",
-      "net": "-1176332.0"
-    },
-    {
-      "nama_sub_unit": "[9201] Poli Gigi Orthodontia",
-      "total_kredit": "4.68904E7",
-      "total_debet": "4.8066732E7",
       "net": "-1176332.0"
     },
     {
@@ -526,7 +479,7 @@
       "net": "-1176332.0"
     },
     {
-      "nama_sub_unit": "[9182] POLIKLINIK PSIKOLOGI",
+      "nama_sub_unit": "[9192] SPESIALIS BEDAH ANAK",
       "total_kredit": "0.0",
       "total_debet": "1176332.0",
       "net": "-1176332.0"
@@ -535,6 +488,48 @@
       "nama_sub_unit": "[9215] POLIKLINIK GIZI",
       "total_kredit": "2665000.0",
       "total_debet": "3841332.0",
+      "net": "-1176332.0"
+    },
+    {
+      "nama_sub_unit": "[9177] Poli Psikiatri",
+      "total_kredit": "3.3050356781E8",
+      "total_debet": "3.3167989981E8",
+      "net": "-1176332.0"
+    },
+    {
+      "nama_sub_unit": "[9208] POLI GERIATRI",
+      "total_kredit": "1135701.24",
+      "total_debet": "2312033.24",
+      "net": "-1176332.0"
+    },
+    {
+      "nama_sub_unit": "[9182] POLIKLINIK PSIKOLOGI",
+      "total_kredit": "0.0",
+      "total_debet": "1176332.0",
+      "net": "-1176332.0"
+    },
+    {
+      "nama_sub_unit": "[9199] Poli Bedah Saraf",
+      "total_kredit": "7.819646589E7",
+      "total_debet": "7.937279789E7",
+      "net": "-1176332.0"
+    },
+    {
+      "nama_sub_unit": "[9280] Poli BTKV",
+      "total_kredit": "9.703541879E7",
+      "total_debet": "9.821175079E7",
+      "net": "-1176332.0"
+    },
+    {
+      "nama_sub_unit": "[9188] POLI ONKOLOGI - PARU",
+      "total_kredit": "0.0",
+      "total_debet": "1176332.0",
+      "net": "-1176332.0"
+    },
+    {
+      "nama_sub_unit": "[9201] Poli Gigi Orthodontia",
+      "total_kredit": "4.68904E7",
+      "total_debet": "4.8066732E7",
       "net": "-1176332.0"
     },
     {
@@ -563,8 +558,8 @@
     },
     {
       "nama_sub_unit": "[9181] Poli Rehabilitasi Medik",
-      "total_kredit": "1.25555166642E9",
-      "total_debet": "1.25782726042E9",
+      "total_kredit": "1.23161429397E9",
+      "total_debet": "1.23388988797E9",
       "net": "-2275594.0"
     },
     {
@@ -574,16 +569,16 @@
       "net": "-2676228.0"
     },
     {
-      "nama_sub_unit": "[9191] Poli Bedah Umum",
-      "total_kredit": "1.5505219566E9",
-      "total_debet": "1.55616299996E9",
-      "net": "-5641043.36"
+      "nama_sub_unit": "[9213] Rumah Vaksin",
+      "total_kredit": "1.61767189707E9",
+      "total_debet": "1.62149632719E9",
+      "net": "-3824430.12"
     },
     {
-      "nama_sub_unit": "[9213] Rumah Vaksin",
-      "total_kredit": "1.64197912546E9",
-      "total_debet": "1.64795355558E9",
-      "net": "-5974430.12"
+      "nama_sub_unit": "[9191] Poli Bedah Umum",
+      "total_kredit": "1.53149714496E9",
+      "total_debet": "1.53713818832E9",
+      "net": "-5641043.36"
     },
     {
       "nama_sub_unit": "[9207] SPESIALIS GIGI ANAK",
@@ -593,26 +588,26 @@
     },
     {
       "nama_sub_unit": "[9202] Poli Gigi Bedah Mulut",
-      "total_kredit": "9.0400215378E8",
-      "total_debet": "9.2460107817E8",
+      "total_kredit": "8.5475358746E8",
+      "total_debet": "8.7535251185E8",
       "net": "-2.059892439E7"
     },
     {
       "nama_sub_unit": "[9195] Poli Spesialis Obgyn",
-      "total_kredit": "3.01654132088E9",
-      "total_debet": "3.03900703367E9",
-      "net": "-2.246571279E7"
+      "total_kredit": "2.96255405008E9",
+      "total_debet": "2.98506776287E9",
+      "net": "-2.251371279E7"
     },
     {
       "nama_sub_unit": "INSTALASI RAWAT JALAN",
-      "total_kredit": "1.3022899517E8",
-      "total_debet": "1.5890788216E8",
+      "total_kredit": "1.2905699517E8",
+      "total_debet": "1.5773588216E8",
       "net": "-2.867888699E7"
     },
     {
       "nama_sub_unit": "[9178] Poli Kulit & Kelamin",
-      "total_kredit": "9.1562516113E8",
-      "total_debet": "9.4535224152E8",
+      "total_kredit": "8.9627114773E8",
+      "total_debet": "9.2599822812E8",
       "net": "-2.972708039E7"
     },
     {
@@ -623,68 +618,68 @@
     },
     {
       "nama_sub_unit": "[9196] Poli THT",
-      "total_kredit": "1.33195389892E9",
-      "total_debet": "1.37224041204E9",
+      "total_kredit": "1.29740193937E9",
+      "total_debet": "1.33768845249E9",
       "net": "-4.028651312E7"
     },
     {
       "nama_sub_unit": "[9180] Poli Paru",
-      "total_kredit": "6.8198645609E8",
-      "total_debet": "7.2788310542E8",
+      "total_kredit": "6.7266618497E8",
+      "total_debet": "7.185628343E8",
       "net": "-4.589664933E7"
     },
     {
       "nama_sub_unit": "[9174] Poli Jantung",
-      "total_kredit": "3.44443478283E9",
-      "total_debet": "3.49403078531E9",
+      "total_kredit": "3.36682581022E9",
+      "total_debet": "3.4164218127E9",
       "net": "-4.959600248E7"
     },
     {
       "nama_sub_unit": "[9204] SPESIALIS KONSERVASI GIGI",
-      "total_kredit": "7.6622363255E8",
-      "total_debet": "8.1611877031E8",
+      "total_kredit": "7.5517873305E8",
+      "total_debet": "8.0507387081E8",
       "net": "-4.989513776E7"
     },
     {
       "nama_sub_unit": "[9176] Poli Neurologi",
-      "total_kredit": "2.32682796811E9",
-      "total_debet": "2.37682338033E9",
+      "total_kredit": "2.30636542212E9",
+      "total_debet": "2.35636083434E9",
       "net": "-4.999541222E7"
     },
     {
       "nama_sub_unit": "[9183] ENDOSKOPI",
-      "total_kredit": "2.0655099237E8",
-      "total_debet": "2.6024283762E8",
-      "net": "-5.369184525E7"
+      "total_kredit": "1.9510849237E8",
+      "total_debet": "2.487270553E8",
+      "net": "-5.361856293E7"
     },
     {
       "nama_sub_unit": "[8018] K3 RS",
       "total_kredit": "0.0",
-      "total_debet": "6.202515836E7",
-      "net": "-6.202515836E7"
+      "total_debet": "6.166907036E7",
+      "net": "-6.166907036E7"
     },
     {
       "nama_sub_unit": "[9198] Poli Bedah Orthopedi",
-      "total_kredit": "1.81866810497E9",
-      "total_debet": "1.88103566847E9",
+      "total_kredit": "1.79019221203E9",
+      "total_debet": "1.85255977553E9",
       "net": "-6.23675635E7"
     },
     {
       "nama_sub_unit": "[9173] Poli Mata",
-      "total_kredit": "1.29681225814E9",
-      "total_debet": "1.36789593205E9",
+      "total_kredit": "1.27911638242E9",
+      "total_debet": "1.35020005633E9",
       "net": "-7.108367391E7"
     },
     {
       "nama_sub_unit": "[9175] Poli Penyakit Dalam",
-      "total_kredit": "7.39834674197E9",
-      "total_debet": "7.47256433558E9",
+      "total_kredit": "7.28668262074E9",
+      "total_debet": "7.36090021435E9",
       "net": "-7.421759361E7"
     },
     {
       "nama_sub_unit": "[9149] RUANG PERAWATAN STANDAR",
-      "total_kredit": "2.07241189496E9",
-      "total_debet": "2.17833349803E9",
+      "total_kredit": "2.04530586643E9",
+      "total_debet": "2.1512274695E9",
       "net": "-1.0592160307E8"
     },
     {
@@ -708,13 +703,13 @@
     {
       "nama_sub_unit": "[9012] PENGEMBANGAN LAYANAN DAN MUTU KEPERAWATAN",
       "total_kredit": "350576.0",
-      "total_debet": "1.3459943651E8",
-      "net": "-1.3424886051E8"
+      "total_debet": "1.3399943651E8",
+      "net": "-1.3364886051E8"
     },
     {
       "nama_sub_unit": "[9172] Poli Spesialis Anak",
-      "total_kredit": "5.5114316931E9",
-      "total_debet": "5.65704263675E9",
+      "total_kredit": "5.48294881387E9",
+      "total_debet": "5.62855975752E9",
       "net": "-1.4561094365E8"
     },
     {
@@ -725,9 +720,9 @@
     },
     {
       "nama_sub_unit": "[9140] INSTALASI RAWAT INAP",
-      "total_kredit": "9.905244955E7",
-      "total_debet": "2.6382548382E8",
-      "net": "-1.6477303427E8"
+      "total_kredit": "9.802270255E7",
+      "total_debet": "2.6240300077E8",
+      "net": "-1.6438029822E8"
     },
     {
       "nama_sub_unit": "[9004] Seksi Adm Sistem Manajemen dan Inovasi",
@@ -737,15 +732,15 @@
     },
     {
       "nama_sub_unit": "[9147] RUANG PERAWATAN NEONATAL",
-      "total_kredit": "7.9950450432E8",
-      "total_debet": "9.7896988831E8",
+      "total_kredit": "7.7777010858E8",
+      "total_debet": "9.5723549257E8",
       "net": "-1.7946538399E8"
     },
     {
       "nama_sub_unit": "[9124] CSSD",
       "total_kredit": "3.2193017447E8",
-      "total_debet": "5.1437283528E8",
-      "net": "-1.9244266081E8"
+      "total_debet": "5.1347608293E8",
+      "net": "-1.9154590846E8"
     },
     {
       "nama_sub_unit": "[9253] CT-SCAN",
@@ -755,38 +750,38 @@
     },
     {
       "nama_sub_unit": "[9161] Poli Umum",
-      "total_kredit": "1.53895896252E9",
-      "total_debet": "1.76648610882E9",
-      "net": "-2.275271463E8"
+      "total_kredit": "1.52171470964E9",
+      "total_debet": "1.74888411794E9",
+      "net": "-2.271694083E8"
     },
     {
       "nama_sub_unit": "[8001] Direksi",
       "total_kredit": "1.02926003E8",
-      "total_debet": "3.3312791E8",
-      "net": "-2.30201907E8"
+      "total_debet": "3.32152436E8",
+      "net": "-2.29226433E8"
     },
     {
       "nama_sub_unit": "[9200] Poli Gigi umum",
-      "total_kredit": "1.0968472134E9",
-      "total_debet": "1.35255243084E9",
-      "net": "-2.5570521744E8"
+      "total_kredit": "1.07650439124E9",
+      "total_debet": "1.32930060868E9",
+      "net": "-2.5279621744E8"
     },
     {
       "nama_sub_unit": "[9630] RUANG PERAWATAN PAVILYUN 3",
-      "total_kredit": "2.70934972583E9",
-      "total_debet": "2.96560190137E9",
-      "net": "-2.5625217554E8"
+      "total_kredit": "2.60631410611E9",
+      "total_debet": "2.86249483265E9",
+      "net": "-2.5618072654E8"
     },
     {
       "nama_sub_unit": "[9252] RONTGEN",
-      "total_kredit": "1.46530704012E9",
-      "total_debet": "1.72409696024E9",
-      "net": "-2.5878992012E8"
+      "total_kredit": "1.43643996858E9",
+      "total_debet": "1.6939758887E9",
+      "net": "-2.5753592012E8"
     },
     {
       "nama_sub_unit": "[9185] KEMOTERAPI",
-      "total_kredit": "5.53289009944E9",
-      "total_debet": "5.80676448263E9",
+      "total_kredit": "5.41755798651E9",
+      "total_debet": "5.6914323697E9",
       "net": "-2.7387438319E8"
     },
     {
@@ -797,38 +792,38 @@
     },
     {
       "nama_sub_unit": "[9220] MCU",
-      "total_kredit": "8.23740166241E9",
-      "total_debet": "8.55619684928E9",
-      "net": "-3.1879518687E8"
+      "total_kredit": "8.18503252145E9",
+      "total_debet": "8.49663970832E9",
+      "net": "-3.1160718687E8"
     },
     {
       "nama_sub_unit": "[9015] Pelayanan Medik",
       "total_kredit": "4539470.0",
-      "total_debet": "3.3975735716E8",
-      "net": "-3.3521788716E8"
+      "total_debet": "3.3863235716E8",
+      "net": "-3.3409288716E8"
     },
     {
       "nama_sub_unit": "[9205] POLIKLINIK FISIOTERAPI",
-      "total_kredit": "2.38152517207E9",
-      "total_debet": "2.73686281192E9",
-      "net": "-3.5533763985E8"
+      "total_kredit": "2.34075527908E9",
+      "total_debet": "2.68830515893E9",
+      "net": "-3.4754987985E8"
     },
     {
       "nama_sub_unit": "[8017] PEMASARAN & PENJUALAN",
       "total_kredit": "1.852254885E8",
-      "total_debet": "5.488222129E8",
-      "net": "-3.635967244E8"
+      "total_debet": "5.4847359449E8",
+      "net": "-3.6324810599E8"
     },
     {
       "nama_sub_unit": "[9146] RUANG PERAWATAN KEBIDANAN & PENY. KANDUNGAN",
-      "total_kredit": "1.78752854182E9",
-      "total_debet": "2.1632889003E9",
-      "net": "-3.7576035848E8"
+      "total_kredit": "1.78466538853E9",
+      "total_debet": "2.16038580781E9",
+      "net": "-3.7572041928E8"
     },
     {
       "nama_sub_unit": "[9145] RUANG PERAWATAN ICU",
-      "total_kredit": "3.03367659267E9",
-      "total_debet": "3.44956138386E9",
+      "total_kredit": "2.97409162716E9",
+      "total_debet": "3.38997641835E9",
       "net": "-4.1588479119E8"
     },
     {
@@ -838,33 +833,39 @@
       "net": "-4.2487926414E8"
     },
     {
+      "nama_sub_unit": "[8021] Personalia",
+      "total_kredit": "7.73242100852E9",
+      "total_debet": "8.17530487455E9",
+      "net": "-4.4288386603E8"
+    },
+    {
       "nama_sub_unit": "[8151] Teknologi Informasi",
-      "total_kredit": "3.5453598934E8",
-      "total_debet": "8.081027562E8",
-      "net": "-4.5356676686E8"
+      "total_kredit": "3.5043598934E8",
+      "total_debet": "8.032407562E8",
+      "net": "-4.5280476686E8"
     },
     {
       "nama_sub_unit": "[9143] RUANG PERAWATAN PENYAKIT DALAM II",
-      "total_kredit": "8.7770703635E8",
-      "total_debet": "1.35084768306E9",
+      "total_kredit": "8.6201524328E8",
+      "total_debet": "1.33515588999E9",
       "net": "-4.7314064671E8"
     },
     {
       "nama_sub_unit": "[9210] Poli KIA & Kebidanan",
-      "total_kredit": "6.6343111275E8",
-      "total_debet": "1.14675259016E9",
-      "net": "-4.8332147741E8"
+      "total_kredit": "6.6308048775E8",
+      "total_debet": "1.13738023788E9",
+      "net": "-4.7429975013E8"
     },
     {
       "nama_sub_unit": "[9620] RUANG PERAWATAN PAVILYUN 2",
-      "total_kredit": "3.29889528592E9",
-      "total_debet": "3.78591176016E9",
+      "total_kredit": "3.27452079552E9",
+      "total_debet": "3.76153726976E9",
       "net": "-4.8701647424E8"
     },
     {
       "nama_sub_unit": "[9154] RUANG PERAWATAN PAVILYUN 1",
-      "total_kredit": "4.02383181375E9",
-      "total_debet": "4.61650779201E9",
+      "total_kredit": "3.95588831501E9",
+      "total_debet": "4.54856429327E9",
       "net": "-5.9267597826E8"
     },
     {
@@ -875,75 +876,69 @@
     },
     {
       "nama_sub_unit": "[9142] RUANG PERAWATAN PENYAKIT DALAM I",
-      "total_kredit": "2.21853466358E9",
-      "total_debet": "2.82475999231E9",
+      "total_kredit": "2.15999730547E9",
+      "total_debet": "2.7662226342E9",
       "net": "-6.0622532873E8"
     },
     {
       "nama_sub_unit": "[9819] DEPO FARMASI IGD",
-      "total_kredit": "7.1597325969E8",
-      "total_debet": "1.35131218028E9",
-      "net": "-6.3533892059E8"
+      "total_kredit": "7.0889487134E8",
+      "total_debet": "1.34086331256E9",
+      "net": "-6.3196844122E8"
     },
     {
       "nama_sub_unit": "[8111] Pengadaan Barang & Jasa",
       "total_kredit": "3.67603257E8",
-      "total_debet": "1.07463029741E9",
-      "net": "-7.0702704041E8"
+      "total_debet": "1.07158735249E9",
+      "net": "-7.0398409549E8"
     },
     {
       "nama_sub_unit": "[9144] RUANG PERAWATAN PENYAKIT BEDAH & ANAK",
-      "total_kredit": "6.95259185749E9",
-      "total_debet": "7.78678236053E9",
-      "net": "-8.3419050304E8"
+      "total_kredit": "6.82182756272E9",
+      "total_debet": "7.65401806576E9",
+      "net": "-8.3219050304E8"
     },
     {
       "nama_sub_unit": "[9111] INSTALASI GAWAT DARURAT",
-      "total_kredit": "1.443105303161E10",
-      "total_debet": "1.54706463979E10",
-      "net": "-1.03959336629E9"
+      "total_kredit": "1.418470267488E10",
+      "total_debet": "1.522426004117E10",
+      "net": "-1.03955736629E9"
     },
     {
       "nama_sub_unit": "[9130] FARMASI RAWAT INAP",
-      "total_kredit": "1.1851968357E9",
-      "total_debet": "2.47448037717E9",
-      "net": "-1.28928354147E9"
-    },
-    {
-      "nama_sub_unit": "[8021] Personalia",
-      "total_kredit": "7.73319648252E9",
-      "total_debet": "9.12696481155E9",
-      "net": "-1.39376832903E9"
+      "total_kredit": "1.1768233453E9",
+      "total_debet": "2.33624277663E9",
+      "net": "-1.15941943133E9"
     },
     {
       "nama_sub_unit": "[8011] PELAYANAN UMUM",
-      "total_kredit": "4.49692234946E9",
-      "total_debet": "6.14585469585E9",
-      "net": "-1.64893234639E9"
+      "total_kredit": "4.49389379416E9",
+      "total_debet": "6.10912428685E9",
+      "net": "-1.61523049269E9"
     },
     {
       "nama_sub_unit": "[9184] Hemodialisis",
-      "total_kredit": "8.67142109278E9",
-      "total_debet": "1.052355858083E10",
-      "net": "-1.85213748805E9"
+      "total_kredit": "8.53270637158E9",
+      "total_debet": "1.038323496833E10",
+      "net": "-1.85052859675E9"
     },
     {
       "nama_sub_unit": "[9241] LABORATORIUM",
-      "total_kredit": "4.92900152776E9",
-      "total_debet": "6.81022785936E9",
-      "net": "-1.8812263316E9"
+      "total_kredit": "4.87653574502E9",
+      "total_debet": "6.75771207662E9",
+      "net": "-1.8811763316E9"
     },
     {
       "nama_sub_unit": "[9123] KAMAR OPERASI",
-      "total_kredit": "1.10150668696E10",
-      "total_debet": "1.321930158089E10",
-      "net": "-2.20423471129E9"
+      "total_kredit": "1.081229714285E10",
+      "total_debet": "1.300417563394E10",
+      "net": "-2.19187849109E9"
     },
     {
       "nama_sub_unit": "[8130] Pajak",
-      "total_kredit": "3.53303836509E9",
+      "total_kredit": "3.52904867409E9",
       "total_debet": "6.81120023411E9",
-      "net": "-3.27816186902E9"
+      "net": "-3.28215156002E9"
     },
     {
       "nama_sub_unit": "[8154] PENGELOLAAN JAMINAN KESEHATAN",
@@ -953,15 +948,15 @@
     },
     {
       "nama_sub_unit": "[9807] FARMASI RAWAT JALAN",
-      "total_kredit": "6.66332544439E9",
-      "total_debet": "1.702679346185E10",
-      "net": "-1.036346801746E10"
+      "total_kredit": "6.60637989932E9",
+      "total_debet": "1.693397801318E10",
+      "net": "-1.032759811386E10"
     },
     {
       "nama_sub_unit": "[8141] Bendahara",
-      "total_kredit": "1.2680121089E9",
-      "total_debet": "4.101464178111E10",
-      "net": "-3.974662967221E10"
+      "total_kredit": "1.2666161089E9",
+      "total_debet": "4.085561337911E10",
+      "net": "-3.958899727021E10"
     }
   ]
 }
