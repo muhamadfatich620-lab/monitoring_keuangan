@@ -557,6 +557,10 @@ tfoot td {
       <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
       Per Sub Unit
     </button>
+    <button class="nav-item" onclick="showPage('pendapatan-lain')">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M8.5 9.5c0-1.4 1.6-2.5 3.5-2.5s3.5 1 3.5 2.2c0 2.8-7 1.3-7 4.1 0 1.2 1.6 2.2 3.5 2.2s3.5-1.1 3.5-2.5"/></svg>
+      Pendapatan Lain
+    </button>
     <button class="nav-item" onclick="showPage('penjualan-kredit')">
       <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
       Penjualan Kredit
@@ -844,6 +848,109 @@ tfoot td {
         <div><div class="section-title">Tren Pendapatan Harian</div></div>
       </div>
       <div class="section-body"><div class="chart-wrap"><canvas id="chartPendapatanHarian"></canvas></div></div>
+    </div>
+  </div>
+
+  <!-- ══ PAGE: PENDAPATAN LAIN ══ -->
+  <div class="page" id="page-pendapatan-lain">
+    <div class="kpi-grid" id="kpiPendapatanLain">
+      <div class="loading"><div class="spinner"></div> Memuat data...</div>
+    </div>
+
+    <!-- FILTER UTAMA: semua rekap + detail mengikuti filter ini -->
+    <div class="section-card" style="margin-bottom:18px">
+      <div class="section-head">
+        <div>
+          <div class="section-title">Filter Pendapatan Lain</div>
+          <div class="section-sub">Rekap Nama COA, Kategori, Sub Unit, dan total akan otomatis berubah mengikuti filter.</div>
+        </div>
+      </div>
+      <div class="local-filter-wrap">
+        <input type="text" id="searchPendapatanLainDetail" placeholder="Cari sub unit / keterangan..." oninput="filterPendapatanLainDetail()"/>
+        <select id="fltPendapatanLainCoa" onchange="filterPendapatanLainDetail()"><option value="">Semua Nama COA</option></select>
+        <select id="fltPendapatanLainKategori" onchange="filterPendapatanLainDetail()"><option value="">Semua Kategori Jurnal</option></select>
+        <select id="fltPendapatanLainSubUnit" onchange="filterPendapatanLainDetail()"><option value="">Semua Sub Unit</option></select>
+        <button class="btn btn-outline" onclick="resetPendapatanLainDetailFilter()">Reset Filter</button>
+        <span class="local-filter-count" id="pendapatanLainDetailCount"></span>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="section-card">
+        <div class="section-head"><div class="section-title">Grafik Per Nama COA</div></div>
+        <div class="section-body"><div class="chart-wrap"><canvas id="chartPendapatanLainCoa"></canvas></div></div>
+      </div>
+      <div class="section-card">
+        <div class="section-head"><div class="section-title">Grafik Per Kategori</div></div>
+        <div class="section-body"><div class="chart-wrap"><canvas id="chartPendapatanLainKategori"></canvas></div></div>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-top:18px">
+      <div class="section-card">
+        <div class="section-head">
+          <div><div class="section-title">Rekap Per Nama COA</div><div class="section-sub">Total mengikuti filter aktif</div></div>
+        </div>
+        <div class="section-body" style="padding:0">
+          <div class="tbl-wrap"><table id="tblPendapatanLainCoa">
+            <thead id="head-tblPendapatanLainCoa"><tr>
+              <th data-key="nama" onclick="tblSort('tblPendapatanLainCoa','nama','text')">Nama COA <span class="sort-ico-wrap"></span></th>
+              <th class="td-num" data-key="jumlah" onclick="tblSort('tblPendapatanLainCoa','jumlah','number')">Jumlah Baris <span class="sort-ico-wrap"></span></th>
+              <th class="td-num" data-key="total_nominal" onclick="tblSort('tblPendapatanLainCoa','total_nominal','number')">Total Nominal <span class="sort-ico-wrap"></span></th>
+            </tr></thead><tbody></tbody><tfoot></tfoot>
+          </table></div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-head">
+          <div><div class="section-title">Rekap Per Kategori Jurnal</div><div class="section-sub">Total mengikuti filter aktif</div></div>
+        </div>
+        <div class="section-body" style="padding:0">
+          <div class="tbl-wrap"><table id="tblPendapatanLainKategori">
+            <thead id="head-tblPendapatanLainKategori"><tr>
+              <th data-key="nama" onclick="tblSort('tblPendapatanLainKategori','nama','text')">Kategori Jurnal <span class="sort-ico-wrap"></span></th>
+              <th class="td-num" data-key="jumlah" onclick="tblSort('tblPendapatanLainKategori','jumlah','number')">Jumlah Baris <span class="sort-ico-wrap"></span></th>
+              <th class="td-num" data-key="total_nominal" onclick="tblSort('tblPendapatanLainKategori','total_nominal','number')">Total Nominal <span class="sort-ico-wrap"></span></th>
+            </tr></thead><tbody></tbody><tfoot></tfoot>
+          </table></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card" style="margin-top:18px">
+      <div class="section-head">
+        <div><div class="section-title">Rekap Per Sub Unit</div><div class="section-sub">Total mengikuti filter aktif</div></div>
+      </div>
+      <div class="section-body" style="padding:0">
+        <div class="tbl-wrap"><table id="tblPendapatanLainSubUnit">
+          <thead id="head-tblPendapatanLainSubUnit"><tr>
+            <th data-key="nama" onclick="tblSort('tblPendapatanLainSubUnit','nama','text')">Sub Unit <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="jumlah" onclick="tblSort('tblPendapatanLainSubUnit','jumlah','number')">Jumlah Baris <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="total_nominal" onclick="tblSort('tblPendapatanLainSubUnit','total_nominal','number')">Total Nominal <span class="sort-ico-wrap"></span></th>
+          </tr></thead><tbody></tbody><tfoot></tfoot>
+        </table></div>
+      </div>
+    </div>
+
+    <div class="section-card" style="margin-top:18px">
+      <div class="section-head">
+        <div><div class="section-title">Detail Pendapatan Lain</div><div class="section-sub">Menampilkan maks 2000 baris pertama dari hasil filter</div></div>
+      </div>
+      <div class="section-body" style="padding:0">
+        <div class="tbl-wrap"><table id="tblPendapatanLainDetail">
+          <thead id="head-tblPendapatanLainDetail"><tr>
+            <th data-key="tanggal_sub_transaksi" onclick="tblSort('tblPendapatanLainDetail','tanggal_sub_transaksi','text')">Tanggal <span class="sort-ico-wrap"></span></th>
+            <th data-key="nama_sub_unit" onclick="tblSort('tblPendapatanLainDetail','nama_sub_unit','text')">Sub Unit <span class="sort-ico-wrap"></span></th>
+            <th data-key="_namaCoa" onclick="tblSort('tblPendapatanLainDetail','_namaCoa','text')">Nama COA <span class="sort-ico-wrap"></span></th>
+            <th data-key="_kodeCoa" onclick="tblSort('tblPendapatanLainDetail','_kodeCoa','text')">Kode COA <span class="sort-ico-wrap"></span></th>
+            <th data-key="keterangan" onclick="tblSort('tblPendapatanLainDetail','keterangan','text')">Kategori Jurnal <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="_debet" onclick="tblSort('tblPendapatanLainDetail','_debet','number')">Debet <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="_kredit" onclick="tblSort('tblPendapatanLainDetail','_kredit','number')">Kredit <span class="sort-ico-wrap"></span></th>
+            <th class="td-num" data-key="_nominal" onclick="tblSort('tblPendapatanLainDetail','_nominal','number')">Nominal <span class="sort-ico-wrap"></span></th>
+          </tr></thead><tbody></tbody><tfoot></tfoot>
+        </table></div>
+      </div>
     </div>
   </div>
 
@@ -1409,6 +1516,7 @@ const CACHE_BIAYA_BAHAN = {};
 const CACHE_BIAYA_UMUM = {};
 const CACHE_PENGELUARAN_KAS = {};
 const CACHE_UANG_MUKA_PJK = {};
+const CACHE_PENDAPATAN_LAIN = {};
 
 const MAX_BAGIAN_PELUNASAN = 200;
 const MAX_BAGIAN_KASIR = 200;
@@ -1417,6 +1525,7 @@ const MAX_BAGIAN_BIAYA_BAHAN = 200;
 const MAX_BAGIAN_BIAYA_UMUM = 200;
 const MAX_BAGIAN_PENGELUARAN_KAS = 200;
 const MAX_BAGIAN_UANG_MUKA_PJK = 200;
+const MAX_BAGIAN_PENDAPATAN_LAIN = 200;
 
 // ══ SIDEBAR TOGGLE ══
 function toggleSidebar() {
@@ -1443,6 +1552,7 @@ const PAGE_TITLES = {
   'kasir-kas'         : ['Per Kas', 'Laporan Kasir'],
   'kasir-detail'      : ['Detail Transaksi', 'Kasir'],
   'pendapatan-unit'   : ['Pendapatan Sub Unit', 'Dari BigQuery'],
+  'pendapatan-lain'   : ['Pendapatan Lain', 'Monitoring Pendapatan'],
   'penjualan-kredit'  : ['Penjualan Kredit', 'Per Penanggung & Segmen'],
   'pelunasan-piutang' : ['Pelunasan Piutang', 'Monitoring Harian'],
   'pengeluaran-kas'   : ['Pengeluaran Kas', 'Monitoring Harian'],
@@ -1795,9 +1905,19 @@ async function fetchBulanUangMukaPjk(kode) {
   return rows;
 }
 
+// ── Pendapatan Lain: mengikuti pola pengambilan data per-bulan yang sama
+//    persis dengan Biaya Bahan/Biaya Umum/Pengeluaran Kas/Uang Muka & PJK,
+//    yaitu file data/pendapatan-lain-YYYY-MM-pN.json (array "pendapatan_lain_detail"). ──
+async function fetchBulanPendapatanLain(kode) {
+  if (CACHE_PENDAPATAN_LAIN[kode]) return CACHE_PENDAPATAN_LAIN[kode];
+  const rows = await fetchBagianBerurutan('pendapatan-lain', kode, MAX_BAGIAN_PENDAPATAN_LAIN, 'pendapatan_lain_detail');
+  CACHE_PENDAPATAN_LAIN[kode] = rows;
+  return rows;
+}
+
 async function loadSemuaUntukRentang(awal, akhir) {
   const bulanList = monthsInRange(awal, akhir);
-  let pelunasanArr = [], kasirArr = [], kreditArr = [], biayaBahanArr = [], biayaUmumArr = [], pengeluaranKasArr = [], umPjkArr = [];
+  let pelunasanArr = [], kasirArr = [], kreditArr = [], biayaBahanArr = [], biayaUmumArr = [], pengeluaranKasArr = [], umPjkArr = [], pendapatanLainArr = [];
 
   // Sumber diproses SATU PER SATU. Di dalamnya tetap ada concurrency global 4.
   // Ini sengaja agar saat dashboard pertama dibuka tidak terjadi ledakan
@@ -1810,6 +1930,7 @@ async function loadSemuaUntukRentang(awal, akhir) {
     biayaUmumArr.push(await fetchBulanBiayaUmum(k));
     pengeluaranKasArr.push(await fetchBulanPengeluaranKas(k));
     umPjkArr.push(await fetchBulanUangMukaPjk(k));
+    pendapatanLainArr.push(await fetchBulanPendapatanLain(k));
   }
 
   return {
@@ -1820,13 +1941,14 @@ async function loadSemuaUntukRentang(awal, akhir) {
     biayaUmum: dedupeExact([].concat(...biayaUmumArr)),
     pengeluaranKas: dedupeExact([].concat(...pengeluaranKasArr)),
     umPjk: dedupeExact([].concat(...umPjkArr)),
+    pendapatanLain: dedupeExact([].concat(...pendapatanLainArr)),
   };
 }
 
 // ══ BUILD FILTERED (async karena fetch file per-bulan) ══
 async function buildFiltered() {
   const { awal, akhir } = getDateRange();
-  const { pelunasan, kasir, kredit, biayaBahan, biayaUmum, pengeluaranKas, umPjk } = await loadSemuaUntukRentang(awal, akhir);
+  const { pelunasan, kasir, kredit, biayaBahan, biayaUmum, pengeluaranKas, umPjk, pendapatanLain } = await loadSemuaUntukRentang(awal, akhir);
 
   let kasirRows  = kasir.filter(r => inRange(r.tanggal_transaksi, awal, akhir));
   // Laporan Kasir: buang seluruh baris dengan nama kasir yang dikecualikan
@@ -1844,6 +1966,7 @@ async function buildFiltered() {
   const umPjkRows = umPjk.filter(r => inRange(r.tanggal_sub_transaksi, awal, akhir));
   const biayaBahanRows = biayaBahan.filter(r => inRange(r.tanggal_sub_transaksi, awal, akhir));
   const biayaUmumRows = biayaUmum.filter(r => inRange(r.tanggal_sub_transaksi, awal, akhir));
+  const pendapatanLainRows = pendapatanLain.filter(r => inRange(r.tanggal_sub_transaksi, awal, akhir));
 
   FILTERED = {
     generated_at: MANIFEST?.generated_at,
@@ -1867,6 +1990,8 @@ async function buildFiltered() {
     biaya_bahan_detail: biayaBahanRows,
     // biaya_umum_detail dari data/biaya-umum-YYYY-MM-pN.json.
     biaya_umum_detail: biayaUmumRows,
+    // pendapatan_lain_detail dari data/pendapatan-lain-YYYY-MM-pN.json.
+    pendapatan_lain_detail: pendapatanLainRows,
   };
 
   recomputeKasirAggregates(kasirRows);
@@ -1981,10 +2106,23 @@ function akuntansiPenanggung(r) {
   return r.nama_penerima || r.Nama_Penerima || r.NAMA_PENERIMA || r.nama_sub_penerima || '-';
 }
 // alias lama, tetap dipertahankan supaya tidak mengubah perilaku modul Pelunasan Piutang
-function pelunasanNominal(r)    { return akuntansiNominal(r); }
-function pelunasanDebet(r)      { return akuntansiDebet(r); }
-function pelunasanKredit(r)     { return akuntansiKredit(r); }
-function pelunasanPenanggung(r) { return akuntansiPenanggung(r); }
+function pelunasanNominal(r) { return akuntansiNominal(r); }
+function pelunasanDebet(r)   { return akuntansiDebet(r); }
+function pelunasanKredit(r)  { return akuntansiKredit(r); }
+
+// ── Pelunasan Piutang: pengambilan nama Penanggung.
+//    Jika nama_penerima = 'indri.nurisa' (akun umum/kasir, bukan penanggung
+//    sebenarnya), nama Penanggung diambil dari nama_sub_penerima.
+//    Selain itu, nama Penanggung tetap diambil dari nama_penerima. ──
+const PELUNASAN_PENANGGUNG_KHUSUS = 'indri.nurisa';
+function pelunasanPenanggung(r) {
+  const namaPenerima = r.nama_penerima || r.Nama_Penerima || r.NAMA_PENERIMA || '';
+  const bersih = String(namaPenerima).trim().toLowerCase();
+  if (bersih === PELUNASAN_PENANGGUNG_KHUSUS) {
+    return r.nama_sub_penerima || '-';
+  }
+  return namaPenerima || r.nama_sub_penerima || '-';
+}
 
 // ══ Lookup nama bank/deposito dari coa_code, khusus modul Pelunasan Piutang ══
 // (tabel pelunasan_piutang adalah hasil CREATE TABLE ... AS SELECT * dari
@@ -2043,6 +2181,25 @@ function namaCoaBiaya(r) {
   return COA_BIAYA_MAP[kode] || (r.Nama_COA || r.nama_coa || ('COA ' + kode));
 }
 function kodeCoaBiaya(r) {
+  return String(r.coa_code || r.Coa_Code || r.COA_CODE || r.kode_coa || '-').trim() || '-';
+}
+
+// ══ Lookup nama COA untuk modul Pendapatan Lain ══
+// Belum ada daftar kode COA "Pendapatan Lain" yang pasti (berbeda dari
+// COA_BIAYA_MAP di atas), jadi peta ini sengaja dikosongkan dulu — nama COA
+// akan otomatis jatuh ke kolom Nama_COA/nama_coa bawaan data (fallback di
+// namaCoaPendapatanLain), atau ke "COA <kode>" kalau nama itu pun kosong.
+// Tambahkan pasangan 'kode': 'Nama COA' di sini kalau ingin nama yang lebih
+// rapi ditampilkan, persis seperti pola COA_BIAYA_MAP.
+const COA_PENDAPATAN_LAIN_MAP = {
+  // '5.x.x' : 'Nama Pendapatan Lain',
+};
+function namaCoaPendapatanLain(r) {
+  const kode = String(r.coa_code || r.Coa_Code || r.COA_CODE || r.kode_coa || '').trim();
+  if (!kode) return r.Nama_COA || r.nama_coa || '-';
+  return COA_PENDAPATAN_LAIN_MAP[kode] || (r.Nama_COA || r.nama_coa || ('COA ' + kode));
+}
+function kodeCoaPendapatanLain(r) {
   return String(r.coa_code || r.Coa_Code || r.COA_CODE || r.kode_coa || '-').trim() || '-';
 }
 
@@ -2259,6 +2416,7 @@ function renderPage(id) {
     case 'kasir-kas':          renderKasirKas(d);          break;
     case 'kasir-detail':       renderKasirDetail(d);       break;
     case 'pendapatan-unit':    renderPendapatanUnit(d);    break;
+    case 'pendapatan-lain':    renderPendapatanLain(d);    break;
     case 'penjualan-kredit':   renderPenjualanKredit(d);   break;
     case 'pelunasan-piutang':  renderPelunasanPiutang(d);  break;
     case 'pengeluaran-kas':    renderPengeluaranKas(d);    break;
@@ -2702,6 +2860,40 @@ function filterKredit() {
     { value: sumBy(rows,'_total'), type: 'rupiah' },
   ]) : '';
   tblRefreshIcons('tblKredit', 'head-tblKredit');
+}
+
+// ── PENDAPATAN LAIN (dari data/pendapatan-lain-YYYY-MM-pN.json). Strukturnya
+//    sengaja dibuat sejajar/mirip dengan modul Biaya Bahan & Biaya Umum di
+//    atas — sama-sama pakai infrastruktur generik renderBiayaGeneric-style
+//    (populateBiayaFilterOptions, filterBiayaGeneric, renderBiayaRekap,
+//    renderBiayaRekapTable), hanya lookup nama COA-nya pakai
+//    namaCoaPendapatanLain/kodeCoaPendapatanLain di atas. ──
+let currentPendapatanLainDetail = [];
+function renderPendapatanLainGeneric(rowsMentah) {
+  return rowsMentah.map(r => ({
+    ...r,
+    _debet: akuntansiDebet(r),
+    _kredit: akuntansiKredit(r),
+    _nominal: akuntansiNominal(r),
+    _namaCoa: namaCoaPendapatanLain(r),
+    _kodeCoa: kodeCoaPendapatanLain(r),
+  }));
+}
+function renderPendapatanLain(d) {
+  const detail = renderPendapatanLainGeneric(d.pendapatan_lain_detail || []);
+  currentPendapatanLainDetail = detail;
+  populateBiayaFilterOptions('PendapatanLain', detail);
+  filterPendapatanLainDetail();
+}
+function filterPendapatanLainDetail() {
+  return filterBiayaGeneric('PendapatanLain', currentPendapatanLainDetail, 'tblPendapatanLainDetail', 'head-tblPendapatanLainDetail');
+}
+function resetPendapatanLainDetailFilter() {
+  document.getElementById('searchPendapatanLainDetail').value = '';
+  document.getElementById('fltPendapatanLainCoa').value = '';
+  document.getElementById('fltPendapatanLainKategori').value = '';
+  document.getElementById('fltPendapatanLainSubUnit').value = '';
+  filterPendapatanLainDetail();
 }
 
 // ── PELUNASAN PIUTANG (dari data/pelunasan-piutang.json, sumber tabel
@@ -3414,8 +3606,8 @@ function filterBiayaGeneric(prefix, sourceDetail, tableId, headId) {
   const totalNominal = sumBy(rows, '_nominal');
   const totalDebet = sumBy(rows, '_debet');
   const totalKredit = sumBy(rows, '_kredit');
-  const kpiId = prefix === 'BiayaBahan' ? 'kpiBiayaBahan' : 'kpiBiayaUmum';
-  const label = prefix === 'BiayaBahan' ? 'Total Biaya Bahan' : 'Total Biaya Umum';
+  const kpiId = `kpi${prefix}`;
+  const label = prefix === 'BiayaBahan' ? 'Total Biaya Bahan' : prefix === 'BiayaUmum' ? 'Total Biaya Umum' : prefix === 'PendapatanLain' ? 'Total Pendapatan Lain' : `Total ${prefix}`;
   const jumlahCoa = rekapBiayaPerCoa(rows).length;
   const jumlahKategori = rekapBiayaPerKategori(rows).length;
   const jumlahSubUnit = rekapBiayaPerSubUnit(rows).length;
@@ -3547,6 +3739,10 @@ TblRerender.tblBiayaBahanSubUnit = () => renderBiayaRekapTable('tblBiayaBahanSub
 TblRerender.tblBiayaUmumCoa = () => renderBiayaRekapTable('tblBiayaUmumCoa','head-tblBiayaUmumCoa', rekapBiayaPerCoa(currentBiayaUmumDetail));
 TblRerender.tblBiayaUmumKategori = () => renderBiayaRekapTable('tblBiayaUmumKategori','head-tblBiayaUmumKategori', rekapBiayaPerKategori(currentBiayaUmumDetail));
 TblRerender.tblBiayaUmumSubUnit = () => renderBiayaRekapTable('tblBiayaUmumSubUnit','head-tblBiayaUmumSubUnit', rekapBiayaPerSubUnit(currentBiayaUmumDetail));
+TblRerender.tblPendapatanLainDetail = filterPendapatanLainDetail;
+TblRerender.tblPendapatanLainCoa = () => renderBiayaRekapTable('tblPendapatanLainCoa','head-tblPendapatanLainCoa', rekapBiayaPerCoa(currentPendapatanLainDetail));
+TblRerender.tblPendapatanLainKategori = () => renderBiayaRekapTable('tblPendapatanLainKategori','head-tblPendapatanLainKategori', rekapBiayaPerKategori(currentPendapatanLainDetail));
+TblRerender.tblPendapatanLainSubUnit = () => renderBiayaRekapTable('tblPendapatanLainSubUnit','head-tblPendapatanLainSubUnit', rekapBiayaPerSubUnit(currentPendapatanLainDetail));
 TblRerender.tblPerbandinganUnit = filterPerbandinganUnit;
 
 // tblUnit disortir ulang lewat renderUnitData memakai data unit yang sedang aktif
