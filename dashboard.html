@@ -2874,7 +2874,9 @@ function renderPendapatanLainGeneric(rowsMentah) {
     ...r,
     _debet: akuntansiDebet(r),
     _kredit: akuntansiKredit(r),
-    _nominal: akuntansiNominal(r),
+    // Pendapatan: nominal NETTO = kredit - debet, supaya pengembalian/retur
+    // (baris debet) MENGURANGI total, bukan ikut menambah seperti nilai absolut.
+    _nominal: (parseFloat(r.kredit) || 0) - (parseFloat(r.debet) || 0),
     _namaCoa: namaCoaPendapatanLain(r),
     _kodeCoa: kodeCoaPendapatanLain(r),
   }));
