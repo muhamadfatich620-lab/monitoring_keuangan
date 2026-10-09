@@ -746,20 +746,6 @@
       "keterangan": "Pemakaian 749, (2526) Teh Sachet RSSG, (106) Paviliun 2, Inventori ID (74154)"
     },
     {
-      "id_sub_transaksi": "2093135",
-      "tanggal_sub_transaksi": "2026-04-16",
-      "coa_code": "4.2.1",
-      "debet": "25300.0",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9140] INSTALASI RAWAT INAP",
-      "nama_cc": "Paviliun 2",
-      "operasional": "Pemakaian 749, (2526) Teh Sachet RSSG, (106) Paviliun 2, Inventori ID (74154)",
-      "nama_sub_penerima": "syaiful.bahri",
-      "loaded_at": "1.782811630798E9",
-      "nama_penerima": "syaiful.bahri",
-      "keterangan": "Pemakaian 749, (2526) Teh Sachet RSSG, (106) Paviliun 2, Inventori ID (74154)"
-    },
-    {
       "id_sub_transaksi": "2087621",
       "tanggal_sub_transaksi": "2026-04-16",
       "coa_code": "4.2.1",
@@ -788,20 +774,6 @@
       "keterangan": "Pemakaian 737, (2526) Teh Sachet RSSG, (105) Paviliun 1, Inventori ID (74146)"
     },
     {
-      "id_sub_transaksi": "2087390",
-      "tanggal_sub_transaksi": "2026-04-16",
-      "coa_code": "4.2.1",
-      "debet": "25300.0",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9140] INSTALASI RAWAT INAP",
-      "nama_cc": "Paviliun 1",
-      "operasional": "Pemakaian 737, (2526) Teh Sachet RSSG, (105) Paviliun 1, Inventori ID (74146)",
-      "nama_sub_penerima": "tina.eliyanti",
-      "loaded_at": "1.782811630798E9",
-      "nama_penerima": "tina.eliyanti",
-      "keterangan": "Pemakaian 737, (2526) Teh Sachet RSSG, (105) Paviliun 1, Inventori ID (74146)"
-    },
-    {
       "id_sub_transaksi": "2087392",
       "tanggal_sub_transaksi": "2026-04-16",
       "coa_code": "4.2.2",
@@ -812,20 +784,6 @@
       "operasional": "Pemakaian 737, (2314) Shampo 30ml, (105) Paviliun 1, Inventori ID (74142)",
       "nama_sub_penerima": "tina.eliyanti",
       "loaded_at": "1.782811630798E9",
-      "nama_penerima": "tina.eliyanti",
-      "keterangan": "Pemakaian 737, (2314) Shampo 30ml, (105) Paviliun 1, Inventori ID (74142)"
-    },
-    {
-      "id_sub_transaksi": "2087392",
-      "tanggal_sub_transaksi": "2026-04-16",
-      "coa_code": "4.2.2",
-      "debet": "43750.0",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9140] INSTALASI RAWAT INAP",
-      "nama_cc": "Paviliun 1",
-      "operasional": "Pemakaian 737, (2314) Shampo 30ml, (105) Paviliun 1, Inventori ID (74142)",
-      "nama_sub_penerima": "tina.eliyanti",
-      "loaded_at": "1.782811611601E9",
       "nama_penerima": "tina.eliyanti",
       "keterangan": "Pemakaian 737, (2314) Shampo 30ml, (105) Paviliun 1, Inventori ID (74142)"
     },
@@ -844,20 +802,6 @@
       "keterangan": "Pemakaian 737, (2796) sabun Logo RSSG, (105) Paviliun 1, Inventori ID (74144)"
     },
     {
-      "id_sub_transaksi": "2087394",
-      "tanggal_sub_transaksi": "2026-04-16",
-      "coa_code": "4.2.2",
-      "debet": "36000.0",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9140] INSTALASI RAWAT INAP",
-      "nama_cc": "Paviliun 1",
-      "operasional": "Pemakaian 737, (2796) sabun Logo RSSG, (105) Paviliun 1, Inventori ID (74144)",
-      "nama_sub_penerima": "tina.eliyanti",
-      "loaded_at": "1.782811611601E9",
-      "nama_penerima": "tina.eliyanti",
-      "keterangan": "Pemakaian 737, (2796) sabun Logo RSSG, (105) Paviliun 1, Inventori ID (74144)"
-    },
-    {
       "id_sub_transaksi": "2087396",
       "tanggal_sub_transaksi": "2026-04-16",
       "coa_code": "4.2.2",
@@ -868,20 +812,6 @@
       "operasional": "Pemakaian 737, (2251) Sedotan berlogo, (105) Paviliun 1, Inventori ID (74707)",
       "nama_sub_penerima": "tina.eliyanti",
       "loaded_at": "1.782811630798E9",
-      "nama_penerima": "tina.eliyanti",
-      "keterangan": "Pemakaian 737, (2251) Sedotan berlogo, (105) Paviliun 1, Inventori ID (74707)"
-    },
-    {
-      "id_sub_transaksi": "2087396",
-      "tanggal_sub_transaksi": "2026-04-16",
-      "coa_code": "4.2.2",
-      "debet": "115000.0",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9140] INSTALASI RAWAT INAP",
-      "nama_cc": "Paviliun 1",
-      "operasional": "Pemakaian 737, (2251) Sedotan berlogo, (105) Paviliun 1, Inventori ID (74707)",
-      "nama_sub_penerima": "tina.eliyanti",
-      "loaded_at": "1.782811611601E9",
       "nama_penerima": "tina.eliyanti",
       "keterangan": "Pemakaian 737, (2251) Sedotan berlogo, (105) Paviliun 1, Inventori ID (74707)"
     },
@@ -898,34 +828,6 @@
       "loaded_at": "1.782811630798E9",
       "nama_penerima": "tina.eliyanti",
       "keterangan": "Pemakaian 737, (688) Coffee Sachet RSSG, (105) Paviliun 1, Inventori ID (74511)"
-    },
-    {
-      "id_sub_transaksi": "2087404",
-      "tanggal_sub_transaksi": "2026-04-16",
-      "coa_code": "4.2.1",
-      "debet": "152323.2",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9140] INSTALASI RAWAT INAP",
-      "nama_cc": "Paviliun 1",
-      "operasional": "Pemakaian 737, (688) Coffee Sachet RSSG, (105) Paviliun 1, Inventori ID (74511)",
-      "nama_sub_penerima": "tina.eliyanti",
-      "loaded_at": "1.782811611601E9",
-      "nama_penerima": "tina.eliyanti",
-      "keterangan": "Pemakaian 737, (688) Coffee Sachet RSSG, (105) Paviliun 1, Inventori ID (74511)"
-    },
-    {
-      "id_sub_transaksi": "2087621",
-      "tanggal_sub_transaksi": "2026-04-16",
-      "coa_code": "4.2.1",
-      "debet": "76161.6",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9140] INSTALASI RAWAT INAP",
-      "nama_cc": "Paviliun 2",
-      "operasional": "Pemakaian 738, (688) Coffee Sachet RSSG, (106) Paviliun 2, Inventori ID (74152)",
-      "nama_sub_penerima": "tina.eliyanti",
-      "loaded_at": "1.782811630798E9",
-      "nama_penerima": "tina.eliyanti",
-      "keterangan": "Pemakaian 738, (688) Coffee Sachet RSSG, (106) Paviliun 2, Inventori ID (74152)"
     },
     {
       "id_sub_transaksi": "2113974",
@@ -956,20 +858,6 @@
       "keterangan": null
     },
     {
-      "id_sub_transaksi": "2113974",
-      "tanggal_sub_transaksi": "2026-04-17",
-      "coa_code": "4.2.2",
-      "debet": "144000.0",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9101] DAPUR",
-      "nama_cc": "131 - SUB DAPUR GRESIK",
-      "operasional": "Pemakaian 752, (2796) sabun Logo RSSG, (24) 131 - SUB DAPUR GRESIK, Inventori ID (33602)",
-      "nama_sub_penerima": "nur.wahyuni",
-      "loaded_at": "1.782811621615E9",
-      "nama_penerima": "nur.wahyuni",
-      "keterangan": "Pemakaian 752, (2796) sabun Logo RSSG, (24) 131 - SUB DAPUR GRESIK, Inventori ID (33602)"
-    },
-    {
       "id_sub_transaksi": "2136043",
       "tanggal_sub_transaksi": "2026-04-17",
       "coa_code": "4.2.1",
@@ -980,20 +868,6 @@
       "operasional": "Mutasi Logistik Gudang Tujuan 1576, (2458) Susu Dancow Full Cream 800gr, (24) 131 - SUB DAPUR GRESIK, Inventori ID (2458)",
       "nama_sub_penerima": "mina.khussaniya",
       "loaded_at": "1.782811663802E9",
-      "nama_penerima": "mina.khussaniya",
-      "keterangan": "Mutasi Logistik Gudang Tujuan 1576, (2458) Susu Dancow Full Cream 800gr, (24) 131 - SUB DAPUR GRESIK, Inventori ID (2458)"
-    },
-    {
-      "id_sub_transaksi": "2136043",
-      "tanggal_sub_transaksi": "2026-04-17",
-      "coa_code": "4.2.1",
-      "debet": "484689.4",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9101] DAPUR",
-      "nama_cc": "131 - SUB DAPUR GRESIK",
-      "operasional": "Mutasi Logistik Gudang Tujuan 1576, (2458) Susu Dancow Full Cream 800gr, (24) 131 - SUB DAPUR GRESIK, Inventori ID (2458)",
-      "nama_sub_penerima": "mina.khussaniya",
-      "loaded_at": "1.78281164357E9",
       "nama_penerima": "mina.khussaniya",
       "keterangan": "Mutasi Logistik Gudang Tujuan 1576, (2458) Susu Dancow Full Cream 800gr, (24) 131 - SUB DAPUR GRESIK, Inventori ID (2458)"
     },
@@ -1010,34 +884,6 @@
       "loaded_at": "1.78281164357E9",
       "nama_penerima": "mina.khussaniya",
       "keterangan": "Mutasi Logistik Gudang Sumber 1576, (2458) Susu Dancow Full Cream 800gr, (2) 101-Gudang Non Obat PT CN, Inventori ID (2458)"
-    },
-    {
-      "id_sub_transaksi": "2136042",
-      "tanggal_sub_transaksi": "2026-04-17",
-      "coa_code": "4.2.1",
-      "debet": "0.0",
-      "kredit": "484689.4",
-      "nama_sub_unit": "101-Gudang Non Obat PT CN",
-      "nama_cc": "101-Gudang Non Obat PT CN",
-      "operasional": "Mutasi Logistik Gudang Sumber 1576, (2458) Susu Dancow Full Cream 800gr, (2) 101-Gudang Non Obat PT CN, Inventori ID (2458)",
-      "nama_sub_penerima": "mina.khussaniya",
-      "loaded_at": "1.782811663802E9",
-      "nama_penerima": "mina.khussaniya",
-      "keterangan": "Mutasi Logistik Gudang Sumber 1576, (2458) Susu Dancow Full Cream 800gr, (2) 101-Gudang Non Obat PT CN, Inventori ID (2458)"
-    },
-    {
-      "id_sub_transaksi": "2131125",
-      "tanggal_sub_transaksi": "2026-04-17",
-      "coa_code": "4.2.1",
-      "debet": "494500.0",
-      "kredit": "0.0",
-      "nama_sub_unit": "101-Gudang Non Obat PT CN",
-      "nama_cc": "101-Gudang Non Obat PT CN",
-      "operasional": null,
-      "nama_sub_penerima": "SEKSI PENGADAAN DAN PERSEDIAAN",
-      "loaded_at": "1.782811652696E9",
-      "nama_penerima": "mina.khussaniya",
-      "keterangan": null
     },
     {
       "id_sub_transaksi": "2172458",
@@ -1054,20 +900,6 @@
       "keterangan": "Pemakaian 773, (1877) Pemutih Bayclin 1000ml, (136) HEMODIALISA, Inventori ID (74001)"
     },
     {
-      "id_sub_transaksi": "2172458",
-      "tanggal_sub_transaksi": "2026-04-18",
-      "coa_code": "4.2.2",
-      "debet": "590701.0",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9184] Hemodialisis",
-      "nama_cc": "HEMODIALISA",
-      "operasional": "Pemakaian 773, (1877) Pemutih Bayclin 1000ml, (136) HEMODIALISA, Inventori ID (74001)",
-      "nama_sub_penerima": "giki.rozak",
-      "loaded_at": "1.78281168362E9",
-      "nama_penerima": "giki.rozak",
-      "keterangan": "Pemakaian 773, (1877) Pemutih Bayclin 1000ml, (136) HEMODIALISA, Inventori ID (74001)"
-    },
-    {
       "id_sub_transaksi": "2209289",
       "tanggal_sub_transaksi": "2026-04-20",
       "coa_code": "4.2.1",
@@ -1096,20 +928,6 @@
       "keterangan": "Pemakaian 782, (2251) Sedotan berlogo, (24) 131 - SUB DAPUR GRESIK, Inventori ID (13239)"
     },
     {
-      "id_sub_transaksi": "2209289",
-      "tanggal_sub_transaksi": "2026-04-20",
-      "coa_code": "4.2.1",
-      "debet": "942500.0",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9101] DAPUR",
-      "nama_cc": "131 - SUB DAPUR GRESIK",
-      "operasional": "Pemakaian 782, (2466) SWA Galon, (24) 131 - SUB DAPUR GRESIK, Inventori ID (13454)",
-      "nama_sub_penerima": "nur.wahyuni",
-      "loaded_at": "1.78281171511E9",
-      "nama_penerima": "nur.wahyuni",
-      "keterangan": "Pemakaian 782, (2466) SWA Galon, (24) 131 - SUB DAPUR GRESIK, Inventori ID (13454)"
-    },
-    {
       "id_sub_transaksi": "2182544",
       "tanggal_sub_transaksi": "2026-04-20",
       "coa_code": "4.2.4",
@@ -1124,20 +942,6 @@
       "keterangan": "Pemakaian 775, (396) [65068] Kelambu Box pink, (131) RUANG PERAWATAN NEONATAL, Inventori ID (74726)"
     },
     {
-      "id_sub_transaksi": "2182544",
-      "tanggal_sub_transaksi": "2026-04-20",
-      "coa_code": "4.2.4",
-      "debet": "1150000.0",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9147] RUANG PERAWATAN NEONATAL",
-      "nama_cc": "RUANG PERAWATAN NEONATAL",
-      "operasional": "Pemakaian 775, (396) [65068] Kelambu Box pink, (131) RUANG PERAWATAN NEONATAL, Inventori ID (74726)",
-      "nama_sub_penerima": "ifiatun.khasanah",
-      "loaded_at": "1.782811693894E9",
-      "nama_penerima": "ifiatun.khasanah",
-      "keterangan": "Pemakaian 775, (396) [65068] Kelambu Box pink, (131) RUANG PERAWATAN NEONATAL, Inventori ID (74726)"
-    },
-    {
       "id_sub_transaksi": "2182542",
       "tanggal_sub_transaksi": "2026-04-20",
       "coa_code": "4.2.4",
@@ -1148,20 +952,6 @@
       "operasional": "Pemakaian 775, (394) [65060] Kelambu Box Biru, (131) RUANG PERAWATAN NEONATAL, Inventori ID (74725)",
       "nama_sub_penerima": "ifiatun.khasanah",
       "loaded_at": "1.782811675276E9",
-      "nama_penerima": "ifiatun.khasanah",
-      "keterangan": "Pemakaian 775, (394) [65060] Kelambu Box Biru, (131) RUANG PERAWATAN NEONATAL, Inventori ID (74725)"
-    },
-    {
-      "id_sub_transaksi": "2182542",
-      "tanggal_sub_transaksi": "2026-04-20",
-      "coa_code": "4.2.4",
-      "debet": "1150000.0",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9147] RUANG PERAWATAN NEONATAL",
-      "nama_cc": "RUANG PERAWATAN NEONATAL",
-      "operasional": "Pemakaian 775, (394) [65060] Kelambu Box Biru, (131) RUANG PERAWATAN NEONATAL, Inventori ID (74725)",
-      "nama_sub_penerima": "ifiatun.khasanah",
-      "loaded_at": "1.782811693894E9",
       "nama_penerima": "ifiatun.khasanah",
       "keterangan": "Pemakaian 775, (394) [65060] Kelambu Box Biru, (131) RUANG PERAWATAN NEONATAL, Inventori ID (74725)"
     },
@@ -1208,20 +998,6 @@
       "keterangan": "Pemakaian 782, (2775) Susu Oligo 165 gr-Kalbe, (24) 131 - SUB DAPUR GRESIK, Inventori ID (33308)"
     },
     {
-      "id_sub_transaksi": "2209283",
-      "tanggal_sub_transaksi": "2026-04-20",
-      "coa_code": "4.2.1",
-      "debet": "1368000.0",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9101] DAPUR",
-      "nama_cc": "131 - SUB DAPUR GRESIK",
-      "operasional": "Pemakaian 782, (2775) Susu Oligo 165 gr-Kalbe, (24) 131 - SUB DAPUR GRESIK, Inventori ID (33308)",
-      "nama_sub_penerima": "nur.wahyuni",
-      "loaded_at": "1.78281171511E9",
-      "nama_penerima": "nur.wahyuni",
-      "keterangan": "Pemakaian 782, (2775) Susu Oligo 165 gr-Kalbe, (24) 131 - SUB DAPUR GRESIK, Inventori ID (33308)"
-    },
-    {
       "id_sub_transaksi": "2209291",
       "tanggal_sub_transaksi": "2026-04-20",
       "coa_code": "4.2.1",
@@ -1250,20 +1026,6 @@
       "keterangan": "Pemakaian 782, (2184) Sabun Sunlight Nipis 755ml, (24) 131 - SUB DAPUR GRESIK, Inventori ID (13172)"
     },
     {
-      "id_sub_transaksi": "2209299",
-      "tanggal_sub_transaksi": "2026-04-20",
-      "coa_code": "4.2.2",
-      "debet": "59798.16",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9101] DAPUR",
-      "nama_cc": "131 - SUB DAPUR GRESIK",
-      "operasional": "Pemakaian 782, (2184) Sabun Sunlight Nipis 755ml, (24) 131 - SUB DAPUR GRESIK, Inventori ID (13172)",
-      "nama_sub_penerima": "nur.wahyuni",
-      "loaded_at": "1.782811695557E9",
-      "nama_penerima": "nur.wahyuni",
-      "keterangan": "Pemakaian 782, (2184) Sabun Sunlight Nipis 755ml, (24) 131 - SUB DAPUR GRESIK, Inventori ID (13172)"
-    },
-    {
       "id_sub_transaksi": "2209297",
       "tanggal_sub_transaksi": "2026-04-20",
       "coa_code": "4.2.1",
@@ -1274,20 +1036,6 @@
       "operasional": "Pemakaian 782, (2197) Saori(Saus Teriyaki) 1000 ml, (24) 131 - SUB DAPUR GRESIK, Inventori ID (13185)",
       "nama_sub_penerima": "nur.wahyuni",
       "loaded_at": "1.78281171511E9",
-      "nama_penerima": "nur.wahyuni",
-      "keterangan": "Pemakaian 782, (2197) Saori(Saus Teriyaki) 1000 ml, (24) 131 - SUB DAPUR GRESIK, Inventori ID (13185)"
-    },
-    {
-      "id_sub_transaksi": "2209297",
-      "tanggal_sub_transaksi": "2026-04-20",
-      "coa_code": "4.2.1",
-      "debet": "54877.2",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9101] DAPUR",
-      "nama_cc": "131 - SUB DAPUR GRESIK",
-      "operasional": "Pemakaian 782, (2197) Saori(Saus Teriyaki) 1000 ml, (24) 131 - SUB DAPUR GRESIK, Inventori ID (13185)",
-      "nama_sub_penerima": "nur.wahyuni",
-      "loaded_at": "1.782811695557E9",
       "nama_penerima": "nur.wahyuni",
       "keterangan": "Pemakaian 782, (2197) Saori(Saus Teriyaki) 1000 ml, (24) 131 - SUB DAPUR GRESIK, Inventori ID (13185)"
     },
@@ -1304,76 +1052,6 @@
       "loaded_at": "1.78281171511E9",
       "nama_penerima": "nur.wahyuni",
       "keterangan": "Pemakaian 782, (2464) SWA Botol 330ml 24's, (24) 131 - SUB DAPUR GRESIK, Inventori ID (13452)"
-    },
-    {
-      "id_sub_transaksi": "2209293",
-      "tanggal_sub_transaksi": "2026-04-20",
-      "coa_code": "4.2.1",
-      "debet": "159000.48",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9101] DAPUR",
-      "nama_cc": "131 - SUB DAPUR GRESIK",
-      "operasional": "Pemakaian 782, (2464) SWA Botol 330ml 24's, (24) 131 - SUB DAPUR GRESIK, Inventori ID (13452)",
-      "nama_sub_penerima": "nur.wahyuni",
-      "loaded_at": "1.782811695557E9",
-      "nama_penerima": "nur.wahyuni",
-      "keterangan": "Pemakaian 782, (2464) SWA Botol 330ml 24's, (24) 131 - SUB DAPUR GRESIK, Inventori ID (13452)"
-    },
-    {
-      "id_sub_transaksi": "2209287",
-      "tanggal_sub_transaksi": "2026-04-20",
-      "coa_code": "4.2.1",
-      "debet": "431622.17",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9101] DAPUR",
-      "nama_cc": "131 - SUB DAPUR GRESIK",
-      "operasional": "Pemakaian 782, (2776) Sweetener Gula Jawa  350ml - Tropicana, (24) 131 - SUB DAPUR GRESIK, Inventori ID (33309)",
-      "nama_sub_penerima": "nur.wahyuni",
-      "loaded_at": "1.782811695557E9",
-      "nama_penerima": "nur.wahyuni",
-      "keterangan": "Pemakaian 782, (2776) Sweetener Gula Jawa  350ml - Tropicana, (24) 131 - SUB DAPUR GRESIK, Inventori ID (33309)"
-    },
-    {
-      "id_sub_transaksi": "2209291",
-      "tanggal_sub_transaksi": "2026-04-20",
-      "coa_code": "4.2.1",
-      "debet": "1260000.0",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9101] DAPUR",
-      "nama_cc": "131 - SUB DAPUR GRESIK",
-      "operasional": "Pemakaian 782, (2465) SWA Botol 600ml 24's, (24) 131 - SUB DAPUR GRESIK, Inventori ID (13453)",
-      "nama_sub_penerima": "nur.wahyuni",
-      "loaded_at": "1.782811695557E9",
-      "nama_penerima": "nur.wahyuni",
-      "keterangan": "Pemakaian 782, (2465) SWA Botol 600ml 24's, (24) 131 - SUB DAPUR GRESIK, Inventori ID (13453)"
-    },
-    {
-      "id_sub_transaksi": "2209285",
-      "tanggal_sub_transaksi": "2026-04-20",
-      "coa_code": "4.2.2",
-      "debet": "460000.0",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9101] DAPUR",
-      "nama_cc": "131 - SUB DAPUR GRESIK",
-      "operasional": "Pemakaian 782, (2251) Sedotan berlogo, (24) 131 - SUB DAPUR GRESIK, Inventori ID (13239)",
-      "nama_sub_penerima": "nur.wahyuni",
-      "loaded_at": "1.78281171511E9",
-      "nama_penerima": "nur.wahyuni",
-      "keterangan": "Pemakaian 782, (2251) Sedotan berlogo, (24) 131 - SUB DAPUR GRESIK, Inventori ID (13239)"
-    },
-    {
-      "id_sub_transaksi": "2208389",
-      "tanggal_sub_transaksi": "2026-04-20",
-      "coa_code": "4.2.5",
-      "debet": "9745200.0",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9101] DAPUR",
-      "nama_cc": "131 - SUB DAPUR GRESIK",
-      "operasional": "Pemakaian 779, (881) Gas LPG isi 50kg, (24) 131 - SUB DAPUR GRESIK, Inventori ID (11869)",
-      "nama_sub_penerima": "nur.wahyuni",
-      "loaded_at": "1.78281171511E9",
-      "nama_penerima": "nur.wahyuni",
-      "keterangan": "Pemakaian 779, (881) Gas LPG isi 50kg, (24) 131 - SUB DAPUR GRESIK, Inventori ID (11869)"
     },
     {
       "id_sub_transaksi": "2290428",

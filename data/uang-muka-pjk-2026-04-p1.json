@@ -469,21 +469,6 @@
       "keterangan_pencocokan": "SEMINAR KEMOTERAPI RS SEMEN GRESIK 2026 - Manual"
     },
     {
-      "id_sub_transaksi": "2135221",
-      "tanggal_sub_transaksi": "2026-04-16",
-      "coa_code": "1.1.6.3",
-      "debet": "0.0",
-      "kredit": "910000.0",
-      "nama_sub_unit": "[8017] PEMASARAN & PENJUALAN",
-      "nama_cc": "Non CC",
-      "operasional": "Alokasi 88 - PJK SEMINAR KEMOTERAPI RS SEMEN GRESIK 2026 - Manual",
-      "nama_sub_penerima": "fajar.aldiansyah",
-      "loaded_at": "1.78281164357E9",
-      "nama_penerima": "fajar.aldiansyah",
-      "keterangan": "PJK",
-      "keterangan_pencocokan": "SEMINAR KEMOTERAPI RS SEMEN GRESIK 2026 - Manual"
-    },
-    {
       "id_sub_transaksi": "2213532",
       "tanggal_sub_transaksi": "2026-04-16",
       "coa_code": "1.1.6.3",
@@ -497,36 +482,6 @@
       "nama_penerima": "fajar.aldiansyah",
       "keterangan": "Uang Muka",
       "keterangan_pencocokan": "UM HALAL BIHALAL CNG TAHUN 2026 - Manual"
-    },
-    {
-      "id_sub_transaksi": "2213532",
-      "tanggal_sub_transaksi": "2026-04-16",
-      "coa_code": "1.1.6.3",
-      "debet": "0.0",
-      "kredit": "265000.0",
-      "nama_sub_unit": "[8021] Personalia",
-      "nama_cc": "Non CC",
-      "operasional": "Alokasi 88 - PJK UM HALAL BIHALAL CNG TAHUN 2026 - Manual",
-      "nama_sub_penerima": "fajar.aldiansyah",
-      "loaded_at": "1.782811695557E9",
-      "nama_penerima": "fajar.aldiansyah",
-      "keterangan": "Uang Muka",
-      "keterangan_pencocokan": "UM HALAL BIHALAL CNG TAHUN 2026 - Manual"
-    },
-    {
-      "id_sub_transaksi": "2213541",
-      "tanggal_sub_transaksi": "2026-04-16",
-      "coa_code": "1.1.6.3",
-      "debet": "0.0",
-      "kredit": "4435000.0",
-      "nama_sub_unit": "[8021] Personalia",
-      "nama_cc": "Non CC",
-      "operasional": "Jurnal Umum V3 - ID Sub Unit 80 - ID Jurnal Umum Detail 84 - PJK UM HALAL BIHALAL CNG TAHUN 2026",
-      "nama_sub_penerima": "fajar.aldiansyah",
-      "loaded_at": "1.782811695557E9",
-      "nama_penerima": "LAIN-LAIN",
-      "keterangan": "Uang Muka",
-      "keterangan_pencocokan": "UM HALAL BIHALAL CNG TAHUN 2026"
     },
     {
       "id_sub_transaksi": "2135143",
@@ -559,21 +514,6 @@
       "keterangan_pencocokan": "HEALTH TALK RSSG DAN ASHA FERTILITY CLINIC 2026 - Manual"
     },
     {
-      "id_sub_transaksi": "2067977",
-      "tanggal_sub_transaksi": "2026-04-16",
-      "coa_code": "1.1.6.3",
-      "debet": "2000000.0",
-      "kredit": "0.0",
-      "nama_sub_unit": "[8017] PEMASARAN & PENJUALAN",
-      "nama_cc": "Non CC",
-      "operasional": "Alokasi 88 - UM HEALTH TALK RSSG DAN ASHA FERTILITY CLINIC 2026 - Manual",
-      "nama_sub_penerima": "may.azmianty",
-      "loaded_at": "1.782811611601E9",
-      "nama_penerima": "ibnu.chris",
-      "keterangan": "Uang Muka",
-      "keterangan_pencocokan": "HEALTH TALK RSSG DAN ASHA FERTILITY CLINIC 2026 - Manual"
-    },
-    {
       "id_sub_transaksi": "2069981",
       "tanggal_sub_transaksi": "2026-04-16",
       "coa_code": "1.1.6.3",
@@ -587,36 +527,6 @@
       "nama_penerima": "ibnu.chris",
       "keterangan": "Uang Muka",
       "keterangan_pencocokan": "PEMBELIAN KASPERSKY ANTI VIRUS - Manual"
-    },
-    {
-      "id_sub_transaksi": "2069981",
-      "tanggal_sub_transaksi": "2026-04-16",
-      "coa_code": "1.1.6.3",
-      "debet": "5500000.0",
-      "kredit": "0.0",
-      "nama_sub_unit": "[8151] Teknologi Informasi",
-      "nama_cc": "Non CC",
-      "operasional": "Alokasi 88 - UM PEMBELIAN KASPERSKY ANTI VIRUS - Manual",
-      "nama_sub_penerima": "tasya.salsabila",
-      "loaded_at": "1.782811630798E9",
-      "nama_penerima": "ibnu.chris",
-      "keterangan": "Uang Muka",
-      "keterangan_pencocokan": "PEMBELIAN KASPERSKY ANTI VIRUS - Manual"
-    },
-    {
-      "id_sub_transaksi": "2135143",
-      "tanggal_sub_transaksi": "2026-04-16",
-      "coa_code": "1.1.6.3",
-      "debet": "0.0",
-      "kredit": "5571500.0",
-      "nama_sub_unit": "[8017] PEMASARAN & PENJUALAN",
-      "nama_cc": "Non CC",
-      "operasional": "Jurnal Umum V3 - ID Sub Unit 75 - ID Jurnal Umum Detail 76 - PJK SEMINAR KEMOTERAPI RS SEMEN GRESIK 2026",
-      "nama_sub_penerima": "fajar.aldiansyah",
-      "loaded_at": "1.78281164357E9",
-      "nama_penerima": "LAIN-LAIN",
-      "keterangan": "PJK",
-      "keterangan_pencocokan": "SEMINAR KEMOTERAPI RS SEMEN GRESIK 2026"
     },
     {
       "id_sub_transaksi": "2281214",
@@ -664,36 +574,6 @@
       "keterangan_pencocokan": "RENOVASI PERLUASAN GUDANG FARMASI - Manual"
     },
     {
-      "id_sub_transaksi": "2115051",
-      "tanggal_sub_transaksi": "2026-04-17",
-      "coa_code": "1.1.6.3",
-      "debet": "6.9129579E7",
-      "kredit": "0.0",
-      "nama_sub_unit": "[8111] Pengadaan Barang & Jasa",
-      "nama_cc": "Non CC",
-      "operasional": "Alokasi 88 - UM RENOVASI PERLUASAN GUDANG FARMASI - Manual",
-      "nama_sub_penerima": "may.azmianty",
-      "loaded_at": "1.782811621615E9",
-      "nama_penerima": "ayu.cahya",
-      "keterangan": "Uang Muka",
-      "keterangan_pencocokan": "RENOVASI PERLUASAN GUDANG FARMASI - Manual"
-    },
-    {
-      "id_sub_transaksi": "2281214",
-      "tanggal_sub_transaksi": "2026-04-17",
-      "coa_code": "1.1.6.3",
-      "debet": "0.0",
-      "kredit": "459000.0",
-      "nama_sub_unit": "[8141] Bendahara",
-      "nama_cc": "Non CC",
-      "operasional": "Alokasi 88 - PJK Biaya Akomodasi Bulan Maret 2026 Pre-OJT Anesthesia \"Developing Skilled Nurse For Safe And Effective Anesthesia Care  - Manual",
-      "nama_sub_penerima": "tasya.salsabila",
-      "loaded_at": "1.782811759982E9",
-      "nama_penerima": "tasya.salsabila",
-      "keterangan": "PJK",
-      "keterangan_pencocokan": "Biaya Akomodasi Bulan Maret 2026 Pre-OJT Anesthesia \"Developing Skilled Nurse For Safe And Effective Anesthesia Care  - Manual"
-    },
-    {
       "id_sub_transaksi": "2112047",
       "tanggal_sub_transaksi": "2026-04-17",
       "coa_code": "1.1.6.3",
@@ -709,21 +589,6 @@
       "keterangan_pencocokan": "PRA RUPS DAN RUPS PT CN TAHUN 2026 - Manual"
     },
     {
-      "id_sub_transaksi": "2112047",
-      "tanggal_sub_transaksi": "2026-04-17",
-      "coa_code": "1.1.6.3",
-      "debet": "2.015E7",
-      "kredit": "0.0",
-      "nama_sub_unit": "[8011] PELAYANAN UMUM",
-      "nama_cc": "Non CC",
-      "operasional": "Alokasi 88 - UANG MUKA PRA RUPS DAN RUPS PT CN TAHUN 2026 - Manual",
-      "nama_sub_penerima": "may.azmianty",
-      "loaded_at": "1.782811621615E9",
-      "nama_penerima": "ibnu.chris",
-      "keterangan": "Uang Muka",
-      "keterangan_pencocokan": "PRA RUPS DAN RUPS PT CN TAHUN 2026 - Manual"
-    },
-    {
       "id_sub_transaksi": "2280989",
       "tanggal_sub_transaksi": "2026-04-17",
       "coa_code": "1.1.6.3",
@@ -734,21 +599,6 @@
       "operasional": "-",
       "nama_sub_penerima": "-",
       "loaded_at": "1.782811759982E9",
-      "nama_penerima": "-",
-      "keterangan": "-",
-      "keterangan_pencocokan": "-"
-    },
-    {
-      "id_sub_transaksi": "2280989",
-      "tanggal_sub_transaksi": "2026-04-17",
-      "coa_code": "1.1.6.3",
-      "debet": "0.0",
-      "kredit": "1041000.0",
-      "nama_sub_unit": "[8021] Personalia",
-      "nama_cc": "Non CC",
-      "operasional": "-",
-      "nama_sub_penerima": "-",
-      "loaded_at": "1.782811778973E9",
       "nama_penerima": "-",
       "keterangan": "-",
       "keterangan_pencocokan": "-"
@@ -767,36 +617,6 @@
       "nama_penerima": "may.azmianty",
       "keterangan": "PJK",
       "keterangan_pencocokan": "AKOMODASI PELATIHAN DIALISIS BAGI PERAWAT AYNIYATUNNISATIN & INTAN FIDYATUK FUAIDAH - Manual"
-    },
-    {
-      "id_sub_transaksi": "2280815",
-      "tanggal_sub_transaksi": "2026-04-17",
-      "coa_code": "1.1.6.3",
-      "debet": "0.0",
-      "kredit": "3873500.0",
-      "nama_sub_unit": "[8141] Bendahara",
-      "nama_cc": "Non CC",
-      "operasional": "Alokasi 88 - PJK AKOMODASI PELATIHAN DIALISIS BAGI PERAWAT AYNIYATUNNISATIN & INTAN FIDYATUK FUAIDAH - Manual",
-      "nama_sub_penerima": "may.azmianty",
-      "loaded_at": "1.782811759982E9",
-      "nama_penerima": "may.azmianty",
-      "keterangan": "PJK",
-      "keterangan_pencocokan": "AKOMODASI PELATIHAN DIALISIS BAGI PERAWAT AYNIYATUNNISATIN & INTAN FIDYATUK FUAIDAH - Manual"
-    },
-    {
-      "id_sub_transaksi": "2130592",
-      "tanggal_sub_transaksi": "2026-04-17",
-      "coa_code": "1.1.6.3",
-      "debet": "0.0",
-      "kredit": "566000.0",
-      "nama_sub_unit": "[8017] PEMASARAN & PENJUALAN",
-      "nama_cc": "Non CC",
-      "operasional": "Alokasi 88 - PJK HALAL BIHALAL CIPTA NIRMALA GROUP - Manual",
-      "nama_sub_penerima": "may.azmianty",
-      "loaded_at": "1.782811652696E9",
-      "nama_penerima": "ayu.cahya",
-      "keterangan": "PJK",
-      "keterangan_pencocokan": "HALAL BIHALAL CIPTA NIRMALA GROUP - Manual"
     },
     {
       "id_sub_transaksi": "2213140",
@@ -829,21 +649,6 @@
       "keterangan_pencocokan": "SERVICE LAPTOP - Manual"
     },
     {
-      "id_sub_transaksi": "2213121",
-      "tanggal_sub_transaksi": "2026-04-20",
-      "coa_code": "1.1.6.3",
-      "debet": "0.0",
-      "kredit": "675000.0",
-      "nama_sub_unit": "[8151] Teknologi Informasi",
-      "nama_cc": "Non CC",
-      "operasional": "Alokasi 88 - PJK SERVICE LAPTOP - Manual",
-      "nama_sub_penerima": "fajar.aldiansyah",
-      "loaded_at": "1.78281171511E9",
-      "nama_penerima": "fajar.aldiansyah",
-      "keterangan": "PJK",
-      "keterangan_pencocokan": "SERVICE LAPTOP - Manual"
-    },
-    {
       "id_sub_transaksi": "2279684",
       "tanggal_sub_transaksi": "2026-04-20",
       "coa_code": "1.1.6.3",
@@ -854,21 +659,6 @@
       "operasional": "Alokasi 88 - PJK RENOVASI PERBAIKAN RUMAH SINGGAH GG/287 - Manual",
       "nama_sub_penerima": "may.azmianty",
       "loaded_at": "1.782811759982E9",
-      "nama_penerima": "may.azmianty",
-      "keterangan": "PJK",
-      "keterangan_pencocokan": "RENOVASI PERBAIKAN RUMAH SINGGAH GG/287 - Manual"
-    },
-    {
-      "id_sub_transaksi": "2279684",
-      "tanggal_sub_transaksi": "2026-04-20",
-      "coa_code": "1.1.6.3",
-      "debet": "0.0",
-      "kredit": "997000.0",
-      "nama_sub_unit": "[8141] Bendahara",
-      "nama_cc": "Non CC",
-      "operasional": "Alokasi 88 - PJK RENOVASI PERBAIKAN RUMAH SINGGAH GG/287 - Manual",
-      "nama_sub_penerima": "may.azmianty",
-      "loaded_at": "1.782811778973E9",
       "nama_penerima": "may.azmianty",
       "keterangan": "PJK",
       "keterangan_pencocokan": "RENOVASI PERBAIKAN RUMAH SINGGAH GG/287 - Manual"
@@ -904,36 +694,6 @@
       "keterangan_pencocokan": "FILTER OLI GENSET - Manual"
     },
     {
-      "id_sub_transaksi": "2184395",
-      "tanggal_sub_transaksi": "2026-04-20",
-      "coa_code": "1.1.6.1",
-      "debet": "0.0",
-      "kredit": "300000.0",
-      "nama_sub_unit": "[8011] PELAYANAN UMUM",
-      "nama_cc": "Non CC",
-      "operasional": "Alokasi 88 - PJK FILTER OLI GENSET - Manual",
-      "nama_sub_penerima": "may.azmianty",
-      "loaded_at": "1.782811693894E9",
-      "nama_penerima": "ayu.cahya",
-      "keterangan": "PJK",
-      "keterangan_pencocokan": "FILTER OLI GENSET - Manual"
-    },
-    {
-      "id_sub_transaksi": "2184324",
-      "tanggal_sub_transaksi": "2026-04-20",
-      "coa_code": "1.1.6.1",
-      "debet": "0.0",
-      "kredit": "202000.0",
-      "nama_sub_unit": "[8001] Direksi",
-      "nama_cc": "Non CC",
-      "operasional": "Alokasi 88 - PJK HANDPHONE DIREKSI - Manual",
-      "nama_sub_penerima": "may.azmianty",
-      "loaded_at": "1.782811693894E9",
-      "nama_penerima": "ayu.cahya",
-      "keterangan": "PJK",
-      "keterangan_pencocokan": "HANDPHONE DIREKSI - Manual"
-    },
-    {
       "id_sub_transaksi": "2185520",
       "tanggal_sub_transaksi": "2026-04-20",
       "coa_code": "1.1.6.1",
@@ -944,21 +704,6 @@
       "operasional": "Alokasi 88 - PJK SERTIF PELAUT - Manual",
       "nama_sub_penerima": "may.azmianty",
       "loaded_at": "1.782811693894E9",
-      "nama_penerima": "ayu.cahya",
-      "keterangan": "PJK",
-      "keterangan_pencocokan": "SERTIF PELAUT - Manual"
-    },
-    {
-      "id_sub_transaksi": "2185520",
-      "tanggal_sub_transaksi": "2026-04-20",
-      "coa_code": "1.1.6.1",
-      "debet": "10000.0",
-      "kredit": "0.0",
-      "nama_sub_unit": "[8111] Pengadaan Barang & Jasa",
-      "nama_cc": "Non CC",
-      "operasional": "Alokasi 88 - PJK SERTIF PELAUT - Manual",
-      "nama_sub_penerima": "may.azmianty",
-      "loaded_at": "1.782811675276E9",
       "nama_penerima": "ayu.cahya",
       "keterangan": "PJK",
       "keterangan_pencocokan": "SERTIF PELAUT - Manual"
@@ -979,21 +724,6 @@
       "keterangan_pencocokan": "JAMUAN VENDOR SIMRS"
     },
     {
-      "id_sub_transaksi": "2213357",
-      "tanggal_sub_transaksi": "2026-04-20",
-      "coa_code": "1.1.6.3",
-      "debet": "0.0",
-      "kredit": "501000.0",
-      "nama_sub_unit": "[8151] Teknologi Informasi",
-      "nama_cc": "Non CC",
-      "operasional": "Jurnal Umum V3 - ID Sub Unit 70 - ID Jurnal Umum Detail 82 - PJK JAMUAN VENDOR SIMRS",
-      "nama_sub_penerima": "fajar.aldiansyah",
-      "loaded_at": "1.782811695557E9",
-      "nama_penerima": "LAIN-LAIN",
-      "keterangan": "PJK",
-      "keterangan_pencocokan": "JAMUAN VENDOR SIMRS"
-    },
-    {
       "id_sub_transaksi": "2213320",
       "tanggal_sub_transaksi": "2026-04-20",
       "coa_code": "1.1.6.3",
@@ -1007,36 +737,6 @@
       "nama_penerima": "LAIN-LAIN",
       "keterangan": "PJK",
       "keterangan_pencocokan": "JAMUAN VENDOR SIMRS"
-    },
-    {
-      "id_sub_transaksi": "2213320",
-      "tanggal_sub_transaksi": "2026-04-20",
-      "coa_code": "1.1.6.3",
-      "debet": "0.0",
-      "kredit": "1447050.0",
-      "nama_sub_unit": "[8151] Teknologi Informasi",
-      "nama_cc": "Non CC",
-      "operasional": "Jurnal Umum V3 - ID Sub Unit 70 - ID Jurnal Umum Detail 80 - PJK JAMUAN VENDOR SIMRS",
-      "nama_sub_penerima": "fajar.aldiansyah",
-      "loaded_at": "1.782811695557E9",
-      "nama_penerima": "LAIN-LAIN",
-      "keterangan": "PJK",
-      "keterangan_pencocokan": "JAMUAN VENDOR SIMRS"
-    },
-    {
-      "id_sub_transaksi": "2213140",
-      "tanggal_sub_transaksi": "2026-04-20",
-      "coa_code": "1.1.6.3",
-      "debet": "0.0",
-      "kredit": "3325000.0",
-      "nama_sub_unit": "[8151] Teknologi Informasi",
-      "nama_cc": "Non CC",
-      "operasional": "Jurnal Umum V3 - ID Sub Unit 70 - ID Jurnal Umum Detail 78 - PJK SERVICE LAPTOP",
-      "nama_sub_penerima": "fajar.aldiansyah",
-      "loaded_at": "1.78281171511E9",
-      "nama_penerima": "LAIN-LAIN",
-      "keterangan": "PJK",
-      "keterangan_pencocokan": "SERVICE LAPTOP"
     },
     {
       "id_sub_transaksi": "2223575",

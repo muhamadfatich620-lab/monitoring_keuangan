@@ -1460,20 +1460,6 @@
       "keterangan": "Pemakaian 515, (2172) Sabun Cair Lifeboy 800 g, (26) 121 - INSTALASI BEDAH SENTRAL (IBS), Inventori ID (18655)"
     },
     {
-      "id_sub_transaksi": "1203596",
-      "tanggal_sub_transaksi": "2026-03-16",
-      "coa_code": "4.2.2",
-      "debet": "52057.04",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9123] KAMAR OPERASI",
-      "nama_cc": "121 - INSTALASI BEDAH SENTRAL (IBS)",
-      "operasional": "Pemakaian 515, (2353) Soklin Pembersih Lantai 1600ml, (26) 121 - INSTALASI BEDAH SENTRAL (IBS), Inventori ID (18836)",
-      "nama_sub_penerima": "tyas.aji",
-      "loaded_at": "1.782809700971E9",
-      "nama_penerima": "tyas.aji",
-      "keterangan": "Pemakaian 515, (2353) Soklin Pembersih Lantai 1600ml, (26) 121 - INSTALASI BEDAH SENTRAL (IBS), Inventori ID (18836)"
-    },
-    {
       "id_sub_transaksi": "1207628",
       "tanggal_sub_transaksi": "2026-03-16",
       "coa_code": "4.2.2",
@@ -1488,20 +1474,6 @@
       "keterangan": "Pemakaian 520, (2526) Teh Sachet RSSG, (107) Paviliun 3, Inventori ID (74159)"
     },
     {
-      "id_sub_transaksi": "1203594",
-      "tanggal_sub_transaksi": "2026-03-16",
-      "coa_code": "4.2.2",
-      "debet": "84957.12",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9123] KAMAR OPERASI",
-      "nama_cc": "121 - INSTALASI BEDAH SENTRAL (IBS)",
-      "operasional": "Pemakaian 515, (2172) Sabun Cair Lifeboy 800 g, (26) 121 - INSTALASI BEDAH SENTRAL (IBS), Inventori ID (18655)",
-      "nama_sub_penerima": "tyas.aji",
-      "loaded_at": "1.782809616822E9",
-      "nama_penerima": "tyas.aji",
-      "keterangan": "Pemakaian 515, (2172) Sabun Cair Lifeboy 800 g, (26) 121 - INSTALASI BEDAH SENTRAL (IBS), Inventori ID (18655)"
-    },
-    {
       "id_sub_transaksi": "1203580",
       "tanggal_sub_transaksi": "2026-03-16",
       "coa_code": "4.2.2",
@@ -1512,20 +1484,6 @@
       "operasional": "Pemakaian 515, (2144) Rinso 770gr, (26) 121 - INSTALASI BEDAH SENTRAL (IBS), Inventori ID (18627)",
       "nama_sub_penerima": "tyas.aji",
       "loaded_at": "1.782809616822E9",
-      "nama_penerima": "tyas.aji",
-      "keterangan": "Pemakaian 515, (2144) Rinso 770gr, (26) 121 - INSTALASI BEDAH SENTRAL (IBS), Inventori ID (18627)"
-    },
-    {
-      "id_sub_transaksi": "1203580",
-      "tanggal_sub_transaksi": "2026-03-16",
-      "coa_code": "4.2.2",
-      "debet": "54606.54",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9123] KAMAR OPERASI",
-      "nama_cc": "121 - INSTALASI BEDAH SENTRAL (IBS)",
-      "operasional": "Pemakaian 515, (2144) Rinso 770gr, (26) 121 - INSTALASI BEDAH SENTRAL (IBS), Inventori ID (18627)",
-      "nama_sub_penerima": "tyas.aji",
-      "loaded_at": "1.782809700971E9",
       "nama_penerima": "tyas.aji",
       "keterangan": "Pemakaian 515, (2144) Rinso 770gr, (26) 121 - INSTALASI BEDAH SENTRAL (IBS), Inventori ID (18627)"
     },
@@ -1542,34 +1500,6 @@
       "loaded_at": "1.782809700971E9",
       "nama_penerima": "tyas.aji",
       "keterangan": "Pemakaian 515, (2501) Tas Kresek Jumbo Kuning, (26) 121 - INSTALASI BEDAH SENTRAL (IBS), Inventori ID (18983)"
-    },
-    {
-      "id_sub_transaksi": "1203582",
-      "tanggal_sub_transaksi": "2026-03-16",
-      "coa_code": "4.2.2",
-      "debet": "167557.83",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9123] KAMAR OPERASI",
-      "nama_cc": "121 - INSTALASI BEDAH SENTRAL (IBS)",
-      "operasional": "Pemakaian 515, (2501) Tas Kresek Jumbo Kuning, (26) 121 - INSTALASI BEDAH SENTRAL (IBS), Inventori ID (18983)",
-      "nama_sub_penerima": "tyas.aji",
-      "loaded_at": "1.782809616822E9",
-      "nama_penerima": "tyas.aji",
-      "keterangan": "Pemakaian 515, (2501) Tas Kresek Jumbo Kuning, (26) 121 - INSTALASI BEDAH SENTRAL (IBS), Inventori ID (18983)"
-    },
-    {
-      "id_sub_transaksi": "1207628",
-      "tanggal_sub_transaksi": "2026-03-16",
-      "coa_code": "4.2.2",
-      "debet": "12300.0",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9140] INSTALASI RAWAT INAP",
-      "nama_cc": "Paviliun 3",
-      "operasional": "Pemakaian 520, (2526) Teh Sachet RSSG, (107) Paviliun 3, Inventori ID (74159)",
-      "nama_sub_penerima": "tina.eliyanti",
-      "loaded_at": "1.782809711858E9",
-      "nama_penerima": "tina.eliyanti",
-      "keterangan": "Pemakaian 520, (2526) Teh Sachet RSSG, (107) Paviliun 3, Inventori ID (74159)"
     },
     {
       "id_sub_transaksi": "1220785",
@@ -1614,48 +1544,6 @@
       "keterangan": "Pemakaian 528, (881) Gas LPG isi 50kg, (24) 131 - SUB DAPUR GRESIK, Inventori ID (11869)"
     },
     {
-      "id_sub_transaksi": "1227706",
-      "tanggal_sub_transaksi": "2026-03-17",
-      "coa_code": "4.2.5",
-      "debet": "3879636.35",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9101] DAPUR",
-      "nama_cc": "131 - SUB DAPUR GRESIK",
-      "operasional": "Pemakaian 528, (881) Gas LPG isi 50kg, (24) 131 - SUB DAPUR GRESIK, Inventori ID (11869)",
-      "nama_sub_penerima": "nur.wahyuni",
-      "loaded_at": "1.782809659273E9",
-      "nama_penerima": "nur.wahyuni",
-      "keterangan": "Pemakaian 528, (881) Gas LPG isi 50kg, (24) 131 - SUB DAPUR GRESIK, Inventori ID (11869)"
-    },
-    {
-      "id_sub_transaksi": "1220785",
-      "tanggal_sub_transaksi": "2026-03-17",
-      "coa_code": "4.2.1",
-      "debet": "2873400.0",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9101] DAPUR",
-      "nama_cc": "Non CC",
-      "operasional": "Alokasi 88 - BIAYA BAHAN MAKAN PASIEAN BULAN MARET 2026 - Manual",
-      "nama_sub_penerima": "may.azmianty",
-      "loaded_at": "1.782809732571E9",
-      "nama_penerima": "ayu.cahya",
-      "keterangan": "Alokasi 88 - BIAYA BAHAN MAKAN PASIEAN BULAN MARET 2026 - Manual"
-    },
-    {
-      "id_sub_transaksi": "1227737",
-      "tanggal_sub_transaksi": "2026-03-17",
-      "coa_code": "4.2.5",
-      "debet": "4655563.62",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9102] LINEN",
-      "nama_cc": "LAUNDRY",
-      "operasional": "Pemakaian 529, (881) Gas LPG isi 50kg, (116) LAUNDRY, Inventori ID (33881)",
-      "nama_sub_penerima": "nur.wahyuni",
-      "loaded_at": "1.782809659273E9",
-      "nama_penerima": "nur.wahyuni",
-      "keterangan": "Pemakaian 529, (881) Gas LPG isi 50kg, (116) LAUNDRY, Inventori ID (33881)"
-    },
-    {
       "id_sub_transaksi": "1240870",
       "tanggal_sub_transaksi": "2026-03-18",
       "coa_code": "4.2.1",
@@ -1680,20 +1568,6 @@
       "operasional": "Pemakaian 535, (2796) sabun Logo RSSG, (107) Paviliun 3, Inventori ID (74158)",
       "nama_sub_penerima": "tina.eliyanti",
       "loaded_at": "1.78280976435E9",
-      "nama_penerima": "tina.eliyanti",
-      "keterangan": "Pemakaian 535, (2796) sabun Logo RSSG, (107) Paviliun 3, Inventori ID (74158)"
-    },
-    {
-      "id_sub_transaksi": "1241125",
-      "tanggal_sub_transaksi": "2026-03-18",
-      "coa_code": "4.2.2",
-      "debet": "36000.0",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9140] INSTALASI RAWAT INAP",
-      "nama_cc": "Paviliun 3",
-      "operasional": "Pemakaian 535, (2796) sabun Logo RSSG, (107) Paviliun 3, Inventori ID (74158)",
-      "nama_sub_penerima": "tina.eliyanti",
-      "loaded_at": "1.78280968293E9",
       "nama_penerima": "tina.eliyanti",
       "keterangan": "Pemakaian 535, (2796) sabun Logo RSSG, (107) Paviliun 3, Inventori ID (74158)"
     },
@@ -1726,34 +1600,6 @@
       "keterangan": "Pemakaian 533, (2314) Shampo 30ml, (106) Paviliun 2, Inventori ID (74322)"
     },
     {
-      "id_sub_transaksi": "1240886",
-      "tanggal_sub_transaksi": "2026-03-18",
-      "coa_code": "4.2.2",
-      "debet": "52500.0",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9140] INSTALASI RAWAT INAP",
-      "nama_cc": "Paviliun 2",
-      "operasional": "Pemakaian 533, (2314) Shampo 30ml, (106) Paviliun 2, Inventori ID (74322)",
-      "nama_sub_penerima": "tina.eliyanti",
-      "loaded_at": "1.78280968293E9",
-      "nama_penerima": "tina.eliyanti",
-      "keterangan": "Pemakaian 533, (2314) Shampo 30ml, (106) Paviliun 2, Inventori ID (74322)"
-    },
-    {
-      "id_sub_transaksi": "1240870",
-      "tanggal_sub_transaksi": "2026-03-18",
-      "coa_code": "4.2.1",
-      "debet": "33086.4",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9140] INSTALASI RAWAT INAP",
-      "nama_cc": "Paviliun 2",
-      "operasional": "Pemakaian 533, (933) Gula sachet RSSG, (106) Paviliun 2, Inventori ID (74153)",
-      "nama_sub_penerima": "tina.eliyanti",
-      "loaded_at": "1.78280968293E9",
-      "nama_penerima": "tina.eliyanti",
-      "keterangan": "Pemakaian 533, (933) Gula sachet RSSG, (106) Paviliun 2, Inventori ID (74153)"
-    },
-    {
       "id_sub_transaksi": "1240632",
       "tanggal_sub_transaksi": "2026-03-18",
       "coa_code": "4.2.2",
@@ -1764,20 +1610,6 @@
       "operasional": "Pemakaian 531, (2796) sabun Logo RSSG, (105) Paviliun 1, Inventori ID (74144)",
       "nama_sub_penerima": "tina.eliyanti",
       "loaded_at": "1.78280976435E9",
-      "nama_penerima": "tina.eliyanti",
-      "keterangan": "Pemakaian 531, (2796) sabun Logo RSSG, (105) Paviliun 1, Inventori ID (74144)"
-    },
-    {
-      "id_sub_transaksi": "1240632",
-      "tanggal_sub_transaksi": "2026-03-18",
-      "coa_code": "4.2.2",
-      "debet": "36000.0",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9140] INSTALASI RAWAT INAP",
-      "nama_cc": "Paviliun 1",
-      "operasional": "Pemakaian 531, (2796) sabun Logo RSSG, (105) Paviliun 1, Inventori ID (74144)",
-      "nama_sub_penerima": "tina.eliyanti",
-      "loaded_at": "1.78280968293E9",
       "nama_penerima": "tina.eliyanti",
       "keterangan": "Pemakaian 531, (2796) sabun Logo RSSG, (105) Paviliun 1, Inventori ID (74144)"
     },
@@ -1796,20 +1628,6 @@
       "keterangan": "Pemakaian 531, (2526) Teh Sachet RSSG, (105) Paviliun 1, Inventori ID (74146)"
     },
     {
-      "id_sub_transaksi": "1240626",
-      "tanggal_sub_transaksi": "2026-03-18",
-      "coa_code": "4.2.1",
-      "debet": "25300.0",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9140] INSTALASI RAWAT INAP",
-      "nama_cc": "Paviliun 1",
-      "operasional": "Pemakaian 531, (2526) Teh Sachet RSSG, (105) Paviliun 1, Inventori ID (74146)",
-      "nama_sub_penerima": "tina.eliyanti",
-      "loaded_at": "1.78280976435E9",
-      "nama_penerima": "tina.eliyanti",
-      "keterangan": "Pemakaian 531, (2526) Teh Sachet RSSG, (105) Paviliun 1, Inventori ID (74146)"
-    },
-    {
       "id_sub_transaksi": "1240622",
       "tanggal_sub_transaksi": "2026-03-18",
       "coa_code": "4.2.2",
@@ -1820,20 +1638,6 @@
       "operasional": "Pemakaian 531, (2260) Selang Fleksibel Uk.30cm, (105) Paviliun 1, Inventori ID (74509)",
       "nama_sub_penerima": "tina.eliyanti",
       "loaded_at": "1.78280976435E9",
-      "nama_penerima": "tina.eliyanti",
-      "keterangan": "Pemakaian 531, (2260) Selang Fleksibel Uk.30cm, (105) Paviliun 1, Inventori ID (74509)"
-    },
-    {
-      "id_sub_transaksi": "1240622",
-      "tanggal_sub_transaksi": "2026-03-18",
-      "coa_code": "4.2.2",
-      "debet": "115000.0",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9140] INSTALASI RAWAT INAP",
-      "nama_cc": "Paviliun 1",
-      "operasional": "Pemakaian 531, (2260) Selang Fleksibel Uk.30cm, (105) Paviliun 1, Inventori ID (74509)",
-      "nama_sub_penerima": "tina.eliyanti",
-      "loaded_at": "1.78280968293E9",
       "nama_penerima": "tina.eliyanti",
       "keterangan": "Pemakaian 531, (2260) Selang Fleksibel Uk.30cm, (105) Paviliun 1, Inventori ID (74509)"
     },
@@ -1852,20 +1656,6 @@
       "keterangan": "Pemakaian 531, (936) Gula Tropikana Slim Clasic 160's, (105) Paviliun 1, Inventori ID (74510)"
     },
     {
-      "id_sub_transaksi": "1240600",
-      "tanggal_sub_transaksi": "2026-03-18",
-      "coa_code": "4.2.1",
-      "debet": "94905.6",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9140] INSTALASI RAWAT INAP",
-      "nama_cc": "Paviliun 1",
-      "operasional": "Pemakaian 531, (936) Gula Tropikana Slim Clasic 160's, (105) Paviliun 1, Inventori ID (74510)",
-      "nama_sub_penerima": "tina.eliyanti",
-      "loaded_at": "1.78280976435E9",
-      "nama_penerima": "tina.eliyanti",
-      "keterangan": "Pemakaian 531, (936) Gula Tropikana Slim Clasic 160's, (105) Paviliun 1, Inventori ID (74510)"
-    },
-    {
       "id_sub_transaksi": "1240598",
       "tanggal_sub_transaksi": "2026-03-18",
       "coa_code": "4.2.1",
@@ -1876,20 +1666,6 @@
       "operasional": "Pemakaian 531, (933) Gula sachet RSSG, (105) Paviliun 1, Inventori ID (74325)",
       "nama_sub_penerima": "tina.eliyanti",
       "loaded_at": "1.78280976435E9",
-      "nama_penerima": "tina.eliyanti",
-      "keterangan": "Pemakaian 531, (933) Gula sachet RSSG, (105) Paviliun 1, Inventori ID (74325)"
-    },
-    {
-      "id_sub_transaksi": "1240598",
-      "tanggal_sub_transaksi": "2026-03-18",
-      "coa_code": "4.2.1",
-      "debet": "34465.0",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9140] INSTALASI RAWAT INAP",
-      "nama_cc": "Paviliun 1",
-      "operasional": "Pemakaian 531, (933) Gula sachet RSSG, (105) Paviliun 1, Inventori ID (74325)",
-      "nama_sub_penerima": "tina.eliyanti",
-      "loaded_at": "1.78280968293E9",
       "nama_penerima": "tina.eliyanti",
       "keterangan": "Pemakaian 531, (933) Gula sachet RSSG, (105) Paviliun 1, Inventori ID (74325)"
     },
@@ -1906,34 +1682,6 @@
       "loaded_at": "1.78280968293E9",
       "nama_penerima": "tina.eliyanti",
       "keterangan": "Pemakaian 531, (688) Coffee Sachet RSSG, (105) Paviliun 1, Inventori ID (74511)"
-    },
-    {
-      "id_sub_transaksi": "1240590",
-      "tanggal_sub_transaksi": "2026-03-18",
-      "coa_code": "4.2.1",
-      "debet": "76161.6",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9140] INSTALASI RAWAT INAP",
-      "nama_cc": "Paviliun 1",
-      "operasional": "Pemakaian 531, (688) Coffee Sachet RSSG, (105) Paviliun 1, Inventori ID (74511)",
-      "nama_sub_penerima": "tina.eliyanti",
-      "loaded_at": "1.78280976435E9",
-      "nama_penerima": "tina.eliyanti",
-      "keterangan": "Pemakaian 531, (688) Coffee Sachet RSSG, (105) Paviliun 1, Inventori ID (74511)"
-    },
-    {
-      "id_sub_transaksi": "1240892",
-      "tanggal_sub_transaksi": "2026-03-18",
-      "coa_code": "4.2.1",
-      "debet": "74145.0",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9140] INSTALASI RAWAT INAP",
-      "nama_cc": "Paviliun 2",
-      "operasional": "Pemakaian 533, (936) Gula Tropikana Slim Clasic 160's, (106) Paviliun 2, Inventori ID (74506)",
-      "nama_sub_penerima": "tina.eliyanti",
-      "loaded_at": "1.78280968293E9",
-      "nama_penerima": "tina.eliyanti",
-      "keterangan": "Pemakaian 533, (936) Gula Tropikana Slim Clasic 160's, (106) Paviliun 2, Inventori ID (74506)"
     },
     {
       "id_sub_transaksi": "1324691",

@@ -289,21 +289,6 @@
       "keterangan_pencocokan": "BUKA PUASA BERSAMA DENGAN FKTP 2026 - Manual"
     },
     {
-      "id_sub_transaksi": "1227399",
-      "tanggal_sub_transaksi": "2026-03-16",
-      "coa_code": "1.1.6.3",
-      "debet": "0.0",
-      "kredit": "545000.0",
-      "nama_sub_unit": "[8017] PEMASARAN & PENJUALAN",
-      "nama_cc": "Non CC",
-      "operasional": "Alokasi 88 - PJK BUKA PUASA BERSAMA DENGAN FKTP 2026 - Manual",
-      "nama_sub_penerima": "may.azmianty",
-      "loaded_at": "1.782809659273E9",
-      "nama_penerima": "ayu.cahya",
-      "keterangan": "PJK",
-      "keterangan_pencocokan": "BUKA PUASA BERSAMA DENGAN FKTP 2026 - Manual"
-    },
-    {
       "id_sub_transaksi": "1200768",
       "tanggal_sub_transaksi": "2026-03-16",
       "coa_code": "1.1.6.3",
@@ -317,36 +302,6 @@
       "nama_penerima": "ayu.cahya",
       "keterangan": "PJK",
       "keterangan_pencocokan": "BIAYA SEMINAR AWAM SEHAT MENJELANG PUASA - Manual"
-    },
-    {
-      "id_sub_transaksi": "1200768",
-      "tanggal_sub_transaksi": "2026-03-16",
-      "coa_code": "1.1.6.3",
-      "debet": "0.0",
-      "kredit": "501000.0",
-      "nama_sub_unit": "[8017] PEMASARAN & PENJUALAN",
-      "nama_cc": "Non CC",
-      "operasional": "Alokasi 88 - PJK BIAYA SEMINAR AWAM SEHAT MENJELANG PUASA - Manual",
-      "nama_sub_penerima": "may.azmianty",
-      "loaded_at": "1.782809616822E9",
-      "nama_penerima": "ayu.cahya",
-      "keterangan": "PJK",
-      "keterangan_pencocokan": "BIAYA SEMINAR AWAM SEHAT MENJELANG PUASA - Manual"
-    },
-    {
-      "id_sub_transaksi": "1227344",
-      "tanggal_sub_transaksi": "2026-03-16",
-      "coa_code": "1.1.6.3",
-      "debet": "0.0",
-      "kredit": "641500.0",
-      "nama_sub_unit": "[8017] PEMASARAN & PENJUALAN",
-      "nama_cc": "Non CC",
-      "operasional": "Alokasi 88 - PJK BIAYA BUKA BERSAMA DENGAN KEPOLISIAN, JASA RAHARJA, BPJS KETENAGAKERJAAN 2026 - Manual",
-      "nama_sub_penerima": "may.azmianty",
-      "loaded_at": "1.782809659273E9",
-      "nama_penerima": "ayu.cahya",
-      "keterangan": "PJK",
-      "keterangan_pencocokan": "BIAYA BUKA BERSAMA DENGAN KEPOLISIAN, JASA RAHARJA, BPJS KETENAGAKERJAAN 2026 - Manual"
     },
     {
       "id_sub_transaksi": "1221626",
@@ -394,36 +349,6 @@
       "keterangan_pencocokan": "BINGKISAN IDUL FITRI 1447 H ( 2026 ) BAGI RELASI WARTAWAN - Manual"
     },
     {
-      "id_sub_transaksi": "1220126",
-      "tanggal_sub_transaksi": "2026-03-17",
-      "coa_code": "1.1.6.3",
-      "debet": "1300000.0",
-      "kredit": "0.0",
-      "nama_sub_unit": "[8017] PEMASARAN & PENJUALAN",
-      "nama_cc": "Non CC",
-      "operasional": "Alokasi 88 - UM BINGKISAN IDUL FITRI 1447 H ( 2026 ) BAGI RELASI WARTAWAN - Manual",
-      "nama_sub_penerima": "may.azmianty",
-      "loaded_at": "1.782809732571E9",
-      "nama_penerima": "ibnu.chris",
-      "keterangan": "Uang Muka",
-      "keterangan_pencocokan": "BINGKISAN IDUL FITRI 1447 H ( 2026 ) BAGI RELASI WARTAWAN - Manual"
-    },
-    {
-      "id_sub_transaksi": "1221626",
-      "tanggal_sub_transaksi": "2026-03-17",
-      "coa_code": "1.1.6.3",
-      "debet": "734000.0",
-      "kredit": "0.0",
-      "nama_sub_unit": "[8021] Personalia",
-      "nama_cc": "Non CC",
-      "operasional": "Alokasi 88 - PJK REAL PELATIHAN AHLI K3 UMUM SERTIFIKASI KEMENAKER RI - Manual",
-      "nama_sub_penerima": "may.azmianty",
-      "loaded_at": "1.782809732571E9",
-      "nama_penerima": "ayu.cahya",
-      "keterangan": "PJK",
-      "keterangan_pencocokan": "REAL PELATIHAN AHLI K3 UMUM SERTIFIKASI KEMENAKER RI - Manual"
-    },
-    {
       "id_sub_transaksi": "1239623",
       "tanggal_sub_transaksi": "2026-03-18",
       "coa_code": "1.1.6.3",
@@ -434,21 +359,6 @@
       "operasional": "Alokasi 88 - UANG MUKA DAPUR MARET 2026 - Manual",
       "nama_sub_penerima": "may.azmianty",
       "loaded_at": "1.78280968293E9",
-      "nama_penerima": "ayu.cahya",
-      "keterangan": "Uang Muka",
-      "keterangan_pencocokan": "DAPUR MARET 2026 - Manual"
-    },
-    {
-      "id_sub_transaksi": "1239623",
-      "tanggal_sub_transaksi": "2026-03-18",
-      "coa_code": "1.1.6.3",
-      "debet": "2.55E7",
-      "kredit": "0.0",
-      "nama_sub_unit": "[9101] DAPUR",
-      "nama_cc": "Non CC",
-      "operasional": "Alokasi 88 - UANG MUKA DAPUR MARET 2026 - Manual",
-      "nama_sub_penerima": "may.azmianty",
-      "loaded_at": "1.78280976435E9",
       "nama_penerima": "ayu.cahya",
       "keterangan": "Uang Muka",
       "keterangan_pencocokan": "DAPUR MARET 2026 - Manual"
